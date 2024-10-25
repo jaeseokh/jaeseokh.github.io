@@ -62,19 +62,19 @@ nav ul li a:hover {
 }
 
 /* Recent posts */
-.recent-posts article {
+.research-interest article {
     margin-bottom: 20px;
 }
 
-.recent-posts h2 {
+.research-interest h2 {
     font-size: 22px;
 }
 
-.recent-posts h3 a {
+.research-interest h3 a {
     text-decoration: none;
     color: #007acc;
 }
 
-.recent-posts h3 a:hover {
+.research-interest h3 a:hover {
     text-decoration: underline;
 }
