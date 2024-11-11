@@ -1,0 +1,35 @@
+/* Body Styling for a Clean Look */
+body {
+    background-color: #f8f9fa;  /* Light gray background */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #5bc0de;  /* Light blue for the 'cosmo' theme */
+    padding: 10px;
+}
+
+/* Header and Title Styling */
+h1, h2 {
+    color: #2b6777;  /* Slightly muted dark blue */
+}
+
+/* Rectangular Image Styling */
+img[alt="headshot.jpg"] {
+    border-radius: 4px;  /* Slight rounding for soft corners, but keeps it rectangular */
+    width: 200px;  /* Fixed width */
+    height: auto;  /* Maintains aspect ratio */
+    border: 2px solid #ddd;  /* Adds a subtle border */
+    padding: 4px;
+}
+
+/* Links Styling */
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
