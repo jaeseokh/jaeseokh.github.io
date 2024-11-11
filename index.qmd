@@ -1,5 +1,4 @@
 ---
-website:
   title: "Jaeseok Hwang"
   subtitle: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
   navbar:
