@@ -1,1 +1,0 @@
-[Jaeseok Personal Web](https://jaeseokh.github.io/)
