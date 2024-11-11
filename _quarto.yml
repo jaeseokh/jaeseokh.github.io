@@ -1,19 +1,43 @@
 project:
   type: website
-  output-dir: docs # GitHub Pages usually serves from the docs folder
+  output-dir: docs
+
 website:
-  title: "Jeaseok Hwang"
-  navbar:
-    left:
-      - text: "Home"
-        href: index.qmd
-      - text: "Resume(CV)"
-        href: Resume(CV).qmd
-      - text: "Research"
-        href: research/index.qmd
-      - text: "Essays"
-        href: essays/index.qmd
+  title: "Jaeseok Hwang"
+  description: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
+ navbar:
+    - text: "Home"
+      href: index.qmd
+    - text: "CV"
+      href: cv.qmd
+    - text: "Projects"
+      href: projects/index.qmd
+    - text: "Publications"
+      href: publications/index.qmd
+    - text: "Contact"
+      href: contact.qmd
+
+
 format:
   html:
-    theme: default
-    css: styles.scss
+    theme: cosmo  # Replace 'solana' with 'cosmo' or another theme of your choice
+    css: styles.scss  # Custom CSS file for further styling
+    toc: true
+    toc-depth: 2
+
+# Customize author details
+author:
+  name: "Jaeseok Hwang"
+  image: headshot.jpg
+  image-shape: "default"  # Use "default" to keep the rectangular shape
+  description: "Ph.D. candidate in Applied Economics (Expected Graduation in May 2025)"
+  links:
+    - icon: github
+      text: "GitHub"
+      href: "https://github.com/jaeseok2illinois"
+    - icon: linkedin
+      text: "LinkedIn"
+      href: "https://www.linkedin.com/in/hwang-jaeseok-15ab94171/"
+    - icon: envelope-fill
+      text: "Email"
+      href: "mailto:jaeseok2@illinois.edu"
