@@ -26,5 +26,8 @@ format:
   html:
     theme: cosmo  # Specify the theme here
     css: styles.scss  # Custom CSS file for further styling
+    mainfont: sans-serif
+    fontsize: 20px
+    page-layout : full
     toc: true
     toc-depth: 2
