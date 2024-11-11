@@ -1,11 +1,7 @@
 ---
-project:
-  type: website
-  output-dir: docs
-
 website:
   title: "Jaeseok Hwang"
-  description: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
+  subtitle: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
   navbar:
     - icon: github
       text: Github
