@@ -4,7 +4,10 @@ project:
 
 website:
   title: "Jaeseok Hwang"
+   site-url: https://jaeseokh.github.io/
   description: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
+    page-navigation: true
+  back-to-top-navigation: true
  navbar:
     - text: "Home"
       href: index.qmd
