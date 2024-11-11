@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs # GitHub Pages usually serves from the docs folder
+website:
+  title: "Jeaseok Hwang"
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Resume(CV)"
+        href: Resume(CV).qmd
+      - text: "Research"
+        href: research/index.qmd
+      - text: "Essays"
+        href: essays/index.qmd
+format:
+  html:
+    theme: default
+    css: styles.scss

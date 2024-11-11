@@ -1,0 +1,11 @@
+---
+title: "Resaerch"
+---
+
+# Projects
+
+## Project 1: Title
+- Description of the Research, methodologies used, and outcomes.
+
+## Project 2: Title
+- Description of the Research, including a link to a GitHub repository if available.
