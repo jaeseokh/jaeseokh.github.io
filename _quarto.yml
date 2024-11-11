@@ -12,8 +12,8 @@ website:
     right:
     - text: "Home"
       href: index.qmd
-    - text: "Resume(CV)"
-      href: Resume.qmd
+    - text: "Resume"
+      href: Resume.qmd  # Simplified name
       icon: person-gear
     - text: "Research"
       href: research/index.qmd
@@ -22,19 +22,17 @@ website:
       href: essays/index.qmd
       icon: pen-to-square
 
-
 format:
   html:
-    theme: cosmo  # Replace 'solana' with 'cosmo' or another theme of your choice
-    css: styles.scss  # Custom CSS file for further styling
+    theme: cosmo
+    css: styles.scss
     toc: true
     toc-depth: 2
 
-# Customize author details
 author:
   name: "Jaeseok Hwang"
   image: headshot.jpg
-  image-shape: "default"  # Use "default" to keep the rectangular shape
+  image-shape: "default"
   description: "Ph.D. candidate in Applied Economics (Expected Graduation in May 2025)"
   links:
     - icon: github
