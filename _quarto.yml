@@ -13,7 +13,7 @@ website:
     - text: "Home"
       href: index.qmd
     - text: "Resume(CV)"
-      href: Resume(CV).qmd
+      href: Resume.qmd
       icon: person-gear
     - text: "Research"
       href: research/index.qmd
