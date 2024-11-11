@@ -1,15 +1,18 @@
 ---
   title: "Jaeseok Hwang"
   subtitle: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
-  navbar:
+  image: headshot.jpg
+  template: cosmo
+  image-shape: "default"
+  links:
     - icon: github
-      text: Github
-      href: https://github.com/jaeseokh
+      text: "GitHub"
+      href: "https://github.com/jaeseokh"
     - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/
+      text: "LinkedIn"
+      href: "https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/"
     - icon: envelope-fill
-      text: Email
+      text: "Email"
       href: "mailto:jaeseok2@illinois.edu"
 ---
 
