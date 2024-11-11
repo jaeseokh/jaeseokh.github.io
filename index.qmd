@@ -9,7 +9,7 @@ website:
   navbar:
     - icon: github
       text: Github
-      href: https://github.com/jaeseok2illinois
+      href: https://github.com/jaeseokh
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/
