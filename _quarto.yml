@@ -14,7 +14,7 @@ website:
       href: index.qmd
     - text: "Resume"
       href: Resume.qmd  # Simplified name
-      icon: person-gear
+      icon: user-cog
     - text: "Research"
       href: research/index.qmd
       icon: flask
@@ -24,10 +24,13 @@ website:
 
 format:
   html:
-    theme: cosmo  # Specify the theme here
-    css: styles.scss  # Custom CSS file for further styling
+    theme: cosmo
+    css: styles.scss
     mainfont: sans-serif
     fontsize: 20px
-    page-layout : full
+    page-layout: full
     toc: true
     toc-depth: 2
+    # Ensure Font Awesome is included
+    include-in-header: |
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
