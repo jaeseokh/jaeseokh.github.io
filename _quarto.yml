@@ -14,11 +14,13 @@ website:
       href: index.qmd
     - text: "Resume(CV)"
       href: Resume(CV).qmd
+      icon: person-gear
     - text: "Research"
       href: research/index.qmd
+      icon: flask
     - text: "Essays"
       href: essays/index.qmd
-
+      icon: icon: pen-to-square
 
 
 format:
