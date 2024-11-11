@@ -24,23 +24,7 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.scss
+    theme: cosmo  # Specify the theme here
+    css: styles.scss  # Custom CSS file for further styling
     toc: true
     toc-depth: 2
-
-author:
-  name: "Jaeseok Hwang"
-  image: headshot.jpg
-  image-shape: "default"
-  description: "Ph.D. candidate in Applied Economics (Expected Graduation in May 2025)"
-  links:
-    - icon: github
-      text: "GitHub"
-      href: "https://github.com/jaeseokh"
-    - icon: linkedin
-      text: "LinkedIn"
-      href: "https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/"
-    - icon: envelope-fill
-      text: "Email"
-      href: "mailto:jaeseok2@illinois.edu"

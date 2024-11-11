@@ -1,52 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "Readme.html",
+    "href": "Readme.html",
     "title": "Jaeseok Hwang",
     "section": "",
-    "text": "Welcome\nHi, I’m a Ph.D. candidate in the Agricultural and Consumer Economics(ACE) at the University of Illinois at Urbana Champaign. My research focuses on data based farm input management and productivity analysis. This website showcases my work, including my Resume(CV), Research, Essays, and more.\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "essays/index.html",
-    "href": "essays/index.html",
-    "title": "Essays",
-    "section": "",
-    "text": "Description of the project, methodologies used, and outcomes.\n\n\n\n\n\nDescription of the project, including a link to a GitHub repository if available."
-  },
-  {
-    "objectID": "essays/index.html#essay-1-title",
-    "href": "essays/index.html#essay-1-title",
-    "title": "Essays",
-    "section": "",
-    "text": "Description of the project, methodologies used, and outcomes."
-  },
-  {
-    "objectID": "essays/index.html#essay-2-title",
-    "href": "essays/index.html#essay-2-title",
-    "title": "Essays",
-    "section": "",
-    "text": "Description of the project, including a link to a GitHub repository if available."
-  },
-  {
-    "objectID": "research/index.html",
-    "href": "research/index.html",
-    "title": "Resaerch",
-    "section": "",
-    "text": "Description of the Research, methodologies used, and outcomes.\n\n\n\n\n\nDescription of the Research, including a link to a GitHub repository if available."
-  },
-  {
-    "objectID": "research/index.html#project-1-title",
-    "href": "research/index.html#project-1-title",
-    "title": "Resaerch",
-    "section": "",
-    "text": "Description of the Research, methodologies used, and outcomes."
-  },
-  {
-    "objectID": "research/index.html#project-2-title",
-    "href": "research/index.html#project-2-title",
-    "title": "Resaerch",
-    "section": "",
-    "text": "Description of the Research, including a link to a GitHub repository if available."
+    "text": "jaeseokh.github.io/ ├── docs/ │ ├── index.html │ ├── Resume.html │ ├── research/ │ │ └── index.html │ ├── essays/ │ │ └── index.html ├── _quarto.yml ├── index.qmd ├── Resume.qmd ├── research/ │ └── index.qmd ├── essays/ │ └── index.qmd ├── styles.scss\n\n\n\n Back to top"
   },
   {
     "objectID": "Resume.html",
@@ -89,5 +47,54 @@
     "title": "Jaeseok Hwang - CV",
     "section": "",
     "text": "Software: R, Python, Visual Studio Code, SQL, STATA, LaTeX\nLanguages: English (Proficient), Korean (Native)"
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Resaerch",
+    "section": "",
+    "text": "Description of the Research, methodologies used, and outcomes.\n\n\n\n\n\nDescription of the Research, including a link to a GitHub repository if available."
+  },
+  {
+    "objectID": "research/index.html#project-1-title",
+    "href": "research/index.html#project-1-title",
+    "title": "Resaerch",
+    "section": "",
+    "text": "Description of the Research, methodologies used, and outcomes."
+  },
+  {
+    "objectID": "research/index.html#project-2-title",
+    "href": "research/index.html#project-2-title",
+    "title": "Resaerch",
+    "section": "",
+    "text": "Description of the Research, including a link to a GitHub repository if available."
+  },
+  {
+    "objectID": "essays/index.html",
+    "href": "essays/index.html",
+    "title": "Essays",
+    "section": "",
+    "text": "Description of the project, methodologies used, and outcomes.\n\n\n\n\n\nDescription of the project, including a link to a GitHub repository if available."
+  },
+  {
+    "objectID": "essays/index.html#essay-1-title",
+    "href": "essays/index.html#essay-1-title",
+    "title": "Essays",
+    "section": "",
+    "text": "Description of the project, methodologies used, and outcomes."
+  },
+  {
+    "objectID": "essays/index.html#essay-2-title",
+    "href": "essays/index.html#essay-2-title",
+    "title": "Essays",
+    "section": "",
+    "text": "Description of the project, including a link to a GitHub repository if available."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jaeseok Hwang",
+    "section": "",
+    "text": "Welcome\nHi, I’m a Ph.D. candidate in the Agricultural and Consumer Economics(ACE) at the University of Illinois at Urbana Champaign. My research focuses on data based farm input management and productivity analysis. This website showcases my work, including my Resume(CV), Research, Essays, and more.\n\n\n\n\n Back to top"
   }
 ]

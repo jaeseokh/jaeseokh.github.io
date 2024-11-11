@@ -2,7 +2,6 @@
   title: "Jaeseok Hwang"
   subtitle: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
   image: headshot.jpg
-  template: cosmo
   image-shape: "default"
   links:
     - icon: github
@@ -19,4 +18,4 @@
 # Welcome
 
 Hi, I'm a Ph.D. candidate in the Agricultural and Consumer Economics(ACE) at the University of Illinois at Urbana Champaign. 
-My research focuses on data based farm input management and productivity analysis. This website showcases my work, including my [Resume(CV)](Resume(CV).qmd), [Research](research/index.qmd), [Essays](essays/index.qmd), and more.
+My research focuses on data based farm input management and productivity analysis. This website showcases my work, including my [Resume(CV)](Resume.qmd), [Research](research/index.qmd), [Essays](essays/index.qmd), and more.
