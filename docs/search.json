@@ -67,16 +67,6 @@
     ]
   },
   {
-    "objectID": "research/index.html",
-    "href": "research/index.html",
-    "title": "Resaerch Journey",
-    "section": "",
-    "text": "!!!!! Add github code and link of the paper!!!!",
-    "crumbs": [
-      "Research"
-    ]
-  },
-  {
     "objectID": "research/index.html#publications",
     "href": "research/index.html#publications",
     "title": "Resaerch Journey",
@@ -91,7 +81,7 @@
     "href": "research/index.html#work-in-progress",
     "title": "Resaerch Journey",
     "section": "Work in Progress",
-    "text": "Work in Progress\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\n\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)\n\n GitHub Repository\n PDF File\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\n\nI served as the primary driver for data handling, managed version control for the analytical software (using R), and developed robust data processing workflows.",
+    "text": "Work in Progress\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nEvaluating the Profitability of Corn Seeding Decisions:  Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nDo the shape of yield distribution vary by nitrogen rate and climate conditions?:  cross validate the estimated distribution with higher moment-based approaches  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa: Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\n\nI served as the primary driver for data handling, managed version control for the analytical software (using R),  and developed robust data processing workflows.",
     "crumbs": [
       "Research"
     ]
@@ -99,7 +89,7 @@
   {
     "objectID": "Resume.html",
     "href": "Resume.html",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "University of Illinois at Urbana-Champaign (UIUC)\nDepartment of Agricultural and Consumer Economics (STEM-Designated)\n1301 W Gregory Dr, Urbana, IL 61801\nEmail: jaeseok2@illinois.edu\nGitHub | LinkedIn\n\n\n\n\nUniversity of Illinois at Urbana-Champaign  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign  M.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University\nB.S. in Economics\nAug 2013\n\n\n\n\n\n\n\n\nStatistical Analyses of Field Trials (Advanced Ag Alliance, NY)  Jan 2019 - Dec 2019 \nData Intensive Farm Management (USDA’s NRCS)  Sep 2020 - Present\n\n\n\n\n\n\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.\n\n\n\n\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)\n\n\n\n\n\n\n5th Symposium on Agri-Tech Economics and Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2022\nNC1210: Frontiers in Multistate and CIGOFT Project\nUniversity of Texas Corpus Christi, TX, USA, Jan 5-6, 2023\n6th Symposium on Agri-Tech Economics for Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2023\nInternational Conference for On-farm Precision Experimentation\nBrownsville South Padre Island, TX, USA, Jan 8-11, 2024\n\n\n\n\n\n\nSoftware: R (professional), Python, Visual Studio Code, SQL, STATA, LaTeX\nLanguages: English (Proficient), Korean (Native)",
     "crumbs": [
@@ -109,7 +99,7 @@
   {
     "objectID": "Resume.html#education",
     "href": "Resume.html#education",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "University of Illinois at Urbana-Champaign  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign  M.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University\nB.S. in Economics\nAug 2013",
     "crumbs": [
@@ -119,7 +109,7 @@
   {
     "objectID": "Resume.html#experience",
     "href": "Resume.html#experience",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "Statistical Analyses of Field Trials (Advanced Ag Alliance, NY)  Jan 2019 - Dec 2019 \nData Intensive Farm Management (USDA’s NRCS)  Sep 2020 - Present",
     "crumbs": [
@@ -129,7 +119,7 @@
   {
     "objectID": "Resume.html#publications",
     "href": "Resume.html#publications",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.",
     "crumbs": [
@@ -139,7 +129,7 @@
   {
     "objectID": "Resume.html#research-work-in-progress",
     "href": "Resume.html#research-work-in-progress",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "Value of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
     "crumbs": [
@@ -149,7 +139,7 @@
   {
     "objectID": "Resume.html#presentations",
     "href": "Resume.html#presentations",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "5th Symposium on Agri-Tech Economics and Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2022\nNC1210: Frontiers in Multistate and CIGOFT Project\nUniversity of Texas Corpus Christi, TX, USA, Jan 5-6, 2023\n6th Symposium on Agri-Tech Economics for Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2023\nInternational Conference for On-farm Precision Experimentation\nBrownsville South Padre Island, TX, USA, Jan 8-11, 2024",
     "crumbs": [
@@ -159,7 +149,7 @@
   {
     "objectID": "Resume.html#skills",
     "href": "Resume.html#skills",
-    "title": "Resume[CV]",
+    "title": "Resume [CV]",
     "section": "",
     "text": "Software: R (professional), Python, Visual Studio Code, SQL, STATA, LaTeX\nLanguages: English (Proficient), Korean (Native)",
     "crumbs": [
