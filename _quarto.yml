@@ -5,32 +5,28 @@ project:
 website:
   title: "Jaeseok Hwang"
   site-url: https://jaeseokh.github.io/
-  description: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
-  page-navigation: true
+  open-graph: true
   back-to-top-navigation: true
-  navbar:
-    right:
-    - text: "Home"
-      href: index.qmd
-    - text: "Resume"
-      href: Resume.qmd  # Simplified name
-      icon: user-cog
-    - text: "Research"
-      href: research/index.qmd
-      icon: flask
-    - text: "Essays"
-      href: essays/index.qmd
-      icon: pen-to-square
+  google-analytics: "G-XZWWMRXM72"
+  sidebar:
+    style: "docked"  # Docked sidebar on the left
+    background: "#13294B"  # Navy Blue background
+    text-color: "#FF5A00"  # Illinois Orange text color
+    search: true  # Include a search bar
+    contents:
+      - text: "About"
+        href: about/index.qmd
+      - text: "Resume"
+        href: Resume.qmd
+      - text: "Research"
+        href: research/index.qmd
+      - text: "Essays"
+        href: essays/index.qmd
 
 format:
   html:
-    theme: cosmo
-    css: styles.scss
+    theme: yeti
+    css: styles.scss  # Custom CSS for styling
     mainfont: sans-serif
-    fontsize: 20px
-    page-layout: full
-    toc: true
-    toc-depth: 2
-    # Ensure Font Awesome is included
-    include-in-header: |
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    fontsize: 16px
+    page-layout: full  # Use the "full" layout to manually implement the sidebar

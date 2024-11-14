@@ -1,21 +1,44 @@
 ---
-  title: "Jaeseok Hwang"
-  subtitle: "Ph.D. candidate in Applied Economics (Estimated Graduation in May 2025)"
-  image: headshot.jpg
-  image-shape: "default"
+title: "Jaeseok Hwang"
+subtitle: "Ph.D. candidate in Applied Economics <br> (resides in Jersey City, NJ)"
+image: withevlyn.jpeg
+about: # https://quarto.org/docs/websites/website-about.html
+  template: trestles
   links:
     - icon: github
-      text: "GitHub"
-      href: "https://github.com/jaeseokh"
+      text: Github
+      href: https://github.com/jaeseokh
     - icon: linkedin
-      text: "LinkedIn"
-      href: "https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/"
+      text: LinkedIn
+      href: https://www.linkedin.com/in/jaeseok-hwang-0b06741a1
     - icon: envelope-fill
-      text: "Email"
+      text: Email
       href: "mailto:jaeseok2@illinois.edu"
 ---
 
-# Welcome
+<div style="font-size: 1em; line-height: 1.5;">
+ <span style="font-size: 1.2em; font-weight: bold;">This website showcases my research journey and essays.</span> <br>
 
-Hi, I'm a Ph.D. candidate in the Agricultural and Consumer Economics(ACE) at the University of Illinois at Urbana Champaign. 
-My research focuses on data based farm input management and productivity analysis. This website showcases my work, including my [Resume(CV)](Resume.qmd), [Research](research/index.qmd), [Essays](essays/index.qmd), and more.
+Over the past 5 years, as a research assistant for the USDA NRCS-funded project <br>
+I have worked with large-scale datasets,leveraging advanced analytics and machine-learning techniques to improve research about farm productivity. <br>
+Explore my work to learn more about my experti
+se and research interests here. <br>
+Thank you for visiting!
+
+
+</div>
+
+## Education
+
+**University of Illinois at Urbana-Champaign**  
+Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)  
+*Aug 2020 - Present*
+
+**University of Illinois at Urbana-Champaign**  
+M.A. in Agricultural and Applied Economics (STEM-Designated)  
+*Aug 2018 - May 2020*
+
+**Sogang University**  
+B.S. in Economics  
+*Aug 2013*
+

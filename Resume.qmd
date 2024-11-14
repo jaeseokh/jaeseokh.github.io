@@ -1,30 +1,30 @@
 ---
-title: "Jaeseok Hwang - CV"
+title: "Resume[CV]"
 format: html
 ---
 
-# Jaeseok Hwang
+# Jaeseok Hwang 
 
 University of Illinois at Urbana-Champaign (UIUC)  
 Department of Agricultural and Consumer Economics (STEM-Designated)  
 1301 W Gregory Dr, Urbana, IL 61801  
 Email: [jaeseok2@illinois.edu](mailto:jaeseok2@illinois.edu)  
 
-[GitHub Webpage](https://jaeseok2illinois.github.io/) | [LinkedIn](https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/)
+[GitHub](https://github.com/jaeseokh) | [LinkedIn](https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/)
 
 ---
 
 ## Education
 
-**University of Illinois at Urbana-Champaign**  
+- **University of Illinois at Urbana-Champaign** <br>
 Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)  
 *Aug 2020 - Present*
 
-**University of Illinois at Urbana-Champaign**  
+- **University of Illinois at Urbana-Champaign** <br> 
 M.A. in Agricultural and Applied Economics (STEM-Designated)  
 *Aug 2018 - May 2020*
 
-**Sogang University**  
+-  **Sogang University**  
 B.S. in Economics  
 *Aug 2013*
 
@@ -32,41 +32,55 @@ B.S. in Economics
 
 ## Experience
 
-**Research Assistant**  
-Statistical Analyses of Field Trials (Advanced Ag Alliance), Supervisor: Prof. David S. Bullock  
-*Jan 2019 - Dec 2019*
+### Research Assistant 
 
-**Data Intensive Farm Management** (USDA's NRCS)  
+- **Statistical Analyses of Field Trials (Advanced Ag Alliance, NY)** <br>
+*Jan 2019 - Dec 2019* <br>
+
+- **Data Intensive Farm Management (USDA's NRCS)** <br>
 *Sep 2020 - Present*
 
 ---
 
 ## Publications
 
-- **David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)** - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. *Precision Agriculture*, 21, 1027-1044.
+- **David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)**  <br> The value of conducting on-farm field trials using precision agriculture technology: <br> a theory and simulations. *Precision Agriculture*, 21, 1027-1044.
 
-### Work in Progress
-- Value of Multiple Field Experiments Data as a Positive Externality (with D. Bullock and T. Mieno)
-- Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data (with D. Bullock and T. Mieno)
-- Informing Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques (with M. Delport, D. Bullock, and T. Mieno)
-- Cross Validate Farmer's Self-Protection Behavior in Nitrogen Management (with D. Bullock and T. Mieno)
+## Research (Work in progress)
+
+- **Value of Multiple Field Experiments Data as a Positive Externality** <br>
+   (with D. Bullock and T. Mieno)
+
+- **Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data** <br>
+  (with D. Bullock and T. Mieno)
+
+- **Informing Site-Specific Input Management for Maize in KwaZulu Natal, South Africa,<br> Using On-farm Experimentation and Statistical Techniques** <br> 
+ (with M. Delport, D. Bullock, and T.Mieno)
+
+- **Do the shape of yield distribution varies by nitrogen rate and climate conditions?: <br> cross validate the distribution with higher moment based approach** <br> 
+ (with D. Bullock and T. Mieno)
+
 
 ---
 
 ## Presentations
 
-- 5th Symposium on Agri-Tech Economics and Sustainable Futures,  
+- **5th Symposium on Agri-Tech Economics and Sustainable Futures**  
   Harper Adams University, UK, Sep 18-19, 2022
-- NC1210: Frontiers in Multistate and CIGOFT Project,  
+
+- **NC1210: Frontiers in Multistate and CIGOFT Project**  
   University of Texas Corpus Christi, TX, USA, Jan 5-6, 2023
-- 6th Symposium on Agri-Tech Economics for Sustainable Futures,  
+
+- **6th Symposium on Agri-Tech Economics for Sustainable Futures**  
   Harper Adams University, UK, Sep 18-19, 2023
-- International Conference for On-farm Precision Experimentation,  
+
+- **International Conference for On-farm Precision Experimentation**   
   Brownsville South Padre Island, TX, USA, Jan 8-11, 2024
 
 ---
 
 ## Skills
 
-**Software:** R, Python, Visual Studio Code, SQL, STATA, LaTeX  
-**Languages:** English (Proficient), Korean (Native)
+- **Software:** R (professional), Python, Visual Studio Code, SQL, STATA, LaTeX 
+
+- **Languages:** English (Proficient), Korean (Native)

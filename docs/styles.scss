@@ -1,35 +1,40 @@
-/* Body Styling for a Clean Look */
-body {
-    background-color: #f8f9fa;  /* Light gray background */
-    color: #333;
-    font-family: 'Arial', sans-serif;
+/* Sidebar Customization */
+.quarto-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px; /* Adjust sidebar width */
+  height: 100%; /* Full-height sidebar */
+  background-color: #13294B; /* Navy Blue */
+  color: #FF5A00 !important; /* Illinois Orange for sidebar text */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0.2, 0.5, 0);
 }
 
-/* Navbar Styling */
-.navbar {
-    background-color: #5bc0de;  /* Light blue for the 'cosmo' theme */
-    padding: 10px;
+.quarto-sidebar h3 {
+  color: #FF5A00 !important; /* Illinois Orange for sidebar headings */
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
-/* Header and Title Styling */
-h1, h2 {
-    color: #2b6777;  /* Slightly muted dark blue */
+.quarto-sidebar .sidebar-item {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
-/* Rectangular Image Styling */
-img[alt="headshot.jpg"] {
-    border-radius: 4px;  /* Slight rounding for soft corners, but keeps it rectangular */
-    width: 200px;  /* Fixed width */
-    height: auto;  /* Maintains aspect ratio */
-    border: 2px solid #ddd;  /* Adds a subtle border */
-    padding: 4px;
+.quarto-sidebar .sidebar-item a {
+  color: #FF5A00 !important; /* Illinois Orange for links */
+  text-decoration: none;
 }
 
-/* Links Styling */
-a {
-    color: #1a73e8;
-    text-decoration: none;
+.quarto-sidebar .sidebar-item a:hover {
+  color: #FFA500 !important; /* Light Orange on hover */
+  text-decoration: underline;
 }
-a:hover {
-    text-decoration: underline;
+
+/* Adjust Content Area */
+.quarto-content {
+  margin-left: 270px; /* Leave space for the sidebar */
+  padding: 30px;
 }
