@@ -17,11 +17,21 @@
     ]
   },
   {
-    "objectID": "about/index.html#education",
-    "href": "about/index.html#education",
+    "objectID": "about/index.html#publications",
+    "href": "about/index.html#publications",
     "title": "Jaeseok Hwang",
-    "section": "Education",
-    "text": "Education\nUniversity of Illinois at Urbana-Champaign\nCandidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign\nM.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University\nB.S. in Economics\nAug 2013",
+    "section": "Publications",
+    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. Precision Agriculture, 21, 1027-1044.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about/index.html#research-work-in-progress",
+    "href": "about/index.html#research-work-in-progress",
+    "title": "Jaeseok Hwang",
+    "section": "Research (Work in progress)",
+    "text": "Research (Work in progress)\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?: cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
     "crumbs": [
       "About"
     ]
@@ -67,21 +77,21 @@
     ]
   },
   {
-    "objectID": "research/index.html#project-1-title",
-    "href": "research/index.html#project-1-title",
+    "objectID": "research/index.html#publications",
+    "href": "research/index.html#publications",
     "title": "Resaerch Journey",
-    "section": "",
-    "text": "Description of the Research, methodologies used, and outcomes.",
+    "section": "Publications",
+    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.\n Link to the published paper",
     "crumbs": [
       "Research"
     ]
   },
   {
-    "objectID": "research/index.html#project-2-title",
-    "href": "research/index.html#project-2-title",
+    "objectID": "research/index.html#work-in-progress",
+    "href": "research/index.html#work-in-progress",
     "title": "Resaerch Journey",
-    "section": "",
-    "text": "Description of the Research, including a link to a GitHub repository if available.",
+    "section": "Work in Progress",
+    "text": "Work in Progress\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\n\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)\n\n GitHub Repository\n PDF File\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\n\nI served as the primary driver for data handling, managed version control for the analytical software (using R), and developed robust data processing workflows.",
     "crumbs": [
       "Research"
     ]
@@ -127,6 +137,16 @@
     ]
   },
   {
+    "objectID": "Resume.html#research-work-in-progress",
+    "href": "Resume.html#research-work-in-progress",
+    "title": "Resume[CV]",
+    "section": "",
+    "text": "Value of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
+    "crumbs": [
+      "Resume"
+    ]
+  },
+  {
     "objectID": "Resume.html#presentations",
     "href": "Resume.html#presentations",
     "title": "Resume[CV]",
@@ -159,75 +179,5 @@
     "title": "Jaeseok Hwang",
     "section": "Education",
     "text": "Education\nUniversity of Illinois at Urbana-Champaign\nCandidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign\nM.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University\nB.S. in Economics\nAug 2013"
-  },
-  {
-    "objectID": "about/index.html#work-in-progress",
-    "href": "about/index.html#work-in-progress",
-    "title": "Jaeseok Hwang",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n** Value of Multiple Field Experiments Data as a Positive Externality ** (with D. Bullock and T. Mieno)\n** Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data ** (with D. Bullock and T. Mieno)\n** Do the shape of yield distribution varies by nitrogen rate and climate conditions?: cross validate the distribution with higher moment based approach ** (with M. Delport, D. Bullock, and T. Mieno)",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about/index.html#research-work-in-progress",
-    "href": "about/index.html#research-work-in-progress",
-    "title": "Jaeseok Hwang",
-    "section": "Research (Work in progress)",
-    "text": "Research (Work in progress)\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?: cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "Resume.html#research-work-in-progress",
-    "href": "Resume.html#research-work-in-progress",
-    "title": "Resume[CV]",
-    "section": "",
-    "text": "Value of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
-    "crumbs": [
-      "Resume"
-    ]
-  },
-  {
-    "objectID": "about/index.html#publications",
-    "href": "about/index.html#publications",
-    "title": "Jaeseok Hwang",
-    "section": "Publications",
-    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. Precision Agriculture, 21, 1027-1044.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "research/index.html#publications",
-    "href": "research/index.html#publications",
-    "title": "Resaerch Journey",
-    "section": "Publications",
-    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.\n Link to the published paper",
-    "crumbs": [
-      "Research"
-    ]
-  },
-  {
-    "objectID": "research/index.html#research-work-in-progress",
-    "href": "research/index.html#research-work-in-progress",
-    "title": "Resaerch Journey",
-    "section": "Research (Work in progress)",
-    "text": "Research (Work in progress)\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)",
-    "crumbs": [
-      "Research"
-    ]
-  },
-  {
-    "objectID": "research/index.html#work-in-progress",
-    "href": "research/index.html#work-in-progress",
-    "title": "Resaerch Journey",
-    "section": "Work in progress",
-    "text": "Work in progress\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)",
-    "crumbs": [
-      "Research"
-    ]
   }
 ]

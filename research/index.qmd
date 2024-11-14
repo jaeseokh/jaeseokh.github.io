@@ -12,13 +12,26 @@ title: "Resaerch Journey"
     [<i class="fas fa-book"></i> Link to the published paper](https://link.springer.com/article/10.1007/s11119-019-09706-1)
 
 
-## Work in progress
+## Work in Progress
 
 - **Value of Multiple Field Experiments Data as a Positive Externality** <br>
-   (with D. Bullock and T. Mieno)
+   (with D. Bullock and T. Mieno)  
+   [<i class="fab fa-github"></i> GitHub Repository](<GitHub_Link_1>)  
+   [<i class="fas fa-file-pdf"></i> PDF File](<PDF_File_Link_1>)
 
 - **Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data** <br>
-  (with D. Bullock and T. Mieno)
+  (with D. Bullock and T. Mieno)  
+   [<i class="fab fa-github"></i> GitHub Repository](<GitHub_Link_2>)  
+   [<i class="fas fa-file-pdf"></i> PDF File](<PDF_File_Link_2>)
+
+- - **Do the shape of yield distribution varies by nitrogen rate and climate conditions?: <br> cross validate the distribution with higher moment based approach** <br> 
+ (with D. Bullock and T. Mieno)
+ 
+   [<i class="fab fa-github"></i> GitHub Repository](<GitHub_Link_3>)  
+   [<i class="fas fa-file-pdf"></i> PDF File](<PDF_File_Link_3>)
 
 - **Informing Site-Specific Input Management for Maize in KwaZulu Natal, South Africa,<br> Using On-farm Experimentation and Statistical Techniques** <br> 
- (with M. Delport, D. Bullock, and T.Mieno)
+ (with M. Delport, D. Bullock, and T.Mieno)   
+
+ I served as the primary driver for data handling, managed version control for the analytical software (using R), and developed robust data processing workflows.
+ 
