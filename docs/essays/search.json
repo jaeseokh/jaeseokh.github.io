@@ -1,0 +1,207 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Essay of my research Journey",
+    "section": "",
+    "text": "Welcome\nThis page shows my essay of research",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Essay of my research Journey",
+    "section": "License",
+    "text": "License\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Preface",
+    "section": "",
+    "text": "Essay of My Research Journey\nHere I have my essay that spans my idea and learning that came and accumulated through my research experiences over five years of Ph.D. program in Appllied Economics.\n:::{.callout-Contents of Essay}\n:::\nEssay of Econometrics  :\nEssay of Price Analysis  :\nEssay of Statistical Learning",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "preface.html#essay-of-my-research-journey",
+    "href": "preface.html#essay-of-my-research-journey",
+    "title": "Preface",
+    "section": "",
+    "text": "Essay of Econometrics:\n\n Essay of Price Analysis:\n Essay of Statistical Learning :\nto be added (more contents)\n\n\n\n\ncontents1\ncontents2\n\n\n\ncontents1\ncontents2\n\n\n\ncontents1\ncontents2",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "E01-Basic Crop Production Model.html",
+    "href": "E01-Basic Crop Production Model.html",
+    "title": "1  Crop Production Model(MicroEconomics)",
+    "section": "",
+    "text": "1.1 Introduction to Production Functions in Economics\nIn economics, production functions are mathematical models used to describe the relationship between input and output. They are foundational in understanding the mechanics of production processes across industries. This section introduces three of the most popular production functions in economics, widely recognized for their theoretical significance.",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
+    ]
+  },
+  {
+    "objectID": "E01-Basic Crop Production Model.html#introduction-to-production-functions-in-economics",
+    "href": "E01-Basic Crop Production Model.html#introduction-to-production-functions-in-economics",
+    "title": "1  Crop Production Model(MicroEconomics)",
+    "section": "",
+    "text": "1.1.1 Cobb-Douglas Production Function\nThe Cobb-Douglas production function is perhaps the most famous, formulated as:\n\\[ Q = A L^{\\alpha} K^{\\beta} \\]\nWhere:  - \\(Q\\) = Output  - \\(L\\) = Labor input  - \\(K\\) = Capital input  - \\(A\\) = Total factor productivity  - \\(\\alpha\\), \\(\\beta\\) = Output elasticities of labor and capital (parameters)\nCite: Douglas (1928)\n\n\n1.1.2 Leontief Production Function\nThe Leontief production function assumes perfect complementarity between inputs:\n\\[ Q = \\text{min} \\left( \\frac{L}{a}, \\frac{K}{b} \\right) \\]\nWhere:  - \\(a\\), \\(b\\) = Input coefficients\nCite: Leontief (1947)\n\n\n1.1.3 CES Production Function\nThe Constant Elasticity of Substitution (CES) production function generalizes the Cobb-Douglas model:\n\\[ Q = A \\left[ \\alpha L^{\\rho} + (1-\\alpha) K^{\\rho} \\right]^{\\frac{1}{\\rho}} \\]\nWhere: - \\(\\rho\\) determines the elasticity of substitution between inputs.\nCite: Arrow et al. (1961)",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
+    ]
+  },
+  {
+    "objectID": "E01-Basic Crop Production Model.html#crop-production-functions-in-agricultural-economics",
+    "href": "E01-Basic Crop Production Model.html#crop-production-functions-in-agricultural-economics",
+    "title": "1  Crop Production Model(MicroEconomics)",
+    "section": "1.2 Crop Production Functions in Agricultural Economics",
+    "text": "1.2 Crop Production Functions in Agricultural Economics\nThe Cobb-Douglas, Leontief, and CES production functions are foundational in economics and often introduced in college-level economics courses. These models provide a generalized framework for understanding the relationship between inputs and outputs in various industries. Similarly, crop production functions extend these concepts to the agricultural sector, focusing on crop response to specific inputs like nitrogen, water, and other environmental factors.\nCrop production functions share similarities with these famous production functions:  - Like the Cobb-Douglas function, they often assume diminishing marginal returns to inputs.  - Similar to the Leontief function, they may reflect constraints such as minimum requirements of critical inputs (e.g., water or nutrients).  - As in the CES function, some models allow for substitutability or complementarity between inputs, tailored to specific agricultural contexts. \nThis section explores crop production functions with a focus on corn, particularly the influential work of Just and Pope (1978) , which provided a framework for modeling crop yield as a function of inputs and environmental factors, accounting for variability and risk.",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
+    ]
+  },
+  {
+    "objectID": "E01-Basic Crop Production Model.html#crop-response-to-nitrogen-and-water",
+    "href": "E01-Basic Crop Production Model.html#crop-response-to-nitrogen-and-water",
+    "title": "1  Crop Production Model(MicroEconomics)",
+    "section": "1.3 Crop Response to Nitrogen and Water",
+    "text": "1.3 Crop Response to Nitrogen and Water\nProminent research, such as Just and Pope (1978) , presented a stochastic production function that includes a deterministic component and a stochastic component, reflecting the inherent variability in agricultural systems. Their model is expressed as:\n\\[ Y = f(X) + g(X) \\epsilon \\]\nWhere:  - \\(Y\\) = Crop yield  - \\(X\\) = Vector of inputs (e.g., nitrogen, water)  - \\(f(X)\\) = Mean response function (deterministic component)  - \\(g(X)\\) = Risk response function (scales variability)  - \\(\\epsilon\\) = Random error term (assumed to have a mean of zero and constant variance) \n\n1.3.1 Connection to the Three Famous Production Functions\n\nCobb-Douglas:\n\nThe deterministic component \\(f(X)\\) in the Just and Pope model can be modeled as a Cobb-Douglas function if we assume that inputs like nitrogen(N) fertilizer have diminishing marginal returns: \\[ f(X) = A \\prod_{i=1}^{n} X_i^{\\alpha_i} \\] Here, the stochastic component \\(g(X)\\epsilon\\) adds variability, which is not present in the standard Cobb-Douglas formulation.\n\nLeontief:\n\nThe Just and Pope model can incorporate minimum input requirements, reflecting the rigid input proportions of the Leontief function, if \\(f(X)\\) includes terms like: \\[ f(X) = \\text{min}\\left(\\frac{X_1}{a_1}, \\frac{X_2}{a_2}\\right) \\] This formulation can be extended to account for variability with \\(g(X)\\epsilon\\).\n\nCES:\n\nThe flexibility of the CES production function aligns with Just and Pope’s stochastic framework by allowing for varying degrees of substitutability between inputs in \\(f(X)\\), while \\(g(X)\\epsilon\\) introduces additional risk elements.\n\n\nThe Just and Pope production function provides a bridge between classical economic production functions and the unique challenges of modeling agricultural systems, where variability and risk play a critical role.\n(Cite: Just & Pope, 1978)",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
+    ]
+  },
+  {
+    "objectID": "E01-Basic Crop Production Model.html#crop-yield-response-function-to-nitrogen",
+    "href": "E01-Basic Crop Production Model.html#crop-yield-response-function-to-nitrogen",
+    "title": "1  Crop Production Model(MicroEconomics)",
+    "section": "1.4 Crop Yield Response Function to Nitrogen",
+    "text": "1.4 Crop Yield Response Function to Nitrogen\nUnderstanding the yield response function to nitrogen is crucial because nitrogen is one of the most significant and manageable inputs in crop production. Optimizing nitrogen use is essential for balancing yield maximization with cost-efficiency and environmental sustainability. Crop yield response to nitrogen often follows a diminishing returns pattern, making it an ideal application of the production function concepts introduced earlier.\nThe Mitscherlich-Baule (M-B) production function provides a useful framework for modeling nitrogen response. Unlike the simplistic quadratic model, the M-B function accounts for diminishing returns as nitrogen input increases, with an asymptotic yield level. It can be expressed as:\n\\[ Y = Y_{\\text{max}} \\left(1 - e^{-\\beta N}\\right) \\]\nWhere:  - \\(Y\\) = Crop yield  - \\(Y_{\\text{max}}\\) = Maximum potential yield  - \\(\\beta\\) = Nitrogen efficiency parameter  - \\(N\\) = Nitrogen input\nCite: Cerrato and Blackmer (1990)\n\n1.4.1 Connection to Classical Production Functions\n\nCobb-Douglas:\n\nThe M-B function aligns conceptually with the Cobb-Douglas model, as both exhibit diminishing marginal returns. However, while Cobb-Douglas assumes constant elasticities, the M-B function allows elasticities to change with input levels, reflecting the unique biological response of crops to nitrogen.\n\nLeontief:\n\nThe M-B function can capture constraints on nitrogen use akin to the Leontief model when nitrogen is insufficient to reach the asymptotic yield, effectively making other inputs redundant.\n\nCES:\n\nThe M-B function can be extended to include interactions with other inputs, allowing for substitutability or complementarity between nitrogen and water, similar to the flexibility of the CES function.\n\n\nThe M-B production function thus bridges classical economic production functions and agricultural models by addressing the specific nonlinear response of crop yield to nitrogen. It provides a foundation for econometric modeling, enabling detailed analysis of yield response while capturing biological and environmental dynamics.\n\n\n\n\n\n\nArrow, Kenneth J, Hollis B Chenery, Bagicha S Minhas, and Robert M Solow. 1961. “Capital-Labor Substitution and Economic Efficiency.” The Review of Economics and Statistics, 225–50.\n\n\nCerrato, ME, and AM Blackmer. 1990. “Comparison of Models for Describing; Corn Yield Response to Nitrogen Fertilizer.” Agronomy Journal 82 (1): 138–43.\n\n\nDouglas, Paul. 1928. “Cobb Douglas Production Function.” The Quarterly Journal of Economics 42 (3): 393–415.\n\n\nJust, Richard E, and Rulon D Pope. 1978. “Stochastic Specification of Production Functions and Economic Implications.” Journal of Econometrics 7 (1): 67–86.\n\n\nLeontief, Wassily. 1947. “Introduction to a Theory of the Internal Structure of Functional Relationships.” Econometrica, Journal of the Econometric Society, 361–73.",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
+    ]
+  },
+  {
+    "objectID": "E02-Estimation of Yield Response.html",
+    "href": "E02-Estimation of Yield Response.html",
+    "title": "\n2  Basic Estimation of Crop Yield Response (Econometrics)\n",
+    "section": "",
+    "text": "2.1 Estimation of Yield Respoonse to Nitrogen",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Estimation of Crop Yield Response (Econometrics)</span>"
+    ]
+  },
+  {
+    "objectID": "E02-Estimation of Yield Response.html#estimation-of-yield-respoonse-to-nitrogen",
+    "href": "E02-Estimation of Yield Response.html#estimation-of-yield-respoonse-to-nitrogen",
+    "title": "\n2  Basic Estimation of Crop Yield Response (Econometrics)\n",
+    "section": "",
+    "text": "2.1.1 Example: Graph of Yield Response to Nitrogen Using M-B Function\nThe following R code generates sample data for nitrogen input, yield, and an error term. It then plots the observed data (green dots) along with the fitted M-B production function (red line).\n\n#| fig-height: 3\n#| fig-width: 5\n#| fig-align: center\n\n# Generate sample data\nset.seed(123)\nnitrogen &lt;- seq(0, 200, by = 5)  # Nitrogen input\nY_max &lt;- 120  # Maximum yield\nbeta &lt;- 0.03  # Nitrogen efficiency parameter\nepsilon &lt;- rnorm(length(nitrogen), mean = 0, sd = 5)  # Random error\n\n# Calculate yield using M-B function\nyield &lt;- Y_max * (1 - exp(-beta * nitrogen)) + epsilon\n\n# Create a data frame for plotting\ndata &lt;- data.frame(Nitrogen = nitrogen, Yield = yield)\n\n# Fit the M-B function\nfit &lt;- nls(Yield ~ Y_max * (1 - exp(-beta * Nitrogen)), \n           data = data, \n           start = list(Y_max = 120, beta = 0.03))\n\n# Generate predicted values for plotting\ndata$Predicted_Yield &lt;- predict(fit)\n\n# Plot the observed data and fitted curve\nggplot(data, aes(x = Nitrogen, y = Yield)) +\n  geom_point(color = \"green\", size = 2, alpha = 0.8) +  # Observed data\n  geom_line(aes(y = Predicted_Yield), color = \"red\", size = 1)\n\n\n\n\n\n\n\n\n2.1.2 Interpretation of the Yield Response to Nitrogen Plot\nThe plot above demonstrates the relationship between nitrogen application and crop yield. The observed data (green dots) illustrate variability due to random error, while the red line represents the fitted Mitscherlich-Baule (M-B) function. This function effectively captures the diminishing returns to nitrogen and the asymptotic nature of yield, where yields plateau as nitrogen levels approach saturation.\nWhile the M-B production function is biologically intuitive, its parameters are nonlinear and require specialized estimation techniques, such as nonlinear least squares (as shown above). In practical applications, simpler functional forms, such as quadratic or quadratic plateau models, are often used for estimating yield response due to their ease of implementation within standard linear regression frameworks.\n\n2.1.3 Bridging the M-B Function and Linear Regression Models\nTo estimate yield response to nitrogen using regression models, a common approach is to employ a quadratic or quadratic plateau model. These models approximate the nonlinear relationship between nitrogen and yield while maintaining the simplicity of linear regression.\n\n2.1.3.1 Quadratic Yield Response Model\nThe quadratic model assumes a concave relationship between nitrogen input and yield:\n\\[ Y = \\beta_0 + \\beta_1 N + \\beta_2 N^2 + \\epsilon \\]\nWhere:  - \\(Y\\) = Crop yield  - \\(N\\) = Nitrogen input  - \\(\\beta_0\\), \\(\\beta_1\\), \\(\\beta_2\\) = Model parameters  - \\(\\epsilon\\) = Error term\nThis model captures the diminishing returns to nitrogen through the quadratic term (\\(N^2\\)), with \\(\\beta_2 &lt; 0\\). It has been widely used in empirical studies of nitrogen response due to its simplicity and flexibility.\nCite: Lory and Scharf (2003)\n\n2.1.3.2 Quadratic-Plateau Model\nA variation of the quadratic model is the quadratic plateau model, which assumes that yields plateau after a certain level of nitrogen input:\n\\[ Y = \\begin{cases}\n\\beta_0 + \\beta_1 N + \\beta_2 N^2, & \\text{if } N &lt; N_{\\text{critical}} \\\\\nY_{\\text{max}}, & \\text{if } N \\geq N_{\\text{critical}}\n\\end{cases} \\]\nWhere:  - \\(N_{\\text{critical}}\\) = Critical nitrogen rate at which the yield plateaus  - \\(Y_{\\text{max}}\\) = Maximum attainable yield \nThis model incorporates biological realism similar to the M-B function but remains computationally simpler for estimation.\nCite: Cerrato and Blackmer (1990)\n\n2.1.3.3 Linear Regression Approach to Estimate Yield Response\nTo estimate yield response using regression, we start with the quadratic model as a foundation. The following R code demonstrates a simple implementation using synthetic data:\n\n# Generate synthetic data\nset.seed(123)\nnitrogen &lt;- seq(0, 200, by = 5)\nbeta_0 &lt;- 40  # Intercept\nbeta_1 &lt;- 0.8  # Linear nitrogen effect\nbeta_2 &lt;- -0.002  # Quadratic nitrogen effect\nepsilon &lt;- rnorm(length(nitrogen), mean = 0, sd = 5)  # Random error\n\n# Quadratic yield data\nyield &lt;- beta_0 + beta_1 * nitrogen + beta_2 * nitrogen^2 + epsilon\ndata &lt;- data.frame(Nitrogen = nitrogen, Yield = yield)\n\n# Fit a quadratic regression model\nquad_fit &lt;- lm(Yield ~ Nitrogen + I(Nitrogen^2), data = data)\n\n# Plot observed data and fitted curve\nggplot(data, aes(x = Nitrogen, y = Yield)) +\n  geom_point(color = \"green\", size = 2, alpha = 0.8) +  # Observed data\n  stat_smooth(method = \"lm\", formula = y ~ poly(x, 2), se = FALSE, color = \"red\") +  # Fitted curve\n  labs(\n    title = \"Quadratic Yield Response to Nitrogen\",\n    x = \"Nitrogen Input (kg/ha)\",\n    y = \"Yield (kg/ha)\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCerrato, ME, and AM Blackmer. 1990. “Comparison of Models for Describing; Corn Yield Response to Nitrogen Fertilizer.” Agronomy Journal 82 (1): 138–43.\n\n\nLory, JA, and PC Scharf. 2003. “Yield Goal Versus Delta Yield for Predicting Fertilizer Nitrogen Need in Corn.” Agronomy Journal 95 (4): 994–99.",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Estimation of Crop Yield Response (Econometrics)</span>"
+    ]
+  },
+  {
+    "objectID": "E03-Spatial and Time Series.html",
+    "href": "E03-Spatial and Time Series.html",
+    "title": "\n3  Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)\n",
+    "section": "",
+    "text": "3.1 Expanding the Simple Regression Analysis\nNow, we can expand the simple regression analysis to a more complex framework that better reflects the real-world setting of crop yield response to nitrogen.\nFrom my five years as a Research Assistant (RA) for the Data Intensive Farm Management (DIFM) project (Cite: DSB, 2019), I have developed and applied various regression methods to model crop yield response to nitrogen. These models range from analyzing data at the single-field level to examining multiple farms across multiple years of on-farm field experiments.",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span>"
+    ]
+  },
+  {
+    "objectID": "E03-Spatial and Time Series.html#yield-response-modeling-at-the-single-field-level",
+    "href": "E03-Spatial and Time Series.html#yield-response-modeling-at-the-single-field-level",
+    "title": "\n3  Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)\n",
+    "section": "\n3.2 Yield Response Modeling at the Single Field Level",
+    "text": "3.2 Yield Response Modeling at the Single Field Level\n\n3.2.1 Data Context\nIn a single field setting, we typically collect the following data:  - Yield (\\(Y\\)): Crop yield for each plot in the field  - Nitrogen (\\(N\\)): Nitrogen input  - Seed Rate (\\(S\\)): Seeding density  - Topographical Features: Elevation, slope, and aspect  - Soil Quality Metrics: Soil nutrition and water-storage capacity \nGiven the variability in field conditions and weather uncertainties, traditional parametric models may struggle to capture the yield response effectively. To address this, we employ a Generalized Additive Model (GAM), a non-parametric approach that flexibly fits relationships between variables.\n\n3.2.2 Generalized Additive Model for Yield Response\nThe GAM regression model can be expressed as:\n\\[ Y = \\beta_0 + f_1(N) + f_2(S) + f_3(\\text{Elevation}) + f_4(\\text{Slope}) + f_5(\\text{Soil Quality}) + \\epsilon \\]\nWhere:  - \\(f_1, f_2, \\ldots\\) = Smooth functions capturing nonlinear relationships  - \\(\\epsilon\\) = Error term \n\n3.2.3 Example: GAM Regression with Synthetic Data\nThe following R code demonstrates how to implement a GAM regression model to estimate yield response to nitrogen and other explanatory variables.\n\n# Load necessary libraries\nlibrary(mgcv)\nlibrary(ggplot2)\n\n# Generate synthetic data\nset.seed(123)\nn &lt;- 200\nnitrogen &lt;- runif(n, 0, 200)  # Nitrogen input\nseed_rate &lt;- runif(n, 5, 10)  # Seeding rate\nelevation &lt;- rnorm(n, 100, 10)  # Elevation\nslope &lt;- rnorm(n, 5, 2)  # Slope\nsoil_quality &lt;- runif(n, 0, 100)  # Soil quality\nerror &lt;- rnorm(n, 0, 5)  # Random error\n\n# Generate yield response\nyield &lt;- 50 + 0.8 * nitrogen - 0.002 * nitrogen^2 +\n         0.5 * seed_rate + 0.2 * elevation - 0.1 * slope +\n         0.05 * soil_quality + error\n\n# Create a data frame\ndata &lt;- data.frame(Yield = yield, Nitrogen = nitrogen, SeedRate = seed_rate,\n                   Elevation = elevation, Slope = slope, SoilQuality = soil_quality)\n\n# Fit a GAM model\ngam_model &lt;- gam(Yield ~ s(Nitrogen) + s(SeedRate) + s(Elevation) + \n                   s(Slope) + s(SoilQuality), data = data)\n\n# Generate predictions for plotting\ndata$Predicted_Yield &lt;- predict(gam_model)\n\n# Plot observed vs. predicted yield\nggplot(data, aes(x = Nitrogen, y = Yield)) +\n  geom_point(color = \"green\", size = 2, alpha = 0.6) +  # Observed data\n  geom_line(aes(y = Predicted_Yield), color = \"red\", size = 1) +  # GAM prediction\n  labs(\n    title = \"GAM Regression: Yield Response to Nitrogen\",\n    x = \"Nitrogen Input (kg/ha)\",\n    y = \"Yield (kg/ha)\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n3.2.4 Strengths of GAM Regression\nGAM regression offers significant advantages in modeling crop yield response:\n\nFlexibility: GAM allows for smooth, nonlinear relationships between yield and explanatory variables. This is particularly important for agricultural data, where yield response to nitrogen often exhibits nonlinear patterns due to biological limits.\nInterpretability: The smooth terms in GAM provide an intuitive understanding of how each input influences yield.\nHandling Variability: GAM is robust to field-specific heterogeneity and weather uncertainties, making it ideal for modeling yield response in diverse agricultural settings.\n\nBy applying GAM regression at the single-field level, we can capture the intricate relationships between yield and its determinants, paving the way for more nuanced analyses at larger spatial and temporal scales.\nCite : Hastie (2017) , Wood (2017)",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span>"
+    ]
+  },
+  {
+    "objectID": "E03-Spatial and Time Series.html#expand-model-to-spatial-and-time-series-analysis-regression",
+    "href": "E03-Spatial and Time Series.html#expand-model-to-spatial-and-time-series-analysis-regression",
+    "title": "\n3  Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)\n",
+    "section": "\n3.3 Expand model to Spatial and Time-Series analysis (regression)",
+    "text": "3.3 Expand model to Spatial and Time-Series analysis (regression)\nHaving explored yield response at the single-field level, we now extend the analysis to account for more complex real-world scenarios. These scenarios include multiple fields across different farms and states in the first year of experiments, as well as repeated experiments in single fields over multiple years. Finally, we consider panel data from multiple fields and multiple years to comprehensively model yield response to nitrogen.\n\n\n3.3.1 Spatial Regression: Accounting for Location-Based Variability\nIn the first year of the experiment, several fields were located across multiple farms and states. These fields exhibited spatial variability in yield response due to differences in soil quality, topography, and regional climate. A spatial regression model internalizes the impact of the spatial location of fields and the spatial autocorrelation structure of errors.\n\n3.3.1.1 Spatial Regression Model\nA commonly used spatial lag model (SLM) is expressed as:\n\\[ Y_i = \\rho W Y_i + X_i \\beta + \\epsilon_i \\]\nWhere:  - \\(Y_i\\) = Crop yield for field \\(i\\)  - \\(W\\) = Spatial weights matrix capturing the relationship between fields  - \\(\\rho\\) = Spatial autocorrelation coefficient  - \\(X_i\\) = Matrix of explanatory variables (e.g., nitrogen, soil quality, topography)  - \\(\\beta\\) = Coefficients for explanatory variables  - \\(\\epsilon_i\\) = Error term, assumed to be i.i.d. \nThe spatial weights matrix \\(W\\) defines the structure of spatial relationships, typically based on geographic distance or field adjacency.\nCite: Anselin (2013)\n\n3.3.1.2 Explanation of Spatial Autocorrelation\nSpatial regression models recognize that nearby fields are likely to have similar yields due to shared environmental conditions. This spatial autocorrelation structure mirrors the logic of time-series analysis, where observations are correlated over time.\n\n3.3.2 Time-Series Analysis: Capturing Temporal Dynamics\nThe logic behind time-series analysis is analogous to spatial models. Just as spatial models account for autocorrelation across fields, time-series models address autocorrelation over time. This approach is particularly relevant in single-field, multiple-year replicated experiments.\n\n3.3.2.1 Time-Series Regression Model\nAn autoregressive model (AR(1)) for yield response to nitrogen can be expressed as:\n\\[ Y_t = \\phi Y_{t-1} + X_t \\beta + \\epsilon_t \\]\nWhere:  - \\(Y_t\\) = Yield in year \\(t\\)  - \\(Y_{t-1}\\) = Yield in year \\(t-1\\) (lagged yield)  - \\(\\phi\\) = Autoregressive coefficient capturing temporal autocorrelation  - \\(X_t\\) = Matrix of explanatory variables (e.g., nitrogen, weather)  - \\(\\beta\\) = Coefficients for explanatory variables  - \\(\\epsilon_t\\) = Error term, assumed to follow \\(E[\\epsilon_t \\epsilon_{t-s}] = \\sigma^2\\) for \\(s = 0\\) and 0 otherwise\nCite: Enders (2008)\n\n3.3.2.2 Explanation of Temporal Autocorrelation\nTemporal autocorrelation arises when factors influencing yield (e.g., soil fertility, management practices) persist over time. Time-series models are essential for analyzing trends and year-over-year changes in yield response.\n\n3.3.3 Panel Data Analysis: Integrating Spatial and Temporal Dimensions\nOnce we have enough on-farm field experiment data collected across multiple fields and years, we can employ panel data analysis. Panel data regression incorporates both spatial and temporal dimensions, capturing time trends and spatial heterogeneity.\n\n3.3.3.1 Panel Data Regression Model\nA fixed-effects panel data model is expressed as:\n\\[ Y_{it} = \\alpha_i + \\delta_t + X_{it} \\beta + \\epsilon_{it} \\]\nWhere:  - \\(Y_{it}\\) = Yield for field \\(i\\) in year \\(t\\)  - \\(\\alpha_i\\) = Field-specific fixed effect capturing unobservable time-invariant characteristics  - \\(\\delta_t\\) = Year-specific fixed effect capturing time trends  - \\(X_{it}\\) = Matrix of explanatory variables for field \\(i\\) in year \\(t\\)  - \\(\\beta\\) = Coefficients for explanatory variables  - \\(\\epsilon_{it}\\) = Error term, assumed to be i.i.d.\n\n3.3.3.2 Explanation of Panel Data Strengths\nPanel data models allow us to:  1. Control for unobservable field-specific factors using \\(\\alpha_i\\).  2. Capture temporal effects like technological change or climate trends using \\(\\delta_t\\).  3. Improve estimation efficiency by leveraging variability across both fields and years. \n\n3.3.4 Handling Unbalanced Panel Data\nOn-farm field experiment data often present unbalanced panel structures. This imbalance arises because: - Fields differ in size, soil type, or management, leading to variability in the number of experimental plots per location (county or state level). - The number of experiments conducted each year may vary due to funding, weather conditions, or logistical constraints.\n\n3.3.4.1 Challenges of Unbalanced Panel Data\n\n\nMissing Observations: Some fields or years may lack data, creating gaps in the panel.\n\nHeterogeneity: Unequal representation of fields or years may introduce bias in parameter estimates if not properly accounted for.\n\nUneven Weights: Overrepresented fields or years may disproportionately influence regression results.\n\n3.3.4.2 Regression Model for Unbalanced Panel Data\nTo handle unbalanced panel data, we use a mixed-effects regression model. This model includes both fixed effects (to control for field- and time-specific factors) and random effects (to account for unobserved heterogeneity). The model can be written as:\n\\[ Y_{it} = \\alpha_i + \\delta_t + X_{it} \\beta + u_i + \\epsilon_{it} \\]\nWhere:  - \\(u_i\\) = Random effect for field \\(i\\), assumed to follow \\(u_i \\sim \\mathcal{N}(0, \\sigma_u^2)\\)  - \\(\\epsilon_{it}\\) = Random error term, assumed to follow \\(\\epsilon_{it} \\sim \\mathcal{N}(0, \\sigma_\\epsilon^2)\\) \n\n3.3.4.3 Weighted Regression for Unbalanced Panels\nAn alternative approach is to apply weighted least squares (WLS) to give appropriate importance to underrepresented fields or years:\n\\[ \\text{minimize} \\quad \\sum_{i=1}^N \\sum_{t=1}^T w_{it} \\left( Y_{it} - \\alpha_i - \\delta_t - X_{it} \\beta \\right)^2 \\]\nWhere:  - \\(w_{it}\\) = Weight for observation \\((i,t)\\), typically inversely proportional to the variance or frequency of observations.\nCite: Wooldridge (2019)\n\n3.3.4.4 Implementation Example: Mixed-Effects Model\nThe following R code demonstrates how to implement a mixed-effects model for unbalanced panel data:\n\n# Load necessary libraries\nlibrary(lme4)\n\n# Generate synthetic unbalanced panel data\nset.seed(123)\nn &lt;- 15  # Number of fields\nt &lt;- 5   # Maximum number of years\nfields &lt;- rep(1:n, each = t)\nyears &lt;- rep(1:t, times = n)\nobserved &lt;- sample(c(TRUE, FALSE), n * t, replace = TRUE, prob = c(0.8, 0.2))  # Random missing data\nfields &lt;- fields[observed]\nyears &lt;- years[observed]\nnitrogen &lt;- runif(length(fields), 0, 200)\nfixed_effect &lt;- rep(rnorm(n, 50, 5), each = t)[observed]\nyield &lt;- fixed_effect + 0.8 * nitrogen + rnorm(length(fields), 0, 5)\ndata_unbalanced &lt;- data.frame(Field = factor(fields), Year = factor(years), Nitrogen = nitrogen, Yield = yield)\n\n# Fit a mixed-effects model\nmixed_model &lt;- lmer(Yield ~ Nitrogen + (1 | Field) + (1 | Year), data = data_unbalanced)\nsummary(mixed_model)\n\nLinear mixed model fit by REML ['lmerMod']\nFormula: Yield ~ Nitrogen + (1 | Field) + (1 | Year)\n   Data: data_unbalanced\n\nREML criterion at convergence: 361.9\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-2.06474 -0.66317 -0.02812  0.64895  1.75602 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n Field    (Intercept) 10.246   3.2009  \n Year     (Intercept)  0.574   0.7576  \n Residual             16.512   4.0635  \nNumber of obs: 60, groups:  Field, 15; Year, 5\n\nFixed effects:\n            Estimate Std. Error t value\n(Intercept)  48.0762     1.4662   32.79\nNitrogen      0.8086     0.0104   77.77\n\nCorrelation of Fixed Effects:\n         (Intr)\nNitrogen -0.705\n\n\n\n3.3.5 Summary of Model Progression\n\n\nSpatial Regression: Captures location-based yield variability using spatial weights and autocorrelation.\n\nTime-Series Analysis: Accounts for temporal changes in yield response using lagged yield and explanatory variables.\n\nPanel Data Analysis: Integrates spatial and temporal dimensions to provide a comprehensive understanding of yield response across multiple fields and years.\n\nUnbalanced Panel Data: Addresses the challenges of uneven field representation and missing data using mixed-effects models or weighted regression.\n\nThe progression from single-field to multi-field, multi-year analyses enables a deeper understanding of crop yield dynamics, making it possible to design policies and interventions tailored to diverse agricultural landscapes.\n\n\n\n\n\n\nAnselin, Luc. 2013. Spatial Econometrics: Methods and Models. Vol. 4. Springer Science & Business Media.\n\n\nEnders, Walter. 2008. Applied Econometric Time Series. John Wiley & Sons.\n\n\nHastie, Trevor J. 2017. “Generalized Additive Models.” In Statistical Models in s, 249–307. Routledge.\n\n\nWood, Simon N. 2017. Generalized Additive Models: An Introduction with r. chapman; hall/CRC.\n\n\nWooldridge, Jeffrey M. 2019. “Correlated Random Effects Models with Unbalanced Panels.” Journal of Econometrics 211 (1): 137–50.",
+    "crumbs": [
+      " Statistical Analysis in Application to Economics Models",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span>"
+    ]
+  },
+  {
+    "objectID": "P01-price_movement.html",
+    "href": "P01-price_movement.html",
+    "title": "",
+    "section": "",
+    "text": "Essay of Price Analysis5  P01-price_movement.html Code",
+    "crumbs": [
+      "Essay of Price Analysis",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>P01-price_movement.html</span>"
+    ]
+  },
+  {
+    "objectID": "P02-stock_money_ag.html",
+    "href": "P02-stock_money_ag.html",
+    "title": "",
+    "section": "",
+    "text": "Essay of Price Analysis6  P02-stock_money_ag.html Code",
+    "crumbs": [
+      "Essay of Price Analysis",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>P02-stock_money_ag.html</span>"
+    ]
+  },
+  {
+    "objectID": "S01-what-is-learning.html",
+    "href": "S01-what-is-learning.html",
+    "title": "",
+    "section": "",
+    "text": "Essay of Statistical Learning(AI)7  S01-what-is-learning.html Code",
+    "crumbs": [
+      "Essay of Statistical Learning(AI)",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>S01-what-is-learning.html</span>"
+    ]
+  },
+  {
+    "objectID": "S02-how-to-use-learning.html",
+    "href": "S02-how-to-use-learning.html",
+    "title": "",
+    "section": "",
+    "text": "Essay of Statistical Learning(AI)8  S02-how-to-use-learning.html Code",
+    "crumbs": [
+      "Essay of Statistical Learning(AI)",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>S02-how-to-use-learning.html</span>"
+    ]
+  },
+  {
+    "objectID": "A01-appendix.html",
+    "href": "A01-appendix.html",
+    "title": "",
+    "section": "",
+    "text": "AppendicesA  A01-appendix.html Code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A01-appendix.html</span>"
+    ]
+  }
+]
