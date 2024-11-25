@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Essay of my research Journey",
+    "title": "Essay of My Research Journey",
     "section": "",
-    "text": "Welcome\nThis page shows my essay of research",
+    "text": "Welcome\nDuring my research journey in graduate school (MS and Ph.D. in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at jaeseok2@illinois.edu.",
     "crumbs": [
       "Welcome"
     ]
@@ -12,31 +12,11 @@
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "Essay of my research Journey",
+    "title": "Essay of My Research Journey",
     "section": "License",
     "text": "License\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License.",
     "crumbs": [
       "Welcome"
-    ]
-  },
-  {
-    "objectID": "preface.html",
-    "href": "preface.html",
-    "title": "Preface",
-    "section": "",
-    "text": "Essay of My Research Journey\nHere I have my essay that spans my idea and learning that came and accumulated through my research experiences over five years of Ph.D. program in Appllied Economics.\n:::{.callout-Contents of Essay}\n:::\nEssay of Econometrics  :\nEssay of Price Analysis  :\nEssay of Statistical Learning",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "preface.html#essay-of-my-research-journey",
-    "href": "preface.html#essay-of-my-research-journey",
-    "title": "Preface",
-    "section": "",
-    "text": "Essay of Econometrics:\n\n Essay of Price Analysis:\n Essay of Statistical Learning :\nto be added (more contents)\n\n\n\n\ncontents1\ncontents2\n\n\n\ncontents1\ncontents2\n\n\n\ncontents1\ncontents2",
-    "crumbs": [
-      "Preface"
     ]
   },
   {
@@ -46,7 +26,7 @@
     "section": "",
     "text": "1.1 Introduction to Production Functions in Economics\nIn economics, production functions are mathematical models used to describe the relationship between input and output. They are foundational in understanding the mechanics of production processes across industries. This section introduces three of the most popular production functions in economics, widely recognized for their theoretical significance.",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
     ]
   },
@@ -57,7 +37,7 @@
     "section": "",
     "text": "1.1.1 Cobb-Douglas Production Function\nThe Cobb-Douglas production function is perhaps the most famous, formulated as:\n\\[ Q = A L^{\\alpha} K^{\\beta} \\]\nWhere:  - \\(Q\\) = Output  - \\(L\\) = Labor input  - \\(K\\) = Capital input  - \\(A\\) = Total factor productivity  - \\(\\alpha\\), \\(\\beta\\) = Output elasticities of labor and capital (parameters)\nCite: Douglas (1928)\n\n\n1.1.2 Leontief Production Function\nThe Leontief production function assumes perfect complementarity between inputs:\n\\[ Q = \\text{min} \\left( \\frac{L}{a}, \\frac{K}{b} \\right) \\]\nWhere:  - \\(a\\), \\(b\\) = Input coefficients\nCite: Leontief (1947)\n\n\n1.1.3 CES Production Function\nThe Constant Elasticity of Substitution (CES) production function generalizes the Cobb-Douglas model:\n\\[ Q = A \\left[ \\alpha L^{\\rho} + (1-\\alpha) K^{\\rho} \\right]^{\\frac{1}{\\rho}} \\]\nWhere: - \\(\\rho\\) determines the elasticity of substitution between inputs.\nCite: Arrow et al. (1961)",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
     ]
   },
@@ -68,7 +48,7 @@
     "section": "1.2 Crop Production Functions in Agricultural Economics",
     "text": "1.2 Crop Production Functions in Agricultural Economics\nThe Cobb-Douglas, Leontief, and CES production functions are foundational in economics and often introduced in college-level economics courses. These models provide a generalized framework for understanding the relationship between inputs and outputs in various industries. Similarly, crop production functions extend these concepts to the agricultural sector, focusing on crop response to specific inputs like nitrogen, water, and other environmental factors.\nCrop production functions share similarities with these famous production functions:  - Like the Cobb-Douglas function, they often assume diminishing marginal returns to inputs.  - Similar to the Leontief function, they may reflect constraints such as minimum requirements of critical inputs (e.g., water or nutrients).  - As in the CES function, some models allow for substitutability or complementarity between inputs, tailored to specific agricultural contexts. \nThis section explores crop production functions with a focus on corn, particularly the influential work of Just and Pope (1978) , which provided a framework for modeling crop yield as a function of inputs and environmental factors, accounting for variability and risk.",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
     ]
   },
@@ -79,7 +59,7 @@
     "section": "1.3 Crop Response to Nitrogen and Water",
     "text": "1.3 Crop Response to Nitrogen and Water\nProminent research, such as Just and Pope (1978) , presented a stochastic production function that includes a deterministic component and a stochastic component, reflecting the inherent variability in agricultural systems. Their model is expressed as:\n\\[ Y = f(X) + g(X) \\epsilon \\]\nWhere:  - \\(Y\\) = Crop yield  - \\(X\\) = Vector of inputs (e.g., nitrogen, water)  - \\(f(X)\\) = Mean response function (deterministic component)  - \\(g(X)\\) = Risk response function (scales variability)  - \\(\\epsilon\\) = Random error term (assumed to have a mean of zero and constant variance) \n\n1.3.1 Connection to the Three Famous Production Functions\n\nCobb-Douglas:\n\nThe deterministic component \\(f(X)\\) in the Just and Pope model can be modeled as a Cobb-Douglas function if we assume that inputs like nitrogen(N) fertilizer have diminishing marginal returns: \\[ f(X) = A \\prod_{i=1}^{n} X_i^{\\alpha_i} \\] Here, the stochastic component \\(g(X)\\epsilon\\) adds variability, which is not present in the standard Cobb-Douglas formulation.\n\nLeontief:\n\nThe Just and Pope model can incorporate minimum input requirements, reflecting the rigid input proportions of the Leontief function, if \\(f(X)\\) includes terms like: \\[ f(X) = \\text{min}\\left(\\frac{X_1}{a_1}, \\frac{X_2}{a_2}\\right) \\] This formulation can be extended to account for variability with \\(g(X)\\epsilon\\).\n\nCES:\n\nThe flexibility of the CES production function aligns with Just and Pope’s stochastic framework by allowing for varying degrees of substitutability between inputs in \\(f(X)\\), while \\(g(X)\\epsilon\\) introduces additional risk elements.\n\n\nThe Just and Pope production function provides a bridge between classical economic production functions and the unique challenges of modeling agricultural systems, where variability and risk play a critical role.\n(Cite: Just & Pope, 1978)",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
     ]
   },
@@ -90,7 +70,7 @@
     "section": "1.4 Crop Yield Response Function to Nitrogen",
     "text": "1.4 Crop Yield Response Function to Nitrogen\nUnderstanding the yield response function to nitrogen is crucial because nitrogen is one of the most significant and manageable inputs in crop production. Optimizing nitrogen use is essential for balancing yield maximization with cost-efficiency and environmental sustainability. Crop yield response to nitrogen often follows a diminishing returns pattern, making it an ideal application of the production function concepts introduced earlier.\nThe Mitscherlich-Baule (M-B) production function provides a useful framework for modeling nitrogen response. Unlike the simplistic quadratic model, the M-B function accounts for diminishing returns as nitrogen input increases, with an asymptotic yield level. It can be expressed as:\n\\[ Y = Y_{\\text{max}} \\left(1 - e^{-\\beta N}\\right) \\]\nWhere:  - \\(Y\\) = Crop yield  - \\(Y_{\\text{max}}\\) = Maximum potential yield  - \\(\\beta\\) = Nitrogen efficiency parameter  - \\(N\\) = Nitrogen input\nCite: Cerrato and Blackmer (1990)\n\n1.4.1 Connection to Classical Production Functions\n\nCobb-Douglas:\n\nThe M-B function aligns conceptually with the Cobb-Douglas model, as both exhibit diminishing marginal returns. However, while Cobb-Douglas assumes constant elasticities, the M-B function allows elasticities to change with input levels, reflecting the unique biological response of crops to nitrogen.\n\nLeontief:\n\nThe M-B function can capture constraints on nitrogen use akin to the Leontief model when nitrogen is insufficient to reach the asymptotic yield, effectively making other inputs redundant.\n\nCES:\n\nThe M-B function can be extended to include interactions with other inputs, allowing for substitutability or complementarity between nitrogen and water, similar to the flexibility of the CES function.\n\n\nThe M-B production function thus bridges classical economic production functions and agricultural models by addressing the specific nonlinear response of crop yield to nitrogen. It provides a foundation for econometric modeling, enabling detailed analysis of yield response while capturing biological and environmental dynamics.\n\n\n\n\n\n\nArrow, Kenneth J, Hollis B Chenery, Bagicha S Minhas, and Robert M Solow. 1961. “Capital-Labor Substitution and Economic Efficiency.” The Review of Economics and Statistics, 225–50.\n\n\nCerrato, ME, and AM Blackmer. 1990. “Comparison of Models for Describing; Corn Yield Response to Nitrogen Fertilizer.” Agronomy Journal 82 (1): 138–43.\n\n\nDouglas, Paul. 1928. “Cobb Douglas Production Function.” The Quarterly Journal of Economics 42 (3): 393–415.\n\n\nJust, Richard E, and Rulon D Pope. 1978. “Stochastic Specification of Production Functions and Economic Implications.” Journal of Econometrics 7 (1): 67–86.\n\n\nLeontief, Wassily. 1947. “Introduction to a Theory of the Internal Structure of Functional Relationships.” Econometrica, Journal of the Econometric Society, 361–73.",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Crop Production Model(MicroEconomics)</span>"
     ]
   },
@@ -101,7 +81,7 @@
     "section": "",
     "text": "2.1 Estimation of Yield Respoonse to Nitrogen",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Estimation of Crop Yield Response (Econometrics)</span>"
     ]
   },
@@ -112,7 +92,7 @@
     "section": "",
     "text": "2.1.1 Example: Graph of Yield Response to Nitrogen Using M-B Function\nThe following R code generates sample data for nitrogen input, yield, and an error term. It then plots the observed data (green dots) along with the fitted M-B production function (red line).\n\n#| fig-height: 3\n#| fig-width: 5\n#| fig-align: center\n\n# Generate sample data\nset.seed(123)\nnitrogen &lt;- seq(0, 200, by = 5)  # Nitrogen input\nY_max &lt;- 120  # Maximum yield\nbeta &lt;- 0.03  # Nitrogen efficiency parameter\nepsilon &lt;- rnorm(length(nitrogen), mean = 0, sd = 5)  # Random error\n\n# Calculate yield using M-B function\nyield &lt;- Y_max * (1 - exp(-beta * nitrogen)) + epsilon\n\n# Create a data frame for plotting\ndata &lt;- data.frame(Nitrogen = nitrogen, Yield = yield)\n\n# Fit the M-B function\nfit &lt;- nls(Yield ~ Y_max * (1 - exp(-beta * Nitrogen)), \n           data = data, \n           start = list(Y_max = 120, beta = 0.03))\n\n# Generate predicted values for plotting\ndata$Predicted_Yield &lt;- predict(fit)\n\n# Plot the observed data and fitted curve\nggplot(data, aes(x = Nitrogen, y = Yield)) +\n  geom_point(color = \"green\", size = 2, alpha = 0.8) +  # Observed data\n  geom_line(aes(y = Predicted_Yield), color = \"red\", size = 1)\n\n\n\n\n\n\n\n\n2.1.2 Interpretation of the Yield Response to Nitrogen Plot\nThe plot above demonstrates the relationship between nitrogen application and crop yield. The observed data (green dots) illustrate variability due to random error, while the red line represents the fitted Mitscherlich-Baule (M-B) function. This function effectively captures the diminishing returns to nitrogen and the asymptotic nature of yield, where yields plateau as nitrogen levels approach saturation.\nWhile the M-B production function is biologically intuitive, its parameters are nonlinear and require specialized estimation techniques, such as nonlinear least squares (as shown above). In practical applications, simpler functional forms, such as quadratic or quadratic plateau models, are often used for estimating yield response due to their ease of implementation within standard linear regression frameworks.\n\n2.1.3 Bridging the M-B Function and Linear Regression Models\nTo estimate yield response to nitrogen using regression models, a common approach is to employ a quadratic or quadratic plateau model. These models approximate the nonlinear relationship between nitrogen and yield while maintaining the simplicity of linear regression.\n\n2.1.3.1 Quadratic Yield Response Model\nThe quadratic model assumes a concave relationship between nitrogen input and yield:\n\\[ Y = \\beta_0 + \\beta_1 N + \\beta_2 N^2 + \\epsilon \\]\nWhere:  - \\(Y\\) = Crop yield  - \\(N\\) = Nitrogen input  - \\(\\beta_0\\), \\(\\beta_1\\), \\(\\beta_2\\) = Model parameters  - \\(\\epsilon\\) = Error term\nThis model captures the diminishing returns to nitrogen through the quadratic term (\\(N^2\\)), with \\(\\beta_2 &lt; 0\\). It has been widely used in empirical studies of nitrogen response due to its simplicity and flexibility.\nCite: Lory and Scharf (2003)\n\n2.1.3.2 Quadratic-Plateau Model\nA variation of the quadratic model is the quadratic plateau model, which assumes that yields plateau after a certain level of nitrogen input:\n\\[ Y = \\begin{cases}\n\\beta_0 + \\beta_1 N + \\beta_2 N^2, & \\text{if } N &lt; N_{\\text{critical}} \\\\\nY_{\\text{max}}, & \\text{if } N \\geq N_{\\text{critical}}\n\\end{cases} \\]\nWhere:  - \\(N_{\\text{critical}}\\) = Critical nitrogen rate at which the yield plateaus  - \\(Y_{\\text{max}}\\) = Maximum attainable yield \nThis model incorporates biological realism similar to the M-B function but remains computationally simpler for estimation.\nCite: Cerrato and Blackmer (1990)\n\n2.1.3.3 Linear Regression Approach to Estimate Yield Response\nTo estimate yield response using regression, we start with the quadratic model as a foundation. The following R code demonstrates a simple implementation using synthetic data:\n\n# Generate synthetic data\nset.seed(123)\nnitrogen &lt;- seq(0, 200, by = 5)\nbeta_0 &lt;- 40  # Intercept\nbeta_1 &lt;- 0.8  # Linear nitrogen effect\nbeta_2 &lt;- -0.002  # Quadratic nitrogen effect\nepsilon &lt;- rnorm(length(nitrogen), mean = 0, sd = 5)  # Random error\n\n# Quadratic yield data\nyield &lt;- beta_0 + beta_1 * nitrogen + beta_2 * nitrogen^2 + epsilon\ndata &lt;- data.frame(Nitrogen = nitrogen, Yield = yield)\n\n# Fit a quadratic regression model\nquad_fit &lt;- lm(Yield ~ Nitrogen + I(Nitrogen^2), data = data)\n\n# Plot observed data and fitted curve\nggplot(data, aes(x = Nitrogen, y = Yield)) +\n  geom_point(color = \"green\", size = 2, alpha = 0.8) +  # Observed data\n  stat_smooth(method = \"lm\", formula = y ~ poly(x, 2), se = FALSE, color = \"red\") +  # Fitted curve\n  labs(\n    title = \"Quadratic Yield Response to Nitrogen\",\n    x = \"Nitrogen Input (kg/ha)\",\n    y = \"Yield (kg/ha)\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\nCerrato, ME, and AM Blackmer. 1990. “Comparison of Models for Describing; Corn Yield Response to Nitrogen Fertilizer.” Agronomy Journal 82 (1): 138–43.\n\n\nLory, JA, and PC Scharf. 2003. “Yield Goal Versus Delta Yield for Predicting Fertilizer Nitrogen Need in Corn.” Agronomy Journal 95 (4): 994–99.",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Basic Estimation of Crop Yield Response (Econometrics)</span>"
     ]
   },
@@ -123,7 +103,7 @@
     "section": "",
     "text": "3.1 Expanding the Simple Regression Analysis\nNow, we can expand the simple regression analysis to a more complex framework that better reflects the real-world setting of crop yield response to nitrogen.\nFrom my five years as a Research Assistant (RA) for the Data Intensive Farm Management (DIFM) project (Cite: DSB, 2019), I have developed and applied various regression methods to model crop yield response to nitrogen. These models range from analyzing data at the single-field level to examining multiple farms across multiple years of on-farm field experiments.",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span>"
     ]
   },
@@ -134,7 +114,7 @@
     "section": "\n3.2 Yield Response Modeling at the Single Field Level",
     "text": "3.2 Yield Response Modeling at the Single Field Level\n\n3.2.1 Data Context\nIn a single field setting, we typically collect the following data:  - Yield (\\(Y\\)): Crop yield for each plot in the field  - Nitrogen (\\(N\\)): Nitrogen input  - Seed Rate (\\(S\\)): Seeding density  - Topographical Features: Elevation, slope, and aspect  - Soil Quality Metrics: Soil nutrition and water-storage capacity \nGiven the variability in field conditions and weather uncertainties, traditional parametric models may struggle to capture the yield response effectively. To address this, we employ a Generalized Additive Model (GAM), a non-parametric approach that flexibly fits relationships between variables.\n\n3.2.2 Generalized Additive Model for Yield Response\nThe GAM regression model can be expressed as:\n\\[ Y = \\beta_0 + f_1(N) + f_2(S) + f_3(\\text{Elevation}) + f_4(\\text{Slope}) + f_5(\\text{Soil Quality}) + \\epsilon \\]\nWhere:  - \\(f_1, f_2, \\ldots\\) = Smooth functions capturing nonlinear relationships  - \\(\\epsilon\\) = Error term \n\n3.2.3 Example: GAM Regression with Synthetic Data\nThe following R code demonstrates how to implement a GAM regression model to estimate yield response to nitrogen and other explanatory variables.\n\n# Load necessary libraries\nlibrary(mgcv)\nlibrary(ggplot2)\n\n# Generate synthetic data\nset.seed(123)\nn &lt;- 200\nnitrogen &lt;- runif(n, 0, 200)  # Nitrogen input\nseed_rate &lt;- runif(n, 5, 10)  # Seeding rate\nelevation &lt;- rnorm(n, 100, 10)  # Elevation\nslope &lt;- rnorm(n, 5, 2)  # Slope\nsoil_quality &lt;- runif(n, 0, 100)  # Soil quality\nerror &lt;- rnorm(n, 0, 5)  # Random error\n\n# Generate yield response\nyield &lt;- 50 + 0.8 * nitrogen - 0.002 * nitrogen^2 +\n         0.5 * seed_rate + 0.2 * elevation - 0.1 * slope +\n         0.05 * soil_quality + error\n\n# Create a data frame\ndata &lt;- data.frame(Yield = yield, Nitrogen = nitrogen, SeedRate = seed_rate,\n                   Elevation = elevation, Slope = slope, SoilQuality = soil_quality)\n\n# Fit a GAM model\ngam_model &lt;- gam(Yield ~ s(Nitrogen) + s(SeedRate) + s(Elevation) + \n                   s(Slope) + s(SoilQuality), data = data)\n\n# Generate predictions for plotting\ndata$Predicted_Yield &lt;- predict(gam_model)\n\n# Plot observed vs. predicted yield\nggplot(data, aes(x = Nitrogen, y = Yield)) +\n  geom_point(color = \"green\", size = 2, alpha = 0.6) +  # Observed data\n  geom_line(aes(y = Predicted_Yield), color = \"red\", size = 1) +  # GAM prediction\n  labs(\n    title = \"GAM Regression: Yield Response to Nitrogen\",\n    x = \"Nitrogen Input (kg/ha)\",\n    y = \"Yield (kg/ha)\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n3.2.4 Strengths of GAM Regression\nGAM regression offers significant advantages in modeling crop yield response:\n\nFlexibility: GAM allows for smooth, nonlinear relationships between yield and explanatory variables. This is particularly important for agricultural data, where yield response to nitrogen often exhibits nonlinear patterns due to biological limits.\nInterpretability: The smooth terms in GAM provide an intuitive understanding of how each input influences yield.\nHandling Variability: GAM is robust to field-specific heterogeneity and weather uncertainties, making it ideal for modeling yield response in diverse agricultural settings.\n\nBy applying GAM regression at the single-field level, we can capture the intricate relationships between yield and its determinants, paving the way for more nuanced analyses at larger spatial and temporal scales.\nCite : Hastie (2017) , Wood (2017)",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span>"
     ]
   },
@@ -145,52 +125,195 @@
     "section": "\n3.3 Expand model to Spatial and Time-Series analysis (regression)",
     "text": "3.3 Expand model to Spatial and Time-Series analysis (regression)\nHaving explored yield response at the single-field level, we now extend the analysis to account for more complex real-world scenarios. These scenarios include multiple fields across different farms and states in the first year of experiments, as well as repeated experiments in single fields over multiple years. Finally, we consider panel data from multiple fields and multiple years to comprehensively model yield response to nitrogen.\n\n\n3.3.1 Spatial Regression: Accounting for Location-Based Variability\nIn the first year of the experiment, several fields were located across multiple farms and states. These fields exhibited spatial variability in yield response due to differences in soil quality, topography, and regional climate. A spatial regression model internalizes the impact of the spatial location of fields and the spatial autocorrelation structure of errors.\n\n3.3.1.1 Spatial Regression Model\nA commonly used spatial lag model (SLM) is expressed as:\n\\[ Y_i = \\rho W Y_i + X_i \\beta + \\epsilon_i \\]\nWhere:  - \\(Y_i\\) = Crop yield for field \\(i\\)  - \\(W\\) = Spatial weights matrix capturing the relationship between fields  - \\(\\rho\\) = Spatial autocorrelation coefficient  - \\(X_i\\) = Matrix of explanatory variables (e.g., nitrogen, soil quality, topography)  - \\(\\beta\\) = Coefficients for explanatory variables  - \\(\\epsilon_i\\) = Error term, assumed to be i.i.d. \nThe spatial weights matrix \\(W\\) defines the structure of spatial relationships, typically based on geographic distance or field adjacency.\nCite: Anselin (2013)\n\n3.3.1.2 Explanation of Spatial Autocorrelation\nSpatial regression models recognize that nearby fields are likely to have similar yields due to shared environmental conditions. This spatial autocorrelation structure mirrors the logic of time-series analysis, where observations are correlated over time.\n\n3.3.2 Time-Series Analysis: Capturing Temporal Dynamics\nThe logic behind time-series analysis is analogous to spatial models. Just as spatial models account for autocorrelation across fields, time-series models address autocorrelation over time. This approach is particularly relevant in single-field, multiple-year replicated experiments.\n\n3.3.2.1 Time-Series Regression Model\nAn autoregressive model (AR(1)) for yield response to nitrogen can be expressed as:\n\\[ Y_t = \\phi Y_{t-1} + X_t \\beta + \\epsilon_t \\]\nWhere:  - \\(Y_t\\) = Yield in year \\(t\\)  - \\(Y_{t-1}\\) = Yield in year \\(t-1\\) (lagged yield)  - \\(\\phi\\) = Autoregressive coefficient capturing temporal autocorrelation  - \\(X_t\\) = Matrix of explanatory variables (e.g., nitrogen, weather)  - \\(\\beta\\) = Coefficients for explanatory variables  - \\(\\epsilon_t\\) = Error term, assumed to follow \\(E[\\epsilon_t \\epsilon_{t-s}] = \\sigma^2\\) for \\(s = 0\\) and 0 otherwise\nCite: Enders (2008)\n\n3.3.2.2 Explanation of Temporal Autocorrelation\nTemporal autocorrelation arises when factors influencing yield (e.g., soil fertility, management practices) persist over time. Time-series models are essential for analyzing trends and year-over-year changes in yield response.\n\n3.3.3 Panel Data Analysis: Integrating Spatial and Temporal Dimensions\nOnce we have enough on-farm field experiment data collected across multiple fields and years, we can employ panel data analysis. Panel data regression incorporates both spatial and temporal dimensions, capturing time trends and spatial heterogeneity.\n\n3.3.3.1 Panel Data Regression Model\nA fixed-effects panel data model is expressed as:\n\\[ Y_{it} = \\alpha_i + \\delta_t + X_{it} \\beta + \\epsilon_{it} \\]\nWhere:  - \\(Y_{it}\\) = Yield for field \\(i\\) in year \\(t\\)  - \\(\\alpha_i\\) = Field-specific fixed effect capturing unobservable time-invariant characteristics  - \\(\\delta_t\\) = Year-specific fixed effect capturing time trends  - \\(X_{it}\\) = Matrix of explanatory variables for field \\(i\\) in year \\(t\\)  - \\(\\beta\\) = Coefficients for explanatory variables  - \\(\\epsilon_{it}\\) = Error term, assumed to be i.i.d.\n\n3.3.3.2 Explanation of Panel Data Strengths\nPanel data models allow us to:  1. Control for unobservable field-specific factors using \\(\\alpha_i\\).  2. Capture temporal effects like technological change or climate trends using \\(\\delta_t\\).  3. Improve estimation efficiency by leveraging variability across both fields and years. \n\n3.3.4 Handling Unbalanced Panel Data\nOn-farm field experiment data often present unbalanced panel structures. This imbalance arises because: - Fields differ in size, soil type, or management, leading to variability in the number of experimental plots per location (county or state level). - The number of experiments conducted each year may vary due to funding, weather conditions, or logistical constraints.\n\n3.3.4.1 Challenges of Unbalanced Panel Data\n\n\nMissing Observations: Some fields or years may lack data, creating gaps in the panel.\n\nHeterogeneity: Unequal representation of fields or years may introduce bias in parameter estimates if not properly accounted for.\n\nUneven Weights: Overrepresented fields or years may disproportionately influence regression results.\n\n3.3.4.2 Regression Model for Unbalanced Panel Data\nTo handle unbalanced panel data, we use a mixed-effects regression model. This model includes both fixed effects (to control for field- and time-specific factors) and random effects (to account for unobserved heterogeneity). The model can be written as:\n\\[ Y_{it} = \\alpha_i + \\delta_t + X_{it} \\beta + u_i + \\epsilon_{it} \\]\nWhere:  - \\(u_i\\) = Random effect for field \\(i\\), assumed to follow \\(u_i \\sim \\mathcal{N}(0, \\sigma_u^2)\\)  - \\(\\epsilon_{it}\\) = Random error term, assumed to follow \\(\\epsilon_{it} \\sim \\mathcal{N}(0, \\sigma_\\epsilon^2)\\) \n\n3.3.4.3 Weighted Regression for Unbalanced Panels\nAn alternative approach is to apply weighted least squares (WLS) to give appropriate importance to underrepresented fields or years:\n\\[ \\text{minimize} \\quad \\sum_{i=1}^N \\sum_{t=1}^T w_{it} \\left( Y_{it} - \\alpha_i - \\delta_t - X_{it} \\beta \\right)^2 \\]\nWhere:  - \\(w_{it}\\) = Weight for observation \\((i,t)\\), typically inversely proportional to the variance or frequency of observations.\nCite: Wooldridge (2019)\n\n3.3.4.4 Implementation Example: Mixed-Effects Model\nThe following R code demonstrates how to implement a mixed-effects model for unbalanced panel data:\n\n# Load necessary libraries\nlibrary(lme4)\n\n# Generate synthetic unbalanced panel data\nset.seed(123)\nn &lt;- 15  # Number of fields\nt &lt;- 5   # Maximum number of years\nfields &lt;- rep(1:n, each = t)\nyears &lt;- rep(1:t, times = n)\nobserved &lt;- sample(c(TRUE, FALSE), n * t, replace = TRUE, prob = c(0.8, 0.2))  # Random missing data\nfields &lt;- fields[observed]\nyears &lt;- years[observed]\nnitrogen &lt;- runif(length(fields), 0, 200)\nfixed_effect &lt;- rep(rnorm(n, 50, 5), each = t)[observed]\nyield &lt;- fixed_effect + 0.8 * nitrogen + rnorm(length(fields), 0, 5)\ndata_unbalanced &lt;- data.frame(Field = factor(fields), Year = factor(years), Nitrogen = nitrogen, Yield = yield)\n\n# Fit a mixed-effects model\nmixed_model &lt;- lmer(Yield ~ Nitrogen + (1 | Field) + (1 | Year), data = data_unbalanced)\nsummary(mixed_model)\n\nLinear mixed model fit by REML ['lmerMod']\nFormula: Yield ~ Nitrogen + (1 | Field) + (1 | Year)\n   Data: data_unbalanced\n\nREML criterion at convergence: 361.9\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-2.06474 -0.66317 -0.02812  0.64895  1.75602 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n Field    (Intercept) 10.246   3.2009  \n Year     (Intercept)  0.574   0.7576  \n Residual             16.512   4.0635  \nNumber of obs: 60, groups:  Field, 15; Year, 5\n\nFixed effects:\n            Estimate Std. Error t value\n(Intercept)  48.0762     1.4662   32.79\nNitrogen      0.8086     0.0104   77.77\n\nCorrelation of Fixed Effects:\n         (Intr)\nNitrogen -0.705\n\n\n\n3.3.5 Summary of Model Progression\n\n\nSpatial Regression: Captures location-based yield variability using spatial weights and autocorrelation.\n\nTime-Series Analysis: Accounts for temporal changes in yield response using lagged yield and explanatory variables.\n\nPanel Data Analysis: Integrates spatial and temporal dimensions to provide a comprehensive understanding of yield response across multiple fields and years.\n\nUnbalanced Panel Data: Addresses the challenges of uneven field representation and missing data using mixed-effects models or weighted regression.\n\nThe progression from single-field to multi-field, multi-year analyses enables a deeper understanding of crop yield dynamics, making it possible to design policies and interventions tailored to diverse agricultural landscapes.\n\n\n\n\n\n\nAnselin, Luc. 2013. Spatial Econometrics: Methods and Models. Vol. 4. Springer Science & Business Media.\n\n\nEnders, Walter. 2008. Applied Econometric Time Series. John Wiley & Sons.\n\n\nHastie, Trevor J. 2017. “Generalized Additive Models.” In Statistical Models in s, 249–307. Routledge.\n\n\nWood, Simon N. 2017. Generalized Additive Models: An Introduction with r. chapman; hall/CRC.\n\n\nWooldridge, Jeffrey M. 2019. “Correlated Random Effects Models with Unbalanced Panels.” Journal of Econometrics 211 (1): 137–50.",
     "crumbs": [
-      " Statistical Analysis in Application to Economics Models",
+      "Statistical Analysis : <br> in Application to Economics Models",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span>"
-    ]
-  },
-  {
-    "objectID": "P01-price_movement.html",
-    "href": "P01-price_movement.html",
-    "title": "",
-    "section": "",
-    "text": "Essay of Price Analysis5  P01-price_movement.html Code",
-    "crumbs": [
-      "Essay of Price Analysis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>P01-price_movement.html</span>"
-    ]
-  },
-  {
-    "objectID": "P02-stock_money_ag.html",
-    "href": "P02-stock_money_ag.html",
-    "title": "",
-    "section": "",
-    "text": "Essay of Price Analysis6  P02-stock_money_ag.html Code",
-    "crumbs": [
-      "Essay of Price Analysis",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>P02-stock_money_ag.html</span>"
     ]
   },
   {
     "objectID": "S01-what-is-learning.html",
     "href": "S01-what-is-learning.html",
-    "title": "",
+    "title": "4  Exploring Statistical Learning",
     "section": "",
-    "text": "Essay of Statistical Learning(AI)7  S01-what-is-learning.html Code",
+    "text": "4.1 Started with the Basic Linear Regression\nAs a Ph.D. student in applied economics, my journey into statistical learning began with the foundational concepts of econometrics: linear regression, basic t-tests, and statistical distributions. These tools, though elementary, laid the groundwork for understanding the broader principles of data analysis. Early on, my focus was firmly rooted in traditional econometric frameworks, with key insights drawn from influential textbooks by Wooldridge (2010) and Greene (2008).\nI write this essay based on what I learned from the econometrics and statistics lectures in my graduate program. I also referred to materials from the lecture notes of my research advisor, Dr. Taro Mieno (UNL), available at  Machine Learning for Economists.",
     "crumbs": [
-      "Essay of Statistical Learning(AI)",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>S01-what-is-learning.html</span>"
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exploring Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S01-what-is-learning.html#from-simple-to-complex-the-journey-beyond-linear-regression",
+    "href": "S01-what-is-learning.html#from-simple-to-complex-the-journey-beyond-linear-regression",
+    "title": "4  Exploring Statistical Learning",
+    "section": "4.2 From Simple to Complex: The Journey Beyond Linear Regression",
+    "text": "4.2 From Simple to Complex: The Journey Beyond Linear Regression\nLinear regression offers an intuitive framework for understanding relationships between predictors (independent variables) and responses (dependent variables). It simplifies the analysis by assuming a straight-line relationship, making it easy to interpret and apply. However, this simplicity often comes at the cost of ignoring the complexities and nuances of real-world data.\nTo perform higher-level analysis, it becomes necessary to relax the rigid assumptions of linear regression. The world is rarely governed by perfect linearity, and exploring the complexity in data requires breaking down these assumptions. This is where non-linearity and flexibility come into play.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exploring Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S01-what-is-learning.html#introducing-flexibility-from-polynomials-to-splines",
+    "href": "S01-what-is-learning.html#introducing-flexibility-from-polynomials-to-splines",
+    "title": "4  Exploring Statistical Learning",
+    "section": "4.3 Introducing Flexibility: From Polynomials to Splines",
+    "text": "4.3 Introducing Flexibility: From Polynomials to Splines\nNon-linear regression extends linear models by incorporating terms that account for curvature, such as polynomials. However, polynomials are limited by their global assumptions—they impose a rigid structure that may fail to adapt to local variations in the data.\nSplines provide a more flexible approach by dividing the predictor variable’s range into intervals and fitting piecewise polynomials within each segment. These are joined at “knots” to ensure smoothness. The spline regression equation can be expressed as:\n\\[\n\\begin{aligned}\nY_{it} &= \\beta_0 + \\beta_1 \\text{seed}_{it} + \\beta_2 \\text{nitrogen}_{it} + \\beta_3 \\text{precipitation}_{it} \\\\\n&\\quad + \\sum_{j=1}^k \\beta_j B_j(X_{it}) + \\epsilon_{it}\n\\end{aligned}\n\\]\nWhere:  - \\(B_j(X_{it})\\): Spline basis functions, defined as piecewise polynomials.  - \\(k\\): Number of basis functions or knots.  - \\(\\beta_j\\): Coefficients estimated for each basis function.  - \\(\\epsilon_{it}\\): Error term for panel observation \\(i\\) at time \\(t\\).\nThis flexibility enables splines to capture non-linear relationships while maintaining interpretability. However, even splines are parametric in nature, relying on pre-defined functions. To fully embrace complexity, we turn to non-parametric methods.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exploring Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S01-what-is-learning.html#the-need-for-non-parametric-methods",
+    "href": "S01-what-is-learning.html#the-need-for-non-parametric-methods",
+    "title": "4  Exploring Statistical Learning",
+    "section": "4.4 The Need for Non-Parametric Methods",
+    "text": "4.4 The Need for Non-Parametric Methods\nNon-parametric methods go beyond predefined equations or functional forms, offering a data-driven approach to uncovering patterns. Unlike parametric models, which make assumptions about the underlying structure of the data, non-parametric models allow the data itself to dictate the relationships.\nIn contexts where the true relationship between variables is unknown or too complex for predefined models, non-parametric methods provide the flexibility needed to explore these intricacies. Kernel regression and locally weighted scatterplot smoothing (LOESS) are examples of non-parametric approaches that adapt to the data without assuming a global functional form.\nThe move from parametric to non-parametric methods highlights the growing emphasis on flexibility and adaptability in statistical analysis.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exploring Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S01-what-is-learning.html#the-role-of-training-and-testing-in-statistical-learning",
+    "href": "S01-what-is-learning.html#the-role-of-training-and-testing-in-statistical-learning",
+    "title": "4  Exploring Statistical Learning",
+    "section": "4.5 The Role of Training and Testing in Statistical Learning",
+    "text": "4.5 The Role of Training and Testing in Statistical Learning\nAs we transition to statistical learning and machine learning techniques, the focus shifts from understanding data to making accurate predictions. A critical aspect of these methods is the training-test framework, which ensures that models generalize well to unseen data.\n\nTraining Set: Used to fit the model, estimating the parameters based on observed data.\nTest Set: Held out during training and used to evaluate the model’s performance on unseen data.\n\nThe training-test split addresses a key issue: overfitting. Overfitting occurs when a model performs exceptionally well on the training data but fails to generalize to new observations. By testing on unseen data, we ensure that the model captures the underlying patterns without memorizing noise or outliers.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exploring Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S01-what-is-learning.html#feasible-supervised-models",
+    "href": "S01-what-is-learning.html#feasible-supervised-models",
+    "title": "4  Exploring Statistical Learning",
+    "section": "4.6 Feasible Supervised Models",
+    "text": "4.6 Feasible Supervised Models\nSupervised learning models aim to predict a response variable based on a set of predictors. Below are common models with equations and expanded descriptions of their benefits:\n\n4.6.1 1. Linear Regression\n\\[\nY_{it} = \\beta_0 + \\beta_1 \\text{seed}_{it} + \\beta_2 \\text{nitrogen}_{it} + \\beta_3 \\text{precipitation}_{it} + \\alpha_i + \\epsilon_{it}\n\\]\n\nDescription: Assumes a linear relationship between predictors (e.g., seed, nitrogen, precipitation) and response (e.g., yield). The inclusion of (_i) allows for fixed effects in panel data.\nBenefits: Simple, interpretable, efficient for small datasets, and unbiased if assumptions (linearity, homoscedasticity) hold.\n\n\n\n\n4.6.2 2. Logistic Regression\n\\[\nP(Y_{it} = 1 | X) = \\frac{\\exp(\\beta_0 + \\beta_1 \\text{seed}_{it} + \\beta_2 \\text{nitrogen}_{it} + \\beta_3 \\text{precipitation}_{it})}{1 + \\exp(\\beta_0 + \\beta_1 \\text{seed}_{it} + \\beta_2 \\text{nitrogen}_{it} + \\beta_3 \\text{precipitation}_{it})}\n\\]\n\nDescription: Models the probability of binary outcomes (e.g., high/low yield). Uses a logit link function to constrain predictions between 0 and 1.\nBenefits: Interpretable in terms of odds ratios, robust to non-normality of errors.\n\n\n\n\n4.6.3 3. Decision Trees\n\\[\n\\begin{aligned}\nf(X) &= \\text{Tree structure with splits on } X \\\\\n&\\text{ to minimize impurity} \\\\\n&\\text{(e.g., Gini index).}\n\\end{aligned}\n\\]\n\nDescription: Splits the data into subsets based on predictor thresholds, resulting in a tree structure.\nBenefits: Handles non-linear relationships, interpretable, and can incorporate interactions without explicitly specifying them.\n\n\n\n\n4.6.4 4. Random Forest\n\\[\n\\hat{f}(X) = \\frac{1}{B} \\sum_{b=1}^B f_b(X)\n\\]\n\nDescription: An ensemble method averaging predictions from multiple decision trees, reducing variance.\nBenefits: Robust to overfitting, handles high-dimensional data well, and captures complex interactions.\n\n\n\n\n4.6.5 5. Support Vector Machines (SVM)\n\\[\n\\min \\| w \\|^2 \\quad \\text{subject to } y_i(w^T X_i + b) \\geq 1\n\\]\n\nDescription: Finds the optimal hyperplane to separate classes in a high-dimensional space.\nBenefits: Effective in high-dimensional settings, robust to outliers, and handles non-linear boundaries with kernels.\n\n\n\n\n4.6.6 6. Neural Networks\n\\[\na^{(l)} = g(W^{(l)}a^{(l-1)} + b^{(l)})\n\\]\n\nDescription: Mimics the human brain by using layers of interconnected nodes to model non-linear relationships.\nBenefits: Extremely flexible, capable of capturing complex patterns, and adaptable to various data types (e.g., images, text).\n\n\n\n\n\n\n\n\nGreene, William H. 2008. “The Econometric Approach to Efficiency Analysis.” The Measurement of Productive Efficiency and Productivity Growth 1 (1): 92–250.\n\n\nWooldridge, Jeffrey M. 2010. Econometric Analysis of Cross Section and Panel Data. MIT press.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Exploring Statistical Learning</span>"
     ]
   },
   {
     "objectID": "S02-how-to-use-learning.html",
     "href": "S02-how-to-use-learning.html",
-    "title": "",
+    "title": "5  Application of Statistical Learning",
     "section": "",
-    "text": "Essay of Statistical Learning(AI)8  S02-how-to-use-learning.html Code",
+    "text": "5.1 Application of Statistical Learning: Machine Learning Models in My Research\nIn this section, I detail the application of machine learning-based regression models that I used during the later stages of my Ph.D. program. To provide concrete examples and enhance understanding, I draw upon my research on estimating yield response to nitrogen. These methods were employed to analyze how yield responds to nitrogen under varying climate conditions, utilizing on-farm field experimental data collected from multiple locations. The dataset includes:\nThe goal of my research is to understand how yield responds to nitrogen applications under diverse climate scenarios. Below, I describe the machine learning models used.",
     "crumbs": [
-      "Essay of Statistical Learning(AI)",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>S02-how-to-use-learning.html</span>"
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Application of Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S02-how-to-use-learning.html#application-of-statistical-learning-machine-learning-models-in-my-research",
+    "href": "S02-how-to-use-learning.html#application-of-statistical-learning-machine-learning-models-in-my-research",
+    "title": "5  Application of Statistical Learning",
+    "section": "",
+    "text": "Dependent Variable: Yield (corn yield).\nIndependent Variables:\n\nField-fixed variables: Seed rate, nitrogen rate (main controllable input), and topography/soil characteristics.\nTime-variant variables: Climate variables such as precipitation (prcp) and temperature (tmpt).",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Application of Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S02-how-to-use-learning.html#gradient-boosting-extreme-gradient-boosting-xgboost",
+    "href": "S02-how-to-use-learning.html#gradient-boosting-extreme-gradient-boosting-xgboost",
+    "title": "5  Application of Statistical Learning",
+    "section": "5.2 Gradient Boosting: Extreme Gradient Boosting (XGBoost)",
+    "text": "5.2 Gradient Boosting: Extreme Gradient Boosting (XGBoost)\n\n5.2.1 Theoretical Background\nGradient boosting is an ensemble learning technique that combines the predictions of weak learners (typically decision trees) to create a strong predictive model. At each iteration, the algorithm minimizes a loss function by fitting a new model to the residuals of the previous predictions.\n\n\n5.2.2 Regression Equation for XGBoost\nThe yield (\\(y_{it}\\)) is expressed as:\n\\[\ny_{it} = f(\\text{seed}_{it}, \\text{nitrogen}_{it}, \\text{prcp}_{it}, \\text{tmpt}_{it}, \\text{topography, soil}) + \\epsilon_{it}\n\\]\nWhere: - \\(f\\) is approximated iteratively using decision trees to capture non-linear interactions.\nThe results from XGBoost are typically in the form of predicted yields. By analyzing feature importance, we can interpret the relative contribution of each variable (e.g., nitrogen rate, precipitation) to yield. This helps identify key drivers of yield variability.\n\n\n5.2.3 Interpretation of Results\n\nMarginal Effects: The predicted yield allows us to quantify the marginal contribution of nitrogen under different climate scenarios (e.g., higher precipitation may reduce nitrogen efficiency due to leaching).\nFeature Importance: XGBoost provides a ranking of variable importance, enabling us to identify critical factors like topography or seed rate that influence yield variability.\nNon-Linear Relationships: Captures diminishing returns to nitrogen, identifying optimal application rates under varying conditions.\nCite: Chen and Guestrin (2016)",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Application of Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S02-how-to-use-learning.html#random-forest",
+    "href": "S02-how-to-use-learning.html#random-forest",
+    "title": "5  Application of Statistical Learning",
+    "section": "5.3 Random Forest",
+    "text": "5.3 Random Forest\n\n5.3.1 Theoretical Background\nRandom Forest (RF) is an ensemble method that builds multiple decision trees and averages their predictions to reduce variance and improve generalization. It captures non-linear interactions and complex relationships.\n\n\n5.3.2 Regression Equation for Random Forest\nThe yield regression model for RF can be expressed as:\n\\[\n\\hat{y}_{it} = \\frac{1}{B} \\sum_{b=1}^B f_b(\\text{seed}_{it}, \\text{nitrogen}_{it}, \\text{prcp}_{it}, \\text{tmpt}_{it}, \\text{topography, soil})\n\\]\nWhere: - \\(B\\) is the number of decision trees. - \\(f_b\\) is the prediction from the \\(b\\)-th tree.\nThe model’s output is the average predicted yield, which accounts for variable interactions and environmental heterogeneity.\n\n\n5.3.3 Interpretation of Results\n\nRobustness: RF predictions are robust against outliers and noise, ensuring stable yield estimates.\nPartial Dependence Plots: These plots help interpret how yield changes with nitrogen rates while holding other variables constant, revealing interactions with climate or soil properties.\nUncertainty Estimates: Variance across trees can provide insights into prediction uncertainty, helping design robust nitrogen application strategies.\nCite: Breiman (2001)\n\n\n\n\n5.3.4 Causal Forest: Causal Machine Learning\nCausal Forests extend RF to estimate heterogeneous treatment effects of nitrogen rates on yield across different fields and climate conditions.\n\n\n5.3.5 Regression Equation for Causal Forest\nThe causal regression model is:\n\\[\ny_{it} = \\tau(\\text{seed}_{it}, \\text{nitrogen}_{it}, \\text{prcp}_{it}, \\text{tmpt}_{it}, \\text{topography, soil}) \\cdot \\text{nitrogen}_{it} + g(\\text{seed}_{it}, \\text{prcp}_{it}, \\text{tmpt}_{it}, \\text{topography, soil}) + \\epsilon_{it}\n\\]\nWhere: - \\(\\tau\\): Estimated treatment effect of nitrogen, capturing heterogeneity across fields. - \\(g\\): Baseline yield function, accounting for other predictors.\n\n\n5.3.6 Interpretation of Results\n\nHeterogeneous Effects: Quantifies how the effect of nitrogen varies across fields with different soil properties or climates.\nOptimal Policies: Identifies nitrogen application rates that maximize yield under varying climate conditions.\nDecision Support: Provides actionable insights for tailoring nitrogen recommendations field-by-field.\nCite: Athey, Tibshirani, and Wager (2019)\n\n\n\n\n5.3.7 Quantile Forest: Quantile Regression Foundation\nQuantile Forests predict conditional quantiles of yield, allowing analysis of variability across the yield distribution.\n\n\n5.3.8 Regression Equation for Quantile Forest\nThe quantile regression model starts as:\n\\[\n\\min_{\\beta} \\sum_{i=1}^n \\rho_\\tau (y_i - X_i^T \\beta)\n\\]\nWhere: - \\(\\rho_\\tau(u) = u(\\tau - \\mathbb{I}(u &lt; 0))\\): Check loss function. - \\(\\tau\\): Quantile of interest (e.g., 0.5 for median yield).\nQuantile Forests extend this by allowing non-linear predictors and estimating conditional quantiles.\n\n\n5.3.9 Interpretation of Results\n\nRisk Analysis: Predicts lower quantiles (e.g., 10th percentile) to understand risks under extreme conditions.\nYield Optimization: Analyzes upper quantiles (e.g., 90th percentile) for potential yield maximization.\nField Management: Provides recommendations for variable-rate nitrogen applications based on yield variability.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Application of Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "S02-how-to-use-learning.html#summary-of-models",
+    "href": "S02-how-to-use-learning.html#summary-of-models",
+    "title": "5  Application of Statistical Learning",
+    "section": "5.4 Summary of Models",
+    "text": "5.4 Summary of Models\n\n\n\n\n\n\n\n\nModel\nKey Feature\nInterpretation of Results\n\n\n\n\nGradient Boosting\nIteratively minimizes loss; regularization included\nIdentifies non-linear yield responses and key predictors; explains diminishing returns.\n\n\nRandom Forest\nAverages multiple trees for robust predictions\nCaptures complex interactions; interprets effects via partial dependence and uncertainty.\n\n\nCausal Forest\nEstimates heterogeneous treatment effects\nProvides field-specific nitrogen recommendations; identifies yield variability sources.\n\n\nQuantile Forest\nPredicts conditional quantiles of the response\nOffers risk and opportunity analysis for extreme yield scenarios.\n\n\n\n\n\n\n\n\n\n\nAthey, Susan, Julie Tibshirani, and Stefan Wager. 2019. “Generalized Random Forests.”\n\n\nBreiman, Leo. 2001. “Random Forests.” Machine Learning 45 (1): 5–32.\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “Xgboost: A Scalable Tree Boosting System.” In Proceedings of the 22nd Acm Sigkdd International Conference on Knowledge Discovery and Data Mining, 785–94.",
+    "crumbs": [
+      "Statistical (Machine) Learning: <br> From Simplicity to Complexity ",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Application of Statistical Learning</span>"
+    ]
+  },
+  {
+    "objectID": "P01-price_movement.html",
+    "href": "P01-price_movement.html",
+    "title": "6  How Price Moves : Stock Market and Grain Stock",
+    "section": "",
+    "text": "6.1 Mechanisms of Price Changes: Stock Market vs. Grain Market (Corn)\nPrice changes in both stock and grain markets reflect the dynamics of supply, demand, and external factors. While the overarching mechanisms share similarities, the specific drivers and their relative influence differ significantly.",
+    "crumbs": [
+      "Price analysis: <br> Grain Stock and Stock Market",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>How Price Moves : Stock Market and Grain Stock</span>"
+    ]
+  },
+  {
+    "objectID": "P01-price_movement.html#mechanisms-of-price-changes-stock-market-vs.-grain-market-corn",
+    "href": "P01-price_movement.html#mechanisms-of-price-changes-stock-market-vs.-grain-market-corn",
+    "title": "6  How Price Moves : Stock Market and Grain Stock",
+    "section": "",
+    "text": "6.1.1 Similarities\n\nSupply and Demand Dynamics:\n\nBoth markets rely on the interplay between supply and demand. For example, stock prices rise with increased demand for shares, while corn prices rise with higher demand for grain or reduced supply due to weather shocks.\n\nMarket Expectations:\n\nPrices in both markets are forward-looking, reflecting expectations about future conditions. In the stock market, this includes company performance and economic forecasts. In the corn market, this includes crop yields, trade policies, and global demand trends.\n\nSpeculation and Hedging:\n\nTraders in both markets speculate on future price movements or hedge against risks. Speculative activity can amplify price volatility.\n\nMacroeconomic Influences:\n\nBroad factors like interest rates, inflation, and global economic conditions impact both stock and corn prices.\n\n\n\n\n\n6.1.2 Differences\n\n\n\n\n\n\n\n\nAspect\nStock Market\nGrain Market (Corn)\n\n\n\n\nPrimary Drivers\nCorporate earnings, investor sentiment, economic data\nWeather conditions, crop yields, global trade, biofuel policies\n\n\nRegulation\nRegulated by securities agencies (e.g., SEC in the U.S.)\nGoverned by agricultural trade policies (e.g., tariffs, subsidies)\n\n\nSeasonality\nLimited, primarily earnings cycles\nStrong seasonal patterns (planting and harvest cycles)\n\n\nElasticity\nPrices more elastic to changes in demand\nPrices often inelastic, especially during supply shocks",
+    "crumbs": [
+      "Price analysis: <br> Grain Stock and Stock Market",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>How Price Moves : Stock Market and Grain Stock</span>"
+    ]
+  },
+  {
+    "objectID": "P01-price_movement.html#regression-models-for-price-change-patterns",
+    "href": "P01-price_movement.html#regression-models-for-price-change-patterns",
+    "title": "6  How Price Moves : Stock Market and Grain Stock",
+    "section": "6.2 Regression Models for Price Change Patterns",
+    "text": "6.2 Regression Models for Price Change Patterns\n\n6.2.1 1. Stock Market Price Analysis\n\n6.2.1.1 Regression Model\nThe general regression equation for stock price analysis is:\n\\[\nP_t = \\beta_0 + \\beta_1 \\text{Earnings}_t + \\beta_2 \\text{MarketSentiment}_t + \\beta_3 \\text{GDPGrowth}_t + \\beta_4 \\text{InterestRate}_t + \\epsilon_t\n\\]\nWhere: - \\(P_t\\): Stock price at time \\(t\\). - \\(\\text{Earnings}_t\\): Corporate earnings. - \\(\\text{MarketSentiment}_t\\): Sentiment score from news or social media. - \\(\\text{GDPGrowth}_t\\): GDP growth rate. - \\(\\text{InterestRate}_t\\): Interest rate.\n\n\n6.2.1.2 Purpose of Analysis\n\nIdentify how macroeconomic and company-specific factors drive stock price movements.\nAssess the role of market sentiment in short-term price volatility.\n\n\n\n\n\n6.2.2 2. Grain Market (Corn Price) Analysis\n\n6.2.2.1 Regression Model\nThe general regression equation for corn price analysis is:\n\\[\nP_t = \\beta_0 + \\beta_1 \\text{Yield}_t + \\beta_2 \\text{ExportDemand}_t + \\beta_3 \\text{BiofuelPolicy}_t + \\beta_4 \\text{Weather}_t + \\beta_5 \\text{Seasonality}_t + \\epsilon_t\n\\]\nWhere:  - \\(P_t\\): Corn price at time \\(t\\).  - \\(\\text{Yield}_t\\): Corn yield per acre.  - \\(\\text{ExportDemand}_t\\): Demand for corn in international markets.  - \\(\\text{BiofuelPolicy}_t\\): Dummy variable representing changes in biofuel policy.  - \\(\\text{Weather}_t\\): Weather conditions (e.g., precipitation, temperature).  - \\(\\text{Seasonality}_t\\): Seasonal index for planting and harvest periods.\n\n\n6.2.2.2 Purpose of Analysis\n\nDetermine the impact of agricultural and trade factors on corn prices.\nQuantify how seasonal and weather-related variations affect price dynamics.\n\n\n\n\n\n6.2.3 Summary of Analytical Approaches\n\n\n\n\n\n\n\n\nMarket\nPrimary Factors in Regression\nPurpose\n\n\n\n\nStock Market\nCorporate earnings, sentiment, macroeconomic indicators\nUnderstand short-term price volatility and long-term valuation.\n\n\nGrain Market (Corn)\nYield, export demand, weather, seasonality, biofuel policies\nIdentify the impact of agricultural and trade policies on price trends.",
+    "crumbs": [
+      "Price analysis: <br> Grain Stock and Stock Market",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>How Price Moves : Stock Market and Grain Stock</span>"
+    ]
+  },
+  {
+    "objectID": "P02-stat-analysis-price.html",
+    "href": "P02-stat-analysis-price.html",
+    "title": "7  Statistical Analysis : Methods for the Price Analysis",
+    "section": "",
+    "text": "7.1 Sample Data for Price Analysis\nTo analyze price changes in the stock and grain markets, we simulate datasets that reflect realistic time series data. Both datasets include a time trend and key market-specific factors.",
+    "crumbs": [
+      "Price analysis: <br> Grain Stock and Stock Market",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Statistical Analysis : Methods for the Price Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "P02-stat-analysis-price.html#sample-data-for-price-analysis",
+    "href": "P02-stat-analysis-price.html#sample-data-for-price-analysis",
+    "title": "7  Statistical Analysis : Methods for the Price Analysis",
+    "section": "",
+    "text": "7.1.1 1. Stock Market Price Analysis\n\n7.1.1.1 Sample Data\nVariables include:  - Time (\\(t\\)): Monthly intervals over five years.  - Stock Price (\\(P_t\\)): Simulated closing prices of a hypothetical stock.  - Earnings (\\(\\text{Earnings}_t\\)): Quarterly corporate earnings.  - Market Sentiment (\\(\\text{MarketSentiment}_t\\)): Sentiment score based on social media or news analysis.  - GDP Growth (\\(\\text{GDPGrowth}_t\\)): Quarterly GDP growth rate.  - Interest Rate (\\(\\text{InterestRate}_t\\)): Monthly changes in interest rates.\n\n\n7.1.1.2 Regression Equation\n\\[\nP_t = \\beta_0 + \\beta_1 \\text{Earnings}_t + \\beta_2 \\text{MarketSentiment}_t + \\beta_3 \\text{GDPGrowth}_t +  \\beta_4 \\text{InterestRate}_t + \\beta_5 t + \\epsilon_t\n\\]\n\n\n\n7.1.2 Interpretation\n\n\\(\\beta_1\\): Captures the sensitivity of stock price to earnings.\n\\(\\beta_4\\): Quantifies how changes in interest rates influence stock prices.\n\n\n\n\n7.1.3 2. Corn Price Analysis\n\n7.1.3.1 Sample Data\nVariables include:  - Time (\\(t\\)): Weekly intervals over five years.  - Corn Price (\\(P_t\\)): Simulated weekly prices.  - Yield (\\(\\text{Yield}_t\\)): Estimated weekly yield.  - Export Demand (\\(\\text{ExportDemand}_t\\)): Simulated export levels.  - Weather (\\(\\text{Weather}_t\\)): Weekly precipitation and temperature data.  - Seasonality (\\(\\text{Seasonality}_t\\)): Binary indicator for planting and harvest periods. \n\n\n7.1.3.2 Regression Equation\n\\[\nP_t = \\beta_0 + \\beta_1 \\text{Yield}_t + \\beta_2 \\text{ExportDemand}_t + \\beta_3 \\text{Weather}_t + \\beta_4 \\text{Seasonality}_t + \\beta_5 t + \\epsilon_t\n\\]\n\n\n\n7.1.4 Interpretation\n\n\\(\\beta_1\\): Reflects the sensitivity of corn price to changes in yield.\n\\(\\beta_4\\): Highlights the seasonal effects on price dynamics.",
+    "crumbs": [
+      "Price analysis: <br> Grain Stock and Stock Market",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Statistical Analysis : Methods for the Price Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "P02-stat-analysis-price.html#key-differences-in-factors-driving-prices",
+    "href": "P02-stat-analysis-price.html#key-differences-in-factors-driving-prices",
+    "title": "7  Statistical Analysis : Methods for the Price Analysis",
+    "section": "7.2 Key Differences in Factors Driving Prices",
+    "text": "7.2 Key Differences in Factors Driving Prices\n\n7.2.1 Stock Market\n\nRelies on economic indicators and company-specific factors.\nSpeculative activities and market sentiment play significant roles.\n\n\n\n7.2.2 Grain Market\n\nStrongly influenced by weather, seasonal cycles, and agricultural policies.\nPrices are more inelastic due to food demand and supply shocks.\nCite : Chen and Guestrin (2016), Tomek and Kaiser (2014)\n\n\n\n\n\n\n\n\nChen, Tianqi, and Carlos Guestrin. 2016. “Xgboost: A Scalable Tree Boosting System.” In Proceedings of the 22nd Acm Sigkdd International Conference on Knowledge Discovery and Data Mining, 785–94.\n\n\nTomek, William G, and Harry M Kaiser. 2014. Agricultural Product Prices. Cornell University Press.",
+    "crumbs": [
+      "Price analysis: <br> Grain Stock and Stock Market",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Statistical Analysis : Methods for the Price Analysis</span>"
     ]
   },
   {
