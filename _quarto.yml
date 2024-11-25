@@ -21,7 +21,7 @@ website:
       - text: "Research"
         href: research/index.qmd
       - text: "Essays"
-        href: _essays/index.html
+        href: https://jaeseokh.github.io/essay_of_research/index.qmd
 
 format:
   html:
