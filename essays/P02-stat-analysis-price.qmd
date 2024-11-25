@@ -1,0 +1,72 @@
+---
+title: "Statistical Analysis : Methods for the Price Analysis "
+author: "Jaeseok Hwang"
+date: "Today’s Date"
+format: html
+bibliography: P00_price_ref.bib
+---
+
+
+## Sample Data for Price Analysis
+
+To analyze price changes in the stock and grain markets, we simulate datasets that reflect realistic time series data. Both datasets include a time trend and key market-specific factors.
+
+---
+
+### **1. Stock Market Price Analysis**
+
+#### Sample Data
+Variables include: <br>
+- **Time ($t$)**: Monthly intervals over five years. <br>
+- **Stock Price ($P_t$)**: Simulated closing prices of a hypothetical stock. <br> 
+- **Earnings ($\text{Earnings}_t$)**: Quarterly corporate earnings. <br>
+- **Market Sentiment ($\text{MarketSentiment}_t$)**: Sentiment score based on social media or news analysis. <br>
+- **GDP Growth ($\text{GDPGrowth}_t$)**: Quarterly GDP growth rate. <br>
+- **Interest Rate ($\text{InterestRate}_t$)**: Monthly changes in interest rates.
+
+#### Regression Equation
+$$
+P_t = \beta_0 + \beta_1 \text{Earnings}_t + \beta_2 \text{MarketSentiment}_t + \beta_3 \text{GDPGrowth}_t +  \beta_4 \text{InterestRate}_t + \beta_5 t + \epsilon_t
+$$
+
+### Interpretation
+- $\beta_1$: Captures the sensitivity of stock price to earnings.
+- $\beta_4$: Quantifies how changes in interest rates influence stock prices.
+
+---
+
+### **2. Corn Price Analysis**
+
+#### Sample Data
+Variables include: <br>
+- **Time ($t$)**: Weekly intervals over five years. <br>
+- **Corn Price ($P_t$)**: Simulated weekly prices. <br>
+- **Yield ($\text{Yield}_t$)**: Estimated weekly yield. <br>
+- **Export Demand ($\text{ExportDemand}_t$)**: Simulated export levels. <br>
+- **Weather ($\text{Weather}_t$)**: Weekly precipitation and temperature  data. <br>
+- **Seasonality ($\text{Seasonality}_t$)**: Binary indicator for planting and harvest periods. <br>
+
+#### Regression Equation
+$$
+P_t = \beta_0 + \beta_1 \text{Yield}_t + \beta_2 \text{ExportDemand}_t + \beta_3 \text{Weather}_t + \beta_4 \text{Seasonality}_t + \beta_5 t + \epsilon_t
+$$
+
+### Interpretation
+- $\beta_1$: Reflects the sensitivity of corn price to changes in yield.
+- $\beta_4$: Highlights the seasonal effects on price dynamics.
+
+---
+
+## Key Differences in Factors Driving Prices
+
+### Stock Market
+- Relies on economic indicators and company-specific factors.
+- Speculative activities and market sentiment play significant roles.
+
+### Grain Market
+- Strongly influenced by weather, seasonal cycles, and agricultural policies.
+- Prices are more inelastic due to food demand and supply shocks.
+
+- Cite : @chen2016xgboost, @tomek2014agricultural
+
+---

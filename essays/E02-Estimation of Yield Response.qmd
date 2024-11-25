@@ -1,0 +1,141 @@
+---
+title: "Basic Estimation of Crop Yield Response (Econometrics)"
+author:  "Jaeseok Hwang"
+date: "Sep 2024"
+format: html
+bibliography: E00_econometrics_ref.bib
+---
+
+```{r}
+#| include: false
+
+library(data.table)
+library(tidyverse)
+library(mgcv)
+library(parallel)
+library(patchwork)
+library(caret)
+library(ggplot2)
+
+```
+
+## Estimation of Yield Respoonse to Nitrogen
+
+### Example: Graph of Yield Response to Nitrogen Using M-B Function
+
+The following R code generates sample data for nitrogen input, yield, and an error term. It then plots the observed data (green dots) along with the fitted M-B production function (red line).
+
+
+```{r}
+
+#| fig-height: 3
+#| fig-width: 5
+#| fig-align: center
+
+# Generate sample data
+set.seed(123)
+nitrogen <- seq(0, 200, by = 5)  # Nitrogen input
+Y_max <- 120  # Maximum yield
+beta <- 0.03  # Nitrogen efficiency parameter
+epsilon <- rnorm(length(nitrogen), mean = 0, sd = 5)  # Random error
+
+# Calculate yield using M-B function
+yield <- Y_max * (1 - exp(-beta * nitrogen)) + epsilon
+
+# Create a data frame for plotting
+data <- data.frame(Nitrogen = nitrogen, Yield = yield)
+
+# Fit the M-B function
+fit <- nls(Yield ~ Y_max * (1 - exp(-beta * Nitrogen)), 
+           data = data, 
+           start = list(Y_max = 120, beta = 0.03))
+
+# Generate predicted values for plotting
+data$Predicted_Yield <- predict(fit)
+
+# Plot the observed data and fitted curve
+ggplot(data, aes(x = Nitrogen, y = Yield)) +
+  geom_point(color = "green", size = 2, alpha = 0.8) +  # Observed data
+  geom_line(aes(y = Predicted_Yield), color = "red", size = 1)
+
+```
+
+
+### Interpretation of the Yield Response to Nitrogen Plot
+
+The plot above demonstrates the relationship between nitrogen application and crop yield. The observed data (green dots) illustrate variability due to random error, while the red line represents the fitted Mitscherlich-Baule (M-B) function. This function effectively captures the diminishing returns to nitrogen and the asymptotic nature of yield, where yields plateau as nitrogen levels approach saturation. 
+
+While the M-B production function is biologically intuitive, its parameters are nonlinear and require specialized estimation techniques, such as nonlinear least squares (as shown above). In practical applications, simpler functional forms, such as quadratic or quadratic plateau models, are often used for estimating yield response due to their ease of implementation within standard linear regression frameworks.
+
+### Bridging the M-B Function and Linear Regression Models
+
+To estimate yield response to nitrogen using regression models, a common approach is to employ a quadratic or quadratic plateau model. These models approximate the nonlinear relationship between nitrogen and yield while maintaining the simplicity of linear regression.
+
+#### Quadratic Yield Response Model
+
+The quadratic model assumes a concave relationship between nitrogen input and yield:
+
+$$ Y = \beta_0 + \beta_1 N + \beta_2 N^2 + \epsilon $$
+
+Where: <br> 
+- $Y$ = Crop yield <br>
+- $N$ = Nitrogen input <br>
+- $\beta_0$, $\beta_1$, $\beta_2$ = Model parameters <br>
+- $\epsilon$ = Error term
+
+This model captures the diminishing returns to nitrogen through the quadratic term ($N^2$), with $\beta_2 < 0$. It has been widely used in empirical studies of nitrogen response due to its simplicity and flexibility.
+
+Cite: @lory2003yield
+
+#### Quadratic-Plateau Model
+
+A variation of the quadratic model is the quadratic plateau model, which assumes that yields plateau after a certain level of nitrogen input:
+
+$$ Y = \begin{cases} 
+\beta_0 + \beta_1 N + \beta_2 N^2, & \text{if } N < N_{\text{critical}} \\
+Y_{\text{max}}, & \text{if } N \geq N_{\text{critical}}
+\end{cases} $$
+
+Where: <br>
+- $N_{\text{critical}}$ = Critical nitrogen rate at which the yield plateaus <br>
+- $Y_{\text{max}}$ = Maximum attainable yield <br>
+
+This model incorporates biological realism similar to the M-B function but remains computationally simpler for estimation.
+
+Cite:  @cerrato1990comparison
+
+#### Linear Regression Approach to Estimate Yield Response
+
+To estimate yield response using regression, we start with the quadratic model as a foundation. The following R code demonstrates a simple implementation using synthetic data:
+
+```{r}
+#| fig-height: 3
+#| fig-width: 5
+#| fig-align: center
+
+# Generate synthetic data
+set.seed(123)
+nitrogen <- seq(0, 200, by = 5)
+beta_0 <- 40  # Intercept
+beta_1 <- 0.8  # Linear nitrogen effect
+beta_2 <- -0.002  # Quadratic nitrogen effect
+epsilon <- rnorm(length(nitrogen), mean = 0, sd = 5)  # Random error
+
+# Quadratic yield data
+yield <- beta_0 + beta_1 * nitrogen + beta_2 * nitrogen^2 + epsilon
+data <- data.frame(Nitrogen = nitrogen, Yield = yield)
+
+# Fit a quadratic regression model
+quad_fit <- lm(Yield ~ Nitrogen + I(Nitrogen^2), data = data)
+
+# Plot observed data and fitted curve
+ggplot(data, aes(x = Nitrogen, y = Yield)) +
+  geom_point(color = "green", size = 2, alpha = 0.8) +  # Observed data
+  stat_smooth(method = "lm", formula = y ~ poly(x, 2), se = FALSE, color = "red") +  # Fitted curve
+  labs(
+    title = "Quadratic Yield Response to Nitrogen",
+    x = "Nitrogen Input (kg/ha)",
+    y = "Yield (kg/ha)"
+  ) +
+  theme_minimal()
+```

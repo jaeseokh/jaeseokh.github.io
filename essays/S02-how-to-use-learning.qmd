@@ -1,0 +1,143 @@
+---
+title: "Application of Statistical Learning"
+author: "Jaeseok Hwang"
+date: "Today's Date"
+format: html
+bibliography: S00_statlearn_ref.bib
+---
+
+## Application of Statistical Learning: Machine Learning Models in My Research
+
+In this section, I detail the application of machine learning-based regression models that I used during the later stages of my Ph.D. program. To provide concrete examples and enhance understanding, I draw upon my research on estimating yield response to nitrogen. These methods were employed to analyze how yield responds to nitrogen under varying climate conditions, utilizing on-farm field experimental data collected from multiple locations. The dataset includes:
+
+1. **Dependent Variable**: Yield (corn yield).
+2. **Independent Variables**: 
+   - **Field-fixed variables**: Seed rate, nitrogen rate (main controllable input), and topography/soil characteristics.
+   - **Time-variant variables**: Climate variables such as precipitation (prcp) and temperature (tmpt).
+
+The goal of my research is to understand how yield responds to nitrogen applications under diverse climate scenarios. Below, I describe the machine learning models used.
+
+---
+
+## Gradient Boosting: Extreme Gradient Boosting (XGBoost)
+
+### Theoretical Background
+
+Gradient boosting is an ensemble learning technique that combines the predictions of weak learners (typically decision trees) to create a strong predictive model. At each iteration, the algorithm minimizes a loss function by fitting a new model to the residuals of the previous predictions.
+
+### Regression Equation for XGBoost
+
+The yield ($y_{it}$) is expressed as:
+
+$$
+y_{it} = f(\text{seed}_{it}, \text{nitrogen}_{it}, \text{prcp}_{it}, \text{tmpt}_{it}, \text{topography, soil}) + \epsilon_{it}
+$$
+
+Where:
+- $f$ is approximated iteratively using decision trees to capture non-linear interactions.
+
+The results from XGBoost are typically in the form of predicted yields. By analyzing feature importance, we can interpret the relative contribution of each variable (e.g., nitrogen rate, precipitation) to yield. This helps identify key drivers of yield variability.
+
+### Interpretation of Results
+
+- **Marginal Effects**: The predicted yield allows us to quantify the marginal contribution of nitrogen under different climate scenarios (e.g., higher precipitation may reduce nitrogen efficiency due to leaching).
+- **Feature Importance**: XGBoost provides a ranking of variable importance, enabling us to identify critical factors like topography or seed rate that influence yield variability.
+- **Non-Linear Relationships**: Captures diminishing returns to nitrogen, identifying optimal application rates under varying conditions.
+
+- Cite: @chen2016xgboost
+
+---
+
+## Random Forest
+
+### Theoretical Background
+
+Random Forest (RF) is an ensemble method that builds multiple decision trees and averages their predictions to reduce variance and improve generalization. It captures non-linear interactions and complex relationships.
+
+### Regression Equation for Random Forest
+
+The yield regression model for RF can be expressed as:
+
+$$
+\hat{y}_{it} = \frac{1}{B} \sum_{b=1}^B f_b(\text{seed}_{it}, \text{nitrogen}_{it}, \text{prcp}_{it}, \text{tmpt}_{it}, \text{topography, soil})
+$$
+
+Where:
+- $B$ is the number of decision trees.
+- $f_b$ is the prediction from the $b$-th tree.
+
+The model's output is the average predicted yield, which accounts for variable interactions and environmental heterogeneity.
+
+### Interpretation of Results
+
+- **Robustness**: RF predictions are robust against outliers and noise, ensuring stable yield estimates.
+- **Partial Dependence Plots**: These plots help interpret how yield changes with nitrogen rates while holding other variables constant, revealing interactions with climate or soil properties.
+- **Uncertainty Estimates**: Variance across trees can provide insights into prediction uncertainty, helping design robust nitrogen application strategies.
+
+- Cite: @breiman2001random
+
+---
+
+### Causal Forest: Causal Machine Learning
+
+Causal Forests extend RF to estimate **heterogeneous treatment effects** of nitrogen rates on yield across different fields and climate conditions.
+
+### Regression Equation for Causal Forest
+
+The causal regression model is:
+
+$$
+y_{it} = \tau(\text{seed}_{it}, \text{nitrogen}_{it}, \text{prcp}_{it}, \text{tmpt}_{it}, \text{topography, soil}) \cdot \text{nitrogen}_{it} + g(\text{seed}_{it}, \text{prcp}_{it}, \text{tmpt}_{it}, \text{topography, soil}) + \epsilon_{it}
+$$
+
+Where:
+- $\tau$: Estimated treatment effect of nitrogen, capturing heterogeneity across fields.
+- $g$: Baseline yield function, accounting for other predictors.
+
+### Interpretation of Results
+
+- **Heterogeneous Effects**: Quantifies how the effect of nitrogen varies across fields with different soil properties or climates.
+- **Optimal Policies**: Identifies nitrogen application rates that maximize yield under varying climate conditions.
+- **Decision Support**: Provides actionable insights for tailoring nitrogen recommendations field-by-field.
+
+- Cite: @athey2019generalized
+
+---
+
+### Quantile Forest: Quantile Regression Foundation
+
+Quantile Forests predict conditional quantiles of yield, allowing analysis of variability across the yield distribution.
+
+### Regression Equation for Quantile Forest
+
+The quantile regression model starts as:
+
+$$
+\min_{\beta} \sum_{i=1}^n \rho_\tau (y_i - X_i^T \beta)
+$$
+
+Where:
+- $\rho_\tau(u) = u(\tau - \mathbb{I}(u < 0))$: Check loss function.
+- $\tau$: Quantile of interest (e.g., 0.5 for median yield).
+
+Quantile Forests extend this by allowing non-linear predictors and estimating conditional quantiles.
+
+### Interpretation of Results
+
+- **Risk Analysis**: Predicts lower quantiles (e.g., 10th percentile) to understand risks under extreme conditions.
+- **Yield Optimization**: Analyzes upper quantiles (e.g., 90th percentile) for potential yield maximization.
+- **Field Management**: Provides recommendations for variable-rate nitrogen applications based on yield variability.
+
+
+---
+
+## Summary of Models
+
+| **Model**          | **Key Feature**                                      | **Interpretation of Results**                                                                 |
+|---------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| Gradient Boosting   | Iteratively minimizes loss; regularization included  | Identifies non-linear yield responses and key predictors; explains diminishing returns.      |
+| Random Forest       | Averages multiple trees for robust predictions       | Captures complex interactions; interprets effects via partial dependence and uncertainty.    |
+| Causal Forest       | Estimates heterogeneous treatment effects            | Provides field-specific nitrogen recommendations; identifies yield variability sources.      |
+| Quantile Forest     | Predicts conditional quantiles of the response       | Offers risk and opportunity analysis for extreme yield scenarios.                           |
+
+---

@@ -1,0 +1,125 @@
+---
+title: "Exploring Statistical Learning"
+author: "Jaeseok Hwang"
+date: "Today’s Date"
+format: html
+bibliography: S00_statlearn_ref.bib
+---
+
+## Started with the Basic Linear Regression
+
+As a Ph.D. student in applied economics, my journey into statistical learning began with the foundational concepts of econometrics: linear regression, basic t-tests, and statistical distributions. These tools, though elementary, laid the groundwork for understanding the broader principles of data analysis. Early on, my focus was firmly rooted in traditional econometric frameworks, with key insights drawn from influential textbooks by @wooldridge2010econometric and @greene2008econometric.
+
+***I write this essay based on what I learned from the econometrics and statistics lectures in my graduate program. I also referred to materials from the lecture notes of my research advisor, Dr. Taro Mieno (UNL), available at <br> [Machine Learning for Economists](https://tmieno2.github.io/ML-Economist).***
+
+## From Simple to Complex: The Journey Beyond Linear Regression
+
+Linear regression offers an intuitive framework for understanding relationships between **predictors** (independent variables) and **responses** (dependent variables). It simplifies the analysis by assuming a straight-line relationship, making it easy to interpret and apply. However, this simplicity often comes at the cost of ignoring the complexities and nuances of real-world data.
+
+To perform higher-level analysis, it becomes necessary to relax the rigid assumptions of linear regression. The world is rarely governed by perfect linearity, and exploring the complexity in data requires breaking down these assumptions. This is where non-linearity and flexibility come into play.
+
+## Introducing Flexibility: From Polynomials to Splines
+
+Non-linear regression extends linear models by incorporating terms that account for curvature, such as polynomials. However, polynomials are limited by their global assumptions—they impose a rigid structure that may fail to adapt to local variations in the data.
+
+Splines provide a more flexible approach by dividing the predictor variable's range into intervals and fitting piecewise polynomials within each segment. These are joined at "knots" to ensure smoothness. The spline regression equation can be expressed as:
+
+$$
+\begin{aligned}
+Y_{it} &= \beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it} \\
+&\quad + \sum_{j=1}^k \beta_j B_j(X_{it}) + \epsilon_{it}
+\end{aligned}
+$$
+
+Where: <br>
+- $B_j(X_{it})$: Spline basis functions, defined as piecewise polynomials. <br>
+- $k$: Number of basis functions or knots. <br>
+- $\beta_j$: Coefficients estimated for each basis function. <br>
+- $\epsilon_{it}$: Error term for panel observation $i$ at time $t$.
+
+This flexibility enables splines to capture non-linear relationships while maintaining interpretability. However, even splines are parametric in nature, relying on pre-defined functions. To fully embrace complexity, we turn to non-parametric methods.
+
+## The Need for Non-Parametric Methods
+
+Non-parametric methods go beyond predefined equations or functional forms, offering a data-driven approach to uncovering patterns. Unlike parametric models, which make assumptions about the underlying structure of the data, non-parametric models allow the data itself to dictate the relationships.
+
+In contexts where the true relationship between variables is unknown or too complex for predefined models, non-parametric methods provide the flexibility needed to explore these intricacies. Kernel regression and locally weighted scatterplot smoothing (LOESS) are examples of non-parametric approaches that adapt to the data without assuming a global functional form.
+
+The move from parametric to non-parametric methods highlights the growing emphasis on flexibility and adaptability in statistical analysis.
+
+## The Role of Training and Testing in Statistical Learning
+
+As we transition to statistical learning and machine learning techniques, the focus shifts from understanding data to making accurate predictions. A critical aspect of these methods is the **training-test framework**, which ensures that models generalize well to unseen data.
+
+1. **Training Set**: Used to fit the model, estimating the parameters based on observed data.
+2. **Test Set**: Held out during training and used to evaluate the model’s performance on unseen data.
+
+The training-test split addresses a key issue: overfitting. Overfitting occurs when a model performs exceptionally well on the training data but fails to generalize to new observations. By testing on unseen data, we ensure that the model captures the underlying patterns without memorizing noise or outliers.
+
+## Feasible Supervised Models
+
+Supervised learning models aim to predict a response variable based on a set of predictors. Below are common models with equations and expanded descriptions of their benefits:
+
+### 1. **Linear Regression**
+$$
+Y_{it} = \beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it} + \alpha_i + \epsilon_{it}
+$$
+
+- **Description**: Assumes a linear relationship between predictors (e.g., seed, nitrogen, precipitation) and response (e.g., yield). The inclusion of \(\alpha_i\) allows for fixed effects in panel data.
+- **Benefits**: Simple, interpretable, efficient for small datasets, and unbiased if assumptions (linearity, homoscedasticity) hold.
+
+---
+
+### 2. **Logistic Regression**
+$$
+P(Y_{it} = 1 | X) = \frac{\exp(\beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it})}{1 + \exp(\beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it})}
+$$
+
+- **Description**: Models the probability of binary outcomes (e.g., high/low yield). Uses a logit link function to constrain predictions between 0 and 1.
+- **Benefits**: Interpretable in terms of odds ratios, robust to non-normality of errors.
+
+---
+
+### 3. **Decision Trees**
+$$
+\begin{aligned}
+f(X) &= \text{Tree structure with splits on } X \\
+&\text{ to minimize impurity} \\
+&\text{(e.g., Gini index).}
+\end{aligned}
+$$
+
+- **Description**: Splits the data into subsets based on predictor thresholds, resulting in a tree structure.
+- **Benefits**: Handles non-linear relationships, interpretable, and can incorporate interactions without explicitly specifying them.
+
+---
+
+### 4. **Random Forest**
+$$
+\hat{f}(X) = \frac{1}{B} \sum_{b=1}^B f_b(X)
+$$
+
+- **Description**: An ensemble method averaging predictions from multiple decision trees, reducing variance.
+- **Benefits**: Robust to overfitting, handles high-dimensional data well, and captures complex interactions.
+
+---
+
+### 5. **Support Vector Machines (SVM)**
+$$
+\min \| w \|^2 \quad \text{subject to } y_i(w^T X_i + b) \geq 1
+$$
+
+- **Description**: Finds the optimal hyperplane to separate classes in a high-dimensional space.
+- **Benefits**: Effective in high-dimensional settings, robust to outliers, and handles non-linear boundaries with kernels.
+
+---
+
+### 6. **Neural Networks**
+$$
+a^{(l)} = g(W^{(l)}a^{(l-1)} + b^{(l)})
+$$
+
+- **Description**: Mimics the human brain by using layers of interconnected nodes to model non-linear relationships.
+- **Benefits**: Extremely flexible, capable of capturing complex patterns, and adaptable to various data types (e.g., images, text).
+
+---

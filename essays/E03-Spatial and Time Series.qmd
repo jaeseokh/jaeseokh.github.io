@@ -1,0 +1,269 @@
+---
+title: "Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)"
+author: "Jaeseok Hwang"
+date: "Sep 2024"
+format: html
+bibliography: E00_econometrics_ref.bib
+---
+
+## Expanding the Simple Regression Analysis
+
+Now, we can expand the simple regression analysis to a more complex framework that better reflects the real-world setting of crop yield response to nitrogen. 
+
+From my five years as a Research Assistant (RA) for the Data Intensive Farm Management (DIFM) project *(Cite: DSB, 2019)*, I have developed and applied various regression methods to model crop yield response to nitrogen. These models range from analyzing data at the single-field level to examining multiple farms across multiple years of on-farm field experiments.
+
+---
+
+## Yield Response Modeling at the Single Field Level
+
+### Data Context
+
+In a single field setting, we typically collect the following data: <br>
+- **Yield ($Y$):** Crop yield for each plot in the field  <br>
+- **Nitrogen ($N$):** Nitrogen input  <br>
+- **Seed Rate ($S$):** Seeding density  <br>
+- **Topographical Features:** Elevation, slope, and aspect  <br>
+- **Soil Quality Metrics:** Soil nutrition and water-storage capacity  <br>
+
+Given the variability in field conditions and weather uncertainties, traditional parametric models may struggle to capture the yield response effectively. To address this, we employ a Generalized Additive Model (GAM), a non-parametric approach that flexibly fits relationships between variables.
+
+---
+
+### Generalized Additive Model for Yield Response
+
+The GAM regression model can be expressed as:
+
+$$ Y = \beta_0 + f_1(N) + f_2(S) + f_3(\text{Elevation}) + f_4(\text{Slope}) + f_5(\text{Soil Quality}) + \epsilon $$
+
+Where:  <br>
+- $f_1, f_2, \ldots$ = Smooth functions capturing nonlinear relationships  <br>
+- $\epsilon$ = Error term  <br>
+
+---
+
+### Example: GAM Regression with Synthetic Data
+
+The following R code demonstrates how to implement a GAM regression model to estimate yield response to nitrogen and other explanatory variables.
+
+```{r}
+#| echo: true
+#| fig-height: 5
+#| fig-width: 7
+
+# Load necessary libraries
+library(mgcv)
+library(ggplot2)
+
+# Generate synthetic data
+set.seed(123)
+n <- 200
+nitrogen <- runif(n, 0, 200)  # Nitrogen input
+seed_rate <- runif(n, 5, 10)  # Seeding rate
+elevation <- rnorm(n, 100, 10)  # Elevation
+slope <- rnorm(n, 5, 2)  # Slope
+soil_quality <- runif(n, 0, 100)  # Soil quality
+error <- rnorm(n, 0, 5)  # Random error
+
+# Generate yield response
+yield <- 50 + 0.8 * nitrogen - 0.002 * nitrogen^2 +
+         0.5 * seed_rate + 0.2 * elevation - 0.1 * slope +
+         0.05 * soil_quality + error
+
+# Create a data frame
+data <- data.frame(Yield = yield, Nitrogen = nitrogen, SeedRate = seed_rate,
+                   Elevation = elevation, Slope = slope, SoilQuality = soil_quality)
+
+# Fit a GAM model
+gam_model <- gam(Yield ~ s(Nitrogen) + s(SeedRate) + s(Elevation) + 
+                   s(Slope) + s(SoilQuality), data = data)
+
+# Generate predictions for plotting
+data$Predicted_Yield <- predict(gam_model)
+
+# Plot observed vs. predicted yield
+ggplot(data, aes(x = Nitrogen, y = Yield)) +
+  geom_point(color = "green", size = 2, alpha = 0.6) +  # Observed data
+  geom_line(aes(y = Predicted_Yield), color = "red", size = 1) +  # GAM prediction
+  labs(
+    title = "GAM Regression: Yield Response to Nitrogen",
+    x = "Nitrogen Input (kg/ha)",
+    y = "Yield (kg/ha)"
+  ) +
+  theme_minimal()
+```
+
+### Strengths of GAM Regression
+
+GAM regression offers significant advantages in modeling crop yield response:
+
+1. **Flexibility**: GAM allows for smooth, nonlinear relationships between yield and explanatory variables. This is particularly important for agricultural data, where yield response to nitrogen often exhibits nonlinear patterns due to biological limits.
+
+2. **Interpretability**: The smooth terms in GAM provide an intuitive understanding of how each input influences yield.
+
+3. **Handling Variability**: GAM is robust to field-specific heterogeneity and weather uncertainties, making it ideal for modeling yield response in diverse agricultural settings.
+
+By applying GAM regression at the single-field level, we can capture the intricate relationships between yield and its determinants, paving the way for more nuanced analyses at larger spatial and temporal scales.
+
+Cite : @hastie2017generalized , @wood2017generalized
+
+
+## Expand model to Spatial and Time-Series analysis (regression)
+
+Having explored yield response at the single-field level, we now extend the analysis to account for more complex real-world scenarios. These scenarios include multiple fields across different farms and states in the first year of experiments, as well as repeated experiments in single fields over multiple years. Finally, we consider panel data from multiple fields and multiple years to comprehensively model yield response to nitrogen.
+
+---
+
+### Spatial Regression: Accounting for Location-Based Variability
+
+In the first year of the experiment, several fields were located across multiple farms and states. These fields exhibited spatial variability in yield response due to differences in soil quality, topography, and regional climate. A spatial regression model internalizes the impact of the spatial location of fields and the spatial autocorrelation structure of errors.
+
+#### Spatial Regression Model
+
+A commonly used spatial lag model (SLM) is expressed as:
+
+$$ Y_i = \rho W Y_i + X_i \beta + \epsilon_i $$
+
+Where: <br>
+- $Y_i$ = Crop yield for field $i$ <br>
+- $W$ = Spatial weights matrix capturing the relationship between fields <br>
+- $\rho$ = Spatial autocorrelation coefficient <br>
+- $X_i$ = Matrix of explanatory variables (e.g., nitrogen, soil quality, topography) <br>
+- $\beta$ = Coefficients for explanatory variables <br> 
+- $\epsilon_i$ = Error term, assumed to be i.i.d. <br>
+
+The spatial weights matrix $W$ defines the structure of spatial relationships, typically based on geographic distance or field adjacency.
+
+Cite: @anselin2013spatial
+
+#### Explanation of Spatial Autocorrelation
+
+Spatial regression models recognize that nearby fields are likely to have similar yields due to shared environmental conditions. This spatial autocorrelation structure mirrors the logic of time-series analysis, where observations are correlated over time.
+
+---
+
+### Time-Series Analysis: Capturing Temporal Dynamics
+
+The logic behind time-series analysis is analogous to spatial models. Just as spatial models account for autocorrelation across fields, time-series models address autocorrelation over time. This approach is particularly relevant in single-field, multiple-year replicated experiments.
+
+#### Time-Series Regression Model
+
+An autoregressive model (AR(1)) for yield response to nitrogen can be expressed as:
+
+$$ Y_t = \phi Y_{t-1} + X_t \beta + \epsilon_t $$
+
+Where: <br>
+- $Y_t$ = Yield in year $t$ <br>
+- $Y_{t-1}$ = Yield in year $t-1$ (lagged yield) <br>
+- $\phi$ = Autoregressive coefficient capturing temporal autocorrelation <br>
+- $X_t$ = Matrix of explanatory variables (e.g., nitrogen, weather) <br>
+- $\beta$ = Coefficients for explanatory variables <br>
+- $\epsilon_t$ = Error term, assumed to follow $E[\epsilon_t \epsilon_{t-s}] = \sigma^2$ for $s = 0$ and 0 otherwise
+
+Cite: @enders2008applied
+
+
+#### Explanation of Temporal Autocorrelation
+
+Temporal autocorrelation arises when factors influencing yield (e.g., soil fertility, management practices) persist over time. Time-series models are essential for analyzing trends and year-over-year changes in yield response.
+
+---
+
+### Panel Data Analysis: Integrating Spatial and Temporal Dimensions
+
+Once we have enough on-farm field experiment data collected across multiple fields and years, we can employ panel data analysis. Panel data regression incorporates both spatial and temporal dimensions, capturing time trends and spatial heterogeneity.
+
+#### Panel Data Regression Model
+
+A fixed-effects panel data model is expressed as:
+
+$$ Y_{it} = \alpha_i + \delta_t + X_{it} \beta + \epsilon_{it} $$
+
+Where: <br>
+- $Y_{it}$ = Yield for field $i$ in year $t$ <br>
+- $\alpha_i$ = Field-specific fixed effect capturing unobservable time-invariant characteristics <br>
+- $\delta_t$ = Year-specific fixed effect capturing time trends <br>
+- $X_{it}$ = Matrix of explanatory variables for field $i$ in year $t$ <br>
+- $\beta$ = Coefficients for explanatory variables <br>
+- $\epsilon_{it}$ = Error term, assumed to be i.i.d. 
+
+#### Explanation of Panel Data Strengths
+
+Panel data models allow us to: <br>
+1. Control for unobservable field-specific factors using $\alpha_i$. <br>
+2. Capture temporal effects like technological change or climate trends using $\delta_t$. <br>
+3. Improve estimation efficiency by leveraging variability across both fields and years. <br>
+
+---
+
+
+### Handling Unbalanced Panel Data
+
+On-farm field experiment data often present unbalanced panel structures. This imbalance arises because:
+- Fields differ in size, soil type, or management, leading to variability in the number of experimental plots per location (county or state level).
+- The number of experiments conducted each year may vary due to funding, weather conditions, or logistical constraints.
+
+#### Challenges of Unbalanced Panel Data
+1. **Missing Observations**: Some fields or years may lack data, creating gaps in the panel.
+2. **Heterogeneity**: Unequal representation of fields or years may introduce bias in parameter estimates if not properly accounted for.
+3. **Uneven Weights**: Overrepresented fields or years may disproportionately influence regression results.
+
+#### Regression Model for Unbalanced Panel Data
+
+To handle unbalanced panel data, we use a mixed-effects regression model. This model includes both fixed effects (to control for field- and time-specific factors) and random effects (to account for unobserved heterogeneity). The model can be written as:
+
+$$ Y_{it} = \alpha_i + \delta_t + X_{it} \beta + u_i + \epsilon_{it} $$
+
+Where: <br>
+- $u_i$ = Random effect for field $i$, assumed to follow $u_i \sim \mathcal{N}(0, \sigma_u^2)$ <br>
+- $\epsilon_{it}$ = Random error term, assumed to follow $\epsilon_{it} \sim \mathcal{N}(0, \sigma_\epsilon^2)$ <br>
+
+#### Weighted Regression for Unbalanced Panels
+
+An alternative approach is to apply weighted least squares (WLS) to give appropriate importance to underrepresented fields or years:
+
+$$ \text{minimize} \quad \sum_{i=1}^N \sum_{t=1}^T w_{it} \left( Y_{it} - \alpha_i - \delta_t - X_{it} \beta \right)^2 $$ 
+
+Where: <br>
+- $w_{it}$ = Weight for observation $(i,t)$, typically inversely proportional to the variance or frequency of observations.
+
+Cite: @wooldridge2019correlated
+
+#### Implementation Example: Mixed-Effects Model
+
+The following R code demonstrates how to implement a mixed-effects model for unbalanced panel data:
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+# Load necessary libraries
+library(lme4)
+
+# Generate synthetic unbalanced panel data
+set.seed(123)
+n <- 15  # Number of fields
+t <- 5   # Maximum number of years
+fields <- rep(1:n, each = t)
+years <- rep(1:t, times = n)
+observed <- sample(c(TRUE, FALSE), n * t, replace = TRUE, prob = c(0.8, 0.2))  # Random missing data
+fields <- fields[observed]
+years <- years[observed]
+nitrogen <- runif(length(fields), 0, 200)
+fixed_effect <- rep(rnorm(n, 50, 5), each = t)[observed]
+yield <- fixed_effect + 0.8 * nitrogen + rnorm(length(fields), 0, 5)
+data_unbalanced <- data.frame(Field = factor(fields), Year = factor(years), Nitrogen = nitrogen, Yield = yield)
+
+# Fit a mixed-effects model
+mixed_model <- lmer(Yield ~ Nitrogen + (1 | Field) + (1 | Year), data = data_unbalanced)
+summary(mixed_model)
+```
+
+### Summary of Model Progression
+
+1. **Spatial Regression**: Captures location-based yield variability using spatial weights and autocorrelation.
+2. **Time-Series Analysis**: Accounts for temporal changes in yield response using lagged yield and explanatory variables.
+3. **Panel Data Analysis**: Integrates spatial and temporal dimensions to provide a comprehensive understanding of yield response across multiple fields and years.
+4. **Unbalanced Panel Data**: Addresses the challenges of uneven field representation and missing data using mixed-effects models or weighted regression.
+
+The progression from single-field to multi-field, multi-year analyses enables a deeper understanding of crop yield dynamics, making it possible to design policies and interventions tailored to diverse agricultural landscapes.

@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Jaeseok Hwang"
-  site-url: https://jaeseokh.github.io/intro/
+  site-url: https://jaeseokh.github.io/
   open-graph: true
   back-to-top-navigation: true
   google-analytics: "G-XZWWMRXM72"
@@ -21,7 +21,7 @@ website:
       - text: "Research"
         href: research/index.qmd
       - text: "Essays"
-        href: https://https://github.com/jaeseokh/essay_of_research/index.qmd
+        href: essays/index.qmd
 
 format:
   html:

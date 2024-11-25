@@ -1,0 +1,54 @@
+project:
+  type: book
+  output-dir: essays  # Render to a local directory
+  # Use _site for a temporary build
+
+book:
+  title: "Essay of My Research Journey"
+  author: "Jaeseok Hwang"
+  site-url: https://jaeseokh.github.io/essays/
+  repo-url: https://jaeseokh.github.io/essays/
+  repo-branch: master
+  repo-actions: [edit]
+  sharing: [facebook, linkedin]
+  chapters:
+    - index.qmd
+    - text: "---"
+    - part: "Statistical Analysis : <br> in Application to Economics Models"
+      chapters: 
+        - E01-Basic Crop Production Model.qmd
+        - E02-Estimation of Yield Response.qmd
+        - E03-Spatial and Time Series.qmd
+    - text: "---"
+    - part: "Statistical (Machine) Learning: <br> From Simplicity to Complexity "
+      chapters: 
+        - S01-what-is-learning.qmd
+        - S02-how-to-use-learning.qmd
+    - text: "---"
+    - part: "Price analysis: <br> Grain Stock and Stock Market"
+      chapters: 
+        - P01-price_movement.qmd
+        - P02-stat-analysis-price.qmd
+    - text: "---"
+  
+  appendices:
+    - A01-appendix.qmd
+    
+
+bibliography: myref.bib
+
+format:
+  html: 
+    include-in-header:
+      - analytics.html
+    theme: cosmo
+    code-link: true
+    callout-icon: false
+    fig-align: center
+    code-tools: true
+    base-url: /essays/
+
+execute:
+  warning: false
+  message: false
+  fig-align: center

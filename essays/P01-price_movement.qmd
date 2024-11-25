@@ -1,0 +1,94 @@
+---
+title: "How Price Moves : Stock Market and Grain Stock "
+author: "Jaeseok Hwang"
+date: "Today’s Date"
+format: html
+bibliography: P00_price_ref.bib
+---
+
+## Mechanisms of Price Changes: Stock Market vs. Grain Market (Corn)
+
+Price changes in both stock and grain markets reflect the dynamics of supply, demand, and external factors. While the overarching mechanisms share similarities, the specific drivers and their relative influence differ significantly.
+
+### **Similarities**
+
+1. **Supply and Demand Dynamics**:
+   - Both markets rely on the interplay between supply and demand. For example, stock prices rise with increased demand for shares, while corn prices rise with higher demand for grain or reduced supply due to weather shocks.
+   
+2. **Market Expectations**:
+   - Prices in both markets are forward-looking, reflecting expectations about future conditions. In the stock market, this includes company performance and economic forecasts. In the corn market, this includes crop yields, trade policies, and global demand trends.
+
+3. **Speculation and Hedging**:
+   - Traders in both markets speculate on future price movements or hedge against risks. Speculative activity can amplify price volatility.
+
+4. **Macroeconomic Influences**:
+   - Broad factors like interest rates, inflation, and global economic conditions impact both stock and corn prices.
+
+---
+
+### **Differences**
+
+| **Aspect**           | **Stock Market**                                         | **Grain Market (Corn)**                                   |
+|-----------------------|---------------------------------------------------------|----------------------------------------------------------|
+| **Primary Drivers**   | Corporate earnings, investor sentiment, economic data   | Weather conditions, crop yields, global trade, biofuel policies |
+| **Regulation**        | Regulated by securities agencies (e.g., SEC in the U.S.)| Governed by agricultural trade policies (e.g., tariffs, subsidies) |
+| **Seasonality**       | Limited, primarily earnings cycles                      | Strong seasonal patterns (planting and harvest cycles)    |
+| **Elasticity**        | Prices more elastic to changes in demand                | Prices often inelastic, especially during supply shocks   |
+
+---
+
+## Regression Models for Price Change Patterns
+
+### **1. Stock Market Price Analysis**
+
+#### **Regression Model**
+The general regression equation for stock price analysis is:
+
+$$
+P_t = \beta_0 + \beta_1 \text{Earnings}_t + \beta_2 \text{MarketSentiment}_t + \beta_3 \text{GDPGrowth}_t + \beta_4 \text{InterestRate}_t + \epsilon_t
+$$
+
+Where:
+- $P_t$: Stock price at time $t$.
+- $\text{Earnings}_t$: Corporate earnings.
+- $\text{MarketSentiment}_t$: Sentiment score from news or social media.
+- $\text{GDPGrowth}_t$: GDP growth rate.
+- $\text{InterestRate}_t$: Interest rate.
+
+#### **Purpose of Analysis**
+- Identify how macroeconomic and company-specific factors drive stock price movements.
+- Assess the role of market sentiment in short-term price volatility.
+
+---
+
+### **2. Grain Market (Corn Price) Analysis**
+
+#### **Regression Model**
+The general regression equation for corn price analysis is:
+
+$$
+P_t = \beta_0 + \beta_1 \text{Yield}_t + \beta_2 \text{ExportDemand}_t + \beta_3 \text{BiofuelPolicy}_t + \beta_4 \text{Weather}_t + \beta_5 \text{Seasonality}_t + \epsilon_t
+$$
+
+Where: <br>
+- $P_t$: Corn price at time $t$. <br> 
+- $\text{Yield}_t$: Corn yield per acre. <br>
+- $\text{ExportDemand}_t$: Demand for corn in international markets. <br>
+- $\text{BiofuelPolicy}_t$: Dummy variable representing changes in biofuel policy. <br>
+- $\text{Weather}_t$: Weather conditions (e.g., precipitation, temperature). <br>
+- $\text{Seasonality}_t$: Seasonal index for planting and harvest periods.
+
+#### **Purpose of Analysis**
+- Determine the impact of agricultural and trade factors on corn prices.
+- Quantify how seasonal and weather-related variations affect price dynamics.
+
+---
+
+### Summary of Analytical Approaches
+
+| **Market**            | **Primary Factors in Regression**                                  | **Purpose**                                                             |
+|------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------|
+| **Stock Market**       | Corporate earnings, sentiment, macroeconomic indicators           | Understand short-term price volatility and long-term valuation.          |
+| **Grain Market (Corn)**| Yield, export demand, weather, seasonality, biofuel policies      | Identify the impact of agricultural and trade policies on price trends.  |
+
+---
