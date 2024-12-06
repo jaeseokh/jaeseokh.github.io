@@ -11,6 +11,10 @@ book:
   repo-branch: master
   repo-actions: [edit]
   sharing: [facebook, linkedin]
+  navbar:
+    left:
+      - text: "Home"
+        href: ../index.html
   chapters:
     - index.qmd
     - text: "---"
