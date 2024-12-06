@@ -4,12 +4,11 @@ project:
   # Use _site for a temporary build
 
 book:
-  title: "Essay of My Research Journey"
+  title: "Research Essays"
   author: "Jaeseok Hwang"
   site-url: https://jaeseokh.github.io/essays/
   repo-url: https://jaeseokh.github.io/
   repo-branch: main
-  repo-actions: [edit]
   sharing: [facebook, linkedin]
   navbar:
     left:
