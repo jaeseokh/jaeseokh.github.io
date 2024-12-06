@@ -8,7 +8,7 @@ book:
   author: "Jaeseok Hwang"
   site-url: https://jaeseokh.github.io/essays/
   repo-url: https://jaeseokh.github.io/essays/
-  repo-branch: master
+  repo-branch: main
   repo-actions: [edit]
   sharing: [facebook, linkedin]
   navbar:
