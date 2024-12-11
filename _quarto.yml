@@ -18,10 +18,10 @@ website:
         href: about/index.qmd
       - text: "Resume"
         href: Resume.qmd
-      - text: "Research"
-        href: research/index.qmd
-      - text: "Essays"
-        href: essays/index.html
+      - text: "Papers"
+        href: papers/index.qmd
+      - text: "Research Note"
+        href: researchnote/index.html
 
 format:
   html:

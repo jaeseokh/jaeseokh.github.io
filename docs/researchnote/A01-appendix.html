@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jaeseok Hwang">
 
-<title>Statistical Analysis : Methods for the Price Analysis – Jaeseok Hwang</title>
+<title>a01-appendix – Jaeseok Hwang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -97,39 +76,9 @@ gtag('js', new Date());
 gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.scss">
-<meta property="og:title" content="Statistical Analysis : Methods for the Price Analysis – Jaeseok Hwang">
-<meta property="og:description" content="">
+<meta property="og:title" content="Jaeseok Hwang">
 <meta property="og:site_name" content="Jaeseok Hwang">
 </head>
 
@@ -183,14 +132,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../research/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research</span></a>
+  <a href="../papers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Papers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../essays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Essays</span></a>
+  <a href="../researchnote/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research Note</span></a>
   </div>
 </li>
     </ul>
@@ -202,115 +151,13 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Statistical Analysis : Methods for the Price Analysis</h1>
-</div>
 
 
 
-<div class="quarto-title-meta column-page-right">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jaeseok Hwang </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="sample-data-for-price-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="sample-data-for-price-analysis">Sample Data for Price Analysis</h2>
-<p>To analyze price changes in the stock and grain markets, we simulate datasets that reflect realistic time series data. Both datasets include a time trend and key market-specific factors.</p>
-<hr>
-<section id="stock-market-price-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="stock-market-price-analysis"><strong>1. Stock Market Price Analysis</strong></h3>
-<section id="sample-data" class="level4">
-<h4 class="anchored" data-anchor-id="sample-data">Sample Data</h4>
-<p>Variables include: <br> - <strong>Time (<span class="math inline">\(t\)</span>)</strong>: Monthly intervals over five years. <br> - <strong>Stock Price (<span class="math inline">\(P_t\)</span>)</strong>: Simulated closing prices of a hypothetical stock. <br> - <strong>Earnings (<span class="math inline">\(\text{Earnings}_t\)</span>)</strong>: Quarterly corporate earnings. <br> - <strong>Market Sentiment (<span class="math inline">\(\text{MarketSentiment}_t\)</span>)</strong>: Sentiment score based on social media or news analysis. <br> - <strong>GDP Growth (<span class="math inline">\(\text{GDPGrowth}_t\)</span>)</strong>: Quarterly GDP growth rate. <br> - <strong>Interest Rate (<span class="math inline">\(\text{InterestRate}_t\)</span>)</strong>: Monthly changes in interest rates.</p>
-</section>
-<section id="regression-equation" class="level4">
-<h4 class="anchored" data-anchor-id="regression-equation">Regression Equation</h4>
-<p><span class="math display">\[
-P_t = \beta_0 + \beta_1 \text{Earnings}_t + \beta_2 \text{MarketSentiment}_t + \beta_3 \text{GDPGrowth}_t +  \beta_4 \text{InterestRate}_t + \beta_5 t + \epsilon_t
-\]</span></p>
-</section>
-</section>
-<section id="interpretation" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
-<ul>
-<li><span class="math inline">\(\beta_1\)</span>: Captures the sensitivity of stock price to earnings.</li>
-<li><span class="math inline">\(\beta_4\)</span>: Quantifies how changes in interest rates influence stock prices.</li>
-</ul>
-<hr>
-</section>
-<section id="corn-price-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="corn-price-analysis"><strong>2. Corn Price Analysis</strong></h3>
-<section id="sample-data-1" class="level4">
-<h4 class="anchored" data-anchor-id="sample-data-1">Sample Data</h4>
-<p>Variables include: <br> - <strong>Time (<span class="math inline">\(t\)</span>)</strong>: Weekly intervals over five years. <br> - <strong>Corn Price (<span class="math inline">\(P_t\)</span>)</strong>: Simulated weekly prices. <br> - <strong>Yield (<span class="math inline">\(\text{Yield}_t\)</span>)</strong>: Estimated weekly yield. <br> - <strong>Export Demand (<span class="math inline">\(\text{ExportDemand}_t\)</span>)</strong>: Simulated export levels. <br> - <strong>Weather (<span class="math inline">\(\text{Weather}_t\)</span>)</strong>: Weekly precipitation and temperature data. <br> - <strong>Seasonality (<span class="math inline">\(\text{Seasonality}_t\)</span>)</strong>: Binary indicator for planting and harvest periods. <br></p>
-</section>
-<section id="regression-equation-1" class="level4">
-<h4 class="anchored" data-anchor-id="regression-equation-1">Regression Equation</h4>
-<p><span class="math display">\[
-P_t = \beta_0 + \beta_1 \text{Yield}_t + \beta_2 \text{ExportDemand}_t + \beta_3 \text{Weather}_t + \beta_4 \text{Seasonality}_t + \beta_5 t + \epsilon_t
-\]</span></p>
-</section>
-</section>
-<section id="interpretation-1" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
-<ul>
-<li><span class="math inline">\(\beta_1\)</span>: Reflects the sensitivity of corn price to changes in yield.</li>
-<li><span class="math inline">\(\beta_4\)</span>: Highlights the seasonal effects on price dynamics.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="key-differences-in-factors-driving-prices" class="level2">
-<h2 class="anchored" data-anchor-id="key-differences-in-factors-driving-prices">Key Differences in Factors Driving Prices</h2>
-<section id="stock-market" class="level3">
-<h3 class="anchored" data-anchor-id="stock-market">Stock Market</h3>
-<ul>
-<li>Relies on economic indicators and company-specific factors.</li>
-<li>Speculative activities and market sentiment play significant roles.</li>
-</ul>
-</section>
-<section id="grain-market" class="level3">
-<h3 class="anchored" data-anchor-id="grain-market">Grain Market</h3>
-<ul>
-<li><p>Strongly influenced by weather, seasonal cycles, and agricultural policies.</p></li>
-<li><p>Prices are more inelastic due to food demand and supply shocks.</p></li>
-<li><p>Cite : <span class="citation" data-cites="chen2016xgboost">Chen and Guestrin (<a href="#ref-chen2016xgboost" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="tomek2014agricultural">Tomek and Kaiser (<a href="#ref-tomek2014agricultural" role="doc-biblioref">2014</a>)</span></p></li>
-</ul>
-<hr>
 
 
 
-</section>
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-chen2016xgboost" class="csl-entry" role="listitem">
-Chen, Tianqi, and Carlos Guestrin. 2016. <span>“Xgboost: A Scalable Tree Boosting System.”</span> In <em>Proceedings of the 22nd Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 785–94.
-</div>
-<div id="ref-tomek2014agricultural" class="csl-entry" role="listitem">
-Tomek, William G, and Harry M Kaiser. 2014. <em>Agricultural Product Prices</em>. Cornell University Press.
-</div>
-</div></section></div></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

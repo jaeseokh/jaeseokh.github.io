@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jaeseok Hwang">
 
-<title>Exploring Statistical Learning – Jaeseok Hwang</title>
+<title>Statistical Analysis : Methods for the Price Analysis – Jaeseok Hwang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.scss">
-<meta property="og:title" content="Exploring Statistical Learning – Jaeseok Hwang">
+<meta property="og:title" content="Statistical Analysis : Methods for the Price Analysis – Jaeseok Hwang">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Jaeseok Hwang">
 </head>
@@ -183,14 +183,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../research/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research</span></a>
+  <a href="../papers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Papers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../essays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Essays</span></a>
+  <a href="../researchnote/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research Note</span></a>
   </div>
 </li>
     </ul>
@@ -204,7 +204,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploring Statistical Learning</h1>
+<h1 class="title">Statistical Analysis : Methods for the Price Analysis</h1>
 </div>
 
 
@@ -233,114 +233,68 @@ window.Quarto = {
 </header>
 
 
-<section id="started-with-the-basic-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="started-with-the-basic-linear-regression">Started with the Basic Linear Regression</h2>
-<p>As a Ph.D.&nbsp;student in applied economics, my journey into statistical learning began with the foundational concepts of econometrics: linear regression, basic t-tests, and statistical distributions. These tools, though elementary, laid the groundwork for understanding the broader principles of data analysis. Early on, my focus was firmly rooted in traditional econometric frameworks, with key insights drawn from influential textbooks by <span class="citation" data-cites="wooldridge2010econometric">Wooldridge (<a href="#ref-wooldridge2010econometric" role="doc-biblioref">2010</a>)</span> and <span class="citation" data-cites="greene2008econometric">Greene (<a href="#ref-greene2008econometric" role="doc-biblioref">2008</a>)</span>.</p>
-<p><strong><em>I write this essay based on what I learned from the econometrics and statistics lectures in my graduate program. I also referred to materials from the lecture notes of my research advisor, Dr.&nbsp;Taro Mieno (UNL), available at <br> <a href="https://tmieno2.github.io/ML-Economist">Machine Learning for Economists</a>.</em></strong></p>
+<section id="sample-data-for-price-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="sample-data-for-price-analysis">Sample Data for Price Analysis</h2>
+<p>To analyze price changes in the stock and grain markets, we simulate datasets that reflect realistic time series data. Both datasets include a time trend and key market-specific factors.</p>
+<hr>
+<section id="stock-market-price-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="stock-market-price-analysis"><strong>1. Stock Market Price Analysis</strong></h3>
+<section id="sample-data" class="level4">
+<h4 class="anchored" data-anchor-id="sample-data">Sample Data</h4>
+<p>Variables include: <br> - <strong>Time (<span class="math inline">\(t\)</span>)</strong>: Monthly intervals over five years. <br> - <strong>Stock Price (<span class="math inline">\(P_t\)</span>)</strong>: Simulated closing prices of a hypothetical stock. <br> - <strong>Earnings (<span class="math inline">\(\text{Earnings}_t\)</span>)</strong>: Quarterly corporate earnings. <br> - <strong>Market Sentiment (<span class="math inline">\(\text{MarketSentiment}_t\)</span>)</strong>: Sentiment score based on social media or news analysis. <br> - <strong>GDP Growth (<span class="math inline">\(\text{GDPGrowth}_t\)</span>)</strong>: Quarterly GDP growth rate. <br> - <strong>Interest Rate (<span class="math inline">\(\text{InterestRate}_t\)</span>)</strong>: Monthly changes in interest rates.</p>
 </section>
-<section id="from-simple-to-complex-the-journey-beyond-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="from-simple-to-complex-the-journey-beyond-linear-regression">From Simple to Complex: The Journey Beyond Linear Regression</h2>
-<p>Linear regression offers an intuitive framework for understanding relationships between <strong>predictors</strong> (independent variables) and <strong>responses</strong> (dependent variables). It simplifies the analysis by assuming a straight-line relationship, making it easy to interpret and apply. However, this simplicity often comes at the cost of ignoring the complexities and nuances of real-world data.</p>
-<p>To perform higher-level analysis, it becomes necessary to relax the rigid assumptions of linear regression. The world is rarely governed by perfect linearity, and exploring the complexity in data requires breaking down these assumptions. This is where non-linearity and flexibility come into play.</p>
-</section>
-<section id="introducing-flexibility-from-polynomials-to-splines" class="level2">
-<h2 class="anchored" data-anchor-id="introducing-flexibility-from-polynomials-to-splines">Introducing Flexibility: From Polynomials to Splines</h2>
-<p>Non-linear regression extends linear models by incorporating terms that account for curvature, such as polynomials. However, polynomials are limited by their global assumptions—they impose a rigid structure that may fail to adapt to local variations in the data.</p>
-<p>Splines provide a more flexible approach by dividing the predictor variable’s range into intervals and fitting piecewise polynomials within each segment. These are joined at “knots” to ensure smoothness. The spline regression equation can be expressed as:</p>
+<section id="regression-equation" class="level4">
+<h4 class="anchored" data-anchor-id="regression-equation">Regression Equation</h4>
 <p><span class="math display">\[
-\begin{aligned}
-Y_{it} &amp;= \beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it} \\
-&amp;\quad + \sum_{j=1}^k \beta_j B_j(X_{it}) + \epsilon_{it}
-\end{aligned}
+P_t = \beta_0 + \beta_1 \text{Earnings}_t + \beta_2 \text{MarketSentiment}_t + \beta_3 \text{GDPGrowth}_t +  \beta_4 \text{InterestRate}_t + \beta_5 t + \epsilon_t
 \]</span></p>
-<p>Where: <br> - <span class="math inline">\(B_j(X_{it})\)</span>: Spline basis functions, defined as piecewise polynomials. <br> - <span class="math inline">\(k\)</span>: Number of basis functions or knots. <br> - <span class="math inline">\(\beta_j\)</span>: Coefficients estimated for each basis function. <br> - <span class="math inline">\(\epsilon_{it}\)</span>: Error term for panel observation <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</p>
-<p>This flexibility enables splines to capture non-linear relationships while maintaining interpretability. However, even splines are parametric in nature, relying on pre-defined functions. To fully embrace complexity, we turn to non-parametric methods.</p>
 </section>
-<section id="the-need-for-non-parametric-methods" class="level2">
-<h2 class="anchored" data-anchor-id="the-need-for-non-parametric-methods">The Need for Non-Parametric Methods</h2>
-<p>Non-parametric methods go beyond predefined equations or functional forms, offering a data-driven approach to uncovering patterns. Unlike parametric models, which make assumptions about the underlying structure of the data, non-parametric models allow the data itself to dictate the relationships.</p>
-<p>In contexts where the true relationship between variables is unknown or too complex for predefined models, non-parametric methods provide the flexibility needed to explore these intricacies. Kernel regression and locally weighted scatterplot smoothing (LOESS) are examples of non-parametric approaches that adapt to the data without assuming a global functional form.</p>
-<p>The move from parametric to non-parametric methods highlights the growing emphasis on flexibility and adaptability in statistical analysis.</p>
 </section>
-<section id="the-role-of-training-and-testing-in-statistical-learning" class="level2">
-<h2 class="anchored" data-anchor-id="the-role-of-training-and-testing-in-statistical-learning">The Role of Training and Testing in Statistical Learning</h2>
-<p>As we transition to statistical learning and machine learning techniques, the focus shifts from understanding data to making accurate predictions. A critical aspect of these methods is the <strong>training-test framework</strong>, which ensures that models generalize well to unseen data.</p>
-<ol type="1">
-<li><strong>Training Set</strong>: Used to fit the model, estimating the parameters based on observed data.</li>
-<li><strong>Test Set</strong>: Held out during training and used to evaluate the model’s performance on unseen data.</li>
-</ol>
-<p>The training-test split addresses a key issue: overfitting. Overfitting occurs when a model performs exceptionally well on the training data but fails to generalize to new observations. By testing on unseen data, we ensure that the model captures the underlying patterns without memorizing noise or outliers.</p>
-</section>
-<section id="feasible-supervised-models" class="level2">
-<h2 class="anchored" data-anchor-id="feasible-supervised-models">Feasible Supervised Models</h2>
-<p>Supervised learning models aim to predict a response variable based on a set of predictors. Below are common models with equations and expanded descriptions of their benefits:</p>
-<section id="linear-regression" class="level3">
-<h3 class="anchored" data-anchor-id="linear-regression">1. <strong>Linear Regression</strong></h3>
-<p><span class="math display">\[
-Y_{it} = \beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it} + \alpha_i + \epsilon_{it}
-\]</span></p>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
 <ul>
-<li><strong>Description</strong>: Assumes a linear relationship between predictors (e.g., seed, nitrogen, precipitation) and response (e.g., yield). The inclusion of (_i) allows for fixed effects in panel data.</li>
-<li><strong>Benefits</strong>: Simple, interpretable, efficient for small datasets, and unbiased if assumptions (linearity, homoscedasticity) hold.</li>
+<li><span class="math inline">\(\beta_1\)</span>: Captures the sensitivity of stock price to earnings.</li>
+<li><span class="math inline">\(\beta_4\)</span>: Quantifies how changes in interest rates influence stock prices.</li>
 </ul>
 <hr>
 </section>
-<section id="logistic-regression" class="level3">
-<h3 class="anchored" data-anchor-id="logistic-regression">2. <strong>Logistic Regression</strong></h3>
+<section id="corn-price-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="corn-price-analysis"><strong>2. Corn Price Analysis</strong></h3>
+<section id="sample-data-1" class="level4">
+<h4 class="anchored" data-anchor-id="sample-data-1">Sample Data</h4>
+<p>Variables include: <br> - <strong>Time (<span class="math inline">\(t\)</span>)</strong>: Weekly intervals over five years. <br> - <strong>Corn Price (<span class="math inline">\(P_t\)</span>)</strong>: Simulated weekly prices. <br> - <strong>Yield (<span class="math inline">\(\text{Yield}_t\)</span>)</strong>: Estimated weekly yield. <br> - <strong>Export Demand (<span class="math inline">\(\text{ExportDemand}_t\)</span>)</strong>: Simulated export levels. <br> - <strong>Weather (<span class="math inline">\(\text{Weather}_t\)</span>)</strong>: Weekly precipitation and temperature data. <br> - <strong>Seasonality (<span class="math inline">\(\text{Seasonality}_t\)</span>)</strong>: Binary indicator for planting and harvest periods. <br></p>
+</section>
+<section id="regression-equation-1" class="level4">
+<h4 class="anchored" data-anchor-id="regression-equation-1">Regression Equation</h4>
 <p><span class="math display">\[
-P(Y_{it} = 1 | X) = \frac{\exp(\beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it})}{1 + \exp(\beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it})}
+P_t = \beta_0 + \beta_1 \text{Yield}_t + \beta_2 \text{ExportDemand}_t + \beta_3 \text{Weather}_t + \beta_4 \text{Seasonality}_t + \beta_5 t + \epsilon_t
 \]</span></p>
+</section>
+</section>
+<section id="interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
 <ul>
-<li><strong>Description</strong>: Models the probability of binary outcomes (e.g., high/low yield). Uses a logit link function to constrain predictions between 0 and 1.</li>
-<li><strong>Benefits</strong>: Interpretable in terms of odds ratios, robust to non-normality of errors.</li>
+<li><span class="math inline">\(\beta_1\)</span>: Reflects the sensitivity of corn price to changes in yield.</li>
+<li><span class="math inline">\(\beta_4\)</span>: Highlights the seasonal effects on price dynamics.</li>
 </ul>
 <hr>
 </section>
-<section id="decision-trees" class="level3">
-<h3 class="anchored" data-anchor-id="decision-trees">3. <strong>Decision Trees</strong></h3>
-<p><span class="math display">\[
-\begin{aligned}
-f(X) &amp;= \text{Tree structure with splits on } X \\
-&amp;\text{ to minimize impurity} \\
-&amp;\text{(e.g., Gini index).}
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Splits the data into subsets based on predictor thresholds, resulting in a tree structure.</li>
-<li><strong>Benefits</strong>: Handles non-linear relationships, interpretable, and can incorporate interactions without explicitly specifying them.</li>
-</ul>
-<hr>
 </section>
-<section id="random-forest" class="level3">
-<h3 class="anchored" data-anchor-id="random-forest">4. <strong>Random Forest</strong></h3>
-<p><span class="math display">\[
-\hat{f}(X) = \frac{1}{B} \sum_{b=1}^B f_b(X)
-\]</span></p>
+<section id="key-differences-in-factors-driving-prices" class="level2">
+<h2 class="anchored" data-anchor-id="key-differences-in-factors-driving-prices">Key Differences in Factors Driving Prices</h2>
+<section id="stock-market" class="level3">
+<h3 class="anchored" data-anchor-id="stock-market">Stock Market</h3>
 <ul>
-<li><strong>Description</strong>: An ensemble method averaging predictions from multiple decision trees, reducing variance.</li>
-<li><strong>Benefits</strong>: Robust to overfitting, handles high-dimensional data well, and captures complex interactions.</li>
+<li>Relies on economic indicators and company-specific factors.</li>
+<li>Speculative activities and market sentiment play significant roles.</li>
 </ul>
-<hr>
 </section>
-<section id="support-vector-machines-svm" class="level3">
-<h3 class="anchored" data-anchor-id="support-vector-machines-svm">5. <strong>Support Vector Machines (SVM)</strong></h3>
-<p><span class="math display">\[
-\min \| w \|^2 \quad \text{subject to } y_i(w^T X_i + b) \geq 1
-\]</span></p>
+<section id="grain-market" class="level3">
+<h3 class="anchored" data-anchor-id="grain-market">Grain Market</h3>
 <ul>
-<li><strong>Description</strong>: Finds the optimal hyperplane to separate classes in a high-dimensional space.</li>
-<li><strong>Benefits</strong>: Effective in high-dimensional settings, robust to outliers, and handles non-linear boundaries with kernels.</li>
-</ul>
-<hr>
-</section>
-<section id="neural-networks" class="level3">
-<h3 class="anchored" data-anchor-id="neural-networks">6. <strong>Neural Networks</strong></h3>
-<p><span class="math display">\[
-a^{(l)} = g(W^{(l)}a^{(l-1)} + b^{(l)})
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Mimics the human brain by using layers of interconnected nodes to model non-linear relationships.</li>
-<li><strong>Benefits</strong>: Extremely flexible, capable of capturing complex patterns, and adaptable to various data types (e.g., images, text).</li>
+<li><p>Strongly influenced by weather, seasonal cycles, and agricultural policies.</p></li>
+<li><p>Prices are more inelastic due to food demand and supply shocks.</p></li>
+<li><p>Cite : <span class="citation" data-cites="chen2016xgboost">Chen and Guestrin (<a href="#ref-chen2016xgboost" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="tomek2014agricultural">Tomek and Kaiser (<a href="#ref-tomek2014agricultural" role="doc-biblioref">2014</a>)</span></p></li>
 </ul>
 <hr>
 
@@ -350,11 +304,11 @@ a^{(l)} = g(W^{(l)}a^{(l-1)} + b^{(l)})
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-greene2008econometric" class="csl-entry" role="listitem">
-Greene, William H. 2008. <span>“The Econometric Approach to Efficiency Analysis.”</span> <em>The Measurement of Productive Efficiency and Productivity Growth</em> 1 (1): 92–250.
+<div id="ref-chen2016xgboost" class="csl-entry" role="listitem">
+Chen, Tianqi, and Carlos Guestrin. 2016. <span>“Xgboost: A Scalable Tree Boosting System.”</span> In <em>Proceedings of the 22nd Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 785–94.
 </div>
-<div id="ref-wooldridge2010econometric" class="csl-entry" role="listitem">
-Wooldridge, Jeffrey M. 2010. <em>Econometric Analysis of Cross Section and Panel Data</em>. MIT press.
+<div id="ref-tomek2014agricultural" class="csl-entry" role="listitem">
+Tomek, William G, and Harry M Kaiser. 2014. <em>Agricultural Product Prices</em>. Cornell University Press.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

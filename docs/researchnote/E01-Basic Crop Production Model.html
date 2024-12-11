@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="<p>.</p>">
+<meta name="author" content="Jaeseok Hwang">
+<meta name="dcterms.date" content="2024-09-01">
 
-<title>index – Jaeseok Hwang</title>
+<title>Crop Production Model(MicroEconomics) – Jaeseok Hwang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,9 +98,38 @@ gtag('js', new Date());
 gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.scss">
-<meta property="og:title" content="Jaeseok Hwang">
+<meta property="og:title" content="Crop Production Model(MicroEconomics) – Jaeseok Hwang">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Jaeseok Hwang">
 </head>
@@ -93,7 +143,9 @@ gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../essays/index.html">Essays</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Jaeseok Hwang
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,14 +184,14 @@ gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../research/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research</span></a>
+  <a href="../papers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Papers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../essays/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Essays</span></a>
+  <a href="../researchnote/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research Note</span></a>
   </div>
 </li>
     </ul>
@@ -151,21 +203,140 @@ gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Crop Production Model(MicroEconomics)</h1>
+</div>
 
 
 
-<section id="welcome" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2>
-<p>During my research journey in graduate school (MS and Ph.D.&nbsp;in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at <a href="mailto:jaeseok2@illinois.edu">jaeseok2@illinois.edu</a>.</p>
+<div class="quarto-title-meta column-page-right">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jaeseok Hwang </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-to-production-functions-in-economics" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-production-functions-in-economics">Introduction to Production Functions in Economics</h2>
+<p>In economics, production functions are mathematical models used to describe the relationship between input and output. They are foundational in understanding the mechanics of production processes across industries. This section introduces three of the most popular production functions in economics, widely recognized for their theoretical significance.</p>
+<section id="cobb-douglas-production-function" class="level3">
+<h3 class="anchored" data-anchor-id="cobb-douglas-production-function">Cobb-Douglas Production Function</h3>
+<p>The Cobb-Douglas production function is perhaps the most famous, formulated as:</p>
+<p><span class="math display">\[ Q = A L^{\alpha} K^{\beta} \]</span></p>
+<p>Where: <br> - <span class="math inline">\(Q\)</span> = Output <br> - <span class="math inline">\(L\)</span> = Labor input <br> - <span class="math inline">\(K\)</span> = Capital input <br> - <span class="math inline">\(A\)</span> = Total factor productivity <br> - <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> = Output elasticities of labor and capital (parameters)</p>
+<p>Cite: <span class="citation" data-cites="douglas1928cobb">Douglas (<a href="#ref-douglas1928cobb" role="doc-biblioref">1928</a>)</span></p>
 </section>
-<section id="license" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="license">License</h2>
-<p>This website is (and will always be) <strong>free to use</strong>, and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</a> License.</p>
+<section id="leontief-production-function" class="level3">
+<h3 class="anchored" data-anchor-id="leontief-production-function">Leontief Production Function</h3>
+<p>The Leontief production function assumes perfect complementarity between inputs:</p>
+<p><span class="math display">\[ Q = \text{min} \left( \frac{L}{a}, \frac{K}{b} \right) \]</span></p>
+<p>Where: <br> - <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> = Input coefficients</p>
+<p>Cite: <span class="citation" data-cites="leontief1947introduction">Leontief (<a href="#ref-leontief1947introduction" role="doc-biblioref">1947</a>)</span></p>
+</section>
+<section id="ces-production-function" class="level3">
+<h3 class="anchored" data-anchor-id="ces-production-function">CES Production Function</h3>
+<p>The Constant Elasticity of Substitution (CES) production function generalizes the Cobb-Douglas model:</p>
+<p><span class="math display">\[ Q = A \left[ \alpha L^{\rho} + (1-\alpha) K^{\rho} \right]^{\frac{1}{\rho}} \]</span></p>
+<p>Where: - <span class="math inline">\(\rho\)</span> determines the elasticity of substitution between inputs.</p>
+<p>Cite: <span class="citation" data-cites="arrow1961capital">Arrow et al. (<a href="#ref-arrow1961capital" role="doc-biblioref">1961</a>)</span></p>
+</section>
+</section>
+<section id="crop-production-functions-in-agricultural-economics" class="level2">
+<h2 class="anchored" data-anchor-id="crop-production-functions-in-agricultural-economics">Crop Production Functions in Agricultural Economics</h2>
+<p>The Cobb-Douglas, Leontief, and CES production functions are foundational in economics and often introduced in college-level economics courses. These models provide a generalized framework for understanding the relationship between inputs and outputs in various industries. Similarly, crop production functions extend these concepts to the agricultural sector, focusing on crop response to specific inputs like nitrogen, water, and other environmental factors.</p>
+<p>Crop production functions share similarities with these famous production functions: <br> - Like the Cobb-Douglas function, they often assume diminishing marginal returns to inputs. <br> - Similar to the Leontief function, they may reflect constraints such as minimum requirements of critical inputs (e.g., water or nutrients). <br> - As in the CES function, some models allow for substitutability or complementarity between inputs, tailored to specific agricultural contexts. <br></p>
+<p>This section explores crop production functions with a focus on corn, particularly the influential work of <span class="citation" data-cites="just1978stochastic">Just and Pope (<a href="#ref-just1978stochastic" role="doc-biblioref">1978</a>)</span> , which provided a framework for modeling crop yield as a function of inputs and environmental factors, accounting for variability and risk.</p>
+</section>
+<section id="crop-response-to-nitrogen-and-water" class="level2">
+<h2 class="anchored" data-anchor-id="crop-response-to-nitrogen-and-water">Crop Response to Nitrogen and Water</h2>
+<p>Prominent research, such as <span class="citation" data-cites="just1978stochastic">Just and Pope (<a href="#ref-just1978stochastic" role="doc-biblioref">1978</a>)</span> , presented a stochastic production function that includes a deterministic component and a stochastic component, reflecting the inherent variability in agricultural systems. Their model is expressed as:</p>
+<p><span class="math display">\[ Y = f(X) + g(X) \epsilon \]</span></p>
+<p>Where: <br> - <span class="math inline">\(Y\)</span> = Crop yield <br> - <span class="math inline">\(X\)</span> = Vector of inputs (e.g., nitrogen, water) <br> - <span class="math inline">\(f(X)\)</span> = Mean response function (deterministic component) <br> - <span class="math inline">\(g(X)\)</span> = Risk response function (scales variability) <br> - <span class="math inline">\(\epsilon\)</span> = Random error term (assumed to have a mean of zero and constant variance) <br></p>
+<section id="connection-to-the-three-famous-production-functions" class="level3">
+<h3 class="anchored" data-anchor-id="connection-to-the-three-famous-production-functions">Connection to the Three Famous Production Functions</h3>
+<ol type="1">
+<li><strong>Cobb-Douglas</strong>:
+<ul>
+<li>The deterministic component <span class="math inline">\(f(X)\)</span> in the Just and Pope model can be modeled as a Cobb-Douglas function if we assume that inputs like nitrogen(N) fertilizer have diminishing marginal returns: <span class="math display">\[ f(X) = A \prod_{i=1}^{n} X_i^{\alpha_i} \]</span> Here, the stochastic component <span class="math inline">\(g(X)\epsilon\)</span> adds variability, which is not present in the standard Cobb-Douglas formulation.</li>
+</ul></li>
+<li><strong>Leontief</strong>:
+<ul>
+<li>The Just and Pope model can incorporate minimum input requirements, reflecting the rigid input proportions of the Leontief function, if <span class="math inline">\(f(X)\)</span> includes terms like: <span class="math display">\[ f(X) = \text{min}\left(\frac{X_1}{a_1}, \frac{X_2}{a_2}\right) \]</span> This formulation can be extended to account for variability with <span class="math inline">\(g(X)\epsilon\)</span>.</li>
+</ul></li>
+<li><strong>CES</strong>:
+<ul>
+<li>The flexibility of the CES production function aligns with Just and Pope’s stochastic framework by allowing for varying degrees of substitutability between inputs in <span class="math inline">\(f(X)\)</span>, while <span class="math inline">\(g(X)\epsilon\)</span> introduces additional risk elements.</li>
+</ul></li>
+</ol>
+<p>The Just and Pope production function provides a bridge between classical economic production functions and the unique challenges of modeling agricultural systems, where variability and risk play a critical role.</p>
+<p><em>(Cite: Just &amp; Pope, 1978)</em></p>
+</section>
+</section>
+<section id="crop-yield-response-function-to-nitrogen" class="level2">
+<h2 class="anchored" data-anchor-id="crop-yield-response-function-to-nitrogen">Crop Yield Response Function to Nitrogen</h2>
+<p>Understanding the yield response function to nitrogen is crucial because nitrogen is one of the most significant and manageable inputs in crop production. Optimizing nitrogen use is essential for balancing yield maximization with cost-efficiency and environmental sustainability. Crop yield response to nitrogen often follows a diminishing returns pattern, making it an ideal application of the production function concepts introduced earlier.</p>
+<p>The Mitscherlich-Baule (M-B) production function provides a useful framework for modeling nitrogen response. Unlike the simplistic quadratic model, the M-B function accounts for diminishing returns as nitrogen input increases, with an asymptotic yield level. It can be expressed as:</p>
+<p><span class="math display">\[ Y = Y_{\text{max}} \left(1 - e^{-\beta N}\right) \]</span></p>
+<p>Where: <br> - <span class="math inline">\(Y\)</span> = Crop yield <br> - <span class="math inline">\(Y_{\text{max}}\)</span> = Maximum potential yield <br> - <span class="math inline">\(\beta\)</span> = Nitrogen efficiency parameter <br> - <span class="math inline">\(N\)</span> = Nitrogen input</p>
+<p>Cite: <span class="citation" data-cites="cerrato1990comparison">Cerrato and Blackmer (<a href="#ref-cerrato1990comparison" role="doc-biblioref">1990</a>)</span></p>
+<section id="connection-to-classical-production-functions" class="level3">
+<h3 class="anchored" data-anchor-id="connection-to-classical-production-functions">Connection to Classical Production Functions</h3>
+<ol type="1">
+<li><strong>Cobb-Douglas</strong>:
+<ul>
+<li>The M-B function aligns conceptually with the Cobb-Douglas model, as both exhibit diminishing marginal returns. However, while Cobb-Douglas assumes constant elasticities, the M-B function allows elasticities to change with input levels, reflecting the unique biological response of crops to nitrogen.</li>
+</ul></li>
+<li><strong>Leontief</strong>:
+<ul>
+<li>The M-B function can capture constraints on nitrogen use akin to the Leontief model when nitrogen is insufficient to reach the asymptotic yield, effectively making other inputs redundant.</li>
+</ul></li>
+<li><strong>CES</strong>:
+<ul>
+<li>The M-B function can be extended to include interactions with other inputs, allowing for substitutability or complementarity between nitrogen and water, similar to the flexibility of the CES function.</li>
+</ul></li>
+</ol>
+<p>The M-B production function thus bridges classical economic production functions and agricultural models by addressing the specific nonlinear response of crop yield to nitrogen. It provides a foundation for econometric modeling, enabling detailed analysis of yield response while capturing biological and environmental dynamics.</p>
+
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-arrow1961capital" class="csl-entry" role="listitem">
+Arrow, Kenneth J, Hollis B Chenery, Bagicha S Minhas, and Robert M Solow. 1961. <span>“Capital-Labor Substitution and Economic Efficiency.”</span> <em>The Review of Economics and Statistics</em>, 225–50.
+</div>
+<div id="ref-cerrato1990comparison" class="csl-entry" role="listitem">
+Cerrato, ME, and AM Blackmer. 1990. <span>“Comparison of Models for Describing; Corn Yield Response to Nitrogen Fertilizer.”</span> <em>Agronomy Journal</em> 82 (1): 138–43.
+</div>
+<div id="ref-douglas1928cobb" class="csl-entry" role="listitem">
+Douglas, Paul. 1928. <span>“Cobb Douglas Production Function.”</span> <em>The Quarterly Journal of Economics</em> 42 (3): 393–415.
+</div>
+<div id="ref-just1978stochastic" class="csl-entry" role="listitem">
+Just, Richard E, and Rulon D Pope. 1978. <span>“Stochastic Specification of Production Functions and Economic Implications.”</span> <em>Journal of Econometrics</em> 7 (1): 67–86.
+</div>
+<div id="ref-leontief1947introduction" class="csl-entry" role="listitem">
+Leontief, Wassily. 1947. <span>“Introduction to a Theory of the Internal Structure of Functional Relationships.”</span> <em>Econometrica, Journal of the Econometric Society</em>, 361–73.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

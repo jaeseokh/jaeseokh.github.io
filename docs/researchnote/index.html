@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jaeseok Hwang">
+<meta name="description" content="<p>.</p>">
 
-<title>How Price Moves : Stock Market and Grain Stock – Jaeseok Hwang</title>
+<title>index – Jaeseok Hwang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,38 +77,9 @@ gtag('js', new Date());
 gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.scss">
-<meta property="og:title" content="How Price Moves : Stock Market and Grain Stock – Jaeseok Hwang">
+<meta property="og:title" content="Jaeseok Hwang">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="Jaeseok Hwang">
 </head>
@@ -122,9 +93,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Jaeseok Hwang
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../researchnote/index.html">Research Note</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,14 +132,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../research/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research</span></a>
+  <a href="../papers/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Papers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../essays/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Essays</span></a>
+  <a href="../researchnote/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Research Note</span></a>
   </div>
 </li>
     </ul>
@@ -182,175 +151,18 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-page-right" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">How Price Moves : Stock Market and Grain Stock</h1>
-</div>
 
 
 
-<div class="quarto-title-meta column-page-right">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jaeseok Hwang </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
+<section id="welcome" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2>
+<p>During my research journey in graduate school (MS and Ph.D.&nbsp;in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at <a href="mailto:jaeseok2@illinois.edu">jaeseok2@illinois.edu</a>.</p>
+</section>
+<section id="license" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="license">License</h2>
+<p>This website is (and will always be) <strong>free to use</strong>, and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</a> License.</p>
 
 
-</header>
-
-
-<section id="mechanisms-of-price-changes-stock-market-vs.-grain-market-corn" class="level2">
-<h2 class="anchored" data-anchor-id="mechanisms-of-price-changes-stock-market-vs.-grain-market-corn">Mechanisms of Price Changes: Stock Market vs.&nbsp;Grain Market (Corn)</h2>
-<p>Price changes in both stock and grain markets reflect the dynamics of supply, demand, and external factors. While the overarching mechanisms share similarities, the specific drivers and their relative influence differ significantly.</p>
-<section id="similarities" class="level3">
-<h3 class="anchored" data-anchor-id="similarities"><strong>Similarities</strong></h3>
-<ol type="1">
-<li><strong>Supply and Demand Dynamics</strong>:
-<ul>
-<li>Both markets rely on the interplay between supply and demand. For example, stock prices rise with increased demand for shares, while corn prices rise with higher demand for grain or reduced supply due to weather shocks.</li>
-</ul></li>
-<li><strong>Market Expectations</strong>:
-<ul>
-<li>Prices in both markets are forward-looking, reflecting expectations about future conditions. In the stock market, this includes company performance and economic forecasts. In the corn market, this includes crop yields, trade policies, and global demand trends.</li>
-</ul></li>
-<li><strong>Speculation and Hedging</strong>:
-<ul>
-<li>Traders in both markets speculate on future price movements or hedge against risks. Speculative activity can amplify price volatility.</li>
-</ul></li>
-<li><strong>Macroeconomic Influences</strong>:
-<ul>
-<li>Broad factors like interest rates, inflation, and global economic conditions impact both stock and corn prices.</li>
-</ul></li>
-</ol>
-<hr>
-</section>
-<section id="differences" class="level3">
-<h3 class="anchored" data-anchor-id="differences"><strong>Differences</strong></h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 41%">
-<col style="width: 42%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Aspect</strong></th>
-<th><strong>Stock Market</strong></th>
-<th><strong>Grain Market (Corn)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Primary Drivers</strong></td>
-<td>Corporate earnings, investor sentiment, economic data</td>
-<td>Weather conditions, crop yields, global trade, biofuel policies</td>
-</tr>
-<tr class="even">
-<td><strong>Regulation</strong></td>
-<td>Regulated by securities agencies (e.g., SEC in the U.S.)</td>
-<td>Governed by agricultural trade policies (e.g., tariffs, subsidies)</td>
-</tr>
-<tr class="odd">
-<td><strong>Seasonality</strong></td>
-<td>Limited, primarily earnings cycles</td>
-<td>Strong seasonal patterns (planting and harvest cycles)</td>
-</tr>
-<tr class="even">
-<td><strong>Elasticity</strong></td>
-<td>Prices more elastic to changes in demand</td>
-<td>Prices often inelastic, especially during supply shocks</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="regression-models-for-price-change-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="regression-models-for-price-change-patterns">Regression Models for Price Change Patterns</h2>
-<section id="stock-market-price-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="stock-market-price-analysis"><strong>1. Stock Market Price Analysis</strong></h3>
-<section id="regression-model" class="level4">
-<h4 class="anchored" data-anchor-id="regression-model"><strong>Regression Model</strong></h4>
-<p>The general regression equation for stock price analysis is:</p>
-<p><span class="math display">\[
-P_t = \beta_0 + \beta_1 \text{Earnings}_t + \beta_2 \text{MarketSentiment}_t + \beta_3 \text{GDPGrowth}_t + \beta_4 \text{InterestRate}_t + \epsilon_t
-\]</span></p>
-<p>Where: - <span class="math inline">\(P_t\)</span>: Stock price at time <span class="math inline">\(t\)</span>. - <span class="math inline">\(\text{Earnings}_t\)</span>: Corporate earnings. - <span class="math inline">\(\text{MarketSentiment}_t\)</span>: Sentiment score from news or social media. - <span class="math inline">\(\text{GDPGrowth}_t\)</span>: GDP growth rate. - <span class="math inline">\(\text{InterestRate}_t\)</span>: Interest rate.</p>
-</section>
-<section id="purpose-of-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="purpose-of-analysis"><strong>Purpose of Analysis</strong></h4>
-<ul>
-<li>Identify how macroeconomic and company-specific factors drive stock price movements.</li>
-<li>Assess the role of market sentiment in short-term price volatility.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="grain-market-corn-price-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="grain-market-corn-price-analysis"><strong>2. Grain Market (Corn Price) Analysis</strong></h3>
-<section id="regression-model-1" class="level4">
-<h4 class="anchored" data-anchor-id="regression-model-1"><strong>Regression Model</strong></h4>
-<p>The general regression equation for corn price analysis is:</p>
-<p><span class="math display">\[
-P_t = \beta_0 + \beta_1 \text{Yield}_t + \beta_2 \text{ExportDemand}_t + \beta_3 \text{BiofuelPolicy}_t + \beta_4 \text{Weather}_t + \beta_5 \text{Seasonality}_t + \epsilon_t
-\]</span></p>
-<p>Where: <br> - <span class="math inline">\(P_t\)</span>: Corn price at time <span class="math inline">\(t\)</span>. <br> - <span class="math inline">\(\text{Yield}_t\)</span>: Corn yield per acre. <br> - <span class="math inline">\(\text{ExportDemand}_t\)</span>: Demand for corn in international markets. <br> - <span class="math inline">\(\text{BiofuelPolicy}_t\)</span>: Dummy variable representing changes in biofuel policy. <br> - <span class="math inline">\(\text{Weather}_t\)</span>: Weather conditions (e.g., precipitation, temperature). <br> - <span class="math inline">\(\text{Seasonality}_t\)</span>: Seasonal index for planting and harvest periods.</p>
-</section>
-<section id="purpose-of-analysis-1" class="level4">
-<h4 class="anchored" data-anchor-id="purpose-of-analysis-1"><strong>Purpose of Analysis</strong></h4>
-<ul>
-<li>Determine the impact of agricultural and trade factors on corn prices.</li>
-<li>Quantify how seasonal and weather-related variations affect price dynamics.</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="summary-of-analytical-approaches" class="level3">
-<h3 class="anchored" data-anchor-id="summary-of-analytical-approaches">Summary of Analytical Approaches</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 40%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Market</strong></th>
-<th><strong>Primary Factors in Regression</strong></th>
-<th><strong>Purpose</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Stock Market</strong></td>
-<td>Corporate earnings, sentiment, macroeconomic indicators</td>
-<td>Understand short-term price volatility and long-term valuation.</td>
-</tr>
-<tr class="even">
-<td><strong>Grain Market (Corn)</strong></td>
-<td>Yield, export demand, weather, seasonality, biofuel policies</td>
-<td>Identify the impact of agricultural and trade policies on price trends.</td>
-</tr>
-</tbody>
-</table>
-<hr>
-
-
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
