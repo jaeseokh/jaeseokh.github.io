@@ -1,0 +1,40 @@
+project:
+  type: book
+  output-dir: ../docs/studynote  # Render to a local directory
+  # Use _site for a temporary build
+
+book:
+  title: "Study Note"
+  author: "Jaeseok Hwang"
+  site-url: https://jaeseokh.github.io/studynote/
+  repo-url: https://jaeseokh.github.io/
+  repo-branch: main
+  sharing: [facebook, linkedin]
+  navbar:
+    left:
+      - text: "Home"
+        href: ../index.html
+  chapters:
+    - index.qmd
+    - text: "---"
+    - part: "Basic Statistics :  eview of basic statistics "
+      chapters: 
+        - E01-Distributions.qmd
+        - E02-Tests.qmd
+    - text: "---"    
+
+format:
+  html: 
+    include-in-header:
+      - analytics.html
+    theme: cosmo
+    code-link: true
+    callout-icon: false
+    fig-align: center
+    code-tools: true
+    base-url: /studynote/
+
+execute:
+  warning: false
+  message: false
+  fig-align: center

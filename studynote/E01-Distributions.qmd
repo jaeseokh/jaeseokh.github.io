@@ -1,0 +1,160 @@
+---
+title: "Distributions"
+author: "Jaeseok Hwang"
+date: "Sep 2024"
+format: html
+---
+
+# Distributions
+
+## Distributions play a foundational role in statistics, each with specific origins, parameters, and applications. To review what I learned in class and update the idea with my research experience, I updates some overview about key distributions, their relationships, parameters, and uses in hypothesis testing or statistical inference.
+
+
+## 1. Binomial Distribution
+
+**Definition:**
+Models the number of successes (\(X\)) in \(n\) independent trials, each with success probability \(p\).
+
+\[
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0, 1, \dots, n
+\]
+
+**Parameters:**
+- \(n\): Number of trials.
+- \(p\): Probability of success.
+
+**Mean:** 
+\(\mu = np\), **Variance:** \(\sigma^2 = np(1-p)\).
+
+**Applications:**
+- Hypothesis testing for proportions (e.g., one-sample proportion test).
+
+**Connection to Normal Distribution:**
+- As \(n \to \infty\), the binomial distribution approaches a normal distribution:
+\[
+X \sim \mathcal{N}(\mu, \sigma^2), \quad \text{where } \mu = np, \sigma^2 = np(1-p).
+\]
+
+---
+
+## 2. Normal Distribution
+
+**Definition:**
+A continuous distribution often used to approximate other distributions:
+\[
+f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right), \quad x \in \mathbb{R}
+\]
+
+**Parameters:**
+- \(\mu\): Mean.
+- \(\sigma^2\): Variance.
+
+**Applications:**
+- Widely used in hypothesis testing (e.g., Z-tests), regression analysis, and confidence intervals.
+
+**Special Cases:**
+1. **Standard Normal Distribution:**
+\[
+Z = \frac{X - \mu}{\sigma} \sim \mathcal{N}(0, 1).
+\]
+2. **Derived from Binomial:**
+\[
+\text{If } X \sim \text{Binomial}(n, p), \text{ then } Z = \frac{X - np}{\sqrt{np(1-p)}} \sim \mathcal{N}(0, 1) \text{ approximately.}
+\]
+
+---
+
+## 3. t-Distribution
+
+**Definition:**
+Derived from the normal distribution when the variance is unknown and estimated from the sample:
+\[
+t = \frac{\bar{x} - \mu}{s / \sqrt{n}}, \quad \text{where } s^2 \text{ is the sample variance.}
+\]
+
+**Parameters:**
+- Degrees of freedom (\(df = n - 1\)).
+
+**Applications:**
+- Testing means (e.g., one-sample, two-sample t-tests).
+
+**Connection to Normal Distribution:**
+\[
+\text{If } X \sim \mathcal{N}(0, 1), Y \sim \chi^2_{df} \text{ are independent, then: }
+t = \frac{X}{\sqrt{Y / df}} \sim t_{df}.
+\]
+
+---
+
+## 4. Chi-Square Distribution
+
+**Definition:**
+Distribution of the sum of squared independent standard normal variables:
+\[
+\chi^2 = \sum_{i=1}^k Z_i^2, \quad Z_i \sim \mathcal{N}(0, 1).
+\]
+
+**Parameters:**
+- Degrees of freedom (\(k\)).
+
+**Applications:**
+- Variance tests.
+- Goodness-of-fit tests.
+- Independence tests in contingency tables.
+
+**Connection to Normal Distribution:**
+\[
+\text{If } X \sim \mathcal{N}(0, 1), \text{ then } X^2 \sim \chi^2_1.
+\]
+
+---
+
+## 5. F-Distribution
+
+**Definition:**
+Ratio of two scaled chi-square variables:
+\[
+F = \frac{(X_1 / df_1)}{(X_2 / df_2)}, \quad X_1 \sim \chi^2_{df_1}, X_2 \sim \chi^2_{df_2}.
+\]
+
+**Parameters:**
+- \(df_1\): Degrees of freedom for the numerator.
+- \(df_2\): Degrees of freedom for the denominator.
+
+**Applications:**
+- Comparing variances.
+- ANOVA (Analysis of Variance).
+
+---
+
+## 6. Poisson Distribution
+
+**Definition:**
+Models the number of events (\(X\)) occurring in a fixed interval, given the average rate (\(\lambda\)):
+\[
+P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \quad k = 0, 1, 2, \dots
+\]
+
+**Parameters:**
+- \(\lambda\): Mean and variance.
+
+**Applications:**
+- Event counting (e.g., arrivals, defects).
+
+**Connection to Binomial:**
+\[
+\text{If } n \to \infty, p \to 0, np = \lambda, \text{ then: } X \sim \text{Poisson}(\lambda).
+\]
+
+---
+
+## Summary Table
+
+| **Distribution**       | **Parameters**             | **Applications**                   | **Derived From**               |
+|-------------------------|----------------------------|-------------------------------------|---------------------------------|
+| **Binomial**            | \(n, p\)                  | Proportion tests                   | -                               |
+| **Normal**              | \(\mu, \sigma^2\)         | General hypothesis tests           | Central Limit Theorem           |
+| **t-Distribution**      | \(df\)                    | Mean tests (small sample size)      | Normal + Estimated Variance     |
+| **Chi-Square**          | \(df\)                    | Variance tests, Goodness-of-fit     | Sum of Squared Normals          |
+| **F-Distribution**      | \(df_1, df_2\)            | Variance comparisons, ANOVA         | Ratio of Chi-Squares            |
+| **Poisson**             | \(\lambda\)               | Event counts                       | Limiting Case of Binomial       |

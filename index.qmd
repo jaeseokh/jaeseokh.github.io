@@ -21,8 +21,7 @@ about: # https://quarto.org/docs/websites/website-about.html
 
 Over the past 5 years, as a research assistant for the USDA NRCS-funded project <br>
 I have worked with large-scale datasets,leveraging advanced analytics and machine-learning techniques to improve research about farm productivity. <br>
-Explore my work to learn more about my experti
-se and research interests here. <br>
+Explore my work to learn more about my expertise and research interests here. <br>
 Thank you for visiting!
 
 
