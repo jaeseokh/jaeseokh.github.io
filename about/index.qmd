@@ -23,7 +23,7 @@ Hi, I'm Jaeseok Hwang, a Ph.D. candidate in Agricultural and Consumer Economics 
 
 In this role, I worked extensively with large-scale datasets, applying advanced data analytics and statistical techniques to address complex questions in farm management and productivity. During this time, I developed a deep expertise in designing and running machine-learning-based regression models to derive actionable insights from big data. My analytical toolkit includes a professional level of proficiency in R, which I use for most of my data processing, statistical modeling, and visualization tasks, as well as Python, which I employ as a versatile second option for complementary analysis and machine learning workflows.
 
-This website highlights my research journey, showcasing programming code (R and Python via VS Code), research outputs, and essays reflecting my experiences and skills. 
+This website highlights my research journey, showcasing programming code (R and Python via VS Code), summary of research outputs, and my individual research note reflecting my knowledge and skills. 
 <br>
 <br>
 
