@@ -33,10 +33,6 @@ book:
         - P01-price_movement.qmd
         - P02-stat-analysis-price.qmd
     - text: "---"
-  
-  appendices:
-    - A01-appendix.qmd
-    
 
 bibliography: myref.bib
 
