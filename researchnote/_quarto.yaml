@@ -13,7 +13,7 @@ book:
   navbar:
     left:
       - text: "Home"
-        href: ../index.html
+        href: /index.html
   chapters:
     - index.qmd
     - text: "---"
