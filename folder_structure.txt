@@ -1,0 +1,146 @@
+.
+├── Jaeseok_profile.jpeg
+├── Readme.md
+├── Resume.qmd
+├── _quarto.yml
+├── about
+│   ├── Jaeseok_profile.jpeg
+│   └── index.qmd
+├── coverletter
+│   └── peloton.qmd
+├── docs
+│   ├── Jaeseok_profile.jpeg
+│   ├── Readme.html
+│   ├── Resume.html
+│   ├── about
+│   │   ├── Jaeseok_profile.jpeg
+│   │   └── index.html
+│   ├── coverletter
+│   │   └── peloton.pdf
+│   ├── index.html
+│   ├── papers
+│   │   └── index.html
+│   ├── researchnote
+│   │   ├── E01-Basic Crop Production Model.html
+│   │   ├── E02-Estimation of Yield Response.html
+│   │   ├── E02-Estimation-of-Yield-Response_files
+│   │   │   └── figure-html
+│   │   │       ├── unnamed-chunk-2-1.png
+│   │   │       └── unnamed-chunk-3-1.png
+│   │   ├── E03-Spatial and Time Series.html
+│   │   ├── E03-Spatial-and-Time-Series_files
+│   │   │   └── figure-html
+│   │   │       └── unnamed-chunk-1-1.png
+│   │   ├── P01-price_movement.html
+│   │   ├── P02-stat-analysis-price.html
+│   │   ├── S01-what-is-learning.html
+│   │   ├── S02-how-to-use-learning.html
+│   │   └── index.html
+│   ├── resume_pdf.pdf
+│   ├── robots.txt
+│   ├── search.json
+│   ├── site_libs
+│   │   ├── bootstrap
+│   │   │   ├── bootstrap-icons.css
+│   │   │   ├── bootstrap-icons.woff
+│   │   │   ├── bootstrap.min.css
+│   │   │   └── bootstrap.min.js
+│   │   ├── clipboard
+│   │   │   └── clipboard.min.js
+│   │   ├── quarto-html
+│   │   │   ├── anchor.min.js
+│   │   │   ├── popper.min.js
+│   │   │   ├── quarto-syntax-highlighting.css
+│   │   │   ├── quarto.js
+│   │   │   ├── tippy.css
+│   │   │   └── tippy.umd.min.js
+│   │   ├── quarto-nav
+│   │   │   ├── headroom.min.js
+│   │   │   └── quarto-nav.js
+│   │   └── quarto-search
+│   │       ├── autocomplete.umd.js
+│   │       ├── fuse.min.js
+│   │       └── quarto-search.js
+│   ├── sitemap.xml
+│   ├── studynote
+│   │   ├── E01-Distributions.html
+│   │   ├── E02-Tests.html
+│   │   └── index.html
+│   └── styles.scss
+├── folder_structure.txt
+├── index.qmd
+├── papers
+│   └── index.qmd
+├── researchnote
+│   ├── E00_econometrics_ref.bib
+│   ├── E01-Basic Crop Production Model.qmd
+│   ├── E02-Estimation of Yield Response.qmd
+│   ├── E03-Spatial and Time Series.qmd
+│   ├── P00_price_ref.bib
+│   ├── P01-price_movement.qmd
+│   ├── P02-stat-analysis-price.qmd
+│   ├── S00_statlearn_ref.bib
+│   ├── S01-what-is-learning.qmd
+│   ├── S02-how-to-use-learning.qmd
+│   ├── _quarto.yaml
+│   ├── analytics.html
+│   ├── docs
+│   │   └── researchnote
+│   │       ├── E01-Basic Crop Production Model.html
+│   │       ├── E02-Estimation of Yield Response.html
+│   │       ├── E02-Estimation-of-Yield-Response_files
+│   │       │   └── figure-html
+│   │       │       ├── unnamed-chunk-2-1.png
+│   │       │       └── unnamed-chunk-3-1.png
+│   │       ├── E03-Spatial and Time Series.html
+│   │       ├── E03-Spatial-and-Time-Series_files
+│   │       │   └── figure-html
+│   │       │       └── unnamed-chunk-1-1.png
+│   │       ├── P01-price_movement.html
+│   │       ├── P02-stat-analysis-price.html
+│   │       ├── S01-what-is-learning.html
+│   │       ├── S02-how-to-use-learning.html
+│   │       ├── index.html
+│   │       ├── robots.txt
+│   │       ├── search.json
+│   │       ├── site_libs
+│   │       │   ├── bootstrap
+│   │       │   │   ├── bootstrap-icons.css
+│   │       │   │   ├── bootstrap-icons.woff
+│   │       │   │   ├── bootstrap.min.css
+│   │       │   │   └── bootstrap.min.js
+│   │       │   ├── clipboard
+│   │       │   │   └── clipboard.min.js
+│   │       │   ├── quarto-html
+│   │       │   │   ├── anchor.min.js
+│   │       │   │   ├── popper.min.js
+│   │       │   │   ├── quarto-syntax-highlighting.css
+│   │       │   │   ├── quarto.js
+│   │       │   │   ├── tippy.css
+│   │       │   │   └── tippy.umd.min.js
+│   │       │   ├── quarto-nav
+│   │       │   │   ├── headroom.min.js
+│   │       │   │   └── quarto-nav.js
+│   │       │   └── quarto-search
+│   │       │       ├── autocomplete.umd.js
+│   │       │       ├── fuse.min.js
+│   │       │       └── quarto-search.js
+│   │       ├── sitemap.xml
+│   │       └── style.css
+│   ├── index.qmd
+│   ├── myref.bib
+│   └── style.css
+├── resume.pdf
+├── resume_pdf.qmd
+├── studynote
+│   ├── E01-Distributions.qmd
+│   ├── E02-Tests.qmd
+│   ├── _quarto.yaml
+│   ├── analytics.html
+│   ├── index.qmd
+│   ├── myref.bib
+│   └── style.css
+├── styles.scss
+└── withevlyn.jpeg
+
+34 directories, 110 files

@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: researchnote
+  output-dir: docs
 
 website:
   title: "Jaeseok Hwang"
@@ -26,7 +26,7 @@ website:
 format:
   html:
     theme: yeti
-    css: styles.scss  # Custom CSS for styling
+    css: ../styles/styles.scss  # Custom CSS for styling
     mainfont: sans-serif
     fontsize: 16px
     page-layout: full  # Use the "full" layout to manually implement the sidebar
