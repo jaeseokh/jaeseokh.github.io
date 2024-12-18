@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _site  # Render to a local directory
+  output-dir: docs/researchnote  # Render to a local directory
   # Use _site for a temporary build
 
 book:
