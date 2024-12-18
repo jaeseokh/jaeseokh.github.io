@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: ../docs/researchnote  # Render to a local directory
+  output-dir: _site  # Render to a local directory
   # Use _site for a temporary build
 
 book:
@@ -9,7 +9,7 @@ book:
   site-url: https://jaeseokh.github.io/researchnote/
   repo-url: https://jaeseokh.github.io/
   repo-branch: main
-  sharing: [facebook, linkedin]
+  sharing: [linkedin]
   navbar:
     left:
       - text: "Home"

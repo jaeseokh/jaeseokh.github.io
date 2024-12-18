@@ -1,124 +1,100 @@
 [
   {
-    "objectID": "Readme.html",
-    "href": "Readme.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Jaeseok Hwang",
     "section": "",
-    "text": "jaeseokh.github.io/ ├── docs/ │ ├── index.html │ ├── Resume.html │ ├── research/ │ │ └── index.html │ ├── essays/ │ │ └── index.html ├── _quarto.yml ├── index.qmd ├── Resume.qmd ├── research/ │ └── index.qmd ├── essays/ │ └── index.qmd ├── styles.scss\n\n\n\n Back to top"
+    "text": "This website showcases my research journey and essays. \nOver the past 5 years, as a research assistant for the USDA NRCS-funded project  I have worked with large-scale datasets,leveraging advanced analytics and machine-learning techniques to improve research about farm productivity.  Explore my work to learn more about my expertise and research interests here.  Thank you for visiting!"
   },
   {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
+    "objectID": "index.html#education",
+    "href": "index.html#education",
     "title": "Jaeseok Hwang",
-    "section": "",
-    "text": "Hi, I’m Jaeseok Hwang, a Ph.D. candidate in Agricultural and Consumer Economics (ACE)  at the University of Illinois at Urbana-Champaign (UIUC), with an expected graduation in May 2025. Over the past 5 years, I have gained extensive experience as a research assistant for the USDA NRCS-funded project, “Data Intensive Farm Management.” \nIn this role, I worked extensively with large-scale datasets, applying advanced data analytics and statistical techniques to address complex questions in farm management and productivity. During this time, I developed a deep expertise in designing and running machine-learning-based regression models to derive actionable insights from big data. My analytical toolkit includes a professional level of proficiency in R, which I use for most of my data processing, statistical modeling, and visualization tasks, as well as Python, which I employ as a versatile second option for complementary analysis and machine learning workflows.\nThis website highlights my research journey, showcasing programming code (R and Python via VS Code), summary of research outputs, and my individual research note reflecting my knowledge and skills.",
-    "crumbs": [
-      "About"
-    ]
+    "section": "Education",
+    "text": "Education\nUniversity of Illinois at Urbana-Champaign\nCandidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign\nM.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University (South Korea)\nB.S. in Economics\nAug 2013"
   },
   {
-    "objectID": "about/index.html#publications",
-    "href": "about/index.html#publications",
-    "title": "Jaeseok Hwang",
+    "objectID": "papers/index.html#publications",
+    "href": "papers/index.html#publications",
+    "title": "Resaerch Journey",
     "section": "Publications",
-    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. Precision Agriculture, 21, 1027-1044.",
+    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.\n Link to the published paper",
     "crumbs": [
-      "About"
+      "Papers"
     ]
   },
   {
-    "objectID": "about/index.html#research-work-in-progress",
-    "href": "about/index.html#research-work-in-progress",
-    "title": "Jaeseok Hwang",
-    "section": "Research (Work in progress)",
-    "text": "Research (Work in progress)\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?: cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
+    "objectID": "papers/index.html#work-in-progress",
+    "href": "papers/index.html#work-in-progress",
+    "title": "Resaerch Journey",
+    "section": "Work in Progress",
+    "text": "Work in Progress\n\nLeveraging Multi-Field On-Farm Experiment Data: Evaluating Economic Gains and Externalities in Precision Agriculture  (with D. Bullock and T. Mieno)\n GitHub Repository\nEvaluating the Profitability of Corn Seeding Decisions:  Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\n GitHub Repository\nDo the shape of yield distribution vary by nitrogen rate and climate conditions?:  cross validate the estimated distribution with higher moment-based approaches  (with D. Bullock and T. Mieno)\n GitHub Repository\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa: Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\n\nI served as the primary driver for data handling, managed version control for the analytical software (using R),  and developed robust data processing workflows.",
     "crumbs": [
-      "About"
+      "Papers"
     ]
   },
   {
-    "objectID": "Resume.html",
-    "href": "Resume.html",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html",
+    "href": "studynote/E01-Distributions.html",
+    "title": "Distributions",
     "section": "",
-    "text": "University of Illinois at Urbana-Champaign (UIUC)\nDepartment of Agricultural and Consumer Economics (STEM-Designated)\n1301 W Gregory Dr, Urbana, IL 61801\nEmail: jaeseok2@illinois.edu\nGitHub | LinkedIn\n\n\n\n\nUniversity of Illinois at Urbana-Champaign  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign  M.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University(South Korea)\nB.S. in Economics\nAug 2013\n\n\n\n\n\n\n\n\nStatistical Analyses of Field Trials (Advanced Ag Alliance, NY)  Jan 2019 - Dec 2019 \nData Intensive Farm Management (USDA’s NRCS)  Sep 2020 - Present\n\n\n\n\n\nCenter for the Economics of Sustainability (CEOS),   Jan 2021 – Present (https://ceos.illinois.edu/who-we-are/graduate-students)\n\n\n\n\n\n\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.\n\n\n\n\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)\n\n\n\n\n\n\n5th Symposium on Agri-Tech Economics and Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2022\nNC1210: Frontiers in Multistate and CIGOFT Project\nUniversity of Texas Corpus Christi, TX, USA, Jan 5-6, 2023\n6th Symposium on Agri-Tech Economics for Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2023\nInternational Conference for On-farm Precision Experimentation\nBrownsville South Padre Island, TX, USA, Jan 8-11, 2024\n\n\n\n\n\n\nSoftware: R (professional), Python, SQL, STATA, LaTeX, Visual Studio Code\nLanguages: English (Proficient), Korean (Native)",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: Models the number of successes ((X)) in (n) independent trials, each with success probability (p).\n[ P(X = k) = p^k (1-p)^{n-k}, k = 0, 1, , n ]\nParameters: - (n): Number of trials. - (p): Probability of success.\nMean: (= np), Variance: (^2 = np(1-p)).\nApplications: - Hypothesis testing for proportions (e.g., one-sample proportion test).\nConnection to Normal Distribution: - As (n ), the binomial distribution approaches a normal distribution: [ X (, ^2), = np, ^2 = np(1-p). ]\n\n\n\n\nDefinition: A continuous distribution often used to approximate other distributions: [ f(x) = (-), x ]\nParameters: - (): Mean. - (^2): Variance.\nApplications: - Widely used in hypothesis testing (e.g., Z-tests), regression analysis, and confidence intervals.\nSpecial Cases: 1. Standard Normal Distribution: [ Z = (0, 1). ] 2. Derived from Binomial: [ X (n, p), Z = (0, 1) ]\n\n\n\n\nDefinition: Derived from the normal distribution when the variance is unknown and estimated from the sample: [ t = , s^2 ]\nParameters: - Degrees of freedom ((df = n - 1)).\nApplications: - Testing means (e.g., one-sample, two-sample t-tests).\nConnection to Normal Distribution: [ X (0, 1), Y ^2_{df} t = t_{df}. ]\n\n\n\n\nDefinition: Distribution of the sum of squared independent standard normal variables: [ ^2 = _{i=1}^k Z_i^2, Z_i (0, 1). ]\nParameters: - Degrees of freedom ((k)).\nApplications: - Variance tests. - Goodness-of-fit tests. - Independence tests in contingency tables.\nConnection to Normal Distribution: [ X (0, 1), X^2 ^2_1. ]\n\n\n\n\nDefinition: Ratio of two scaled chi-square variables: [ F = , X_1 ^2_{df_1}, X_2 ^2_{df_2}. ]\nParameters: - (df_1): Degrees of freedom for the numerator. - (df_2): Degrees of freedom for the denominator.\nApplications: - Comparing variances. - ANOVA (Analysis of Variance).\n\n\n\n\nDefinition: Models the number of events ((X)) occurring in a fixed interval, given the average rate (()): [ P(X = k) = , k = 0, 1, 2, ]\nParameters: - (): Mean and variance.\nApplications: - Event counting (e.g., arrivals, defects).\nConnection to Binomial: [ n , p , np = , X (). ]\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution\nParameters\nApplications\nDerived From\n\n\n\n\nBinomial\n(n, p)\nProportion tests\n-\n\n\nNormal\n(, ^2)\nGeneral hypothesis tests\nCentral Limit Theorem\n\n\nt-Distribution\n(df)\nMean tests (small sample size)\nNormal + Estimated Variance\n\n\nChi-Square\n(df)\nVariance tests, Goodness-of-fit\nSum of Squared Normals\n\n\nF-Distribution\n(df_1, df_2)\nVariance comparisons, ANOVA\nRatio of Chi-Squares\n\n\nPoisson\n()\nEvent counts\nLimiting Case of Binomial"
   },
   {
-    "objectID": "Resume.html#education",
-    "href": "Resume.html#education",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html#binomial-distribution",
+    "href": "studynote/E01-Distributions.html#binomial-distribution",
+    "title": "Distributions",
     "section": "",
-    "text": "University of Illinois at Urbana-Champaign  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign  M.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University(South Korea)\nB.S. in Economics\nAug 2013",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: Models the number of successes ((X)) in (n) independent trials, each with success probability (p).\n[ P(X = k) = p^k (1-p)^{n-k}, k = 0, 1, , n ]\nParameters: - (n): Number of trials. - (p): Probability of success.\nMean: (= np), Variance: (^2 = np(1-p)).\nApplications: - Hypothesis testing for proportions (e.g., one-sample proportion test).\nConnection to Normal Distribution: - As (n ), the binomial distribution approaches a normal distribution: [ X (, ^2), = np, ^2 = np(1-p). ]"
   },
   {
-    "objectID": "Resume.html#experience",
-    "href": "Resume.html#experience",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html#normal-distribution",
+    "href": "studynote/E01-Distributions.html#normal-distribution",
+    "title": "Distributions",
     "section": "",
-    "text": "Statistical Analyses of Field Trials (Advanced Ag Alliance, NY)  Jan 2019 - Dec 2019 \nData Intensive Farm Management (USDA’s NRCS)  Sep 2020 - Present\n\n\n\n\n\nCenter for the Economics of Sustainability (CEOS),   Jan 2021 – Present (https://ceos.illinois.edu/who-we-are/graduate-students)",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: A continuous distribution often used to approximate other distributions: [ f(x) = (-), x ]\nParameters: - (): Mean. - (^2): Variance.\nApplications: - Widely used in hypothesis testing (e.g., Z-tests), regression analysis, and confidence intervals.\nSpecial Cases: 1. Standard Normal Distribution: [ Z = (0, 1). ] 2. Derived from Binomial: [ X (n, p), Z = (0, 1) ]"
   },
   {
-    "objectID": "Resume.html#publications",
-    "href": "Resume.html#publications",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html#t-distribution",
+    "href": "studynote/E01-Distributions.html#t-distribution",
+    "title": "Distributions",
     "section": "",
-    "text": "David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: Derived from the normal distribution when the variance is unknown and estimated from the sample: [ t = , s^2 ]\nParameters: - Degrees of freedom ((df = n - 1)).\nApplications: - Testing means (e.g., one-sample, two-sample t-tests).\nConnection to Normal Distribution: [ X (0, 1), Y ^2_{df} t = t_{df}. ]"
   },
   {
-    "objectID": "Resume.html#research-work-in-progress",
-    "href": "Resume.html#research-work-in-progress",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html#chi-square-distribution",
+    "href": "studynote/E01-Distributions.html#chi-square-distribution",
+    "title": "Distributions",
     "section": "",
-    "text": "Value of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: Distribution of the sum of squared independent standard normal variables: [ ^2 = _{i=1}^k Z_i^2, Z_i (0, 1). ]\nParameters: - Degrees of freedom ((k)).\nApplications: - Variance tests. - Goodness-of-fit tests. - Independence tests in contingency tables.\nConnection to Normal Distribution: [ X (0, 1), X^2 ^2_1. ]"
   },
   {
-    "objectID": "Resume.html#presentations",
-    "href": "Resume.html#presentations",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html#f-distribution",
+    "href": "studynote/E01-Distributions.html#f-distribution",
+    "title": "Distributions",
     "section": "",
-    "text": "5th Symposium on Agri-Tech Economics and Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2022\nNC1210: Frontiers in Multistate and CIGOFT Project\nUniversity of Texas Corpus Christi, TX, USA, Jan 5-6, 2023\n6th Symposium on Agri-Tech Economics for Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2023\nInternational Conference for On-farm Precision Experimentation\nBrownsville South Padre Island, TX, USA, Jan 8-11, 2024",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: Ratio of two scaled chi-square variables: [ F = , X_1 ^2_{df_1}, X_2 ^2_{df_2}. ]\nParameters: - (df_1): Degrees of freedom for the numerator. - (df_2): Degrees of freedom for the denominator.\nApplications: - Comparing variances. - ANOVA (Analysis of Variance)."
   },
   {
-    "objectID": "Resume.html#skills",
-    "href": "Resume.html#skills",
-    "title": "Resume [CV]",
+    "objectID": "studynote/E01-Distributions.html#poisson-distribution",
+    "href": "studynote/E01-Distributions.html#poisson-distribution",
+    "title": "Distributions",
     "section": "",
-    "text": "Software: R (professional), Python, SQL, STATA, LaTeX, Visual Studio Code\nLanguages: English (Proficient), Korean (Native)",
-    "crumbs": [
-      "Resume"
-    ]
+    "text": "Definition: Models the number of events ((X)) occurring in a fixed interval, given the average rate (()): [ P(X = k) = , k = 0, 1, 2, ]\nParameters: - (): Mean and variance.\nApplications: - Event counting (e.g., arrivals, defects).\nConnection to Binomial: [ n , p , np = , X (). ]"
   },
   {
-    "objectID": "studynote/index.html",
-    "href": "studynote/index.html",
-    "title": "Jaeseok Hwang",
+    "objectID": "studynote/E01-Distributions.html#summary-table",
+    "href": "studynote/E01-Distributions.html#summary-table",
+    "title": "Distributions",
     "section": "",
-    "text": "Welcome to My Personal Study Notes on Statistics! This webpage serves as a comprehensive repository for reviewing and updating the statistical knowledge I have acquired through my academic classes and research projects. Here, I aim to organize, refine, and expand on concepts that have been pivotal in my work as a researcher and student. ## License {.unnumbered}\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
+    "text": "Distribution\nParameters\nApplications\nDerived From\n\n\n\n\nBinomial\n(n, p)\nProportion tests\n-\n\n\nNormal\n(, ^2)\nGeneral hypothesis tests\nCentral Limit Theorem\n\n\nt-Distribution\n(df)\nMean tests (small sample size)\nNormal + Estimated Variance\n\n\nChi-Square\n(df)\nVariance tests, Goodness-of-fit\nSum of Squared Normals\n\n\nF-Distribution\n(df_1, df_2)\nVariance comparisons, ANOVA\nRatio of Chi-Squares\n\n\nPoisson\n()\nEvent counts\nLimiting Case of Binomial"
   },
   {
-    "objectID": "studynote/index.html#welcome",
-    "href": "studynote/index.html#welcome",
-    "title": "Jaeseok Hwang",
+    "objectID": "studynote/E02-Tests.html",
+    "href": "studynote/E02-Tests.html",
+    "title": "Tests",
     "section": "",
-    "text": "Welcome to My Personal Study Notes on Statistics! This webpage serves as a comprehensive repository for reviewing and updating the statistical knowledge I have acquired through my academic classes and research projects. Here, I aim to organize, refine, and expand on concepts that have been pivotal in my work as a researcher and student. ## License {.unnumbered}\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
+    "text": "Distributions\n\n\n\n\n Back to top"
   },
   {
     "objectID": "researchnote/P02-stat-analysis-price.html",
@@ -345,100 +321,124 @@
     "text": "Regression Models for Price Change Patterns\n\n1. Stock Market Price Analysis\n\nRegression Model\nThe general regression equation for stock price analysis is:\n\\[\nP_t = \\beta_0 + \\beta_1 \\text{Earnings}_t + \\beta_2 \\text{MarketSentiment}_t + \\beta_3 \\text{GDPGrowth}_t + \\beta_4 \\text{InterestRate}_t + \\epsilon_t\n\\]\nWhere: - \\(P_t\\): Stock price at time \\(t\\). - \\(\\text{Earnings}_t\\): Corporate earnings. - \\(\\text{MarketSentiment}_t\\): Sentiment score from news or social media. - \\(\\text{GDPGrowth}_t\\): GDP growth rate. - \\(\\text{InterestRate}_t\\): Interest rate.\n\n\nPurpose of Analysis\n\nIdentify how macroeconomic and company-specific factors drive stock price movements.\nAssess the role of market sentiment in short-term price volatility.\n\n\n\n\n\n2. Grain Market (Corn Price) Analysis\n\nRegression Model\nThe general regression equation for corn price analysis is:\n\\[\nP_t = \\beta_0 + \\beta_1 \\text{Yield}_t + \\beta_2 \\text{ExportDemand}_t + \\beta_3 \\text{BiofuelPolicy}_t + \\beta_4 \\text{Weather}_t + \\beta_5 \\text{Seasonality}_t + \\epsilon_t\n\\]\nWhere:  - \\(P_t\\): Corn price at time \\(t\\).  - \\(\\text{Yield}_t\\): Corn yield per acre.  - \\(\\text{ExportDemand}_t\\): Demand for corn in international markets.  - \\(\\text{BiofuelPolicy}_t\\): Dummy variable representing changes in biofuel policy.  - \\(\\text{Weather}_t\\): Weather conditions (e.g., precipitation, temperature).  - \\(\\text{Seasonality}_t\\): Seasonal index for planting and harvest periods.\n\n\nPurpose of Analysis\n\nDetermine the impact of agricultural and trade factors on corn prices.\nQuantify how seasonal and weather-related variations affect price dynamics.\n\n\n\n\n\nSummary of Analytical Approaches\n\n\n\n\n\n\n\n\nMarket\nPrimary Factors in Regression\nPurpose\n\n\n\n\nStock Market\nCorporate earnings, sentiment, macroeconomic indicators\nUnderstand short-term price volatility and long-term valuation.\n\n\nGrain Market (Corn)\nYield, export demand, weather, seasonality, biofuel policies\nIdentify the impact of agricultural and trade policies on price trends."
   },
   {
-    "objectID": "studynote/E02-Tests.html",
-    "href": "studynote/E02-Tests.html",
-    "title": "Tests",
+    "objectID": "studynote/index.html",
+    "href": "studynote/index.html",
+    "title": "Jaeseok Hwang",
     "section": "",
-    "text": "Distributions\n\n\n\n\n Back to top"
+    "text": "Welcome to My Personal Study Notes on Statistics! This webpage serves as a comprehensive repository for reviewing and updating the statistical knowledge I have acquired through my academic classes and research projects. Here, I aim to organize, refine, and expand on concepts that have been pivotal in my work as a researcher and student. ## License {.unnumbered}\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
   },
   {
-    "objectID": "studynote/E01-Distributions.html",
-    "href": "studynote/E01-Distributions.html",
-    "title": "Distributions",
+    "objectID": "studynote/index.html#welcome",
+    "href": "studynote/index.html#welcome",
+    "title": "Jaeseok Hwang",
     "section": "",
-    "text": "Definition: Models the number of successes ((X)) in (n) independent trials, each with success probability (p).\n[ P(X = k) = p^k (1-p)^{n-k}, k = 0, 1, , n ]\nParameters: - (n): Number of trials. - (p): Probability of success.\nMean: (= np), Variance: (^2 = np(1-p)).\nApplications: - Hypothesis testing for proportions (e.g., one-sample proportion test).\nConnection to Normal Distribution: - As (n ), the binomial distribution approaches a normal distribution: [ X (, ^2), = np, ^2 = np(1-p). ]\n\n\n\n\nDefinition: A continuous distribution often used to approximate other distributions: [ f(x) = (-), x ]\nParameters: - (): Mean. - (^2): Variance.\nApplications: - Widely used in hypothesis testing (e.g., Z-tests), regression analysis, and confidence intervals.\nSpecial Cases: 1. Standard Normal Distribution: [ Z = (0, 1). ] 2. Derived from Binomial: [ X (n, p), Z = (0, 1) ]\n\n\n\n\nDefinition: Derived from the normal distribution when the variance is unknown and estimated from the sample: [ t = , s^2 ]\nParameters: - Degrees of freedom ((df = n - 1)).\nApplications: - Testing means (e.g., one-sample, two-sample t-tests).\nConnection to Normal Distribution: [ X (0, 1), Y ^2_{df} t = t_{df}. ]\n\n\n\n\nDefinition: Distribution of the sum of squared independent standard normal variables: [ ^2 = _{i=1}^k Z_i^2, Z_i (0, 1). ]\nParameters: - Degrees of freedom ((k)).\nApplications: - Variance tests. - Goodness-of-fit tests. - Independence tests in contingency tables.\nConnection to Normal Distribution: [ X (0, 1), X^2 ^2_1. ]\n\n\n\n\nDefinition: Ratio of two scaled chi-square variables: [ F = , X_1 ^2_{df_1}, X_2 ^2_{df_2}. ]\nParameters: - (df_1): Degrees of freedom for the numerator. - (df_2): Degrees of freedom for the denominator.\nApplications: - Comparing variances. - ANOVA (Analysis of Variance).\n\n\n\n\nDefinition: Models the number of events ((X)) occurring in a fixed interval, given the average rate (()): [ P(X = k) = , k = 0, 1, 2, ]\nParameters: - (): Mean and variance.\nApplications: - Event counting (e.g., arrivals, defects).\nConnection to Binomial: [ n , p , np = , X (). ]\n\n\n\n\n\n\n\n\n\n\n\n\n\nDistribution\nParameters\nApplications\nDerived From\n\n\n\n\nBinomial\n(n, p)\nProportion tests\n-\n\n\nNormal\n(, ^2)\nGeneral hypothesis tests\nCentral Limit Theorem\n\n\nt-Distribution\n(df)\nMean tests (small sample size)\nNormal + Estimated Variance\n\n\nChi-Square\n(df)\nVariance tests, Goodness-of-fit\nSum of Squared Normals\n\n\nF-Distribution\n(df_1, df_2)\nVariance comparisons, ANOVA\nRatio of Chi-Squares\n\n\nPoisson\n()\nEvent counts\nLimiting Case of Binomial"
+    "text": "Welcome to My Personal Study Notes on Statistics! This webpage serves as a comprehensive repository for reviewing and updating the statistical knowledge I have acquired through my academic classes and research projects. Here, I aim to organize, refine, and expand on concepts that have been pivotal in my work as a researcher and student. ## License {.unnumbered}\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
   },
   {
-    "objectID": "studynote/E01-Distributions.html#binomial-distribution",
-    "href": "studynote/E01-Distributions.html#binomial-distribution",
-    "title": "Distributions",
+    "objectID": "Resume.html",
+    "href": "Resume.html",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Definition: Models the number of successes ((X)) in (n) independent trials, each with success probability (p).\n[ P(X = k) = p^k (1-p)^{n-k}, k = 0, 1, , n ]\nParameters: - (n): Number of trials. - (p): Probability of success.\nMean: (= np), Variance: (^2 = np(1-p)).\nApplications: - Hypothesis testing for proportions (e.g., one-sample proportion test).\nConnection to Normal Distribution: - As (n ), the binomial distribution approaches a normal distribution: [ X (, ^2), = np, ^2 = np(1-p). ]"
+    "text": "University of Illinois at Urbana-Champaign (UIUC)\nDepartment of Agricultural and Consumer Economics (STEM-Designated)\n1301 W Gregory Dr, Urbana, IL 61801\nEmail: jaeseok2@illinois.edu\nGitHub | LinkedIn\n\n\n\n\nUniversity of Illinois at Urbana-Champaign  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - May 2025 (expected)\nUniversity of Illinois at Urbana-Champaign  M.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University(South Korea)\nB.S. in Economics\nAug 2013\n\n\n\n\n\n\n\n\nStatistical Analyses of Field Trials (Advanced Ag Alliance, NY)  Jan 2019 - Dec 2019 \nData Intensive Farm Management (USDA’s NRCS)  Sep 2020 - Present\n\n\n\n\n\nCenter for the Economics of Sustainability (CEOS),   Jan 2021 – Present  Link to Webpage\n\n\n\n\n\n\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044. Link to the published paper\n\n\n\n\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)\n\n\n\n\n\n\n5th Symposium on Agri-Tech Economics and Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2022\nNC1210: Frontiers in Multistate and CIGOFT Project\nUniversity of Texas Corpus Christi, TX, USA, Jan 5-6, 2023\n6th Symposium on Agri-Tech Economics for Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2023\nInternational Conference for On-farm Precision Experimentation\nBrownsville South Padre Island, TX, USA, Jan 8-11, 2024\n\n\n\n\n\n\nSoftware: R (professional), Python, SQL, STATA, LaTeX, Visual Studio Code\nLanguages: English (Proficient), Korean (Native)",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "studynote/E01-Distributions.html#normal-distribution",
-    "href": "studynote/E01-Distributions.html#normal-distribution",
-    "title": "Distributions",
+    "objectID": "Resume.html#education",
+    "href": "Resume.html#education",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Definition: A continuous distribution often used to approximate other distributions: [ f(x) = (-), x ]\nParameters: - (): Mean. - (^2): Variance.\nApplications: - Widely used in hypothesis testing (e.g., Z-tests), regression analysis, and confidence intervals.\nSpecial Cases: 1. Standard Normal Distribution: [ Z = (0, 1). ] 2. Derived from Binomial: [ X (n, p), Z = (0, 1) ]"
+    "text": "University of Illinois at Urbana-Champaign  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - May 2025 (expected)\nUniversity of Illinois at Urbana-Champaign  M.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University(South Korea)\nB.S. in Economics\nAug 2013",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "studynote/E01-Distributions.html#t-distribution",
-    "href": "studynote/E01-Distributions.html#t-distribution",
-    "title": "Distributions",
+    "objectID": "Resume.html#experience",
+    "href": "Resume.html#experience",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Definition: Derived from the normal distribution when the variance is unknown and estimated from the sample: [ t = , s^2 ]\nParameters: - Degrees of freedom ((df = n - 1)).\nApplications: - Testing means (e.g., one-sample, two-sample t-tests).\nConnection to Normal Distribution: [ X (0, 1), Y ^2_{df} t = t_{df}. ]"
+    "text": "Statistical Analyses of Field Trials (Advanced Ag Alliance, NY)  Jan 2019 - Dec 2019 \nData Intensive Farm Management (USDA’s NRCS)  Sep 2020 - Present\n\n\n\n\n\nCenter for the Economics of Sustainability (CEOS),   Jan 2021 – Present  Link to Webpage",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "studynote/E01-Distributions.html#chi-square-distribution",
-    "href": "studynote/E01-Distributions.html#chi-square-distribution",
-    "title": "Distributions",
+    "objectID": "Resume.html#publications",
+    "href": "Resume.html#publications",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Definition: Distribution of the sum of squared independent standard normal variables: [ ^2 = _{i=1}^k Z_i^2, Z_i (0, 1). ]\nParameters: - Degrees of freedom ((k)).\nApplications: - Variance tests. - Goodness-of-fit tests. - Independence tests in contingency tables.\nConnection to Normal Distribution: [ X (0, 1), X^2 ^2_1. ]"
+    "text": "David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044. Link to the published paper",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "studynote/E01-Distributions.html#f-distribution",
-    "href": "studynote/E01-Distributions.html#f-distribution",
-    "title": "Distributions",
+    "objectID": "Resume.html#research-work-in-progress",
+    "href": "Resume.html#research-work-in-progress",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Definition: Ratio of two scaled chi-square variables: [ F = , X_1 ^2_{df_1}, X_2 ^2_{df_2}. ]\nParameters: - (df_1): Degrees of freedom for the numerator. - (df_2): Degrees of freedom for the denominator.\nApplications: - Comparing variances. - ANOVA (Analysis of Variance)."
+    "text": "Value of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?:  cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "studynote/E01-Distributions.html#poisson-distribution",
-    "href": "studynote/E01-Distributions.html#poisson-distribution",
-    "title": "Distributions",
+    "objectID": "Resume.html#presentations",
+    "href": "Resume.html#presentations",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Definition: Models the number of events ((X)) occurring in a fixed interval, given the average rate (()): [ P(X = k) = , k = 0, 1, 2, ]\nParameters: - (): Mean and variance.\nApplications: - Event counting (e.g., arrivals, defects).\nConnection to Binomial: [ n , p , np = , X (). ]"
+    "text": "5th Symposium on Agri-Tech Economics and Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2022\nNC1210: Frontiers in Multistate and CIGOFT Project\nUniversity of Texas Corpus Christi, TX, USA, Jan 5-6, 2023\n6th Symposium on Agri-Tech Economics for Sustainable Futures\nHarper Adams University, UK, Sep 18-19, 2023\nInternational Conference for On-farm Precision Experimentation\nBrownsville South Padre Island, TX, USA, Jan 8-11, 2024",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "studynote/E01-Distributions.html#summary-table",
-    "href": "studynote/E01-Distributions.html#summary-table",
-    "title": "Distributions",
+    "objectID": "Resume.html#skills",
+    "href": "Resume.html#skills",
+    "title": "Resume [CV]",
     "section": "",
-    "text": "Distribution\nParameters\nApplications\nDerived From\n\n\n\n\nBinomial\n(n, p)\nProportion tests\n-\n\n\nNormal\n(, ^2)\nGeneral hypothesis tests\nCentral Limit Theorem\n\n\nt-Distribution\n(df)\nMean tests (small sample size)\nNormal + Estimated Variance\n\n\nChi-Square\n(df)\nVariance tests, Goodness-of-fit\nSum of Squared Normals\n\n\nF-Distribution\n(df_1, df_2)\nVariance comparisons, ANOVA\nRatio of Chi-Squares\n\n\nPoisson\n()\nEvent counts\nLimiting Case of Binomial"
+    "text": "Software: R (professional), Python, SQL, STATA, LaTeX, Visual Studio Code\nLanguages: English (Proficient), Korean (Native)",
+    "crumbs": [
+      "Resume"
+    ]
   },
   {
-    "objectID": "papers/index.html#publications",
-    "href": "papers/index.html#publications",
-    "title": "Resaerch Journey",
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Jaeseok Hwang",
+    "section": "",
+    "text": "Hi, I’m Jaeseok Hwang, a Ph.D. candidate in Agricultural and Consumer Economics (ACE)  at the University of Illinois at Urbana-Champaign (UIUC), with an expected graduation in May 2025. Over the past 5 years, I have gained extensive experience as a research assistant for the USDA NRCS-funded project, “Data Intensive Farm Management.” \nIn this role, I worked extensively with large-scale datasets, applying advanced data analytics and statistical techniques to address complex questions in farm management and productivity. During this time, I developed a deep expertise in designing and running machine-learning-based regression models to derive actionable insights from big data. My analytical toolkit includes a professional level of proficiency in R, which I use for most of my data processing, statistical modeling, and visualization tasks, as well as Python, which I employ as a versatile second option for complementary analysis and machine learning workflows.\nThis website highlights my research journey, showcasing programming code (R and Python via VS Code), summary of research outputs, and my individual research note reflecting my knowledge and skills.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about/index.html#publications",
+    "href": "about/index.html#publications",
+    "title": "Jaeseok Hwang",
     "section": "Publications",
-    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)  The value of conducting on-farm field trials using precision agriculture technology:  a theory and simulations. Precision Agriculture, 21, 1027-1044.\n Link to the published paper",
+    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. Precision Agriculture, 21, 1027-1044.\n\nLink to the published paper",
     "crumbs": [
-      "Papers"
+      "About"
     ]
   },
   {
-    "objectID": "papers/index.html#work-in-progress",
-    "href": "papers/index.html#work-in-progress",
-    "title": "Resaerch Journey",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n\nLeveraging Multi-Field On-Farm Experiment Data: Evaluating Economic Gains and Externalities in Precision Agriculture  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nEvaluating the Profitability of Corn Seeding Decisions:  Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nDo the shape of yield distribution vary by nitrogen rate and climate conditions?:  cross validate the estimated distribution with higher moment-based approaches  (with D. Bullock and T. Mieno)\n GitHub Repository\n PDF File\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa: Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\n\nI served as the primary driver for data handling, managed version control for the analytical software (using R),  and developed robust data processing workflows.",
+    "objectID": "about/index.html#research-work-in-progress",
+    "href": "about/index.html#research-work-in-progress",
+    "title": "Jaeseok Hwang",
+    "section": "Research (Work in progress)",
+    "text": "Research (Work in progress)\n\nValue of Multiple Field Experiments Data as a Positive Externality  (with D. Bullock and T. Mieno)\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data  (with D. Bullock and T. Mieno)\nInforming Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using On-farm Experimentation and Statistical Techniques  (with M. Delport, D. Bullock, and T.Mieno)\nDo the shape of yield distribution varies by nitrogen rate and climate conditions?: cross validate the distribution with higher moment based approach  (with D. Bullock and T. Mieno)",
     "crumbs": [
-      "Papers"
+      "About"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "Readme.html",
+    "href": "Readme.html",
     "title": "Jaeseok Hwang",
     "section": "",
-    "text": "This website showcases my research journey and essays. \nOver the past 5 years, as a research assistant for the USDA NRCS-funded project  I have worked with large-scale datasets,leveraging advanced analytics and machine-learning techniques to improve research about farm productivity.  Explore my work to learn more about my expertise and research interests here.  Thank you for visiting!"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Jaeseok Hwang",
-    "section": "Education",
-    "text": "Education\nUniversity of Illinois at Urbana-Champaign\nCandidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)\nAug 2020 - Present\nUniversity of Illinois at Urbana-Champaign\nM.A. in Agricultural and Applied Economics (STEM-Designated)\nAug 2018 - May 2020\nSogang University (South Korea)\nB.S. in Economics\nAug 2013"
+    "text": "jaeseokh.github.io/ ├── docs/ │ ├── index.html │ ├── Resume.html │ ├── research/ │ │ └── index.html │ ├── essays/ │ │ └── index.html ├── _quarto.yml ├── index.qmd ├── Resume.qmd ├── research/ │ └── index.qmd ├── essays/ │ └── index.qmd ├── styles.scss\n\n\n\n Back to top"
   }
 ]

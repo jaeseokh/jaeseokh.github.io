@@ -18,7 +18,7 @@ Email: [jaeseok2@illinois.edu](mailto:jaeseok2@illinois.edu)
 
 - **University of Illinois at Urbana-Champaign** <br>
 Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)  
-*Aug 2020 - Present*
+*Aug 2020 - May 2025 (expected)*
 
 - **University of Illinois at Urbana-Champaign** <br> 
 M.A. in Agricultural and Applied Economics (STEM-Designated)  
@@ -42,14 +42,15 @@ B.S. in Economics
 
 ### Graduate Research 
 - **Center for the Economics of Sustainability (CEOS), ** <br>
-*Jan 2021 – Present*
-(https://ceos.illinois.edu/who-we-are/graduate-students)
+*Jan 2021 – Present* <br>
+[Link to Webpage](https://ceos.illinois.edu/who-we-are/graduate-students)
 
 ---
 
 ## Publications
 
-- **David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)**  <br> The value of conducting on-farm field trials using precision agriculture technology: <br> a theory and simulations. *Precision Agriculture*, 21, 1027-1044.
+- **David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)**  <br> The value of conducting on-farm field trials using precision agriculture technology: <br> a theory and simulations. *Precision Agriculture*, 21, 1027-1044.<br>
+ [Link to the published paper](https://link.springer.com/article/10.1007/s11119-019-09706-1)
 
 ## Research (Work in progress)
 
@@ -86,7 +87,5 @@ B.S. in Economics
 
 ## Skills
 
-- **Software:** R (professional), Python, SQL, STATA, LaTeX,
- Visual Studio Code
-
+- **Software:** R (professional), Python, SQL, STATA, LaTeX, QGIS 
 - **Languages:** English (Proficient), Korean (Native)

@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jaeseok Hwang">
+<meta name="description" content="<p>.</p>">
 
-<title>Exploring Statistical Learning – Jaeseok Hwang</title>
+<title>Research Note</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,51 +22,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -87,129 +102,178 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XZWWMRXM72"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
 
-<script type="text/javascript">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-45VKT2HZSL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XZWWMRXM72', { 'anonymize_ip': true});
+  gtag('config', 'G-45VKT2HZSL');
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.scss">
-<meta property="og:title" content="Exploring Statistical Learning – Jaeseok Hwang">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Jaeseok Hwang">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Research Note</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://jaeseokh.github.io/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-git"></i></a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=|url|" title="LinkedIn" class="quarto-navigation-tool px-1" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Jaeseok Hwang
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Jaeseok Hwang</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Welcome</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Statistical Analysis : <br> in Application to Economics Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Resume.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Resume</span></a>
+  <a href="./E01-Basic Crop Production Model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crop Production Model(MicroEconomics)</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../papers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Papers</span></a>
+  <a href="./E02-Estimation of Yield Response.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic Estimation of Crop Yield Response (Econometrics)</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../researchnote/" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Research Note</span></a>
+  <a href="./E03-Spatial and Time Series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Advanced Analysis of Crop Yield Response to Nitrogen (Econometrics)</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Statistical (Machine) Learning: <br> From Simplicity to Complexity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./S01-what-is-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Exploring Statistical Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./S02-how-to-use-learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Application of Statistical Learning</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Price analysis: <br> Grain Stock and Stock Market</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./P01-price_movement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">How Price Moves : Stock Market and Grain Stock</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./P02-stat-analysis-price.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Statistical Analysis : Methods for the Price Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Exploring Statistical Learning</h1>
+<div class="quarto-title-block"><div><h1 class="title">Research Note</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -218,12 +282,6 @@ window.Quarto = {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
   
     
   </div>
@@ -233,130 +291,20 @@ window.Quarto = {
 </header>
 
 
-<section id="started-with-the-basic-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="started-with-the-basic-linear-regression">Started with the Basic Linear Regression</h2>
-<p>As a Ph.D.&nbsp;student in applied economics, my journey into statistical learning began with the foundational concepts of econometrics: linear regression, basic t-tests, and statistical distributions. These tools, though elementary, laid the groundwork for understanding the broader principles of data analysis. Early on, my focus was firmly rooted in traditional econometric frameworks, with key insights drawn from influential textbooks by <span class="citation" data-cites="wooldridge2010econometric">Wooldridge (<a href="#ref-wooldridge2010econometric" role="doc-biblioref">2010</a>)</span> and <span class="citation" data-cites="greene2008econometric">Greene (<a href="#ref-greene2008econometric" role="doc-biblioref">2008</a>)</span>.</p>
-<p><strong><em>I write this essay based on what I learned from the econometrics and statistics lectures in my graduate program. I also referred to materials from the lecture notes of my research advisor, Dr.&nbsp;Taro Mieno (UNL), available at <br> <a href="https://tmieno2.github.io/ML-Economist">Machine Learning for Economists</a>.</em></strong></p>
+<section id="welcome" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2>
+<p>During my research journey in graduate school (MS and Ph.D.&nbsp;in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at <a href="mailto:jaeseok2@illinois.edu">jaeseok2@illinois.edu</a>.</p>
 </section>
-<section id="from-simple-to-complex-the-journey-beyond-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="from-simple-to-complex-the-journey-beyond-linear-regression">From Simple to Complex: The Journey Beyond Linear Regression</h2>
-<p>Linear regression offers an intuitive framework for understanding relationships between <strong>predictors</strong> (independent variables) and <strong>responses</strong> (dependent variables). It simplifies the analysis by assuming a straight-line relationship, making it easy to interpret and apply. However, this simplicity often comes at the cost of ignoring the complexities and nuances of real-world data.</p>
-<p>To perform higher-level analysis, it becomes necessary to relax the rigid assumptions of linear regression. The world is rarely governed by perfect linearity, and exploring the complexity in data requires breaking down these assumptions. This is where non-linearity and flexibility come into play.</p>
-</section>
-<section id="introducing-flexibility-from-polynomials-to-splines" class="level2">
-<h2 class="anchored" data-anchor-id="introducing-flexibility-from-polynomials-to-splines">Introducing Flexibility: From Polynomials to Splines</h2>
-<p>Non-linear regression extends linear models by incorporating terms that account for curvature, such as polynomials. However, polynomials are limited by their global assumptions—they impose a rigid structure that may fail to adapt to local variations in the data.</p>
-<p>Splines provide a more flexible approach by dividing the predictor variable’s range into intervals and fitting piecewise polynomials within each segment. These are joined at “knots” to ensure smoothness. The spline regression equation can be expressed as:</p>
-<p><span class="math display">\[
-\begin{aligned}
-Y_{it} &amp;= \beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it} \\
-&amp;\quad + \sum_{j=1}^k \beta_j B_j(X_{it}) + \epsilon_{it}
-\end{aligned}
-\]</span></p>
-<p>Where: <br> - <span class="math inline">\(B_j(X_{it})\)</span>: Spline basis functions, defined as piecewise polynomials. <br> - <span class="math inline">\(k\)</span>: Number of basis functions or knots. <br> - <span class="math inline">\(\beta_j\)</span>: Coefficients estimated for each basis function. <br> - <span class="math inline">\(\epsilon_{it}\)</span>: Error term for panel observation <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</p>
-<p>This flexibility enables splines to capture non-linear relationships while maintaining interpretability. However, even splines are parametric in nature, relying on pre-defined functions. To fully embrace complexity, we turn to non-parametric methods.</p>
-</section>
-<section id="the-need-for-non-parametric-methods" class="level2">
-<h2 class="anchored" data-anchor-id="the-need-for-non-parametric-methods">The Need for Non-Parametric Methods</h2>
-<p>Non-parametric methods go beyond predefined equations or functional forms, offering a data-driven approach to uncovering patterns. Unlike parametric models, which make assumptions about the underlying structure of the data, non-parametric models allow the data itself to dictate the relationships.</p>
-<p>In contexts where the true relationship between variables is unknown or too complex for predefined models, non-parametric methods provide the flexibility needed to explore these intricacies. Kernel regression and locally weighted scatterplot smoothing (LOESS) are examples of non-parametric approaches that adapt to the data without assuming a global functional form.</p>
-<p>The move from parametric to non-parametric methods highlights the growing emphasis on flexibility and adaptability in statistical analysis.</p>
-</section>
-<section id="the-role-of-training-and-testing-in-statistical-learning" class="level2">
-<h2 class="anchored" data-anchor-id="the-role-of-training-and-testing-in-statistical-learning">The Role of Training and Testing in Statistical Learning</h2>
-<p>As we transition to statistical learning and machine learning techniques, the focus shifts from understanding data to making accurate predictions. A critical aspect of these methods is the <strong>training-test framework</strong>, which ensures that models generalize well to unseen data.</p>
-<ol type="1">
-<li><strong>Training Set</strong>: Used to fit the model, estimating the parameters based on observed data.</li>
-<li><strong>Test Set</strong>: Held out during training and used to evaluate the model’s performance on unseen data.</li>
-</ol>
-<p>The training-test split addresses a key issue: overfitting. Overfitting occurs when a model performs exceptionally well on the training data but fails to generalize to new observations. By testing on unseen data, we ensure that the model captures the underlying patterns without memorizing noise or outliers.</p>
-</section>
-<section id="feasible-supervised-models" class="level2">
-<h2 class="anchored" data-anchor-id="feasible-supervised-models">Feasible Supervised Models</h2>
-<p>Supervised learning models aim to predict a response variable based on a set of predictors. Below are common models with equations and expanded descriptions of their benefits:</p>
-<section id="linear-regression" class="level3">
-<h3 class="anchored" data-anchor-id="linear-regression">1. <strong>Linear Regression</strong></h3>
-<p><span class="math display">\[
-Y_{it} = \beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it} + \alpha_i + \epsilon_{it}
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Assumes a linear relationship between predictors (e.g., seed, nitrogen, precipitation) and response (e.g., yield). The inclusion of (_i) allows for fixed effects in panel data.</li>
-<li><strong>Benefits</strong>: Simple, interpretable, efficient for small datasets, and unbiased if assumptions (linearity, homoscedasticity) hold.</li>
-</ul>
-<hr>
-</section>
-<section id="logistic-regression" class="level3">
-<h3 class="anchored" data-anchor-id="logistic-regression">2. <strong>Logistic Regression</strong></h3>
-<p><span class="math display">\[
-P(Y_{it} = 1 | X) = \frac{\exp(\beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it})}{1 + \exp(\beta_0 + \beta_1 \text{seed}_{it} + \beta_2 \text{nitrogen}_{it} + \beta_3 \text{precipitation}_{it})}
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Models the probability of binary outcomes (e.g., high/low yield). Uses a logit link function to constrain predictions between 0 and 1.</li>
-<li><strong>Benefits</strong>: Interpretable in terms of odds ratios, robust to non-normality of errors.</li>
-</ul>
-<hr>
-</section>
-<section id="decision-trees" class="level3">
-<h3 class="anchored" data-anchor-id="decision-trees">3. <strong>Decision Trees</strong></h3>
-<p><span class="math display">\[
-\begin{aligned}
-f(X) &amp;= \text{Tree structure with splits on } X \\
-&amp;\text{ to minimize impurity} \\
-&amp;\text{(e.g., Gini index).}
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Splits the data into subsets based on predictor thresholds, resulting in a tree structure.</li>
-<li><strong>Benefits</strong>: Handles non-linear relationships, interpretable, and can incorporate interactions without explicitly specifying them.</li>
-</ul>
-<hr>
-</section>
-<section id="random-forest" class="level3">
-<h3 class="anchored" data-anchor-id="random-forest">4. <strong>Random Forest</strong></h3>
-<p><span class="math display">\[
-\hat{f}(X) = \frac{1}{B} \sum_{b=1}^B f_b(X)
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: An ensemble method averaging predictions from multiple decision trees, reducing variance.</li>
-<li><strong>Benefits</strong>: Robust to overfitting, handles high-dimensional data well, and captures complex interactions.</li>
-</ul>
-<hr>
-</section>
-<section id="support-vector-machines-svm" class="level3">
-<h3 class="anchored" data-anchor-id="support-vector-machines-svm">5. <strong>Support Vector Machines (SVM)</strong></h3>
-<p><span class="math display">\[
-\min \| w \|^2 \quad \text{subject to } y_i(w^T X_i + b) \geq 1
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Finds the optimal hyperplane to separate classes in a high-dimensional space.</li>
-<li><strong>Benefits</strong>: Effective in high-dimensional settings, robust to outliers, and handles non-linear boundaries with kernels.</li>
-</ul>
-<hr>
-</section>
-<section id="neural-networks" class="level3">
-<h3 class="anchored" data-anchor-id="neural-networks">6. <strong>Neural Networks</strong></h3>
-<p><span class="math display">\[
-a^{(l)} = g(W^{(l)}a^{(l-1)} + b^{(l)})
-\]</span></p>
-<ul>
-<li><strong>Description</strong>: Mimics the human brain by using layers of interconnected nodes to model non-linear relationships.</li>
-<li><strong>Benefits</strong>: Extremely flexible, capable of capturing complex patterns, and adaptable to various data types (e.g., images, text).</li>
-</ul>
-<hr>
+<section id="license" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="license">License</h2>
+<p>This website is (and will always be) <strong>free to use</strong>, and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</a> License.</p>
 
 
+<!-- -->
 
 </section>
-</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-greene2008econometric" class="csl-entry" role="listitem">
-Greene, William H. 2008. <span>“The Econometric Approach to Efficiency Analysis.”</span> <em>The Measurement of Productive Efficiency and Productivity Growth</em> 1 (1): 92–250.
-</div>
-<div id="ref-wooldridge2010econometric" class="csl-entry" role="listitem">
-Wooldridge, Jeffrey M. 2010. <em>Econometric Analysis of Cross Section and Panel Data</em>. MIT press.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -447,9 +395,60 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
     clipboardModal.on('success', onCopySuccess);
   }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jaeseokh\.github\.io\/");
+      var filterRegex = new RegExp("https:\/\/jaeseokh\.github\.io\/researchnote\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -776,7 +775,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">description-meta:</span><span class="co"> |</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">  .</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Welcome {.unnumbered}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>During my research journey in graduate school (MS and Ph.D. in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  This collection of essays showcases how I built my foundational knowledge and expanded my research focus. </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  Please enjoy this material and feel free to contact me at <span class="co">[</span><span class="ot">jaeseok2@illinois.edu</span><span class="co">](mailto:jaeseok2@illinois.edu)</span>.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## License {.unnumbered}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This website is (and will always be) **free to use**, and is licensed under the <span class="co">[</span><span class="ot">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</span><span class="co">](https://creativecommons.org/licenses/by-nc-nd/4.0/)</span> License.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

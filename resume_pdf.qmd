@@ -1,0 +1,113 @@
+---
+title: "RESUME(CV)"
+format: 
+  pdf: 
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+    linestretch: 1.1
+
+---
+
+# \textbf{Jaeseok Hwang}  
+
+\textbf{University of Illinois at Urbana-Champaign (UIUC)} \newline
+Department of Agricultural and Consumer Economics (STEM-Designated) \newline
+1301 W Gregory Dr, Urbana, IL 61801  
+
+\textbf{Current Residence:} \newline
+160 Morgan Street, Apt 3007 \newline
+Jersey City, NJ 07302  
+
+  Email: jaeseok2@illinois.edu \newline
+  Cell: 217-778-8776 \newline
+
+ [Github](https://jaeseokh.github.com)
+ [LinkedIn](https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/)
+ 
+\noindent\hrulefill
+
+## \textbf{Education}
+
+- \textbf{University of Illinois at Urbana-Champaign}  
+  Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)  
+  *Aug 2020 - May 2025 (Expected)*  
+
+- \textbf{University of Illinois at Urbana-Champaign}  
+  M.A. in Agricultural and Applied Economics (STEM-Designated)  
+  *Aug 2018 - May 2020*  
+
+- \textbf{Sogang University (South Korea)}  
+  B.S. in Economics  
+  *Aug 2013*  
+
+\noindent\hrulefill
+
+## \textbf{Experience}
+
+### \textbf{Research Assistant}  
+
+- \textbf{Statistical Analyses of Field Trials (Advanced Ag Alliance, NY)}  
+  *Jan 2019 - Dec 2019*  
+
+- \textbf{Data Intensive Farm Management (USDA's NRCS)}  
+  *Sep 2020 - Present*  
+
+### \textbf{Graduate Research}  
+
+- \textbf{Center for the Economics of Sustainability (CEOS)}  
+  *Jan 2021 – Present*  
+  [Link to the webpage](https://ceos.illinois.edu/who-we-are/graduate-students)
+
+\noindent\hrulefill
+
+## \textbf{Publications}
+
+- \textbf{David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)}  
+  The value of conducting on-farm field trials using precision agriculture technology:  
+  a theory and simulations. *Precision Agriculture*, 21, 1027-1044.  
+  [Link to the published paper](https://link.springer.com/article/10.1007/s11119-019-09706-1)
+
+
+## \textbf{Work in Progress}
+
+- \textbf{Value of Multiple Field Experiments Data as a Positive Externality}  
+  (with D. Bullock and T. Mieno)  
+
+- \textbf{Evaluating the Profitability of Corn Seeding Decisions: \newline
+   Insights from On-Farm Precision Experiments Data} \newline 
+  (with D. Bullock and T. Mieno)  
+
+- \textbf{Informing Site-Specific Input Management for Maize in KwaZulu Natal, \newline 
+ South Africa, Using On-farm Experimentation and Statistical Techniques}    \newline 
+  (with M. Delport, D. Bullock, and T. Mieno)  
+
+- \textbf{Do the shape of yield distribution vary by nitrogen rate and climate conditions?    \newline 
+  Cross-validate the distribution with higher moment-based approach}    \newline 
+  (with D. Bullock and T. Mieno)  
+
+\noindent\hrulefill
+
+## \textbf{Presentations}
+
+- \textbf{5th Symposium on Agri-Tech Economics and Sustainable Futures}  
+  Harper Adams University, UK, Sep 18-19, 2022  
+
+- \textbf{NC1210: Frontiers in Multistate and CIGOFT Project}  
+  University of Texas Corpus Christi, TX, USA, Jan 5-6, 2023  
+
+- \textbf{6th Symposium on Agri-Tech Economics for Sustainable Futures}  
+  Harper Adams University, UK, Sep 18-19, 2023  
+
+- \textbf{International Conference for On-farm Precision Experimentation}  
+  Brownsville South Padre Island, TX, USA, Jan 8-11, 2024  
+
+\noindent\hrulefill
+
+## \textbf{Skills}
+- \textbf{Data Analysis}
+- \textbf{Data Visualization}
+- \textbf{ESRI ArcGIS Spatial Analyst}
+- \textbf{Econometrics}
+- \textbf{Software:} R (professional), Python (proficient), SQL, STATA, LaTeX 
+- \textbf{Languages:} English (Proficient), Korean (Native)

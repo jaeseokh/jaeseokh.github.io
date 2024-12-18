@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jaeseokh.github.io/Readme.html</loc>
-    <lastmod>2024-11-11T19:35:51.705Z</lastmod>
+    <loc>https://jaeseokh.github.io/index.html</loc>
+    <lastmod>2024-12-15T03:50:04.682Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/about/index.html</loc>
-    <lastmod>2024-12-15T03:51:39.564Z</lastmod>
+    <loc>https://jaeseokh.github.io/papers/index.html</loc>
+    <lastmod>2024-12-17T18:30:11.791Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/Resume.html</loc>
-    <lastmod>2024-12-15T03:49:45.206Z</lastmod>
+    <loc>https://jaeseokh.github.io/studynote/E01-Distributions.html</loc>
+    <lastmod>2024-12-11T21:16:07.574Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/studynote/index.html</loc>
-    <lastmod>2024-12-13T15:11:48.894Z</lastmod>
+    <loc>https://jaeseokh.github.io/studynote/E02-Tests.html</loc>
+    <lastmod>2024-12-11T21:08:19.956Z</lastmod>
   </url>
   <url>
     <loc>https://jaeseokh.github.io/researchnote/P02-stat-analysis-price.html</loc>
@@ -49,19 +49,19 @@
     <lastmod>2024-11-25T21:12:25.278Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/studynote/E02-Tests.html</loc>
-    <lastmod>2024-12-11T21:08:19.956Z</lastmod>
+    <loc>https://jaeseokh.github.io/studynote/index.html</loc>
+    <lastmod>2024-12-13T15:11:48.894Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/studynote/E01-Distributions.html</loc>
-    <lastmod>2024-12-11T21:16:07.574Z</lastmod>
+    <loc>https://jaeseokh.github.io/Resume.html</loc>
+    <lastmod>2024-12-18T02:02:27.914Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/papers/index.html</loc>
-    <lastmod>2024-12-15T03:52:05.720Z</lastmod>
+    <loc>https://jaeseokh.github.io/about/index.html</loc>
+    <lastmod>2024-12-18T02:02:03.503Z</lastmod>
   </url>
   <url>
-    <loc>https://jaeseokh.github.io/index.html</loc>
-    <lastmod>2024-12-15T03:50:04.682Z</lastmod>
+    <loc>https://jaeseokh.github.io/Readme.html</loc>
+    <lastmod>2024-11-11T19:35:51.705Z</lastmod>
   </url>
 </urlset>

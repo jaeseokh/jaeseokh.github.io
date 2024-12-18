@@ -34,6 +34,8 @@ This website highlights my research journey, showcasing programming code (R and 
 
 - David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. *Precision Agriculture*, 21, 1027-1044.
 
+ [Link to the published paper](https://link.springer.com/article/10.1007/s11119-019-09706-1)
+ 
 ## Research (Work in progress)
 
 - Value of Multiple Field Experiments Data as a Positive Externality <br>
