@@ -38,17 +38,12 @@ This website highlights my research journey, showcasing programming code (R and 
  
 ## Research (Work in progress)
 
-- Value of Multiple Field Experiments Data as a Positive Externality <br>
-   (with D. Bullock and T. Mieno)
+- Leveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data 
 
-- Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data <br>
-  (with D. Bullock and T. Mieno)
+- Evaluating the Profitability of Corn Seeding Decisions
 
-- Informing Site-Specific Input Management for Maize in KwaZulu Natal, South Africa, Using
-On-farm Experimentation and Statistical Techniques <br> 
- (with M. Delport, D. Bullock, and T.Mieno)
+- ICan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective
 
-- Do the shape of yield distribution varies by nitrogen rate and climate conditions?: cross validate the distribution with higher moment based approach <br> 
- (with D. Bullock and T. Mieno)
+- nforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)
 
 </div>

@@ -1,95 +1,213 @@
 ---
-title: "Resume [CV]"
-format: html
+format: 
+  pdf: 
+    documentclass: article
+    geometry:
+      - top=14mm
+      - left=15mm
+      - right=15mm
+      - bottom=10mm
+      - heightrounded
+    fontfamily: libertine
+    colorlinks: true
+    fontsize: '16'
+    include-in-header: 
+      text: |
+        \usepackage{multicol}
+        \usepackage{lipsum}
+        \usepackage{hyperref}
+        \usepackage{libertine}
+        \usepackage{wrapfig}
+        \pagestyle{empty}
+        \setlength{\multicolsep}{2pt plus 1.0pt minus 0.75pt}% 50% of original values
+        \setlength{\columnsep}{3em}
 ---
 
-# Jaeseok Hwang 
+<!-- TITLE -->
+\begin{huge}\begin{center}{\bf JAESEOK HWANG}\end{center}\end{huge}
 
-University of Illinois at Urbana-Champaign (UIUC)  
-Department of Agricultural and Consumer Economics (STEM-Designated)  
-1301 W Gregory Dr, Urbana, IL 61801  
-Email: [jaeseok2@illinois.edu](mailto:jaeseok2@illinois.edu)  
+<!-- CONTACT INFO -->
+\begin{center}\href{mailto:jaeseok2@illinois.edu}{jaeseok2@illinois.edu} ∙ Jersey City, NJ ∙ \href{https://github.com/jaeseokh}{Github} ∙ \href{https://www.linkedin.com/in/jaeseok-hwang-0b06741a1}{LinkedIn}\end{center}
 
-Current Residence: <br>
-160 Morgan Street, Apt 3007 <br>
-Jersey City, NJ 07302 
+**Summary:** Ph.D. candidate in Applied Economics with deep experience in causal inference and geo-spatial analysis. 
+Built ML pipelines in R and Python to estimate and predict U.S. farm productivies across diverse weather and market conditions.
 
-[GitHub](https://github.com/jaeseokh) | [LinkedIn](https://www.linkedin.com/in/jaeseok-hwang-0b06741a1/)
+<!-- EXPERIENCE -->
+\begin{large}{\bf EXPERIENCE \ (Ph.D Research Assistant)}
+  \vspace{3pt}
+  \hrule
+\end{large}
 
----
+\begin{multicols}{2}
+  \begin{flushleft}{\bf Data Intensive Farm Management (USDA NRCS)}\\
+  \end{flushleft}
+  \begin{flushright}
+  Sep 2020 – Present
+  \end{flushright}
+\end{multicols}
+- Developed geospatial data pipelines for a public-facing analytics platform (difm.farm)
+- Collaborated with Oracle Cloud engineers to implement scalable data infrastructure
+- Analyzed farm productivity across 100+ commercial farms in 16 states
+- Applied machine learning models using PyTorch, scikit-learn (Python),and R6, caret (R)
 
-## Education
+\begin{multicols}{2}
+  \begin{flushleft}{\bf Center for the Economics of Sustainability (UIUC)}\\
+  \end{flushleft}
+  \begin{flushright}
+  Jan 2021 – Present
+  \end{flushright}
+\end{multicols}
+- Simulated sustainable and profitable farm models
+- Integrated economic and agronomic data pipelines for large-scale scenario analysis 
 
-- **University of Illinois at Urbana-Champaign** <br>
-Candidate for Ph.D. in Agricultural and Applied Economics (STEM-Designated)  
-*Aug 2020 - May 2025 (expected)*
+\begin{multicols}{2}
+  \begin{flushleft}{\bf Advanced Ag Alliance (with Cornell University)}\\
+  \end{flushleft}
+  \begin{flushright}
+  Jan 2019 – Dec 2019
+  \end{flushright}
+\end{multicols}
+- Conducted data analysis on field experiments to estimate optimal hybrid seeding and fertilizer application
+- Collaborated with crop scientists at Cornell University on experimental design and result interpretation
 
-- **University of Illinois at Urbana-Champaign** <br> 
-M.A. in Agricultural and Applied Economics (STEM-Designated)  
-*Aug 2018 - May 2020*
+<!-- Publications -->
+\begin{large}{\bf PUBLICATION}
+  \vspace{3pt}
+  \hrule
+\end{large}
 
--  **Sogang University(South Korea)**  
-B.S. in Economics  
-*Aug 2013*
+\begin{multicols}{2}
+  \begin{flushleft}\textit{Bullock, D., Mieno, T., \& Hwang, J. (2020).} 
+  \end{flushleft}
+   \begin{flushright} \textit{Precision Agriculture}, 21(5), 1027–1044. \href{https://doi.org/10.1007/s11119-019-09706-1}{DOI}
+  \end{flushright} 
+\end{multicols}
+- \textit{The Value of Conducting On-Farm Field Trials Using Precision Agriculture Technology.}
+  
 
----
+\vspace{6pt}
+\begin{large} {\bf WORKING PAPERS} \end{large} 
+Reproducible R & Python Code: \href{https://github.com/jaeseokh}{github.com/jaeseokh}
 
-## Experience
+\hrule
+\vspace{6pt}
 
-### Research Assistant 
+\noindent\textbf{\textit{Leveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data}}  
+- Examines the broader economic value and unintended effects of multi-field precision experiments  
+- Demonstrates external validity using harmonized datasets across 100+ farms
 
-- **Statistical Analyses of Field Trials (Advanced Ag Alliance, NY)** <br>
-*Jan 2019 - Dec 2019* <br>
+\vspace{4pt}
+\noindent\textbf{\textit{Evaluating the Profitability of Corn Seeding Decisions}}  
+- Estimates and validates growers’ input decisions and optimizes future recommendations
 
-- **Data Intensive Farm Management (USDA's NRCS)** <br>
-*Sep 2020 - Present*
-
-### Graduate Research 
-- **Center for the Economics of Sustainability (CEOS), ** <br>
-*Jan 2021 – Present* <br>
-[Link to Webpage](https://ceos.illinois.edu/who-we-are/graduate-students)
-
----
-
-## Publications
-
-- **David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)**  <br> The value of conducting on-farm field trials using precision agriculture technology: <br> a theory and simulations. *Precision Agriculture*, 21, 1027-1044.<br>
- [Link to the published paper](https://link.springer.com/article/10.1007/s11119-019-09706-1)
-
-## Research (Work in progress)
-
-- **Value of Multiple Field Experiments Data as a Positive Externality** <br>
-   (with D. Bullock and T. Mieno)
-
-- **Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data** <br>
-  (with D. Bullock and T. Mieno)
-
-- **Informing Site-Specific Input Management for Maize in KwaZulu Natal, South Africa,<br> Using On-farm Experimentation and Statistical Techniques** <br> 
- (with M. Delport, D. Bullock, and T.Mieno)
-
-- **Do the shape of yield distribution varies by nitrogen rate and climate conditions?: <br> cross validate the distribution with higher moment based approach** <br> 
- (with D. Bullock and T. Mieno)
+\vspace{4pt}
+\noindent\textbf{\textit{Can On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective}}  
+- Estimated higher moments and yield distributions using GAM and maximum entropy methods  
+- Showed subplot data improves EONR accuracy under varying precipitation compared to field-level aggregation
 
 
----
+\vspace{4pt}
+\noindent\textbf{\textit{Informing Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)}}  
+- Led data management, reproducibility workflows, and statistical analysis across all projects
 
-## Presentations
+\vspace{5pt}
+<!-- EDUCATION -->
+\begin{large}{\bf EDUCATION}
+  \vspace{3pt}
+  \hrule
+\end{large}
 
-- **5th Symposium on Agri-Tech Economics and Sustainable Futures**  
-  Harper Adams University, UK, Sep 18-19, 2022
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf University of Illinois at Urbana-Champaign}\\
+  \hspace{5 mm}Ph.D. Agricultural \& Applied Economics
+  \end{flushleft}
+  \begin{flushright}
+  Expected Aug. 2025
+  \end{flushright}
+\end{multicols}
+- Dissertation: U.S. commercial crop and input allocation analysis under spatial and weather uncertainty
 
-- **NC1210: Frontiers in Multistate and CIGOFT Project**  
-  University of Texas Corpus Christi, TX, USA, Jan 5-6, 2023
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf University of Illinois Urbana-Champaign}\\
+  \hspace{5 mm}M.A. Agricultural \& Applied Economics
+  \end{flushleft}
+  \begin{flushright}
+  May 2020
+  \end{flushright}
+\end{multicols}
+- Focus on empirical policy evaluation, statistics, and environmental economics
 
-- **6th Symposium on Agri-Tech Economics for Sustainable Futures**  
-  Harper Adams University, UK, Sep 18-19, 2023
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf Sogang University}\\
+  \hspace{5 mm}B.S. Economics
+  \end{flushleft}
+  \begin{flushright}
+  Aug. 2013, South Korea
+  \end{flushright}
+\end{multicols}
 
-- **International Conference for On-farm Precision Experimentation**   
-  Brownsville South Padre Island, TX, USA, Jan 8-11, 2024
+\newpage
+<!-- SELECTED PRESENTATIONS -->
+\begin{large}{\bf SELECTED PRESENTATIONS}
+  \vspace{3pt}
+  \hrule
+\end{large}
 
----
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf International Conference for On-farm Precision Experimentation}\\
+  \end{flushleft}
+  \begin{flushright}
+  Jan. 2024 / Brownsville, TX
+  \end{flushright}
+\end{multicols}
+- Title: Shape of Yield Distribution: County-Level vs Field-Level Analysis
 
-## Skills
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf 6th Agri-Tech Economics Symposium}\\
+  \end{flushleft}
+  \begin{flushright}
+  Sep. 2023 / Newport, UK
+  \end{flushright}
+\end{multicols}
+- Title : Estimate the Accurate Profitability of U.S. Corn Seeding Rate: How Accurate is the Farmer’s Decision?
 
-- **Software:** R (professional), Python, SQL, STATA, LaTeX, QGIS 
-- **Languages:** English (Proficient), Korean (Native)
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf 5th Agri-Tech Economics Symposium}\\
+  \end{flushleft}
+  \begin{flushright}
+  Sep. 2022 / Newport, UK
+    \end{flushright}
+\end{multicols}
+- Title: Economic Externality from the Shared Field Information and Data
+
+\vspace{2pt}
+\begin{multicols}{2}
+  \begin{flushleft}{\bf Cyber-Infrastructure Development Meeting for DIFM}\\
+  \end{flushleft}
+  \begin{flushright}
+  Jan. 2023 / Corpus Christi, TX
+  \end{flushright}
+\end{multicols}
+- Title : Value of Multiple Field Experiment Data: Insight from Information Overflow
+
+<!-- SKILLS -->
+\begin{large}{\bf TECHNICAL SKILLS}
+  \vspace{3pt}
+  \hrule
+\end{large}
+
+\vspace{4pt}
+\begin{tabular}{@{}p{4.2cm}p{11cm}@{}}
+\textbf{Programming:} & Python (advanced), R (expert), SQL, Shell, LaTeX \\
+\textbf{Data Science \& ML:} & PyTorch, scikit-learn, Bootstrap, Causal inference, Bayesian modeling \\
+\textbf{Econometrics:} & Panel data, Treatment effect estimation, Simulation-based inference \\
+\textbf{Geospatial:} & GIS pipelines with R and QGIS; Spatial econometrics; Satellite data integration \\
+\textbf{Tools \& Workflow:} & GitHub, Jupyter, Quarto, VS Code, RStudio, Oracle Cloud, SQL \\
+\textbf{Visualization:} & ggplot2, matplotlib, Quarto dashboards, automated PDF/HTML reporting \\
+\end{tabular}

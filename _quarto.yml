@@ -21,7 +21,7 @@ website:
       - text: "Papers"
         href: papers/index.qmd
       - text: "Research Note"
-        href: researchnote/
+        href: researchnote/index.html
 
 format:
   html:
