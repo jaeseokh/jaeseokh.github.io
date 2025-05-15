@@ -42,8 +42,8 @@ This website highlights my research journey, showcasing programming code (R and 
 
 - Evaluating the Profitability of Corn Seeding Decisions
 
-- ICan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective
+- Can On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective
 
-- nforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)
+- Informing Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)
 
 </div>

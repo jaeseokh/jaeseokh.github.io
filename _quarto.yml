@@ -17,7 +17,7 @@ website:
       - text: "About"
         href: about/index.qmd
       - text: "Resume"
-        href: Resume.qmd
+        href: docs/Resume.pdf
       - text: "Papers"
         href: papers/index.qmd
       - text: "Research Note"
