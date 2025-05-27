@@ -206,8 +206,8 @@ Reproducible R & Python Code: \href{https://github.com/jaeseokh}{github.com/jaes
 \begin{tabular}{@{}p{4.2cm}p{11cm}@{}}
 \textbf{Programming:} & Python (advanced), R (expert), SQL, Shell, LaTeX \\
 \textbf{Data Science \& ML:} & PyTorch, scikit-learn, Bootstrap, Causal inference, Bayesian modeling \\
-\textbf{Econometrics:} & Panel data, Treatment effect estimation, Simulation-based inference \\
+\textbf{Econometrics:} & Panel data, Simulation-based inference \\
 \textbf{Geospatial:} & GIS pipelines with R and QGIS; Spatial econometrics; Satellite data integration \\
-\textbf{Tools \& Workflow:} & GitHub, Jupyter, Quarto, VS Code, RStudio, Oracle Cloud, SQL \\
-\textbf{Visualization:} & ggplot2, matplotlib, Quarto dashboards, automated PDF/HTML reporting \\
+\textbf{Tools \& Workflow:} & GitHub, Jupyter,  VS Code \\
+\textbf{Visualization:} & plotly, matplotlib \\
 \end{tabular}

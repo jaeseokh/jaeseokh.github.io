@@ -20,7 +20,7 @@ website:
         href: docs/Resume.pdf
       - text: "Papers"
         href: papers/index.qmd
-      - text: "Research Note"
+      - text: "Machine Learning and Data Analytics"
         href: researchnote/index.html
 
 format:
