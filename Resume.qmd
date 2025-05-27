@@ -27,7 +27,7 @@ format:
 \begin{huge}\begin{center}{\bf JAESEOK HWANG}\end{center}\end{huge}
 
 <!-- CONTACT INFO -->
-\begin{center}\href{mailto:jaeseok2@illinois.edu}{jaeseok2@illinois.edu} ∙ Jersey City, NJ ∙ \href{https://github.com/jaeseokh}{Github} ∙ \href{https://www.linkedin.com/in/jaeseok-hwang-0b06741a1}{LinkedIn}\end{center}
+\begin{center}\href{mailto:jaeseok2@illinois.edu}{jaeseok2@illinois.edu} ∙ 217-778-8776 ∙ \href{https://github.com/jaeseokh}{Github} ∙ \href{https://www.linkedin.com/in/jaeseok-hwang-0b06741a1}{LinkedIn}\end{center}
 
 **Summary:** Ph.D. candidate in Applied Economics with deep experience in causal inference and geo-spatial analysis. 
 Built ML pipelines in R and Python to estimate and predict U.S. farm productivies across diverse weather and market conditions.
