@@ -33,7 +33,7 @@ format:
 Built ML pipelines in R and Python to estimate and predict U.S. farm productivies across diverse weather and market conditions.
 
 <!-- EXPERIENCE -->
-\begin{large}{\bf EXPERIENCE \ (Ph.D Research Assistant)}
+\begin{large}{\bf EXPERIENCE \ (Graduate Research Assistant)}
   \vspace{3pt}
   \hrule
 \end{large}
