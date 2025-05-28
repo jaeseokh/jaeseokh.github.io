@@ -17,7 +17,7 @@ website:
       - text: "About"
         href: about/index.qmd
       - text: "Resume"
-        href: docs/Resume.pdf
+        href: Resume.pdf
       - text: "Papers"
         href: papers/index.qmd
       - text: "Machine Learning and Data Analytics"
