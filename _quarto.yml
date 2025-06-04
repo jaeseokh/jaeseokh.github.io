@@ -7,7 +7,6 @@ website:
   site-url: https://jaeseokh.github.io/
   open-graph: true
   back-to-top-navigation: true
-  google-analytics: "G-XZWWMRXM72"
   sidebar:
     style: "docked"  # Docked sidebar on the left
     background: "#13294B"  # Navy Blue background
@@ -17,7 +16,7 @@ website:
       - text: "About"
         href: about/index.qmd
       - text: "Resume"
-        href: Resume.pdf
+        href: docs/Resume.pdf
       - text: "Papers"
         href: papers/index.qmd
       - text: "Machine Learning and Data Analytics"
