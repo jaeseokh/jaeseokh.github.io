@@ -17,6 +17,9 @@ title: "Project and Research"
 
 ### **1. The Value of Multiple OFPE Datasets as an Externality**
 
+- **Main Contribution:**  
+  Although current OFPE datasets are limited in both quantity and quality, this research progressively integrates *key domain knowledge* from crop growth models in agronomy and crop science. The goal is to reform traditional supervised learning models so they better align with the biological and economic mechanisms underlying yield response.
+
 - **Objective:**  
   Combine more than 100 OFPE (On-Farm Precision Experiment) datasets and implement a leave-one-location-out (LOLO) cross-validation to predict yields for a held-out field *i* where no training data exist.
 
@@ -28,7 +31,7 @@ title: "Project and Research"
   2. A “universal yield-N response” derived from the combined dataset has limited explanatory power due to heterogeneous data quality and scale.
 
 - **Ongoing Work:**  
-  Shift focus from yield prediction toward improving the **expected information gain** and **probabilistic profitability**:
+  Shift focus from yield prediction toward improving the **expected information gain** and **probabilistic profitability**:  
   1. Identify available planting, application, and harvest windows.  
   2. Integrate core APSIM/DSSAT modules to simulate nitrogen uptake and mineralization processes.  
   3. Use ex-post yield and EONR (via backward induction) to evaluate stochastic profitability.
@@ -36,6 +39,9 @@ title: "Project and Research"
 <br>
 
 ### **2. Profitable Seeding Decisions and Farmer Behavior**
+
+- **Main Contribution:**  
+  This study frames the *dynamic risk environment* faced by growers—capturing how weather and price volatility shape real-world decision-making and risk management behavior. It models how farmers adapt to uncertainty in both short- and long-term horizons.
 
 - **Objective:**  
   Compare producers’ chosen seeding rates with the economically optimal seeding rate (EOSR) and assess their profitability under historical vs. recent weather and price conditions.
@@ -52,6 +58,9 @@ title: "Project and Research"
 <br>
 
 ### **3. Enhancing the Value of Soil Information: Insights from OFPE**
+
+- **Main Contribution:**  
+  This research focuses on identifying strategies that help farmers enhance their **learning capacity**—both statistically and computationally—to improve long-run profitability through data-informed management decisions.
 
 - **Status Quo:**  
   Farmers often base N-rate decisions on soil sampling and simulator-based recommendations. However, single-rate applications offer limited learning potential compared to variable-rate (VRN) approaches supported by on-farm experimentation (OFE).
