@@ -1,0 +1,73 @@
+---
+title: "Project and Research"
+---
+
+<br>
+
+## Publications
+
+- **David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)**  
+  The value of conducting on-farm field trials using precision agriculture technology:  
+  a theory and simulations. *Precision Agriculture*, 21, 1027–1044.  
+  <span style="font-size: 85%;">[<i class="fas fa-book"></i> Link to the published paper](https://link.springer.com/article/10.1007/s11119-019-09706-1)</span>
+
+<br>
+
+## Work in Progress
+
+### **1. The Value of Multiple OFPE Datasets as an Externality**
+
+- **Objective:**  
+  Combine more than 100 OFPE (On-Farm Precision Experiment) datasets and implement a leave-one-location-out (LOLO) cross-validation to predict yields for a held-out field *i* where no training data exist.
+
+- **Models:**  
+  XGBoost, Random Forest, and Causal Forest.
+
+- **Key Findings / Limitations:**  
+  1. The predictive capability of trained models remains low across fields.  
+  2. A “universal yield-N response” derived from the combined dataset has limited explanatory power due to heterogeneous data quality and scale.
+
+- **Ongoing Work:**  
+  Shift focus from yield prediction toward improving the **expected information gain** and **probabilistic profitability**:
+  1. Identify available planting, application, and harvest windows.  
+  2. Integrate core APSIM/DSSAT modules to simulate nitrogen uptake and mineralization processes.  
+  3. Use ex-post yield and EONR (via backward induction) to evaluate stochastic profitability.
+
+<br>
+
+### **2. Profitable Seeding Decisions and Farmer Behavior**
+
+- **Objective:**  
+  Compare producers’ chosen seeding rates with the economically optimal seeding rate (EOSR) and assess their profitability under historical vs. recent weather and price conditions.
+
+- **Model:**  
+  Generalized Additive Model (GAM).
+
+- **Key Findings:**  
+  Producers’ chosen rates are strongly influenced by **historical weather** and **price trends**, but recent shocks in weather or market conditions often lead to suboptimal outcomes.
+
+- **Ongoing Work:**  
+  Develop a **dynamic framework** to evaluate how short- and long-term shocks in weather and prices affect producers’ adaptive decisions and profitability over time.
+
+<br>
+
+### **3. Enhancing the Value of Soil Information: Insights from OFPE**
+
+- **Status Quo:**  
+  Farmers often base N-rate decisions on soil sampling and simulator-based recommendations. However, single-rate applications offer limited learning potential compared to variable-rate (VRN) approaches supported by on-farm experimentation (OFE).
+
+- **Research Question:**  
+  How effectively can we **learn accurate yield-N response functions** from soil information when combining VRN applications with OFE, compared to learning from single-rate applications?
+
+- **Proposed Approach:**  
+  Develop and test statistical frameworks (TBD) to quantify the **learning gain** from spatially rich OFE data relative to conventional soil-test-based recommendations.
+
+<br>
+
+---
+
+### **Other Collaborative Work**
+
+- **Informing Site-Specific Input Management in South Africa Using On-Farm Experimentation**  
+  *(with M. Delport, D. Bullock, and T. Mieno)*  
+  <br>&nbsp;&nbsp;&nbsp;&nbsp;– Led data management, reproducibility workflows, and statistical analysis across all project sites.

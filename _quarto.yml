@@ -18,7 +18,7 @@ website:
       - text: "Resume"
         href: docs/Resume.pdf
       - text: "Papers"
-        href: papers/index.qmd
+        href: papers/index_updating.qmd
       - text: "Machine Learning and Data Analytics"
         href: researchnote/index.html
 
