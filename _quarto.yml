@@ -5,27 +5,49 @@ project:
 website:
   title: "Jaeseok Hwang"
   site-url: https://jaeseokh.github.io/
-  open-graph: true
-  back-to-top-navigation: true
-  sidebar:
-    style: "docked"  # Docked sidebar on the left
-    background: "#13294B"  # Navy Blue background
-    text-color: "#FF5A00"  # Illinois Orange text color
-    search: true  # Include a search bar
-    contents:
-      - text: "About"
-        href: about/index.qmd
-      - text: "Resume"
-        href: docs/Resume.pdf
-      - text: "Papers"
-        href: papers/index_updating.qmd
-      - text: "Machine Learning and Data Analytics"
-        href: researchnote/index.html
+  favicon: assets/favicon.ico
+  navbar:
+    right:
+      - text: Projects
+        menu:
+          - text: Limited Data → Value
+            href: projects/limited-data.qmd
+          - text: Seed & N Choices under Risk
+            href: projects/risk-choices.qmd
+          - text: Static to Dyanmic information
+            href: projects/static-dynamic.qmd
+      - text: StudyNotes
+        menu:
+          - text: Bayesian
+            href: studynote/bayesian.qmd
+          - text: Learning(Statistical)
+            href: studynote/statistical_learning.qmd
+          - text: Risk-Analysis(finance,commodity)
+            href: studynote/risk_analysis.qmd
+        href: teaching/
+      - text: Papers
+        menu:
+          - text: Ch1(Value of limted Field Exp data)
+            href: research/ch1_value_limit.qmd
+          - text: Ch2(Crop-grower's Choice under Risk)
+            href: research/ch2_choice_risk.qmd
+          - text: Ch3(Enhancing value of higher moents)
+            href: research/ch3_enhance_moment.qmd
 
+
+      - text: Resume(CV)
+        href: resume/resume_updated.pdf
+  page-footer:
+    center: 
+      © {&copy} {date:yyyy} Jaeseok Hwang · Built with Quarto
 format:
   html:
-    theme: yeti
-    css: ../styles/styles.scss  # Custom CSS for styling
-    mainfont: sans-serif
-    fontsize: 16px
-    page-layout: full  # Use the "full" layout to manually implement the sidebar
+    theme: flatly
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    anchor-sections: true
+
+# Optional: enable listings for blog/posts later
+listing:
+  contents: posts
