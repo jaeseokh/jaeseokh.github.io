@@ -1,11 +1,9 @@
 ---
 title: "Jaeseok Hwang"
-# Use Quarto's About page as a clean hero-style landing page
-# See: https://quarto.org/docs/websites/website-pages.html#about
 about:
   template: trestles
-  image: assets/profile.jpg   # replace with your headshot path
-  image-shape: rounded
+  image: Jaeseok_profile.jpeg
+  image-shape: round
   links:
     - icon: github
       text: GitHub
@@ -16,10 +14,6 @@ about:
     - icon: envelope
       text: Email
       href: "mailto:jaeseok2@illinois.edu"
-  # One-liner that speaks to recruiters
-  description: 
-    Ph.D. candidate in Applied Economics building **data-driven decision systems** for agriculture; 
-    applied ML & Bayesian methods; risk analysis for growers and ag‑commodity markets.
 page-layout: article
 toc: false
 format:
@@ -28,29 +22,8 @@ format:
     smooth-scroll: true
 ---
 
-## Featured Work
+Hi, I'm **Jaeseok Hwang** — an **Applied Economist and Data Scientist** completing my Ph.D. in Applied Economics at the **University of Illinois Urbana-Champaign** (expected May 2026).  
 
-Below are three flagship projects that show how I extract value from messy, limited ag data, connect models to domain knowledge, and link farmer decisions to market risk.
+**My research develops** data-driven decision systems for U.S. crop producers, integrating applied machine learning, Bayesian modeling, and economic optimization to turn limited field data into actionable, risk-aware insights.  
 
-::: {.grid .cards}
--   title: Enhancing Value from *Limited Data*
-    href: projects/limited-data.qmd
-    text: Bayesian & ML workflow that turns ~100 on‑farm field trials into actionable nitrogen/management insights. Includes evolution from early failed baselines (2021) to a signal‑rich, domain‑informed pipeline.
-
--   title: Farmers’ Seed & Fertilizer Choices under Risk
-    href: projects/risk-choices.qmd
-    text: Do farmers hedge? An empirical + simulation framework linking weather/price uncertainty to variety and N‑rate choices; connects farm decisions to ag‑commodity risk management.
-
--   title: Ongoing Projects
-    href: projects/ongoing.qmd
-    text: Active lines I’m exploring now (brief notes, figures, and open questions).
-:::
-
-## What I Do (in one minute)
-
-- **Model messy field data** → robust features from soils (SSURGO), topography (DEM), and weather (Daymet).  
-- **Fit interpretable + predictive models** → XGBoost/QR forests + Bayesian partial pooling to handle limited/noisy trials.  
-- **Bridge to decisions** → risk metrics, scenario analysis, and simple dashboards that stakeholders can use.  
-
-If you want the long version, see my [CV](cv/cv.pdf){target=_blank} and selected [papers](papers/).
-
+**Main focus**  on building profit-optimization and risk-management frameworks that connect crop producers information with ag-technology, input-supply — using **R** as my primary analytical environment and **Python** for scalable machine-learning workflows.  

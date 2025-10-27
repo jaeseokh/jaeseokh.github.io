@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jaeseok Hwang">
 
-<title>How Price Moves : Stock Market and Grain Stock – Jaeseok Hwang</title>
+<title>Resaerch Journey – Jaeseok Hwang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,11 +42,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -67,6 +68,36 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -99,102 +130,96 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles/styles.scss">
-<meta property="og:title" content="How Price Moves : Stock Market and Grain Stock – Jaeseok Hwang">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Jaeseok Hwang">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Jaeseok Hwang
-      </li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Jaeseok Hwang</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Projects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-projects">    
+        <li>
+    <a class="dropdown-item" href="../projects/limited-data.md">
+ <span class="dropdown-text">Add Value to Limited Data</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/risk-choices.md">
+ <span class="dropdown-text">Input Choices under Risk</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../projects/static-dynamic.md">
+ <span class="dropdown-text">Static to Dyanmic Information</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-studynotes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">StudyNotes</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-studynotes">    
+        <li>
+    <a class="dropdown-item" href="../studynote/bayesian.pdf">
+ <span class="dropdown-text">Bayesian</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../studynote/statistical_learning.pdf">
+ <span class="dropdown-text">Statistical Learning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../studynote/risk_analysis.pdf">
+ <span class="dropdown-text">Risk-Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../research/working_papers.pdf"> 
+<span class="menu-text">Papers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../resume/resume_updated.pdf"> 
+<span class="menu-text">Resume(CV)</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Jaeseok Hwang</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../about/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../docs/Resume.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Resume</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../papers/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Papers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../researchnote/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Machine Learning and Data Analytics</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How Price Moves : Stock Market and Grain Stock</h1>
+<h1 class="title">Resaerch Journey</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jaeseok Hwang </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
-    </div>
-  </div>
   
     
   </div>
@@ -204,147 +229,45 @@ window.Quarto = {
 </header>
 
 
-<section id="mechanisms-of-price-changes-stock-market-vs.-grain-market-corn" class="level2">
-<h2 class="anchored" data-anchor-id="mechanisms-of-price-changes-stock-market-vs.-grain-market-corn">Mechanisms of Price Changes: Stock Market vs.&nbsp;Grain Market (Corn)</h2>
-<p>Price changes in both stock and grain markets reflect the dynamics of supply, demand, and external factors. While the overarching mechanisms share similarities, the specific drivers and their relative influence differ significantly.</p>
-<section id="similarities" class="level3">
-<h3 class="anchored" data-anchor-id="similarities"><strong>Similarities</strong></h3>
-<ol type="1">
-<li><strong>Supply and Demand Dynamics</strong>:
+<p><br></p>
+<section id="publications" class="level2">
+<h2 class="anchored" data-anchor-id="publications">Publications</h2>
 <ul>
-<li>Both markets rely on the interplay between supply and demand. For example, stock prices rise with increased demand for shares, while corn prices rise with higher demand for grain or reduced supply due to weather shocks.</li>
-</ul></li>
-<li><strong>Market Expectations</strong>:
-<ul>
-<li>Prices in both markets are forward-looking, reflecting expectations about future conditions. In the stock market, this includes company performance and economic forecasts. In the corn market, this includes crop yields, trade policies, and global demand trends.</li>
-</ul></li>
-<li><strong>Speculation and Hedging</strong>:
-<ul>
-<li>Traders in both markets speculate on future price movements or hedge against risks. Speculative activity can amplify price volatility.</li>
-</ul></li>
-<li><strong>Macroeconomic Influences</strong>:
-<ul>
-<li>Broad factors like interest rates, inflation, and global economic conditions impact both stock and corn prices.</li>
-</ul></li>
-</ol>
-<hr>
-</section>
-<section id="differences" class="level3">
-<h3 class="anchored" data-anchor-id="differences"><strong>Differences</strong></h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 41%">
-<col style="width: 42%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Aspect</strong></th>
-<th><strong>Stock Market</strong></th>
-<th><strong>Grain Market (Corn)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Primary Drivers</strong></td>
-<td>Corporate earnings, investor sentiment, economic data</td>
-<td>Weather conditions, crop yields, global trade, biofuel policies</td>
-</tr>
-<tr class="even">
-<td><strong>Regulation</strong></td>
-<td>Regulated by securities agencies (e.g., SEC in the U.S.)</td>
-<td>Governed by agricultural trade policies (e.g., tariffs, subsidies)</td>
-</tr>
-<tr class="odd">
-<td><strong>Seasonality</strong></td>
-<td>Limited, primarily earnings cycles</td>
-<td>Strong seasonal patterns (planting and harvest cycles)</td>
-</tr>
-<tr class="even">
-<td><strong>Elasticity</strong></td>
-<td>Prices more elastic to changes in demand</td>
-<td>Prices often inelastic, especially during supply shocks</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="regression-models-for-price-change-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="regression-models-for-price-change-patterns">Regression Models for Price Change Patterns</h2>
-<section id="stock-market-price-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="stock-market-price-analysis"><strong>1. Stock Market Price Analysis</strong></h3>
-<section id="regression-model" class="level4">
-<h4 class="anchored" data-anchor-id="regression-model"><strong>Regression Model</strong></h4>
-<p>The general regression equation for stock price analysis is:</p>
-<p><span class="math display">\[
-P_t = \beta_0 + \beta_1 \text{Earnings}_t + \beta_2 \text{MarketSentiment}_t + \beta_3 \text{GDPGrowth}_t + \beta_4 \text{InterestRate}_t + \epsilon_t
-\]</span></p>
-<p>Where: - <span class="math inline">\(P_t\)</span>: Stock price at time <span class="math inline">\(t\)</span>. - <span class="math inline">\(\text{Earnings}_t\)</span>: Corporate earnings. - <span class="math inline">\(\text{MarketSentiment}_t\)</span>: Sentiment score from news or social media. - <span class="math inline">\(\text{GDPGrowth}_t\)</span>: GDP growth rate. - <span class="math inline">\(\text{InterestRate}_t\)</span>: Interest rate.</p>
-</section>
-<section id="purpose-of-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="purpose-of-analysis"><strong>Purpose of Analysis</strong></h4>
-<ul>
-<li>Identify how macroeconomic and company-specific factors drive stock price movements.</li>
-<li>Assess the role of market sentiment in short-term price volatility.</li>
+<li><p><strong>David S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)</strong> <br> The value of conducting on-farm field trials using precision agriculture technology: <br> a theory and simulations. <em>Precision Agriculture</em>, 21, 1027-1044.</p>
+<p><span style="font-size: 85%;"><a href="https://link.springer.com/article/10.1007/s11119-019-09706-1"><i class="fas fa-book"></i> Link to the published paper</a></span></p></li>
 </ul>
-<hr>
 </section>
-</section>
-<section id="grain-market-corn-price-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="grain-market-corn-price-analysis"><strong>2. Grain Market (Corn Price) Analysis</strong></h3>
-<section id="regression-model-1" class="level4">
-<h4 class="anchored" data-anchor-id="regression-model-1"><strong>Regression Model</strong></h4>
-<p>The general regression equation for corn price analysis is:</p>
-<p><span class="math display">\[
-P_t = \beta_0 + \beta_1 \text{Yield}_t + \beta_2 \text{ExportDemand}_t + \beta_3 \text{BiofuelPolicy}_t + \beta_4 \text{Weather}_t + \beta_5 \text{Seasonality}_t + \epsilon_t
-\]</span></p>
-<p>Where: <br> - <span class="math inline">\(P_t\)</span>: Corn price at time <span class="math inline">\(t\)</span>. <br> - <span class="math inline">\(\text{Yield}_t\)</span>: Corn yield per acre. <br> - <span class="math inline">\(\text{ExportDemand}_t\)</span>: Demand for corn in international markets. <br> - <span class="math inline">\(\text{BiofuelPolicy}_t\)</span>: Dummy variable representing changes in biofuel policy. <br> - <span class="math inline">\(\text{Weather}_t\)</span>: Weather conditions (e.g., precipitation, temperature). <br> - <span class="math inline">\(\text{Seasonality}_t\)</span>: Seasonal index for planting and harvest periods.</p>
-</section>
-<section id="purpose-of-analysis-1" class="level4">
-<h4 class="anchored" data-anchor-id="purpose-of-analysis-1"><strong>Purpose of Analysis</strong></h4>
+<section id="work-in-progress" class="level2">
+<h2 class="anchored" data-anchor-id="work-in-progress">Work in Progress</h2>
 <ul>
-<li>Determine the impact of agricultural and trade factors on corn prices.</li>
-<li>Quantify how seasonal and weather-related variations affect price dynamics.</li>
+<li><p><strong>Leveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data</strong><br>
+(with D. Bullock and T. Mieno)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Examines the broader economic value and unintended effects of multi-field precision experiments<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Demonstrates external validity using harmonized datasets across 100+ farms<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/jaeseokh/value_multifield_ofpe">GitHub Repository</a></p></li>
+<li><p><strong>Evaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data</strong> (with D. Bullock and T. Mieno)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Estimates and validates growers’ input decisions and optimizes future recommendations<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/jaeseokh/corn_seed_response">GitHub Repository</a></p></li>
+<li><p><strong>Can On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective</strong> (with D. Bullock and T. Mieno)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Estimated higher moments and yield distributions using GAM and maximum entropy methods<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Examine subplot data improves distribution estimates with uncertainty compared to aggregated data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/jaeseokh/yield_distribution">GitHub Repository</a></p></li>
+<li><p><strong>Informing Site-Specific Input Management in South Africa Using On-Farm Experimentation</strong> (with M. Delport, D. Bullock, and T.Mieno)<br>
+&nbsp;&nbsp;&nbsp;&nbsp; - Led data management, reproducibility workflows, and statistical analysis across all projects</p></li>
 </ul>
-<hr>
-</section>
-</section>
-<section id="summary-of-analytical-approaches" class="level3">
-<h3 class="anchored" data-anchor-id="summary-of-analytical-approaches">Summary of Analytical Approaches</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 40%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Market</strong></th>
-<th><strong>Primary Factors in Regression</strong></th>
-<th><strong>Purpose</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Stock Market</strong></td>
-<td>Corporate earnings, sentiment, macroeconomic indicators</td>
-<td>Understand short-term price volatility and long-term valuation.</td>
-</tr>
-<tr class="even">
-<td><strong>Grain Market (Corn)</strong></td>
-<td>Yield, export demand, weather, seasonality, biofuel policies</td>
-<td>Identify the impact of agricultural and trade policies on price trends.</td>
-</tr>
-</tbody>
-</table>
-<hr>
+
 
 
 </section>
-</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -451,6 +374,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -766,8 +694,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© {&amp;copy} {Oct 2025} Jaeseok Hwang · Built with Quarto</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
 
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

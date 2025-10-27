@@ -1,8 +1,0 @@
----
-title: "Tests"
-author: "Jaeseok Hwang"
-date: "Sep 2024"
-format: html
----
-
-# Distributions
