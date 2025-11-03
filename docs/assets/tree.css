@@ -1,0 +1,45 @@
+/* Hero */
+.hero { text-align:center; padding: 3rem 1rem 2rem; }
+.hero h1 { margin: 0 0 .25rem; font-weight: 800; }
+.hero .sub { opacity:.8; margin-bottom: 1rem; }
+.cta-row { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+
+/* Buttons & chips */
+.btn { display:inline-block; padding:.55rem .9rem; border-radius:999px; border:1px solid rgba(0,0,0,.12); text-decoration:none; }
+.btn.primary { background:#0d6efd; color:#fff; border-color:#0d6efd; }
+.btn.ghost { background:transparent; }
+.btn.small { padding:.4rem .7rem; font-size:.9rem; }
+.chip { display:inline-block; padding:.2rem .6rem; border-radius: 999px; border:1px solid rgba(0,0,0,.15); font-size:.8rem; margin-right:.25rem; }
+.chip.done { background: rgba(25,135,84,.15); border-color: rgba(25,135,84,.35); }
+.chip.inprog { background: rgba(255,193,7,.15); border-color: rgba(255,193,7,.35); }
+
+/* Ensemble tree */
+.tree-wrap { position:relative; padding: 1rem 0 2rem; }
+.tree-trunk { position:absolute; left:50%; transform:translateX(-50%); top:0; bottom:0; width:2px; background:linear-gradient(#e0e0e0,transparent 20%, transparent 80%, #e0e0e0); opacity:.7; }
+.tree-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; align-items:stretch; }
+.node-card { background: var(--quarto-body-bg, #fff); border:1px solid rgba(0,0,0,.08); border-radius: 16px; padding: 1rem; box-shadow: 0 4px 18px rgba(0,0,0,.06); position:relative; }
+.node-card::before { content:""; position:absolute; top:-12px; left:50%; width:2px; height:12px; background:#d0d0d0; }
+.node-card h3 { margin-top:0; }
+.kicker { font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; opacity:.6; margin:.5rem 0 .15rem; }
+.actions { margin-top:.6rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+
+@media (max-width: 900px) {
+  .tree-grid { grid-template-columns: 1fr; }
+  .tree-trunk { display:none; }
+  .node-card::before { display:none; }
+}
+
+/* Cards grid on /projects */
+.cards { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:1rem; }
+.card { display:block; padding:1rem; border:1px solid rgba(0,0,0,.08); border-radius:16px; text-decoration:none; color:inherit; box-shadow: 0 4px 16px rgba(0,0,0,.05); }
+.card:hover { box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+
+/* Stepper */
+.stepper { display:flex; gap:.5rem; flex-wrap:wrap; margin: .5rem 0 1rem; }
+.step { padding:.35rem .6rem; border-radius:999px; background:#f1f3f5; font-size:.85rem; }
+.step.done { background: rgba(25,135,84,.15); }
+.step.inprog { background: rgba(255,193,7,.15); }
+
+/* Mini hero on project pages */
+.hero-mini { background: linear-gradient(90deg, rgba(13,110,253,.08), transparent); padding: .8rem 1rem; border-radius: 12px; margin: .5rem 0 1rem; }
+```

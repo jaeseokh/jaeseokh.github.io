@@ -1,0 +1,92 @@
+---
+title: "Multi‑Field OFPE Value"
+format:
+  html:
+    toc: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r}
+# -- Configure repo + assets (EDIT these paths to your actual files)
+repo_user <- "jaeseokh"
+repo_name <- "value_multifield_ofpe"
+branch    <- "main"    # or the branch where results live
+
+# Example: results/figures/main_figure.png and results/tables/summary.csv
+figure_path <- "results/figures/main_figure.png"
+table_path  <- "results/tables/summary.csv"
+
+base_raw <- sprintf("https://raw.githubusercontent.com/%s/%s/%s/",
+                    repo_user, repo_name, branch)
+url_fig <- paste0(base_raw, figure_path)
+url_tbl <- paste0(base_raw, table_path)
+```
+
+::: {.hero-mini}
+
+# Why it matters
+
+Pooling on‑farm precision experiments across fields can turn small local trials into **field‑scale, robust recommendations**.
+:::
+
+## At a glance
+
+* **Main problem (why)**: Farmers run OFPEs, but gains are often siloed by field; pooling is hard.
+* **Main question (focus)**: How to quantify cross‑field value while respecting heterogeneity?
+* **Finding / limitation**: Early evidence of decision value; pooling sensitive to outliers.
+* **Long‑term solution & goal**: Hierarchical pooling + diagnostics → robust field prescriptions.
+
+## Key Result
+
+### Main Figure
+
+```{r}
+#| fig-cap: "Latest main figure from the repo"
+knitr::include_graphics(url_fig)
+```
+
+**Takeaway (2 sentences):**
+
+* The pooled model identifies consistent response patterns across fields.
+* Remaining variance suggests targeted pooling rules and outlier handling are pivotal.
+
+### Main Table (top lines)
+
+```{r}
+library(readr); library(dplyr)
+try({
+  tbl <- read_csv(url_tbl, show_col_types = FALSE)
+  head(tbl, 8)
+}, silent = TRUE)
+```
+
+**Takeaway (2 sentences):**
+
+* The summary highlights between‑field variability that affects expected gains.
+* We prioritize shrinkage strategies where uncertainty is largest.
+
+## Workflow Roadmap
+
+<div class="stepper">
+  <div class="step done">Data audit</div>
+  <div class="step inprog">Pooling models</div>
+  <div class="step">Diagnostics</div>
+  <div class="step">Prescription</div>
+  <div class="step">Docs</div>
+</div>
+
+## Tech & Data
+
+**Tech**: R, Quarto, GLM/GLMM, Spatial/CAR, Bayes
+
+**Data**: OFPE field trials (multi‑year, multi‑field).
+
+<div class="actions">
+  <a class="btn primary" href="https://github.com/jaeseokh/value_multifield_ofpe">GitHub Repository</a>
+</div>
+```

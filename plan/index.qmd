@@ -1,0 +1,157 @@
+# ---- Plan–Track–Feedback : monthly + weekly (one-chunk) ---------------------
+
+```{r load_libs_data_bhm}
+
+req <- c("dplyr","tidyr","lubridate","ggplot2","gt","googlesheets4","stringr")
+to_install <- req[!req %in% rownames(installed.packages())]
+if(length(to_install)) install.packages(to_install, quiet = TRUE)
+invisible(lapply(req, library, character.only = TRUE))
+
+# ------------------------------ 1) MONTHLY PLAN ------------------------------
+
+# Edit these values each month right here
+
+plan_title   <- "Stay Calm in Pocket"
+plan_period  <- "3 years (Nov 2025 – Nov 2028) of finding my real interest and talent."
+principles   <- c(
+"Stick to the simple plan",
+"Start first – finish it every day (no excuse)",
+"Relaxed but consistent work"
+)
+
+month_label  <- "Nov–Dec 2025"
+focus_items  <- c(
+"CPT Job & Defense",
+"GitHub R–Python 3-chapter with webpage",
+"Ensemble learning (stat inference) & Bayesian study",
+"Price analysis (commodity market)",
+"English (interview prep)"
+)
+
+# Render monthly plan blocks
+
+cat(sprintf("## %s\n\n", plan_title))
+cat(sprintf("*%s*\n\n", plan_period))
+
+tibble(`#` = seq_along(principles), Principle = principles) |>
+gt() |>
+tab_header(title = md("**Monthly Principles**")) |>
+tab_style(style = cell_text(weight = "bold"),
+locations = cells_column_labels(everything())) |>
+fmt_markdown(columns = everything())
+
+cat("\n\n")
+tibble(Area = month_label, Focus = focus_items) |>
+mutate(Area = if_else(row_number()==1, Area, "")) |>
+gt() |>
+tab_header(title = md(sprintf("**Monthly Focus — %s**", month_label))) |>
+tab_style(style = cell_text(weight = "bold"),
+locations = cells_column_labels(everything())) |>
+cols_align(align = "left", columns = everything())
+
+# ------------------------------ 2) WEEKLY TRACK ------------------------------
+
+# Keep a Google Sheet with columns:
+
+# Date | Academic | Career | Personal | Done (%) | Notes | Energy
+
+# Set sharing to: Anyone with link can view (or add your service account)
+
+sheet_url <- "[https://docs.google.com/spreadsheets/d/10_fOOT3k2c_W43h2iE8xDffhRs1spUNI_GDetKR8xLs/edit?gid=932499860#gid=932499860](https://docs.google.com/spreadsheets/d/10_fOOT3k2c_W43h2iE8xDffhRs1spUNI_GDetKR8xLs/edit?gid=932499860#gid=932499860)"  # <<< EDIT: your Google Sheet URL >>>
+
+# Safe read; if the URL isn't set yet, skip gracefully
+
+have_sheet <- grepl("http", sheet_url)
+if (have_sheet) {
+gs4_deauth()  # uses public read if the sheet is shared to "Anyone with link"
+daily <- tryCatch(
+googlesheets4::read_sheet(sheet_url, sheet = 1, col_types = "Dcccccn"),
+error = function(e) NULL
+)
+} else {
+daily <- NULL
+}
+
+if (is.null(daily)) {
+cat("\n\n> *Weekly tracker will appear here once your Google Sheet URL is set and accessible.*\n")
+} else {
+
+# Clean & metrics
+
+daily <- daily |>
+rename(
+date = 1,
+academic = 2, career = 3, personal = 4,
+done_pct = 5, notes = 6, energy = 7
+) |>
+mutate(
+date = as.Date(date),
+done_pct = as.numeric(str_replace(done_pct, "%",""))/100
+) |>
+arrange(date)
+
+# Weekly summary (Mon–Sun)
+
+weekly <- daily |>
+mutate(week = floor_date(date, unit = "week", week_start = 1)) |>
+group_by(week) |>
+summarise(
+days = n(),
+avg_done = mean(done_pct, na.rm = TRUE),
+green_days = sum(done_pct >= 0.9, na.rm = TRUE),
+yellow_days = sum(dplyr::between(done_pct, 0.6, 0.89), na.rm = TRUE),
+red_days = sum(done_pct < 0.6, na.rm = TRUE),
+avg_energy = mean(energy, na.rm = TRUE),
+.groups = "drop"
+)
+
+# Show last 7 days table
+
+cat("\n\n### Last 7 Days — Daily Log\n")
+daily_tail <- tail(daily, 7) |>
+mutate(Done = scales::percent(done_pct, accuracy = 1)) |>
+select(date, academic, career, personal, Done, notes, energy)
+
+daily_tail |>
+gt() |>
+tab_header(title = md("**Daily Plan → Track**")) |>
+cols_label(
+date = "Date", academic = "Academic 🎓", career = "Career 💼",
+personal = "Personal 💪", notes = "Notes 🗒", energy = "Energy (1–5)"
+) |>
+data_color(
+columns = "Done",
+colors = scales::col_bin(
+palette = c("#f87171", "#fbbf24", "#34d399"),
+domain = c(0, 1), bins = c(0, 0.6, 0.9, 1.01)
+)
+)
+
+# Weekly plot
+
+cat("\n\n### Weekly Consistency\n")
+ggplot(weekly, aes(x = week, y = avg_done)) +
+geom_col() +
+geom_hline(yintercept = 0.9, linetype = 2) +
+scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0,1)) +
+labs(x = "Week (Mon start)", y = "Avg Done %", title = "Weekly Consistency Score",
+subtitle = "Dashed line at 90% target") +
+theme_minimal(base_size = 12)
+
+# Weekly summary table (most recent)
+
+cat("\n\n")
+tail(weekly, 1) |>
+transmute(
+`Week starting` = week,
+`Avg Done %` = scales::percent(avg_done, 1),
+`Green (≥90%)` = green_days,
+`Yellow (60–89%)` = yellow_days,
+`Red (<60%)` = red_days,
+`Avg Energy` = round(avg_energy,1)
+) |>
+gt() |>
+tab_header(title = md("**This Week at a Glance**"))
+}
+
+# -----------------------------------------------------------------------------

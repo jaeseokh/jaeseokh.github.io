@@ -4,7 +4,7 @@
     "href": "Readme.html",
     "title": "Jaeseok Hwang",
     "section": "",
-    "text": "jaeseok hwang webpage\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "jaeseok hwang webpage"
   },
   {
     "objectID": "about/index.html",
@@ -28,6 +28,41 @@
     "text": "Research (Work in progress)\n\nLeveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data\nEvaluating the Profitability of Corn Seeding Decisions\nCan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective\nInforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)"
   },
   {
+    "objectID": "projects/ch3/ch3_index.html",
+    "href": "projects/ch3/ch3_index.html",
+    "title": "Yield Distribution",
+    "section": "",
+    "text": "# -- Configure repo + assets (EDIT these paths)\nrepo_user &lt;- \"jaeseokh\"\nrepo_name &lt;- \"yield_distribution\"\nbranch    &lt;- \"main\"\n\nfigure_path &lt;- \"results/figures/main_figure.png\"\ntable_path  &lt;- \"results/tables/summary.csv\"\n\nbase_raw &lt;- sprintf(\"https://raw.githubusercontent.com/%s/%s/%s/\",\n                    repo_user, repo_name, branch)\nurl_fig &lt;- paste0(base_raw, figure_path)\nurl_tbl &lt;- paste0(base_raw, table_path)"
+  },
+  {
+    "objectID": "projects/ch3/ch3_index.html#at-a-glance",
+    "href": "projects/ch3/ch3_index.html#at-a-glance",
+    "title": "Yield Distribution",
+    "section": "At a glance",
+    "text": "At a glance\n\nMain problem: Averages understate tail risk.\nMain question: How do N × weather shift moments/tails?\nFinding / limitation: Tails respond differently; calibration ongoing.\nLong‑term solution & goal: Central/raw‑moment regressions → MaxEnt densities."
+  },
+  {
+    "objectID": "projects/ch3/ch3_index.html#key-result",
+    "href": "projects/ch3/ch3_index.html#key-result",
+    "title": "Yield Distribution",
+    "section": "Key Result",
+    "text": "Key Result\n\nMain Figure\n\nknitr::include_graphics(url_fig)\n\n\n\n\nLatest main figure from the repo\n\n\n\n\nTakeaway: Two sentences about risk‑sensitive insights from the figure.\n\n\nMain Table (top lines)\n\nlibrary(readr); library(dplyr)\ntry({\n  tbl &lt;- read_csv(url_tbl, show_col_types = FALSE)\n  head(tbl, 8)\n}, silent = TRUE)\n\nTakeaway: Two sentences on moment shifts and implications."
+  },
+  {
+    "objectID": "projects/ch3/ch3_index.html#workflow-roadmap",
+    "href": "projects/ch3/ch3_index.html#workflow-roadmap",
+    "title": "Yield Distribution",
+    "section": "Workflow Roadmap",
+    "text": "Workflow Roadmap\n\n\nMoment models\n\n\nMaxEnt\n\n\nBacktests\n\n\nDocs"
+  },
+  {
+    "objectID": "projects/ch3/ch3_index.html#tech-data",
+    "href": "projects/ch3/ch3_index.html#tech-data",
+    "title": "Yield Distribution",
+    "section": "Tech & Data",
+    "text": "Tech & Data\nTech: R, MaxEnt, NB/GLM, CAR\nData: OFPE + weather/soil features.\n\nGitHub Repository\n\n```"
+  },
+  {
     "objectID": "projects/index_origin.html#publications",
     "href": "projects/index_origin.html#publications",
     "title": "Resaerch Journey",
@@ -40,6 +75,13 @@
     "title": "Resaerch Journey",
     "section": "Work in Progress",
     "text": "Work in Progress\n\nLeveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data\n(with D. Bullock and T. Mieno)\n     - Examines the broader economic value and unintended effects of multi-field precision experiments\n     - Demonstrates external validity using harmonized datasets across 100+ farms\n    GitHub Repository\nEvaluating the Profitability of Corn Seeding Decisions: Insights from On-Farm Precision Experiments Data (with D. Bullock and T. Mieno)\n     - Estimates and validates growers’ input decisions and optimizes future recommendations\n    GitHub Repository\nCan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective (with D. Bullock and T. Mieno)\n     - Estimated higher moments and yield distributions using GAM and maximum entropy methods\n     - Examine subplot data improves distribution estimates with uncertainty compared to aggregated data\n    GitHub Repository\nInforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (with M. Delport, D. Bullock, and T.Mieno)\n     - Led data management, reproducibility workflows, and statistical analysis across all projects"
+  },
+  {
+    "objectID": "plan/index.html",
+    "href": "plan/index.html",
+    "title": "—- Plan–Track–Feedback : monthly + weekly (one-chunk) ———————",
+    "section": "",
+    "text": "—- Plan–Track–Feedback : monthly + weekly (one-chunk) ———————\nreq &lt;- c(“dplyr”,“tidyr”,“lubridate”,“ggplot2”,“gt”,“googlesheets4”,“stringr”) to_install &lt;- req[!req %in% rownames(installed.packages())] if(length(to_install)) install.packages(to_install, quiet = TRUE) invisible(lapply(req, library, character.only = TRUE))\n\n\n—————————— 1) MONTHLY PLAN ——————————\n\n\nEdit these values each month right here\nplan_title &lt;- “Stay Calm in Pocket” plan_period &lt;- “3 years (Nov 2025 – Nov 2028) of finding my real interest and talent.” principles &lt;- c( “Stick to the simple plan”, “Start first – finish it every day (no excuse)”, “Relaxed but consistent work” )\nmonth_label &lt;- “Nov–Dec 2025” focus_items &lt;- c( “CPT Job & Defense”, “GitHub R–Python 3-chapter with webpage”, “Ensemble learning (stat inference) & Bayesian study”, “Price analysis (commodity market)”, “English (interview prep)” )\n\n\nRender monthly plan blocks\ncat(sprintf(“## %s”, plan_title)) cat(sprintf(“%s”, plan_period))\ntibble(# = seq_along(principles), Principle = principles) |&gt; gt() |&gt; tab_header(title = md(“Monthly Principles”)) |&gt; tab_style(style = cell_text(weight = “bold”), locations = cells_column_labels(everything())) |&gt; fmt_markdown(columns = everything())\ncat(“”) tibble(Area = month_label, Focus = focus_items) |&gt; mutate(Area = if_else(row_number()==1, Area, ““)) |&gt; gt() |&gt; tab_header(title = md(sprintf(”Monthly Focus — %s”, month_label))) |&gt; tab_style(style = cell_text(weight = “bold”), locations = cells_column_labels(everything())) |&gt; cols_align(align = “left”, columns = everything())\n\n\n—————————— 2) WEEKLY TRACK ——————————\n\n\nKeep a Google Sheet with columns:\n\n\nDate | Academic | Career | Personal | Done (%) | Notes | Energy\n\n\nSet sharing to: Anyone with link can view (or add your service account)\nsheet_url &lt;- “https://docs.google.com/spreadsheets/d/10_fOOT3k2c_W43h2iE8xDffhRs1spUNI_GDetKR8xLs/edit?gid=932499860#gid=932499860” # &lt;&lt;&lt; EDIT: your Google Sheet URL &gt;&gt;&gt;\n\n\nSafe read; if the URL isn’t set yet, skip gracefully\nhave_sheet &lt;- grepl(“http”, sheet_url) if (have_sheet) { gs4_deauth() # uses public read if the sheet is shared to “Anyone with link” daily &lt;- tryCatch( googlesheets4::read_sheet(sheet_url, sheet = 1, col_types = “Dcccccn”), error = function(e) NULL ) } else { daily &lt;- NULL }\nif (is.null(daily)) { cat(“&gt; Weekly tracker will appear here once your Google Sheet URL is set and accessible.”) } else {\n\n\nClean & metrics\ndaily &lt;- daily |&gt; rename( date = 1, academic = 2, career = 3, personal = 4, done_pct = 5, notes = 6, energy = 7 ) |&gt; mutate( date = as.Date(date), done_pct = as.numeric(str_replace(done_pct, “%”,““))/100 ) |&gt; arrange(date)\n\n\nWeekly summary (Mon–Sun)\nweekly &lt;- daily |&gt; mutate(week = floor_date(date, unit = “week”, week_start = 1)) |&gt; group_by(week) |&gt; summarise( days = n(), avg_done = mean(done_pct, na.rm = TRUE), green_days = sum(done_pct &gt;= 0.9, na.rm = TRUE), yellow_days = sum(dplyr::between(done_pct, 0.6, 0.89), na.rm = TRUE), red_days = sum(done_pct &lt; 0.6, na.rm = TRUE), avg_energy = mean(energy, na.rm = TRUE), .groups = “drop” )\n\n\nShow last 7 days table\ncat(“### Last 7 Days — Daily Log”) daily_tail &lt;- tail(daily, 7) |&gt; mutate(Done = scales::percent(done_pct, accuracy = 1)) |&gt; select(date, academic, career, personal, Done, notes, energy)\ndaily_tail |&gt; gt() |&gt; tab_header(title = md(“Daily Plan → Track”)) |&gt; cols_label( date = “Date”, academic = “Academic 🎓”, career = “Career 💼”, personal = “Personal 💪”, notes = “Notes 🗒”, energy = “Energy (1–5)” ) |&gt; data_color( columns = “Done”, colors = scales::col_bin( palette = c(“#f87171”, “#fbbf24”, “#34d399”), domain = c(0, 1), bins = c(0, 0.6, 0.9, 1.01) ) )\n\n\nWeekly plot\ncat(“### Weekly Consistency”) ggplot(weekly, aes(x = week, y = avg_done)) + geom_col() + geom_hline(yintercept = 0.9, linetype = 2) + scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0,1)) + labs(x = “Week (Mon start)”, y = “Avg Done %”, title = “Weekly Consistency Score”, subtitle = “Dashed line at 90% target”) + theme_minimal(base_size = 12)\n\n\nWeekly summary table (most recent)\ncat(“”) tail(weekly, 1) |&gt; transmute( Week starting = week, Avg Done % = scales::percent(avg_done, 1), Green (≥90%) = green_days, Yellow (60–89%) = yellow_days, Red (&lt;60%) = red_days, Avg Energy = round(avg_energy,1) ) |&gt; gt() |&gt; tab_header(title = md(“This Week at a Glance”)) }\n\n\n—————————————————————————–"
   },
   {
     "objectID": "research/index.html",
@@ -67,7 +109,7 @@
     "href": "research/working_papers.html",
     "title": "Working Ppaers",
     "section": "",
-    "text": "Working paper updated\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Working paper updated"
   },
   {
     "objectID": "studynote/index.html",
@@ -84,24 +126,52 @@
     "text": "Welcome to My Personal Study Notes on Statistics! This webpage serves as a comprehensive repository for reviewing and updating the statistical knowledge I have acquired through my academic classes and research projects. Here, I aim to organize, refine, and expand on concepts that have been pivotal in my work as a researcher and student. ## License {.unnumbered}\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
   },
   {
-    "objectID": "projects/index_updating.html#publications",
-    "href": "projects/index_updating.html#publications",
-    "title": "Project and Research",
-    "section": "Publications",
-    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020)\nThe value of conducting on-farm field trials using precision agriculture technology:\na theory and simulations. Precision Agriculture, 21, 1027–1044.\n Link to the published paper"
+    "objectID": "projects/ch1/ch1_index.html",
+    "href": "projects/ch1/ch1_index.html",
+    "title": "Multi‑Field OFPE Value",
+    "section": "",
+    "text": "# -- Configure repo + assets (EDIT these paths to your actual files)\nrepo_user &lt;- \"jaeseokh\"\nrepo_name &lt;- \"value_multifield_ofpe\"\nbranch    &lt;- \"main\"    # or the branch where results live\n\n# Example: results/figures/main_figure.png and results/tables/summary.csv\nfigure_path &lt;- \"results/figures/main_figure.png\"\ntable_path  &lt;- \"results/tables/summary.csv\"\n\nbase_raw &lt;- sprintf(\"https://raw.githubusercontent.com/%s/%s/%s/\",\n                    repo_user, repo_name, branch)\nurl_fig &lt;- paste0(base_raw, figure_path)\nurl_tbl &lt;- paste0(base_raw, table_path)"
   },
   {
-    "objectID": "projects/index_updating.html#work-in-progress",
-    "href": "projects/index_updating.html#work-in-progress",
-    "title": "Project and Research",
-    "section": "Work in Progress",
-    "text": "Work in Progress\n\n1. The Value of Multiple OFPE Datasets as an Externality\n\nMain Contribution:\nAlthough current OFPE datasets are limited in both quantity and quality, this research progressively integrates key domain knowledge from crop growth models in agronomy and crop science. The goal is to reform traditional supervised learning models so they better align with the biological and economic mechanisms underlying yield response.\nObjective:\nCombine more than 100 OFPE (On-Farm Precision Experiment) datasets and implement a leave-one-location-out (LOLO) cross-validation to predict yields for a held-out field i where no training data exist.\nModels:\nXGBoost, Random Forest, and Causal Forest.\nKey Findings / Limitations:\n\nThe predictive capability of trained models remains low across fields.\n\nA “universal yield-N response” derived from the combined dataset has limited explanatory power due to heterogeneous data quality and scale.\n\nOngoing Work:\nShift focus from yield prediction toward improving the expected information gain and probabilistic profitability:\n\nIdentify available planting, application, and harvest windows.\n\nIntegrate core APSIM/DSSAT modules to simulate nitrogen uptake and mineralization processes.\n\nUse ex-post yield and EONR (via backward induction) to evaluate stochastic profitability.\n\n\n\n\n\n2. Profitable Seeding Decisions and Farmer Behavior\n\nMain Contribution:\nThis study frames the dynamic risk environment faced by growers—capturing how weather and price volatility shape real-world decision-making and risk management behavior. It models how farmers adapt to uncertainty in both short- and long-term horizons.\nObjective:\nCompare producers’ chosen seeding rates with the economically optimal seeding rate (EOSR) and assess their profitability under historical vs. recent weather and price conditions.\nModel:\nGeneralized Additive Model (GAM).\nKey Findings:\nProducers’ chosen rates are strongly influenced by historical weather and price trends, but recent shocks in weather or market conditions often lead to suboptimal outcomes.\nOngoing Work:\nDevelop a dynamic framework to evaluate how short- and long-term shocks in weather and prices affect producers’ adaptive decisions and profitability over time.\n\n\n\n\n3. Enhancing the Value of Soil Information: Insights from OFPE\n\nMain Contribution:\nThis research focuses on identifying strategies that help farmers enhance their learning capacity—both statistically and computationally—to improve long-run profitability through data-informed management decisions.\nStatus Quo:\nFarmers often base N-rate decisions on soil sampling and simulator-based recommendations. However, single-rate applications offer limited learning potential compared to variable-rate (VRN) approaches supported by on-farm experimentation (OFE).\nResearch Question:\nHow effectively can we learn accurate yield-N response functions from soil information when combining VRN applications with OFE, compared to learning from single-rate applications?\nProposed Approach:\nDevelop and test statistical frameworks (TBD) to quantify the learning gain from spatially rich OFE data relative to conventional soil-test-based recommendations.\n\n\n\n\n\nOther Collaborative Work\n\nInforming Site-Specific Input Management in South Africa Using On-Farm Experimentation\n(with M. Delport, D. Bullock, and T. Mieno)\n    – Led data management, reproducibility workflows, and statistical analysis across all project sites."
+    "objectID": "projects/ch1/ch1_index.html#at-a-glance",
+    "href": "projects/ch1/ch1_index.html#at-a-glance",
+    "title": "Multi‑Field OFPE Value",
+    "section": "At a glance",
+    "text": "At a glance\n\nMain problem (why): Farmers run OFPEs, but gains are often siloed by field; pooling is hard.\nMain question (focus): How to quantify cross‑field value while respecting heterogeneity?\nFinding / limitation: Early evidence of decision value; pooling sensitive to outliers.\nLong‑term solution & goal: Hierarchical pooling + diagnostics → robust field prescriptions."
+  },
+  {
+    "objectID": "projects/ch1/ch1_index.html#key-result",
+    "href": "projects/ch1/ch1_index.html#key-result",
+    "title": "Multi‑Field OFPE Value",
+    "section": "Key Result",
+    "text": "Key Result\n\nMain Figure\n\nknitr::include_graphics(url_fig)\n\n\n\n\nLatest main figure from the repo\n\n\n\n\nTakeaway (2 sentences):\n\nThe pooled model identifies consistent response patterns across fields.\nRemaining variance suggests targeted pooling rules and outlier handling are pivotal.\n\n\n\nMain Table (top lines)\n\nlibrary(readr); library(dplyr)\ntry({\n  tbl &lt;- read_csv(url_tbl, show_col_types = FALSE)\n  head(tbl, 8)\n}, silent = TRUE)\n\nTakeaway (2 sentences):\n\nThe summary highlights between‑field variability that affects expected gains.\nWe prioritize shrinkage strategies where uncertainty is largest."
+  },
+  {
+    "objectID": "projects/ch1/ch1_index.html#workflow-roadmap",
+    "href": "projects/ch1/ch1_index.html#workflow-roadmap",
+    "title": "Multi‑Field OFPE Value",
+    "section": "Workflow Roadmap",
+    "text": "Workflow Roadmap\n\n\nData audit\n\n\nPooling models\n\n\nDiagnostics\n\n\nPrescription\n\n\nDocs"
+  },
+  {
+    "objectID": "projects/ch1/ch1_index.html#tech-data",
+    "href": "projects/ch1/ch1_index.html#tech-data",
+    "title": "Multi‑Field OFPE Value",
+    "section": "Tech & Data",
+    "text": "Tech & Data\nTech: R, Quarto, GLM/GLMM, Spatial/CAR, Bayes\nData: OFPE field trials (multi‑year, multi‑field).\n\nGitHub Repository\n\n```"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Multi‑Field OFPE Value\n\n&lt;p&gt;Pooling on‑farm experiments to quantify decision value across fields.&lt;/p&gt;\n \n\nCorn Seed Response\n\n&lt;p&gt;GxE and causal ML to place the right hybrid in the right environment.&lt;/p&gt;\n \n\nYield Distribution\n\n&lt;p&gt;From moments to distributions to risk—beyond mean yield.&lt;/p&gt;\n\n\n```"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jaeseok Hwang",
     "section": "",
-    "text": "Hi, I’m Jaeseok Hwang — an Applied Economist and Data Scientist completing my Ph.D. in Applied Economics at the University of Illinois Urbana-Champaign (expected May 2026).\nMy research develops data-driven decision systems for U.S. crop producers, integrating applied machine learning, Bayesian modeling, and economic optimization to turn limited field data into actionable, risk-aware insights.\nMain focus on building profit-optimization and risk-management frameworks that connect crop producers information with ag-technology, input-supply — using R as my primary analytical environment and Python for scalable machine-learning workflows.\n\n\n\n\n\n\nNo matching items"
+    "text": "Jaeseok Hwang\n\n\n  &lt;a class=\"btn icon\" href=\"https://github.com/jaeseokh\" aria-label=\"GitHub\"&gt;GitHub&lt;/a&gt;\n  &lt;a class=\"btn icon\" href=\"https://www.linkedin.com/in/jaeseok-hwang\" aria-label=\"LinkedIn\"&gt;LinkedIn&lt;/a&gt;\n  &lt;a class=\"btn icon\" href=\"mailto:jaeseokh@gmail.com\" aria-label=\"Email\"&gt;Email&lt;/a&gt;\n&lt;/div&gt;\n\n\n\n\n\n\nProjects\n\n\n\n\nMulti‑Field OFPE Value\n\n\n\n\nCorn Seed Response\n\n\n\n\nYield Distribution\n\n\n\n\n\n\nStudy Notes\n\n\n\n\nEconometrics\n\n\n\n\nSpatial/CAR\n\n\n\n\nML Tooling\n\n\n\n\n\n\nResume & CV\n\n\n\n\nResume (Industry)\n\n\n\n\nCV (Academic)\n\n\n\n\n\n\n\n\n\n\n\nWelcome\n\n\nPick a project or section in the middle to see a quick, recruiter‑ready preview. Each card links to details and the GitHub repo.\n\n\n\n\n\nMulti‑Field OFPE Value\n\n\nPooling on‑farm experiments to quantify robust, cross‑field prescriptions.\n\n\n    &lt;a class=\"btn primary\" href=\"projects/ofpe/index.qmd\"&gt;Move to detail&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"https://github.com/jaeseokh/value_multifield_ofpe\"&gt;Move to repo&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;article class=\"card hidden\" data-id=\"p2\"&gt;\n  &lt;h3&gt;Corn Seed Response&lt;/h3&gt;\n  &lt;p&gt;GxE + causal ML to put the right hybrid in the right environment.&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"projects/seed/index.qmd\"&gt;Move to detail&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"https://github.com/jaeseokh/corn_seed_response\"&gt;Move to repo&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;article class=\"card hidden\" data-id=\"p3\"&gt;\n  &lt;h3&gt;Yield Distribution&lt;/h3&gt;\n  &lt;p&gt;From moments to distributions and risk—beyond mean yield.&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"projects/yield/index.qmd\"&gt;Move to detail&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"https://github.com/jaeseokh/yield_distribution\"&gt;Move to repo&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;!-- STUDY NOTES PREVIEWS --&gt;\n&lt;article class=\"card hidden\" data-id=\"s1\"&gt;\n  &lt;h3&gt;Econometrics&lt;/h3&gt;\n  &lt;p&gt;Asymptotics, GMM/IV, inference under dependence. Clean examples + slides.&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"studynotes/econometrics.qmd\"&gt;Open notes&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"studynotes/index.qmd\"&gt;All notes&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;article class=\"card hidden\" data-id=\"s2\"&gt;\n  &lt;h3&gt;Spatial/CAR&lt;/h3&gt;\n  &lt;p&gt;CAR priors, adjacency, NB‑GLM, diagnostics for spatial dependence.&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"studynotes/spatial.qmd\"&gt;Open notes&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"studynotes/index.qmd\"&gt;All notes&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;article class=\"card hidden\" data-id=\"s3\"&gt;\n  &lt;h3&gt;ML Tooling&lt;/h3&gt;\n  &lt;p&gt;Pipelines, reproducible Quarto, GitHub Actions, profiling.&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"studynotes/ml.qmd\"&gt;Open notes&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"studynotes/index.qmd\"&gt;All notes&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;!-- RESUME & CV PREVIEWS --&gt;\n&lt;article class=\"card hidden\" data-id=\"r1\"&gt;\n  &lt;h3&gt;Resume (Industry)&lt;/h3&gt;\n  &lt;p&gt;1‑page, impact‑first resume tailored for DS/Quant roles.&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"resume/index.qmd\"&gt;View resume&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"resume/resume.pdf\"&gt;Download PDF&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n&lt;article class=\"card hidden\" data-id=\"r2\"&gt;\n  &lt;h3&gt;CV (Academic)&lt;/h3&gt;\n  &lt;p&gt;Full academic record (teaching, publications, service).&lt;/p&gt;\n  &lt;div class=\"actions\"&gt;\n    &lt;a class=\"btn primary\" href=\"cv/index.qmd\"&gt;View CV&lt;/a&gt;\n    &lt;a class=\"btn\" href=\"cv/cv.pdf\"&gt;Download PDF&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/article&gt;\n\n\n\n```"
   }
 ]

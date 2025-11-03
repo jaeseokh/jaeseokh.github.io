@@ -1,0 +1,64 @@
+/* --- 3-pane homepage layout --- */
+.home-grid { display:grid; grid-template-columns: 240px 320px 1fr; gap: 1rem; }
+@media (max-width: 1100px) { .home-grid { grid-template-columns: 200px 260px 1fr; } }
+@media (max-width: 900px)  { .home-grid { grid-template-columns: 1fr; } }
+
+/* LEFT: profile */
+.profile { position: sticky; top: 84px; align-self: start; text-align:center; padding: .75rem; border:1px solid rgba(0,0,0,.08); border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,.05); }
+.avatar { width: 160px; height:160px; object-fit:cover; border-radius: 50%; display:block; margin:.25rem auto .5rem; }
+.name { margin:.25rem 0 .35rem; font-weight:800; font-size:1.25rem; }
+.social .btn { display:block; margin:.3rem 0; }
+
+/* MIDDLE: TOC tree */
+.toc-tree { position: sticky; top: 84px; align-self: start; padding: .75rem; border:1px solid rgba(0,0,0,.08); border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,.05); }
+.tree { list-style:none; padding-left:0; margin:0; }
+.tree > li { margin-bottom:.6rem; }
+.branch, .leaf { width:100%; text-align:left; border:0; background:transparent; padding:.4rem .5rem; border-radius:10px; font-weight:700; }
+.leaf { font-weight:500; opacity:.9; }
+.branch:hover, .leaf:hover { background: rgba(13,110,253,.08); cursor:pointer; }
+
+/* RIGHT: dynamic preview */
+.panel { min-height: 55vh; border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:1rem; box-shadow:0 4px 16px rgba(0,0,0,.05); }
+.card { border:1px solid rgba(0,0,0,.06); border-radius:14px; padding:1rem; margin-bottom: .8rem; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.card h3 { margin-top:0; }
+.hidden { display:none; }
+.actions { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem; }
+.btn { display:inline-block; padding:.45rem .8rem; border-radius:999px; border:1px solid rgba(0,0,0,.12); text-decoration:none; }
+.btn.primary { background:#0d6efd; color:#fff; border-color:#0d6efd; }
+
+/* Dark-mode friendliness via Quarto vars */
+.profile, .toc-tree, .panel, .card { background: var(--quarto-body-bg, #fff); }
+```
+
+### C) `assets/home.js`
+
+```js
+(function(){
+  const panel = document.getElementById('panel');
+  const cards = panel.querySelectorAll('[data-id]');
+  function show(id){
+    cards.forEach(c => c.classList.add('hidden'));
+    const target = panel.querySelector('[data-id="'+id+'"]');
+    if (target) target.classList.remove('hidden');
+  }
+  // Click handling for tree buttons
+  document.querySelectorAll('.toc-tree .branch, .toc-tree .leaf').forEach(btn => {
+    btn.addEventListener('click', () => show(btn.dataset.target));
+  });
+  // Support deep linking via hash (#p1, #s2, #r1)
+  if (location.hash) show(location.hash.replace('#',''));
+})();
+```
+
+**How it works**
+
+* Left column is a sticky **profile** (smaller avatar + social buttons).
+* Middle column is your **ensemble TOC**—flat, fast, and keyboard‑navigable.
+* Right column **updates instantly** on click without reloading. Each preview has two CTAs: **Move to detail** (go to your Quarto project page) and **Move to repo** (GitHub).
+* You can deep‑link to a preview (e.g., `/#p1` shows Project 1 immediately).
+
+**What to customize**
+
+* Replace `assets/profile.jpg` with your photo (smaller, ~400×400 works well).
+* Edit the preview texts and target links.
+* Add/remove study‑notes categories by duplicating a `<button class="leaf" ...>` and a matching `<article data-id="..."></article>`.

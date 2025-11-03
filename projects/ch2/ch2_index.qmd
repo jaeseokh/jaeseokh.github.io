@@ -30,3 +30,22 @@ This project investigates how crop producers (specifically corn growers) make in
 3.  **Informing Decision Support:** The framework developed can inform the design of better decision support tools. By understanding how choices shift under different risk scenarios (weather forecasts, price outlooks), tools can provide recommendations that better align with a producer's risk tolerance and the specific uncertainties they face in a given season.
 
 **(Link to full Conceptual Framework / Paper / Code if applicable)**
+
+
+::: {.hero-mini}
+
+# Why it matters
+
+Pooling on‑farm precision experiments across fields can turn small local trials into **field‑scale, robust recommendations**.
+:::
+
+## At a glance
+
+* **Main problem (why)**: Farmers run OFPEs, but gains are often siloed by field; pooling is hard.
+* **Main question (focus)**: How to quantify cross‑field value while respecting heterogeneity?
+* **Finding / limitation**: Early evidence of decision value; pooling sensitive to outliers.
+* **Long‑term solution & goal**: Hierarchical pooling + diagnostics → robust field prescriptions.
+
+## Key Result
+
+### Main Figure

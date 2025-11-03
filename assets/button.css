@@ -1,0 +1,24 @@
+
+---
+
+### 🔧 How to make the figure/table truly “live”
+
+Each project page builds the figure and table from a **raw GitHub URL**. To use it:
+
+1. Pick a canonical path in each repo (e.g., `results/figures/main_figure.png`, `results/tables/summary.csv`).
+2. Ensure those files exist on your default branch.
+3. Edit the `figure_path` and `table_path` variables at the top of each project page to your exact filenames.
+4. On every push to the project repo, your website will render the newest assets on next site build.
+
+> If you want the **site to rebuild automatically** when the project repos update, add a tiny GitHub Action in this website repo to run nightly or on push to those repos (can add later).
+
+---
+
+### ✅ Next quick edits for you
+
+* Replace placeholder sentences under **Takeaway** blocks with your own two‑sentence summaries.
+* Confirm the `figure_path` & `table_path` for each project.
+* Drop `resume.pdf` and `cv.pdf` into `/resume/` and `/cv/` respectively.
+* Commit & push: Quarto will render to `docs/` and GitHub Pages will update.
+
+---

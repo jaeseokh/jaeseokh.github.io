@@ -6,38 +6,52 @@ website:
   title: "Jaeseok Hwang"
   site-url: https://jaeseokh.github.io/
   navbar:
+    background: dark
     right:
+      - text: About
+        href: about.qmd
       - text: Projects
         menu:
-          - text: Add Value to Limited Data
-            href: projects/limited-data.qmd
-          - text: Input Choices under Risk
-            href: projects/risk-choices.qmd
-          - text: Static to Dyanmic Information
-            href: projects/static-dynamic.qmd
-      - text: StudyNotes
+          - text: Overview
+            href: projects/index.qmd
+          - text: Multi-Field OFPE
+            href: projects/ofpe/index.qmd
+          - text: Corn Seed Response
+            href: projects/seed/index.qmd
+          - text: Yield Distribution
+            href: projects/yield/index.qmd
+      - text: Study Notes
         menu:
-          - text: Bayesian
-            href: studynote/bayesian.qmd
-          - text: Statistical Learning
-            href: studynote/statistical_learning.qmd
-          - text: Risk-Analysis
-            href: studynote/risk_analysis.qmd
-      - text: Papers
-        href: research/working_papers.pdf
-      - text: Resume(CV)
-        href: resume/resume_updated.pdf
+          - text: All Notes
+            href: studynotes/index.qmd
+          - text: Econometrics
+            href: studynotes/econometrics.qmd
+          - text: Spatial/CAR
+            href: studynotes/spatial.qmd
+          - text: ML Tooling
+            href: studynotes/ml.qmd
+      - text: Resume/CV
+        menu:
+          - text: Resume (Industry)
+            href: resume/index.qmd
+          - text: CV (Academic)
+            href: cv/index.qmd
   page-footer:
-    center: 
-      © {&copy} {Oct 2025} Jaeseok Hwang · Built with Quarto
+    left: "© {year} Jaeseok Hwang"
+    right: "Built with Quarto"
+
 format:
   html:
     theme: flatly
-    css: styles/styles.scss
+    toc: false
     smooth-scroll: true
-    link-external-newwindow: true
-    anchor-sections: true
+    grid:
+      body-width: 1100px
+    css:
+      - assets/tree.css
+      - assets/buttons.css
+    code-copy: true
+    code-overflow: wrap
 
-# Optional: enable listings for blog/posts later
-listing:
-  contents: posts
+execute:
+  freeze: auto

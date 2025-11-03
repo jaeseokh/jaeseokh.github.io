@@ -30,11 +30,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -67,71 +66,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles/styles.scss">
+<link rel="stylesheet" href="assets/tree.css">
+<link rel="stylesheet" href="assets/buttons.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -148,52 +90,71 @@ window.Quarto = {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./about.qmd"> 
+<span class="menu-text">About</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Projects</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-projects">    
         <li>
-    <a class="dropdown-item" href="./projects/limited-data.md">
- <span class="dropdown-text">Add Value to Limited Data</span></a>
+    <a class="dropdown-item" href="./projects/index.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/risk-choices.md">
- <span class="dropdown-text">Input Choices under Risk</span></a>
+    <a class="dropdown-item" href="./projects/ofpe/index.qmd">
+ <span class="dropdown-text">Multi-Field OFPE</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects/static-dynamic.md">
- <span class="dropdown-text">Static to Dyanmic Information</span></a>
+    <a class="dropdown-item" href="./projects/seed/index.qmd">
+ <span class="dropdown-text">Corn Seed Response</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projects/yield/index.qmd">
+ <span class="dropdown-text">Yield Distribution</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-studynotes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">StudyNotes</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-study-notes" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Study Notes</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-studynotes">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-study-notes">    
         <li>
-    <a class="dropdown-item" href="./studynote/bayesian.pdf">
- <span class="dropdown-text">Bayesian</span></a>
+    <a class="dropdown-item" href="./studynotes/index.qmd">
+ <span class="dropdown-text">All Notes</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./studynote/statistical_learning.pdf">
- <span class="dropdown-text">Statistical Learning</span></a>
+    <a class="dropdown-item" href="./studynotes/econometrics.qmd">
+ <span class="dropdown-text">Econometrics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./studynote/risk_analysis.pdf">
- <span class="dropdown-text">Risk-Analysis</span></a>
+    <a class="dropdown-item" href="./studynotes/spatial.qmd">
+ <span class="dropdown-text">Spatial/CAR</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./studynotes/ml.qmd">
+ <span class="dropdown-text">ML Tooling</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./research/working_papers.pdf"> 
-<span class="menu-text">Papers</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resumecv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Resume/CV</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resumecv">    
+        <li>
+    <a class="dropdown-item" href="./resume/index.qmd">
+ <span class="dropdown-text">Resume (Industry)</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./resume/resume_updated.pdf"> 
-<span class="menu-text">Resume(CV)</span></a>
+        <li>
+    <a class="dropdown-item" href="./cv/index.qmd">
+ <span class="dropdown-text">CV (Academic)</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -202,51 +163,212 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="Jaeseok_profile.jpeg" class="about-image
-  round " style="height: 20em; width: 20em;">
+<main class="content page-columns page-full column-page" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Jaeseok Hwang</h1>
 </div>
-<div class="quarto-title-meta">
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/jaeseokh" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="mailto:jaeseok2@illinois.edu" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Hi, I’m <strong>Jaeseok Hwang</strong> — an <strong>Applied Economist and Data Scientist</strong> completing my Ph.D.&nbsp;in Applied Economics at the <strong>University of Illinois Urbana-Champaign</strong> (expected May 2026).</p>
-<p><strong>My research develops</strong> data-driven decision systems for U.S. crop producers, integrating applied machine learning, Bayesian modeling, and economic optimization to turn limited field data into actionable, risk-aware insights.</p>
-<p><strong>Main focus</strong> on building profit-optimization and risk-management frameworks that connect crop producers information with ag-technology, input-supply — using <strong>R</strong> as my primary analytical environment and <strong>Python</strong> for scalable machine-learning workflows.</p>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
+<style>
+  @import url("assets/home.css");
+</style>
+<div class="home-grid page-columns page-full">
+<!-- 1) LEFT: profile column -->
+<aside class="profile">
+<img src="assets/profile.jpg" alt="Profile photo of Jaeseok Hwang" class="avatar">
+<h2 class="name anchored">
+Jaeseok Hwang
+</h2>
+<div class="social">
+<pre><code>  &lt;a class="btn icon" href="https://github.com/jaeseokh" aria-label="GitHub"&gt;GitHub&lt;/a&gt;
+  &lt;a class="btn icon" href="https://www.linkedin.com/in/jaeseok-hwang" aria-label="LinkedIn"&gt;LinkedIn&lt;/a&gt;
+  &lt;a class="btn icon" href="mailto:jaeseokh@gmail.com" aria-label="Email"&gt;Email&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+</div></aside>
+<!-- 2) MIDDLE: ensemble TOC tree -->
+<nav class="toc-tree" aria-label="Homepage navigation">
+<ul class="tree">
+<li>
+<button class="branch" data-target="p1">
+Projects
+</button>
+<ul>
+<li>
+<button class="leaf" data-target="p1">
+Multi‑Field OFPE Value
+</button>
+</li>
+<li>
+<button class="leaf" data-target="p2">
+Corn Seed Response
+</button>
+</li>
+<li>
+<button class="leaf" data-target="p3">
+Yield Distribution
+</button>
+</li>
+</ul>
+</li>
+<li>
+<button class="branch" data-target="s0">
+Study Notes
+</button>
+<ul>
+<li>
+<button class="leaf" data-target="s1">
+Econometrics
+</button>
+</li>
+<li>
+<button class="leaf" data-target="s2">
+Spatial/CAR
+</button>
+</li>
+<li>
+<button class="leaf" data-target="s3">
+ML Tooling
+</button>
+</li>
+</ul>
+</li>
+<li>
+<button class="branch" data-target="r0">
+Resume &amp; CV
+</button>
+<ul>
+<li>
+<button class="leaf" data-target="r1">
+Resume (Industry)
+</button>
+</li>
+<li>
+<button class="leaf" data-target="r2">
+CV (Academic)
+</button>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<!-- 3) RIGHT: dynamic preview panel -->
+<section id="panel" class="panel" aria-live="polite">
+<!-- Default welcome card -->
+<article class="card">
+<h3 class="anchored">
+Welcome
+</h3>
+<p>
+Pick a project or section in the middle to see a quick, recruiter‑ready preview. Each card links to details and the GitHub repo.
+</p>
+</article>
+<!-- PROJECT PREVIEWS -->
+<article class="card hidden" data-id="p1">
+<h3 class="anchored">
+Multi‑Field OFPE Value
+</h3>
+<p>
+Pooling on‑farm experiments to quantify robust, cross‑field prescriptions.
+</p>
+<div class="actions">
+<pre><code>    &lt;a class="btn primary" href="projects/ofpe/index.qmd"&gt;Move to detail&lt;/a&gt;
+    &lt;a class="btn" href="https://github.com/jaeseokh/value_multifield_ofpe"&gt;Move to repo&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;article class="card hidden" data-id="p2"&gt;
+  &lt;h3&gt;Corn Seed Response&lt;/h3&gt;
+  &lt;p&gt;GxE + causal ML to put the right hybrid in the right environment.&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="projects/seed/index.qmd"&gt;Move to detail&lt;/a&gt;
+    &lt;a class="btn" href="https://github.com/jaeseokh/corn_seed_response"&gt;Move to repo&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;article class="card hidden" data-id="p3"&gt;
+  &lt;h3&gt;Yield Distribution&lt;/h3&gt;
+  &lt;p&gt;From moments to distributions and risk—beyond mean yield.&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="projects/yield/index.qmd"&gt;Move to detail&lt;/a&gt;
+    &lt;a class="btn" href="https://github.com/jaeseokh/yield_distribution"&gt;Move to repo&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;!-- STUDY NOTES PREVIEWS --&gt;
+&lt;article class="card hidden" data-id="s1"&gt;
+  &lt;h3&gt;Econometrics&lt;/h3&gt;
+  &lt;p&gt;Asymptotics, GMM/IV, inference under dependence. Clean examples + slides.&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="studynotes/econometrics.qmd"&gt;Open notes&lt;/a&gt;
+    &lt;a class="btn" href="studynotes/index.qmd"&gt;All notes&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;article class="card hidden" data-id="s2"&gt;
+  &lt;h3&gt;Spatial/CAR&lt;/h3&gt;
+  &lt;p&gt;CAR priors, adjacency, NB‑GLM, diagnostics for spatial dependence.&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="studynotes/spatial.qmd"&gt;Open notes&lt;/a&gt;
+    &lt;a class="btn" href="studynotes/index.qmd"&gt;All notes&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;article class="card hidden" data-id="s3"&gt;
+  &lt;h3&gt;ML Tooling&lt;/h3&gt;
+  &lt;p&gt;Pipelines, reproducible Quarto, GitHub Actions, profiling.&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="studynotes/ml.qmd"&gt;Open notes&lt;/a&gt;
+    &lt;a class="btn" href="studynotes/index.qmd"&gt;All notes&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;!-- RESUME &amp; CV PREVIEWS --&gt;
+&lt;article class="card hidden" data-id="r1"&gt;
+  &lt;h3&gt;Resume (Industry)&lt;/h3&gt;
+  &lt;p&gt;1‑page, impact‑first resume tailored for DS/Quant roles.&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="resume/index.qmd"&gt;View resume&lt;/a&gt;
+    &lt;a class="btn" href="resume/resume.pdf"&gt;Download PDF&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;article class="card hidden" data-id="r2"&gt;
+  &lt;h3&gt;CV (Academic)&lt;/h3&gt;
+  &lt;p&gt;Full academic record (teaching, publications, service).&lt;/p&gt;
+  &lt;div class="actions"&gt;
+    &lt;a class="btn primary" href="cv/index.qmd"&gt;View CV&lt;/a&gt;
+    &lt;a class="btn" href="cv/cv.pdf"&gt;Download PDF&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+</div></article></section>
 </div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main></div>
-</div>
+<script src="assets/home.js"></script>
+<p>```</p>
+
+
+</main></div>
+
+
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -268,6 +390,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -347,11 +476,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -666,18 +790,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>© {year} Jaeseok Hwang</p>
+</div>   
     <div class="nav-footer-center">
-<p>© {&amp;copy} {Oct 2025} Jaeseok Hwang · Built with Quarto</p>
-</div>
-    <div class="nav-footer-right">
       &nbsp;
     </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
   </div>
 </footer>
 

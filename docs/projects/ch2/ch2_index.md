@@ -74,3 +74,27 @@ choices.
     face in a given season.
 
 **(Link to full Conceptual Framework / Paper / Code if applicable)**
+
+<div class="hero-mini">
+
+# Why it matters
+
+Pooling on‑farm precision experiments across fields can turn small local
+trials into **field‑scale, robust recommendations**.
+
+</div>
+
+## At a glance
+
+- **Main problem (why)**: Farmers run OFPEs, but gains are often siloed
+  by field; pooling is hard.
+- **Main question (focus)**: How to quantify cross‑field value while
+  respecting heterogeneity?
+- **Finding / limitation**: Early evidence of decision value; pooling
+  sensitive to outliers.
+- **Long‑term solution & goal**: Hierarchical pooling + diagnostics →
+  robust field prescriptions.
+
+## Key Result
+
+### Main Figure

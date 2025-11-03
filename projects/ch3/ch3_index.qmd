@@ -1,0 +1,84 @@
+---
+title: "Yield Distribution"
+format:
+  html:
+    toc: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r}
+# -- Configure repo + assets (EDIT these paths)
+repo_user <- "jaeseokh"
+repo_name <- "yield_distribution"
+branch    <- "main"
+
+figure_path <- "results/figures/main_figure.png"
+table_path  <- "results/tables/summary.csv"
+
+base_raw <- sprintf("https://raw.githubusercontent.com/%s/%s/%s/",
+                    repo_user, repo_name, branch)
+url_fig <- paste0(base_raw, figure_path)
+url_tbl <- paste0(base_raw, table_path)
+```
+
+::: {.hero-mini}
+
+# Why it matters
+
+Means hide risk. Managers need the **whole distribution** to price decisions.
+:::
+
+## At a glance
+
+* **Main problem**: Averages understate tail risk.
+* **Main question**: How do N × weather shift moments/tails?
+* **Finding / limitation**: Tails respond differently; calibration ongoing.
+* **Long‑term solution & goal**: Central/raw‑moment regressions → MaxEnt densities.
+
+## Key Result
+
+### Main Figure
+
+```{r}
+#| fig-cap: "Latest main figure from the repo"
+knitr::include_graphics(url_fig)
+```
+
+**Takeaway:** Two sentences about risk‑sensitive insights from the figure.
+
+### Main Table (top lines)
+
+```{r}
+library(readr); library(dplyr)
+try({
+  tbl <- read_csv(url_tbl, show_col_types = FALSE)
+  head(tbl, 8)
+}, silent = TRUE)
+```
+
+**Takeaway:** Two sentences on moment shifts and implications.
+
+## Workflow Roadmap
+
+<div class="stepper">
+  <div class="step">Moment models</div>
+  <div class="step inprog">MaxEnt</div>
+  <div class="step">Backtests</div>
+  <div class="step">Docs</div>
+</div>
+
+## Tech & Data
+
+**Tech**: R, MaxEnt, NB/GLM, CAR
+
+**Data**: OFPE + weather/soil features.
+
+<div class="actions">
+  <a class="btn primary" href="https://github.com/jaeseokh/yield_distribution">GitHub Repository</a>
+</div>
+```

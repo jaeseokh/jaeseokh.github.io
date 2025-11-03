@@ -1,0 +1,15 @@
+{
+  "hash": "42a5b8f69d6785db23b7df18c355fde2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Multi‑Field OFPE Value\"\nformat:\n  html:\n    toc: true\n---\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# -- Configure repo + assets (EDIT these paths to your actual files)\nrepo_user <- \"jaeseokh\"\nrepo_name <- \"value_multifield_ofpe\"\nbranch    <- \"main\"    # or the branch where results live\n\n# Example: results/figures/main_figure.png and results/tables/summary.csv\nfigure_path <- \"results/figures/main_figure.png\"\ntable_path  <- \"results/tables/summary.csv\"\n\nbase_raw <- sprintf(\"https://raw.githubusercontent.com/%s/%s/%s/\",\n                    repo_user, repo_name, branch)\nurl_fig <- paste0(base_raw, figure_path)\nurl_tbl <- paste0(base_raw, table_path)\n```\n:::\n\n\n\n::: {.hero-mini}\n\n# Why it matters\n\nPooling on‑farm precision experiments across fields can turn small local trials into **field‑scale, robust recommendations**.\n:::\n\n## At a glance\n\n* **Main problem (why)**: Farmers run OFPEs, but gains are often siloed by field; pooling is hard.\n* **Main question (focus)**: How to quantify cross‑field value while respecting heterogeneity?\n* **Finding / limitation**: Early evidence of decision value; pooling sensitive to outliers.\n* **Long‑term solution & goal**: Hierarchical pooling + diagnostics → robust field prescriptions.\n\n## Key Result\n\n### Main Figure\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nknitr::include_graphics(url_fig)\n```\n\n::: {.cell-output-display}\n![Latest main figure from the repo](https://raw.githubusercontent.com/jaeseokh/value_multifield_ofpe/main/results/figures/main_figure.png)\n:::\n:::\n\n\n\n**Takeaway (2 sentences):**\n\n* The pooled model identifies consistent response patterns across fields.\n* Remaining variance suggests targeted pooling rules and outlier handling are pivotal.\n\n### Main Table (top lines)\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(readr); library(dplyr)\ntry({\n  tbl <- read_csv(url_tbl, show_col_types = FALSE)\n  head(tbl, 8)\n}, silent = TRUE)\n```\n:::\n\n\n\n**Takeaway (2 sentences):**\n\n* The summary highlights between‑field variability that affects expected gains.\n* We prioritize shrinkage strategies where uncertainty is largest.\n\n## Workflow Roadmap\n\n<div class=\"stepper\">\n  <div class=\"step done\">Data audit</div>\n  <div class=\"step inprog\">Pooling models</div>\n  <div class=\"step\">Diagnostics</div>\n  <div class=\"step\">Prescription</div>\n  <div class=\"step\">Docs</div>\n</div>\n\n## Tech & Data\n\n**Tech**: R, Quarto, GLM/GLMM, Spatial/CAR, Bayes\n\n**Data**: OFPE field trials (multi‑year, multi‑field).\n\n<div class=\"actions\">\n  <a class=\"btn primary\" href=\"https://github.com/jaeseokh/value_multifield_ofpe\">GitHub Repository</a>\n</div>\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
