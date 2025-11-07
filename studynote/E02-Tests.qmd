@@ -1,0 +1,16 @@
+---
+title: "Bayesian vs Frequentist"
+author: "Jaeseok Hwang"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{amsmath, amssymb, bm}
+        \usepackage{mathtools}
+        \usepackage{siunitx}
+        \DeclareMathOperator{\argmin}{arg\,min}
+---
+
+# Bayesian

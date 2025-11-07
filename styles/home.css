@@ -1,0 +1,14 @@
+.home-wrap { padding-top: 1rem; padding-bottom: 2rem; }
+.left-panel { position: sticky; top: 1rem; align-self: flex-start; }
+.profile-img {
+  width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+  display: block; margin: 0 0 1rem 0;
+}
+.name { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.links { list-style: none; padding-left: 0; margin: 0.5rem 0 0.75rem 0; }
+.links li { margin-bottom: 0.25rem; }
+.home-toc h2 { margin-top: 0.5rem; }
+.home-toc h3 { margin-top: 1rem; font-size: 1.05rem; }
+.home-toc ul { margin-bottom: 0.75rem; }
+.right-panel section { margin-bottom: 2rem; }
+@media (max-width: 991.98px) { .left-panel { position: static; } }

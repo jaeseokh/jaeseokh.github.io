@@ -1,0 +1,57 @@
+---
+title: "Jaeseok Hwang"
+page-layout: full
+---
+
+<div class="container mt-4">
+  <div class="row">
+    <!-- Left column: photo + name + buttons + short bio UNDER photo -->
+    <div class="col-md-5 text-center">
+      <img src="assets/headshot.jpg" alt="Jaeseok Hwang"
+           class="rounded-circle img-fluid mb-3" style="max-width:320px;">
+      <h1 class="mb-3">Jaeseok Hwang</h1>
+
+      <p class="lead" style="max-width:640px; margin: 0 auto;">
+        I’m an <b>Applied Economist and Data Scientist</b> (Ph.D. candidate, UIUC),
+        building data-driven decision systems for U.S. crop producers by integrating
+        applied ML, Bayesian modeling, and economic optimization. I primarily use
+        <b>R</b> and <b>Python</b> to transform limited field data into
+        actionable, risk-aware insights.
+      </p>
+
+      <div class="mt-3">
+        <a class="btn btn-outline-secondary me-2" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
+        <a class="btn btn-outline-secondary me-2" href="https://www.linkedin.com/in/..." target="_blank">LinkedIn</a>
+        <a class="btn btn-outline-secondary" href="mailto:youremail@illinois.edu">Email</a>
+      </div>
+    </div>
+
+    <!-- Right column: site table of contents -->
+    <div class="col-md-7">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 class="card-title">Site Contents</h3>
+          <hr/>
+          <h5>Projects</h5>
+          <ul>
+            <li><a href="projects/ch1_index.html">Value of multi-field OFPE data</a></li>
+            <li><a href="projects/ch2_index.html">Risky input decisions under price & weather risk</a></li>
+            <li><a href="projects/ch3_index.html">From static info to dynamic info</a></li>
+          </ul>
+
+          <h5 class="mt-3">Study Notes</h5>
+          <ul>
+            <li><a href="studynote/E01-Distributions.html">Bayesian</a></li>
+            <li><a href="studynote/E02-Tests.html">Risk analysis</a></li>
+            <li><a href="studynote/ML01-Basics.html">Machine learning</a></li>
+          </ul>
+
+          <h5 class="mt-3">Resume</h5>
+          <ul>
+            <li><a href="resume/index.html">Resume / CV</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

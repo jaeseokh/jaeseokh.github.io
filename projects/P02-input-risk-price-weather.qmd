@@ -1,0 +1,5 @@
+---
+title: "Risk-Managing Input Decisions under Price & Weather Risk"
+---
+
+Overview, modeling, data, figures, links to code.

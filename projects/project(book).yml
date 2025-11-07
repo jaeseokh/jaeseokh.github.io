@@ -1,0 +1,22 @@
+project:
+  type: book
+  output-dir: ../docs/projects
+
+book:
+  title: "Projects"
+  sidebar: false
+  chapters:
+    - index.qmd
+    - ch1_index.qmd
+    - ch2_index.qmd
+    - ch3_index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+
+# make main site's assets available
+resources:
+  - ../assets

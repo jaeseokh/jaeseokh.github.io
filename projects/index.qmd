@@ -1,21 +1,12 @@
 ---
 title: "Projects"
----
+page-layout: article
 
-<div class="cards">
-  <a class="card" href="ofpe/index.qmd">
-    <h3>Multi‑Field OFPE Value</h3>
-    <p>Pooling on‑farm experiments to quantify decision value across fields.</p>
-  </a>
-  <a class="card" href="seed/index.qmd">
-    <h3>Corn Seed Response</h3>
-    <p>GxE and causal ML to place the right hybrid in the right environment.</p>
-  </a>
-  <a class="card" href="yield/index.qmd">
-    <h3>Yield Distribution</h3>
-    <p>From moments to distributions to risk—beyond mean yield.</p>
-  </a>
-</div>
-```
-
+listing:
+  contents: data/projects.yml
+  type: grid        # card grid
+  grid-columns: 2   # optional: 2-up on desktop, auto stacks on mobile
+  sort-ui: false
+  filter-ui: false
 ---
+Below are my current projects. Click a title to open the **project site** (built from the project’s own repository).

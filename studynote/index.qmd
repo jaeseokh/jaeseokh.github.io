@@ -1,11 +1,20 @@
 ---
-description-meta: |
-  .
+title: "Welcome"
 ---
 
-## Welcome {.unnumbered}
-Welcome to My Personal Study Notes on Statistics!
-This webpage serves as a comprehensive repository for reviewing and updating the statistical knowledge I have acquired through my academic classes and research projects. Here, I aim to organize, refine, and expand on concepts that have been pivotal in my work as a researcher and student.
-## License {.unnumbered}
+# Welcome
 
-This website is (and will always be) **free to use**, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License.
+These notes collect concise explanations and examples on statistics and machine learning topics I often revisit in research and teaching.  
+Each section in the sidebar corresponds to a different topic area — click to open any note.
+
+## How to read
+
+- **Basic Statistics** – probability, distributions, hypothesis tests  
+- **Bayesian Statistics** – posterior inference, MCMC, applied examples  
+- **Machine Learning** – regression, trees, ensemble methods
+
+## Tags & Features
+
+- All examples reproducible in **R or Python**
+- Lightweight Quarto pages (HTML only)
+- Auto-generated sidebar and search

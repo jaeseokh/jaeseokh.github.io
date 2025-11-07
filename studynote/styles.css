@@ -1,0 +1,4 @@
+/* tighter code blocks and softer sidebar */
+.sidebar { font-size: 0.9rem; }
+.sidebar-section h2, .sidebar-item { margin-top: 0.4rem; }
+pre code { font-size: 0.85rem; }

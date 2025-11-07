@@ -1,0 +1,5 @@
+/* Tighter grid, nice card spacing */
+.quarto-grid .card { border-radius: 16px; overflow: hidden; }
+.quarto-grid .card-img-top { object-fit: cover; }
+.quarto-grid .card-title { font-size: 1.1rem; line-height: 1.25; }
+.quarto-grid .card-text { color: #444; }

@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Jaeseok Hwang"
+  navbar:
+    right:
+      - text: Projects
+        href: projects/index.html
+      - text: StudyNotes
+        href: studynote/index.html
+      - text: Papers
+        href: papers/index.html    # optional placeholder or remove
+      - text: Resume(CV)
+        href: resume/index.html
+      - icon: magnifying-glass
+        href: search
+
+format:
+  html:
+    theme: cosmo
+    toc: false
+    css: assets/styles.css
+    code-link: true
+
+# make /assets available to subprojects during render
+resources:
+  - assets

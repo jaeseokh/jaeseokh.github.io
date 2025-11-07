@@ -1,0 +1,16 @@
+---
+title: "Statistical Learning"
+author: "Your Name"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    include-in-header:
+      text: |
+        \usepackage{amsmath, amssymb, bm}
+        \usepackage{mathtools}
+        \usepackage{siunitx}
+        \DeclareMathOperator{\argmin}{arg\,min}
+---
+
+# About statistical Learning

@@ -1,0 +1,8 @@
+project:
+  type: website
+  output-dir: ../docs/resume
+
+format:
+  html:
+    theme: cosmo
+    toc: false

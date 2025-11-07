@@ -1,4 +1,76 @@
+# ------------------------------------------------------------
+# Quarto build + cache files
+# ------------------------------------------------------------
+.quarto/
+_quarto.yaml~
+_quarto.yml~
+_quarto.yml.backup
+_quarto.yml.tmp
+.Rhistory
+.RData
+.Rproj.user/
+.Rproj
+.DS_Store
+
+# Freeze and cache directories
+_freeze/
+*/_freeze/
+*.knit.md
+*.utf8.md
+
+# Quarto render output (local builds)
+_site/
+__site/
+*.html~
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ------------------------------------------------------------
+# Python / R virtual environments
+# ------------------------------------------------------------
+venv/
+.env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.rds
+*.rda
+
+# ------------------------------------------------------------
+# OS-generated files
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+._*
+
+# ------------------------------------------------------------
+# Output and documents
+# ------------------------------------------------------------
+docs/*.zip
+docs/*.tar.gz
+*.pdf~
+*.docx~
+*.pptx~
+*.xlsx~
+*.csv~
+*.rds~
+
+# ------------------------------------------------------------
+# Project-specific: ignore raw work folders
+# ------------------------------------------------------------
+plan/
+about/
+coverletter/
+bayesian_files/
+research/data/
+research/raw/
+
 /.quarto/
-coverletter/*
-studynote/*
-docs/coverletter/*
