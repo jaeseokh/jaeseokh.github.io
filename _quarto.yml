@@ -3,12 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: "Jaeseok Hwang"
+  title: "Mainpage"
   search: true
   repo-url: https://github.com/jaeseokh/jaeseokh.github.io
   repo-actions: [source, issue]
   page-footer:
-    center: "© {year} Jaeseok Hwang"
+    center: "© {2025} used quarto for this webpage"
   navbar:
     right:
       - text: Projects

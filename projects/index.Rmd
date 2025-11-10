@@ -1,0 +1,12 @@
+---
+title: "Projects (test)"
+site: bookdown::bookdown_site
+documentclass: book
+---
+
+# Chapter 1
+
+This is a minimal test page.
+
+```{r}
+summary(cars)

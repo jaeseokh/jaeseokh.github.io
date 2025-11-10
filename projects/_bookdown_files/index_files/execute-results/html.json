@@ -1,0 +1,15 @@
+{
+  "hash": "c8edd93b76934cf3fc52f2841b56e3d7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Projects\"\nsite: bookdown::bookdown_site\ndocumentclass: book\nparams:\n  include_children: false\n---\n\n\n\nWelcome—use the left sidebar to browse.\n\n# (PART) Multi-Field OFPE Value {-}\n# (PART) Risk-Managing Input Decisions {-}\n# (PART) From Static to Dynamic Information {-}\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

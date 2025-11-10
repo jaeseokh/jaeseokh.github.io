@@ -1,0 +1,6 @@
+book_filename: "Projects"
+delete_merged_file: true
+output_dir: "../docs/projects"
+rmd_files:
+  - index.Rmd
+  - second.Rmd

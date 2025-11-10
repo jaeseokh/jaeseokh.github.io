@@ -1,0 +1,11 @@
+bookdown::bs4_book:
+  theme:
+    bootswatch: cosmo
+  repo: https://github.com/jaeseokh/jaeseokh.github.io
+  toc_depth: 3
+  split_by: section
+  css: styles.css
+  config:
+    toc:
+      collapse: subsection
+      scroll_highlight: true
