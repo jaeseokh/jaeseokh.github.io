@@ -1,9 +1,0 @@
----
-title: "Working Ppaers"
-author: "Jaeseok Hwang"
-date: "Oct 2025 (updated)"
-format: html
-bibliography: myref.bib
----
-
-# Working paper updated

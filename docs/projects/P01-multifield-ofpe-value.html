@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../assets/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="../styles/home.css">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -94,44 +93,18 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-study" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Study</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-study">    
-        <li>
-    <a class="dropdown-item" href="../studynote/index.html">
- <span class="dropdown-text">Welcome</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../studynote/E01-Distributions.html">
- <span class="dropdown-text">Basic Statistics</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../studynote/B01-Bayes-Theorem.html">
- <span class="dropdown-text">Bayesian</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../research/working_papers.pdf"> 
+    <a class="nav-link" href="../studynote/index.html"> 
+<span class="menu-text">StudyNotes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../papers/index.html"> 
 <span class="menu-text">Papers</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resumecv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resume/CV</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resumecv">    
-        <li>
-    <a class="dropdown-item" href="../resume/resume_updated.pdf">
- <span class="dropdown-text">Resume</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../resume/index.html"> 
+<span class="menu-text">Resume(CV)</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../resume/cv.pdf">
- <span class="dropdown-text">CV</span></a>
-  </li>  
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -263,7 +236,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jaeseokh\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -277,11 +250,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -603,8 +571,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2025 Jaeseok Hwang · Built with Quarto</p>
-</div>
+<p>© {year} Jaeseok Hwang</p>
+<div class="toc-actions"><ul><li><a href="https://github.com/jaeseokh/jaeseokh.github.io/blob/main/projects/P01-multifield-ofpe-value.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/jaeseokh/jaeseokh.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

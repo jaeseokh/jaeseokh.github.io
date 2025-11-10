@@ -1,0 +1,8 @@
+project:
+  type: website
+  output-dir: ../docs/resume   # write the built HTML/PDF into the main site's docs/resume
+
+format:
+  html:
+    theme: cosmo
+    toc: false

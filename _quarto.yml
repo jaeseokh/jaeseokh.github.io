@@ -4,6 +4,11 @@ project:
 
 website:
   title: "Jaeseok Hwang"
+  search: true
+  repo-url: https://github.com/jaeseokh/jaeseokh.github.io
+  repo-actions: [source, issue]
+  page-footer:
+    center: "© {year} Jaeseok Hwang"
   navbar:
     right:
       - text: Projects
@@ -11,11 +16,9 @@ website:
       - text: StudyNotes
         href: studynote/index.html
       - text: Papers
-        href: papers/index.html    # optional placeholder or remove
+        href: papers/index.html
       - text: Resume(CV)
         href: resume/index.html
-      - icon: magnifying-glass
-        href: search
 
 format:
   html:
@@ -23,6 +26,10 @@ format:
     toc: false
     css: assets/styles.css
     code-link: true
+    smooth-scroll: true
+
+# freeze HTML so unchanged pages don’t rebuild every time
+freeze: auto
 
 # make /assets available to subprojects during render
 resources:
