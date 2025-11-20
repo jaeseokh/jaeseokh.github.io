@@ -1,6 +1,19 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - webpage_layout.qmd
+    - about/index.qmd
+    - projects/index.qmd
+    - projects/*.qmd
+    - studynote/index.qmd
+    - studynote/*.qmd
+    - papers/index.qmd
+    - papers/*.qmd
+    - resume/index.qmd
+    - resume/*.qmd
+    # (add any other specific .qmd you want rendered here)
 
 website:
   title: "Mainpage"

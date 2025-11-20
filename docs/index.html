@@ -162,21 +162,14 @@ ul.task-list li input[type="checkbox"] {
   border: 1px solid var(--bs-border-color);
   border-radius: .75rem;
   padding: 1rem;
+  margin-bottom: 1.25rem;
 }
+.section-card h3 { margin-top:0.2rem; }
 .list-group a {
   display:flex; justify-content:space-between; align-items:center;
   font-weight:600; text-decoration:none;
 }
 .list-group a small { font-weight:400; opacity:.65; }
-
-/* Reduce title size on the homepage */
-h1.title {
-  font-size: 1.3rem;     /* default is about 2rem; try 1.5–1.7 for balance */
-  font-weight: 700;
-  text-align: left;      /* or center if you prefer */
-  margin-bottom: 0.75rem;
-}
-
 </style>
 <div class="columns">
 <div class="column" style="width:40%;">
@@ -189,14 +182,35 @@ Jaeseok Hwang
 <p><a href="mailto:jaeseok2@illinois.edu">Email</a> · <a href="https://github.com/jaeseokh">GitHub</a> · <a href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1">LinkedIn</a></p>
 </div>
 <div class="bio">
-<p>Ph.D.&nbsp;candidate in Agricultural &amp; Applied Economics. I build data-driven, production-theory-aware models (R/Python, PyTorch) for geospatial and time-series problems; interested in data science economist roles.</p>
+<p>Ph.D.&nbsp;candidate in Agricultural &amp; Applied Economics specializing in quantitative, data-intensive farm management. I work at the intersection of applied econometrics, statistical learning, and agronomic modeling, building production-theory-guided models in R and Python for geospatial and field-scale data. My research blends causal inference, Bayesian modeling, and machine-learning pipelines to understand input responses, environmental risk, and decision-making under uncertainty—interests I aim to bring into data science economist roles.</p>
 </div>
 </div>
 </div><div class="column" style="width:60%;">
-<section id="explore" class="level3 section-card">
-<h3 class="anchored" data-anchor-id="explore">Explore</h3>
+<!-- ====================== PROJECTS ====================== -->
+<section id="projects" class="level3 section-card">
+<h3 class="anchored" data-anchor-id="projects">Projects</h3>
 <div class="list-group">
-<p><a class="list-group-item list-group-item-action" href="projects/index.html"> <span>Projects</span> <small>Multi-Field OFPE · Risk · Dynamics</small> </a> <a class="list-group-item list-group-item-action" href="studynote/index.html"> <span>Study Notes</span> <small>Bayesian · Risk · Statistical Learning</small> </a> <a class="list-group-item list-group-item-action" href="papers/index.html"> <span>Papers</span> <small>Drafts · Slides</small> </a> <a class="list-group-item list-group-item-action" href="resume/index.html"> <span>Resume / CV</span> <small>HTML + PDF</small> </a></p>
+<p><a class="list-group-item list-group-item-action" href="https://jaeseokh.github.io/value_multifield_ofpe/" target="_blank"> <span>Bayesian Yield–Nitrogen Modeling</span> <small>Multi-field OFPE · APSIM priors · Bayes</small> </a></p>
+<!-- TODO: update href once the repo / book URL is ready -->
+<p><a class="list-group-item list-group-item-action" href="https://github.com/jaeseokh/PRODUCER_INPUT_RISK_BOOK" target="_blank"> <span>Producer’s Input Decision System Under Risk</span> <small>Utility · risk · dynamic decisions</small> </a></p>
+<!-- TODO: update href once the repo / book URL is ready -->
+<p><a class="list-group-item list-group-item-action" href="https://github.com/jaeseokh/N_LEACHING_EVAL_BOOK" target="_blank"> <span>N-Leaching Evaluation</span> <small>Leaching · tile flow · nitrate</small> </a></p>
+</div>
+</section>
+<!-- ====================== STUDY NOTES ====================== -->
+<section id="study-notes" class="level3 section-card">
+<h3 class="anchored" data-anchor-id="study-notes">Study Notes</h3>
+<div class="list-group">
+<p><a class="list-group-item list-group-item-action" href="studynote/statistical_learning.html"> <span>Statistical Learning</span> <small>ML theory · cross-validation · inference</small> </a></p>
+<p><a class="list-group-item list-group-item-action" href="studynote/price_analysis.html"> <span>Price Analysis</span> <small>Demand · elasticity · markets</small> </a></p>
+<p><a class="list-group-item list-group-item-action" href="studynote/bayesian_notes.html"> <span>Bayesian</span> <small>Prior design · posterior inference</small> </a></p>
+</div>
+</section>
+<!-- ====================== RESUME ====================== -->
+<section id="resume-cv" class="level3 section-card">
+<h3 class="anchored" data-anchor-id="resume-cv">Resume / CV</h3>
+<div class="list-group">
+<p><a class="list-group-item list-group-item-action" href="resume/resume_jaeseok.pdf" target="_blank"> <span>Resume (PDF)</span> <small>Open file</small> </a></p>
 </div>
 </section>
 </div>

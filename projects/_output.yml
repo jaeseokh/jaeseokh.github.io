@@ -1,11 +1,6 @@
-bookdown::bs4_book:
-  theme:
-    bootswatch: cosmo
-  repo: https://github.com/jaeseokh/jaeseokh.github.io
-  toc_depth: 3
-  split_by: section
-  css: styles.css
+bookdown::gitbook:
+  css: style.css    # optional
+  split_by: chapter
   config:
     toc:
       collapse: subsection
-      scroll_highlight: true

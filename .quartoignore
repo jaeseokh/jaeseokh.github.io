@@ -1,0 +1,16 @@
+# Ignore all external repos and submodules by default...
+external/**
+projects/external/**
+
+# ...but ALLOW their "results" folders (we re-include them)
+!external/**/results/**
+!projects/external/**/results/**
+
+# Ignore any Code/Main trees in submodules
+**/Code/**
+
+# Ignore other heavy or irrelevant data folders
+**/Data/**
+**/Sandbox/**
+**/_bookdown_files/**
+**/_ext_sanitized/**

@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "studynote/index.html",
+    "href": "studynote/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "These notes collect concise explanations and examples on statistics and machine learning topics I often revisit in research and teaching.\nEach section in the sidebar corresponds to a different topic area — click to open any note.\n\n\n\nBasic Statistics – probability, distributions, hypothesis tests\n\nBayesian Statistics – posterior inference, MCMC, applied examples\n\nMachine Learning – regression, trees, ensemble methods\n\n\n\n\n\nAll examples reproducible in R or Python\nLightweight Quarto pages (HTML only)\nAuto-generated sidebar and search"
+  },
+  {
+    "objectID": "studynote/index.html#how-to-read",
+    "href": "studynote/index.html#how-to-read",
+    "title": "Welcome",
+    "section": "",
+    "text": "Basic Statistics – probability, distributions, hypothesis tests\n\nBayesian Statistics – posterior inference, MCMC, applied examples\n\nMachine Learning – regression, trees, ensemble methods"
+  },
+  {
+    "objectID": "studynote/index.html#tags-features",
+    "href": "studynote/index.html#tags-features",
+    "title": "Welcome",
+    "section": "",
+    "text": "All examples reproducible in R or Python\nLightweight Quarto pages (HTML only)\nAuto-generated sidebar and search"
+  },
+  {
+    "objectID": "projects/P02-input-risk-price-weather.html",
+    "href": "projects/P02-input-risk-price-weather.html",
+    "title": "Risk-Managing Input Decisions under Price & Weather Risk",
+    "section": "",
+    "text": "Overview, modeling, data, figures, links to code."
+  },
+  {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "Jaeseok Hwang",
+    "section": "",
+    "text": "Hi, I’m Jaeseok Hwang, a Ph.D. candidate in Agricultural and Consumer Economics (ACE)  at the University of Illinois at Urbana-Champaign (UIUC), with an expected graduation in May 2025. Over the past 5 years, I have gained extensive experience as a research assistant for the USDA NRCS-funded project, “Data Intensive Farm Management.” \nIn this role, I worked extensively with large-scale datasets, applying advanced data analytics and statistical techniques to address complex questions in farm management and productivity. During this time, I developed a deep expertise in designing and running machine-learning-based regression models to derive actionable insights from big data. My analytical toolkit includes a professional level of proficiency in R, which I use for most of my data processing, statistical modeling, and visualization tasks, as well as Python, which I employ as a versatile second option for complementary analysis and machine learning workflows.\nThis website highlights my research journey, showcasing programming code (R and Python via VS Code), summary of research outputs, and my individual research note reflecting my knowledge and skills."
+  },
+  {
+    "objectID": "about/index.html#publications",
+    "href": "about/index.html#publications",
+    "title": "Jaeseok Hwang",
+    "section": "Publications",
+    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. Precision Agriculture, 21, 1027-1044.\n\nLink to the published paper"
+  },
+  {
+    "objectID": "about/index.html#research-work-in-progress",
+    "href": "about/index.html#research-work-in-progress",
+    "title": "Jaeseok Hwang",
+    "section": "Research (Work in progress)",
+    "text": "Research (Work in progress)\n\nLeveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data\nEvaluating the Profitability of Corn Seeding Decisions\nCan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective\nInforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Trace of Research and Study",
+    "section": "",
+    "text": "Jaeseok Hwang\n\n\nEmail · GitHub · LinkedIn\n\n\nPh.D. candidate in Agricultural & Applied Economics specializing in quantitative, data-intensive farm management. I work at the intersection of applied econometrics, statistical learning, and agronomic modeling, building production-theory-guided models in R and Python for geospatial and field-scale data. My research blends causal inference, Bayesian modeling, and machine-learning pipelines to understand input responses, environmental risk, and decision-making under uncertainty—interests I aim to bring into data science economist roles.\n\n\n\n\n\nProjects\n\n Bayesian Yield–Nitrogen Modeling Multi-field OFPE · APSIM priors · Bayes \n\n Producer’s Input Decision System Under Risk Utility · risk · dynamic decisions \n\n N-Leaching Evaluation Leaching · tile flow · nitrate \n\n\n\n\nStudy Notes\n\n Statistical Learning ML theory · cross-validation · inference \n Price Analysis Demand · elasticity · markets \n Bayesian Prior design · posterior inference \n\n\n\n\nResume / CV\n\n Resume (PDF) Open file"
+  },
+  {
+    "objectID": "webpage_layout.html",
+    "href": "webpage_layout.html",
+    "title": "Jaeseok Hwang",
+    "section": "",
+    "text": "&lt;!-- Left column: photo + name + buttons + short bio UNDER photo --&gt;\n&lt;div class=\"col-md-5 text-center\"&gt;\n  &lt;img src=\"assets/headshot.jpg\" alt=\"Jaeseok Hwang\"\n       class=\"rounded-circle img-fluid mb-3\" style=\"max-width:320px;\"&gt;\n  &lt;h1 class=\"mb-3\"&gt;Jaeseok Hwang&lt;/h1&gt;\n\n  &lt;p class=\"lead\" style=\"max-width:640px; margin: 0 auto;\"&gt;\n    I’m an &lt;b&gt;Applied Economist and Data Scientist&lt;/b&gt; (Ph.D. candidate, UIUC),\n    building data-driven decision systems for U.S. crop producers by integrating\n    applied ML, Bayesian modeling, and economic optimization. I primarily use\n    &lt;b&gt;R&lt;/b&gt; and &lt;b&gt;Python&lt;/b&gt; to transform limited field data into\n    actionable, risk-aware insights.\n  &lt;/p&gt;\n\n  &lt;div class=\"mt-3\"&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://github.com/jaeseokh\" target=\"_blank\"&gt;GitHub&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://www.linkedin.com/in/...\" target=\"_blank\"&gt;LinkedIn&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary\" href=\"mailto:youremail@illinois.edu\"&gt;Email&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;!-- Right column: site table of contents --&gt;\n&lt;div class=\"col-md-7\"&gt;\n  &lt;div class=\"card shadow-sm\"&gt;\n    &lt;div class=\"card-body\"&gt;\n      &lt;h3 class=\"card-title\"&gt;Site Contents&lt;/h3&gt;\n      &lt;hr/&gt;\n      &lt;h5&gt;Projects&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch1_index.html\"&gt;Value of multi-field OFPE data&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch2_index.html\"&gt;Risky input decisions under price & weather risk&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch3_index.html\"&gt;From static info to dynamic info&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Study Notes&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E01-Distributions.html\"&gt;Bayesian&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E02-Tests.html\"&gt;Risk analysis&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/ML01-Basics.html\"&gt;Machine learning&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Resume&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"resume/index.html\"&gt;Resume / CV&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "projects/P01-multifield-ofpe-value.html",
+    "href": "projects/P01-multifield-ofpe-value.html",
+    "title": "Value of Multiple Field Experimental Data",
+    "section": "",
+    "text": "Intro text here. (figs, methods, key results)"
+  },
+  {
+    "objectID": "projects/P03-static-to-dynamic.html",
+    "href": "projects/P03-static-to-dynamic.html",
+    "title": "From Static to Dynamic Information",
+    "section": "",
+    "text": "Dynamic soil–fertilizer–water framing; example analyses; roadmap."
+  }
+]

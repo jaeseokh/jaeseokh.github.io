@@ -39,13 +39,13 @@ format:
 
 \begin{multicols}{2}
 \begin{flushleft}{\bf Data Intensive Farm Management (USDA NRCS)}\end{flushleft}
-\begin{flushright}Sep 2020 – May 2025 \end{flushright}
+\begin{flushright}Sep 2020 – Aug 2025 \end{flushright}
 \end{multicols}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item \textbf{Engineered} Python/R data pipelines to process and integrate 500k+ geospatial and time-series records, enabling large-scale modeling and public data delivery.
-\item \textbf{Collaborated with} Oracle cloud engineers to support scalable ETL workflows, developing core R/Python scripts for processing of 300+ unique datasets.
-\item \textbf{Developed and benchmarked} tree-based models (XGBoost, Causal Forest) to forecast performance outcomes and improve accuracy over baseline methods.
+\item Engineered Python/R data pipelines to process and integrate 500k+ geospatial and time-series records, enabling large-scale modeling and public data delivery.
+\item Collaborated with Oracle cloud engineers to support scalable ETL workflows, developing core R/Python scripts for processing of unique datasets.
+\item Benchmarked tree-based and Bayesian modeling frameworks to systematically evaluate yield–nitrogen response patterns across heterogeneous field environments.
 \end{itemize}
 \vspace{-2pt}
 
@@ -55,8 +55,8 @@ format:
 \end{multicols}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item \textbf{Conducted} large-scale economic and geospatial scenario analyses using Monte Carlo simulations to evaluate the profitability and sustainability of different business strategies.
-\item \textbf{Applied} panel-based counterfactual models to estimate the economic impact of management changes, informing national-scale policy studies.
+\item Conducted geospatial and economic scenario analysis using Monte Carlo simulation to assess profitability and sustainability outcomes.
+\item Applied panel-based counterfactual models to estimate the impact of management changes, contributing to national-scale policy evaluations.
 \end{itemize}
 \vspace{-2pt}
 
@@ -67,30 +67,32 @@ format:
 \vspace{1pt}
 \textit{Reproducible Code Portfolio: \href{https://github.com/jaeseokh}{github.com/jaeseokh}}
 
-\textbf{Predictive Model Generalization and Validation (2022–2025)}
+\textbf{Bayesian Modeling of Yield–Nitrogen Responses Using On-Farm Experiment Data (2022–2025)}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item Began by developing ensemble-based predictive systems (XGBoost, Random Forest) to improve cross-environment yield forecasting and model stability under data heterogeneity.
-\item Advanced the framework toward Bayesian tree models to integrate domain priors and quantify uncertainty.
-\item Demonstrated how Bayesian approaches enhance learning when experimental data are limited or noisy by incorporating production-theoretic beliefs into posterior updates, linking economic theory with machine-learning inference.
+\item  Developed ML and Bayesian models using >500k OFPE observations to characterize yield–nitrogen response heterogeneity.
+\item  Identified limits of tree-based models under sparse covariates; introduced timing-specific weather to proxy soil–water–N dynamics.
+\item Advanced Bayesian curve-feature models (plateau, steepness, curvature) to quantify timing effects.
+\item Applied shrinkage priors and pooling to support nitrogen decision-making under limited field-year data.
+
 \end{itemize}
 \vspace{-2pt}
 
-\textbf{Causal Inference for Optimal Resource Allocation and Risk Analysis}
+\textbf{Producer Input Decisions Under Weather and Price Uncertainty (Behavioral and Causal Analysis)}
 \vspace{-4pt}
-\begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item Conducted systematic analysis of crop producers’ decision behavior to evaluate how growers respond to historical changes in price and weather to maximize profitability.
-\item Explored risk-based decision frameworks identifying strategies that remain optimal under volatile input–output price ratios and unpredictable weather shocks.
+\begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
+\item Studied fertilizer input adjustments under weather and price volatility using behavioral elasticity models.
+\item Built uncertainty-aware decision frameworks identifying strategies robust to volatile environments.
+\item Designed econometric models connecting individual adjustments to system-level behavior.
 \end{itemize}
-\vspace{-2pt}
 
-\textbf{Trade-Off of Production Output and Core Input}
+\textbf{Nitrogen Loss Measurement and Yield Impacts (Ongoing)}
 \vspace{-4pt}
-\begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item Evaluated profitability and precision of new high-tech groundwater control systems, focusing on spatial spillover effects and accurate measurement of economic return.
-\item Developed frameworks to assess trade-offs between production outputs and essential resource inputs under spatially heterogeneous production environments.
+\begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
+\item Analyze real-time nitrogen-loss sensor data to quantify leaching dynamics.
+\item Build time-series and spatial models linking N-loss patterns with weather events and soil conditions.
+\item Develop an inference framework to evaluate yield and profit penalties associated with N-loss.
 \end{itemize}
-\vspace{1pt}
 
 \begin{large}{\bf EDUCATION}
   \vspace{1pt}
@@ -129,4 +131,4 @@ format:
 \textbf{Data Science \& ML:} Scikit-learn, PyTorch, Pandas.
 \vspace{1pt}
 
-\textbf{Methods:} Causal Inference, Bayesian Models, Time-Series Analysis, Geospatial Analysis
+\textbf{Methods:} Causal Inference, Bayesian Models, Geospatial Analysis
