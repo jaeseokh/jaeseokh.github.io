@@ -28,8 +28,6 @@ website:
         href: projects/index.html
       - text: StudyNotes
         href: studynote/index.html
-      - text: Papers
-        href: papers/index.html
       - text: Resume(CV)
         href: resume/index.html
 
