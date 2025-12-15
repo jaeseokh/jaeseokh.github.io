@@ -76,14 +76,14 @@ Ph.D. candidate in Agricultural & Applied Economics specializing in quantitative
 
 <!-- TODO: update href once the repo / book URL is ready -->
 <a class="list-group-item list-group-item-action"
-   href="https://github.com/jaeseokh/PRODUCER_INPUT_RISK_BOOK" target="_blank">
+   href="https://github.com/jaeseokh/corn_seed_response" target="_blank">
   <span>Producer's Input Decision System Under Risk</span>
   <small>Utility · risk · dynamic decisions</small>
 </a>
 
 <!-- TODO: update href once the repo / book URL is ready -->
 <a class="list-group-item list-group-item-action"
-   href="https://github.com/jaeseokh/N_LEACHING_EVAL_BOOK" target="_blank">
+   href="https://github.com/jaeseokh/n_leaching" target="_blank">
   <span>N-Leaching Evaluation</span>
   <small>Leaching · tile flow · nitrate</small>
 </a>
