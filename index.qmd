@@ -76,7 +76,7 @@ Ph.D. candidate in Agricultural & Applied Economics specializing in quantitative
 
 <!-- TODO: update href once the repo / book URL is ready -->
 <a class="list-group-item list-group-item-action"
-   href="https://github.com/jaeseokh/corn_seed_response" target="_blank">
+   href="https://jaeseokh.github.io/corn_seed_response" target="_blank">
   <span>Producer's Input Decision System Under Risk</span>
   <small>Utility · risk · dynamic decisions</small>
 </a>
