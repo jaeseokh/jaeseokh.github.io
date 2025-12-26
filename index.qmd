@@ -97,7 +97,8 @@ Ph.D. candidate in Agricultural & Applied Economics specializing in quantitative
 
 <div class="list-group">
 
-<a class="list-group-item list-group-item-action" href="https://jaeseokh.github.io/book_of_stat_review/">
+<a class="list-group-item list-group-item-action" 
+href="https://jaeseokh.github.io/book_of_stat_review/" target="_blank">
   <span>Statistical Learning</span>
   <small>ML theory · cross-validation · inference</small>
 </a>
