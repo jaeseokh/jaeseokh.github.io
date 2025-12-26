@@ -25,8 +25,6 @@ format:
         \setlist[itemize]{nosep, left=0pt}
 ---
 
-
-
 \begin{huge}\begin{center}{\bf JAESEOK HWANG}\end{center}\end{huge}
 
 \begin{center}
@@ -35,17 +33,17 @@ format:
 \href{https://www.linkedin.com/in/jaeseok-hwang-0b06741a1}{LinkedIn}
 \end{center}
 
-\begin{large}{\bf PROFESSIONAL EXPERIENCE (Research Assistant)} \vspace{1pt} \hrule \end{large}
+\begin{large}{\bf PROFESSIONAL EXPERIENCE (Quantitative Research)} \vspace{1pt} \hrule \end{large}
 
 \begin{multicols}{2}
-\begin{flushleft}{\bf Data Intensive Farm Management (USDA NRCS)}\end{flushleft}
+\begin{flushleft}{\bf Data Intensive Farm Management (USDA Grant)}\end{flushleft}
 \begin{flushright}Sep 2020 – Aug 2025 \end{flushright}
 \end{multicols}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item Engineered Python/R data pipelines to process and integrate 500k+ geospatial and time-series records, enabling large-scale modeling and public data delivery.
-\item Collaborated with Oracle cloud engineers to support scalable ETL workflows, developing core R/Python scripts for processing of unique datasets.
-\item Benchmarked tree-based and Bayesian modeling frameworks to systematically evaluate yield–nitrogen response patterns across heterogeneous field environments.
+\item \textbf{ETL \& Data Pipelines:} Architected R and Python pipelines to clean, merge, and analyze large-scale geospatial and time-series datasets (500k+ observations).
+\item \textbf{Model Validation:} Benchmarked Machine Learning (Gradient Boosting/RF) against Bayesian Hierarchical models to evaluate predictive accuracy versus interpretability for decision support.
+\item \textbf{Heterogeneity Analysis:} Quantified heterogeneous response effects across diverse environmental segments to optimize resource allocation strategies.
 \end{itemize}
 \vspace{-2pt}
 
@@ -55,43 +53,41 @@ format:
 \end{multicols}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item Conducted geospatial and economic scenario analysis using Monte Carlo simulation to assess profitability and sustainability outcomes.
-\item Applied panel-based counterfactual models to estimate the impact of management changes, contributing to national-scale policy evaluations.
+\item \textbf{Stress Testing (Monte Carlo):} Designed Monte Carlo simulations to analyze profit-at-risk and outcome variance under stochastic volatility scenarios.
+\item \textbf{Causal Inference:} Applied econometric panel data methods and counterfactual analysis to isolate the marginal impact of management decisions on financial performance.
 \end{itemize}
 \vspace{-2pt}
 
-\begin{large}{\bf DATA SCIENCE AND ECONOMICS PROJECTS}
+\begin{large}{\bf QUANTITATIVE MODELING PROJECTS}
 \vspace{1pt}
 \hrule
 \end{large}
 \vspace{1pt}
 \textit{Reproducible Code Portfolio: \href{https://github.com/jaeseokh}{github.com/jaeseokh}}
 
-\textbf{Bayesian Modeling of Yield–Nitrogen Responses Using On-Farm Experiment Data (2022–2025)}
+\textbf{Bayesian Hierarchical Modeling \& Uncertainty Quantification (2022–2025)}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item  Developed ML and Bayesian models using >500k OFPE observations to characterize yield–nitrogen response heterogeneity.
-\item  Identified limits of tree-based models under sparse covariates; introduced timing-specific weather to proxy soil–water–N dynamics.
-\item Advanced Bayesian curve-feature models (plateau, steepness, curvature) to quantify timing effects.
-\item Applied shrinkage priors and pooling to support nitrogen decision-making under limited field-year data.
-
+\item Developed hierarchical Bayesian models to estimate non-linear return functions, accounting for parameter uncertainty across distinct operating segments.
+\item Implemented \textbf{shrinkage estimators} and \textbf{partial pooling} to stabilize inference in segments with sparse data (solving for "thin-file" data challenges).
+\item Analyzed posterior distributions to calculate confidence intervals and risk-adjusted probability of returns.
 \end{itemize}
 \vspace{-2pt}
 
-\textbf{Producer Input Decisions Under Weather and Price Uncertainty (Behavioral and Causal Analysis)}
+\textbf{Behavioral Response Modeling under Market Volatility}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
-\item Studied fertilizer input adjustments under weather and price volatility using behavioral elasticity models.
-\item Built uncertainty-aware decision frameworks identifying strategies robust to volatile environments.
-\item Designed econometric models connecting individual adjustments to system-level behavior.
+\item Estimated elasticity of input decisions in response to exogenous price shocks and stochastic weather events.
+\item Modeled agent decision-making under uncertainty to predict shifts in risk exposure.
+\item Aggregated micro-level behavioral parameters to forecast macro-level system outcomes.
 \end{itemize}
 
-\textbf{Nitrogen Loss Measurement and Yield Impacts (Ongoing)}
+\textbf{Spatial-Temporal Modeling of Loss Events (Ongoing)}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
-\item Analyze real-time nitrogen-loss sensor data to quantify leaching dynamics.
-\item Build time-series and spatial models linking N-loss patterns with weather events and soil conditions.
-\item Develop an inference framework to evaluate yield and profit penalties associated with N-loss.
+\item Utilized high-frequency sensor data to model the dynamics of resource loss events.
+\item Built time-series (ARIMA/Spatial) models linking loss patterns to external volatility factors.
+\item Quantified the financial impact of loss events on overall profit margins.
 \end{itemize}
 
 \begin{large}{\bf EDUCATION}
@@ -101,8 +97,9 @@ format:
 
 \noindent
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-\textbf{University of Illinois at Urbana–Champaign} & \textit{Expected May 2026} \\
+\textbf{University of Illinois at Urbana–Champaign} & \textit{Expected Dec 2025} \\
 \hspace{5mm}Ph.D.\ Agricultural and Applied Economics & \\
+\textit{\hspace{5mm}Focus: Econometrics, Bayesian Statistics, Optimization under Uncertainty} & \\
 \end{tabular*}
 
 \vspace{-4pt}
@@ -125,10 +122,11 @@ format:
   \vspace{1pt}
   \hrule
 \end{large}
-\textbf{Languages:} R (Expert), Python (Proficient), SQL \hspace{2em} \textbf{Tools:} GitHub, Jupyter, QGIS, Quarto
+\textbf{Languages:} R (Expert), Python (Pandas, Scikit-Learn), SQL \hspace{1em}
+\textbf{Tools:} GitHub, Jupyter, Quarto
 \vspace{1pt}
 
-\textbf{Data Science \& ML:} Scikit-learn, PyTorch, Pandas.
+\textbf{Modeling:} Bayesian Inference, Monte Carlo Simulation, Logistic Regression, Time-Series Analysis
 \vspace{1pt}
 
-\textbf{Methods:} Causal Inference, Bayesian Models, Geospatial Analysis
+\textbf{Concepts:} Stress Testing, Causal Inference, A/B Testing Design, Optimization, Risk Quantification

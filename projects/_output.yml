@@ -1,6 +1,0 @@
-bookdown::gitbook:
-  css: style.css    # optional
-  split_by: chapter
-  config:
-    toc:
-      collapse: subsection

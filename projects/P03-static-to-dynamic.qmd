@@ -1,5 +1,0 @@
----
-title: "From Static to Dynamic Information"
----
-
-Dynamic soil–fertilizer–water framing; example analyses; roadmap.

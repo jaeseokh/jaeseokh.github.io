@@ -1,0 +1,134 @@
+---
+format:
+  pdf:
+    documentclass: article
+    geometry:
+      - top=12mm
+      - left=15mm
+      - right=15mm
+      - bottom=8mm
+      - heightrounded
+    fontfamily: libertine
+    colorlinks: true
+    fontsize: '11pt'
+    include-in-header:
+      text: |
+        \usepackage{multicol}
+        \usepackage{lipsum}
+        \usepackage{hyperref}
+        \usepackage{libertine}
+        \usepackage{wrapfig}
+        \usepackage{enumitem}
+        \pagestyle{empty}
+        \setlength{\multicolsep}{2pt plus 1.0pt minus 0.75pt}
+        \setlength{\columnsep}{3em}
+        \setlist[itemize]{nosep, left=0pt}
+---
+
+
+
+\begin{huge}\begin{center}{\bf JAESEOK HWANG}\end{center}\end{huge}
+
+\begin{center}
+\href{mailto:jaeseok2@illinois.edu}{jaeseok2@illinois.edu} ∙ 217-778-8776 ∙
+\href{https://github.com/jaeseokh}{Github} ∙
+\href{https://www.linkedin.com/in/jaeseok-hwang-0b06741a1}{LinkedIn}
+\end{center}
+
+\begin{large}{\bf PROFESSIONAL EXPERIENCE (Research Assistant)} \vspace{1pt} \hrule \end{large}
+
+\begin{multicols}{2}
+\begin{flushleft}{\bf Data Intensive Farm Management (USDA NRCS)}\end{flushleft}
+\begin{flushright}Sep 2020 – Aug 2025 \end{flushright}
+\end{multicols}
+\vspace{-4pt}
+\begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
+\item Engineered Python/R data pipelines to process and integrate 500k+ geospatial and time-series records, enabling large-scale modeling and public data delivery.
+\item Collaborated with Oracle cloud engineers to support scalable ETL workflows, developing core R/Python scripts for processing of unique datasets.
+\item Benchmarked tree-based and Bayesian modeling frameworks to systematically evaluate yield–nitrogen response patterns across heterogeneous field environments.
+\end{itemize}
+\vspace{-2pt}
+
+\begin{multicols}{2}
+\begin{flushleft}{\bf Center for the Economics of Sustainability (UIUC)}\end{flushleft}
+\begin{flushright}Jan 2021 – Aug 2024 \end{flushright}
+\end{multicols}
+\vspace{-4pt}
+\begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
+\item Conducted geospatial and economic scenario analysis using Monte Carlo simulation to assess profitability and sustainability outcomes.
+\item Applied panel-based counterfactual models to estimate the impact of management changes, contributing to national-scale policy evaluations.
+\end{itemize}
+\vspace{-2pt}
+
+\begin{large}{\bf DATA SCIENCE AND ECONOMICS PROJECTS}
+\vspace{1pt}
+\hrule
+\end{large}
+\vspace{1pt}
+\textit{Reproducible Code Portfolio: \href{https://github.com/jaeseokh}{github.com/jaeseokh}}
+
+\textbf{Bayesian Modeling of Yield–Nitrogen Responses Using On-Farm Experiment Data (2022–2025)}
+\vspace{-4pt}
+\begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
+\item  Developed ML and Bayesian models using >500k OFPE observations to characterize yield–nitrogen response heterogeneity.
+\item  Identified limits of tree-based models under sparse covariates; introduced timing-specific weather to proxy soil–water–N dynamics.
+\item Advanced Bayesian curve-feature models (plateau, steepness, curvature) to quantify timing effects.
+\item Applied shrinkage priors and pooling to support nitrogen decision-making under limited field-year data.
+
+\end{itemize}
+\vspace{-2pt}
+
+\textbf{Producer Input Decisions Under Weather and Price Uncertainty (Behavioral and Causal Analysis)}
+\vspace{-4pt}
+\begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
+\item Studied fertilizer input adjustments under weather and price volatility using behavioral elasticity models.
+\item Built uncertainty-aware decision frameworks identifying strategies robust to volatile environments.
+\item Designed econometric models connecting individual adjustments to system-level behavior.
+\end{itemize}
+
+\textbf{Nitrogen Loss Measurement and Yield Impacts (Ongoing)}
+\vspace{-4pt}
+\begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
+\item Analyze real-time nitrogen-loss sensor data to quantify leaching dynamics.
+\item Build time-series and spatial models linking N-loss patterns with weather events and soil conditions.
+\item Develop an inference framework to evaluate yield and profit penalties associated with N-loss.
+\end{itemize}
+
+\begin{large}{\bf EDUCATION}
+  \vspace{1pt}
+  \hrule
+\end{large}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{University of Illinois at Urbana–Champaign} & \textit{Expected May 2026} \\
+\hspace{5mm}Ph.D.\ Agricultural and Applied Economics & \\
+\end{tabular*}
+
+\vspace{-4pt}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{University of Illinois Urbana–Champaign} & \textit{May 2020} \\
+\hspace{5mm}M.A.\ Agricultural and Applied Economics & \\
+\end{tabular*}
+
+\vspace{-4pt}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+\textbf{Sogang University} & \textit{Aug.\ 2013, South Korea} \\
+\hspace{5mm}B.S.\ Economics & \\
+\end{tabular*}
+
+\begin{large}{\bf TECHNICAL SKILLS}
+  \vspace{1pt}
+  \hrule
+\end{large}
+\textbf{Languages:} R (Expert), Python (Proficient), SQL \hspace{2em} \textbf{Tools:} GitHub, Jupyter, QGIS, Quarto
+\vspace{1pt}
+
+\textbf{Data Science \& ML:} Scikit-learn, PyTorch, Pandas.
+\vspace{1pt}
+
+\textbf{Methods:} Causal Inference, Bayesian Models, Geospatial Analysis

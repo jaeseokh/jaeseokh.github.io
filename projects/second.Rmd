@@ -1,6 +1,0 @@
-
-**`projects/second.Rmd`**
-```markdown
-# Chapter 2
-
-Empty test chapter.
