@@ -103,9 +103,10 @@ href="https://jaeseokh.github.io/book_of_stat_review/" target="_blank">
   <small>ML theory · cross-validation · inference</small>
 </a>
 
-<a class="list-group-item list-group-item-action" href="studynote/price_analysis.html">
-  <span>Price Analysis</span>
-  <small>Demand · elasticity · markets</small>
+<a class="list-group-item list-group-item-action" 
+href="https://jaeseokh.github.io/book_of_finance/" target="_blank">
+  <span>Data Analytics for Finance</span>
+  <small>Valuation · Credit Risk · Portfolio Optimization · Algo Trading</small>
 </a>
 
 <a class="list-group-item list-group-item-action" href="studynote/bayesian_notes.html">
