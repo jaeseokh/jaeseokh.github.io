@@ -43,7 +43,6 @@ format:
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
 \item \textbf{ETL \& Data Pipelines:} Architected R and Python pipelines to clean, merge, and analyze large-scale geospatial and time-series datasets (500k+ observations).
 \item \textbf{Model Validation:} Benchmarked Machine Learning (Gradient Boosting/RF) against Bayesian Hierarchical models to evaluate predictive accuracy versus interpretability for decision support.
-\item \textbf{Heterogeneity Analysis:} Quantified heterogeneous response effects across diverse environmental segments to optimize resource allocation strategies.
 \end{itemize}
 \vspace{-2pt}
 
@@ -69,7 +68,7 @@ format:
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
 \item Developed hierarchical Bayesian models to estimate non-linear return functions, accounting for parameter uncertainty across distinct operating segments.
-\item Implemented \textbf{shrinkage estimators} and \textbf{partial pooling} to stabilize inference in segments with sparse data (solving for "thin-file" data challenges).
+\item Implemented \textbf{shrinkage estimators} and \textbf{partial pooling} to stabilize inference in segments with sparse data
 \item Analyzed posterior distributions to calculate confidence intervals and risk-adjusted probability of returns.
 \end{itemize}
 \vspace{-2pt}
@@ -97,9 +96,9 @@ format:
 
 \noindent
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-\textbf{University of Illinois at Urbana–Champaign} & \textit{Expected Dec 2025} \\
+\textbf{University of Illinois at Urbana–Champaign} & \textit{May 2026 (expected)} \\
 \hspace{5mm}Ph.D.\ Agricultural and Applied Economics & \\
-\textit{\hspace{5mm}Focus: Econometrics, Bayesian Statistics, Optimization under Uncertainty} & \\
+\textit{\hspace{5mm}\textit{\hspace{5mm}Focus: Optimization under Uncertainty,Econometrics, Price Analysis }} & \\
 \end{tabular*}
 
 \vspace{-4pt}
@@ -122,11 +121,16 @@ format:
   \vspace{1pt}
   \hrule
 \end{large}
-\textbf{Languages:} R (Expert), Python (Pandas, Scikit-Learn), SQL \hspace{1em}
-\textbf{Tools:} GitHub, Jupyter, Quarto
-\vspace{1pt}
 
-\textbf{Modeling:} Bayesian Inference, Monte Carlo Simulation, Logistic Regression, Time-Series Analysis
-\vspace{1pt}
+\textbf{Programming \& Data:}
+R (Expert), Python (Pandas, NumPy, Scikit-Learn), SQL \hspace{1em}
+GitHub. 
+\vspace{2pt}
 
-\textbf{Concepts:} Stress Testing, Causal Inference, A/B Testing Design, Optimization, Risk Quantification
+\textbf{Statistical \& Machine Learning Methods:}
+Bayesian Hierarchical Modeling, Monte Carlo Simulation,
+Time-Series Analysis, Regularized Regression.
+\vspace{2pt}
+
+\textbf{Decision-Oriented Analytics:}
+Optimization under Uncertainty, Scenario Analysis, Stress Testing.
