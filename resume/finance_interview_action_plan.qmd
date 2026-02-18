@@ -1,0 +1,151 @@
+---
+title: "Finance Interview Acceleration Plan (Feb 18 - Apr 5, 2026)"
+author: "Jaeseok Hwang"
+format:
+  pdf:
+    documentclass: article
+    geometry:
+      - top=15mm
+      - left=16mm
+      - right=16mm
+      - bottom=14mm
+    fontsize: 11pt
+    colorlinks: true
+    toc: false
+---
+
+## Objective
+
+Secure interview opportunities within 30 days for risk/model validation-oriented finance roles, while producing defense-aligned portfolio outputs by April 5, 2026.
+
+## Role Targeting (Primary)
+
+- Model Risk Analyst / Model Validation Analyst
+- Credit Risk Analytics Analyst
+- Stress Testing / Portfolio Risk Analyst
+- Quantitative Risk Researcher (validation and diagnostics focus)
+
+## Positioning Statement
+
+I build and validate decision models under non-stationarity, detect transferability failure early, and convert model diagnostics into risk-aware deployment decisions.
+
+## Constraints and Strategy
+
+- Constraint: Earliest start date is May 2026 (PhD completion).
+- Constraint: Interview pipeline must be built immediately.
+- Strategy: Prioritize interview conversion over breadth by using one flagship project as proof (`value_multifield_python`) and one supporting project for robustness narrative (`corn_seed_response`).
+
+## 30-Day Interview Plan (Short-Term)
+
+### Week 1 (Feb 18 - Feb 24): Assets and Message
+
+- Finalize finance-targeted 1-page resume.
+- Publish one flagship portfolio brief (2 pages) translating project findings to finance risk language:
+  - Transferability risk
+  - Out-of-group validation
+  - Decision-loss proxy
+  - Assumption audit and deployment criteria
+- Prepare 6 interview stories (2 minutes each):
+  - Model instability detection
+  - Distribution shift diagnostics
+  - Stress scenario design
+  - Tradeoff: predictive gain vs governance clarity
+  - Economic mechanism behind model failure
+  - Communication under uncertainty
+- Build target-company/contact tracker (application + outreach + follow-up cadence).
+
+### Week 2 (Feb 25 - Mar 3): Pipeline Launch
+
+Daily quotas (Mon-Sat):
+- 10 tailored applications
+- 15 recruiter/HR direct messages
+- 5 hiring-manager messages
+- 1 referral ask from alumni/lab/professional contacts
+
+Follow-up rules:
+- Follow-up #1 on day 4 after first message.
+- Follow-up #2 on day 10.
+- Stop after 2 follow-ups unless there is engagement.
+
+### Week 3 (Mar 4 - Mar 10): Conversion Push
+
+- Prioritize active threads only (companies that replied/clicked/requested info).
+- Run mock interviews every day (45 to 60 minutes):
+  - 20 min technical validation case
+  - 20 min behavioral/communication
+  - 10 min role-specific Q&A
+- Build one concise "Model Validation Memo" sample (2 pages) to send on request.
+
+### Week 4 (Mar 11 - Mar 17): Decision Window
+
+- Double down on highest-response channels (likely direct outreach + targeted applications).
+- Continue daily quotas with focus on conversion metrics:
+  - Reply rate
+  - Screening-call rate
+  - Interview-invite rate
+- Refine resume bullets and outreach scripts based on response data.
+
+## Defense-Aligned Plan (Mar 18 - Apr 5)
+
+Deliverables supporting both defense and interview credibility:
+
+1. Portfolio Memo 1 (Flagship):
+- "Model Transferability Failure Under Shifted Regimes"
+- Include holdout diagnostics, decision-loss implications, and trigger thresholds.
+
+2. Portfolio Memo 2 (Risk Design):
+- "Stress Testing Framework for Decision Models Under Correlation and Volatility Shock"
+- Include scenario design and monitoring logic.
+
+3. Portfolio Memo 3 (Governance):
+- "Model Lifecycle and Validation Checklist (SR 11-7 style logic, conceptual)"
+- Focus on inventory, tiering, monitoring, challenger, escalation.
+
+4. Defense Appendix:
+- 1-page mapping from dissertation contributions to finance risk use-cases.
+
+## 3-6 Month Specialist Track (Long-Term)
+
+### Core Knowledge Build
+
+- Credit risk framework: PD, LGD, EAD, expected vs unexpected loss.
+- Governance framework: SR 11-7 principles and model lifecycle.
+- Stress testing logic: scenario design, sensitivity, thresholds.
+- Drift and stability monitoring: population shift and performance decay.
+
+### Artifact Build
+
+- One reusable validation template (Python/R + memo format).
+- One challenger-model template with monitoring dashboard.
+- One governance-ready documentation template (scope, assumptions, limitations, controls).
+
+## Weekly Scoreboard (Non-Negotiable)
+
+Track every Sunday:
+
+- Applications sent
+- Direct outreach sent
+- Reply rate (\%)
+- Screening calls booked
+- Interviews booked
+- Portfolio artifacts completed
+- Defense milestones completed
+
+## Risk Register and Mitigation
+
+- Risk: Low response rate.
+  - Mitigation: Increase direct outreach volume and tighten targeting.
+- Risk: Profile mismatch due to domain background.
+  - Mitigation: Lead with risk-validation methodology, not sector label.
+- Risk: Time conflict with defense.
+  - Mitigation: Use defense deliverables as interview portfolio artifacts.
+
+## Operating Rule
+
+Every week must produce:
+
+- Interview pipeline progress (volume and conversion)
+- One concrete portfolio artifact
+- One defense milestone
+
+No passive preparation weeks.

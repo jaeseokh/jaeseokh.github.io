@@ -33,27 +33,29 @@ format:
 \href{https://www.linkedin.com/in/jaeseok-hwang-0b06741a1}{LinkedIn}
 \end{center}
 
+\textbf{PhD Quantitative Economist (May 2026) focused on model validation, stress testing, and decision-risk diagnostics in non-stationary environments.}
+
 \begin{large}{\bf PROFESSIONAL EXPERIENCE (Quantitative Research)} \vspace{1pt} \hrule \end{large}
 
 \begin{multicols}{2}
 \begin{flushleft}{\bf Data Intensive Farm Management (USDA Grant)}\end{flushleft}
-\begin{flushright}Sep 2020 – Aug 2025 \end{flushright}
+\begin{flushright}Sep 2020 -- Aug 2025 \end{flushright}
 \end{multicols}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item \textbf{ETL \& Data Pipelines:} Architected R and Python pipelines to clean, merge, and analyze large-scale geospatial and time-series datasets (500k+ observations).
-\item \textbf{Model Validation:} Benchmarked Machine Learning (Gradient Boosting/RF) against Bayesian Hierarchical models to evaluate predictive accuracy versus interpretability for decision support.
+\item \textbf{Model Validation Pipeline:} Built reproducible Python/R/SQL workflow for geospatial and time-series data (500k+ observations), including staged ETL, feature engineering, holdout testing, and audit-ready outputs.
+\item \textbf{Out-of-Group Stability Diagnostics:} Implemented leave-one-location-out validation, monotonicity-constrained vs unconstrained model challengers, and feature-rank stability checks to detect generalization risk.
 \end{itemize}
 \vspace{-2pt}
 
 \begin{multicols}{2}
 \begin{flushleft}{\bf Center for the Economics of Sustainability (UIUC)}\end{flushleft}
-\begin{flushright}Jan 2021 – Aug 2024 \end{flushright}
+\begin{flushright}Jan 2021 -- Aug 2024 \end{flushright}
 \end{multicols}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item \textbf{Stress Testing (Monte Carlo):} Designed Monte Carlo simulations to analyze profit-at-risk and outcome variance under stochastic volatility scenarios.
-\item \textbf{Causal Inference:} Applied econometric panel data methods and counterfactual analysis to isolate the marginal impact of management decisions on financial performance.
+\item \textbf{Stress Testing (Monte Carlo):} Designed simulation experiments to quantify profit-at-risk under stochastic volatility and policy/input shocks.
+\item \textbf{Causal and Behavioral Risk Analysis:} Applied panel econometrics and counterfactual analysis to estimate decision response under uncertainty and identify heterogeneity in downside exposure.
 \end{itemize}
 \vspace{-2pt}
 
@@ -62,31 +64,23 @@ format:
 \hrule
 \end{large}
 \vspace{1pt}
-\textit{Reproducible Code Portfolio: \href{https://github.com/jaeseokh}{github.com/jaeseokh}}
+\textit{Code Portfolio: \href{https://github.com/jaeseokh}{github.com/jaeseokh}}
 
-\textbf{Bayesian Hierarchical Modeling \& Uncertainty Quantification (2022–2025)}
+\textbf{Model Transferability and Decision-Loss Diagnostics (Python, SQL, XGBoost/RF, SHAP)}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=1pt, topsep=0pt]
-\item Developed hierarchical Bayesian models to estimate non-linear return functions, accounting for parameter uncertainty across distinct operating segments.
-\item Implemented \textbf{shrinkage estimators} and \textbf{partial pooling} to stabilize inference in segments with sparse data
-\item Analyzed posterior distributions to calculate confidence intervals and risk-adjusted probability of returns.
+\item Designed a three-stage validation framework (prediction, decision gap, mechanism stability) with 20 out-of-group holdouts to test robustness under distribution shift.
+\item Quantified decision-risk gaps (mean absolute decision gap: 50.8 units; 50\% of holdouts above 40-unit threshold) and linked errors to economic loss proxies.
+\item Built assumption-audit outputs to classify transferability, mechanism stability, and covariate adequacy; converted findings into go/no-go deployment recommendations.
 \end{itemize}
 \vspace{-2pt}
 
-\textbf{Behavioral Response Modeling under Market Volatility}
+\textbf{Hierarchical and Nonlinear Decision Modeling under Uncertainty}
 \vspace{-4pt}
 \begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
-\item Estimated elasticity of input decisions in response to exogenous price shocks and stochastic weather events.
-\item Modeled agent decision-making under uncertainty to predict shifts in risk exposure.
-\item Aggregated micro-level behavioral parameters to forecast macro-level system outcomes.
-\end{itemize}
-
-\textbf{Spatial-Temporal Modeling of Loss Events (Ongoing)}
-\vspace{-4pt}
-\begin{itemize}[left=1.5mm, itemsep=0pt, topsep=1pt]
-\item Utilized high-frequency sensor data to model the dynamics of resource loss events.
-\item Built time-series (ARIMA/Spatial) models linking loss patterns to external volatility factors.
-\item Quantified the financial impact of loss events on overall profit margins.
+\item Developed Bayesian hierarchical and nonlinear models to estimate heterogeneous response functions across operating segments.
+\item Used partial pooling/shrinkage to stabilize inference for sparse segments and improve reliability of interval estimates for decision support.
+\item Produced reproducible reporting artifacts (tables/figures/memos) for technical and non-technical stakeholders.
 \end{itemize}
 
 \begin{large}{\bf EDUCATION}
@@ -96,16 +90,16 @@ format:
 
 \noindent
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-\textbf{University of Illinois at Urbana–Champaign} & \textit{May 2026 (expected)} \\
+\textbf{University of Illinois at Urbana--Champaign} & \textit{May 2026 (expected)} \\
 \hspace{5mm}Ph.D.\ Agricultural and Applied Economics & \\
-\textit{\hspace{5mm}\textit{\hspace{5mm}Focus: Optimization under Uncertainty,Econometrics, Price Analysis }} & \\
+\textit{\hspace{5mm}Focus: Econometrics, Optimization under Uncertainty, Price Analysis} & \\
 \end{tabular*}
 
 \vspace{-4pt}
 
 \noindent
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-\textbf{University of Illinois Urbana–Champaign} & \textit{May 2020} \\
+\textbf{University of Illinois Urbana--Champaign} & \textit{May 2020} \\
 \hspace{5mm}M.A.\ Agricultural and Applied Economics & \\
 \end{tabular*}
 
@@ -123,14 +117,12 @@ format:
 \end{large}
 
 \textbf{Programming \& Data:}
-R (Expert), Python (Pandas, NumPy, Scikit-Learn), SQL \hspace{1em}
-GitHub. 
+Python (Pandas, NumPy, scikit-learn, XGBoost), R, SQL, Git/GitHub.
 \vspace{2pt}
 
-\textbf{Statistical \& Machine Learning Methods:}
-Bayesian Hierarchical Modeling, Monte Carlo Simulation,
-Time-Series Analysis, Regularized Regression.
+\textbf{Modeling \& Validation:}
+Out-of-time/group validation, model stability diagnostics, Bayesian hierarchical modeling, Monte Carlo simulation, time-series analysis.
 \vspace{2pt}
 
-\textbf{Decision-Oriented Analytics:}
-Optimization under Uncertainty, Scenario Analysis, Stress Testing.
+\textbf{Risk Analytics Focus:}
+Decision-loss decomposition, stress testing, uncertainty quantification, scenario analysis.

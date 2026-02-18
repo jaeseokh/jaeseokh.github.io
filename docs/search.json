@@ -1,5 +1,47 @@
 [
   {
+    "objectID": "resume/index.html",
+    "href": "resume/index.html",
+    "title": "Resume",
+    "section": "",
+    "text": "If you are not redirected automatically, open Resume PDF."
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Mainpage",
+    "section": "",
+    "text": "During my research journey in graduate school (MS and Ph.D. in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at jaeseok2@illinois.edu."
+  },
+  {
+    "objectID": "research/index.html#welcome",
+    "href": "research/index.html#welcome",
+    "title": "Mainpage",
+    "section": "",
+    "text": "During my research journey in graduate school (MS and Ph.D. in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at jaeseok2@illinois.edu."
+  },
+  {
+    "objectID": "research/index.html#license",
+    "href": "research/index.html#license",
+    "title": "Mainpage",
+    "section": "License",
+    "text": "License\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
+  },
+  {
+    "objectID": "webpage_layout.html",
+    "href": "webpage_layout.html",
+    "title": "Jaeseok Hwang",
+    "section": "",
+    "text": "&lt;!-- Left column: photo + name + buttons + short bio UNDER photo --&gt;\n&lt;div class=\"col-md-5 text-center\"&gt;\n  &lt;img src=\"assets/headshot.jpg\" alt=\"Jaeseok Hwang\"\n       class=\"rounded-circle img-fluid mb-3\" style=\"max-width:320px;\"&gt;\n  &lt;h1 class=\"mb-3\"&gt;Jaeseok Hwang&lt;/h1&gt;\n\n  &lt;p class=\"lead\" style=\"max-width:640px; margin: 0 auto;\"&gt;\n    I’m an &lt;b&gt;Applied Economist and Data Scientist&lt;/b&gt; (Ph.D. candidate, UIUC),\n    building data-driven decision systems for U.S. crop producers by integrating\n    applied ML, Bayesian modeling, and economic optimization. I primarily use\n    &lt;b&gt;R&lt;/b&gt; and &lt;b&gt;Python&lt;/b&gt; to transform limited field data into\n    actionable, risk-aware insights.\n  &lt;/p&gt;\n\n  &lt;div class=\"mt-3\"&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://github.com/jaeseokh\" target=\"_blank\"&gt;GitHub&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://www.linkedin.com/in/...\" target=\"_blank\"&gt;LinkedIn&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary\" href=\"mailto:youremail@illinois.edu\"&gt;Email&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;!-- Right column: site table of contents --&gt;\n&lt;div class=\"col-md-7\"&gt;\n  &lt;div class=\"card shadow-sm\"&gt;\n    &lt;div class=\"card-body\"&gt;\n      &lt;h3 class=\"card-title\"&gt;Site Contents&lt;/h3&gt;\n      &lt;hr/&gt;\n      &lt;h5&gt;Projects&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch1_index.html\"&gt;Value of multi-field OFPE data&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch2_index.html\"&gt;Risky input decisions under price & weather risk&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch3_index.html\"&gt;From static info to dynamic info&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Study Notes&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E01-Distributions.html\"&gt;Bayesian&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E02-Tests.html\"&gt;Risk analysis&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/ML01-Basics.html\"&gt;Machine learning&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Resume&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"resume/index.html\"&gt;Resume / CV&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantitative Risk Portfolio",
+    "section": "",
+    "text": "Jaeseok Hwang\n\n\nEmail · GitHub · LinkedIn\n\n\nPhD Quantitative Economist (May 2026) focused on model validation, stress testing, and decision-risk diagnostics under non-stationarity. Open to finance risk analytics, model validation, and quantitative decision-science roles.\n\n\nBuilt reproducible Python/R/SQL pipelines over 500k+ observations.\n\n\nDesigned out-of-group holdout diagnostics to test transferability risk.\n\n\nConverted model error into decision-loss and deployment-governance signals.\n\n\nAvailable to start: May 2026\n\n\n\n\n\nProjects\n\n Model Transferability and Decision-Loss Diagnostics Python · SQL · XGBoost/RF · SHAP · 20 holdouts \n Risk-Aware Input Decision System R/Python ETL · scenario logic · reproducible reporting \n Applied Research Write-up and Figures Methods narrative · diagnostics · publication-style outputs \n\n\n\n\nLearning and Notes\n\n Statistical Learning Notes generalization · validation · inference \n Finance Analytics Notes credit risk · portfolio risk · valuation \n Research Index working papers · methods and references \n\n\n\n\nResume / CV\n\n Resume (Finance-Focused PDF) Open file \n Interview Action Plan 30-day and 3-6 month roadmap"
+  },
+  {
     "objectID": "about/index.html",
     "href": "about/index.html",
     "title": "Jaeseok Hwang",
@@ -21,17 +63,10 @@
     "text": "Research (Work in progress)\n\nLeveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data\nEvaluating the Profitability of Corn Seeding Decisions\nCan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective\nInforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Trace of Research and Study",
+    "objectID": "research/working_papers.html",
+    "href": "research/working_papers.html",
+    "title": "Working Ppaers",
     "section": "",
-    "text": "Jaeseok Hwang\n\n\nEmail · GitHub · LinkedIn\n\n\nPh.D. candidate in Agricultural & Applied Economics specializing in quantitative, data-intensive farm management. I work at the intersection of applied econometrics, statistical learning, and agronomic modeling, building production-theory-guided models in R and Python for geospatial and field-scale data. My research blends causal inference, Bayesian modeling, and machine-learning pipelines to understand input responses, environmental risk, and decision-making under uncertainty—interests I aim to bring into data science economist roles.\n\n\n\n\n\nProjects\n\n Bayesian Yield–Nitrogen Modeling Multi-field OFPE · APSIM priors · Bayes \n\n Producer’s Input Decision System Under Risk Utility · risk · dynamic decisions \n\n N-Leaching Evaluation Leaching · tile flow · nitrate \n\n\n\n\nStudy Notes\n\n Statistical Learning ML theory · cross-validation · inference \n Data Analytics for Finance Valuation · Credit Risk · Portfolio Optimization · Algo Trading \n Bayesian Prior design · posterior inference \n\n\n\n\nResume / CV\n\n Resume (PDF) Open file"
-  },
-  {
-    "objectID": "webpage_layout.html",
-    "href": "webpage_layout.html",
-    "title": "Jaeseok Hwang",
-    "section": "",
-    "text": "&lt;!-- Left column: photo + name + buttons + short bio UNDER photo --&gt;\n&lt;div class=\"col-md-5 text-center\"&gt;\n  &lt;img src=\"assets/headshot.jpg\" alt=\"Jaeseok Hwang\"\n       class=\"rounded-circle img-fluid mb-3\" style=\"max-width:320px;\"&gt;\n  &lt;h1 class=\"mb-3\"&gt;Jaeseok Hwang&lt;/h1&gt;\n\n  &lt;p class=\"lead\" style=\"max-width:640px; margin: 0 auto;\"&gt;\n    I’m an &lt;b&gt;Applied Economist and Data Scientist&lt;/b&gt; (Ph.D. candidate, UIUC),\n    building data-driven decision systems for U.S. crop producers by integrating\n    applied ML, Bayesian modeling, and economic optimization. I primarily use\n    &lt;b&gt;R&lt;/b&gt; and &lt;b&gt;Python&lt;/b&gt; to transform limited field data into\n    actionable, risk-aware insights.\n  &lt;/p&gt;\n\n  &lt;div class=\"mt-3\"&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://github.com/jaeseokh\" target=\"_blank\"&gt;GitHub&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://www.linkedin.com/in/...\" target=\"_blank\"&gt;LinkedIn&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary\" href=\"mailto:youremail@illinois.edu\"&gt;Email&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;!-- Right column: site table of contents --&gt;\n&lt;div class=\"col-md-7\"&gt;\n  &lt;div class=\"card shadow-sm\"&gt;\n    &lt;div class=\"card-body\"&gt;\n      &lt;h3 class=\"card-title\"&gt;Site Contents&lt;/h3&gt;\n      &lt;hr/&gt;\n      &lt;h5&gt;Projects&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch1_index.html\"&gt;Value of multi-field OFPE data&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch2_index.html\"&gt;Risky input decisions under price & weather risk&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch3_index.html\"&gt;From static info to dynamic info&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Study Notes&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E01-Distributions.html\"&gt;Bayesian&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E02-Tests.html\"&gt;Risk analysis&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/ML01-Basics.html\"&gt;Machine learning&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Resume&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"resume/index.html\"&gt;Resume / CV&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;"
+    "text": "Working paper updated"
   }
 ]

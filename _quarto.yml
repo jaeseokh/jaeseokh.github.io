@@ -5,12 +5,8 @@ project:
     - index.qmd
     - webpage_layout.qmd
     - about/index.qmd
-    - projects/index.qmd
-    - projects/*.qmd
-    - studynote/index.qmd
-    - studynote/*.qmd
-    - papers/index.qmd
-    - papers/*.qmd
+    - research/index.qmd
+    - research/working_papers.qmd
     - resume/index.qmd
     - resume/*.qmd
     # (add any other specific .qmd you want rendered here)
@@ -24,11 +20,11 @@ website:
     center: "© {2025} used quarto for this webpage"
   navbar:
     right:
-      - text: Projects
-        href: projects/index.html
-      - text: StudyNotes
-        href: studynote/index.html
-      - text: Resume(CV)
+      - text: Portfolio
+        href: https://jaeseokh.github.io/#projects
+      - text: Research
+        href: research/index.html
+      - text: Resume
         href: resume/index.html
 
 format:
