@@ -30,30 +30,23 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Spatial Decision Analytics Portfolio",
+    "title": "Research and Spatial Decision Work",
     "section": "",
-    "text": "Dissertation hub for defense and recruiter review\n\n\n\nPhD candidate in Applied Economics building spatial decision systems that connect field data, predictive modeling, and economic risk evaluation.\n\n\nThis site now focuses on three dissertation chapters, the GitHub repos behind them, and a new spatial-analysis platform built around grower, market, and policy decisions.\n\n\nOpen Research Atlas Open Spatial Decision Lab Resume PDF GitHub LinkedIn\n\n\n\n\nPortfolio signal\n\n\nSpatial analysis Economic decisions Validation risk GitHub-first\n\n\n\n\nResearch frame\n\n\nThree connected dissertation chapters\n\n\n\n\nPrimary stack\n\n\nPython, R, SQL, GeoPandas, XGBoost\n\n\n\n\nValidation lens\n\n\nHoldouts, uncertainty, structural checks\n\n\n\n\nOutcome focus\n\n\nVisual results, contribution, challenge"
+    "text": "Research, code, and decision analytics\n\n\n\nPhD candidate in Applied Economics building spatial analysis, economic decision models, and applied research systems around field data, uncertainty, and risk.\n\n\nThe homepage now focuses on three dissertation chapters and one new public research platform.\n\n\nOpen Research Atlas Open Spatial Decision Lab Resume PDF GitHub LinkedIn\n\n\n\n\nCurrent focus\n\n\nSpatial analysis Economic decisions Validation risk GitHub-first\n\n\n\n\nMain frame\n\n\nThree connected dissertation chapters\n\n\n\n\nTechnical stack\n\n\nPython, R, SQL, GeoPandas, XGBoost\n\n\n\n\nResearch lens\n\n\nHoldouts, uncertainty, structural checks\n\n\n\n\nPublic output\n\n\nVisual results, contribution, challenge"
   },
   {
-    "objectID": "index.html#spatial-thesis-atlas",
-    "href": "index.html#spatial-thesis-atlas",
-    "title": "Spatial Decision Analytics Portfolio",
-    "section": "Spatial Thesis Atlas",
-    "text": "Spatial Thesis Atlas\n\n\n\nData -&gt; Validation -&gt; Decision -&gt; Monitoring\n\n\n\n\nChapter 1\n\n\nTransfer Across Fields\n\n\nCan information move from one field to another without breaking decision quality?\n\n\n \n\n\n\n\n\nHoldout maps and transfer-risk comparisons\n\n\n\n\nChapter 2\n\n\nProfitability Risk Split\n\n\nHow much loss comes from the decision rule and how much from exogenous shocks?\n\n\n\n\n \n\n\nObserved\n\n\n\n\n \n\n\nDecision\n\n\n\n\n \n\n\nShock\n\n\n\n\nBayesian decomposition of controllable vs. uncontrollable loss\n\n\n\n\nChapter 3\n\n\nValue of Information\n\n\nWhen do monitored signals change actions enough to justify the extra information?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPaired-strip comparisons and heterogeneous treatment effects\n\n\n\n\n\nA single portfolio story: field-level spatial data feed a validation pipeline, economic loss is decomposed into controllable and uncontrollable parts, and extra information is valued only when it changes decisions under uncertainty."
+    "objectID": "index.html#research-atlas",
+    "href": "index.html#research-atlas",
+    "title": "Research and Spatial Decision Work",
+    "section": "Research Atlas",
+    "text": "Research Atlas\n\n\n\nChapter 1\n\n\nTransferability of Multi-Field Information\n\n\nFocus: whether information learned in one field can be trusted in another field.\n\n\nOpen summary GitHub repo\n\n\n\n\nChapter 2\n\n\nInformation Validity and Profitability Risk\n\n\nFocus: separating decision error from exogenous weather and market shocks.\n\n\nOpen summary GitHub repo\n\n\n\n\nChapter 3\n\n\nValue of Information in Stochastic Environments\n\n\nFocus: when monitored signals improve decisions enough to justify the information itself.\n\n\nOpen summary GitHub repo"
   },
   {
-    "objectID": "index.html#three-connected-chapters",
-    "href": "index.html#three-connected-chapters",
-    "title": "Spatial Decision Analytics Portfolio",
-    "section": "Three Connected Chapters",
-    "text": "Three Connected Chapters\n\n\n\nChapter 1\n\n\nTransferability of Multi-Field Information\n\n\nFocus: whether information learned in one field can be trusted in another field.\n\n\nOpen summary GitHub repo\n\n\n\n\nChapter 2\n\n\nInformation Validity and Profitability Risk\n\n\nFocus: separating decision error from exogenous weather and market shocks.\n\n\nOpen summary GitHub repo\n\n\n\n\nChapter 3\n\n\nValue of Information in Stochastic Environments\n\n\nFocus: when monitored signals improve decisions enough to justify the information itself.\n\n\nOpen summary GitHub repo"
-  },
-  {
-    "objectID": "index.html#what-is-deliberately-foregrounded",
-    "href": "index.html#what-is-deliberately-foregrounded",
-    "title": "Spatial Decision Analytics Portfolio",
-    "section": "What Is Deliberately Foregrounded",
-    "text": "What Is Deliberately Foregrounded\n\n\n\nCleanup\n\n\nHigh-signal pages only\n\n\nOlder study-note links and lightly maintained source pages are no longer the center of the site. The front page now stays focused on thesis chapters, visual outputs, GitHub repositories, and the resume.\n\n\n\n\nNew Platform\n\n\nSpatial Decision Lab\n\n\nThe next public page now shifts away from the old defense brief and toward a new research platform built around API data, index-driven decisions, and spatial-economic intuition for growers, firms, and government.\n\n\nOpen the platform page"
+    "objectID": "index.html#current-public-research",
+    "href": "index.html#current-public-research",
+    "title": "Research and Spatial Decision Work",
+    "section": "Current Public Research",
+    "text": "Current Public Research\n\n\nNext public layer\n\n\nSpatial Decision Lab\n\n\nThis page is reserved for the new research direction focused on spatial analysis, API data, index-driven mechanisms, and economic interpretation for growers, firms, and government.\n\n\nOpen Spatial Decision Lab"
   },
   {
     "objectID": "research/chapter2.html",
@@ -67,21 +60,7 @@
     "href": "research/index.html",
     "title": "Research Atlas",
     "section": "",
-    "text": "Three dissertation chapters\n\n\n\nThis page is the front door. Each chapter card stays short: title, main focus, and repository link. Click into the chapter page to see the concise research summary with visual result, contribution, data, logic, and methods.\n\n\nOpen Spatial Decision Lab GitHub Profile Resume PDF"
-  },
-  {
-    "objectID": "research/index.html#shared-spine",
-    "href": "research/index.html#shared-spine",
-    "title": "Research Atlas",
-    "section": "Shared Spine",
-    "text": "Shared Spine\n\n\n\nSpatial data engineering\n\n\nGeoPandas workflows, field boundaries, API and SQL ingestion, reproducible ETL\n\n\n\n\nValidation design\n\n\nOut-of-location holdouts, model comparison, uncertainty checks, sensitivity analysis\n\n\n\n\nModel families\n\n\nXGBoost, Random Forest, Bayesian hierarchical models, GAMs, causal forests\n\n\n\n\nDecision lens\n\n\nProfitability, downside risk, information value, structural reliability"
-  },
-  {
-    "objectID": "research/index.html#why-this-page-is-short",
-    "href": "research/index.html#why-this-page-is-short",
-    "title": "Research Atlas",
-    "section": "Why This Page Is Short",
-    "text": "Why This Page Is Short\n\n\n\nShortcut\n\n\nOne page to choose the chapter\n\n\nThis page is intentionally light. It lets a recruiter, advisor, or collaborator choose the chapter first and then open the more focused summary page.\n\n\n\n\nNext Public Layer\n\n\nSpatial Decision Lab\n\n\nAfter the dissertation atlas, the next public-facing page is the Spatial Decision Lab, which will hold the new API and index-driven spatial research platform."
+    "text": "Three dissertation chapters\n\n\nSimple chapter shortcuts\n\n\nThis page stays intentionally short. Each chapter card shows the topic, the main focus, and the repository link. The chapter page holds the concise summary with visual result, contribution, data, logic, and method.\n\n\nOpen Spatial Decision Lab GitHub Profile Resume PDF\n\n\n\n\n\nChapter 1\n\n\nTransferability of Multi-Field Information\n\n\nMain focus: whether a model trained in one field can be trusted in a structurally different field.\n\n\nOpen chapter page GitHub repo\n\n\n\n\nChapter 2\n\n\nInformation Validity and Profitability Risk\n\n\nMain focus: which part of weak profitability comes from the decision and which part comes from external shocks.\n\n\nOpen chapter page GitHub repo\n\n\n\n\nChapter 3\n\n\nValue of Information in Stochastic Environments\n\n\nMain focus: when monitored signals change decisions enough to create real economic value.\n\n\nOpen chapter page GitHub repo"
   },
   {
     "objectID": "resume/index.html",

@@ -7,8 +7,8 @@ page-layout: full
 
 <div class="surface">
 <p class="eyebrow">Three dissertation chapters</p>
-<h2>Shortcuts first, chapter pages second</h2>
-<p>This page is the front door. Each chapter card stays short: title, main focus, and repository link. Click into the chapter page to see the concise research summary with visual result, contribution, data, logic, and methods.</p>
+<h2>Simple chapter shortcuts</h2>
+<p>This page stays intentionally short. Each chapter card shows the topic, the main focus, and the repository link. The chapter page holds the concise summary with visual result, contribution, data, logic, and method.</p>
 <div class="hero-actions">
 <a class="action-link" href="working_papers.html">Open Spatial Decision Lab</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub Profile</a>
@@ -45,42 +45,5 @@ page-layout: full
 <a href="chapter3.html">Open chapter page</a>
 <a href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a>
 </div>
-</div>
-</div>
-
-## Shared Spine {.unnumbered}
-
-<div class="metric-grid">
-<div class="metric-card">
-<div class="metric-label">Spatial data engineering</div>
-<div class="metric-value">GeoPandas workflows, field boundaries, API and SQL ingestion, reproducible ETL</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">Validation design</div>
-<div class="metric-value">Out-of-location holdouts, model comparison, uncertainty checks, sensitivity analysis</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">Model families</div>
-<div class="metric-value">XGBoost, Random Forest, Bayesian hierarchical models, GAMs, causal forests</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">Decision lens</div>
-<div class="metric-value">Profitability, downside risk, information value, structural reliability</div>
-</div>
-</div>
-
-## Why This Page Is Short {.unnumbered}
-
-<div class="tone-strip">
-<div class="process-card">
-<p class="eyebrow">Shortcut</p>
-<h3>One page to choose the chapter</h3>
-<p>This page is intentionally light. It lets a recruiter, advisor, or collaborator choose the chapter first and then open the more focused summary page.</p>
-</div>
-
-<div class="process-card">
-<p class="eyebrow">Next Public Layer</p>
-<h3>Spatial Decision Lab</h3>
-<p>After the dissertation atlas, the next public-facing page is the <a href="working_papers.html">Spatial Decision Lab</a>, which will hold the new API and index-driven spatial research platform.</p>
 </div>
 </div>

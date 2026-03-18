@@ -1,5 +1,5 @@
 ---
-title: "Spatial Decision Analytics Portfolio"
+title: "Research and Spatial Decision Work"
 page-layout: full
 format:
   html:
@@ -8,10 +8,10 @@ format:
 
 <div class="hero-shell">
 <div class="hero-copy">
-<p class="eyebrow">Dissertation hub for defense and recruiter review</p>
+<p class="eyebrow">Research, code, and decision analytics</p>
 <h2 class="hero-heading">Jaeseok Hwang</h2>
-<p class="hero-lead">PhD candidate in Applied Economics building spatial decision systems that connect field data, predictive modeling, and economic risk evaluation.</p>
-<p class="hero-lead">This site now focuses on three dissertation chapters, the GitHub repos behind them, and a new spatial-analysis platform built around grower, market, and policy decisions.</p>
+<p class="hero-lead">PhD candidate in Applied Economics building spatial analysis, economic decision models, and applied research systems around field data, uncertainty, and risk.</p>
+<p class="hero-lead">The homepage now focuses on three dissertation chapters and one new public research platform.</p>
 <div class="hero-actions">
 <a class="action-link" href="research/index.html">Open Research Atlas</a>
 <a class="action-link secondary" href="research/working_papers.html">Open Spatial Decision Lab</a>
@@ -22,7 +22,7 @@ format:
 </div>
 
 <div class="hero-panel">
-<p class="eyebrow">Portfolio signal</p>
+<p class="eyebrow">Current focus</p>
 <div class="chip-row">
 <span class="chip">Spatial analysis</span>
 <span class="chip">Economic decisions</span>
@@ -31,94 +31,26 @@ format:
 </div>
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-label">Research frame</div>
+<div class="metric-label">Main frame</div>
 <div class="metric-value">Three connected dissertation chapters</div>
 </div>
 <div class="metric-card">
-<div class="metric-label">Primary stack</div>
+<div class="metric-label">Technical stack</div>
 <div class="metric-value">Python, R, SQL, GeoPandas, XGBoost</div>
 </div>
 <div class="metric-card">
-<div class="metric-label">Validation lens</div>
+<div class="metric-label">Research lens</div>
 <div class="metric-value">Holdouts, uncertainty, structural checks</div>
 </div>
 <div class="metric-card">
-<div class="metric-label">Outcome focus</div>
+<div class="metric-label">Public output</div>
 <div class="metric-value">Visual results, contribution, challenge</div>
 </div>
 </div>
 </div>
 </div>
 
-## Spatial Thesis Atlas {.unnumbered}
-
-<div class="surface atlas-shell">
-<div class="atlas-board" role="img" aria-label="A three-part visual linking the dissertation chapters through spatial transfer, profitability risk decomposition, and value of information.">
-<div class="atlas-ribbon">Data -> Validation -> Decision -> Monitoring</div>
-<div class="atlas-track">
-<div class="atlas-column">
-<p class="eyebrow">Chapter 1</p>
-<h3>Transfer Across Fields</h3>
-<p class="atlas-sub">Can information move from one field to another without breaking decision quality?</p>
-<div class="tile-grid" aria-hidden="true">
-<span></span><span></span><span></span><span></span>
-<span></span><span></span><span></span><span></span>
-</div>
-<div class="risk-bar" aria-hidden="true"><span></span></div>
-<p class="atlas-note">Holdout maps and transfer-risk comparisons</p>
-</div>
-
-<div class="atlas-column">
-<p class="eyebrow">Chapter 2</p>
-<h3>Profitability Risk Split</h3>
-<p class="atlas-sub">How much loss comes from the decision rule and how much from exogenous shocks?</p>
-<div class="stack-bars" aria-hidden="true">
-<div>
-<div class="stack">
-<span class="core" style="height: 44%;"></span>
-<span class="shock" style="height: 18%;"></span>
-</div>
-<div class="label">Observed</div>
-</div>
-<div>
-<div class="stack">
-<span class="core" style="height: 58%;"></span>
-<span class="shock" style="height: 24%;"></span>
-</div>
-<div class="label">Decision</div>
-</div>
-<div>
-<div class="stack">
-<span class="core" style="height: 70%;"></span>
-<span class="shock" style="height: 30%;"></span>
-</div>
-<div class="label">Shock</div>
-</div>
-</div>
-<p class="atlas-note">Bayesian decomposition of controllable vs. uncontrollable loss</p>
-</div>
-
-<div class="atlas-column">
-<p class="eyebrow">Chapter 3</p>
-<h3>Value of Information</h3>
-<p class="atlas-sub">When do monitored signals change actions enough to justify the extra information?</p>
-<div class="paired-grid" aria-hidden="true">
-<div class="pair"><span class="bar base" style="height: 48%;"></span><span class="bar signal" style="height: 62%;"></span></div>
-<div class="pair"><span class="bar base" style="height: 44%;"></span><span class="bar signal" style="height: 72%;"></span></div>
-<div class="pair"><span class="bar base" style="height: 56%;"></span><span class="bar signal" style="height: 78%;"></span></div>
-<div class="pair"><span class="bar base" style="height: 40%;"></span><span class="bar signal" style="height: 66%;"></span></div>
-</div>
-<div class="signal-dots" aria-hidden="true">
-<span></span><span></span><span></span><span></span>
-</div>
-<p class="atlas-note">Paired-strip comparisons and heterogeneous treatment effects</p>
-</div>
-</div>
-</div>
-<p class="atlas-caption">A single portfolio story: field-level spatial data feed a validation pipeline, economic loss is decomposed into controllable and uncontrollable parts, and extra information is valued only when it changes decisions under uncertainty.</p>
-</div>
-
-## Three Connected Chapters {.unnumbered}
+## Research Atlas {.unnumbered}
 
 <div class="chapter-grid">
 <div class="chapter-card">
@@ -152,19 +84,11 @@ format:
 </div>
 </div>
 
-## What Is Deliberately Foregrounded {.unnumbered}
+## Current Public Research {.unnumbered}
 
-<div class="tone-strip">
-<div class="process-card">
-<p class="eyebrow">Cleanup</p>
-<h3>High-signal pages only</h3>
-<p>Older study-note links and lightly maintained source pages are no longer the center of the site. The front page now stays focused on thesis chapters, visual outputs, GitHub repositories, and the resume.</p>
-</div>
-
-<div class="process-card">
-<p class="eyebrow">New Platform</p>
+<div class="surface">
+<p class="eyebrow">Next public layer</p>
 <h3>Spatial Decision Lab</h3>
-<p>The next public page now shifts away from the old defense brief and toward a new research platform built around API data, index-driven decisions, and spatial-economic intuition for growers, firms, and government.</p>
-<p><a href="research/working_papers.html">Open the platform page</a></p>
-</div>
+<p>This page is reserved for the new research direction focused on spatial analysis, API data, index-driven mechanisms, and economic interpretation for growers, firms, and government.</p>
+<p><a href="research/working_papers.html">Open Spatial Decision Lab</a></p>
 </div>
