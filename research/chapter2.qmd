@@ -1,0 +1,48 @@
+---
+title: "Chapter 2"
+subtitle: "Information Validity and Profitability Risk"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+<div class="surface">
+<p class="eyebrow">Chapter 2 summary</p>
+<h2>Which part of weak profitability comes from the decision, and which part comes from outside shocks?</h2>
+<p>This chapter separates controllable decision error from uncontrollable weather and market shocks. The goal is to avoid confusing a bad decision rule with bad luck.</p>
+<div class="hero-actions">
+<a class="action-link" href="index.html">Back to Research Atlas</a>
+<a class="action-link ghost" href="https://github.com/jaeseokh/corn_seed_response" target="_blank">GitHub repo</a>
+</div>
+</div>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Simple visual result</div>
+<div class="metric-value">Decomposition charts, realized-versus-optimal curves, and uncertainty bands around profit gaps</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main contribution</div>
+<div class="metric-value">Separates decision-driven loss from exogenous shocks so outcome interpretation becomes more defensible</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Data</div>
+<div class="metric-value">Input decisions, response outcomes, and uncertainty from weather and price variation</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main logic</div>
+<div class="metric-value">Compare realized outcomes against modeled benchmarks and assign the gap to controllable and uncontrollable components</div>
+</div>
+</div>
+
+<div class="tone-strip">
+<div class="process-card">
+<p class="eyebrow">Methods</p>
+<p>Bayesian hierarchical modeling, nonlinear response structure, uncertainty decomposition, and profitability-risk interpretation.</p>
+</div>
+<div class="process-card">
+<p class="eyebrow">Why it matters</p>
+<p>This chapter gives economic meaning to model evaluation by showing whether the system failed or whether the environment moved against the decision.</p>
+</div>
+</div>

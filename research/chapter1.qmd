@@ -1,0 +1,48 @@
+---
+title: "Chapter 1"
+subtitle: "Transferability of Multi-Field Information"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+<div class="surface">
+<p class="eyebrow">Chapter 1 summary</p>
+<h2>When does information travel across fields, and when does it fail?</h2>
+<p>This chapter asks whether a model that performs well in one field can be trusted in a different field environment. The core issue is not prediction alone. The real issue is whether transferred information still supports a good decision.</p>
+<div class="hero-actions">
+<a class="action-link" href="index.html">Back to Research Atlas</a>
+<a class="action-link ghost" href="https://github.com/jaeseokh/value_multifield_python" target="_blank">GitHub repo</a>
+</div>
+</div>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Simple visual result</div>
+<div class="metric-value">Holdout field maps, transfer-risk comparisons, and profit-loss contrasts across locations</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main contribution</div>
+<div class="metric-value">Shows that predictive fit is not enough; structural validation is needed before transfer</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Data</div>
+<div class="metric-value">Field-level spatial data, management information, and response outcomes across multiple fields</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main logic</div>
+<div class="metric-value">Train on one environment, hold out another, and measure whether decision quality survives transfer</div>
+</div>
+</div>
+
+<div class="tone-strip">
+<div class="process-card">
+<p class="eyebrow">Methods</p>
+<p>XGBoost, Random Forest, holdout design, stability comparisons, and decision-loss interpretation under cross-field transfer.</p>
+</div>
+<div class="process-card">
+<p class="eyebrow">Why it matters</p>
+<p>A model can look strong in aggregate and still become risky when moved to a new spatial setting. This chapter makes that risk visible.</p>
+</div>
+</div>

@@ -1,72 +1,93 @@
 [
   {
+    "objectID": "research/working_papers.html",
+    "href": "research/working_papers.html",
+    "title": "Spatial Decision Lab",
+    "section": "",
+    "text": "New research platform\n\n\n\nThis page replaces the old defense-brief slot. Its job is different: it becomes the platform for new research that combines spatial analysis, economic intuition, API data, and index-driven decision mechanisms for growers, government, and market actors."
+  },
+  {
+    "objectID": "research/working_papers.html#platform-structure",
+    "href": "research/working_papers.html#platform-structure",
+    "title": "Spatial Decision Lab",
+    "section": "Platform Structure",
+    "text": "Platform Structure\n\n\n\nTrack 1\n\n\nSpatial Results Layer\n\n\nMaps, index surfaces, and comparison panels that show how weather, market condition, and farm-level outcomes move together.\n\n\n\n\nTrack 2\n\n\nAPI and Index Layer\n\n\nPublic-source pipelines, SQL-ready structures, and derived indices that convert raw data into signals usable for economic decisions.\n\n\n\n\nTrack 3\n\n\nDecision Actor Layer\n\n\nA framework that separates what matters for growers, what matters for firms, and what matters for government response or monitoring.\n\n\n\n\n\nStatus: Platform scaffold only for now.\n\n\nNext detail pass: data sources, index logic, actor-specific decision mechanism, and first visual outputs."
+  },
+  {
+    "objectID": "research/chapter3.html",
+    "href": "research/chapter3.html",
+    "title": "Chapter 3",
+    "section": "",
+    "text": "Chapter 3 summary\n\n\nWhen does extra information create enough decision improvement to be worth using?\n\n\nThis chapter treats information as an economic asset. The question is not whether a signal exists, but whether it changes action quality enough to matter under uncertainty.\n\n\nBack to Research Atlas GitHub repo\n\n\n\n\n\nSimple visual result\n\n\nPaired-strip comparisons, treatment-effect summaries, and downside-risk views under signal and no-signal settings\n\n\n\n\nMain contribution\n\n\nReframes precision-ag information as a decision asset whose value depends on changed action quality\n\n\n\n\nData\n\n\nPaired-strip experimental data, monitored signals, treatment outcomes, and profitability measures\n\n\n\n\nMain logic\n\n\nCompare outcomes with and without the signal and identify whether the information changes decisions enough to create value\n\n\n\n\n\n\nMethods\n\n\nGAM-based regression, causal forests, quantile views, and treatment-effect interpretation under noisy field conditions.\n\n\n\n\nWhy it matters\n\n\nThe chapter shifts the discussion from descriptive information to usable information, which is the real decision problem."
+  },
+  {
+    "objectID": "research/chapter1.html",
+    "href": "research/chapter1.html",
+    "title": "Chapter 1",
+    "section": "",
+    "text": "Chapter 1 summary\n\n\nWhen does information travel across fields, and when does it fail?\n\n\nThis chapter asks whether a model that performs well in one field can be trusted in a different field environment. The core issue is not prediction alone. The real issue is whether transferred information still supports a good decision.\n\n\nBack to Research Atlas GitHub repo\n\n\n\n\n\nSimple visual result\n\n\nHoldout field maps, transfer-risk comparisons, and profit-loss contrasts across locations\n\n\n\n\nMain contribution\n\n\nShows that predictive fit is not enough; structural validation is needed before transfer\n\n\n\n\nData\n\n\nField-level spatial data, management information, and response outcomes across multiple fields\n\n\n\n\nMain logic\n\n\nTrain on one environment, hold out another, and measure whether decision quality survives transfer\n\n\n\n\n\n\nMethods\n\n\nXGBoost, Random Forest, holdout design, stability comparisons, and decision-loss interpretation under cross-field transfer.\n\n\n\n\nWhy it matters\n\n\nA model can look strong in aggregate and still become risky when moved to a new spatial setting. This chapter makes that risk visible."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Spatial Decision Analytics Portfolio",
+    "section": "",
+    "text": "Dissertation hub for defense and recruiter review\n\n\n\nPhD candidate in Applied Economics building spatial decision systems that connect field data, predictive modeling, and economic risk evaluation.\n\n\nThis site now focuses on three dissertation chapters, the GitHub repos behind them, and a new spatial-analysis platform built around grower, market, and policy decisions.\n\n\nOpen Research Atlas Open Spatial Decision Lab Resume PDF GitHub LinkedIn\n\n\n\n\nPortfolio signal\n\n\nSpatial analysis Economic decisions Validation risk GitHub-first\n\n\n\n\nResearch frame\n\n\nThree connected dissertation chapters\n\n\n\n\nPrimary stack\n\n\nPython, R, SQL, GeoPandas, XGBoost\n\n\n\n\nValidation lens\n\n\nHoldouts, uncertainty, structural checks\n\n\n\n\nOutcome focus\n\n\nVisual results, contribution, challenge"
+  },
+  {
+    "objectID": "index.html#spatial-thesis-atlas",
+    "href": "index.html#spatial-thesis-atlas",
+    "title": "Spatial Decision Analytics Portfolio",
+    "section": "Spatial Thesis Atlas",
+    "text": "Spatial Thesis Atlas\n\n\n\nData -&gt; Validation -&gt; Decision -&gt; Monitoring\n\n\n\n\nChapter 1\n\n\nTransfer Across Fields\n\n\nCan information move from one field to another without breaking decision quality?\n\n\n \n\n\n\n\n\nHoldout maps and transfer-risk comparisons\n\n\n\n\nChapter 2\n\n\nProfitability Risk Split\n\n\nHow much loss comes from the decision rule and how much from exogenous shocks?\n\n\n\n\n \n\n\nObserved\n\n\n\n\n \n\n\nDecision\n\n\n\n\n \n\n\nShock\n\n\n\n\nBayesian decomposition of controllable vs. uncontrollable loss\n\n\n\n\nChapter 3\n\n\nValue of Information\n\n\nWhen do monitored signals change actions enough to justify the extra information?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPaired-strip comparisons and heterogeneous treatment effects\n\n\n\n\n\nA single portfolio story: field-level spatial data feed a validation pipeline, economic loss is decomposed into controllable and uncontrollable parts, and extra information is valued only when it changes decisions under uncertainty."
+  },
+  {
+    "objectID": "index.html#three-connected-chapters",
+    "href": "index.html#three-connected-chapters",
+    "title": "Spatial Decision Analytics Portfolio",
+    "section": "Three Connected Chapters",
+    "text": "Three Connected Chapters\n\n\n\nChapter 1\n\n\nTransferability of Multi-Field Information\n\n\nFocus: whether information learned in one field can be trusted in another field.\n\n\nOpen summary GitHub repo\n\n\n\n\nChapter 2\n\n\nInformation Validity and Profitability Risk\n\n\nFocus: separating decision error from exogenous weather and market shocks.\n\n\nOpen summary GitHub repo\n\n\n\n\nChapter 3\n\n\nValue of Information in Stochastic Environments\n\n\nFocus: when monitored signals improve decisions enough to justify the information itself.\n\n\nOpen summary GitHub repo"
+  },
+  {
+    "objectID": "index.html#what-is-deliberately-foregrounded",
+    "href": "index.html#what-is-deliberately-foregrounded",
+    "title": "Spatial Decision Analytics Portfolio",
+    "section": "What Is Deliberately Foregrounded",
+    "text": "What Is Deliberately Foregrounded\n\n\n\nCleanup\n\n\nHigh-signal pages only\n\n\nOlder study-note links and lightly maintained source pages are no longer the center of the site. The front page now stays focused on thesis chapters, visual outputs, GitHub repositories, and the resume.\n\n\n\n\nNew Platform\n\n\nSpatial Decision Lab\n\n\nThe next public page now shifts away from the old defense brief and toward a new research platform built around API data, index-driven decisions, and spatial-economic intuition for growers, firms, and government.\n\n\nOpen the platform page"
+  },
+  {
+    "objectID": "research/chapter2.html",
+    "href": "research/chapter2.html",
+    "title": "Chapter 2",
+    "section": "",
+    "text": "Chapter 2 summary\n\n\nWhich part of weak profitability comes from the decision, and which part comes from outside shocks?\n\n\nThis chapter separates controllable decision error from uncontrollable weather and market shocks. The goal is to avoid confusing a bad decision rule with bad luck.\n\n\nBack to Research Atlas GitHub repo\n\n\n\n\n\nSimple visual result\n\n\nDecomposition charts, realized-versus-optimal curves, and uncertainty bands around profit gaps\n\n\n\n\nMain contribution\n\n\nSeparates decision-driven loss from exogenous shocks so outcome interpretation becomes more defensible\n\n\n\n\nData\n\n\nInput decisions, response outcomes, and uncertainty from weather and price variation\n\n\n\n\nMain logic\n\n\nCompare realized outcomes against modeled benchmarks and assign the gap to controllable and uncontrollable components\n\n\n\n\n\n\nMethods\n\n\nBayesian hierarchical modeling, nonlinear response structure, uncertainty decomposition, and profitability-risk interpretation.\n\n\n\n\nWhy it matters\n\n\nThis chapter gives economic meaning to model evaluation by showing whether the system failed or whether the environment moved against the decision."
+  },
+  {
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Research Atlas",
+    "section": "",
+    "text": "Three dissertation chapters\n\n\n\nThis page is the front door. Each chapter card stays short: title, main focus, and repository link. Click into the chapter page to see the concise research summary with visual result, contribution, data, logic, and methods.\n\n\nOpen Spatial Decision Lab GitHub Profile Resume PDF"
+  },
+  {
+    "objectID": "research/index.html#shared-spine",
+    "href": "research/index.html#shared-spine",
+    "title": "Research Atlas",
+    "section": "Shared Spine",
+    "text": "Shared Spine\n\n\n\nSpatial data engineering\n\n\nGeoPandas workflows, field boundaries, API and SQL ingestion, reproducible ETL\n\n\n\n\nValidation design\n\n\nOut-of-location holdouts, model comparison, uncertainty checks, sensitivity analysis\n\n\n\n\nModel families\n\n\nXGBoost, Random Forest, Bayesian hierarchical models, GAMs, causal forests\n\n\n\n\nDecision lens\n\n\nProfitability, downside risk, information value, structural reliability"
+  },
+  {
+    "objectID": "research/index.html#why-this-page-is-short",
+    "href": "research/index.html#why-this-page-is-short",
+    "title": "Research Atlas",
+    "section": "Why This Page Is Short",
+    "text": "Why This Page Is Short\n\n\n\nShortcut\n\n\nOne page to choose the chapter\n\n\nThis page is intentionally light. It lets a recruiter, advisor, or collaborator choose the chapter first and then open the more focused summary page.\n\n\n\n\nNext Public Layer\n\n\nSpatial Decision Lab\n\n\nAfter the dissertation atlas, the next public-facing page is the Spatial Decision Lab, which will hold the new API and index-driven spatial research platform."
+  },
+  {
     "objectID": "resume/index.html",
     "href": "resume/index.html",
     "title": "Resume",
     "section": "",
     "text": "If you are not redirected automatically, open Resume PDF."
-  },
-  {
-    "objectID": "research/index.html",
-    "href": "research/index.html",
-    "title": "Mainpage",
-    "section": "",
-    "text": "During my research journey in graduate school (MS and Ph.D. in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at jaeseok2@illinois.edu."
-  },
-  {
-    "objectID": "research/index.html#welcome",
-    "href": "research/index.html#welcome",
-    "title": "Mainpage",
-    "section": "",
-    "text": "During my research journey in graduate school (MS and Ph.D. in Applied Economics), I developed a deep interest in Econometrics, Price Analysis, and Statistical Learning. This collection of essays showcases how I built my foundational knowledge and expanded my research focus. Please enjoy this material and feel free to contact me at jaeseok2@illinois.edu."
-  },
-  {
-    "objectID": "research/index.html#license",
-    "href": "research/index.html#license",
-    "title": "Mainpage",
-    "section": "License",
-    "text": "License\nThis website is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License."
-  },
-  {
-    "objectID": "webpage_layout.html",
-    "href": "webpage_layout.html",
-    "title": "Jaeseok Hwang",
-    "section": "",
-    "text": "&lt;!-- Left column: photo + name + buttons + short bio UNDER photo --&gt;\n&lt;div class=\"col-md-5 text-center\"&gt;\n  &lt;img src=\"assets/headshot.jpg\" alt=\"Jaeseok Hwang\"\n       class=\"rounded-circle img-fluid mb-3\" style=\"max-width:320px;\"&gt;\n  &lt;h1 class=\"mb-3\"&gt;Jaeseok Hwang&lt;/h1&gt;\n\n  &lt;p class=\"lead\" style=\"max-width:640px; margin: 0 auto;\"&gt;\n    I’m an &lt;b&gt;Applied Economist and Data Scientist&lt;/b&gt; (Ph.D. candidate, UIUC),\n    building data-driven decision systems for U.S. crop producers by integrating\n    applied ML, Bayesian modeling, and economic optimization. I primarily use\n    &lt;b&gt;R&lt;/b&gt; and &lt;b&gt;Python&lt;/b&gt; to transform limited field data into\n    actionable, risk-aware insights.\n  &lt;/p&gt;\n\n  &lt;div class=\"mt-3\"&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://github.com/jaeseokh\" target=\"_blank\"&gt;GitHub&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary me-2\" href=\"https://www.linkedin.com/in/...\" target=\"_blank\"&gt;LinkedIn&lt;/a&gt;\n    &lt;a class=\"btn btn-outline-secondary\" href=\"mailto:youremail@illinois.edu\"&gt;Email&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;!-- Right column: site table of contents --&gt;\n&lt;div class=\"col-md-7\"&gt;\n  &lt;div class=\"card shadow-sm\"&gt;\n    &lt;div class=\"card-body\"&gt;\n      &lt;h3 class=\"card-title\"&gt;Site Contents&lt;/h3&gt;\n      &lt;hr/&gt;\n      &lt;h5&gt;Projects&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch1_index.html\"&gt;Value of multi-field OFPE data&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch2_index.html\"&gt;Risky input decisions under price & weather risk&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"projects/ch3_index.html\"&gt;From static info to dynamic info&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Study Notes&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E01-Distributions.html\"&gt;Bayesian&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/E02-Tests.html\"&gt;Risk analysis&lt;/a&gt;&lt;/li&gt;\n        &lt;li&gt;&lt;a href=\"studynote/ML01-Basics.html\"&gt;Machine learning&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n\n      &lt;h5 class=\"mt-3\"&gt;Resume&lt;/h5&gt;\n      &lt;ul&gt;\n        &lt;li&gt;&lt;a href=\"resume/index.html\"&gt;Resume / CV&lt;/a&gt;&lt;/li&gt;\n      &lt;/ul&gt;\n    &lt;/div&gt;\n  &lt;/div&gt;\n&lt;/div&gt;"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Quantitative Risk Portfolio",
-    "section": "",
-    "text": "Jaeseok Hwang\n\n\nEmail · GitHub · LinkedIn\n\n\nPhD Quantitative Economist (May 2026) focused on model validation, stress testing, and decision-risk diagnostics under non-stationarity. Open to finance risk analytics, model validation, and quantitative decision-science roles.\n\n\nBuilt reproducible Python/R/SQL pipelines over 500k+ observations.\n\n\nDesigned out-of-group holdout diagnostics to test transferability risk.\n\n\nConverted model error into decision-loss and deployment-governance signals.\n\n\nAvailable to start: May 2026\n\n\n\n\n\nProjects\n\n Model Transferability and Decision-Loss Diagnostics Python · SQL · XGBoost/RF · SHAP · 20 holdouts \n Risk-Aware Input Decision System R/Python ETL · scenario logic · reproducible reporting \n Applied Research Write-up and Figures Methods narrative · diagnostics · publication-style outputs \n\n\n\n\nLearning and Notes\n\n Statistical Learning Notes generalization · validation · inference \n Finance Analytics Notes credit risk · portfolio risk · valuation \n Research Index working papers · methods and references \n\n\n\n\nResume / CV\n\n Resume (Finance-Focused PDF) Open file \n Interview Action Plan 30-day and 3-6 month roadmap"
-  },
-  {
-    "objectID": "about/index.html",
-    "href": "about/index.html",
-    "title": "Jaeseok Hwang",
-    "section": "",
-    "text": "Hi, I’m Jaeseok Hwang, a Ph.D. candidate in Agricultural and Consumer Economics (ACE)  at the University of Illinois at Urbana-Champaign (UIUC), with an expected graduation in May 2025. Over the past 5 years, I have gained extensive experience as a research assistant for the USDA NRCS-funded project, “Data Intensive Farm Management.” \nIn this role, I worked extensively with large-scale datasets, applying advanced data analytics and statistical techniques to address complex questions in farm management and productivity. During this time, I developed a deep expertise in designing and running machine-learning-based regression models to derive actionable insights from big data. My analytical toolkit includes a professional level of proficiency in R, which I use for most of my data processing, statistical modeling, and visualization tasks, as well as Python, which I employ as a versatile second option for complementary analysis and machine learning workflows.\nThis website highlights my research journey, showcasing programming code (R and Python via VS Code), summary of research outputs, and my individual research note reflecting my knowledge and skills."
-  },
-  {
-    "objectID": "about/index.html#publications",
-    "href": "about/index.html#publications",
-    "title": "Jaeseok Hwang",
-    "section": "Publications",
-    "text": "Publications\n\nDavid S. Bullock, Taro Mieno, and Jaeseok Hwang (2020) - The value of conducting on-farm field trials using precision agriculture technology: a theory and simulations. Precision Agriculture, 21, 1027-1044.\n\nLink to the published paper"
-  },
-  {
-    "objectID": "about/index.html#research-work-in-progress",
-    "href": "about/index.html#research-work-in-progress",
-    "title": "Jaeseok Hwang",
-    "section": "Research (Work in progress)",
-    "text": "Research (Work in progress)\n\nLeveraging Multi-Field On-Farm Experiment Data: Externalities in Collected Data\nEvaluating the Profitability of Corn Seeding Decisions\nCan On-Farm Subplot Experiments Improve Regional Nitrogen Decisions? A Distributional Perspective\nInforming Site-Specific Input Management in South Africa Using On-Farm Experimentation (M. Delport et al. 2025)"
-  },
-  {
-    "objectID": "research/working_papers.html",
-    "href": "research/working_papers.html",
-    "title": "Working Ppaers",
-    "section": "",
-    "text": "Working paper updated"
   }
 ]

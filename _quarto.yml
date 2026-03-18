@@ -3,27 +3,21 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - webpage_layout.qmd
-    - about/index.qmd
-    - research/index.qmd
-    - research/working_papers.qmd
-    - resume/index.qmd
+    - research/*.qmd
     - resume/*.qmd
-    # (add any other specific .qmd you want rendered here)
 
 website:
-  title: "Mainpage"
+  title: "Jaeseok Hwang"
   search: true
   repo-url: https://github.com/jaeseokh/jaeseokh.github.io
-  repo-actions: [source, issue]
   page-footer:
-    center: "© {2025} used quarto for this webpage"
+    center: "Built with Quarto for research, defense, and recruiter review"
   navbar:
     right:
-      - text: Portfolio
-        href: https://jaeseokh.github.io/#projects
-      - text: Research
+      - text: Research Atlas
         href: research/index.html
+      - text: Spatial Decision Lab
+        href: research/working_papers.html
       - text: Resume
         href: resume/index.html
 

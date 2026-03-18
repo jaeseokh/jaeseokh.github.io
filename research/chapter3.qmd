@@ -1,0 +1,48 @@
+---
+title: "Chapter 3"
+subtitle: "Value of Information in Stochastic Environments"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+<div class="surface">
+<p class="eyebrow">Chapter 3 summary</p>
+<h2>When does extra information create enough decision improvement to be worth using?</h2>
+<p>This chapter treats information as an economic asset. The question is not whether a signal exists, but whether it changes action quality enough to matter under uncertainty.</p>
+<div class="hero-actions">
+<a class="action-link" href="index.html">Back to Research Atlas</a>
+<a class="action-link ghost" href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a>
+</div>
+</div>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Simple visual result</div>
+<div class="metric-value">Paired-strip comparisons, treatment-effect summaries, and downside-risk views under signal and no-signal settings</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main contribution</div>
+<div class="metric-value">Reframes precision-ag information as a decision asset whose value depends on changed action quality</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Data</div>
+<div class="metric-value">Paired-strip experimental data, monitored signals, treatment outcomes, and profitability measures</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main logic</div>
+<div class="metric-value">Compare outcomes with and without the signal and identify whether the information changes decisions enough to create value</div>
+</div>
+</div>
+
+<div class="tone-strip">
+<div class="process-card">
+<p class="eyebrow">Methods</p>
+<p>GAM-based regression, causal forests, quantile views, and treatment-effect interpretation under noisy field conditions.</p>
+</div>
+<div class="process-card">
+<p class="eyebrow">Why it matters</p>
+<p>The chapter shifts the discussion from descriptive information to usable information, which is the real decision problem.</p>
+</div>
+</div>

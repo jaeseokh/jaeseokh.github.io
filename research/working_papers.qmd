@@ -1,9 +1,50 @@
 ---
-title: "Working Ppaers"
-author: "Jaeseok Hwang"
-date: "Oct 2025 (updated)"
+title: "Spatial Decision Lab"
 format: html
-bibliography: myref.bib
 ---
 
-# Working paper updated
+<div class="surface">
+  <p class="eyebrow">New research platform</p>
+  <h2>API-driven spatial analysis with economic decision logic</h2>
+  <p>This page replaces the old defense-brief slot. Its job is different: it becomes the platform for new research that combines spatial analysis, economic intuition, API data, and index-driven decision mechanisms for growers, government, and market actors.</p>
+</div>
+
+<div class="tone-strip">
+<div class="process-card">
+<p class="eyebrow">Public focus</p>
+<h3>Visualized results that explain the mechanism</h3>
+<p>The page will emphasize visual outputs that do more than look good. Each visual should explain why a result happens, what index or signal is driving it, and how the interpretation changes across decision-makers.</p>
+</div>
+<div class="process-card">
+<p class="eyebrow">Data spine</p>
+<h3>API data, index construction, and decision use</h3>
+<p>The platform will connect public APIs, constructed indices, and decision logic across three audiences: growers, firms, and government.</p>
+</div>
+</div>
+
+## Platform Structure {.unnumbered}
+
+<div class="chapter-grid">
+<div class="chapter-card">
+<p class="eyebrow">Track 1</p>
+<h3>Spatial Results Layer</h3>
+<p class="hub-focus">Maps, index surfaces, and comparison panels that show how weather, market condition, and farm-level outcomes move together.</p>
+</div>
+
+<div class="chapter-card">
+<p class="eyebrow">Track 2</p>
+<h3>API and Index Layer</h3>
+<p class="hub-focus">Public-source pipelines, SQL-ready structures, and derived indices that convert raw data into signals usable for economic decisions.</p>
+</div>
+
+<div class="chapter-card">
+<p class="eyebrow">Track 3</p>
+<h3>Decision Actor Layer</h3>
+<p class="hub-focus">A framework that separates what matters for growers, what matters for firms, and what matters for government response or monitoring.</p>
+</div>
+</div>
+
+<div class="surface">
+  <p><strong>Status:</strong> Platform scaffold only for now.</p>
+  <p><strong>Next detail pass:</strong> data sources, index logic, actor-specific decision mechanism, and first visual outputs.</p>
+</div>
