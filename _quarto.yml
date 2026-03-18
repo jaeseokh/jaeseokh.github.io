@@ -14,10 +14,6 @@ website:
     center: "Built with Quarto for research, defense, and recruiter review"
   navbar:
     right:
-      - text: Research Atlas
-        href: research/index.html
-      - text: Spatial Decision Lab
-        href: research/working_papers.html
       - text: Resume
         href: resume/index.html
 

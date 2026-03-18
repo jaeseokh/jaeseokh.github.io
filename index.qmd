@@ -20,13 +20,19 @@ main.content {
 <div class="homepage-layout">
 <div class="main-stack">
 <div class="hero-copy">
+<div class="hero-topline">
+<div class="hero-identity">
 <img src="assets/profile.jpeg" alt="Portrait of Jaeseok Hwang" class="hero-portrait">
 <h2 class="hero-heading">Jaeseok Hwang</h2>
+</div>
+<div class="hero-summary">
 <p class="hero-kicker">Research, code, and decision analytics</p>
 <ul class="hero-points">
 <li>Ph.D. (Aug 2026) in Applied Economics, UIUC.</li>
 <li>This page brings together my dissertation chapters and individual research portfolio, with a focus on producer risk management under price and environmental shocks. Methodologically, I work with supervised machine learning, including XGBoost and Random Forest, together with causal inference and spatial analytics.</li>
 </ul>
+</div>
+</div>
 <div class="hero-actions">
 <a class="action-link secondary" href="resume/Resume_Jaeseok.pdf" target="_blank">Resume PDF</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
