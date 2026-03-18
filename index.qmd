@@ -50,45 +50,133 @@ format:
 </div>
 </div>
 
-## Research Atlas {.unnumbered}
+## Main Sections {.unnumbered}
 
-<div class="chapter-grid">
-<div class="chapter-card">
-<p class="eyebrow">Chapter 1</p>
-<h3>Transferability of Multi-Field Information</h3>
-<p class="hub-focus">Focus: whether information learned in one field can be trusted in another field.</p>
-<div class="hub-link-row">
-<a href="research/chapter1.html">Open summary</a>
-<a href="https://github.com/jaeseokh/value_multifield_python" target="_blank">GitHub repo</a>
-</div>
-</div>
-
-<div class="chapter-card">
-<p class="eyebrow">Chapter 2</p>
-<h3>Information Validity and Profitability Risk</h3>
-<p class="hub-focus">Focus: separating decision error from exogenous weather and market shocks.</p>
-<div class="hub-link-row">
-<a href="research/chapter2.html">Open summary</a>
-<a href="https://github.com/jaeseokh/corn_seed_response" target="_blank">GitHub repo</a>
-</div>
-</div>
-
-<div class="chapter-card">
-<p class="eyebrow">Chapter 3</p>
-<h3>Value of Information in Stochastic Environments</h3>
-<p class="hub-focus">Focus: when monitored signals improve decisions enough to justify the information itself.</p>
-<div class="hub-link-row">
-<a href="research/chapter3.html">Open summary</a>
-<a href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a>
-</div>
-</div>
-</div>
-
-## Current Public Research {.unnumbered}
+::: {.panel-tabset}
+## Chapter 1
 
 <div class="surface">
-<p class="eyebrow">Next public layer</p>
-<h3>Spatial Decision Lab</h3>
-<p>This page is reserved for the new research direction focused on spatial analysis, API data, index-driven mechanisms, and economic interpretation for growers, firms, and government.</p>
-<p><a href="research/working_papers.html">Open Spatial Decision Lab</a></p>
+<p class="eyebrow">Transferability of Multi-Field Information</p>
+<h3>Can information learned in one field be trusted in another field?</h3>
+<p>This chapter studies whether a model that looks strong in one environment still supports reliable decisions when moved to a different field.</p>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Simple visual result</div>
+<div class="metric-value">Holdout field maps and transfer-risk comparisons</div>
 </div>
+<div class="metric-card">
+<div class="metric-label">Main contribution</div>
+<div class="metric-value">Shows that predictive fit alone is not enough for deployment</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Data</div>
+<div class="metric-value">Field-level spatial data, management records, and response outcomes</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main logic and methods</div>
+<div class="metric-value">Cross-field holdouts with XGBoost and Random Forest validation</div>
+</div>
+</div>
+
+<div class="hero-actions">
+<a class="action-link" href="research/chapter1.html">Open chapter page</a>
+<a class="action-link ghost" href="https://github.com/jaeseokh/value_multifield_python" target="_blank">GitHub repo</a>
+</div>
+</div>
+
+## Chapter 2
+
+<div class="surface">
+<p class="eyebrow">Information Validity and Profitability Risk</p>
+<h3>Which part of weak profitability comes from the decision, and which part comes from shocks?</h3>
+<p>This chapter separates controllable decision error from exogenous weather and market shocks so poor outcomes are not misread.</p>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Simple visual result</div>
+<div class="metric-value">Decomposition charts and realized-versus-optimal curves</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main contribution</div>
+<div class="metric-value">Separates decision-driven loss from uncontrollable external variation</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Data</div>
+<div class="metric-value">Input decisions, realized outcomes, weather, price, and uncertainty measures</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main logic and methods</div>
+<div class="metric-value">Bayesian hierarchical modeling and profitability-risk decomposition</div>
+</div>
+</div>
+
+<div class="hero-actions">
+<a class="action-link" href="research/chapter2.html">Open chapter page</a>
+<a class="action-link ghost" href="https://github.com/jaeseokh/corn_seed_response" target="_blank">GitHub repo</a>
+</div>
+</div>
+
+## Chapter 3
+
+<div class="surface">
+<p class="eyebrow">Value of Information in Stochastic Environments</p>
+<h3>When does extra information improve decisions enough to be worth using?</h3>
+<p>This chapter treats information as an economic asset and studies whether monitored signals change action quality enough to create value.</p>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Simple visual result</div>
+<div class="metric-value">Paired-strip comparisons and downside-risk views</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main contribution</div>
+<div class="metric-value">Shows that information matters only when it changes decision quality</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Data</div>
+<div class="metric-value">Paired-strip experiments, monitored signals, and profitability outcomes</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Main logic and methods</div>
+<div class="metric-value">GAMs, causal forests, and treatment-effect interpretation under uncertainty</div>
+</div>
+</div>
+
+<div class="hero-actions">
+<a class="action-link" href="research/chapter3.html">Open chapter page</a>
+<a class="action-link ghost" href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a>
+</div>
+</div>
+
+## Spatial Decision Lab
+
+<div class="surface">
+<p class="eyebrow">New public research platform</p>
+<h3>Spatial analysis, API data, and economic decision logic</h3>
+<p>This page is reserved for the new research direction focused on spatial analysis, API data, index-driven mechanisms, and economic interpretation for growers, firms, and government.</p>
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-label">Track 1</div>
+<div class="metric-value">Spatial results and map-based comparison</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Track 2</div>
+<div class="metric-value">API pipelines, SQL structure, and index construction</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Track 3</div>
+<div class="metric-value">Decision mechanisms for growers, firms, and government</div>
+</div>
+<div class="metric-card">
+<div class="metric-label">Status</div>
+<div class="metric-value">Platform scaffold live, detailed content next</div>
+</div>
+</div>
+
+<div class="hero-actions">
+<a class="action-link" href="research/working_papers.html">Open Spatial Decision Lab</a>
+</div>
+</div>
+:::

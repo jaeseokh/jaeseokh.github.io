@@ -234,196 +234,35 @@ img {
   padding: 1.5rem;
 }
 
-.atlas-shell {
-  overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 251, 244, 0.94), rgba(240, 234, 226, 0.96));
-}
-
-.atlas-board {
-  border: 1px solid rgba(25, 48, 56, 0.08);
-  border-radius: 18px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(246, 239, 229, 0.95)),
-    linear-gradient(120deg, rgba(15, 118, 110, 0.08), rgba(18, 73, 91, 0.02));
-  padding: 1rem;
-}
-
-.atlas-ribbon {
-  margin-bottom: 1rem;
-  color: var(--accent-deep);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.atlas-track {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.atlas-column {
-  min-height: 340px;
-  padding: 1.1rem;
-  border: 1px solid rgba(25, 48, 56, 0.1);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.58);
-}
-
-.atlas-column h3 {
-  margin-top: 0.15rem;
-  margin-bottom: 0.45rem;
-  font-size: 1.35rem;
-}
-
-.atlas-sub {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.tile-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.5rem;
+.panel-tabset {
   margin-top: 1rem;
 }
 
-.tile-grid p {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.5rem;
-  margin: 0;
+.panel-tabset > .nav-tabs,
+.panel-tabset > ul.nav-tabs {
+  gap: 0.55rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.tile-grid span {
-  display: block;
-  aspect-ratio: 1.08;
-  border-radius: 12px;
-}
-
-.tile-grid span:nth-child(1),
-.tile-grid span:nth-child(6) { background: #d4eadf; }
-.tile-grid span:nth-child(2),
-.tile-grid span:nth-child(7) { background: #ddeaf0; }
-.tile-grid span:nth-child(3),
-.tile-grid span:nth-child(8) { background: #f1dfbf; }
-.tile-grid span:nth-child(4),
-.tile-grid span:nth-child(5) { background: #e3efdd; }
-
-.risk-bar {
-  height: 18px;
-  margin-top: 1rem;
-  overflow: hidden;
+.panel-tabset > .nav-tabs .nav-link,
+.panel-tabset > ul.nav-tabs .nav-link {
+  border: 0;
   border-radius: 999px;
-  background: rgba(18, 73, 91, 0.1);
-}
-
-.risk-bar span {
-  display: block;
-  height: 100%;
-  width: 58%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent-green), var(--accent-deep));
-}
-
-.stack-bars {
-  display: flex;
-  align-items: end;
-  gap: 0.8rem;
-  height: 180px;
-  margin-top: 1.2rem;
-}
-
-.stack-bars .stack {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-  width: 54px;
-  height: 100%;
-}
-
-.stack-bars .stack p {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-.stack-bars .core,
-.stack-bars .shock {
-  display: block;
-  border-radius: 12px 12px 0 0;
-}
-
-.stack-bars .core { background: var(--accent-deep); }
-.stack-bars .shock { background: rgba(180, 83, 9, 0.78); }
-
-.stack-bars .label {
-  margin-top: 0.55rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.paired-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.7rem;
-  align-items: end;
-  height: 190px;
-  margin-top: 1.15rem;
-}
-
-.paired-grid .pair {
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  gap: 0.35rem;
-  height: 100%;
-}
-
-.paired-grid .bar {
-  width: 24px;
-  border-radius: 12px 12px 0 0;
-}
-
-.paired-grid .bar.base { background: #c9dce5; }
-.paired-grid .bar.signal { background: var(--accent-warm); }
-
-.signal-dots {
-  display: flex;
-  gap: 0.8rem;
-  margin-top: 0.9rem;
-}
-
-.signal-dots p {
-  display: flex;
-  gap: 0.8rem;
-  margin: 0;
-}
-
-.signal-dots span {
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--accent-green);
-}
-
-.atlas-note {
-  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.56);
   color: var(--ink);
-  font-size: 0.93rem;
   font-weight: 700;
+  padding: 0.7rem 1rem;
 }
 
-.atlas-caption {
-  max-width: 70rem;
-  margin: 1rem 0 0;
-  color: var(--muted);
+.panel-tabset > .nav-tabs .nav-link.active,
+.panel-tabset > ul.nav-tabs .nav-link.active {
+  background: var(--ink);
+  color: #fff;
+}
+
+.panel-tabset > .tab-content,
+.panel-tabset > .tab-content > .tab-pane {
+  margin-top: 0.8rem;
 }
 
 .chapter-grid {
