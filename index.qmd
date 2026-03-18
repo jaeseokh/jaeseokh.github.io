@@ -17,26 +17,28 @@ main.content {
 }
 </style>
 
-<div class="hero-shell">
+<div class="homepage-layout">
+<div class="main-stack">
 <div class="hero-copy">
-<p class="eyebrow">Research, code, and decision analytics · Ph.D. (Aug 2026) in Applied Economics, UIUC</p>
+<img src="assets/profile.jpeg" alt="Portrait of Jaeseok Hwang" class="hero-portrait">
 <h2 class="hero-heading">Jaeseok Hwang</h2>
-<p class="hero-lead">I focus on production risk management and spatial analytics.</p>
-<p class="hero-lead">My work studies dynamic decision systems under exogenous market price and environmental shocks.</p>
+<p class="hero-kicker">Research, code, and decision analytics</p>
+<ul class="hero-points">
+<li>Ph.D. (Aug 2026) in Applied Economics, UIUC.</li>
+<li>This page brings together my dissertation chapters and individual research portfolio, with a focus on producer risk management under price and environmental shocks. Methodologically, I work with supervised machine learning, including XGBoost and Random Forest, together with causal inference and spatial analytics.</li>
+</ul>
 <div class="hero-actions">
 <a class="action-link secondary" href="resume/Resume_Jaeseok.pdf" target="_blank">Resume PDF</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
 <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a>
 </div>
 </div>
-</div>
 
-## Project(Papers) {.unnumbered}
+<div class="surface project-panel">
+<h2>Project(Papers)</h2>
 
-::: {.panel-tabset}
-## Chapter 1
-
-<div class="surface">
+<div class="project-stack">
+<div class="chapter-card project-entry">
 <p class="eyebrow">Chapter 1</p>
 <h3>Transferability of Multi-Field Information</h3>
 <p class="hub-focus">Keywords: transferability, spatial heterogeneity, holdout validation</p>
@@ -46,9 +48,7 @@ main.content {
 </div>
 </div>
 
-## Chapter 2
-
-<div class="surface">
+<div class="chapter-card project-entry">
 <p class="eyebrow">Chapter 2</p>
 <h3>Information Validity and Profitability Risk</h3>
 <p class="hub-focus">Keywords: profitability risk, exogenous shocks, Bayesian hierarchy</p>
@@ -58,9 +58,7 @@ main.content {
 </div>
 </div>
 
-## Chapter 3
-
-<div class="surface">
+<div class="chapter-card project-entry">
 <p class="eyebrow">Chapter 3</p>
 <h3>Value of Information in Stochastic Environments</h3>
 <p class="hub-focus">Keywords: value of information, stochastic environments, causal inference</p>
@@ -69,17 +67,20 @@ main.content {
 <a href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a>
 </div>
 </div>
+</div>
+</div>
+</div>
 
-## Decision, Risk and AI
-
-<div class="surface">
+<aside class="project-side">
 <p class="eyebrow">New research</p>
 <h3>Decision, Risk and AI</h3>
 <p class="hub-focus">Keywords: real-time monitoring, AI-updated information, dynamic risk</p>
-<p>This project studies how dynamic risk can be monitored in real time as weather, market, and policy signals are continuously updated through AI-assisted information systems.</p>
+<p>This project asks how dynamic risk can be monitored in real time as weather, market, and policy information is continuously updated through AI-assisted systems.</p>
+<p class="project-side-note">This panel is intentionally left open for additional description, visual results, and system notes as the project develops.</p>
 <div class="hub-link-row">
 <a href="research/working_papers.html">Open main</a>
 <a href="https://github.com/jaeseokh/jaeseokh.github.io" target="_blank">GitHub repo</a>
 </div>
+<div class="project-side-spacer"></div>
+</aside>
 </div>
-:::
