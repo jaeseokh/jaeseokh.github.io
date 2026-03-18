@@ -97,9 +97,8 @@ img {
 
 .hero-shell {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.95fr);
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 1.5rem;
 }
 
 .hero-copy,
@@ -122,20 +121,21 @@ img {
 }
 
 .hero-heading {
-  margin: 0 0 0.8rem;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
 }
 
 .hero-lead {
-  max-width: 42rem;
+  max-width: 58rem;
   color: var(--muted);
-  font-size: 1.08rem;
+  font-size: 1.04rem;
 }
 
 .hero-actions {
   margin-top: 1.4rem;
 }
 
+.hero-actions,
 .hero-actions p,
 .chip-row p {
   display: flex;

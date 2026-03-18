@@ -7,7 +7,7 @@ project:
     - resume/*.qmd
 
 website:
-  title: "Jaeseok Hwang"
+  title: "Portfolio"
   search: true
   repo-url: https://github.com/jaeseokh/jaeseokh.github.io
   page-footer:

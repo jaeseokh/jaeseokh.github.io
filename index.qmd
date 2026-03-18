@@ -1,51 +1,32 @@
 ---
-title: "Research and Spatial Decision Work"
+title: "Portfolio"
 page-layout: full
 format:
   html:
     toc: false
+    title-block: false
 ---
+
+<style>
+#title-block-header {
+  display: none;
+}
+
+main.content {
+  padding-top: 0.35rem;
+}
+</style>
 
 <div class="hero-shell">
 <div class="hero-copy">
-<p class="eyebrow">Research, code, and decision analytics</p>
+<p class="eyebrow">Research, code, and decision analytics · Ph.D. (Aug 2026) in Applied Economics, UIUC</p>
 <h2 class="hero-heading">Jaeseok Hwang</h2>
-<p class="hero-lead">PhD candidate in Applied Economics building spatial analysis, economic decision models, and applied research systems around field data, uncertainty, and risk.</p>
-<p class="hero-lead">The homepage now focuses on three dissertation chapters and one new public research platform.</p>
+<p class="hero-lead">I focus on production risk management and spatial analytics.</p>
+<p class="hero-lead">My work studies dynamic decision systems under exogenous market price and environmental shocks.</p>
 <div class="hero-actions">
-<a class="action-link" href="research/index.html">Open Research Atlas</a>
-<a class="action-link secondary" href="research/working_papers.html">Open Spatial Decision Lab</a>
 <a class="action-link secondary" href="resume/Resume_Jaeseok.pdf" target="_blank">Resume PDF</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
 <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a>
-</div>
-</div>
-
-<div class="hero-panel">
-<p class="eyebrow">Current focus</p>
-<div class="chip-row">
-<span class="chip">Spatial analysis</span>
-<span class="chip">Economic decisions</span>
-<span class="chip">Validation risk</span>
-<span class="chip">GitHub-first</span>
-</div>
-<div class="metric-grid">
-<div class="metric-card">
-<div class="metric-label">Main frame</div>
-<div class="metric-value">Three connected dissertation chapters</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">Technical stack</div>
-<div class="metric-value">Python, R, SQL, GeoPandas, XGBoost</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">Research lens</div>
-<div class="metric-value">Holdouts, uncertainty, structural checks</div>
-</div>
-<div class="metric-card">
-<div class="metric-label">Public output</div>
-<div class="metric-value">Visual results, contribution, challenge</div>
-</div>
 </div>
 </div>
 </div>
