@@ -45,14 +45,8 @@ page-layout: full
             <li><a href="studynote/E02-Tests.html">Risk analysis</a></li>
             <li><a href="studynote/ML01-Basics.html">Machine learning</a></li>
           </ul>
-
-          <h5 class="mt-3">Resume</h5>
-          <ul>
-            <li><a href="resume/index.html">Resume / CV</a></li>
-          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-

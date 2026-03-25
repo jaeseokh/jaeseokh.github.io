@@ -25,8 +25,6 @@ website:
             href: studynote/risk_analysis.qmd
       - text: Papers
         href: research/working_papers.pdf
-      - text: Resume(CV)
-        href: resume/resume_updated.pdf
   page-footer:
     center: 
       © {&copy} {Oct 2025} Jaeseok Hwang · Built with Quarto

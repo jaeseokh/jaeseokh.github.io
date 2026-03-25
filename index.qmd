@@ -34,7 +34,6 @@ main.content {
 </div>
 </div>
 <div class="hero-actions">
-<a class="action-link secondary" href="resume/Resume_Jaeseok.pdf" target="_blank">Resume PDF</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
 <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a>
 </div>

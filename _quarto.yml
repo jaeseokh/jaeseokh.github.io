@@ -4,7 +4,6 @@ project:
   render:
     - index.qmd
     - research/*.qmd
-    - resume/*.qmd
 
 website:
   title: "Portfolio"
@@ -12,10 +11,6 @@ website:
   repo-url: https://github.com/jaeseokh/jaeseokh.github.io
   page-footer:
     center: "Built with Quarto for research, defense, and recruiter review"
-  navbar:
-    right:
-      - text: Resume
-        href: resume/index.html
 
 format:
   html:

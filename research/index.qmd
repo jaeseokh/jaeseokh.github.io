@@ -12,7 +12,6 @@ page-layout: full
 <div class="hero-actions">
 <a class="action-link" href="working_papers.html">Open Spatial Decision Lab</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub Profile</a>
-<a class="action-link ghost" href="../resume/Resume_Jaeseok.pdf" target="_blank">Resume PDF</a>
 </div>
 </div>
 
