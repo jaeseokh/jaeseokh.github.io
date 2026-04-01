@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-04-01T13:58:50.709145-04:00",
+  "indicators": [
+    {
+      "indicator_id": "pmi",
+      "label": "PMI",
+      "type": "Leading activity survey",
+      "definition": "Monthly diffusion surveys of purchasing managers that measure whether orders, output, employment, deliveries, and inventories are improving or worsening.",
+      "logic": "Purchasing managers see the pipeline early, so PMI often moves before hard activity data. Higher new orders and output usually point to stronger growth; higher prices and slower deliveries can point to inflation or supply stress.",
+      "method": "Diffusion index = % higher + 0.5 x % same. ISM manufacturing headline is an equal-weight composite of new orders, production, employment, supplier deliveries, and inventories.",
+      "industry_use": "Used as a fast growth signal, a demand-versus-supply diagnostic, and a release-day cross-asset read for rates, equities, and FX.",
+      "dashboard_block": "Track manufacturing, services, composite, new orders, prices, supplier deliveries, and employment. Use PMI as the leading demand-supply block in the scenario engine.",
+      "public_source": "ISM and S&P Global releases; FRED mirrors can be added later where available.",
+      "update_frequency": "Monthly, with flash estimates for S&P Global.",
+      "v1_status": "Playbook block now; live ingestion next wave."
+    },
+    {
+      "indicator_id": "claims",
+      "label": "Claims",
+      "type": "Leading labor indicator",
+      "definition": "Weekly unemployment insurance filings. Initial claims capture new layoffs; continuing claims capture how hard it is for unemployed workers to find the next job.",
+      "logic": "Layoffs usually appear in claims before they show up clearly in payrolls or the unemployment rate, so claims are an early warning signal for labor-market weakening.",
+      "method": "Main desk measures are initial claims, continuing claims, the 4-week moving average, and insured unemployment relative to covered employment.",
+      "industry_use": "Used for payroll nowcasts, recession monitoring, and judging whether labor softening reflects higher layoffs or slower re-employment.",
+      "dashboard_block": "Track initial claims, continuing claims, and 4-week average. Feed them into the labor and demand blocks and compare against payrolls and PMI.",
+      "public_source": "U.S. Department of Labor weekly release and FRED series such as ICSA and CCSA.",
+      "update_frequency": "Weekly.",
+      "v1_status": "Ready for live FRED integration in the next dashboard revision."
+    },
+    {
+      "indicator_id": "payrolls",
+      "label": "Payrolls",
+      "type": "Coincident labor indicator",
+      "definition": "Monthly nonfarm payroll employment from the BLS establishment survey. It measures jobs, not people, and is the main hard-data signal for labor demand.",
+      "logic": "Firms add payroll jobs when demand is strong and trim hiring when growth slows. Payrolls matter because job growth supports labor income and consumption.",
+      "method": "Headline payroll change is the month-over-month change in total nonfarm employment. Desks often focus on private payrolls, revisions, sector breadth, hours, and wages.",
+      "industry_use": "Used to judge labor momentum, consumption support, sector rotation, and the Fed path. Revisions and private payrolls often matter as much as the headline.",
+      "dashboard_block": "Track headline payrolls, private payrolls, 3-month average, average hourly earnings, and average weekly hours. Use payrolls as the core coincident labor block.",
+      "public_source": "BLS Employment Situation and FRED series such as PAYEMS.",
+      "update_frequency": "Monthly.",
+      "v1_status": "Live now through FRED for the headline; richer labor block next wave."
+    },
+    {
+      "indicator_id": "cpi_pce",
+      "label": "CPI / PCE details",
+      "type": "Inflation composition block",
+      "definition": "Headline and core consumer inflation measures, plus the category detail that shows whether inflation is coming from goods, shelter, or nonhousing services.",
+      "logic": "Inflation is persistent or temporary depending on the mix. Core goods often reflect supply chains and goods demand, shelter moves with long lags, and core services ex housing is more tied to wages and sticky demand.",
+      "method": "Monthly inflation can be read as m/m, y/y, or 3m and 6m annualized. Contribution analysis uses category weights times category inflation to explain the headline.",
+      "industry_use": "Used to map CPI releases into core PCE, diagnose persistence, and decide whether the Fed should stay restrictive or can ease.",
+      "dashboard_block": "Track headline/core CPI and PCE, shelter, OER, core goods, core services ex housing, and a small set of trimmed or median trend measures.",
+      "public_source": "BLS CPI, BEA PCE, Cleveland Fed median and trimmed measures, NY Fed MCT.",
+      "update_frequency": "Monthly, with some weekly market-based inflation signals alongside.",
+      "v1_status": "Headline CPI and PCE live now; component expansion next wave."
+    },
+    {
+      "indicator_id": "yield_curve",
+      "label": "Yield curve",
+      "type": "Rates and recession signal",
+      "definition": "The shape of Treasury yields across maturities, especially the slope between short and long yields such as 10Y-3M or 10Y-2Y.",
+      "logic": "Long yields reflect expected future short rates plus a term premium. An inverted curve usually means policy is tight now and the market expects weaker growth and lower rates later.",
+      "method": "Core measures are level, slope, and curvature. Recession models often use a probability function of the term spread, especially the 10Y-3M spread.",
+      "industry_use": "Used for recession risk, Fed-path interpretation, curve trades, and separating growth fear from inflation or term-premium pressure.",
+      "dashboard_block": "Track 2Y, 10Y, real yields, 10Y-2Y, 10Y-3M, and breakeven inflation. Use the curve as the rates anchor for growth, Fed, and financial-condition scenarios.",
+      "public_source": "U.S. Treasury and FRED.",
+      "update_frequency": "Daily market data.",
+      "v1_status": "Live now."
+    },
+    {
+      "indicator_id": "credit_spreads",
+      "label": "Credit spreads",
+      "type": "Financial transmission signal",
+      "definition": "The extra yield investors require to hold corporate debt over a risk-free benchmark, usually measured with option-adjusted spreads.",
+      "logic": "Wider spreads reflect tighter financing, more risk aversion, higher expected losses, or lower liquidity. They can both signal and transmit slower growth.",
+      "method": "Spread = corporate yield minus risk-free yield, often expressed as option-adjusted spread. Advanced work separates default risk from excess risk premium.",
+      "industry_use": "Used to monitor financial conditions, recession risk, refinancing stress, and whether risk markets confirm or reject the rates and equity story.",
+      "dashboard_block": "Track IG and HY OAS, quality buckets where possible, and compare spread moves with equities, the dollar, and the yield curve.",
+      "public_source": "FRED ICE BofA spread series and Federal Reserve research on excess bond premium.",
+      "update_frequency": "Daily market data.",
+      "v1_status": "HY spread live now; fuller credit stack next wave."
+    },
+    {
+      "indicator_id": "financial_conditions",
+      "label": "Financial conditions",
+      "type": "Cross-asset transmission index",
+      "definition": "A combined read of rates, credit, equities, volatility, the dollar, and funding conditions that captures how easy or hard it is to finance spending and risk-taking.",
+      "logic": "Tighter conditions raise borrowing costs, lower asset prices, and reduce risk appetite, which then slows spending and investment with a lag.",
+      "method": "Institutions build standardized weighted indices such as the Chicago Fed NFCI and ANFCI or the St. Louis Fed Financial Stress Index.",
+      "industry_use": "Used to judge whether markets are amplifying or offsetting Fed policy and whether a shock is becoming a real macro tightening event.",
+      "dashboard_block": "Track NFCI, ANFCI, STLFSI4, rates, credit spreads, equities, the dollar, and volatility. Use this as the main bridge from market moves to real-economy implications.",
+      "public_source": "Chicago Fed, St. Louis Fed, FRED, and standard market data.",
+      "update_frequency": "Weekly index updates plus daily market components.",
+      "v1_status": "Core market components live now; formal index integration next wave."
+    },
+    {
+      "indicator_id": "gdp_nowcasts",
+      "label": "GDP nowcasts",
+      "type": "Real-time growth estimate",
+      "definition": "Model-based estimates of current-quarter GDP growth built before the official GDP release arrives.",
+      "logic": "GDP arrives late, but its components show up throughout the quarter in monthly releases. A nowcast turns those partial signals into one running growth estimate.",
+      "method": "Atlanta Fed GDPNow uses component-level bridge equations and related models; the New York Fed Staff Nowcast uses a dynamic factor framework with recent robustness updates.",
+      "industry_use": "Used as the running growth anchor, a disciplined benchmark for release-by-release updates, and a check against internal house views.",
+      "dashboard_block": "Track Atlanta Fed GDPNow, NY Fed Staff Nowcast, their change after each release, and which GDP component drove the update.",
+      "public_source": "Atlanta Fed GDPNow and NY Fed Staff Nowcast public pages.",
+      "update_frequency": "Several times per month as source data arrive.",
+      "v1_status": "Playbook block now; live scraper/API layer next wave."
+    }
+  ]
+}

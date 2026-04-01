@@ -1,6 +1,6 @@
 ---
-title: "Decision, Risk and AI"
-subtitle: "Daily static macro desk built from public data"
+title: "Macro Scenario Monitoring"
+subtitle: "Vol. 1 | Before, during, and after the U.S.-Iran war"
 page-layout: full
 format:
   html:
@@ -8,120 +8,148 @@ format:
 ---
 
 <style>
-.dashboard-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 880px;
-}
-
-.dashboard-table th,
-.dashboard-table td {
-  padding: 0.8rem 0.85rem;
-  border-bottom: 1px solid rgba(25, 48, 56, 0.1);
-  vertical-align: middle;
-}
-
-.dashboard-table thead th {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-
-.table-scroll {
-  overflow-x: auto;
-}
-
-.table-note,
-.snapshot-meta {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.scenario-bars {
+.hero-grid,
+.branch-grid,
+.phase-grid,
+.decision-grid {
   display: grid;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
-.scenario-bar-row {
+.hero-grid,
+.branch-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.phase-grid,
+.decision-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.scenario-hero {
   display: grid;
-  grid-template-columns: minmax(220px, 1.3fr) minmax(0, 4fr) auto;
-  gap: 0.9rem;
-  align-items: center;
+  gap: 1rem;
 }
 
-.scenario-bar-label,
-.scenario-bar-value {
-  font-weight: 700;
+.branch-card,
+.phase-card,
+.decision-card {
+  padding: 1.1rem 1.15rem;
+  border: 1px solid rgba(25, 48, 56, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
 }
 
-.scenario-bar-track {
-  position: relative;
-  height: 14px;
-  border-radius: 999px;
-  background: rgba(18, 73, 91, 0.12);
-  overflow: hidden;
+.branch-card h3,
+.phase-card h3,
+.decision-card h3 {
+  margin: 0.2rem 0 0.65rem;
 }
 
-.scenario-bar-fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent-green), var(--accent));
-}
-
-.scenario-subvalue {
-  margin: 0.35rem 0 0;
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
-.scenario-positive {
-  color: var(--accent-green);
-}
-
-.scenario-negative {
-  color: #b45309;
-}
-
-.scenario-neutral {
+.branch-meta,
+.hub-note {
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.sparkline {
-  width: 160px;
-  height: 42px;
-  display: block;
+.branch-card ul,
+.decision-card ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.05rem;
 }
 
-.lag-table td.lag-match {
-  background: rgba(15, 118, 110, 0.12);
-  color: var(--accent-green);
-  font-weight: 700;
+.branch-card li,
+.decision-card li {
+  margin: 0.35rem 0;
 }
 
-.lag-table td.lag-miss {
-  background: rgba(180, 83, 9, 0.12);
-  color: var(--accent-warm);
-  font-weight: 700;
-}
-
-.lag-table td.lag-na {
-  color: var(--muted);
-}
-
-@media (max-width: 767px) {
-  .scenario-bar-row {
-    grid-template-columns: 1fr;
-  }
+.branch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.95rem;
 }
 </style>
 
-<div class="surface">
-<p class="eyebrow">New research platform</p>
-<h2>U.S. macro scenario monitoring with energy, geopolitics, and explicit lag logic</h2>
-<p>This page is the public-facing output of a daily static macro desk. It uses public market and macro series, an explicit scenario engine, and lagged event checks to show how a live shock propagates through rates, credit, inflation compensation, FX, and equities.</p>
-<div class="hub-link-row"><a href="generated/snapshot.json">Snapshot JSON</a><a href="generated/signal_dashboard.csv">Signal dashboard CSV</a><a href="generated/lag_check.csv">Lag-check CSV</a></div>
+<div class="surface scenario-hero">
+<p class="eyebrow">Decision, Risk and AI</p>
+<h2>Macro Scenario Monitoring</h2>
+<p>Vol. 1 studies one live geopolitical event through a sell-side macro lens. The organizing question is simple: how do we turn a before-war baseline, a live war shock, and post-war outcomes into a structured decision process using public data, explicit scenarios, and market confirmation signals?</p>
+<p class="hub-note">This hub is intentionally simple. It introduces the event, the decision structure, and the two research branches. The detailed model, signal design, and index lists live inside each branch page.</p>
 </div>
 
-{{< include generated/decision_risk_ai_snapshot.md >}}
+<div class="surface">
+<p class="eyebrow">Vol. 1 frame</p>
+<h3>One event, three phases</h3>
+<div class="phase-grid">
+<div class="phase-card">
+<p class="eyebrow">Phase 1</p>
+<h3>Pre-war baseline</h3>
+<p>The benchmark world before the shock: growth, inflation, rates, and cross-asset pricing under a lower geopolitical premium.</p>
+</div>
+<div class="phase-card">
+<p class="eyebrow">Phase 2</p>
+<h3>Current war transmission</h3>
+<p>The live shock: energy, shipping, food, inflation compensation, credit, and risk appetite are checked against explicit lagged market responses.</p>
+</div>
+<div class="phase-card">
+<p class="eyebrow">Phase 3</p>
+<h3>Post-war outcomes</h3>
+<p>The two main paths after the conflict: relief and normalization, or persistent fragmentation with longer-lived inflation and risk premia.</p>
+</div>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Research structure</p>
+<h3>Two branches from the same scenario engine</h3>
+<div class="branch-grid">
+<div class="branch-card">
+<p class="eyebrow">Branch A</p>
+<h3>Commodity</h3>
+<p>Energy and food are treated as physical markets first, then as macro transmission channels. This branch focuses on supply, storage, logistics, inventories, export flows, weather, and geopolitical risk premium.</p>
+<p class="branch-meta">Goal: show how a commodity shock becomes an inflation, growth, FX, and country-risk story.</p>
+<ul>
+<li>Energy-centered decision model for oil, gas, products, and food spillovers.</li>
+<li>Scenario design around pre-war, current war, relief, and persistent fragmentation.</li>
+<li>Desk-style reading of EIA, IEA, OPEC, USDA, FAO, futures curves, and positioning.</li>
+</ul>
+<div class="branch-actions">
+<a href="macro_scenario_commodity.html">Open commodity branch</a>
+</div>
+</div>
+<div class="branch-card">
+<p class="eyebrow">Branch B</p>
+<h3>Investment</h3>
+<p>This branch translates the same scenarios into sell-side macro forecasting and market interpretation. It follows the daily discipline of revising the growth, inflation, Fed, rates, FX, credit, and equity story for clients and internal desk partners.</p>
+<p class="branch-meta">Goal: show how a macro economist updates scenarios, interprets signals, and turns them into a publishable desk note.</p>
+<ul>
+<li>Live scenario scoring using public signals and explicit lag logic.</li>
+<li>Indicator playbook covering PMI, claims, payrolls, CPI/PCE, the yield curve, spreads, financial conditions, and GDP nowcasts.</li>
+<li>Sell-side framing for forecast revision, sales/trading briefings, and client updates.</li>
+</ul>
+<div class="branch-actions">
+<a href="macro_scenario_investment.html">Open investment branch</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Decision model</p>
+<h3>How the project is organized</h3>
+<div class="decision-grid">
+<div class="decision-card">
+<h3>Scenario</h3>
+<p>Each phase is translated into a base case and alternative scenarios with explicit reasoning, not only narrative judgment.</p>
+</div>
+<div class="decision-card">
+<h3>Signals and indices</h3>
+<p>Commodity reports, macro releases, and market signals are linked to each scenario through expected direction, lag, and transmission channel.</p>
+</div>
+<div class="decision-card">
+<h3>Desk output</h3>
+<p>The final output is a sell-side style research surface: what changed, what confirms it, what could invalidate it, and what clients should watch next.</p>
+</div>
+</div>
+</div>

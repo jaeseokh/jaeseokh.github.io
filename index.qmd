@@ -78,12 +78,12 @@ main.content {
 
 <aside class="project-side">
 <p class="eyebrow">New research</p>
-<h3>Decision, Risk and AI</h3>
-<p class="hub-focus">Keywords: U.S. macro desk, public API pipeline, lagged scenario scoring</p>
-<p>This project turns public macro and market data into a daily static scenario monitor for U.S. macro risk. The current build tracks energy and geopolitical shocks, measures transmission into rates, credit, FX, and equities, and publishes a recruiter-facing desk note every day.</p>
-<p class="project-side-note">The public page now functions as a live research surface rather than a placeholder. It shows the active event lens, scenario probabilities, lag confirmation table, and the daily market dashboard.</p>
+<h3>Macro Scenario Monitoring</h3>
+<p class="hub-focus">Keywords: sell-side macro research, commodity transmission, scenario scoring</p>
+<p>This project is now organized as a two-track Vol. 1 research hub around the U.S.-Iran war scenario. One branch studies energy and food as commodity-to-macro transmission channels; the other studies the same event as a sell-side macro forecasting and market-decision problem.</p>
+<p class="project-side-note">The hub introduces the scenario structure and then splits the work into a commodity branch and an investment branch. The investment branch remains a live public desk note built from public data, lagged signal checks, and explicit scenario scoring.</p>
 <div class="hub-link-row">
-<a href="research/working_papers.html">Open daily desk</a>
+<a href="research/working_papers.html">Open Vol. 1 hub</a>
 <a href="https://github.com/jaeseokh/jaeseokh.github.io" target="_blank">Website repo</a>
 </div>
 <div class="project-side-spacer"></div>

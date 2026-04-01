@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Portfolio</title>
+<title>Macro Scenario Monitoring – Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +23,21 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css">
 </head>
 
 <body>
@@ -80,11 +80,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full column-page" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Portfolio</h1>
+<h1 class="title">Macro Scenario Monitoring</h1>
+<p class="subtitle lead">Vol. 1 | Commodity branch</p>
 </div>
 
 
@@ -102,115 +103,429 @@ ul.task-list li input[type="checkbox"] {
 
 
 <style>
-#title-block-header {
-  display: none;
+.commodity-grid,
+.scenario-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-main.content {
-  padding-top: 0.35rem;
+.commodity-card,
+.scenario-card {
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(25, 48, 56, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.commodity-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+}
+
+.commodity-table th,
+.commodity-table td {
+  padding: 0.8rem 0.85rem;
+  border-bottom: 1px solid rgba(25, 48, 56, 0.1);
+  vertical-align: top;
+}
+
+.commodity-table thead th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.page-note {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 </style>
-<div class="homepage-layout page-columns page-full">
-<div class="main-stack">
-<div class="hero-copy">
-<div class="hero-topline">
-<div class="hero-identity">
-<img src="assets/profile.jpeg" alt="Portrait of Jaeseok Hwang" class="hero-portrait">
-<h2 class="hero-heading anchored">
-Jaeseok Hwang
-</h2>
-</div>
-<div class="hero-summary">
-<p class="hero-kicker">
-Research, code, and decision analytics
-</p>
-<ul class="hero-points">
-<li>
-Ph.D.&nbsp;(Aug 2026) in Applied Economics, UIUC.
-</li>
-<li>
-This page brings together my dissertation chapters and individual research portfolio, with a focus on producer risk management under price and environmental shocks. Methodologically, I work with supervised machine learning, including XGBoost and Random Forest, together with causal inference and spatial analytics.
-</li>
-</ul>
-</div>
-</div>
-<div class="hero-actions">
-<p><a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a> <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a></p>
-</div>
-</div>
-<div class="surface project-panel">
-<h2 class="anchored">
-Project(Papers)
-</h2>
-<div class="project-stack">
-<div class="chapter-card project-entry">
+<div class="surface">
 <p class="eyebrow">
-Chapter 1
-</p>
-<h3 class="anchored">
-Transferability of Multi-Field Information
-</h3>
-<p class="hub-focus">
-Keywords: transferability, spatial heterogeneity, holdout validation
-</p>
-<div class="hub-link-row">
-<p><a href="research/chapter1.html">Open summary</a> <a href="https://github.com/jaeseokh/value_multifield_python" target="_blank">GitHub repo</a></p>
-</div>
-</div>
-<div class="chapter-card project-entry">
-<p class="eyebrow">
-Chapter 2
-</p>
-<h3 class="anchored">
-Information Validity and Profitability Risk
-</h3>
-<p class="hub-focus">
-Keywords: profitability risk, exogenous shocks, Bayesian hierarchy
-</p>
-<div class="hub-link-row">
-<p><a href="research/chapter2.html">Open summary</a> <a href="https://github.com/jaeseokh/corn_seed_response" target="_blank">GitHub repo</a></p>
-</div>
-</div>
-<div class="chapter-card project-entry">
-<p class="eyebrow">
-Chapter 3
-</p>
-<h3 class="anchored">
-Value of Information in Stochastic Environments
-</h3>
-<p class="hub-focus">
-Keywords: value of information, stochastic environments, causal inference
-</p>
-<div class="hub-link-row">
-<p><a href="research/chapter3.html">Open summary</a> <a href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<aside class="project-side">
-<p class="eyebrow">
-New research
-</p>
-<h3 class="anchored">
 Macro Scenario Monitoring
-</h3>
-<p class="hub-focus">
-Keywords: sell-side macro research, commodity transmission, scenario scoring
 </p>
+<h2 class="anchored">
+Vol. 1 | Commodity branch
+</h2>
 <p>
-This project is now organized as a two-track Vol. 1 research hub around the U.S.-Iran war scenario. One branch studies energy and food as commodity-to-macro transmission channels; the other studies the same event as a sell-side macro forecasting and market-decision problem.
+This branch focuses on energy and food as the first transmission layer of the U.S.-Iran war scenario. The desk question is not only whether prices move, but whether physical evidence, logistics, inventories, and policy action confirm a durable macro shock.
 </p>
-<p class="project-side-note">
-The hub introduces the scenario structure and then splits the work into a commodity branch and an investment branch. The investment branch remains a live public desk note built from public data, lagged signal checks, and explicit scenario scoring.
+<div class="page-actions">
+<p><a href="working_papers.html">Back to Vol. 1 hub</a> <a href="macro_scenario_investment.html">Open investment branch</a></p>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Desk question
 </p>
-<div class="hub-link-row">
-<p><a href="research/working_papers.html">Open Vol. 1 hub</a> <a href="https://github.com/jaeseokh/jaeseokh.github.io" target="_blank">Website repo</a></p>
+<h3 class="anchored">
+What a sell-side macro desk needs from commodity analysis
+</h3>
+<div class="commodity-grid">
+<div class="commodity-card">
+<h3 class="anchored">
+Physical read
+</h3>
+<p>
+Is the shock real? The desk checks inventories, storage, exports, refinery runs, freight, crop conditions, acreage, and bottlenecks before treating the price move as fundamental.
+</p>
 </div>
-<div class="project-side-spacer">
-
+<div class="commodity-card">
+<h3 class="anchored">
+Macro read
+</h3>
+<p>
+How does the shock pass into inflation, real income, trade balances, FX, and growth? This is where commodity analysis becomes macro economics.
+</p>
 </div>
-</aside>
+<div class="commodity-card">
+<h3 class="anchored">
+Client read
+</h3>
+<p>
+What should clients do with this information? The desk writes what changed, what confirms it, what could invalidate it, and which countries or assets are exposed.
+</p>
+</div>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Scenario ladder
+</p>
+<h3 class="anchored">
+Vol. 1 commodity scenarios
+</h3>
+<div class="scenario-grid">
+<div class="scenario-card">
+<p class="eyebrow">
+Scenario A
+</p>
+<h3 class="anchored">
+Pre-war baseline
+</h3>
+<p>
+Commodity risk premium stays manageable. Oil and food prices reflect normal supply-demand conditions more than conflict escalation.
+</p>
+</div>
+<div class="scenario-card">
+<p class="eyebrow">
+Scenario B
+</p>
+<h3 class="anchored">
+Current war shock
+</h3>
+<p>
+Oil, shipping, insurance, fertilizer, and food-security channels all move higher. The desk tests whether the physical data confirm the price move.
+</p>
+</div>
+<div class="scenario-card">
+<p class="eyebrow">
+Scenario C
+</p>
+<h3 class="anchored">
+Post-war relief
+</h3>
+<p>
+Risk premia fade, logistics normalize, curves flatten back, and the inflation impulse weakens faster than the fear premium suggested.
+</p>
+</div>
+<div class="scenario-card">
+<p class="eyebrow">
+Scenario D
+</p>
+<h3 class="anchored">
+Post-war fragmentation
+</h3>
+<p>
+Even after active conflict cools, sanctions, route shifts, and energy-security policy keep commodity premia and inflation risk structurally higher.
+</p>
+</div>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Decision model
+</p>
+<h3 class="anchored">
+How the commodity branch makes a call
+</h3>
+<div class="table-scroll">
+<table class="commodity-table">
+<thead>
+<tr>
+<th>
+Layer
+</th>
+<th>
+What the desk checks
+</th>
+<th>
+Examples
+</th>
+<th>
+Why it matters
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>Shock type</strong>
+</td>
+<td>
+Classify the move as supply, demand, logistics, sanctions, weather, or policy.
+</td>
+<td>
+War escalation, shipping disruption, export ban, drought, refinery outage.
+</td>
+<td>
+Different shocks produce very different inflation and growth paths.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Physical confirmation</strong>
+</td>
+<td>
+Check whether the market move is supported by actual balance evidence.
+</td>
+<td>
+Inventories, storage, refinery runs, acreage, yield expectations, export flows.
+</td>
+<td>
+This helps separate a durable shortage from a temporary fear premium.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Curve and spread confirmation</strong>
+</td>
+<td>
+Watch futures structure and product spreads.
+</td>
+<td>
+Brent time spreads, gasoline and diesel cracks, grain nearby-deferred spreads.
+</td>
+<td>
+A tight front end often confirms real near-term scarcity.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Macro transmission</strong>
+</td>
+<td>
+Map the commodity shock into inflation, income, trade, and policy.
+</td>
+<td>
+Gasoline pass-through, fertilizer into food, importer/exporter FX stress.
+</td>
+<td>
+This is the bridge from commodity market reading to macro forecast revision.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Desk output</strong>
+</td>
+<td>
+Write what changed, what confirms it, and what would invalidate the call.
+</td>
+<td>
+Client note, sales/trading brief, country-exposure table, inflation warning.
+</td>
+<td>
+Sell-side research must explain the call, not only state the price move.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Signals and indices
+</p>
+<h3 class="anchored">
+Main public reports and market series the branch should use
+</h3>
+<div class="table-scroll">
+<table class="commodity-table">
+<thead>
+<tr>
+<th>
+Bucket
+</th>
+<th>
+Signal or report
+</th>
+<th>
+What it tells the desk
+</th>
+<th>
+Cadence
+</th>
+<th>
+Why it matters for the sell-side note
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>Oil</strong>
+</td>
+<td>
+Brent, WTI, and crude time spreads
+</td>
+<td>
+Spot direction, near-term tightness, and curve structure.
+</td>
+<td>
+Daily
+</td>
+<td>
+Separates a simple headline price move from a true shortage story.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Oil products</strong>
+</td>
+<td>
+Gasoline and diesel cracks, retail gasoline
+</td>
+<td>
+Refining tightness and direct pass-through into inflation.
+</td>
+<td>
+Daily / weekly
+</td>
+<td>
+Clients care about CPI transmission, not only crude itself.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Oil balance</strong>
+</td>
+<td>
+EIA Weekly Petroleum Status Report, EIA STEO, IEA Oil Market Report, OPEC MOMR
+</td>
+<td>
+Inventories, refinery runs, supply-demand balance, spare capacity, export changes.
+</td>
+<td>
+Weekly / monthly
+</td>
+<td>
+These reports anchor the fundamental read behind the price narrative.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Natural gas</strong>
+</td>
+<td>
+Henry Hub, LNG exports, EIA storage report
+</td>
+<td>
+Storage tightness, export pull, weather sensitivity, domestic balance.
+</td>
+<td>
+Daily / weekly
+</td>
+<td>
+Gas often matters through utilities, power, and LNG-linked global spillovers.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Positioning</strong>
+</td>
+<td>
+CFTC Commitments of Traders
+</td>
+<td>
+Whether price action is being amplified by speculative positioning.
+</td>
+<td>
+Weekly
+</td>
+<td>
+Helps explain overshoots and unstable reversals.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Grains</strong>
+</td>
+<td>
+Corn, wheat, soy futures and nearby-deferred spreads
+</td>
+<td>
+Food risk premium, weather sensitivity, and tightness at the front of the curve.
+</td>
+<td>
+Daily
+</td>
+<td>
+Links food shocks to inflation and importer stress.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Crop balance</strong>
+</td>
+<td>
+USDA WASDE, Grain Stocks, Crop Progress, Export Sales
+</td>
+<td>
+Production, stocks-to-use, crop condition, export demand, and shipment pace.
+</td>
+<td>
+Weekly / monthly / quarterly
+</td>
+<td>
+These are the core physical reports for a grain-based macro call.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Global food</strong>
+</td>
+<td>
+FAO Food Price Index
+</td>
+<td>
+Broad international food-price pressure.
+</td>
+<td>
+Monthly
+</td>
+<td>
+Useful when a sell-side note needs a global inflation and EM vulnerability angle.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="page-note">
+Best starting rule: treat a commodity shock as credible only when physical reports, curve structure, and macro transmission all point in the same direction.
+</p>
 </div>
 
 
@@ -654,5 +969,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

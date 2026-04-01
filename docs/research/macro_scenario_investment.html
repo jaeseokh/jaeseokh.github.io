@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Macro Scenario Monitoring – Portfolio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Macro Scenario Monitoring</h1>
+<p class="subtitle lead">Vol. 1 | Investment branch</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+.investment-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.investment-card {
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(25, 48, 56, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.investment-card h3 {
+  margin: 0.15rem 0 0.55rem;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.page-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+</style>
+<div class="surface">
+<p class="eyebrow">
+Macro Scenario Monitoring
+</p>
+<h2 class="anchored">
+Vol. 1 | Investment branch
+</h2>
+<p>
+This branch treats the U.S.-Iran war as a sell-side macro forecasting problem. The aim is to use a transparent scenario model, daily market confirmation, and core macro indicators to decide whether the desk should revise its growth, inflation, Fed, and cross-asset view.
+</p>
+<div class="page-actions">
+<p><a href="working_papers.html">Back to Vol. 1 hub</a> <a href="macro_scenario_commodity.html">Open commodity branch</a> <a href="generated/snapshot.json">Snapshot JSON</a></p>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Sell-side use
+</p>
+<h3 class="anchored">
+What this branch is built to show
+</h3>
+<div class="investment-grid">
+<div class="investment-card">
+<h3 class="anchored">
+Forecast revision
+</h3>
+<p>
+The desk updates the base case and alternative scenarios for growth, inflation, and the Fed as new information arrives.
+</p>
+</div>
+<div class="investment-card">
+<h3 class="anchored">
+Desk briefing
+</h3>
+<p>
+The output is meant to brief sales, trading, and clients with a clear answer to what changed and why it matters.
+</p>
+</div>
+<div class="investment-card">
+<h3 class="anchored">
+Cross-asset mapping
+</h3>
+<p>
+Rates, FX, credit, and equities are used as confirmation channels, not as disconnected charts.
+</p>
+</div>
+</div>
+<p class="page-note">
+This is the live branch of Vol. 1. The snapshot below is rebuilt from public data and explicit scenario scoring.
+</p>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Decision, Risk and AI
+</p>
+<h2 class="anchored">
+Daily U.S. macro scenario monitor with global energy and geopolitical transmission
+</h2>
+<p>
+This page is rebuilt from public data and an explicit scenario model. It is designed to show how a desk economist could monitor a live macro shock, test whether market signals confirm the scenario, and keep the reasoning transparent instead of hiding it inside a black box.
+</p>
+</div>
+<div class="tone-strip">
+<div class="process-card">
+<p class="eyebrow">
+Current read
+</p>
+<h3 class="anchored">
+De-escalation / relief
+</h3>
+<p>
+Oil risk premium fades, volatility falls, credit tightens back in, and risk assets recover as markets price less near-term disruption.
+</p>
+<p class="snapshot-meta">
+Generated: 2026-04-01 17:58 UTC
+</p>
+<p class="snapshot-meta">
+Active event lens: Middle East energy and shipping disruption since 2026-03-10
+</p>
+<p class="project-side-note">
+Runner-up scenario: <strong>Growth drag / trade shock</strong> at 24.3%.
+</p>
+</div>
+<div class="process-card">
+<p class="eyebrow">
+Five-question map
+</p>
+<div class="metric-grid">
+<div class="metric-card scenario-metric">
+<p class="metric-label">
+demand
+</p>
+<div class="metric-value">
+mixed
+</div>
+<p class="scenario-subvalue scenario-neutral">
+-0.17
+</p>
+</div>
+<div class="metric-card scenario-metric">
+<p class="metric-label">
+supply
+</p>
+<div class="metric-value">
+mixed
+</div>
+<p class="scenario-subvalue scenario-neutral">
+-0.16
+</p>
+</div>
+<div class="metric-card scenario-metric">
+<p class="metric-label">
+inflation
+</p>
+<div class="metric-value">
+mixed
+</div>
+<p class="scenario-subvalue scenario-neutral">
+-0.03
+</p>
+</div>
+<div class="metric-card scenario-metric">
+<p class="metric-label">
+financial conditions
+</p>
+<div class="metric-value">
+mixed
+</div>
+<p class="scenario-subvalue scenario-neutral">
++0.09
+</p>
+</div>
+<div class="metric-card scenario-metric">
+<p class="metric-label">
+fed
+</p>
+<div class="metric-value">
+hold / mixed
+</div>
+<p class="scenario-subvalue scenario-neutral">
+-0.12
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Scenario score
+</p>
+<h3 class="anchored">
+Probability scoreboard
+</h3>
+<div class="scenario-bars">
+<div class="scenario-bar-row">
+<div class="scenario-bar-label">
+De-escalation / relief
+</div>
+<div class="scenario-bar-track">
+<div class="scenario-bar-fill" style="width:44.4%">
+
+</div>
+</div>
+<div class="scenario-bar-value">
+44.4%
+</div>
+</div>
+<div class="scenario-bar-row">
+<div class="scenario-bar-label">
+Growth drag / trade shock
+</div>
+<div class="scenario-bar-track">
+<div class="scenario-bar-fill" style="width:24.3%">
+
+</div>
+</div>
+<div class="scenario-bar-value">
+24.3%
+</div>
+</div>
+<div class="scenario-bar-row">
+<div class="scenario-bar-label">
+Geopolitical energy shock
+</div>
+<div class="scenario-bar-track">
+<div class="scenario-bar-fill" style="width:16.1%">
+
+</div>
+</div>
+<div class="scenario-bar-value">
+16.1%
+</div>
+</div>
+<div class="scenario-bar-row">
+<div class="scenario-bar-label">
+Stagflation persistence
+</div>
+<div class="scenario-bar-track">
+<div class="scenario-bar-fill" style="width:15.3%">
+
+</div>
+</div>
+<div class="scenario-bar-value">
+15.3%
+</div>
+</div>
+</div>
+</div>
+<div class="chapter-grid">
+<div class="chapter-card">
+<p class="eyebrow">
+Evidence that confirms the dominant scenario
+</p>
+<ul class="detail-list">
+<li>
+<strong>VIX</strong>: contribution +0.65
+</li>
+<li>
+<strong>S&amp;P 500</strong>: contribution +0.59
+</li>
+<li>
+<strong>U.S. high yield spread</strong>: contribution +0.57
+</li>
+</ul>
+</div>
+<div class="chapter-card">
+<p class="eyebrow">
+Signals pulling against it
+</p>
+<ul class="detail-list">
+<li>
+<strong>Brent crude</strong>: contribution -0.56
+</li>
+<li>
+<strong>Broad U.S. dollar</strong>: contribution -0.37
+</li>
+</ul>
+</div>
+<div class="chapter-card">
+<p class="eyebrow">
+Method
+</p>
+<p class="hub-focus">
+Signals are standardized across 1d, 2d, 5d, and 20d horizons, then matched against scenario sign expectations using explicit weights.
+</p>
+<p>
+No black-box classifier is used in this version. The system is designed for economic interpretation first and machine assistance second.
+</p>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Market signal dashboard
+</p>
+<h3 class="anchored">
+Daily move, medium-horizon move, and current shock intensity
+</h3>
+<div class="table-scroll">
+<table class="dashboard-table">
+<thead>
+<tr>
+<th>
+Signal
+</th>
+<th>
+Latest
+</th>
+<th>
+1d
+</th>
+<th>
+5d
+</th>
+<th>
+20d
+</th>
+<th>
+Composite z
+</th>
+<th>
+30-observation path
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>Brent crude</strong>
+<div class="table-note">
+Energy
+</div>
+</td>
+<td>
+121.88 $/bbl
+</td>
+<td>
++0.34%
+</td>
+<td>
++17.43%
+</td>
+<td>
++57.79%
+</td>
+<td>
++1.27
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,38 7,36 12,35 18,36 23,36 28,37 34,37 39,36 45,36 50,33 55,29 61,30 66,25 71,21 77,21 82,24 88,24 93,16 98,16 104,17 109,12 114,6 120,11 125,6 131,15 136,12 141,12 147,9 152,4 158,4"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Henry Hub gas</strong>
+<div class="table-note">
+Energy
+</div>
+</td>
+<td>
+2.88 $/MMBtu
+</td>
+<td>
+-3.68%
+</td>
+<td>
+-2.04%
+</td>
+<td>
+-3.68%
+</td>
+<td>
+-0.19
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,15 7,28 12,19 18,14 23,15 28,27 34,25 39,32 45,27 50,27 55,18 61,38 66,35 71,18 77,5 82,20 88,14 93,4 98,9 104,24 109,15 114,16 120,9 125,23 131,32 136,35 141,32 147,27 152,27 158,37"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>U.S. high yield spread</strong>
+<div class="table-note">
+Credit
+</div>
+</td>
+<td>
+3.28 pct
+</td>
+<td>
+-18.00 bps
+</td>
+<td>
++9.00 bps
+</td>
+<td>
++20.00 bps
+</td>
+<td>
+-1.38
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,36 7,38 12,32 18,31 23,33 28,31 34,24 39,23 45,28 50,25 55,31 61,30 66,22 71,19 77,26 82,24 88,20 93,14 98,14 104,17 109,18 114,14 120,16 125,19 131,19 136,20 141,18 147,6 152,4 158,14"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>10Y breakeven inflation</strong>
+<div class="table-note">
+Inflation
+</div>
+</td>
+<td>
+2.30 pct
+</td>
+<td>
+-1.00 bps
+</td>
+<td>
+-3.00 bps
+</td>
+<td>
++1.00 bps
+</td>
+<td>
+-0.44
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,28 7,28 12,31 18,35 23,35 28,31 34,31 39,38 45,28 50,28 55,28 61,24 66,15 71,17 77,19 82,13 88,8 93,13 98,13 104,10 109,4 114,10 120,8 125,19 131,19 136,24 141,17 147,24 152,24 158,26"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>2Y Treasury yield</strong>
+<div class="table-note">
+Rates
+</div>
+</td>
+<td>
+3.82 pct
+</td>
+<td>
+-6.00 bps
+</td>
+<td>
+-1.00 bps
+</td>
+<td>
++35.00 bps
+</td>
+<td>
+-1.03
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,35 7,32 12,32 18,32 23,35 28,35 34,33 39,35 45,38 50,32 55,30 61,28 66,26 71,27 77,27 82,26 88,22 93,15 98,17 104,20 109,20 114,15 120,13 125,8 131,11 136,7 141,11 147,4 152,8 158,12"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>10Y Treasury yield</strong>
+<div class="table-note">
+Rates
+</div>
+</td>
+<td>
+4.35 pct
+</td>
+<td>
+-9.00 bps
+</td>
+<td>
++1.00 bps
+</td>
+<td>
++30.00 bps
+</td>
+<td>
+-1.06
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,32 7,29 12,30 18,30 23,33 28,32 34,32 39,34 45,38 50,32 55,31 61,29 66,26 71,24 77,27 82,24 88,20 93,16 98,15 104,19 109,21 114,17 120,17 125,7 131,11 136,7 141,11 147,5 152,4 158,10"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>10Y real yield</strong>
+<div class="table-note">
+Rates
+</div>
+</td>
+<td>
+2.04 pct
+</td>
+<td>
+-9.00 bps
+</td>
+<td>
++3.00 bps
+</td>
+<td>
++28.00 bps
+</td>
+<td>
+-1.05
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,32 7,31 12,32 18,31 23,33 28,33 34,33 39,36 45,38 50,34 55,33 61,31 66,29 71,31 77,33 82,29 88,27 93,23 98,21 104,25 109,28 114,26 120,24 125,13 131,13 136,9 141,13 147,8 152,4 158,11"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Broad U.S. dollar</strong>
+<div class="table-note">
+FX
+</div>
+</td>
+<td>
+120.89 index
+</td>
+<td>
++0.41%
+</td>
+<td>
++0.51%
+</td>
+<td>
++2.60%
+</td>
+<td>
++1.42
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,38 7,35 12,34 18,30 23,33 28,33 34,33 39,35 45,34 50,34 55,26 61,18 66,22 71,17 77,18 82,17 88,25 93,20 98,14 104,7 109,11 114,14 120,13 125,11 131,10 136,13 141,11 147,11 152,9 158,4"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>S&amp;P 500</strong>
+<div class="table-note">
+Equities
+</div>
+</td>
+<td>
+6,528.52 index
+</td>
+<td>
++2.91%
+</td>
+<td>
+-0.42%
+</td>
+<td>
+-4.23%
+</td>
+<td>
++1.47
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,7 7,8 12,6 18,10 23,7 28,4 34,6 39,7 45,7 50,11 55,8 61,10 66,15 71,12 77,13 82,13 88,19 93,21 98,17 104,16 109,22 114,23 120,28 125,24 131,25 136,23 141,30 147,36 152,38 158,27"></polyline>
+</svg>
+</td>
+</tr>
+<tr>
+<td>
+<strong>VIX</strong>
+<div class="table-note">
+Volatility
+</div>
+</td>
+<td>
+25.25 index
+</td>
+<td>
+-17.51%
+</td>
+<td>
+-6.31%
+</td>
+<td>
++7.13%
+</td>
+<td>
+-1.66
+</td>
+<td>
+<svg viewbox="0 0 160 42" class="sparkline" role="img" aria-label="Recent signal path">
+<polyline fill="none" stroke="#12495b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="2,33 7,32 12,34 18,30 23,33 28,38 34,36 39,32 45,28 50,23 55,29 61,22 66,8 71,18 77,19 82,21 88,13 93,14 98,23 104,26 109,19 114,22 120,15 125,16 131,14 136,18 141,13 147,4 152,5 158,19"></polyline>
+</svg>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Lag check
+</p>
+<h3 class="anchored">
+Does the active event still behave like the chosen scenario?
+</h3>
+<div class="table-scroll">
+<table class="dashboard-table lag-table">
+<thead>
+<tr>
+<th>
+Signal
+</th>
+<th>
+Expected
+</th>
+<th>
+t+1
+</th>
+<th>
+t+2
+</th>
+<th>
+t+5
+</th>
+<th>
+t+20
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>VIX</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-match">
+-2.81
+</td>
+<td class="lag-miss">
+9.47
+</td>
+<td class="lag-match">
+-5.70
+</td>
+<td class="lag-miss">
+22.78
+</td>
+</tr>
+<tr>
+<td>
+<strong>S&amp;P 500</strong>
+</td>
+<td>
+up
+</td>
+<td class="lag-miss">
+-0.08
+</td>
+<td class="lag-miss">
+-1.61
+</td>
+<td class="lag-miss">
+-1.21
+</td>
+<td class="lag-miss">
+-6.46
+</td>
+</tr>
+<tr>
+<td>
+<strong>U.S. high yield spread</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-miss">
+3.00
+</td>
+<td class="lag-miss">
+11.00
+</td>
+<td class="lag-miss">
+21.00
+</td>
+<td class="lag-miss">
+40.00
+</td>
+</tr>
+<tr>
+<td>
+<strong>Brent crude</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-miss">
+1.27
+</td>
+<td class="lag-miss">
+13.96
+</td>
+<td class="lag-miss">
+12.47
+</td>
+<td class="lag-miss">
+35.66
+</td>
+</tr>
+<tr>
+<td>
+<strong>Broad U.S. dollar</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-miss">
+0.47
+</td>
+<td class="lag-miss">
+0.92
+</td>
+<td class="lag-miss">
+1.16
+</td>
+<td class="lag-na">
+n/a
+</td>
+</tr>
+<tr>
+<td>
+<strong>2Y Treasury yield</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-miss">
+7.00
+</td>
+<td class="lag-miss">
+19.00
+</td>
+<td class="lag-miss">
+11.00
+</td>
+<td class="lag-miss">
+25.00
+</td>
+</tr>
+<tr>
+<td>
+<strong>10Y Treasury yield</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-miss">
+6.00
+</td>
+<td class="lag-miss">
+12.00
+</td>
+<td class="lag-miss">
+8.00
+</td>
+<td class="lag-miss">
+20.00
+</td>
+</tr>
+<tr>
+<td>
+<strong>10Y breakeven inflation</strong>
+</td>
+<td>
+down
+</td>
+<td class="lag-miss">
+3.00
+</td>
+<td class="lag-miss">
+5.00
+</td>
+<td class="lag-miss">
+3.00
+</td>
+<td class="lag-match">
+-2.00
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Macro backdrop
+</p>
+<h3 class="anchored">
+Slower-moving confirmation variables
+</h3>
+<div class="table-scroll">
+<table class="dashboard-table">
+<thead>
+<tr>
+<th>
+Macro signal
+</th>
+<th>
+Read
+</th>
+<th>
+Method
+</th>
+<th>
+Latest date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>CPI inflation</strong>
+<div class="table-note">
+Inflation
+</div>
+</td>
+<td>
++2.66%
+</td>
+<td>
+y/y
+</td>
+<td>
+2026-02-01
+</td>
+</tr>
+<tr>
+<td>
+<strong>PCE inflation</strong>
+<div class="table-note">
+Inflation
+</div>
+</td>
+<td>
++2.83%
+</td>
+<td>
+y/y
+</td>
+<td>
+2026-01-01
+</td>
+</tr>
+<tr>
+<td>
+<strong>Unemployment rate</strong>
+<div class="table-note">
+Labor
+</div>
+</td>
+<td>
+4.40 pct
+</td>
+<td>
+latest
+</td>
+<td>
+2026-02-01
+</td>
+</tr>
+<tr>
+<td>
+<strong>Nonfarm payrolls</strong>
+<div class="table-note">
+Labor
+</div>
+</td>
+<td>
+-92k
+</td>
+<td>
+m/m change
+</td>
+<td>
+2026-02-01
+</td>
+</tr>
+<tr>
+<td>
+<strong>Retail sales</strong>
+<div class="table-note">
+Demand
+</div>
+</td>
+<td>
++3.71%
+</td>
+<td>
+y/y
+</td>
+<td>
+2026-02-01
+</td>
+</tr>
+<tr>
+<td>
+<strong>Industrial production</strong>
+<div class="table-note">
+Supply
+</div>
+</td>
+<td>
++1.44%
+</td>
+<td>
+y/y
+</td>
+<td>
+2026-02-01
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Workflow
+</p>
+<h3 class="anchored">
+How this system is built every day
+</h3>
+<ol>
+<li>
+Pull official public series for energy, rates, inflation compensation, credit, FX, equities, and key macro releases.
+</li>
+<li>
+Compute 1d, 2d, 5d, and 20d moves and standardize them against trailing history.
+</li>
+<li>
+Score a small set of explicit scenarios using expected sign and signal importance.
+</li>
+<li>
+Use the active event date to test whether lagged market behavior still confirms the chosen shock narrative.
+</li>
+<li>
+Publish a static snapshot that is reproducible, reviewable, and easy to explain to a recruiter, hiring manager, or research lead.
+</li>
+</ol>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Step 1: Indicator summary
+</p>
+<h2 class="anchored">
+Macro indicator playbook
+</h2>
+<p>
+This table keeps the big-picture comparison in one place. It is designed as the bridge between macro study notes and the actual scenario desk.
+</p>
+<div class="table-scroll">
+<table class="dashboard-table indicator-table">
+<thead>
+<tr>
+<th>
+Indicator
+</th>
+<th>
+Definition
+</th>
+<th>
+Logic and method
+</th>
+<th>
+Industry use
+</th>
+<th>
+Our dashboard role
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>PMI</strong>
+<div class="table-note">
+Leading activity survey
+</div>
+</td>
+<td>
+Monthly diffusion surveys of purchasing managers that measure whether orders, output, employment, deliveries, and inventories are improving or worsening.
+</td>
+<td>
+<strong>Logic:</strong> Purchasing managers see the pipeline early, so PMI often moves before hard activity data. Higher new orders and output usually point to stronger growth; higher prices and slower deliveries can point to inflation or supply stress.<br><strong>Method:</strong> Diffusion index = % higher + 0.5 x % same. ISM manufacturing headline is an equal-weight composite of new orders, production, employment, supplier deliveries, and inventories.
+</td>
+<td>
+Used as a fast growth signal, a demand-versus-supply diagnostic, and a release-day cross-asset read for rates, equities, and FX.
+</td>
+<td>
+Track manufacturing, services, composite, new orders, prices, supplier deliveries, and employment. Use PMI as the leading demand-supply block in the scenario engine.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Claims</strong>
+<div class="table-note">
+Leading labor indicator
+</div>
+</td>
+<td>
+Weekly unemployment insurance filings. Initial claims capture new layoffs; continuing claims capture how hard it is for unemployed workers to find the next job.
+</td>
+<td>
+<strong>Logic:</strong> Layoffs usually appear in claims before they show up clearly in payrolls or the unemployment rate, so claims are an early warning signal for labor-market weakening.<br><strong>Method:</strong> Main desk measures are initial claims, continuing claims, the 4-week moving average, and insured unemployment relative to covered employment.
+</td>
+<td>
+Used for payroll nowcasts, recession monitoring, and judging whether labor softening reflects higher layoffs or slower re-employment.
+</td>
+<td>
+Track initial claims, continuing claims, and 4-week average. Feed them into the labor and demand blocks and compare against payrolls and PMI.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Payrolls</strong>
+<div class="table-note">
+Coincident labor indicator
+</div>
+</td>
+<td>
+Monthly nonfarm payroll employment from the BLS establishment survey. It measures jobs, not people, and is the main hard-data signal for labor demand.
+</td>
+<td>
+<strong>Logic:</strong> Firms add payroll jobs when demand is strong and trim hiring when growth slows. Payrolls matter because job growth supports labor income and consumption.<br><strong>Method:</strong> Headline payroll change is the month-over-month change in total nonfarm employment. Desks often focus on private payrolls, revisions, sector breadth, hours, and wages.
+</td>
+<td>
+Used to judge labor momentum, consumption support, sector rotation, and the Fed path. Revisions and private payrolls often matter as much as the headline.
+</td>
+<td>
+Track headline payrolls, private payrolls, 3-month average, average hourly earnings, and average weekly hours. Use payrolls as the core coincident labor block.
+</td>
+</tr>
+<tr>
+<td>
+<strong>CPI / PCE details</strong>
+<div class="table-note">
+Inflation composition block
+</div>
+</td>
+<td>
+Headline and core consumer inflation measures, plus the category detail that shows whether inflation is coming from goods, shelter, or nonhousing services.
+</td>
+<td>
+<strong>Logic:</strong> Inflation is persistent or temporary depending on the mix. Core goods often reflect supply chains and goods demand, shelter moves with long lags, and core services ex housing is more tied to wages and sticky demand.<br><strong>Method:</strong> Monthly inflation can be read as m/m, y/y, or 3m and 6m annualized. Contribution analysis uses category weights times category inflation to explain the headline.
+</td>
+<td>
+Used to map CPI releases into core PCE, diagnose persistence, and decide whether the Fed should stay restrictive or can ease.
+</td>
+<td>
+Track headline/core CPI and PCE, shelter, OER, core goods, core services ex housing, and a small set of trimmed or median trend measures.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Yield curve</strong>
+<div class="table-note">
+Rates and recession signal
+</div>
+</td>
+<td>
+The shape of Treasury yields across maturities, especially the slope between short and long yields such as 10Y-3M or 10Y-2Y.
+</td>
+<td>
+<strong>Logic:</strong> Long yields reflect expected future short rates plus a term premium. An inverted curve usually means policy is tight now and the market expects weaker growth and lower rates later.<br><strong>Method:</strong> Core measures are level, slope, and curvature. Recession models often use a probability function of the term spread, especially the 10Y-3M spread.
+</td>
+<td>
+Used for recession risk, Fed-path interpretation, curve trades, and separating growth fear from inflation or term-premium pressure.
+</td>
+<td>
+Track 2Y, 10Y, real yields, 10Y-2Y, 10Y-3M, and breakeven inflation. Use the curve as the rates anchor for growth, Fed, and financial-condition scenarios.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Credit spreads</strong>
+<div class="table-note">
+Financial transmission signal
+</div>
+</td>
+<td>
+The extra yield investors require to hold corporate debt over a risk-free benchmark, usually measured with option-adjusted spreads.
+</td>
+<td>
+<strong>Logic:</strong> Wider spreads reflect tighter financing, more risk aversion, higher expected losses, or lower liquidity. They can both signal and transmit slower growth.<br><strong>Method:</strong> Spread = corporate yield minus risk-free yield, often expressed as option-adjusted spread. Advanced work separates default risk from excess risk premium.
+</td>
+<td>
+Used to monitor financial conditions, recession risk, refinancing stress, and whether risk markets confirm or reject the rates and equity story.
+</td>
+<td>
+Track IG and HY OAS, quality buckets where possible, and compare spread moves with equities, the dollar, and the yield curve.
+</td>
+</tr>
+<tr>
+<td>
+<strong>Financial conditions</strong>
+<div class="table-note">
+Cross-asset transmission index
+</div>
+</td>
+<td>
+A combined read of rates, credit, equities, volatility, the dollar, and funding conditions that captures how easy or hard it is to finance spending and risk-taking.
+</td>
+<td>
+<strong>Logic:</strong> Tighter conditions raise borrowing costs, lower asset prices, and reduce risk appetite, which then slows spending and investment with a lag.<br><strong>Method:</strong> Institutions build standardized weighted indices such as the Chicago Fed NFCI and ANFCI or the St.&nbsp;Louis Fed Financial Stress Index.
+</td>
+<td>
+Used to judge whether markets are amplifying or offsetting Fed policy and whether a shock is becoming a real macro tightening event.
+</td>
+<td>
+Track NFCI, ANFCI, STLFSI4, rates, credit spreads, equities, the dollar, and volatility. Use this as the main bridge from market moves to real-economy implications.
+</td>
+</tr>
+<tr>
+<td>
+<strong>GDP nowcasts</strong>
+<div class="table-note">
+Real-time growth estimate
+</div>
+</td>
+<td>
+Model-based estimates of current-quarter GDP growth built before the official GDP release arrives.
+</td>
+<td>
+<strong>Logic:</strong> GDP arrives late, but its components show up throughout the quarter in monthly releases. A nowcast turns those partial signals into one running growth estimate.<br><strong>Method:</strong> Atlanta Fed GDPNow uses component-level bridge equations and related models; the New York Fed Staff Nowcast uses a dynamic factor framework with recent robustness updates.
+</td>
+<td>
+Used as the running growth anchor, a disciplined benchmark for release-by-release updates, and a check against internal house views.
+</td>
+<td>
+Track Atlanta Fed GDPNow, NY Fed Staff Nowcast, their change after each release, and which GDP component drove the update.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="surface">
+<p class="eyebrow">
+Step 2: Dashboard blocks
+</p>
+<h3 class="anchored">
+How each indicator becomes a reusable block in the desk
+</h3>
+<div class="indicator-grid">
+<div class="indicator-card">
+<p class="eyebrow">
+PMI
+</p>
+<h3 class="anchored">
+Leading activity survey
+</h3>
+<p>
+Track manufacturing, services, composite, new orders, prices, supplier deliveries, and employment. Use PMI as the leading demand-supply block in the scenario engine.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> ISM and S&amp;P Global releases; FRED mirrors can be added later where available.<br><strong>Cadence:</strong> Monthly, with flash estimates for S&amp;P Global.<br><strong>Status:</strong> Playbook block now; live ingestion next wave.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+Claims
+</p>
+<h3 class="anchored">
+Leading labor indicator
+</h3>
+<p>
+Track initial claims, continuing claims, and 4-week average. Feed them into the labor and demand blocks and compare against payrolls and PMI.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> U.S. Department of Labor weekly release and FRED series such as ICSA and CCSA.<br><strong>Cadence:</strong> Weekly.<br><strong>Status:</strong> Ready for live FRED integration in the next dashboard revision.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+Payrolls
+</p>
+<h3 class="anchored">
+Coincident labor indicator
+</h3>
+<p>
+Track headline payrolls, private payrolls, 3-month average, average hourly earnings, and average weekly hours. Use payrolls as the core coincident labor block.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> BLS Employment Situation and FRED series such as PAYEMS.<br><strong>Cadence:</strong> Monthly.<br><strong>Status:</strong> Live now through FRED for the headline; richer labor block next wave.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+CPI / PCE details
+</p>
+<h3 class="anchored">
+Inflation composition block
+</h3>
+<p>
+Track headline/core CPI and PCE, shelter, OER, core goods, core services ex housing, and a small set of trimmed or median trend measures.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> BLS CPI, BEA PCE, Cleveland Fed median and trimmed measures, NY Fed MCT.<br><strong>Cadence:</strong> Monthly, with some weekly market-based inflation signals alongside.<br><strong>Status:</strong> Headline CPI and PCE live now; component expansion next wave.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+Yield curve
+</p>
+<h3 class="anchored">
+Rates and recession signal
+</h3>
+<p>
+Track 2Y, 10Y, real yields, 10Y-2Y, 10Y-3M, and breakeven inflation. Use the curve as the rates anchor for growth, Fed, and financial-condition scenarios.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> U.S. Treasury and FRED.<br><strong>Cadence:</strong> Daily market data.<br><strong>Status:</strong> Live now.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+Credit spreads
+</p>
+<h3 class="anchored">
+Financial transmission signal
+</h3>
+<p>
+Track IG and HY OAS, quality buckets where possible, and compare spread moves with equities, the dollar, and the yield curve.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> FRED ICE BofA spread series and Federal Reserve research on excess bond premium.<br><strong>Cadence:</strong> Daily market data.<br><strong>Status:</strong> HY spread live now; fuller credit stack next wave.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+Financial conditions
+</p>
+<h3 class="anchored">
+Cross-asset transmission index
+</h3>
+<p>
+Track NFCI, ANFCI, STLFSI4, rates, credit spreads, equities, the dollar, and volatility. Use this as the main bridge from market moves to real-economy implications.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> Chicago Fed, St.&nbsp;Louis Fed, FRED, and standard market data.<br><strong>Cadence:</strong> Weekly index updates plus daily market components.<br><strong>Status:</strong> Core market components live now; formal index integration next wave.
+</p>
+</div>
+<div class="indicator-card">
+<p class="eyebrow">
+GDP nowcasts
+</p>
+<h3 class="anchored">
+Real-time growth estimate
+</h3>
+<p>
+Track Atlanta Fed GDPNow, NY Fed Staff Nowcast, their change after each release, and which GDP component drove the update.
+</p>
+<p class="table-note">
+<strong>Public source:</strong> Atlanta Fed GDPNow and NY Fed Staff Nowcast public pages.<br><strong>Cadence:</strong> Several times per month as source data arrive.<br><strong>Status:</strong> Playbook block now; live scraper/API layer next wave.
+</p>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Built with Quarto for research, defense, and recruiter review</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

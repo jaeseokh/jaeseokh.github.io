@@ -1,0 +1,73 @@
+---
+title: "Macro Scenario Monitoring"
+subtitle: "Vol. 1 | Investment branch"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+<style>
+.investment-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.investment-card {
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(25, 48, 56, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.investment-card h3 {
+  margin: 0.15rem 0 0.55rem;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.page-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+</style>
+
+<div class="surface">
+<p class="eyebrow">Macro Scenario Monitoring</p>
+<h2>Vol. 1 | Investment branch</h2>
+<p>This branch treats the U.S.-Iran war as a sell-side macro forecasting problem. The aim is to use a transparent scenario model, daily market confirmation, and core macro indicators to decide whether the desk should revise its growth, inflation, Fed, and cross-asset view.</p>
+<div class="page-actions">
+<a href="working_papers.html">Back to Vol. 1 hub</a>
+<a href="macro_scenario_commodity.html">Open commodity branch</a>
+<a href="generated/snapshot.json">Snapshot JSON</a>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Sell-side use</p>
+<h3>What this branch is built to show</h3>
+<div class="investment-grid">
+<div class="investment-card">
+<h3>Forecast revision</h3>
+<p>The desk updates the base case and alternative scenarios for growth, inflation, and the Fed as new information arrives.</p>
+</div>
+<div class="investment-card">
+<h3>Desk briefing</h3>
+<p>The output is meant to brief sales, trading, and clients with a clear answer to what changed and why it matters.</p>
+</div>
+<div class="investment-card">
+<h3>Cross-asset mapping</h3>
+<p>Rates, FX, credit, and equities are used as confirmation channels, not as disconnected charts.</p>
+</div>
+</div>
+<p class="page-note">This is the live branch of Vol. 1. The snapshot below is rebuilt from public data and explicit scenario scoring.</p>
+</div>
+
+{{< include generated/decision_risk_ai_snapshot.md >}}
+
+{{< include generated/indicator_playbook.md >}}

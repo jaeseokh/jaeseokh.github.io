@@ -1,0 +1,242 @@
+---
+title: "Macro Scenario Monitoring"
+subtitle: "Vol. 1 | Commodity branch"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+<style>
+.commodity-grid,
+.scenario-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.commodity-card,
+.scenario-card {
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(25, 48, 56, 0.1);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.commodity-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 920px;
+}
+
+.commodity-table th,
+.commodity-table td {
+  padding: 0.8rem 0.85rem;
+  border-bottom: 1px solid rgba(25, 48, 56, 0.1);
+  vertical-align: top;
+}
+
+.commodity-table thead th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.page-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+</style>
+
+<div class="surface">
+<p class="eyebrow">Macro Scenario Monitoring</p>
+<h2>Vol. 1 | Commodity branch</h2>
+<p>This branch focuses on energy and food as the first transmission layer of the U.S.-Iran war scenario. The desk question is not only whether prices move, but whether physical evidence, logistics, inventories, and policy action confirm a durable macro shock.</p>
+<div class="page-actions">
+<a href="working_papers.html">Back to Vol. 1 hub</a>
+<a href="macro_scenario_investment.html">Open investment branch</a>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Desk question</p>
+<h3>What a sell-side macro desk needs from commodity analysis</h3>
+<div class="commodity-grid">
+<div class="commodity-card">
+<h3>Physical read</h3>
+<p>Is the shock real? The desk checks inventories, storage, exports, refinery runs, freight, crop conditions, acreage, and bottlenecks before treating the price move as fundamental.</p>
+</div>
+<div class="commodity-card">
+<h3>Macro read</h3>
+<p>How does the shock pass into inflation, real income, trade balances, FX, and growth? This is where commodity analysis becomes macro economics.</p>
+</div>
+<div class="commodity-card">
+<h3>Client read</h3>
+<p>What should clients do with this information? The desk writes what changed, what confirms it, what could invalidate it, and which countries or assets are exposed.</p>
+</div>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Scenario ladder</p>
+<h3>Vol. 1 commodity scenarios</h3>
+<div class="scenario-grid">
+<div class="scenario-card">
+<p class="eyebrow">Scenario A</p>
+<h3>Pre-war baseline</h3>
+<p>Commodity risk premium stays manageable. Oil and food prices reflect normal supply-demand conditions more than conflict escalation.</p>
+</div>
+<div class="scenario-card">
+<p class="eyebrow">Scenario B</p>
+<h3>Current war shock</h3>
+<p>Oil, shipping, insurance, fertilizer, and food-security channels all move higher. The desk tests whether the physical data confirm the price move.</p>
+</div>
+<div class="scenario-card">
+<p class="eyebrow">Scenario C</p>
+<h3>Post-war relief</h3>
+<p>Risk premia fade, logistics normalize, curves flatten back, and the inflation impulse weakens faster than the fear premium suggested.</p>
+</div>
+<div class="scenario-card">
+<p class="eyebrow">Scenario D</p>
+<h3>Post-war fragmentation</h3>
+<p>Even after active conflict cools, sanctions, route shifts, and energy-security policy keep commodity premia and inflation risk structurally higher.</p>
+</div>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Decision model</p>
+<h3>How the commodity branch makes a call</h3>
+<div class="table-scroll">
+<table class="commodity-table">
+<thead>
+<tr>
+<th>Layer</th>
+<th>What the desk checks</th>
+<th>Examples</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shock type</strong></td>
+<td>Classify the move as supply, demand, logistics, sanctions, weather, or policy.</td>
+<td>War escalation, shipping disruption, export ban, drought, refinery outage.</td>
+<td>Different shocks produce very different inflation and growth paths.</td>
+</tr>
+<tr>
+<td><strong>Physical confirmation</strong></td>
+<td>Check whether the market move is supported by actual balance evidence.</td>
+<td>Inventories, storage, refinery runs, acreage, yield expectations, export flows.</td>
+<td>This helps separate a durable shortage from a temporary fear premium.</td>
+</tr>
+<tr>
+<td><strong>Curve and spread confirmation</strong></td>
+<td>Watch futures structure and product spreads.</td>
+<td>Brent time spreads, gasoline and diesel cracks, grain nearby-deferred spreads.</td>
+<td>A tight front end often confirms real near-term scarcity.</td>
+</tr>
+<tr>
+<td><strong>Macro transmission</strong></td>
+<td>Map the commodity shock into inflation, income, trade, and policy.</td>
+<td>Gasoline pass-through, fertilizer into food, importer/exporter FX stress.</td>
+<td>This is the bridge from commodity market reading to macro forecast revision.</td>
+</tr>
+<tr>
+<td><strong>Desk output</strong></td>
+<td>Write what changed, what confirms it, and what would invalidate the call.</td>
+<td>Client note, sales/trading brief, country-exposure table, inflation warning.</td>
+<td>Sell-side research must explain the call, not only state the price move.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="surface">
+<p class="eyebrow">Signals and indices</p>
+<h3>Main public reports and market series the branch should use</h3>
+<div class="table-scroll">
+<table class="commodity-table">
+<thead>
+<tr>
+<th>Bucket</th>
+<th>Signal or report</th>
+<th>What it tells the desk</th>
+<th>Cadence</th>
+<th>Why it matters for the sell-side note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Oil</strong></td>
+<td>Brent, WTI, and crude time spreads</td>
+<td>Spot direction, near-term tightness, and curve structure.</td>
+<td>Daily</td>
+<td>Separates a simple headline price move from a true shortage story.</td>
+</tr>
+<tr>
+<td><strong>Oil products</strong></td>
+<td>Gasoline and diesel cracks, retail gasoline</td>
+<td>Refining tightness and direct pass-through into inflation.</td>
+<td>Daily / weekly</td>
+<td>Clients care about CPI transmission, not only crude itself.</td>
+</tr>
+<tr>
+<td><strong>Oil balance</strong></td>
+<td>EIA Weekly Petroleum Status Report, EIA STEO, IEA Oil Market Report, OPEC MOMR</td>
+<td>Inventories, refinery runs, supply-demand balance, spare capacity, export changes.</td>
+<td>Weekly / monthly</td>
+<td>These reports anchor the fundamental read behind the price narrative.</td>
+</tr>
+<tr>
+<td><strong>Natural gas</strong></td>
+<td>Henry Hub, LNG exports, EIA storage report</td>
+<td>Storage tightness, export pull, weather sensitivity, domestic balance.</td>
+<td>Daily / weekly</td>
+<td>Gas often matters through utilities, power, and LNG-linked global spillovers.</td>
+</tr>
+<tr>
+<td><strong>Positioning</strong></td>
+<td>CFTC Commitments of Traders</td>
+<td>Whether price action is being amplified by speculative positioning.</td>
+<td>Weekly</td>
+<td>Helps explain overshoots and unstable reversals.</td>
+</tr>
+<tr>
+<td><strong>Grains</strong></td>
+<td>Corn, wheat, soy futures and nearby-deferred spreads</td>
+<td>Food risk premium, weather sensitivity, and tightness at the front of the curve.</td>
+<td>Daily</td>
+<td>Links food shocks to inflation and importer stress.</td>
+</tr>
+<tr>
+<td><strong>Crop balance</strong></td>
+<td>USDA WASDE, Grain Stocks, Crop Progress, Export Sales</td>
+<td>Production, stocks-to-use, crop condition, export demand, and shipment pace.</td>
+<td>Weekly / monthly / quarterly</td>
+<td>These are the core physical reports for a grain-based macro call.</td>
+</tr>
+<tr>
+<td><strong>Global food</strong></td>
+<td>FAO Food Price Index</td>
+<td>Broad international food-price pressure.</td>
+<td>Monthly</td>
+<td>Useful when a sell-side note needs a global inflation and EM vulnerability angle.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="page-note">Best starting rule: treat a commodity shock as credible only when physical reports, curve structure, and macro transmission all point in the same direction.</p>
+</div>

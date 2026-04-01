@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-04-01T12:26:33.841813-04:00",
+  "generated_at": "2026-04-01T13:58:50.709145-04:00",
   "summary": {
     "dominant_scenario": "De-escalation / relief",
-    "dominant_probability": 0.5832599486170562,
+    "dominant_probability": 0.4436834394905161,
     "runner_up_scenario": "Growth drag / trade shock",
-    "runner_up_probability": 0.25552923601360644,
+    "runner_up_probability": 0.24292255555447262,
     "question_map": [
       {
         "question": "demand",
-        "score": -0.04794115475140926,
+        "score": -0.17450699412325543,
         "reading": "mixed"
       },
       {
         "question": "supply",
-        "score": 0.007115093276339905,
+        "score": -0.1649604563069413,
         "reading": "mixed"
       },
       {
         "question": "inflation",
-        "score": -0.24585644311135998,
+        "score": -0.02789959192498004,
         "reading": "mixed"
       },
       {
         "question": "financial_conditions",
-        "score": -0.145658977267144,
+        "score": 0.08732192245097573,
         "reading": "mixed"
       },
       {
         "question": "fed",
-        "score": -0.3212596382647018,
-        "reading": "more dovish / earlier easing"
+        "score": -0.12426837750082184,
+        "reading": "hold / mixed"
       }
     ]
   },
@@ -50,7 +50,7 @@
       "scenario_id": "deescalation_relief",
       "title": "De-escalation / relief",
       "description": "Oil risk premium fades, volatility falls, credit tightens back in, and risk assets recover as markets price less near-term disruption.",
-      "raw_score": 0.44291484543722126,
+      "raw_score": 0.22516724566149962,
       "five_question_scores": {
         "demand": 0.45,
         "supply": 0.35,
@@ -59,14 +59,6 @@
         "fed": -0.45
       },
       "contributions": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 1.0,
-          "composite_z": -2.5180032193824813,
-          "contribution": 0.8507886295800053
-        },
         {
           "series_id": "VIXCLS",
           "label": "VIX",
@@ -90,6 +82,14 @@
           "weight": 0.95,
           "composite_z": -1.3790714404110058,
           "contribution": 0.5677994734026479
+        },
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.5630771933058143
         },
         {
           "series_id": "DTWEXBGS",
@@ -124,32 +124,24 @@
           "contribution": 0.09654872436264934
         },
         {
-          "series_id": "DHHNGSP",
-          "label": "Henry Hub gas",
-          "expected_direction": -1,
-          "weight": 0.75,
-          "composite_z": -0.2189131587010958,
-          "contribution": 0.08176615527058759
-        },
-        {
           "series_id": "DFII10",
           "label": "10Y real yield",
           "expected_direction": -1,
           "weight": 0.15,
           "composite_z": -1.0533566883259573,
           "contribution": 0.07242568630220933
+        },
+        {
+          "series_id": "DHHNGSP",
+          "label": "Henry Hub gas",
+          "expected_direction": -1,
+          "weight": 0.75,
+          "composite_z": -0.185557794596558,
+          "contribution": 0.0693851996254304
         }
       ],
-      "probability": 0.5832599486170562,
+      "probability": 0.4436834394905161,
       "top_confirms": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 1.0,
-          "composite_z": -2.5180032193824813,
-          "contribution": 0.8507886295800053
-        },
         {
           "series_id": "VIXCLS",
           "label": "VIX",
@@ -165,9 +157,25 @@
           "weight": 0.95,
           "composite_z": 1.4653391703413625,
           "contribution": 0.5934610650961899
+        },
+        {
+          "series_id": "BAMLH0A0HYM2",
+          "label": "U.S. high yield spread",
+          "expected_direction": -1,
+          "weight": 0.95,
+          "composite_z": -1.3790714404110058,
+          "contribution": 0.5677994734026479
         }
       ],
       "top_diverges": [
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.5630771933058143
+        },
         {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
@@ -182,7 +190,7 @@
       "scenario_id": "growth_drag_trade_shock",
       "title": "Growth drag / trade shock",
       "description": "Trade friction and weaker global demand hit risky assets, widen credit spreads, lower yields, and pull energy prices down through softer demand.",
-      "raw_score": 0.07611656179293479,
+      "raw_score": -0.042552151183971196,
       "five_question_scores": {
         "demand": -0.9,
         "supply": -0.25,
@@ -216,14 +224,6 @@
           "contribution": -0.5677994734026479
         },
         {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 0.65,
-          "composite_z": -2.5180032193824813,
-          "contribution": 0.5530126092270035
-        },
-        {
           "series_id": "DGS2",
           "label": "2Y Treasury yield",
           "expected_direction": -1,
@@ -248,6 +248,14 @@
           "contribution": 0.3862703269451164
         },
         {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 0.65,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.3660001756487793
+        },
+        {
           "series_id": "DGS10",
           "label": "10Y Treasury yield",
           "expected_direction": -1,
@@ -268,20 +276,12 @@
           "label": "Henry Hub gas",
           "expected_direction": -1,
           "weight": 0.4,
-          "composite_z": -0.2189131587010958,
-          "contribution": 0.043608616144313384
+          "composite_z": -0.185557794596558,
+          "contribution": 0.03700543980022954
         }
       ],
-      "probability": 0.25552923601360644,
+      "probability": 0.24292255555447262,
       "top_confirms": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 0.65,
-          "composite_z": -2.5180032193824813,
-          "contribution": 0.5530126092270035
-        },
         {
           "series_id": "DGS2",
           "label": "2Y Treasury yield",
@@ -297,6 +297,14 @@
           "weight": 0.65,
           "composite_z": 1.4155387375367996,
           "contribution": 0.39602950187475383
+        },
+        {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": -1,
+          "weight": 0.8,
+          "composite_z": -1.0533566883259573,
+          "contribution": 0.3862703269451164
         }
       ],
       "top_diverges": [
@@ -330,7 +338,7 @@
       "scenario_id": "geopolitical_energy_shock",
       "title": "Geopolitical energy shock",
       "description": "Energy and shipping disruption lifts oil and gas, pushes inflation compensation higher, tightens financial conditions, and delays Fed easing.",
-      "raw_score": -0.4334915288783932,
+      "raw_score": -0.22654985168752395,
       "five_question_scores": {
         "demand": -0.35,
         "supply": -0.95,
@@ -339,14 +347,6 @@
         "fed": 0.7
       },
       "contributions": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": 1,
-          "weight": 1.0,
-          "composite_z": -2.5180032193824813,
-          "contribution": -0.8507886295800053
-        },
         {
           "series_id": "VIXCLS",
           "label": "VIX",
@@ -362,6 +362,14 @@
           "weight": 0.95,
           "composite_z": 1.4653391703413625,
           "contribution": -0.5934610650961899
+        },
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": 1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": 0.5630771933058143
         },
         {
           "series_id": "BAMLH0A0HYM2",
@@ -416,12 +424,20 @@
           "label": "Henry Hub gas",
           "expected_direction": 1,
           "weight": 0.85,
-          "composite_z": -0.2189131587010958,
-          "contribution": -0.09266830930666592
+          "composite_z": -0.185557794596558,
+          "contribution": -0.07863655957548778
         }
       ],
-      "probability": 0.0811840359107683,
+      "probability": 0.1605728710859835,
       "top_confirms": [
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": 1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": 0.5630771933058143
+        },
         {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
@@ -432,14 +448,6 @@
         }
       ],
       "top_diverges": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": 1,
-          "weight": 1.0,
-          "composite_z": -2.5180032193824813,
-          "contribution": -0.8507886295800053
-        },
         {
           "series_id": "VIXCLS",
           "label": "VIX",
@@ -455,6 +463,14 @@
           "weight": 0.95,
           "composite_z": 1.4653391703413625,
           "contribution": -0.5934610650961899
+        },
+        {
+          "series_id": "BAMLH0A0HYM2",
+          "label": "U.S. high yield spread",
+          "expected_direction": 1,
+          "weight": 0.8,
+          "composite_z": -1.3790714404110058,
+          "contribution": -0.4781469249706509
         }
       ]
     },
@@ -462,7 +478,7 @@
       "scenario_id": "stagflation_persistence",
       "title": "Stagflation persistence",
       "description": "Inflation pressure stays alive while growth sentiment erodes, leaving the Fed tighter for longer and keeping both rates and risk premia elevated.",
-      "raw_score": -0.43987255281741405,
+      "raw_score": -0.24854082375862663,
       "five_question_scores": {
         "demand": -0.65,
         "supply": -0.7,
@@ -476,8 +492,8 @@
           "label": "Brent crude",
           "expected_direction": 1,
           "weight": 1.0,
-          "composite_z": -2.5180032193824813,
-          "contribution": -0.8507886295800053
+          "composite_z": 1.2746551813416716,
+          "contribution": 0.5630771933058143
         },
         {
           "series_id": "BAMLH0A0HYM2",
@@ -548,12 +564,20 @@
           "label": "Henry Hub gas",
           "expected_direction": 1,
           "weight": 0.7,
-          "composite_z": -0.2189131587010958,
-          "contribution": -0.07631507825254841
+          "composite_z": -0.185557794596558,
+          "contribution": -0.0647595196504017
         }
       ],
-      "probability": 0.08002677945856898,
+      "probability": 0.15282113386902782,
       "top_confirms": [
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": 1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": 0.5630771933058143
+        },
         {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
@@ -564,14 +588,6 @@
         }
       ],
       "top_diverges": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": 1,
-          "weight": 1.0,
-          "composite_z": -2.5180032193824813,
-          "contribution": -0.8507886295800053
-        },
         {
           "series_id": "BAMLH0A0HYM2",
           "label": "U.S. high yield spread",
@@ -587,6 +603,14 @@
           "weight": 0.75,
           "composite_z": 1.4653391703413625,
           "contribution": -0.468521893496992
+        },
+        {
+          "series_id": "DGS10",
+          "label": "10Y Treasury yield",
+          "expected_direction": 1,
+          "weight": 0.9,
+          "composite_z": -1.0646028326509012,
+          "contribution": -0.4384245052289561
         }
       ]
     }
@@ -594,28 +618,28 @@
   "five_questions": [
     {
       "question": "demand",
-      "score": -0.04794115475140926,
+      "score": -0.17450699412325543,
       "reading": "mixed"
     },
     {
       "question": "supply",
-      "score": 0.007115093276339905,
+      "score": -0.1649604563069413,
       "reading": "mixed"
     },
     {
       "question": "inflation",
-      "score": -0.24585644311135998,
+      "score": -0.02789959192498004,
       "reading": "mixed"
     },
     {
       "question": "financial_conditions",
-      "score": -0.145658977267144,
+      "score": 0.08732192245097573,
       "reading": "mixed"
     },
     {
       "question": "fed",
-      "score": -0.3212596382647018,
-      "reading": "more dovish / earlier easing"
+      "score": -0.12426837750082184,
+      "reading": "hold / mixed"
     }
   ]
 }
