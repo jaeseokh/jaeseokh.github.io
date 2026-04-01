@@ -1,0 +1,7 @@
+series_id,label,category,unit,latest_date,latest_value,snapshot_value,snapshot_label
+CPIAUCSL,CPI inflation,Inflation,pct,2026-02-01,327.46,2.6645890876940963,y/y
+PCEPI,PCE inflation,Inflation,pct,2026-01-01,128.969,2.832151941124403,y/y
+UNRATE,Unemployment rate,Labor,pct,2026-02-01,4.4,4.4,latest
+PAYEMS,Nonfarm payrolls,Labor,k jobs,2026-02-01,158466.0,-92.0,m/m change
+RSAFS,Retail sales,Demand,pct,2026-02-01,738366.0,3.7144518641087085,y/y
+INDPRO,Industrial production,Supply,pct,2026-02-01,102.551,1.4359149865528271,y/y
