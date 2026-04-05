@@ -1,368 +1,66 @@
 {
-  "generated_at": "2026-04-01T13:58:50.709145-04:00",
+  "generated_at": "2026-04-04T22:52:11.107223-04:00",
   "summary": {
-    "dominant_scenario": "De-escalation / relief",
-    "dominant_probability": 0.4436834394905161,
-    "runner_up_scenario": "Growth drag / trade shock",
-    "runner_up_probability": 0.24292255555447262,
+    "dominant_scenario": "Inflation shock",
+    "dominant_probability": 0.3111711959179624,
+    "runner_up_scenario": "Stagflation",
+    "runner_up_probability": 0.2643047191252843,
     "question_map": [
       {
-        "question": "demand",
-        "score": -0.17450699412325543,
-        "reading": "mixed"
+        "question": "energy_input_pressure",
+        "score": 0.38041008994455267,
+        "reading": "higher"
       },
       {
-        "question": "supply",
-        "score": -0.1649604563069413,
-        "reading": "mixed"
+        "question": "inflation_pressure",
+        "score": 0.38148249097571885,
+        "reading": "higher"
       },
       {
-        "question": "inflation",
-        "score": -0.02789959192498004,
-        "reading": "mixed"
+        "question": "financial_tightening",
+        "score": 0.39592439074904084,
+        "reading": "tighter"
       },
       {
-        "question": "financial_conditions",
-        "score": 0.08732192245097573,
-        "reading": "mixed"
+        "question": "growth_drag",
+        "score": 0.39838692214195337,
+        "reading": "higher"
       },
       {
-        "question": "fed",
-        "score": -0.12426837750082184,
-        "reading": "hold / mixed"
+        "question": "policy_offset",
+        "score": -0.17096497794987825,
+        "reading": "mixed"
       }
     ]
   },
   "active_event": {
-    "title": "Middle East energy and shipping disruption",
+    "title": "U.S.-Iran war and regional escalation",
     "start_date": "2026-03-10",
-    "primary_scenario_id": "geopolitical_energy_shock",
+    "primary_scenario_id": "inflation_shock",
     "tags": [
+      "war",
       "energy",
       "shipping",
       "inflation",
+      "growth",
       "geopolitics"
     ],
-    "note": "This file is intentionally manual. Update it when the event lens changes."
+    "note": "This event lens is manual by design. The monitor treats the war as the cause, the transmission channels as the confounded middle, and the macro conclusions as the object that is updated daily."
   },
   "scenarios": [
     {
-      "scenario_id": "deescalation_relief",
-      "title": "De-escalation / relief",
-      "description": "Oil risk premium fades, volatility falls, credit tightens back in, and risk assets recover as markets price less near-term disruption.",
-      "raw_score": 0.22516724566149962,
+      "scenario_id": "inflation_shock",
+      "title": "Inflation shock",
+      "description": "War escalation persists mainly through energy, shipping, and input costs, keeping inflation compensation firm and delaying policy relief even while growth damage stays limited.",
+      "raw_score": 0.11664881141930437,
       "five_question_scores": {
-        "demand": 0.45,
-        "supply": 0.35,
-        "inflation": -0.45,
-        "financial_conditions": -0.85,
-        "fed": -0.45
+        "energy_input_pressure": 0.95,
+        "inflation_pressure": 1.0,
+        "financial_tightening": 0.25,
+        "growth_drag": 0.15,
+        "policy_offset": -0.4
       },
       "contributions": [
-        {
-          "series_id": "VIXCLS",
-          "label": "VIX",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": -1.6564708287671657,
-          "contribution": 0.6455510010472157
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": 1,
-          "weight": 0.95,
-          "composite_z": 1.4653391703413625,
-          "contribution": 0.5934610650961899
-        },
-        {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": -1.3790714404110058,
-          "contribution": 0.5677994734026479
-        },
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 1.0,
-          "composite_z": 1.2746551813416716,
-          "contribution": -0.5630771933058143
-        },
-        {
-          "series_id": "DTWEXBGS",
-          "label": "Broad U.S. dollar",
-          "expected_direction": -1,
-          "weight": 0.6,
-          "composite_z": 1.4155387375367996,
-          "contribution": -0.3655656940382343
-        },
-        {
-          "series_id": "DGS2",
-          "label": "2Y Treasury yield",
-          "expected_direction": -1,
-          "weight": 0.55,
-          "composite_z": -1.0313229602692187,
-          "contribution": 0.2608895287618719
-        },
-        {
-          "series_id": "DGS10",
-          "label": "10Y Treasury yield",
-          "expected_direction": -1,
-          "weight": 0.2,
-          "composite_z": -1.0646028326509012,
-          "contribution": 0.09742766782865692
-        },
-        {
-          "series_id": "T10YIE",
-          "label": "10Y breakeven inflation",
-          "expected_direction": -1,
-          "weight": 0.45,
-          "composite_z": -0.4358778190429024,
-          "contribution": 0.09654872436264934
-        },
-        {
-          "series_id": "DFII10",
-          "label": "10Y real yield",
-          "expected_direction": -1,
-          "weight": 0.15,
-          "composite_z": -1.0533566883259573,
-          "contribution": 0.07242568630220933
-        },
-        {
-          "series_id": "DHHNGSP",
-          "label": "Henry Hub gas",
-          "expected_direction": -1,
-          "weight": 0.75,
-          "composite_z": -0.185557794596558,
-          "contribution": 0.0693851996254304
-        }
-      ],
-      "probability": 0.4436834394905161,
-      "top_confirms": [
-        {
-          "series_id": "VIXCLS",
-          "label": "VIX",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": -1.6564708287671657,
-          "contribution": 0.6455510010472157
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": 1,
-          "weight": 0.95,
-          "composite_z": 1.4653391703413625,
-          "contribution": 0.5934610650961899
-        },
-        {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": -1.3790714404110058,
-          "contribution": 0.5677994734026479
-        }
-      ],
-      "top_diverges": [
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 1.0,
-          "composite_z": 1.2746551813416716,
-          "contribution": -0.5630771933058143
-        },
-        {
-          "series_id": "DTWEXBGS",
-          "label": "Broad U.S. dollar",
-          "expected_direction": -1,
-          "weight": 0.6,
-          "composite_z": 1.4155387375367996,
-          "contribution": -0.3655656940382343
-        }
-      ]
-    },
-    {
-      "scenario_id": "growth_drag_trade_shock",
-      "title": "Growth drag / trade shock",
-      "description": "Trade friction and weaker global demand hit risky assets, widen credit spreads, lower yields, and pull energy prices down through softer demand.",
-      "raw_score": -0.042552151183971196,
-      "five_question_scores": {
-        "demand": -0.9,
-        "supply": -0.25,
-        "inflation": -0.55,
-        "financial_conditions": 0.85,
-        "fed": -0.75
-      },
-      "contributions": [
-        {
-          "series_id": "VIXCLS",
-          "label": "VIX",
-          "expected_direction": 1,
-          "weight": 0.9,
-          "composite_z": -1.6564708287671657,
-          "contribution": -0.6115746325710465
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": 1.4653391703413625,
-          "contribution": -0.5934610650961899
-        },
-        {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
-          "expected_direction": 1,
-          "weight": 0.95,
-          "composite_z": -1.3790714404110058,
-          "contribution": -0.5677994734026479
-        },
-        {
-          "series_id": "DGS2",
-          "label": "2Y Treasury yield",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": -1.0313229602692187,
-          "contribution": 0.45062736786141505
-        },
-        {
-          "series_id": "DTWEXBGS",
-          "label": "Broad U.S. dollar",
-          "expected_direction": 1,
-          "weight": 0.65,
-          "composite_z": 1.4155387375367996,
-          "contribution": 0.39602950187475383
-        },
-        {
-          "series_id": "DFII10",
-          "label": "10Y real yield",
-          "expected_direction": -1,
-          "weight": 0.8,
-          "composite_z": -1.0533566883259573,
-          "contribution": 0.3862703269451164
-        },
-        {
-          "series_id": "DCOILBRENTEU",
-          "label": "Brent crude",
-          "expected_direction": -1,
-          "weight": 0.65,
-          "composite_z": 1.2746551813416716,
-          "contribution": -0.3660001756487793
-        },
-        {
-          "series_id": "DGS10",
-          "label": "10Y Treasury yield",
-          "expected_direction": -1,
-          "weight": 0.75,
-          "composite_z": -1.0646028326509012,
-          "contribution": 0.3653537543574634
-        },
-        {
-          "series_id": "T10YIE",
-          "label": "10Y breakeven inflation",
-          "expected_direction": -1,
-          "weight": 0.8,
-          "composite_z": -0.4358778190429024,
-          "contribution": 0.17164217664470993
-        },
-        {
-          "series_id": "DHHNGSP",
-          "label": "Henry Hub gas",
-          "expected_direction": -1,
-          "weight": 0.4,
-          "composite_z": -0.185557794596558,
-          "contribution": 0.03700543980022954
-        }
-      ],
-      "probability": 0.24292255555447262,
-      "top_confirms": [
-        {
-          "series_id": "DGS2",
-          "label": "2Y Treasury yield",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": -1.0313229602692187,
-          "contribution": 0.45062736786141505
-        },
-        {
-          "series_id": "DTWEXBGS",
-          "label": "Broad U.S. dollar",
-          "expected_direction": 1,
-          "weight": 0.65,
-          "composite_z": 1.4155387375367996,
-          "contribution": 0.39602950187475383
-        },
-        {
-          "series_id": "DFII10",
-          "label": "10Y real yield",
-          "expected_direction": -1,
-          "weight": 0.8,
-          "composite_z": -1.0533566883259573,
-          "contribution": 0.3862703269451164
-        }
-      ],
-      "top_diverges": [
-        {
-          "series_id": "VIXCLS",
-          "label": "VIX",
-          "expected_direction": 1,
-          "weight": 0.9,
-          "composite_z": -1.6564708287671657,
-          "contribution": -0.6115746325710465
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": 1.4653391703413625,
-          "contribution": -0.5934610650961899
-        },
-        {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
-          "expected_direction": 1,
-          "weight": 0.95,
-          "composite_z": -1.3790714404110058,
-          "contribution": -0.5677994734026479
-        }
-      ]
-    },
-    {
-      "scenario_id": "geopolitical_energy_shock",
-      "title": "Geopolitical energy shock",
-      "description": "Energy and shipping disruption lifts oil and gas, pushes inflation compensation higher, tightens financial conditions, and delays Fed easing.",
-      "raw_score": -0.22654985168752395,
-      "five_question_scores": {
-        "demand": -0.35,
-        "supply": -0.95,
-        "inflation": 0.95,
-        "financial_conditions": 0.75,
-        "fed": 0.7
-      },
-      "contributions": [
-        {
-          "series_id": "VIXCLS",
-          "label": "VIX",
-          "expected_direction": 1,
-          "weight": 0.95,
-          "composite_z": -1.6564708287671657,
-          "contribution": -0.6455510010472157
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": 1.4653391703413625,
-          "contribution": -0.5934610650961899
-        },
         {
           "series_id": "DCOILBRENTEU",
           "label": "Brent crude",
@@ -372,63 +70,79 @@
           "contribution": 0.5630771933058143
         },
         {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
           "expected_direction": 1,
-          "weight": 0.8,
-          "composite_z": -1.3790714404110058,
-          "contribution": -0.4781469249706509
+          "weight": 1.0,
+          "composite_z": 1.191657272585085,
+          "contribution": 0.5340746701483883
         },
         {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
           "expected_direction": 1,
-          "weight": 0.55,
+          "weight": 0.4,
           "composite_z": 1.4155387375367996,
-          "contribution": 0.33510188620171477
+          "contribution": 0.2437104626921562
+        },
+        {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": 1,
+          "weight": 0.4,
+          "composite_z": -0.9294064366163858,
+          "contribution": -0.1735638790689264
         },
         {
           "series_id": "DGS2",
           "label": "2Y Treasury yield",
           "expected_direction": 1,
-          "weight": 0.45,
-          "composite_z": -1.0313229602692187,
-          "contribution": -0.21345506898698607
+          "weight": 0.7,
+          "composite_z": -0.43403866909214467,
+          "contribution": -0.14957271254875684
         },
         {
-          "series_id": "DGS10",
-          "label": "10Y Treasury yield",
+          "series_id": "VIXCLS",
+          "label": "VIX",
           "expected_direction": 1,
           "weight": 0.35,
-          "composite_z": -1.0646028326509012,
-          "contribution": -0.17049841870014956
+          "composite_z": -0.8040037518888742,
+          "contribution": -0.1335811892894033
         },
         {
-          "series_id": "T10YIE",
-          "label": "10Y breakeven inflation",
+          "series_id": "DGS10",
+          "label": "10Y Treasury yield",
           "expected_direction": 1,
-          "weight": 0.75,
-          "composite_z": -0.4358778190429024,
-          "contribution": -0.16091454060441557
-        },
-        {
-          "series_id": "DFII10",
-          "label": "10Y real yield",
-          "expected_direction": 1,
-          "weight": 0.25,
-          "composite_z": -1.0533566883259573,
-          "contribution": -0.12070947717034888
+          "weight": 0.45,
+          "composite_z": -0.31251577787000195,
+          "contribution": -0.06974929340469702
         },
         {
           "series_id": "DHHNGSP",
           "label": "Henry Hub gas",
           "expected_direction": 1,
-          "weight": 0.85,
+          "weight": 0.75,
           "composite_z": -0.185557794596558,
-          "contribution": -0.07863655957548778
+          "contribution": -0.0693851996254304
+        },
+        {
+          "series_id": "SP500",
+          "label": "S&P 500",
+          "expected_direction": -1,
+          "weight": 0.45,
+          "composite_z": 0.21000634965466924,
+          "contribution": -0.047078531652663416
+        },
+        {
+          "series_id": "BAMLH0A0HYM2",
+          "label": "U.S. high yield spread",
+          "expected_direction": 1,
+          "weight": 0.25,
+          "composite_z": -0.2184716803570835,
+          "contribution": -0.027200854895481102
         }
       ],
-      "probability": 0.1605728710859835,
+      "probability": 0.3111711959179624,
       "top_confirms": [
         {
           "series_id": "DCOILBRENTEU",
@@ -439,52 +153,60 @@
           "contribution": 0.5630771933058143
         },
         {
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
+          "expected_direction": 1,
+          "weight": 1.0,
+          "composite_z": 1.191657272585085,
+          "contribution": 0.5340746701483883
+        },
+        {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
           "expected_direction": 1,
-          "weight": 0.55,
+          "weight": 0.4,
           "composite_z": 1.4155387375367996,
-          "contribution": 0.33510188620171477
+          "contribution": 0.2437104626921562
         }
       ],
       "top_diverges": [
         {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": 1,
+          "weight": 0.4,
+          "composite_z": -0.9294064366163858,
+          "contribution": -0.1735638790689264
+        },
+        {
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": 1,
+          "weight": 0.7,
+          "composite_z": -0.43403866909214467,
+          "contribution": -0.14957271254875684
+        },
+        {
           "series_id": "VIXCLS",
           "label": "VIX",
           "expected_direction": 1,
-          "weight": 0.95,
-          "composite_z": -1.6564708287671657,
-          "contribution": -0.6455510010472157
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": -1,
-          "weight": 0.95,
-          "composite_z": 1.4653391703413625,
-          "contribution": -0.5934610650961899
-        },
-        {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
-          "expected_direction": 1,
-          "weight": 0.8,
-          "composite_z": -1.3790714404110058,
-          "contribution": -0.4781469249706509
+          "weight": 0.35,
+          "composite_z": -0.8040037518888742,
+          "contribution": -0.1335811892894033
         }
       ]
     },
     {
-      "scenario_id": "stagflation_persistence",
-      "title": "Stagflation persistence",
-      "description": "Inflation pressure stays alive while growth sentiment erodes, leaving the Fed tighter for longer and keeping both rates and risk premia elevated.",
-      "raw_score": -0.24854082375862663,
+      "scenario_id": "stagflation",
+      "title": "Stagflation",
+      "description": "The war shock broadens from energy and shipping into inflation persistence, tighter financial conditions, and weaker growth sentiment at the same time.",
+      "raw_score": 0.04409745440560846,
       "five_question_scores": {
-        "demand": -0.65,
-        "supply": -0.7,
-        "inflation": 1.0,
-        "financial_conditions": 0.9,
-        "fed": 0.95
+        "energy_input_pressure": 0.8,
+        "inflation_pressure": 0.95,
+        "financial_tightening": 1.0,
+        "growth_drag": 0.85,
+        "policy_offset": -0.75
       },
       "contributions": [
         {
@@ -496,79 +218,79 @@
           "contribution": 0.5630771933058143
         },
         {
-          "series_id": "BAMLH0A0HYM2",
-          "label": "U.S. high yield spread",
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
           "expected_direction": 1,
-          "weight": 0.85,
-          "composite_z": -1.3790714404110058,
-          "contribution": -0.5080311077813165
-        },
-        {
-          "series_id": "SP500",
-          "label": "S&P 500",
-          "expected_direction": -1,
-          "weight": 0.75,
-          "composite_z": 1.4653391703413625,
-          "contribution": -0.468521893496992
-        },
-        {
-          "series_id": "DGS10",
-          "label": "10Y Treasury yield",
-          "expected_direction": 1,
-          "weight": 0.9,
-          "composite_z": -1.0646028326509012,
-          "contribution": -0.4384245052289561
-        },
-        {
-          "series_id": "VIXCLS",
-          "label": "VIX",
-          "expected_direction": 1,
-          "weight": 0.6,
-          "composite_z": -1.6564708287671657,
-          "contribution": -0.407716421714031
-        },
-        {
-          "series_id": "DGS2",
-          "label": "2Y Treasury yield",
-          "expected_direction": 1,
-          "weight": 0.7,
-          "composite_z": -1.0313229602692187,
-          "contribution": -0.33204121842420053
+          "weight": 0.95,
+          "composite_z": 1.191657272585085,
+          "contribution": 0.5073709366409689
         },
         {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
           "expected_direction": 1,
-          "weight": 0.45,
+          "weight": 0.6,
           "composite_z": 1.4155387375367996,
-          "contribution": 0.2741742705286757
+          "contribution": 0.3655656940382343
+        },
+        {
+          "series_id": "VIXCLS",
+          "label": "VIX",
+          "expected_direction": 1,
+          "weight": 0.95,
+          "composite_z": -0.8040037518888742,
+          "contribution": -0.3625775137855232
         },
         {
           "series_id": "DFII10",
           "label": "10Y real yield",
           "expected_direction": 1,
-          "weight": 0.55,
-          "composite_z": -1.0533566883259573,
-          "contribution": -0.26556084977476757
+          "weight": 0.5,
+          "composite_z": -0.9294064366163858,
+          "contribution": -0.21695484883615798
         },
         {
-          "series_id": "T10YIE",
-          "label": "10Y breakeven inflation",
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": 1,
+          "weight": 0.55,
+          "composite_z": -0.43403866909214467,
+          "contribution": -0.11752141700259466
+        },
+        {
+          "series_id": "DGS10",
+          "label": "10Y Treasury yield",
+          "expected_direction": 1,
+          "weight": 0.75,
+          "composite_z": -0.31251577787000195,
+          "contribution": -0.1162488223411617
+        },
+        {
+          "series_id": "BAMLH0A0HYM2",
+          "label": "U.S. high yield spread",
           "expected_direction": 1,
           "weight": 0.95,
-          "composite_z": -0.4358778190429024,
-          "contribution": -0.20382508476559302
+          "composite_z": -0.2184716803570835,
+          "contribution": -0.10336324860282818
+        },
+        {
+          "series_id": "SP500",
+          "label": "S&P 500",
+          "expected_direction": -1,
+          "weight": 0.95,
+          "composite_z": 0.21000634965466924,
+          "contribution": -0.09938801126673387
         },
         {
           "series_id": "DHHNGSP",
           "label": "Henry Hub gas",
           "expected_direction": 1,
-          "weight": 0.7,
+          "weight": 0.75,
           "composite_z": -0.185557794596558,
-          "contribution": -0.0647595196504017
+          "contribution": -0.0693851996254304
         }
       ],
-      "probability": 0.15282113386902782,
+      "probability": 0.2643047191252843,
       "top_confirms": [
         {
           "series_id": "DCOILBRENTEU",
@@ -579,67 +301,1691 @@
           "contribution": 0.5630771933058143
         },
         {
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
+          "expected_direction": 1,
+          "weight": 0.95,
+          "composite_z": 1.191657272585085,
+          "contribution": 0.5073709366409689
+        },
+        {
           "series_id": "DTWEXBGS",
           "label": "Broad U.S. dollar",
           "expected_direction": 1,
-          "weight": 0.45,
+          "weight": 0.6,
           "composite_z": 1.4155387375367996,
-          "contribution": 0.2741742705286757
+          "contribution": 0.3655656940382343
         }
       ],
       "top_diverges": [
         {
+          "series_id": "VIXCLS",
+          "label": "VIX",
+          "expected_direction": 1,
+          "weight": 0.95,
+          "composite_z": -0.8040037518888742,
+          "contribution": -0.3625775137855232
+        },
+        {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": 1,
+          "weight": 0.5,
+          "composite_z": -0.9294064366163858,
+          "contribution": -0.21695484883615798
+        },
+        {
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": 1,
+          "weight": 0.55,
+          "composite_z": -0.43403866909214467,
+          "contribution": -0.11752141700259466
+        }
+      ]
+    },
+    {
+      "scenario_id": "growth_slowdown",
+      "title": "Growth slowdown / recession risk",
+      "description": "The war shock evolves mainly into weaker demand, tighter risk conditions, and lower yields, with growth damage overtaking the initial commodity inflation impulse.",
+      "raw_score": -0.03871940772764643,
+      "five_question_scores": {
+        "energy_input_pressure": -0.25,
+        "inflation_pressure": -0.45,
+        "financial_tightening": 0.9,
+        "growth_drag": 1.0,
+        "policy_offset": -0.15
+      },
+      "contributions": [
+        {
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
+          "expected_direction": -1,
+          "weight": 0.8,
+          "composite_z": 1.191657272585085,
+          "contribution": -0.42725973611871065
+        },
+        {
+          "series_id": "DTWEXBGS",
+          "label": "Broad U.S. dollar",
+          "expected_direction": 1,
+          "weight": 0.65,
+          "composite_z": 1.4155387375367996,
+          "contribution": 0.39602950187475383
+        },
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 0.7,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.39415403531407
+        },
+        {
+          "series_id": "VIXCLS",
+          "label": "VIX",
+          "expected_direction": 1,
+          "weight": 0.8,
+          "composite_z": -0.8040037518888742,
+          "contribution": -0.3053284326614933
+        },
+        {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": -1,
+          "weight": 0.55,
+          "composite_z": -0.9294064366163858,
+          "contribution": 0.2386503337197738
+        },
+        {
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": -1,
+          "weight": 1.0,
+          "composite_z": -0.43403866909214467,
+          "contribution": 0.2136753036410812
+        },
+        {
+          "series_id": "DGS10",
+          "label": "10Y Treasury yield",
+          "expected_direction": -1,
+          "weight": 0.85,
+          "composite_z": -0.31251577787000195,
+          "contribution": 0.13174866531998325
+        },
+        {
           "series_id": "BAMLH0A0HYM2",
           "label": "U.S. high yield spread",
           "expected_direction": 1,
-          "weight": 0.85,
-          "composite_z": -1.3790714404110058,
-          "contribution": -0.5080311077813165
+          "weight": 1.0,
+          "composite_z": -0.2184716803570835,
+          "contribution": -0.10880341958192441
         },
         {
           "series_id": "SP500",
           "label": "S&P 500",
           "expected_direction": -1,
+          "weight": 0.95,
+          "composite_z": 0.21000634965466924,
+          "contribution": -0.09938801126673387
+        },
+        {
+          "series_id": "DHHNGSP",
+          "label": "Henry Hub gas",
+          "expected_direction": -1,
+          "weight": 0.55,
+          "composite_z": -0.185557794596558,
+          "contribution": 0.05088247972531563
+        }
+      ],
+      "probability": 0.21937108257124574,
+      "top_confirms": [
+        {
+          "series_id": "DTWEXBGS",
+          "label": "Broad U.S. dollar",
+          "expected_direction": 1,
+          "weight": 0.65,
+          "composite_z": 1.4155387375367996,
+          "contribution": 0.39602950187475383
+        },
+        {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": -1,
+          "weight": 0.55,
+          "composite_z": -0.9294064366163858,
+          "contribution": 0.2386503337197738
+        },
+        {
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": -1,
+          "weight": 1.0,
+          "composite_z": -0.43403866909214467,
+          "contribution": 0.2136753036410812
+        }
+      ],
+      "top_diverges": [
+        {
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
+          "expected_direction": -1,
+          "weight": 0.8,
+          "composite_z": 1.191657272585085,
+          "contribution": -0.42725973611871065
+        },
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 0.7,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.39415403531407
+        },
+        {
+          "series_id": "VIXCLS",
+          "label": "VIX",
+          "expected_direction": 1,
+          "weight": 0.8,
+          "composite_z": -0.8040037518888742,
+          "contribution": -0.3053284326614933
+        }
+      ]
+    },
+    {
+      "scenario_id": "contained_shock",
+      "title": "Contained shock",
+      "description": "War-driven risk premium remains visible but policy response, market adaptation, and fading tightness stop the shock from becoming a durable macro regime.",
+      "raw_score": -0.06850104460770036,
+      "five_question_scores": {
+        "energy_input_pressure": -0.35,
+        "inflation_pressure": -0.4,
+        "financial_tightening": -0.7,
+        "growth_drag": -0.45,
+        "policy_offset": 0.9
+      },
+      "contributions": [
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.5630771933058143
+        },
+        {
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
+          "expected_direction": -1,
           "weight": 0.75,
-          "composite_z": 1.4653391703413625,
-          "contribution": -0.468521893496992
+          "composite_z": 1.191657272585085,
+          "contribution": -0.4005560026112912
+        },
+        {
+          "series_id": "VIXCLS",
+          "label": "VIX",
+          "expected_direction": -1,
+          "weight": 0.95,
+          "composite_z": -0.8040037518888742,
+          "contribution": 0.3625775137855232
+        },
+        {
+          "series_id": "DTWEXBGS",
+          "label": "Broad U.S. dollar",
+          "expected_direction": -1,
+          "weight": 0.55,
+          "composite_z": 1.4155387375367996,
+          "contribution": -0.33510188620171477
+        },
+        {
+          "series_id": "SP500",
+          "label": "S&P 500",
+          "expected_direction": 1,
+          "weight": 0.95,
+          "composite_z": 0.21000634965466924,
+          "contribution": 0.09938801126673387
+        },
+        {
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": -1,
+          "weight": 0.45,
+          "composite_z": -0.43403866909214467,
+          "contribution": 0.09615388663848654
+        },
+        {
+          "series_id": "BAMLH0A0HYM2",
+          "label": "U.S. high yield spread",
+          "expected_direction": -1,
+          "weight": 0.8,
+          "composite_z": -0.2184716803570835,
+          "contribution": 0.08704273566553954
+        },
+        {
+          "series_id": "DFII10",
+          "label": "10Y real yield",
+          "expected_direction": -1,
+          "weight": 0.2,
+          "composite_z": -0.9294064366163858,
+          "contribution": 0.0867819395344632
+        },
+        {
+          "series_id": "DHHNGSP",
+          "label": "Henry Hub gas",
+          "expected_direction": -1,
+          "weight": 0.7,
+          "composite_z": -0.185557794596558,
+          "contribution": 0.0647595196504017
         },
         {
           "series_id": "DGS10",
           "label": "10Y Treasury yield",
+          "expected_direction": -1,
+          "weight": 0.3,
+          "composite_z": -0.31251577787000195,
+          "contribution": 0.046499528936464675
+        }
+      ],
+      "probability": 0.20515300238550754,
+      "top_confirms": [
+        {
+          "series_id": "VIXCLS",
+          "label": "VIX",
+          "expected_direction": -1,
+          "weight": 0.95,
+          "composite_z": -0.8040037518888742,
+          "contribution": 0.3625775137855232
+        },
+        {
+          "series_id": "SP500",
+          "label": "S&P 500",
           "expected_direction": 1,
-          "weight": 0.9,
-          "composite_z": -1.0646028326509012,
-          "contribution": -0.4384245052289561
+          "weight": 0.95,
+          "composite_z": 0.21000634965466924,
+          "contribution": 0.09938801126673387
+        },
+        {
+          "series_id": "DGS2",
+          "label": "2Y Treasury yield",
+          "expected_direction": -1,
+          "weight": 0.45,
+          "composite_z": -0.43403866909214467,
+          "contribution": 0.09615388663848654
+        }
+      ],
+      "top_diverges": [
+        {
+          "series_id": "DCOILBRENTEU",
+          "label": "Brent crude",
+          "expected_direction": -1,
+          "weight": 1.0,
+          "composite_z": 1.2746551813416716,
+          "contribution": -0.5630771933058143
+        },
+        {
+          "series_id": "T10YIE",
+          "label": "10Y breakeven inflation",
+          "expected_direction": -1,
+          "weight": 0.75,
+          "composite_z": 1.191657272585085,
+          "contribution": -0.4005560026112912
+        },
+        {
+          "series_id": "DTWEXBGS",
+          "label": "Broad U.S. dollar",
+          "expected_direction": -1,
+          "weight": 0.55,
+          "composite_z": 1.4155387375367996,
+          "contribution": -0.33510188620171477
         }
       ]
     }
   ],
+  "scenario_history": [
+    {
+      "date": "2026-03-10",
+      "dominant_scenario_id": "contained_shock",
+      "dominant_scenario": "Contained shock",
+      "dominant_probability": 0.40457125632339497,
+      "contained_shock_probability": 0.40457125632339497,
+      "contained_shock_raw_score": 0.18628609722681902,
+      "inflation_shock_probability": 0.19991338875988499,
+      "inflation_shock_raw_score": -0.12702219764088812,
+      "stagflation_probability": 0.19296939880948782,
+      "stagflation_raw_score": -0.14273446235606552,
+      "growth_slowdown_probability": 0.20254595610723222,
+      "growth_slowdown_raw_score": -0.12120771409127384,
+      "energy_input_pressure": 0.1520568096294847,
+      "inflation_pressure": 0.13026013485128587,
+      "financial_tightening": 0.1420392270695916,
+      "growth_drag": 0.21449988806375186,
+      "policy_offset": 0.10903983266390077
+    },
+    {
+      "date": "2026-03-11",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.3991305968281908,
+      "contained_shock_probability": 0.11858359651897431,
+      "contained_shock_raw_score": -0.22469411056646663,
+      "inflation_shock_probability": 0.3991305968281908,
+      "inflation_shock_raw_score": 0.3147150031968081,
+      "stagflation_probability": 0.35281080766508005,
+      "stagflation_raw_score": 0.2598897960647551,
+      "growth_slowdown_probability": 0.1294749989877549,
+      "growth_slowdown_raw_score": -0.18564093866540474,
+      "energy_input_pressure": 0.5875497045902656,
+      "inflation_pressure": 0.6286036759579373,
+      "financial_tightening": 0.48611243839782525,
+      "growth_drag": 0.43587115659376313,
+      "policy_offset": -0.3369563574611727
+    },
+    {
+      "date": "2026-03-12",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.45571422908662673,
+      "contained_shock_probability": 0.03277307236808131,
+      "contained_shock_raw_score": -0.5700395958627136,
+      "inflation_shock_probability": 0.45571422908662673,
+      "inflation_shock_raw_score": 0.5998531635309445,
+      "stagflation_probability": 0.4242649373859842,
+      "stagflation_raw_score": 0.5680719146225951,
+      "growth_slowdown_probability": 0.08724776115930781,
+      "growth_slowdown_raw_score": -0.1348641794798009,
+      "energy_input_pressure": 0.7390579519224274,
+      "inflation_pressure": 0.8063951981343906,
+      "financial_tightening": 0.593775329043361,
+      "growth_drag": 0.5014822097347518,
+      "policy_offset": -0.4840757937167619
+    },
+    {
+      "date": "2026-03-13",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.3765774355485582,
+      "contained_shock_probability": 0.08123984101610626,
+      "contained_shock_raw_score": -0.34170362380800984,
+      "inflation_shock_probability": 0.3495317331409467,
+      "inflation_shock_raw_score": 0.3068246311399546,
+      "stagflation_probability": 0.3765774355485582,
+      "stagflation_raw_score": 0.33994878439443393,
+      "growth_slowdown_probability": 0.1926509902943888,
+      "growth_slowdown_raw_score": 0.04206279027880476,
+      "energy_input_pressure": 0.5567204029935116,
+      "inflation_pressure": 0.5880914148731595,
+      "financial_tightening": 0.5804783713874705,
+      "growth_drag": 0.5286136420245575,
+      "policy_offset": -0.37802756154746003
+    },
+    {
+      "date": "2026-03-14",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.3765774355485582,
+      "contained_shock_probability": 0.08123984101610626,
+      "contained_shock_raw_score": -0.34170362380800984,
+      "inflation_shock_probability": 0.3495317331409467,
+      "inflation_shock_raw_score": 0.3068246311399546,
+      "stagflation_probability": 0.3765774355485582,
+      "stagflation_raw_score": 0.33994878439443393,
+      "growth_slowdown_probability": 0.1926509902943888,
+      "growth_slowdown_raw_score": 0.04206279027880476,
+      "energy_input_pressure": 0.5567204029935116,
+      "inflation_pressure": 0.5880914148731595,
+      "financial_tightening": 0.5804783713874705,
+      "growth_drag": 0.5286136420245575,
+      "policy_offset": -0.37802756154746003
+    },
+    {
+      "date": "2026-03-15",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.3765774355485582,
+      "contained_shock_probability": 0.08123984101610626,
+      "contained_shock_raw_score": -0.34170362380800984,
+      "inflation_shock_probability": 0.3495317331409467,
+      "inflation_shock_raw_score": 0.3068246311399546,
+      "stagflation_probability": 0.3765774355485582,
+      "stagflation_raw_score": 0.33994878439443393,
+      "growth_slowdown_probability": 0.1926509902943888,
+      "growth_slowdown_raw_score": 0.04206279027880476,
+      "energy_input_pressure": 0.5567204029935116,
+      "inflation_pressure": 0.5880914148731595,
+      "financial_tightening": 0.5804783713874705,
+      "growth_drag": 0.5286136420245575,
+      "policy_offset": -0.37802756154746003
+    },
+    {
+      "date": "2026-03-16",
+      "dominant_scenario_id": "contained_shock",
+      "dominant_scenario": "Contained shock",
+      "dominant_probability": 0.3395279416122182,
+      "contained_shock_probability": 0.3395279416122182,
+      "contained_shock_raw_score": 0.12631940254537308,
+      "inflation_shock_probability": 0.19527520685911187,
+      "inflation_shock_raw_score": -0.11952342636101991,
+      "stagflation_probability": 0.1930237883322771,
+      "stagflation_raw_score": -0.12467740142797637,
+      "growth_slowdown_probability": 0.27217306319639284,
+      "growth_slowdown_raw_score": 0.02804468248382846,
+      "energy_input_pressure": 0.1530524318186034,
+      "inflation_pressure": 0.12035875069151106,
+      "financial_tightening": 0.24912878779525588,
+      "growth_drag": 0.3127469905821969,
+      "policy_offset": 0.041871263978684875
+    },
+    {
+      "date": "2026-03-17",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.32850131063453575,
+      "contained_shock_probability": 0.21991704302784282,
+      "contained_shock_raw_score": -0.05808287672936586,
+      "inflation_shock_probability": 0.32850131063453575,
+      "inflation_shock_raw_score": 0.12026842530487108,
+      "stagflation_probability": 0.2649895721942194,
+      "stagflation_raw_score": 0.024779379673639034,
+      "growth_slowdown_probability": 0.18659207414340206,
+      "growth_slowdown_raw_score": -0.13111647037350935,
+      "energy_input_pressure": 0.40044891926258896,
+      "inflation_pressure": 0.4083081536433762,
+      "financial_tightening": 0.3611058364624253,
+      "growth_drag": 0.3621457377411396,
+      "policy_offset": -0.16020617579593058
+    },
+    {
+      "date": "2026-03-18",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.44521147739346195,
+      "contained_shock_probability": 0.06262792740933827,
+      "contained_shock_raw_score": -0.41067768338301536,
+      "inflation_shock_probability": 0.44521147739346195,
+      "inflation_shock_raw_score": 0.4610281370641142,
+      "stagflation_probability": 0.3853772535700761,
+      "stagflation_raw_score": 0.3968829524171338,
+      "growth_slowdown_probability": 0.10678334162712372,
+      "growth_slowdown_raw_score": -0.1735262906210395,
+      "energy_input_pressure": 0.6826370963798004,
+      "inflation_pressure": 0.7382161935890932,
+      "financial_tightening": 0.5489455811963161,
+      "growth_drag": 0.47295316143650545,
+      "policy_offset": -0.4267698977106059
+    },
+    {
+      "date": "2026-03-19",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.2799161782999656,
+      "contained_shock_probability": 0.19320794117082354,
+      "contained_shock_raw_score": -0.07817267706903136,
+      "inflation_shock_probability": 0.25538606897378946,
+      "inflation_shock_raw_score": 0.045831488217763616,
+      "stagflation_probability": 0.2799161782999656,
+      "stagflation_raw_score": 0.08659317663513764,
+      "growth_slowdown_probability": 0.27148981155542146,
+      "growth_slowdown_raw_score": 0.07300847309458453,
+      "energy_input_pressure": 0.3310544758664289,
+      "inflation_pressure": 0.3218528466904877,
+      "financial_tightening": 0.45285796712371584,
+      "growth_drag": 0.46078289992959004,
+      "policy_offset": -0.17892788599406206
+    },
+    {
+      "date": "2026-03-20",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.4195824751143981,
+      "contained_shock_probability": 0.07179922717254637,
+      "contained_shock_raw_score": -0.3665180252378134,
+      "inflation_shock_probability": 0.4195824751143981,
+      "inflation_shock_raw_score": 0.4180981514609817,
+      "stagflation_probability": 0.40053443033392727,
+      "stagflation_raw_score": 0.39744909423107777,
+      "growth_slowdown_probability": 0.10808386737912816,
+      "growth_slowdown_raw_score": -0.18472524159804718,
+      "energy_input_pressure": 0.6668801992706467,
+      "inflation_pressure": 0.7227327527420028,
+      "financial_tightening": 0.5524460707329597,
+      "growth_drag": 0.47916585220248015,
+      "policy_offset": -0.41982708844778216
+    },
+    {
+      "date": "2026-03-21",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.4195824751143981,
+      "contained_shock_probability": 0.07179922717254637,
+      "contained_shock_raw_score": -0.3665180252378134,
+      "inflation_shock_probability": 0.4195824751143981,
+      "inflation_shock_raw_score": 0.4180981514609817,
+      "stagflation_probability": 0.40053443033392727,
+      "stagflation_raw_score": 0.39744909423107777,
+      "growth_slowdown_probability": 0.10808386737912816,
+      "growth_slowdown_raw_score": -0.18472524159804718,
+      "energy_input_pressure": 0.6668801992706467,
+      "inflation_pressure": 0.7227327527420028,
+      "financial_tightening": 0.5524460707329597,
+      "growth_drag": 0.47916585220248015,
+      "policy_offset": -0.41982708844778216
+    },
+    {
+      "date": "2026-03-22",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.4195824751143981,
+      "contained_shock_probability": 0.07179922717254637,
+      "contained_shock_raw_score": -0.3665180252378134,
+      "inflation_shock_probability": 0.4195824751143981,
+      "inflation_shock_raw_score": 0.4180981514609817,
+      "stagflation_probability": 0.40053443033392727,
+      "stagflation_raw_score": 0.39744909423107777,
+      "growth_slowdown_probability": 0.10808386737912816,
+      "growth_slowdown_raw_score": -0.18472524159804718,
+      "energy_input_pressure": 0.6668801992706467,
+      "inflation_pressure": 0.7227327527420028,
+      "financial_tightening": 0.5524460707329597,
+      "growth_drag": 0.47916585220248015,
+      "policy_offset": -0.41982708844778216
+    },
+    {
+      "date": "2026-03-23",
+      "dominant_scenario_id": "contained_shock",
+      "dominant_scenario": "Contained shock",
+      "dominant_probability": 0.41615335125498937,
+      "contained_shock_probability": 0.41615335125498937,
+      "contained_shock_raw_score": 0.22651580524483222,
+      "inflation_shock_probability": 0.14540634996347507,
+      "inflation_shock_raw_score": -0.24082712303762546,
+      "stagflation_probability": 0.1650407870009456,
+      "stagflation_raw_score": -0.18453361158141415,
+      "growth_slowdown_probability": 0.27339951178058997,
+      "growth_slowdown_raw_score": 0.03979594453276806,
+      "energy_input_pressure": 0.056165111181664035,
+      "inflation_pressure": 0.012703976811112155,
+      "financial_tightening": 0.15614458921585278,
+      "growth_drag": 0.24822612516116974,
+      "policy_offset": 0.15158495912630274
+    },
+    {
+      "date": "2026-03-24",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.3195229665218378,
+      "contained_shock_probability": 0.17612715168086945,
+      "contained_shock_raw_score": -0.11680908296350868,
+      "inflation_shock_probability": 0.315512898315022,
+      "inflation_shock_raw_score": 0.14229908430677285,
+      "stagflation_probability": 0.3195229665218378,
+      "stagflation_raw_score": 0.14791223570520104,
+      "growth_slowdown_probability": 0.18883698348227088,
+      "growth_slowdown_raw_score": -0.08584111199047952,
+      "energy_input_pressure": 0.44650187765786914,
+      "inflation_pressure": 0.4636322132713982,
+      "financial_tightening": 0.4450654700580285,
+      "growth_drag": 0.42850122151669506,
+      "policy_offset": -0.23565849522694526
+    },
+    {
+      "date": "2026-03-25",
+      "dominant_scenario_id": "contained_shock",
+      "dominant_scenario": "Contained shock",
+      "dominant_probability": 0.29003135688334325,
+      "contained_shock_probability": 0.29003135688334325,
+      "contained_shock_raw_score": 0.0603130895597905,
+      "inflation_shock_probability": 0.2132185333991326,
+      "inflation_shock_raw_score": -0.07642976651405549,
+      "stagflation_probability": 0.21511965998967417,
+      "stagflation_raw_score": -0.072484516182868,
+      "growth_slowdown_probability": 0.28163044972785,
+      "growth_slowdown_raw_score": 0.047249403006381155,
+      "energy_input_pressure": 0.20273474737978267,
+      "inflation_pressure": 0.17483596525845324,
+      "financial_tightening": 0.31886974827618203,
+      "growth_drag": 0.3659508301314385,
+      "policy_offset": -0.027843504616077194
+    },
+    {
+      "date": "2026-03-26",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.4147109680481459,
+      "contained_shock_probability": 0.06698526785731788,
+      "contained_shock_raw_score": -0.3875913560442668,
+      "inflation_shock_probability": 0.4147109680481459,
+      "inflation_shock_raw_score": 0.4226793562076422,
+      "stagflation_probability": 0.3989724964574671,
+      "stagflation_raw_score": 0.40548409766377363,
+      "growth_slowdown_probability": 0.11933126763706917,
+      "growth_slowdown_raw_score": -0.1309555005810403,
+      "energy_input_pressure": 0.6598757561523836,
+      "inflation_pressure": 0.7132416621031313,
+      "financial_tightening": 0.5631586918427431,
+      "growth_drag": 0.490521164297345,
+      "policy_offset": -0.42272670863633294
+    },
+    {
+      "date": "2026-03-27",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.4022418295284272,
+      "contained_shock_probability": 0.05529997641214461,
+      "contained_shock_raw_score": -0.4491241930417058,
+      "inflation_shock_probability": 0.2981431023084339,
+      "inflation_shock_raw_score": 0.2996762951120374,
+      "stagflation_probability": 0.4022418295284272,
+      "stagflation_raw_score": 0.43277846996146935,
+      "growth_slowdown_probability": 0.2443150917509943,
+      "growth_slowdown_raw_score": 0.21118081578318443,
+      "energy_input_pressure": 0.5245956461337548,
+      "inflation_pressure": 0.5482110585076344,
+      "financial_tightening": 0.6579512041929294,
+      "growth_drag": 0.6060571228109574,
+      "policy_offset": -0.40781589806141294
+    },
+    {
+      "date": "2026-03-28",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.4022418295284272,
+      "contained_shock_probability": 0.05529997641214461,
+      "contained_shock_raw_score": -0.4491241930417058,
+      "inflation_shock_probability": 0.2981431023084339,
+      "inflation_shock_raw_score": 0.2996762951120374,
+      "stagflation_probability": 0.4022418295284272,
+      "stagflation_raw_score": 0.43277846996146935,
+      "growth_slowdown_probability": 0.2443150917509943,
+      "growth_slowdown_raw_score": 0.21118081578318443,
+      "energy_input_pressure": 0.5245956461337548,
+      "inflation_pressure": 0.5482110585076344,
+      "financial_tightening": 0.6579512041929294,
+      "growth_drag": 0.6060571228109574,
+      "policy_offset": -0.40781589806141294
+    },
+    {
+      "date": "2026-03-29",
+      "dominant_scenario_id": "stagflation",
+      "dominant_scenario": "Stagflation",
+      "dominant_probability": 0.4022418295284272,
+      "contained_shock_probability": 0.05529997641214461,
+      "contained_shock_raw_score": -0.4491241930417058,
+      "inflation_shock_probability": 0.2981431023084339,
+      "inflation_shock_raw_score": 0.2996762951120374,
+      "stagflation_probability": 0.4022418295284272,
+      "stagflation_raw_score": 0.43277846996146935,
+      "growth_slowdown_probability": 0.2443150917509943,
+      "growth_slowdown_raw_score": 0.21118081578318443,
+      "energy_input_pressure": 0.5245956461337548,
+      "inflation_pressure": 0.5482110585076344,
+      "financial_tightening": 0.6579512041929294,
+      "growth_drag": 0.6060571228109574,
+      "policy_offset": -0.40781589806141294
+    },
+    {
+      "date": "2026-03-30",
+      "dominant_scenario_id": "growth_slowdown",
+      "dominant_scenario": "Growth slowdown / recession risk",
+      "dominant_probability": 0.40934869247993794,
+      "contained_shock_probability": 0.11615367667711383,
+      "contained_shock_raw_score": -0.21955467239711776,
+      "inflation_shock_probability": 0.21210283444431416,
+      "inflation_shock_raw_score": 0.04807071067972201,
+      "stagflation_probability": 0.262394796398634,
+      "stagflation_raw_score": 0.14263915551410394,
+      "growth_slowdown_probability": 0.40934869247993794,
+      "growth_slowdown_raw_score": 0.3402912068939908,
+      "energy_input_pressure": 0.26842256988403135,
+      "inflation_pressure": 0.23070950873619883,
+      "financial_tightening": 0.6025267545676771,
+      "growth_drag": 0.6119305400807227,
+      "policy_offset": -0.23850122593928944
+    },
+    {
+      "date": "2026-03-31",
+      "dominant_scenario_id": "contained_shock",
+      "dominant_scenario": "Contained shock",
+      "dominant_probability": 0.43156346201598456,
+      "contained_shock_probability": 0.43156346201598456,
+      "contained_shock_raw_score": 0.2223628847972968,
+      "inflation_shock_probability": 0.1869570411619864,
+      "inflation_shock_raw_score": -0.14943076350961992,
+      "stagflation_probability": 0.14751569041354035,
+      "stagflation_raw_score": -0.2547393493983053,
+      "growth_slowdown_probability": 0.23396380640848866,
+      "growth_slowdown_raw_score": -0.04974740090091508,
+      "energy_input_pressure": 0.08608357812700258,
+      "inflation_pressure": 0.049187849364635994,
+      "financial_tightening": 0.10272795306048754,
+      "growth_drag": 0.19319214152710287,
+      "policy_offset": 0.167892960578163
+    },
+    {
+      "date": "2026-04-01",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.31834412834061937,
+      "contained_shock_probability": 0.2779997210717296,
+      "contained_shock_raw_score": 0.0355690589634898,
+      "inflation_shock_probability": 0.31834412834061937,
+      "inflation_shock_raw_score": 0.09579699314316802,
+      "stagflation_probability": 0.24372147904268168,
+      "stagflation_raw_score": -0.022917170536436243,
+      "growth_slowdown_probability": 0.15993467154496926,
+      "growth_slowdown_raw_score": -0.21014413274293217,
+      "energy_input_pressure": 0.36012053489638607,
+      "inflation_pressure": 0.366709042807239,
+      "financial_tightening": 0.27264891076809816,
+      "growth_drag": 0.28974967350006325,
+      "policy_offset": -0.08391921238544774
+    },
+    {
+      "date": "2026-04-02",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.3078560275385766,
+      "contained_shock_probability": 0.2076594502957319,
+      "contained_shock_raw_score": -0.06450521200566972,
+      "inflation_shock_probability": 0.3078560275385766,
+      "inflation_shock_raw_score": 0.11048712172573828,
+      "stagflation_probability": 0.26262563183944837,
+      "stagflation_raw_score": 0.03986371478911729,
+      "growth_slowdown_probability": 0.221858890326243,
+      "growth_slowdown_raw_score": -0.03510873606007903,
+      "energy_input_pressure": 0.37441820144813953,
+      "inflation_pressure": 0.37445009702095045,
+      "financial_tightening": 0.3939010248106989,
+      "growth_drag": 0.39782232888748126,
+      "policy_offset": -0.16649696317779467
+    },
+    {
+      "date": "2026-04-03",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.3111711959179624,
+      "contained_shock_probability": 0.20515300238550754,
+      "contained_shock_raw_score": -0.06850104460770036,
+      "inflation_shock_probability": 0.3111711959179624,
+      "inflation_shock_raw_score": 0.11664881141930437,
+      "stagflation_probability": 0.2643047191252843,
+      "stagflation_raw_score": 0.04409745440560846,
+      "growth_slowdown_probability": 0.21937108257124574,
+      "growth_slowdown_raw_score": -0.03871940772764643,
+      "energy_input_pressure": 0.38041008994455267,
+      "inflation_pressure": 0.38148249097571885,
+      "financial_tightening": 0.39592439074904084,
+      "growth_drag": 0.39838692214195337,
+      "policy_offset": -0.17096497794987825
+    },
+    {
+      "date": "2026-04-04",
+      "dominant_scenario_id": "inflation_shock",
+      "dominant_scenario": "Inflation shock",
+      "dominant_probability": 0.3111711959179624,
+      "contained_shock_probability": 0.20515300238550754,
+      "contained_shock_raw_score": -0.06850104460770036,
+      "inflation_shock_probability": 0.3111711959179624,
+      "inflation_shock_raw_score": 0.11664881141930437,
+      "stagflation_probability": 0.2643047191252843,
+      "stagflation_raw_score": 0.04409745440560846,
+      "growth_slowdown_probability": 0.21937108257124574,
+      "growth_slowdown_raw_score": -0.03871940772764643,
+      "energy_input_pressure": 0.38041008994455267,
+      "inflation_pressure": 0.38148249097571885,
+      "financial_tightening": 0.39592439074904084,
+      "growth_drag": 0.39838692214195337,
+      "policy_offset": -0.17096497794987825
+    }
+  ],
+  "transitions": [
+    {
+      "date": "2026-03-10",
+      "type": "start",
+      "from": "",
+      "to": "Contained shock",
+      "note": "War start baseline"
+    },
+    {
+      "date": "2026-03-11",
+      "type": "dominant_shift",
+      "from": "Contained shock",
+      "to": "Inflation shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-13",
+      "type": "dominant_shift",
+      "from": "Inflation shock",
+      "to": "Stagflation",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-16",
+      "type": "dominant_shift",
+      "from": "Stagflation",
+      "to": "Contained shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-17",
+      "type": "dominant_shift",
+      "from": "Contained shock",
+      "to": "Inflation shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "dominant_shift",
+      "from": "Inflation shock",
+      "to": "Stagflation",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-20",
+      "type": "dominant_shift",
+      "from": "Stagflation",
+      "to": "Inflation shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-23",
+      "type": "dominant_shift",
+      "from": "Inflation shock",
+      "to": "Contained shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-24",
+      "type": "dominant_shift",
+      "from": "Contained shock",
+      "to": "Stagflation",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-25",
+      "type": "dominant_shift",
+      "from": "Stagflation",
+      "to": "Contained shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-26",
+      "type": "dominant_shift",
+      "from": "Contained shock",
+      "to": "Inflation shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-27",
+      "type": "dominant_shift",
+      "from": "Inflation shock",
+      "to": "Stagflation",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-30",
+      "type": "dominant_shift",
+      "from": "Stagflation",
+      "to": "Growth slowdown / recession risk",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-03-31",
+      "type": "dominant_shift",
+      "from": "Growth slowdown / recession risk",
+      "to": "Contained shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-04-01",
+      "type": "dominant_shift",
+      "from": "Contained shock",
+      "to": "Inflation shock",
+      "note": "Dominant conclusion changed"
+    },
+    {
+      "date": "2026-04-04",
+      "type": "latest",
+      "from": "",
+      "to": "Inflation shock",
+      "note": "Latest monitored day"
+    }
+  ],
   "five_questions": [
     {
-      "question": "demand",
-      "score": -0.17450699412325543,
-      "reading": "mixed"
+      "question": "energy_input_pressure",
+      "score": 0.38041008994455267,
+      "reading": "higher"
     },
     {
-      "question": "supply",
-      "score": -0.1649604563069413,
-      "reading": "mixed"
+      "question": "inflation_pressure",
+      "score": 0.38148249097571885,
+      "reading": "higher"
     },
     {
-      "question": "inflation",
-      "score": -0.02789959192498004,
-      "reading": "mixed"
+      "question": "financial_tightening",
+      "score": 0.39592439074904084,
+      "reading": "tighter"
     },
     {
-      "question": "financial_conditions",
-      "score": 0.08732192245097573,
-      "reading": "mixed"
+      "question": "growth_drag",
+      "score": 0.39838692214195337,
+      "reading": "higher"
     },
     {
-      "question": "fed",
-      "score": -0.12426837750082184,
-      "reading": "hold / mixed"
+      "question": "policy_offset",
+      "score": -0.17096497794987825,
+      "reading": "mixed"
+    }
+  ],
+  "market_signals": [
+    {
+      "series_id": "DCOILBRENTEU",
+      "label": "Brent crude",
+      "category": "Energy",
+      "unit": "$/bbl",
+      "source": "FRED public CSV",
+      "latest_date": "2026-03-30",
+      "latest_value": 121.88,
+      "change_1": 0.33753190088087315,
+      "z_1": 0.04340750299076032,
+      "change_2": 7.487432754211125,
+      "z_2": 1.811829643741662,
+      "change_5": 17.42942480007707,
+      "z_5": 2.5950267616105607,
+      "change_20": 57.79388917659244,
+      "z_20": 3.8513511910243707,
+      "composite_z": 1.2746551813416716,
+      "recent_values": [
+        69.77,
+        71.78,
+        73.17,
+        72.75,
+        71.9,
+        71.21,
+        70.69,
+        71.66,
+        71.32,
+        77.24,
+        83.28,
+        81.56,
+        88.59,
+        95.74,
+        94.35,
+        89.84,
+        90.98,
+        102.38,
+        103.23,
+        101.04,
+        108.39,
+        118.09,
+        111.05,
+        118.42,
+        103.79,
+        108.42,
+        109.14,
+        113.39,
+        121.47,
+        121.88
+      ]
+    },
+    {
+      "series_id": "DHHNGSP",
+      "label": "Henry Hub gas",
+      "category": "Energy",
+      "unit": "$/MMBtu",
+      "source": "FRED public CSV",
+      "latest_date": "2026-03-30",
+      "latest_value": 2.88,
+      "change_1": -3.6789297658862985,
+      "z_1": -0.235991842456427,
+      "change_2": -3.6789297658862985,
+      "z_2": -0.16367081933416291,
+      "change_5": -2.040816326530614,
+      "z_5": -0.1136699616570533,
+      "change_20": -3.6789297658862985,
+      "z_20": -0.15052454719012623,
+      "composite_z": -0.185557794596558,
+      "recent_values": [
+        3.13,
+        2.98,
+        3.09,
+        3.15,
+        3.13,
+        2.99,
+        3.02,
+        2.94,
+        2.99,
+        2.99,
+        3.1,
+        2.87,
+        2.9,
+        3.1,
+        3.25,
+        3.08,
+        3.15,
+        3.27,
+        3.2,
+        3.03,
+        3.14,
+        3.12,
+        3.21,
+        3.04,
+        2.94,
+        2.9,
+        2.94,
+        2.99,
+        2.99,
+        2.88
+      ]
+    },
+    {
+      "series_id": "BAMLH0A0HYM2",
+      "label": "U.S. high yield spread",
+      "category": "Credit",
+      "unit": "pct",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-02",
+      "latest_value": 3.17,
+      "change_1": 0.9999999999999787,
+      "z_1": 0.19271886376869152,
+      "change_2": -10.999999999999988,
+      "z_2": -1.0282349894392067,
+      "change_5": -4.0000000000000036,
+      "z_5": -0.16384497521789523,
+      "change_20": 16.999999999999993,
+      "z_20": 0.7208864564469271,
+      "composite_z": -0.2184716803570835,
+      "recent_values": [
+        2.95,
+        2.97,
+        2.94,
+        2.98,
+        3.1,
+        3.12,
+        3.03,
+        3.08,
+        2.97,
+        3.0,
+        3.13,
+        3.19,
+        3.06,
+        3.09,
+        3.17,
+        3.28,
+        3.27,
+        3.22,
+        3.2,
+        3.27,
+        3.24,
+        3.19,
+        3.19,
+        3.17,
+        3.21,
+        3.42,
+        3.46,
+        3.28,
+        3.16,
+        3.17
+      ]
+    },
+    {
+      "series_id": "T10YIE",
+      "label": "10Y breakeven inflation",
+      "category": "Inflation",
+      "unit": "pct",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-03",
+      "latest_value": 2.36,
+      "change_1": 2.0000000000000018,
+      "z_1": 0.9595249437098403,
+      "change_2": 4.999999999999982,
+      "z_2": 1.7261844833474953,
+      "change_5": 4.999999999999982,
+      "z_5": 1.1767165761841352,
+      "change_20": 0.9999999999999787,
+      "z_20": 0.13344775349162363,
+      "composite_z": 1.191657272585085,
+      "recent_values": [
+        2.26,
+        2.26,
+        2.28,
+        2.28,
+        2.25,
+        2.29,
+        2.29,
+        2.29,
+        2.31,
+        2.35,
+        2.34,
+        2.33,
+        2.36,
+        2.38,
+        2.36,
+        2.36,
+        2.37,
+        2.4,
+        2.37,
+        2.38,
+        2.33,
+        2.33,
+        2.31,
+        2.34,
+        2.31,
+        2.31,
+        2.3,
+        2.31,
+        2.34,
+        2.36
+      ]
+    },
+    {
+      "series_id": "DGS2",
+      "label": "2Y Treasury yield",
+      "category": "Rates",
+      "unit": "pct",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-02",
+      "latest_value": 3.79,
+      "change_1": -2.0000000000000018,
+      "z_1": -0.37891324784939734,
+      "change_2": 0.0,
+      "z_2": 0.015180261935281254,
+      "change_5": -16.999999999999993,
+      "z_5": -1.7098895435924701,
+      "change_20": 22.00000000000002,
+      "z_20": 1.4779224515598757,
+      "composite_z": -0.43403866909214467,
+      "recent_values": [
+        3.48,
+        3.43,
+        3.43,
+        3.45,
+        3.42,
+        3.38,
+        3.47,
+        3.51,
+        3.54,
+        3.57,
+        3.56,
+        3.56,
+        3.57,
+        3.64,
+        3.76,
+        3.73,
+        3.68,
+        3.68,
+        3.76,
+        3.79,
+        3.88,
+        3.83,
+        3.9,
+        3.84,
+        3.96,
+        3.88,
+        3.82,
+        3.79,
+        3.81,
+        3.79
+      ]
+    },
+    {
+      "series_id": "DGS10",
+      "label": "10Y Treasury yield",
+      "category": "Rates",
+      "unit": "pct",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-02",
+      "latest_value": 4.31,
+      "change_1": -2.000000000000046,
+      "z_1": -0.434903454073772,
+      "change_2": 0.9999999999999787,
+      "z_2": 0.14940834880177575,
+      "change_5": -11.000000000000032,
+      "z_5": -1.1273817675183784,
+      "change_20": 17.99999999999997,
+      "z_20": 1.2768925065267678,
+      "composite_z": -0.31251577787000195,
+      "recent_values": [
+        4.08,
+        4.03,
+        4.04,
+        4.05,
+        4.02,
+        3.97,
+        4.05,
+        4.06,
+        4.09,
+        4.13,
+        4.15,
+        4.12,
+        4.15,
+        4.21,
+        4.27,
+        4.28,
+        4.23,
+        4.2,
+        4.26,
+        4.25,
+        4.39,
+        4.34,
+        4.39,
+        4.33,
+        4.42,
+        4.44,
+        4.35,
+        4.3,
+        4.33,
+        4.31
+      ]
+    },
+    {
+      "series_id": "DFII10",
+      "label": "10Y real yield",
+      "category": "Rates",
+      "unit": "pct",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-02",
+      "latest_value": 1.97,
+      "change_1": -5.000000000000004,
+      "z_1": -1.26047377570751,
+      "change_2": -3.0000000000000027,
+      "z_2": -0.536147765667663,
+      "change_5": -11.00000000000001,
+      "z_5": -1.3200964388562018,
+      "change_20": 14.999999999999991,
+      "z_20": 1.253407598470659,
+      "composite_z": -0.9294064366163858,
+      "recent_values": [
+        1.8,
+        1.77,
+        1.78,
+        1.77,
+        1.74,
+        1.72,
+        1.76,
+        1.77,
+        1.8,
+        1.82,
+        1.8,
+        1.78,
+        1.82,
+        1.85,
+        1.89,
+        1.92,
+        1.87,
+        1.83,
+        1.86,
+        1.88,
+        2.01,
+        2.01,
+        2.06,
+        2.02,
+        2.08,
+        2.13,
+        2.04,
+        2.0,
+        2.02,
+        1.97
+      ]
+    },
+    {
+      "series_id": "DTWEXBGS",
+      "label": "Broad U.S. dollar",
+      "category": "FX",
+      "unit": "index",
+      "source": "FRED public CSV",
+      "latest_date": "2026-03-27",
+      "latest_value": 120.8851,
+      "change_1": 0.41208083795030975,
+      "z_1": 1.428696851377379,
+      "change_2": 0.6300768678794717,
+      "z_2": 1.539484560299318,
+      "change_5": 0.506669260706854,
+      "z_5": 0.9169086923903664,
+      "change_20": 2.599507903003078,
+      "z_20": 2.5479609569822066,
+      "composite_z": 1.4155387375367996,
+      "recent_values": [
+        117.5258,
+        117.7375,
+        117.8426,
+        118.2354,
+        117.9917,
+        117.9395,
+        117.9463,
+        117.769,
+        117.9042,
+        117.8223,
+        118.667,
+        119.4341,
+        119.0705,
+        119.5683,
+        119.491,
+        119.5151,
+        118.7255,
+        119.2885,
+        119.8227,
+        120.5518,
+        120.097,
+        119.8328,
+        119.9276,
+        120.1802,
+        120.2757,
+        119.9371,
+        120.1295,
+        120.1282,
+        120.389,
+        120.8851
+      ]
+    },
+    {
+      "series_id": "SP500",
+      "label": "S&P 500",
+      "category": "Equities",
+      "unit": "index",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-02",
+      "latest_value": 6582.69,
+      "change_1": 0.1120857996264804,
+      "z_1": 0.03796996658336142,
+      "change_2": 0.8297439542193202,
+      "z_2": 0.45116749748018453,
+      "change_5": 1.6292634426199097,
+      "z_5": 0.6054825552798285,
+      "change_20": -3.630954908054952,
+      "z_20": -1.2705379121572886,
+      "composite_z": 0.21000634965466924,
+      "recent_values": [
+        6909.51,
+        6837.75,
+        6890.07,
+        6946.13,
+        6908.86,
+        6878.88,
+        6881.62,
+        6816.63,
+        6869.5,
+        6830.71,
+        6740.02,
+        6795.99,
+        6781.48,
+        6775.8,
+        6672.62,
+        6632.19,
+        6699.38,
+        6716.09,
+        6624.7,
+        6606.49,
+        6506.48,
+        6581.0,
+        6556.37,
+        6591.9,
+        6477.16,
+        6368.85,
+        6343.72,
+        6528.52,
+        6575.32,
+        6582.69
+      ]
+    },
+    {
+      "series_id": "VIXCLS",
+      "label": "VIX",
+      "category": "Volatility",
+      "unit": "index",
+      "source": "FRED public CSV",
+      "latest_date": "2026-04-01",
+      "latest_value": 24.54,
+      "change_1": -2.8118811881188153,
+      "z_1": -0.3913593189707166,
+      "change_2": -19.830120875530874,
+      "z_2": -2.0233035128071823,
+      "change_5": -3.1188314251875218,
+      "z_5": -0.23496510005232074,
+      "change_20": 16.028368794326244,
+      "z_20": 0.5218403100113419,
+      "composite_z": -0.8040037518888742,
+      "recent_values": [
+        20.23,
+        19.09,
+        21.01,
+        19.55,
+        17.93,
+        18.63,
+        19.86,
+        21.44,
+        23.57,
+        21.15,
+        23.75,
+        29.49,
+        25.5,
+        24.93,
+        24.23,
+        27.29,
+        27.19,
+        23.51,
+        22.37,
+        25.09,
+        24.06,
+        26.78,
+        26.15,
+        26.95,
+        25.33,
+        27.44,
+        31.05,
+        30.61,
+        25.25,
+        24.54
+      ]
+    }
+  ],
+  "macro_backdrop": [
+    {
+      "series_id": "CPIAUCSL",
+      "label": "CPI inflation",
+      "category": "Inflation",
+      "unit": "pct",
+      "latest_date": "2026-02-01",
+      "latest_value": 327.46,
+      "snapshot_value": 2.6645890876940963,
+      "snapshot_label": "y/y"
+    },
+    {
+      "series_id": "PCEPI",
+      "label": "PCE inflation",
+      "category": "Inflation",
+      "unit": "pct",
+      "latest_date": "2026-01-01",
+      "latest_value": 128.969,
+      "snapshot_value": 2.832151941124403,
+      "snapshot_label": "y/y"
+    },
+    {
+      "series_id": "UNRATE",
+      "label": "Unemployment rate",
+      "category": "Labor",
+      "unit": "pct",
+      "latest_date": "2026-03-01",
+      "latest_value": 4.3,
+      "snapshot_value": 4.3,
+      "snapshot_label": "latest"
+    },
+    {
+      "series_id": "PAYEMS",
+      "label": "Nonfarm payrolls",
+      "category": "Labor",
+      "unit": "k jobs",
+      "latest_date": "2026-03-01",
+      "latest_value": 158637.0,
+      "snapshot_value": 178.0,
+      "snapshot_label": "m/m change"
+    },
+    {
+      "series_id": "RSAFS",
+      "label": "Retail sales",
+      "category": "Demand",
+      "unit": "pct",
+      "latest_date": "2026-02-01",
+      "latest_value": 738366.0,
+      "snapshot_value": 3.7144518641087085,
+      "snapshot_label": "y/y"
+    },
+    {
+      "series_id": "INDPRO",
+      "label": "Industrial production",
+      "category": "Supply",
+      "unit": "pct",
+      "latest_date": "2026-02-01",
+      "latest_value": 102.551,
+      "snapshot_value": 1.4359149865528271,
+      "snapshot_label": "y/y"
+    }
+  ],
+  "lag_check": [
+    {
+      "label": "Brent crude",
+      "expected_direction": 1,
+      "weight": 1.0,
+      "baseline_date": "2026-03-10",
+      "h1_value": 1.268922528940339,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 13.958147818343713,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": 12.466607301869994,
+      "h5_match": true,
+      "h5_date": "2026-03-16",
+      "h20_value": 35.6634016028495,
+      "h20_match": true,
+      "h20_date": "2026-03-30"
+    },
+    {
+      "label": "10Y breakeven inflation",
+      "expected_direction": 1,
+      "weight": 1.0,
+      "baseline_date": "2026-03-10",
+      "h1_value": 2.9999999999999805,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 4.999999999999982,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": 2.9999999999999805,
+      "h5_match": true,
+      "h5_date": "2026-03-16",
+      "h20_value": -2.0000000000000018,
+      "h20_match": false,
+      "h20_date": "2026-03-30"
+    },
+    {
+      "label": "Broad U.S. dollar",
+      "expected_direction": 1,
+      "weight": 0.4,
+      "baseline_date": "2026-03-10",
+      "h1_value": 0.4742030987445851,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 0.924148561176833,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": 1.1551857014710383,
+      "h5_match": true,
+      "h5_date": "2026-03-16",
+      "h20_value": null,
+      "h20_match": null,
+      "h20_date": null
+    },
+    {
+      "label": "10Y real yield",
+      "expected_direction": 1,
+      "weight": 0.4,
+      "baseline_date": "2026-03-10",
+      "h1_value": 3.0000000000000027,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 6.999999999999984,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": 5.000000000000004,
+      "h5_match": true,
+      "h5_date": "2026-03-16",
+      "h20_value": 21.999999999999996,
+      "h20_match": true,
+      "h20_date": "2026-03-30"
+    },
+    {
+      "label": "2Y Treasury yield",
+      "expected_direction": 1,
+      "weight": 0.7,
+      "baseline_date": "2026-03-10",
+      "h1_value": 7.000000000000028,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 18.999999999999993,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": 11.000000000000032,
+      "h5_match": true,
+      "h5_date": "2026-03-16",
+      "h20_value": 25.0,
+      "h20_match": true,
+      "h20_date": "2026-03-30"
+    },
+    {
+      "label": "VIX",
+      "expected_direction": 1,
+      "weight": 0.35,
+      "baseline_date": "2026-03-10",
+      "h1_value": -2.807862013638184,
+      "h1_match": false,
+      "h1_date": "2026-03-11",
+      "h2_value": 9.466506217408742,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": -5.695948656237458,
+      "h5_match": false,
+      "h5_date": "2026-03-16",
+      "h20_value": 22.783794624949856,
+      "h20_match": true,
+      "h20_date": "2026-03-30"
+    },
+    {
+      "label": "10Y Treasury yield",
+      "expected_direction": 1,
+      "weight": 0.45,
+      "baseline_date": "2026-03-10",
+      "h1_value": 5.999999999999961,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 11.999999999999922,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": 8.000000000000007,
+      "h5_match": true,
+      "h5_date": "2026-03-16",
+      "h20_value": 19.99999999999993,
+      "h20_match": true,
+      "h20_date": "2026-03-30"
+    },
+    {
+      "label": "Henry Hub gas",
+      "expected_direction": 1,
+      "weight": 0.75,
+      "baseline_date": "2026-03-10",
+      "h1_value": 2.2727272727272676,
+      "h1_match": true,
+      "h1_date": "2026-03-11",
+      "h2_value": 6.168831168831167,
+      "h2_match": true,
+      "h2_date": "2026-03-12",
+      "h5_value": -1.6233766233766318,
+      "h5_match": false,
+      "h5_date": "2026-03-16",
+      "h20_value": -6.493506493506499,
+      "h20_match": false,
+      "h20_date": "2026-03-30"
     }
   ]
 }

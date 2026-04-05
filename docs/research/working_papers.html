@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Macro Scenario Monitoring – Portfolio</title>
+<title>War-to-Macro Terminal – Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,8 +84,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Macro Scenario Monitoring</h1>
-<p class="subtitle lead">Vol. 1 | Before, during, and after the U.S.-Iran war</p>
+<h1 class="title">War-to-Macro Terminal</h1>
 </div>
 
 
@@ -103,225 +102,1410 @@ ul.task-list li input[type="checkbox"] {
 
 
 <style>
-.hero-grid,
-.branch-grid,
-.phase-grid,
-.decision-grid {
+#title-block-header {
+  display: none;
+}
+
+#quarto-document-content {
+  padding-top: 0;
+}
+
+.terminal-page {
+  --terminal-bg: #071019;
+  --terminal-bg-soft: #0b1521;
+  --terminal-panel: rgba(10, 20, 31, 0.88);
+  --terminal-panel-strong: rgba(13, 26, 39, 0.97);
+  --terminal-border: rgba(114, 166, 203, 0.18);
+  --terminal-grid: rgba(79, 112, 141, 0.16);
+  --terminal-ink: #e8eff5;
+  --terminal-muted: #8ea4ba;
+  --terminal-cyan: #4bc9dd;
+  --terminal-orange: #ff9d31;
+  --terminal-green: #48d597;
+  --terminal-red: #ff6e6e;
+  --terminal-purple: #9b87ff;
+  --terminal-yellow: #ffc857;
+  --terminal-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  margin: 0 auto 2rem;
+  padding: 1rem 0 3rem;
+  color: var(--terminal-ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.terminal-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(84, 136, 176, 0.24);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255, 157, 49, 0.18), transparent 20%),
+    radial-gradient(circle at 86% 12%, rgba(75, 201, 221, 0.16), transparent 22%),
+    linear-gradient(180deg, rgba(6, 12, 20, 0.98), rgba(8, 16, 26, 0.98));
+  box-shadow: var(--terminal-shadow);
+}
+
+.terminal-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--terminal-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--terminal-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.terminal-topbar {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--terminal-border);
+  background: rgba(7, 14, 22, 0.92);
+}
+
+.terminal-dots {
+  display: inline-flex;
+  gap: 0.45rem;
+}
+
+.terminal-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+}
+
+.terminal-dots span:nth-child(1) { background: #ff5f56; }
+.terminal-dots span:nth-child(2) { background: #ffbd2e; }
+.terminal-dots span:nth-child(3) { background: #27c93f; }
+
+.terminal-brand {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.83rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brand-kicker {
+  color: var(--terminal-orange);
+  font-weight: 700;
+}
+
+.brand-title {
+  color: var(--terminal-ink);
+  font-weight: 600;
+}
+
+.brand-chip {
+  padding: 0.28rem 0.55rem;
+  border: 1px solid rgba(75, 201, 221, 0.26);
+  border-radius: 999px;
+  color: var(--terminal-cyan);
+}
+
+.terminal-status {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--terminal-muted);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.8rem;
+}
+
+.status-ping {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--terminal-green);
+  box-shadow: 0 0 18px rgba(72, 213, 151, 0.65);
+}
+
+.terminal-app {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem;
+}
+
+.terminal-loading,
+.terminal-error {
+  padding: 3rem 1.4rem;
+  color: var(--terminal-muted);
+  text-align: center;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+}
+
+.terminal-grid {
   display: grid;
   gap: 1rem;
 }
 
-.hero-grid,
-.branch-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.phase-grid,
-.decision-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.scenario-hero {
+.headline-grid {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
 }
 
-.branch-card,
-.phase-card,
-.decision-card {
-  padding: 1.1rem 1.15rem;
-  border: 1px solid rgba(25, 48, 56, 0.1);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.72);
+.headline-card {
+  padding: 0.82rem 0.9rem 0.88rem;
+  border: 1px solid rgba(118, 163, 195, 0.14);
+  border-radius: 18px;
+  background: rgba(12, 23, 36, 0.74);
 }
 
-.branch-card h3,
-.phase-card h3,
-.decision-card h3 {
-  margin: 0.2rem 0 0.65rem;
+.headline-label {
+  color: var(--terminal-muted);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.branch-meta,
-.hub-note {
-  color: var(--muted);
-  font-size: 0.95rem;
+.headline-value {
+  margin-top: 0.35rem;
+  font-size: 1.28rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
-.branch-card ul,
-.decision-card ul {
-  margin: 0.6rem 0 0;
-  padding-left: 1.05rem;
+.headline-subvalue {
+  margin-top: 0.28rem;
+  color: var(--terminal-muted);
+  font-size: 0.82rem;
 }
 
-.branch-card li,
-.decision-card li {
-  margin: 0.35rem 0;
+.ticker-strip {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
 }
 
-.branch-actions {
+.ticker-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.6rem;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.52rem 0.72rem;
+  border: 1px solid rgba(118, 163, 195, 0.14);
+  border-radius: 999px;
+  background: rgba(12, 23, 36, 0.74);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+}
+
+.ticker-name {
+  color: var(--terminal-cyan);
+  font-weight: 700;
+}
+
+.ticker-latest {
+  color: var(--terminal-ink);
+}
+
+.ticker-change {
+  font-weight: 700;
+}
+
+.terminal-panel {
+  border: 1px solid var(--terminal-border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(8, 17, 27, 0.92), rgba(12, 22, 34, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.terminal-panel-inner {
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.6rem;
+  color: var(--terminal-cyan);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.section-copy {
+  margin: 0.55rem 0 0;
+  color: var(--terminal-muted);
+  max-width: 70ch;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.05fr) minmax(320px, 1.2fr) minmax(320px, 1.15fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.stage-card {
+  position: relative;
+  min-height: 100%;
+  border: 1px solid rgba(120, 167, 201, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(12, 23, 35, 0.95), rgba(7, 14, 22, 0.95));
+  padding: 1rem;
+}
+
+.stage-card h3 {
+  margin: 0.2rem 0 0.55rem;
+  font-size: 1.05rem;
+}
+
+.stage-card p {
+  color: var(--terminal-muted);
+}
+
+.stage-card::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: -0.85rem;
+  width: 1.1rem;
+  border-top: 2px dashed rgba(75, 201, 221, 0.35);
+}
+
+.stage-card:last-child::after {
+  display: none;
+}
+
+.cause-title {
+  margin: 0.15rem 0 0.6rem;
+  font-size: 1.45rem;
+  line-height: 1.08;
+}
+
+.cause-meta {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.meta-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(75, 201, 221, 0.1);
+  color: var(--terminal-cyan);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+}
+
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.terminal-tag {
+  padding: 0.34rem 0.55rem;
+  border: 1px solid rgba(255, 157, 49, 0.24);
+  border-radius: 999px;
+  color: var(--terminal-yellow);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.76rem;
+}
+
+.transmission-list,
+.scenario-list,
+.driver-list,
+.transition-list,
+.macro-grid,
+.signal-table,
+.daily-table {
   margin-top: 0.95rem;
 }
+
+.transmission-list,
+.scenario-list {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.transmission-item,
+.scenario-item,
+.driver-item,
+.transition-item,
+.macro-item {
+  border: 1px solid rgba(118, 163, 195, 0.14);
+  border-radius: 18px;
+  background: rgba(12, 23, 36, 0.74);
+}
+
+.transmission-item {
+  padding: 0.78rem 0.8rem;
+}
+
+.transmission-head,
+.scenario-head,
+.driver-head,
+.transition-head,
+.macro-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.transmission-head strong,
+.scenario-head strong {
+  font-size: 0.96rem;
+}
+
+.mono {
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+}
+
+.meter {
+  position: relative;
+  height: 13px;
+  margin-top: 0.7rem;
+  border-radius: 999px;
+  background: rgba(113, 141, 166, 0.14);
+  overflow: hidden;
+}
+
+.meter::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.meter-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 999px;
+}
+
+.tone-positive {
+  color: var(--terminal-green);
+}
+
+.tone-negative {
+  color: var(--terminal-red);
+}
+
+.tone-neutral {
+  color: var(--terminal-yellow);
+}
+
+.scenario-item {
+  padding: 0.85rem 0.9rem 0.95rem;
+}
+
+.scenario-item.is-dominant {
+  border-color: rgba(255, 157, 49, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 157, 49, 0.18);
+}
+
+.scenario-subtitle {
+  margin: 0.45rem 0 0;
+  color: var(--terminal-muted);
+  font-size: 0.92rem;
+}
+
+.prob-track {
+  position: relative;
+  height: 11px;
+  margin-top: 0.72rem;
+  border-radius: 999px;
+  background: rgba(113, 141, 166, 0.12);
+  overflow: hidden;
+}
+
+.prob-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+}
+
+.delta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.48rem;
+  color: var(--terminal-muted);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
+  gap: 1rem;
+}
+
+.chart-shell,
+.driver-shell,
+.signal-shell,
+.macro-shell,
+.lag-shell,
+.daily-shell {
+  min-height: 100%;
+}
+
+.regime-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16px, 1fr));
+  gap: 0.2rem;
+  margin-top: 0.9rem;
+}
+
+.regime-cell {
+  height: 14px;
+  border-radius: 6px;
+  opacity: 0.92;
+}
+
+.chart-wrap {
+  margin-top: 0.85rem;
+  border: 1px solid rgba(114, 166, 203, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(6, 14, 22, 0.92), rgba(9, 18, 30, 0.92));
+  overflow: hidden;
+}
+
+.history-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.history-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  padding: 0.85rem 1rem 1rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: var(--terminal-muted);
+  font-size: 0.86rem;
+}
+
+.legend-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+}
+
+.driver-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.driver-item,
+.transition-item {
+  padding: 0.78rem 0.82rem;
+}
+
+.driver-item p,
+.transition-item p,
+.macro-item p {
+  margin: 0.4rem 0 0;
+  color: var(--terminal-muted);
+  font-size: 0.9rem;
+}
+
+.contribution-track {
+  height: 10px;
+  margin-top: 0.6rem;
+  border-radius: 999px;
+  background: rgba(113, 141, 166, 0.12);
+  overflow: hidden;
+}
+
+.contribution-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.transition-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.transition-item .transition-date {
+  color: var(--terminal-cyan);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.transition-route {
+  margin-top: 0.35rem;
+  color: var(--terminal-ink);
+  font-weight: 700;
+}
+
+.signal-shell .panel-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.7rem;
+  color: var(--terminal-muted);
+  font-size: 0.86rem;
+}
+
+.table-wrap {
+  margin-top: 0.85rem;
+  overflow-x: auto;
+}
+
+.terminal-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.terminal-table th,
+.terminal-table td {
+  padding: 0.72rem 0.65rem;
+  border-bottom: 1px solid rgba(114, 166, 203, 0.12);
+  vertical-align: middle;
+}
+
+.terminal-table th {
+  color: var(--terminal-cyan);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.terminal-table td {
+  font-size: 0.92rem;
+}
+
+.signal-label {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.signal-label small {
+  color: var(--terminal-muted);
+  font-size: 0.78rem;
+}
+
+.sparkline {
+  width: 130px;
+  height: 34px;
+}
+
+.macro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.72rem;
+}
+
+.macro-item {
+  padding: 0.82rem 0.86rem 0.9rem;
+}
+
+.macro-item .macro-value {
+  margin-top: 0.45rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.macro-item .macro-date {
+  color: var(--terminal-muted);
+  font-size: 0.78rem;
+}
+
+.lag-table td.match-yes {
+  color: var(--terminal-green);
+}
+
+.lag-table td.match-no {
+  color: var(--terminal-red);
+}
+
+.lag-table td.match-na {
+  color: var(--terminal-muted);
+}
+
+.daily-shell .table-wrap {
+  max-height: 520px;
+  overflow: auto;
+}
+
+.foot-note {
+  margin-top: 0.82rem;
+  color: var(--terminal-muted);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 1200px) {
+  .headline-grid,
+  .flow-grid,
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage-card::after {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .terminal-topbar {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .terminal-status {
+    justify-self: start;
+  }
+
+  .terminal-app {
+    padding: 0.85rem;
+  }
+
+  .terminal-panel-inner,
+  .stage-card {
+    padding: 0.9rem;
+  }
+}
 </style>
-<div class="surface scenario-hero">
-<p class="eyebrow">
-Decision, Risk and AI
-</p>
-<h2 class="anchored">
-Macro Scenario Monitoring
-</h2>
-<p>
-Vol. 1 studies one live geopolitical event through a sell-side macro lens. The organizing question is simple: how do we turn a before-war baseline, a live war shock, and post-war outcomes into a structured decision process using public data, explicit scenarios, and market confirmation signals?
-</p>
-<p class="hub-note">
-This hub is intentionally simple. It introduces the event, the decision structure, and the two research branches. The detailed model, signal design, and index lists live inside each branch page.
-</p>
+<div class="terminal-page">
+  <div class="terminal-shell">
+    <div class="terminal-topbar">
+      <div class="terminal-dots" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="terminal-brand">
+        <span class="brand-kicker">Macro terminal</span>
+        <span class="brand-title">War -&gt; transmission -&gt; conclusion</span>
+        <span class="brand-chip">live public-signal monitor</span>
+      </div>
+      <div class="terminal-status">
+        <span class="status-ping"></span>
+        <span>Loading published snapshot</span>
+      </div>
+    </div>
+    <div class="terminal-app" id="war-terminal-app">
+      <div class="terminal-loading">Initializing war-to-macro monitor...</div>
+    </div>
+  </div>
 </div>
-<div class="surface">
-<p class="eyebrow">
-Vol. 1 frame
-</p>
-<h3 class="anchored">
-One event, three phases
-</h3>
-<div class="phase-grid">
-<div class="phase-card">
-<p class="eyebrow">
-Phase 1
-</p>
-<h3 class="anchored">
-Pre-war baseline
-</h3>
-<p>
-The benchmark world before the shock: growth, inflation, rates, and cross-asset pricing under a lower geopolitical premium.
-</p>
-</div>
-<div class="phase-card">
-<p class="eyebrow">
-Phase 2
-</p>
-<h3 class="anchored">
-Current war transmission
-</h3>
-<p>
-The live shock: energy, shipping, food, inflation compensation, credit, and risk appetite are checked against explicit lagged market responses.
-</p>
-</div>
-<div class="phase-card">
-<p class="eyebrow">
-Phase 3
-</p>
-<h3 class="anchored">
-Post-war outcomes
-</h3>
-<p>
-The two main paths after the conflict: relief and normalization, or persistent fragmentation with longer-lived inflation and risk premia.
-</p>
-</div>
-</div>
-</div>
-<div class="surface">
-<p class="eyebrow">
-Research structure
-</p>
-<h3 class="anchored">
-Two branches from the same scenario engine
-</h3>
-<div class="branch-grid">
-<div class="branch-card">
-<p class="eyebrow">
-Branch A
-</p>
-<h3 class="anchored">
-Commodity
-</h3>
-<p>
-Energy and food are treated as physical markets first, then as macro transmission channels. This branch focuses on supply, storage, logistics, inventories, export flows, weather, and geopolitical risk premium.
-</p>
-<p class="branch-meta">
-Goal: show how a commodity shock becomes an inflation, growth, FX, and country-risk story.
-</p>
-<ul>
-<li>
-Energy-centered decision model for oil, gas, products, and food spillovers.
-</li>
-<li>
-Scenario design around pre-war, current war, relief, and persistent fragmentation.
-</li>
-<li>
-Desk-style reading of EIA, IEA, OPEC, USDA, FAO, futures curves, and positioning.
-</li>
-</ul>
-<div class="branch-actions">
-<p><a href="macro_scenario_commodity.html">Open commodity branch</a></p>
-</div>
-</div>
-<div class="branch-card">
-<p class="eyebrow">
-Branch B
-</p>
-<h3 class="anchored">
-Investment
-</h3>
-<p>
-This branch translates the same scenarios into sell-side macro forecasting and market interpretation. It follows the daily discipline of revising the growth, inflation, Fed, rates, FX, credit, and equity story for clients and internal desk partners.
-</p>
-<p class="branch-meta">
-Goal: show how a macro economist updates scenarios, interprets signals, and turns them into a publishable desk note.
-</p>
-<ul>
-<li>
-Live scenario scoring using public signals and explicit lag logic.
-</li>
-<li>
-Indicator playbook covering PMI, claims, payrolls, CPI/PCE, the yield curve, spreads, financial conditions, and GDP nowcasts.
-</li>
-<li>
-Sell-side framing for forecast revision, sales/trading briefings, and client updates.
-</li>
-</ul>
-<div class="branch-actions">
-<p><a href="macro_scenario_investment.html">Open investment branch</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="surface">
-<p class="eyebrow">
-Decision model
-</p>
-<h3 class="anchored">
-How the project is organized
-</h3>
-<div class="decision-grid">
-<div class="decision-card">
-<h3 class="anchored">
-Scenario
-</h3>
-<p>
-Each phase is translated into a base case and alternative scenarios with explicit reasoning, not only narrative judgment.
-</p>
-</div>
-<div class="decision-card">
-<h3 class="anchored">
-Signals and indices
-</h3>
-<p>
-Commodity reports, macro releases, and market signals are linked to each scenario through expected direction, lag, and transmission channel.
-</p>
-</div>
-<div class="decision-card">
-<h3 class="anchored">
-Desk output
-</h3>
-<p>
-The final output is a sell-side style research surface: what changed, what confirms it, what could invalidate it, and what clients should watch next.
-</p>
-</div>
-</div>
-</div>
+<script>
+(function () {
+  const SNAPSHOT_PATH = "generated/snapshot.json";
+  const COLORS = {
+    contained_shock: "#48d597",
+    inflation_shock: "#ff9d31",
+    stagflation: "#ff5e7a",
+    growth_slowdown: "#6f86ff"
+  };
+
+  const QUESTION_LABELS = {
+    energy_input_pressure: "Energy input pressure",
+    inflation_pressure: "Inflation pressure",
+    financial_tightening: "Financial tightening",
+    growth_drag: "Growth drag",
+    policy_offset: "Policy offset"
+  };
+
+  const app = document.getElementById("war-terminal-app");
+  const status = document.querySelector(".terminal-status");
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function num(value) {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function pct(value, digits = 1) {
+    const parsed = num(value);
+    if (parsed === null) {
+      return "n/a";
+    }
+    return `${(parsed * 100).toFixed(digits)}%`;
+  }
+
+  function fixed(value, digits = 2) {
+    const parsed = num(value);
+    if (parsed === null) {
+      return "n/a";
+    }
+    return parsed.toFixed(digits);
+  }
+
+  function formatLatestValue(row) {
+    const value = num(row.latest_value);
+    if (value === null) {
+      return "n/a";
+    }
+    const unit = String(row.unit || "");
+    if (unit === "pct") {
+      return `${value.toFixed(2)}%`;
+    }
+    if (unit === "index") {
+      return value.toLocaleString("en-US", {
+        minimumFractionDigits: value >= 1000 ? 2 : 2,
+        maximumFractionDigits: 2
+      });
+    }
+    if (unit.startsWith("$/")) {
+      return `$${value.toFixed(2)}`;
+    }
+    return value.toLocaleString("en-US", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function formatMacroSnapshot(row) {
+    const value = num(row.snapshot_value);
+    if (value === null) {
+      return "n/a";
+    }
+    if (row.snapshot_label === "m/m change") {
+      return `${signed(value, 0)}k`;
+    }
+    if (row.snapshot_label === "y/y") {
+      return `${value.toFixed(2)}%`;
+    }
+    if (row.snapshot_label === "latest" && row.unit === "pct") {
+      return `${value.toFixed(2)}%`;
+    }
+    return value.toLocaleString("en-US", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2
+    });
+  }
+
+  function signed(value, digits = 2, suffix = "") {
+    const parsed = num(value);
+    if (parsed === null) {
+      return "n/a";
+    }
+    const sign = parsed > 0 ? "+" : "";
+    return `${sign}${parsed.toFixed(digits)}${suffix}`;
+  }
+
+  function shortDate(value) {
+    const parts = String(value).split("-");
+    if (parts.length !== 3) {
+      return escapeHtml(value);
+    }
+    return `${parts[1]}/${parts[2]}`;
+  }
+
+  function prettyDateTime(value) {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) {
+      return escapeHtml(value);
+    }
+    return parsed.toLocaleString("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit"
+    });
+  }
+
+  function daysBetween(start, end) {
+    const a = new Date(`${start}T00:00:00`);
+    const b = new Date(`${end}T00:00:00`);
+    return Math.round((b - a) / 86400000);
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function toneClass(value) {
+    const parsed = num(value);
+    if (parsed === null) {
+      return "tone-neutral";
+    }
+    if (parsed > 0.08) {
+      return "tone-positive";
+    }
+    if (parsed < -0.08) {
+      return "tone-negative";
+    }
+    return "tone-neutral";
+  }
+
+  function contributionTone(value) {
+    const parsed = num(value) ?? 0;
+    return parsed >= 0 ? "#48d597" : "#ff6e6e";
+  }
+
+  function sparkline(values, color) {
+    if (!Array.isArray(values) || values.length < 2) {
+      return "";
+    }
+    const width = 130;
+    const height = 34;
+    const low = Math.min(...values);
+    const high = Math.max(...values);
+    const span = high === low ? 1 : high - low;
+    const points = values.map((value, idx) => {
+      const x = 4 + (idx * (width - 8)) / (values.length - 1);
+      const y = 4 + ((high - value) * (height - 8)) / span;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(" ");
+    return [
+      `<svg viewBox="0 0 ${width} ${height}" class="sparkline" role="img" aria-label="Recent path">`,
+      `<polyline fill="none" stroke="${color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="${points}"></polyline>`,
+      "</svg>"
+    ].join("");
+  }
+
+  function historyChart(history, scenarios) {
+    const width = 960;
+    const height = 320;
+    const left = 56;
+    const right = 20;
+    const top = 18;
+    const bottom = 42;
+    const plotWidth = width - left - right;
+    const plotHeight = height - top - bottom;
+    const gridLevels = [0, 0.25, 0.5, 0.75, 1];
+
+    const grid = gridLevels.map((level) => {
+      const y = top + (1 - level) * plotHeight;
+      return [
+        `<line x1="${left}" y1="${y}" x2="${width - right}" y2="${y}" stroke="rgba(142,164,186,0.16)" stroke-width="1"></line>`,
+        `<text x="${left - 10}" y="${y + 4}" fill="rgba(142,164,186,0.72)" text-anchor="end" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${Math.round(level * 100)}%</text>`
+      ].join("");
+    }).join("");
+
+    const xAxis = [
+      `<line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="rgba(142,164,186,0.24)" stroke-width="1.2"></line>`,
+      `<text x="${left}" y="${height - 14}" fill="rgba(142,164,186,0.72)" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${escapeHtml(history[0].date)}</text>`,
+      `<text x="${width - right}" y="${height - 14}" fill="rgba(142,164,186,0.72)" text-anchor="end" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${escapeHtml(history[history.length - 1].date)}</text>`
+    ].join("");
+
+    const lines = scenarios.map((scenario) => {
+      const key = `${scenario.scenario_id}_probability`;
+      const points = history.map((row, idx) => {
+        const x = left + (idx * plotWidth) / Math.max(history.length - 1, 1);
+        const y = top + (1 - num(row[key])) * plotHeight;
+        return `${x.toFixed(2)},${y.toFixed(2)}`;
+      }).join(" ");
+      const color = COLORS[scenario.scenario_id] || "#4bc9dd";
+      const lastRow = history[history.length - 1];
+      const lastX = left + plotWidth;
+      const lastY = top + (1 - num(lastRow[key])) * plotHeight;
+      return [
+        `<polyline fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="${points}"></polyline>`,
+        `<circle cx="${lastX}" cy="${lastY}" r="4" fill="${color}"></circle>`
+      ].join("");
+    }).join("");
+
+    const legend = scenarios.map((scenario) => (
+      `<div class="legend-item"><span class="legend-swatch" style="background:${COLORS[scenario.scenario_id] || "#4bc9dd"}"></span>${escapeHtml(scenario.title)}</div>`
+    )).join("");
+
+    return `
+      <div class="chart-wrap">
+        <svg viewBox="0 0 ${width} ${height}" class="history-chart" role="img" aria-label="Scenario probabilities from war start to latest date">
+          ${grid}
+          ${xAxis}
+          ${lines}
+        </svg>
+        <div class="history-legend">${legend}</div>
+      </div>
+    `;
+  }
+
+  function regimeStrip(history) {
+    return history.map((row) => {
+      const color = COLORS[row.dominant_scenario_id] || "#4bc9dd";
+      const title = `${row.date} | ${row.dominant_scenario} ${pct(row.dominant_probability)}`;
+      return `<div class="regime-cell" style="background:${color}" title="${escapeHtml(title)}"></div>`;
+    }).join("");
+  }
+
+  function transmissionItems(questions) {
+    return questions.map((item) => {
+      const score = clamp(num(item.score) ?? 0, -1, 1);
+      const left = score >= 0 ? 50 : 50 + score * 50;
+      const width = Math.abs(score) * 50;
+      const color = score >= 0 ? "#ff9d31" : "#48d597";
+      return `
+        <div class="transmission-item">
+          <div class="transmission-head">
+            <strong>${escapeHtml(QUESTION_LABELS[item.question] || item.question)}</strong>
+            <span class="mono ${toneClass(score)}">${signed(score, 2)}</span>
+          </div>
+          <div class="meter">
+            <div class="meter-fill" style="left:${left}%;width:${width}%;background:${color}"></div>
+          </div>
+          <p class="foot-note">${escapeHtml(String(item.reading))}</p>
+        </div>
+      `;
+    }).join("");
+  }
+
+  function scenarioItems(scenarios, historyStart) {
+    return scenarios.map((scenario, idx) => {
+      const current = num(scenario.probability) ?? 0;
+      const prior = historyStart ? num(historyStart[`${scenario.scenario_id}_probability`]) ?? 0 : 0;
+      const delta = (current - prior) * 100;
+      const color = COLORS[scenario.scenario_id] || "#4bc9dd";
+      return `
+        <div class="scenario-item ${idx === 0 ? "is-dominant" : ""}">
+          <div class="scenario-head">
+            <strong>${escapeHtml(scenario.title)}</strong>
+            <span class="mono" style="color:${color}">${pct(current)}</span>
+          </div>
+          <p class="scenario-subtitle">${escapeHtml(scenario.description)}</p>
+          <div class="prob-track">
+            <div class="prob-fill" style="width:${(current * 100).toFixed(1)}%;background:${color}"></div>
+          </div>
+          <div class="delta-row">
+            <span>Raw score ${signed(scenario.raw_score, 2)}</span>
+            <span class="${toneClass(delta / 100)}">${signed(delta, 1, " pts")} since start</span>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  function driverItems(items, heading) {
+    return `
+      <div class="driver-shell">
+        <p class="section-kicker">${escapeHtml(heading)}</p>
+        <div class="driver-grid">
+          ${items.map((item) => {
+            const value = num(item.contribution) ?? 0;
+            const width = clamp(Math.abs(value) / 0.65, 0.08, 1) * 100;
+            return `
+              <div class="driver-item">
+                <div class="driver-head">
+                  <strong>${escapeHtml(item.label)}</strong>
+                  <span class="mono ${toneClass(value)}">${signed(value, 2)}</span>
+                </div>
+                <p>Composite z ${signed(item.composite_z, 2)} | weight ${fixed(item.weight, 2)}</p>
+                <div class="contribution-track">
+                  <div class="contribution-fill" style="width:${width.toFixed(1)}%;background:${contributionTone(value)}"></div>
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  function transitionItems(transitions) {
+    return transitions.map((item) => `
+      <div class="transition-item">
+        <div class="transition-date">${escapeHtml(item.date)}</div>
+        <div class="transition-route">${escapeHtml(item.from || "Opening read")} -> ${escapeHtml(item.to)}</div>
+        <p>${escapeHtml(item.note)}</p>
+      </div>
+    `).join("");
+  }
+
+  function signalRows(signals) {
+    return signals.map((row) => `
+      <tr>
+        <td>
+          <div class="signal-label">
+            <strong>${escapeHtml(row.label)}</strong>
+            <small>${escapeHtml(row.category)} | ${escapeHtml(row.latest_date)}</small>
+          </div>
+        </td>
+        <td class="mono">${escapeHtml(formatLatestValue(row))}</td>
+        <td class="mono ${toneClass((num(row.change_1) ?? 0) / 10)}">${signed(row.change_1, 2)}</td>
+        <td class="mono ${toneClass((num(row.change_5) ?? 0) / 10)}">${signed(row.change_5, 2)}</td>
+        <td class="mono ${toneClass(row.composite_z)}">${signed(row.composite_z, 2)}</td>
+        <td>${sparkline(Array.isArray(row.recent_values) ? row.recent_values.map(Number) : [], COLORS.inflation_shock)}</td>
+      </tr>
+    `).join("");
+  }
+
+  function selectTapeSignals(signals) {
+    const preferred = [
+      "Brent crude",
+      "10Y breakeven inflation",
+      "2Y Treasury yield",
+      "U.S. high yield spread",
+      "Broad U.S. dollar",
+      "S&P 500",
+      "VIX"
+    ];
+    const selected = preferred
+      .map((label) => signals.find((row) => row.label === label))
+      .filter(Boolean);
+    if (selected.length >= 5) {
+      return selected;
+    }
+    const byStrength = [...signals]
+      .sort((a, b) => Math.abs(num(b.composite_z) ?? 0) - Math.abs(num(a.composite_z) ?? 0));
+    const merged = [...selected];
+    for (const row of byStrength) {
+      if (!merged.some((item) => item.label === row.label)) {
+        merged.push(row);
+      }
+      if (merged.length >= 7) {
+        break;
+      }
+    }
+    return merged;
+  }
+
+  function tickerRow(signals) {
+    return signals.map((row) => `
+      <div class="ticker-item">
+        <span class="ticker-name">${escapeHtml(row.label)}</span>
+        <span class="ticker-latest">${escapeHtml(formatLatestValue(row))}</span>
+        <span class="ticker-change ${toneClass((num(row.change_1) ?? 0) / 10)}">${signed(row.change_1, 2)}</span>
+        <span class="ticker-change ${toneClass(row.composite_z)}">z ${signed(row.composite_z, 2)}</span>
+      </div>
+    `).join("");
+  }
+
+  function macroItems(rows) {
+    return rows.map((row) => `
+      <div class="macro-item">
+        <div class="macro-head">
+          <strong>${escapeHtml(row.label)}</strong>
+          <span class="mono">${escapeHtml(row.snapshot_label)}</span>
+        </div>
+        <div class="macro-value">${escapeHtml(formatMacroSnapshot(row))}</div>
+        <p class="macro-date">${escapeHtml(row.category)} | latest ${escapeHtml(row.latest_date)}</p>
+      </div>
+    `).join("");
+  }
+
+  function lagRows(rows) {
+    return rows.map((row) => {
+      const expected = Number(row.expected_direction) > 0 ? "up" : "down";
+      const cells = ["h1", "h2", "h5", "h20"].map((key) => {
+        const value = num(row[`${key}_value`]);
+        const match = row[`${key}_match`];
+        const className = match === true ? "match-yes" : match === false ? "match-no" : "match-na";
+        return `<td class="${className} mono">${value === null ? "n/a" : signed(value, 2)}</td>`;
+      }).join("");
+      return `
+        <tr>
+          <td><strong>${escapeHtml(row.label)}</strong></td>
+          <td class="mono">${expected}</td>
+          ${cells}
+        </tr>
+      `;
+    }).join("");
+  }
+
+  function dailyRows(history) {
+    return history.map((row) => `
+      <tr>
+        <td class="mono">${escapeHtml(row.date)}</td>
+        <td><strong>${escapeHtml(row.dominant_scenario)}</strong></td>
+        <td class="mono">${pct(row.contained_shock_probability)}</td>
+        <td class="mono">${pct(row.inflation_shock_probability)}</td>
+        <td class="mono">${pct(row.stagflation_probability)}</td>
+        <td class="mono">${pct(row.growth_slowdown_probability)}</td>
+      </tr>
+    `).join("");
+  }
+
+  function render(snapshot) {
+    const history = Array.isArray(snapshot.scenario_history) ? snapshot.scenario_history : [];
+    const scenarios = Array.isArray(snapshot.scenarios) ? snapshot.scenarios : [];
+    const questions = Array.isArray(snapshot.five_questions) ? snapshot.five_questions : [];
+    const transitions = Array.isArray(snapshot.transitions) ? snapshot.transitions : [];
+    const signals = Array.isArray(snapshot.market_signals) ? snapshot.market_signals : [];
+    const macro = Array.isArray(snapshot.macro_backdrop) ? snapshot.macro_backdrop : [];
+    const lag = Array.isArray(snapshot.lag_check) ? snapshot.lag_check : [];
+
+    const dominant = scenarios[0];
+    const runnerUp = scenarios[1];
+    const historyStart = history[0];
+    const historyEnd = history[history.length - 1];
+    const trackedDays = historyStart && historyEnd ? daysBetween(historyStart.date, historyEnd.date) + 1 : 0;
+    const startDate = snapshot.active_event?.start_date || historyStart?.date || "";
+    const topSignals = [...signals]
+      .sort((a, b) => Math.abs(num(b.composite_z) ?? 0) - Math.abs(num(a.composite_z) ?? 0))
+      .slice(0, 8);
+    const tapeSignals = selectTapeSignals(signals);
+    const strongestQuestion = [...questions]
+      .sort((a, b) => Math.abs(num(b.score) ?? 0) - Math.abs(num(a.score) ?? 0))[0];
+
+    const latestTransition = transitions.length ? transitions[transitions.length - 1] : null;
+
+    app.innerHTML = `
+      <div class="terminal-grid">
+        <section class="terminal-panel">
+          <div class="terminal-panel-inner">
+            <p class="section-kicker">War monitor</p>
+            <h1 class="section-title">Iran-U.S. war impact terminal</h1>
+            <p class="section-copy">This page starts from the war shock, tracks the transmission channels daily, and updates the macro conclusion directly from public indices and releases. The objective is to show how the original anticipation evolves into inflation shock, stagflation, contained shock, or growth slowdown as new evidence arrives.</p>
+            <div class="headline-grid">
+              <div class="headline-card">
+                <div class="headline-label">Lead conclusion</div>
+                <div class="headline-value" style="color:${COLORS[dominant?.scenario_id] || "#4bc9dd"}">${escapeHtml(dominant?.title || "")}</div>
+                <div class="headline-subvalue">${pct(dominant?.probability)} now</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">Runner-up</div>
+                <div class="headline-value">${escapeHtml(runnerUp?.title || "n/a")}</div>
+                <div class="headline-subvalue">${runnerUp ? pct(runnerUp.probability) : "n/a"} | spread ${runnerUp ? signed(((num(dominant?.probability) ?? 0) - (num(runnerUp?.probability) ?? 0)) * 100, 1, " pts") : "n/a"}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">Tracking window</div>
+                <div class="headline-value">${trackedDays} days</div>
+                <div class="headline-subvalue">from ${escapeHtml(startDate)} to ${escapeHtml(historyEnd?.date || "")}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">Strongest channel</div>
+                <div class="headline-value">${escapeHtml(QUESTION_LABELS[strongestQuestion?.question] || "n/a")}</div>
+                <div class="headline-subvalue">${strongestQuestion ? `${escapeHtml(String(strongestQuestion.reading))} | ${signed(strongestQuestion.score, 2)}` : "n/a"}</div>
+              </div>
+            </div>
+            <div class="ticker-strip">
+              <div class="ticker-row">
+                ${tickerRow(tapeSignals)}
+              </div>
+            </div>
+            <div class="flow-grid" style="margin-top:1rem;">
+              <div class="stage-card">
+                <p class="section-kicker">Cause</p>
+                <div class="cause-title">${escapeHtml(snapshot.active_event?.title || "Active event")}</div>
+                <p>${escapeHtml(snapshot.active_event?.note || "")}</p>
+                <div class="cause-meta">
+                  <div class="meta-pill-row">
+                    <span class="meta-pill">Start ${escapeHtml(startDate)}</span>
+                    <span class="meta-pill">${trackedDays} tracked days</span>
+                    <span class="meta-pill">Updated ${escapeHtml(prettyDateTime(snapshot.generated_at))}</span>
+                  </div>
+                  <div class="tag-grid">
+                    ${(snapshot.active_event?.tags || []).map((tag) => `<span class="terminal-tag">${escapeHtml(tag)}</span>`).join("")}
+                  </div>
+                </div>
+              </div>
+
+              <div class="stage-card">
+                <p class="section-kicker">Transmission channels</p>
+                <h3>How the war shock is moving through the system</h3>
+                <div class="transmission-list">
+                  ${transmissionItems(questions)}
+                </div>
+              </div>
+
+              <div class="stage-card">
+                <p class="section-kicker">Macro conclusions</p>
+                <h3>${escapeHtml(dominant?.title || "No dominant conclusion")}</h3>
+                <p>${escapeHtml(dominant?.description || "")}</p>
+                <div class="meta-pill-row" style="margin-top:0.8rem;">
+                  <span class="meta-pill" style="color:${COLORS[dominant?.scenario_id] || "#4bc9dd"};border-color:${COLORS[dominant?.scenario_id] || "#4bc9dd"}33;">Lead ${pct(dominant?.probability)}</span>
+                  ${runnerUp ? `<span class="meta-pill">Runner-up ${escapeHtml(runnerUp.title)} ${pct(runnerUp.probability)}</span>` : ""}
+                  ${latestTransition ? `<span class="meta-pill">Latest flip ${escapeHtml(latestTransition.date)}</span>` : ""}
+                </div>
+                <div class="scenario-list">
+                  ${scenarioItems(scenarios, historyStart)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="chart-grid">
+          <section class="terminal-panel chart-shell">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Probability path</p>
+              <h2 class="section-title">Daily scenario progression from war start to latest date</h2>
+              <p class="section-copy">Each line shows how the macro conclusion likelihood moved as the shock passed through energy, inflation, financial, and growth signals.</p>
+              <div class="regime-strip">${regimeStrip(history)}</div>
+              ${historyChart(history, scenarios)}
+            </div>
+          </section>
+
+          <section class="terminal-panel driver-shell">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Why the current read leads</p>
+              <h2 class="section-title">${escapeHtml(dominant?.title || "")} drivers</h2>
+              <p class="section-copy">These are the strongest index contributions now pushing the dominant conclusion higher or lower.</p>
+              ${driverItems(dominant?.top_confirms || [], "Confirming indices")}
+              <div style="height:0.9rem;"></div>
+              ${driverItems(dominant?.top_diverges || [], "Signals pulling against it")}
+            </div>
+          </section>
+        </div>
+
+        <div class="chart-grid">
+          <section class="terminal-panel signal-shell">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Index engine</p>
+              <h2 class="section-title">Current market drivers</h2>
+              <div class="panel-tools">
+                <span>Top signals by absolute composite z-score</span>
+                <span class="mono">latest public print only</span>
+              </div>
+              <div class="table-wrap">
+                <table class="terminal-table signal-table">
+                  <thead>
+                    <tr>
+                      <th>Signal</th>
+                      <th>Latest</th>
+                      <th>1d</th>
+                      <th>5d</th>
+                      <th>z-score</th>
+                      <th>Path</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${signalRows(topSignals)}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="terminal-panel">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Regime flips</p>
+              <h2 class="section-title">How the market story changed</h2>
+              <div class="transition-list">
+                ${transitionItems(transitions.slice(-8).reverse())}
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="chart-grid">
+          <section class="terminal-panel macro-shell">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Macro backdrop</p>
+              <h2 class="section-title">Slower confirmation layer</h2>
+              <p class="section-copy">These releases lag the market, but they tell us whether the war shock is turning into real inflation persistence or growth damage.</p>
+              <div class="macro-grid">
+                ${macroItems(macro)}
+              </div>
+            </div>
+          </section>
+
+          <section class="terminal-panel lag-shell">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Lag validation</p>
+              <h2 class="section-title">Did the opening war shock behave like the current thesis?</h2>
+              <div class="table-wrap">
+                <table class="terminal-table lag-table">
+                  <thead>
+                    <tr>
+                      <th>Signal</th>
+                      <th>Expected</th>
+                      <th>t+1</th>
+                      <th>t+2</th>
+                      <th>t+5</th>
+                      <th>t+20</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${lagRows(lag)}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="terminal-panel daily-shell">
+          <div class="terminal-panel-inner">
+            <p class="section-kicker">Daily score log</p>
+            <h2 class="section-title">Full day-by-day conclusion table</h2>
+            <p class="section-copy">This is the compact audit trail from the opening war date to the latest monitored date.</p>
+            <div class="table-wrap">
+              <table class="terminal-table daily-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Dominant</th>
+                    <th>Contained</th>
+                    <th>Inflation</th>
+                    <th>Stagflation</th>
+                    <th>Growth slowdown</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${dailyRows(history)}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  async function init() {
+    try {
+      const response = await fetch(SNAPSHOT_PATH, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Failed to load ${SNAPSHOT_PATH}: ${response.status}`);
+      }
+      const snapshot = await response.json();
+      render(snapshot);
+      status.innerHTML = `<span class="status-ping"></span><span>Live snapshot ${escapeHtml(prettyDateTime(snapshot.generated_at))}</span>`;
+    } catch (error) {
+      console.error(error);
+      status.innerHTML = `<span class="status-ping" style="background:#ff6e6e;box-shadow:none;"></span><span>Snapshot unavailable</span>`;
+      app.innerHTML = `<div class="terminal-error">The published monitor could not be loaded. Check generated/snapshot.json and rebuild the snapshot.</div>`;
+    }
+  }
+
+  init();
+})();
+</script>
 
 
 
