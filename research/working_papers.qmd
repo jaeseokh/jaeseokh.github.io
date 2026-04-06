@@ -1,5 +1,5 @@
 ---
-title: "War-to-Macro Terminal"
+title: "Front-End Rates, Liquidity and Macro Terminal"
 page-layout: full
 format:
   html:
@@ -155,7 +155,7 @@ format:
 
 .headline-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 1rem;
 }
@@ -223,6 +223,41 @@ format:
 
 .ticker-change {
   font-weight: 700;
+}
+
+.signal-cluster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+  margin-top: 0.9rem;
+}
+
+.signal-cluster-card {
+  padding: 0.78rem 0.82rem 0.86rem;
+  border: 1px solid rgba(118, 163, 195, 0.14);
+  border-radius: 16px;
+  background: rgba(12, 23, 36, 0.74);
+}
+
+.signal-cluster-label {
+  color: var(--terminal-muted);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.signal-cluster-value {
+  margin-top: 0.35rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.signal-cluster-meta {
+  margin-top: 0.28rem;
+  color: var(--terminal-muted);
+  font-size: 0.8rem;
 }
 
 .terminal-panel {
@@ -689,6 +724,10 @@ format:
     grid-template-columns: 1fr;
   }
 
+  .signal-cluster-grid {
+    grid-template-columns: 1fr;
+  }
+
   .stage-card::after {
     display: none;
   }
@@ -798,6 +837,12 @@ format:
       return "n/a";
     }
     const unit = String(row.unit || "");
+    if (unit === "$ mn") {
+      return `$${(value / 1000).toFixed(1)}bn`;
+    }
+    if (unit === "$ bn") {
+      return `$${value.toFixed(1)}bn`;
+    }
     if (unit === "pct") {
       return `${value.toFixed(2)}%`;
     }
@@ -834,6 +879,22 @@ format:
       minimumFractionDigits: 0,
       maximumFractionDigits: 2
     });
+  }
+
+  function signalByLabel(signals, label) {
+    return signals.find((row) => row.label === label) || null;
+  }
+
+  function latestValue(signals, label) {
+    const row = signalByLabel(signals, label);
+    return row ? num(row.latest_value) : null;
+  }
+
+  function spreadBps(a, b) {
+    if (a === null || b === null) {
+      return null;
+    }
+    return (a - b) * 100;
   }
 
   function signed(value, digits = 2, suffix = "") {
@@ -1123,6 +1184,20 @@ format:
     `).join("");
   }
 
+  function signalCluster(cards) {
+    return `
+      <div class="signal-cluster-grid">
+        ${cards.map((card) => `
+          <div class="signal-cluster-card">
+            <div class="signal-cluster-label">${escapeHtml(card.label)}</div>
+            <div class="signal-cluster-value ${card.tone || ""}">${escapeHtml(card.value)}</div>
+            <div class="signal-cluster-meta">${escapeHtml(card.meta || "")}</div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+  }
+
   function macroItems(rows) {
     return rows.map((row) => `
       <div class="macro-item">
@@ -1183,42 +1258,126 @@ format:
     const historyEnd = history[history.length - 1];
     const trackedDays = historyStart && historyEnd ? daysBetween(historyStart.date, historyEnd.date) + 1 : 0;
     const startDate = snapshot.active_event?.start_date || historyStart?.date || "";
-    const topSignals = [...signals]
-      .sort((a, b) => Math.abs(num(b.composite_z) ?? 0) - Math.abs(num(a.composite_z) ?? 0))
-      .slice(0, 8);
-    const tapeSignals = selectTapeSignals(signals);
+    const topSignals = [
+      "Effective fed funds rate",
+      "SOFR",
+      "3M T-bill yield",
+      "2Y Treasury yield",
+      "ON RRP take-up",
+      "Reserve balances",
+      "Treasury General Account",
+      "10Y breakeven inflation",
+      "Brent crude",
+      "Broad U.S. dollar"
+    ]
+      .map((label) => signalByLabel(signals, label))
+      .filter(Boolean);
+    const tapeSignals = [
+      "Effective fed funds rate",
+      "SOFR",
+      "3M T-bill yield",
+      "2Y Treasury yield",
+      "ON RRP take-up",
+      "Reserve balances",
+      "Treasury General Account"
+    ]
+      .map((label) => signalByLabel(signals, label))
+      .filter(Boolean);
     const strongestQuestion = [...questions]
       .sort((a, b) => Math.abs(num(b.score) ?? 0) - Math.abs(num(a.score) ?? 0))[0];
 
     const latestTransition = transitions.length ? transitions[transitions.length - 1] : null;
+    const effr = signalByLabel(signals, "Effective fed funds rate");
+    const sofr = signalByLabel(signals, "SOFR");
+    const bill3m = signalByLabel(signals, "3M T-bill yield");
+    const twoYear = signalByLabel(signals, "2Y Treasury yield");
+    const onRrp = signalByLabel(signals, "ON RRP take-up");
+    const reserves = signalByLabel(signals, "Reserve balances");
+    const tga = signalByLabel(signals, "Treasury General Account");
+    const sofrEffr = spreadBps(latestValue(signals, "SOFR"), latestValue(signals, "Effective fed funds rate"));
+    const billEffr = spreadBps(latestValue(signals, "3M T-bill yield"), latestValue(signals, "Effective fed funds rate"));
+    const frontEndCards = [
+      {
+        label: "EFFR",
+        value: effr ? formatLatestValue(effr) : "n/a",
+        meta: effr ? `1d ${signed(effr.change_1, 2)} | z ${signed(effr.composite_z, 2)}` : ""
+      },
+      {
+        label: "SOFR",
+        value: sofr ? formatLatestValue(sofr) : "n/a",
+        meta: sofr ? `1d ${signed(sofr.change_1, 2)} | z ${signed(sofr.composite_z, 2)}` : ""
+      },
+      {
+        label: "3M T-bill",
+        value: bill3m ? formatLatestValue(bill3m) : "n/a",
+        meta: bill3m ? `1d ${signed(bill3m.change_1, 2)} | z ${signed(bill3m.composite_z, 2)}` : ""
+      },
+      {
+        label: "2Y Treasury",
+        value: twoYear ? formatLatestValue(twoYear) : "n/a",
+        meta: twoYear ? `1d ${signed(twoYear.change_1, 2)} | z ${signed(twoYear.composite_z, 2)}` : ""
+      }
+    ];
+    const liquidityCards = [
+      {
+        label: "ON RRP",
+        value: onRrp ? formatLatestValue(onRrp) : "n/a",
+        meta: onRrp ? `1w-style move ${signed(onRrp.change_1, 2, "%")} | z ${signed(onRrp.composite_z, 2)}` : ""
+      },
+      {
+        label: "Reserve balances",
+        value: reserves ? formatLatestValue(reserves) : "n/a",
+        meta: reserves ? `latest ${escapeHtml(reserves.latest_date)} | z ${signed(reserves.composite_z, 2)}` : ""
+      },
+      {
+        label: "TGA",
+        value: tga ? formatLatestValue(tga) : "n/a",
+        meta: tga ? `latest ${escapeHtml(tga.latest_date)} | z ${signed(tga.composite_z, 2)}` : ""
+      },
+      {
+        label: "Strongest macro channel",
+        value: strongestQuestion ? (QUESTION_LABELS[strongestQuestion.question] || strongestQuestion.question) : "n/a",
+        meta: strongestQuestion ? `${strongestQuestion.reading} | ${signed(strongestQuestion.score, 2)}` : ""
+      }
+    ];
 
     app.innerHTML = `
       <div class="terminal-grid">
         <section class="terminal-panel">
           <div class="terminal-panel-inner">
             <p class="section-kicker">War monitor</p>
-            <h1 class="section-title">Iran-U.S. war impact terminal</h1>
-            <p class="section-copy">This page starts from the war shock, tracks the transmission channels daily, and updates the macro conclusion directly from public indices and releases. The objective is to show how the original anticipation evolves into inflation shock, stagflation, contained shock, or growth slowdown as new evidence arrives.</p>
+            <h1 class="section-title">Iran-U.S. war overlay for front-end rates and liquidity</h1>
+            <p class="section-copy">This page now starts where a short-rate strategist would start: the front end of the curve, secured funding conditions, and balance-sheet liquidity. The war is treated as the overlay shock that can bleed into repo conditions, bill pricing, and then the broader macro conclusion.</p>
             <div class="headline-grid">
               <div class="headline-card">
-                <div class="headline-label">Lead conclusion</div>
+                <div class="headline-label">EFFR</div>
+                <div class="headline-value">${escapeHtml(effr ? formatLatestValue(effr) : "n/a")}</div>
+                <div class="headline-subvalue">${effr ? `1d ${signed(effr.change_1, 2)}` : "n/a"}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">SOFR - EFFR</div>
+                <div class="headline-value">${sofrEffr === null ? "n/a" : signed(sofrEffr, 1, " bps")}</div>
+                <div class="headline-subvalue">${sofr ? `SOFR ${formatLatestValue(sofr)}` : "n/a"}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">3M Bill - EFFR</div>
+                <div class="headline-value">${billEffr === null ? "n/a" : signed(billEffr, 1, " bps")}</div>
+                <div class="headline-subvalue">${bill3m ? `Bill ${formatLatestValue(bill3m)}` : "n/a"}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">ON RRP</div>
+                <div class="headline-value">${escapeHtml(onRrp ? formatLatestValue(onRrp) : "n/a")}</div>
+                <div class="headline-subvalue">${onRrp ? `z ${signed(onRrp.composite_z, 2)}` : "n/a"}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">Reserve balances</div>
+                <div class="headline-value">${escapeHtml(reserves ? formatLatestValue(reserves) : "n/a")}</div>
+                <div class="headline-subvalue">${reserves ? `latest ${escapeHtml(reserves.latest_date)}` : "n/a"}</div>
+              </div>
+              <div class="headline-card">
+                <div class="headline-label">Lead macro conclusion</div>
                 <div class="headline-value" style="color:${COLORS[dominant?.scenario_id] || "#4bc9dd"}">${escapeHtml(dominant?.title || "")}</div>
                 <div class="headline-subvalue">${pct(dominant?.probability)} now</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">Runner-up</div>
-                <div class="headline-value">${escapeHtml(runnerUp?.title || "n/a")}</div>
-                <div class="headline-subvalue">${runnerUp ? pct(runnerUp.probability) : "n/a"} | spread ${runnerUp ? signed(((num(dominant?.probability) ?? 0) - (num(runnerUp?.probability) ?? 0)) * 100, 1, " pts") : "n/a"}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">Tracking window</div>
-                <div class="headline-value">${trackedDays} days</div>
-                <div class="headline-subvalue">from ${escapeHtml(startDate)} to ${escapeHtml(historyEnd?.date || "")}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">Strongest channel</div>
-                <div class="headline-value">${escapeHtml(QUESTION_LABELS[strongestQuestion?.question] || "n/a")}</div>
-                <div class="headline-subvalue">${strongestQuestion ? `${escapeHtml(String(strongestQuestion.reading))} | ${signed(strongestQuestion.score, 2)}` : "n/a"}</div>
               </div>
             </div>
             <div class="ticker-strip">
@@ -1228,31 +1387,31 @@ format:
             </div>
             <div class="flow-grid" style="margin-top:1rem;">
               <div class="stage-card">
-                <p class="section-kicker">Cause</p>
-                <div class="cause-title">${escapeHtml(snapshot.active_event?.title || "Active event")}</div>
-                <p>${escapeHtml(snapshot.active_event?.note || "")}</p>
+                <p class="section-kicker">Short-end first</p>
+                <div class="cause-title">Front-end rates read</div>
+                <p>The first question is whether the war shock is repricing the Fed-sensitive front end through funding rates, bill yields, and the 2-year sector.</p>
+                ${signalCluster(frontEndCards)}
                 <div class="cause-meta">
                   <div class="meta-pill-row">
                     <span class="meta-pill">Start ${escapeHtml(startDate)}</span>
                     <span class="meta-pill">${trackedDays} tracked days</span>
                     <span class="meta-pill">Updated ${escapeHtml(prettyDateTime(snapshot.generated_at))}</span>
                   </div>
-                  <div class="tag-grid">
-                    ${(snapshot.active_event?.tags || []).map((tag) => `<span class="terminal-tag">${escapeHtml(tag)}</span>`).join("")}
-                  </div>
                 </div>
               </div>
 
               <div class="stage-card">
-                <p class="section-kicker">Transmission channels</p>
-                <h3>How the war shock is moving through the system</h3>
-                <div class="transmission-list">
-                  ${transmissionItems(questions)}
+                <p class="section-kicker">Repo and liquidity second</p>
+                <h3>Funding and balance-sheet conditions</h3>
+                <p>The second question is whether liquidity is orderly or starting to tighten through repo substitutes, Fed facilities, reserves, and Treasury cash management.</p>
+                ${signalCluster(liquidityCards)}
+                <div class="tag-grid" style="margin-top:0.85rem;">
+                  ${(snapshot.active_event?.tags || []).map((tag) => `<span class="terminal-tag">${escapeHtml(tag)}</span>`).join("")}
                 </div>
               </div>
 
               <div class="stage-card">
-                <p class="section-kicker">Macro conclusions</p>
+                <p class="section-kicker">Macro conclusion third</p>
                 <h3>${escapeHtml(dominant?.title || "No dominant conclusion")}</h3>
                 <p>${escapeHtml(dominant?.description || "")}</p>
                 <div class="meta-pill-row" style="margin-top:0.8rem;">
@@ -1294,11 +1453,11 @@ format:
         <div class="chart-grid">
           <section class="terminal-panel signal-shell">
             <div class="terminal-panel-inner">
-              <p class="section-kicker">Index engine</p>
-              <h2 class="section-title">Current market drivers</h2>
+              <p class="section-kicker">Short-end and funding monitor</p>
+              <h2 class="section-title">Front-end and liquidity drivers</h2>
               <div class="panel-tools">
-                <span>Top signals by absolute composite z-score</span>
-                <span class="mono">latest public print only</span>
+                <span>Policy rates, bills, repo-adjacent liquidity, and macro spillover</span>
+                <span class="mono">front-end first</span>
               </div>
               <div class="table-wrap">
                 <table class="terminal-table signal-table">
