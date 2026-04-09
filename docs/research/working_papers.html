@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Front-End Rates, Liquidity and Macro Terminal – Portfolio</title>
+<title>Rates Desk Hypothesis Terminal – Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Front-End Rates, Liquidity and Macro Terminal</h1>
+<h1 class="title">Rates Desk Hypothesis Terminal</h1>
 </div>
 
 
@@ -113,10 +113,10 @@ ul.task-list li input[type="checkbox"] {
 .terminal-page {
   --terminal-bg: #071019;
   --terminal-bg-soft: #0b1521;
-  --terminal-panel: rgba(10, 20, 31, 0.88);
-  --terminal-panel-strong: rgba(13, 26, 39, 0.97);
+  --terminal-panel: rgba(10, 20, 31, 0.9);
+  --terminal-panel-strong: rgba(12, 23, 36, 0.98);
   --terminal-border: rgba(114, 166, 203, 0.18);
-  --terminal-grid: rgba(79, 112, 141, 0.16);
+  --terminal-grid: rgba(79, 112, 141, 0.14);
   --terminal-ink: #e8eff5;
   --terminal-muted: #8ea4ba;
   --terminal-cyan: #4bc9dd;
@@ -138,8 +138,8 @@ ul.task-list li input[type="checkbox"] {
   border: 1px solid rgba(84, 136, 176, 0.24);
   border-radius: 28px;
   background:
-    radial-gradient(circle at 12% 8%, rgba(255, 157, 49, 0.18), transparent 20%),
-    radial-gradient(circle at 86% 12%, rgba(75, 201, 221, 0.16), transparent 22%),
+    radial-gradient(circle at 10% 8%, rgba(255, 157, 49, 0.16), transparent 22%),
+    radial-gradient(circle at 90% 10%, rgba(75, 201, 221, 0.14), transparent 24%),
     linear-gradient(180deg, rgba(6, 12, 20, 0.98), rgba(8, 16, 26, 0.98));
   box-shadow: var(--terminal-shadow);
 }
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
     linear-gradient(var(--terminal-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--terminal-grid) 1px, transparent 1px);
   background-size: 28px 28px;
-  opacity: 0.24;
+  opacity: 0.22;
   pointer-events: none;
 }
 
@@ -248,15 +248,53 @@ ul.task-list li input[type="checkbox"] {
   gap: 1rem;
 }
 
+.terminal-panel {
+  border: 1px solid var(--terminal-border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(8, 17, 27, 0.92), rgba(12, 22, 34, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.terminal-panel-inner {
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.55rem;
+  color: var(--terminal-cyan);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.85rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.section-copy {
+  margin: 0.55rem 0 0;
+  color: var(--terminal-muted);
+  max-width: 74ch;
+}
+
+.mono {
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+}
+
 .headline-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0.8rem;
   margin-top: 1rem;
 }
 
 .headline-card {
-  padding: 0.82rem 0.9rem 0.88rem;
+  padding: 0.78rem 0.84rem 0.84rem;
   border: 1px solid rgba(118, 163, 195, 0.14);
   border-radius: 18px;
   background: rgba(12, 23, 36, 0.74);
@@ -265,41 +303,36 @@ ul.task-list li input[type="checkbox"] {
 .headline-label {
   color: var(--terminal-muted);
   font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .headline-value {
   margin-top: 0.35rem;
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
 .headline-subvalue {
-  margin-top: 0.28rem;
+  margin-top: 0.25rem;
   color: var(--terminal-muted);
-  font-size: 0.82rem;
-}
-
-.ticker-strip {
-  display: grid;
-  gap: 0.6rem;
-  margin-top: 1rem;
+  font-size: 0.8rem;
 }
 
 .ticker-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  margin-top: 0.95rem;
 }
 
 .ticker-item {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.52rem 0.72rem;
+  padding: 0.5rem 0.72rem;
   border: 1px solid rgba(118, 163, 195, 0.14);
   border-radius: 999px;
   background: rgba(12, 23, 36, 0.74);
@@ -320,311 +353,185 @@ ul.task-list li input[type="checkbox"] {
   font-weight: 700;
 }
 
-.signal-cluster-grid {
+.desk-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.72rem;
-  margin-top: 0.9rem;
-}
-
-.signal-cluster-card {
-  padding: 0.78rem 0.82rem 0.86rem;
-  border: 1px solid rgba(118, 163, 195, 0.14);
-  border-radius: 16px;
-  background: rgba(12, 23, 36, 0.74);
-}
-
-.signal-cluster-label {
-  color: var(--terminal-muted);
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.signal-cluster-value {
-  margin-top: 0.35rem;
-  font-size: 1.12rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-}
-
-.signal-cluster-meta {
-  margin-top: 0.28rem;
-  color: var(--terminal-muted);
-  font-size: 0.8rem;
-}
-
-.terminal-panel {
-  border: 1px solid var(--terminal-border);
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(8, 17, 27, 0.92), rgba(12, 22, 34, 0.92));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-}
-
-.terminal-panel-inner {
-  padding: 1.15rem 1.2rem 1.25rem;
-}
-
-.section-kicker {
-  margin: 0 0 0.6rem;
-  color: var(--terminal-cyan);
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.section-title {
-  margin: 0;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.section-copy {
-  margin: 0.55rem 0 0;
-  color: var(--terminal-muted);
-  max-width: 70ch;
-}
-
-.flow-grid {
-  display: grid;
-  grid-template-columns: minmax(240px, 1.05fr) minmax(320px, 1.2fr) minmax(320px, 1.15fr);
+  grid-template-columns: 1.2fr 0.95fr 0.95fr;
   gap: 1rem;
-  align-items: stretch;
 }
 
-.stage-card {
-  position: relative;
-  min-height: 100%;
-  border: 1px solid rgba(120, 167, 201, 0.16);
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(12, 23, 35, 0.95), rgba(7, 14, 22, 0.95));
-  padding: 1rem;
+.panel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1rem;
 }
 
-.stage-card h3 {
-  margin: 0.2rem 0 0.55rem;
-  font-size: 1.05rem;
-}
-
-.stage-card p {
-  color: var(--terminal-muted);
-}
-
-.stage-card::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 1px);
-  right: -0.85rem;
-  width: 1.1rem;
-  border-top: 2px dashed rgba(75, 201, 221, 0.35);
-}
-
-.stage-card:last-child::after {
-  display: none;
-}
-
-.cause-title {
-  margin: 0.15rem 0 0.6rem;
-  font-size: 1.45rem;
-  line-height: 1.08;
-}
-
-.cause-meta {
+.section-stack {
   display: grid;
   gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.meta-pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-}
-
-.meta-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.58rem;
-  border-radius: 999px;
-  background: rgba(75, 201, 221, 0.1);
-  color: var(--terminal-cyan);
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.78rem;
-}
-
-.tag-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.terminal-tag {
-  padding: 0.34rem 0.55rem;
-  border: 1px solid rgba(255, 157, 49, 0.24);
-  border-radius: 999px;
-  color: var(--terminal-yellow);
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.76rem;
-}
-
-.transmission-list,
-.scenario-list,
-.driver-list,
-.transition-list,
-.macro-grid,
-.signal-table,
-.daily-table {
   margin-top: 0.95rem;
 }
 
-.transmission-list,
-.scenario-list {
+.desk-list,
+.score-grid,
+.bias-grid,
+.macro-grid,
+.release-table,
+.daily-table {
+  margin-top: 0.9rem;
+}
+
+.desk-list {
   display: grid;
   gap: 0.72rem;
 }
 
-.transmission-item,
-.scenario-item,
-.driver-item,
-.transition-item,
+.desk-item,
+.score-card,
+.bias-card,
 .macro-item {
   border: 1px solid rgba(118, 163, 195, 0.14);
   border-radius: 18px;
   background: rgba(12, 23, 36, 0.74);
 }
 
-.transmission-item {
-  padding: 0.78rem 0.8rem;
+.desk-item,
+.score-card,
+.bias-card,
+.macro-item {
+  padding: 0.78rem 0.84rem 0.9rem;
 }
 
-.transmission-head,
-.scenario-head,
-.driver-head,
-.transition-head,
-.macro-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
-}
-
-.transmission-head strong,
-.scenario-head strong {
+.desk-item strong,
+.score-card strong,
+.bias-card strong,
+.macro-item strong {
+  display: block;
   font-size: 0.96rem;
 }
 
-.mono {
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-}
-
-.meter {
-  position: relative;
-  height: 13px;
-  margin-top: 0.7rem;
-  border-radius: 999px;
-  background: rgba(113, 141, 166, 0.14);
-  overflow: hidden;
-}
-
-.meter::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.22);
-}
-
-.meter-fill {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  border-radius: 999px;
-}
-
-.tone-positive {
-  color: var(--terminal-green);
-}
-
-.tone-negative {
-  color: var(--terminal-red);
-}
-
-.tone-neutral {
-  color: var(--terminal-yellow);
-}
-
-.scenario-item {
-  padding: 0.85rem 0.9rem 0.95rem;
-}
-
-.scenario-item.is-dominant {
-  border-color: rgba(255, 157, 49, 0.42);
-  box-shadow: inset 0 0 0 1px rgba(255, 157, 49, 0.18);
-}
-
-.scenario-subtitle {
-  margin: 0.45rem 0 0;
+.desk-item p,
+.score-card p,
+.bias-card p,
+.macro-item p {
+  margin: 0.4rem 0 0;
   color: var(--terminal-muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
-.prob-track {
-  position: relative;
-  height: 11px;
-  margin-top: 0.72rem;
-  border-radius: 999px;
-  background: rgba(113, 141, 166, 0.12);
-  overflow: hidden;
-}
-
-.prob-fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  border-radius: 999px;
-}
-
-.delta-row {
+.desk-meta,
+.score-meta,
+.bias-meta {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.48rem;
+  gap: 0.8rem;
+  margin-top: 0.35rem;
   color: var(--terminal-muted);
   font-family: "SF Mono", "Menlo", "Consolas", monospace;
   font-size: 0.78rem;
 }
 
-.chart-grid {
+.score-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
-  gap: 1rem;
+  gap: 0.72rem;
 }
 
-.chart-shell,
-.driver-shell,
-.signal-shell,
-.macro-shell,
-.lag-shell,
-.daily-shell {
-  min-height: 100%;
+.score-bar,
+.prob-track,
+.contribution-track {
+  position: relative;
+  height: 10px;
+  margin-top: 0.62rem;
+  border-radius: 999px;
+  background: rgba(113, 141, 166, 0.12);
+  overflow: hidden;
 }
 
-.regime-strip {
+.score-fill,
+.prob-fill,
+.contribution-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+}
+
+.bias-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16px, 1fr));
-  gap: 0.2rem;
-  margin-top: 0.9rem;
+  gap: 0.72rem;
 }
 
-.regime-cell {
-  height: 14px;
-  border-radius: 6px;
-  opacity: 0.92;
+.status-pill,
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.34rem 0.58rem;
+  border-radius: 999px;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.76rem;
+}
+
+.status-pill {
+  border: 1px solid rgba(118, 163, 195, 0.2);
+}
+
+.status-pill.is-active {
+  color: var(--terminal-orange);
+  border-color: rgba(255, 157, 49, 0.34);
+  background: rgba(255, 157, 49, 0.1);
+}
+
+.status-pill.is-watch {
+  color: var(--terminal-yellow);
+  border-color: rgba(255, 200, 87, 0.34);
+  background: rgba(255, 200, 87, 0.08);
+}
+
+.status-pill.is-calm {
+  color: var(--terminal-green);
+  border-color: rgba(72, 213, 151, 0.34);
+  background: rgba(72, 213, 151, 0.08);
+}
+
+.meta-pill {
+  background: rgba(75, 201, 221, 0.1);
+  color: var(--terminal-cyan);
+  border: 1px solid rgba(75, 201, 221, 0.2);
+}
+
+.release-table-wrap,
+.table-wrap {
+  margin-top: 0.85rem;
+  overflow-x: auto;
+}
+
+.terminal-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.terminal-table th,
+.terminal-table td {
+  padding: 0.68rem 0.62rem;
+  border-bottom: 1px solid rgba(114, 166, 203, 0.12);
+  vertical-align: top;
+}
+
+.terminal-table th {
+  color: var(--terminal-cyan);
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.terminal-table td {
+  font-size: 0.9rem;
+}
+
+.mini-note {
+  color: var(--terminal-muted);
+  font-size: 0.8rem;
 }
 
 .chart-wrap {
@@ -662,169 +569,56 @@ ul.task-list li input[type="checkbox"] {
   border-radius: 999px;
 }
 
-.driver-grid {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.driver-item,
-.transition-item {
-  padding: 0.78rem 0.82rem;
-}
-
-.driver-item p,
-.transition-item p,
-.macro-item p {
-  margin: 0.4rem 0 0;
-  color: var(--terminal-muted);
-  font-size: 0.9rem;
-}
-
-.contribution-track {
-  height: 10px;
-  margin-top: 0.6rem;
-  border-radius: 999px;
-  background: rgba(113, 141, 166, 0.12);
-  overflow: hidden;
-}
-
-.contribution-fill {
-  height: 100%;
-  border-radius: 999px;
-}
-
-.transition-list {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.transition-item .transition-date {
-  color: var(--terminal-cyan);
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.transition-route {
-  margin-top: 0.35rem;
-  color: var(--terminal-ink);
-  font-weight: 700;
-}
-
-.signal-shell .panel-tools {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 0.7rem;
-  color: var(--terminal-muted);
-  font-size: 0.86rem;
-}
-
-.table-wrap {
-  margin-top: 0.85rem;
-  overflow-x: auto;
-}
-
-.terminal-table {
-  width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-}
-
-.terminal-table th,
-.terminal-table td {
-  padding: 0.72rem 0.65rem;
-  border-bottom: 1px solid rgba(114, 166, 203, 0.12);
-  vertical-align: middle;
-}
-
-.terminal-table th {
-  color: var(--terminal-cyan);
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.terminal-table td {
-  font-size: 0.92rem;
-}
-
-.signal-label {
-  display: grid;
-  gap: 0.18rem;
-}
-
-.signal-label small {
-  color: var(--terminal-muted);
-  font-size: 0.78rem;
-}
-
-.sparkline {
-  width: 130px;
-  height: 34px;
-}
-
 .macro-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.72rem;
 }
 
-.macro-item {
-  padding: 0.82rem 0.86rem 0.9rem;
-}
-
-.macro-item .macro-value {
-  margin-top: 0.45rem;
-  font-size: 1.25rem;
+.macro-value {
+  margin-top: 0.42rem;
+  font-size: 1.22rem;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
 
-.macro-item .macro-date {
+.macro-date {
   color: var(--terminal-muted);
   font-size: 0.78rem;
 }
 
-.lag-table td.match-yes {
+.tone-positive {
   color: var(--terminal-green);
 }
 
-.lag-table td.match-no {
+.tone-negative {
   color: var(--terminal-red);
 }
 
-.lag-table td.match-na {
-  color: var(--terminal-muted);
-}
-
-.daily-shell .table-wrap {
-  max-height: 520px;
-  overflow: auto;
+.tone-neutral {
+  color: var(--terminal-yellow);
 }
 
 .foot-note {
-  margin-top: 0.82rem;
+  margin-top: 0.8rem;
   color: var(--terminal-muted);
   font-size: 0.84rem;
 }
 
-@media (max-width: 1200px) {
-  .headline-grid,
-  .flow-grid,
-  .chart-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1400px) {
+  .headline-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .signal-cluster-grid {
+  .desk-grid,
+  .panel-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .stage-card::after {
-    display: none;
+@media (max-width: 900px) {
+  .headline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -842,9 +636,8 @@ ul.task-list li input[type="checkbox"] {
     padding: 0.85rem;
   }
 
-  .terminal-panel-inner,
-  .stage-card {
-    padding: 0.9rem;
+  .terminal-panel-inner {
+    padding: 0.95rem;
   }
 }
 </style>
@@ -857,9 +650,9 @@ ul.task-list li input[type="checkbox"] {
         <span></span>
       </div>
       <div class="terminal-brand">
-        <span class="brand-kicker">Macro terminal</span>
-        <span class="brand-title">War -&gt; transmission -&gt; conclusion</span>
-        <span class="brand-chip">live public-signal monitor</span>
+        <span class="brand-kicker">Rates desk</span>
+        <span class="brand-title">SMBC-style stagflation monitor</span>
+        <span class="brand-chip">public signal workflow</span>
       </div>
       <div class="terminal-status">
         <span class="status-ping"></span>
@@ -867,7 +660,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
     </div>
     <div class="terminal-app" id="war-terminal-app">
-      <div class="terminal-loading">Initializing war-to-macro monitor...</div>
+      <div class="terminal-loading">Initializing desk hypothesis terminal...</div>
     </div>
   </div>
 </div>
@@ -879,14 +672,6 @@ ul.task-list li input[type="checkbox"] {
     inflation_shock: "#ff9d31",
     stagflation: "#ff5e7a",
     growth_slowdown: "#6f86ff"
-  };
-
-  const QUESTION_LABELS = {
-    energy_input_pressure: "Energy input pressure",
-    inflation_pressure: "Inflation pressure",
-    financial_tightening: "Financial tightening",
-    growth_drag: "Growth drag",
-    policy_offset: "Policy offset"
   };
 
   const app = document.getElementById("war-terminal-app");
@@ -906,46 +691,55 @@ ul.task-list li input[type="checkbox"] {
     return Number.isFinite(parsed) ? parsed : null;
   }
 
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
   function pct(value, digits = 1) {
     const parsed = num(value);
-    if (parsed === null) {
-      return "n/a";
-    }
+    if (parsed === null) return "n/a";
     return `${(parsed * 100).toFixed(digits)}%`;
+  }
+
+  function signed(value, digits = 2, suffix = "") {
+    const parsed = num(value);
+    if (parsed === null) return "n/a";
+    const sign = parsed > 0 ? "+" : "";
+    return `${sign}${parsed.toFixed(digits)}${suffix}`;
   }
 
   function fixed(value, digits = 2) {
     const parsed = num(value);
-    if (parsed === null) {
-      return "n/a";
-    }
+    if (parsed === null) return "n/a";
     return parsed.toFixed(digits);
   }
 
+  function prettyDateTime(value) {
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return escapeHtml(value);
+    return parsed.toLocaleString("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit"
+    });
+  }
+
   function formatLatestValue(row) {
+    if (!row) return "n/a";
     const value = num(row.latest_value);
-    if (value === null) {
-      return "n/a";
-    }
+    if (value === null) return "n/a";
     const unit = String(row.unit || "");
-    if (unit === "$ mn") {
-      return `$${(value / 1000).toFixed(1)}bn`;
-    }
-    if (unit === "$ bn") {
-      return `$${value.toFixed(1)}bn`;
-    }
-    if (unit === "pct") {
-      return `${value.toFixed(2)}%`;
-    }
+    if (unit === "$ mn") return `$${(value / 1000).toFixed(1)}bn`;
+    if (unit === "$ bn") return `$${value.toFixed(1)}bn`;
+    if (unit === "pct") return `${value.toFixed(2)}%`;
     if (unit === "index") {
       return value.toLocaleString("en-US", {
-        minimumFractionDigits: value >= 1000 ? 2 : 2,
+        minimumFractionDigits: 0,
         maximumFractionDigits: 2
       });
     }
-    if (unit.startsWith("$/")) {
-      return `$${value.toFixed(2)}`;
-    }
+    if (unit.startsWith("$/")) return `$${value.toFixed(2)}`;
     return value.toLocaleString("en-US", {
       minimumFractionDigits: 0,
       maximumFractionDigits: 2
@@ -953,19 +747,11 @@ ul.task-list li input[type="checkbox"] {
   }
 
   function formatMacroSnapshot(row) {
-    const value = num(row.snapshot_value);
-    if (value === null) {
-      return "n/a";
-    }
-    if (row.snapshot_label === "m/m change") {
-      return `${signed(value, 0)}k`;
-    }
-    if (row.snapshot_label === "y/y") {
-      return `${value.toFixed(2)}%`;
-    }
-    if (row.snapshot_label === "latest" && row.unit === "pct") {
-      return `${value.toFixed(2)}%`;
-    }
+    const value = num(row?.snapshot_value);
+    if (value === null) return "n/a";
+    if (row.snapshot_label === "m/m change") return `${signed(value, 0)}k`;
+    if (row.snapshot_label === "y/y") return `${value.toFixed(2)}%`;
+    if (row.snapshot_label === "latest" && row.unit === "pct") return `${value.toFixed(2)}%`;
     return value.toLocaleString("en-US", {
       minimumFractionDigits: 0,
       maximumFractionDigits: 2
@@ -976,147 +762,92 @@ ul.task-list li input[type="checkbox"] {
     return signals.find((row) => row.label === label) || null;
   }
 
+  function scenarioById(rows, id) {
+    return rows.find((row) => row.scenario_id === id) || null;
+  }
+
+  function questionById(rows, id) {
+    return rows.find((row) => row.question === id) || null;
+  }
+
   function latestValue(signals, label) {
     const row = signalByLabel(signals, label);
     return row ? num(row.latest_value) : null;
   }
 
   function spreadBps(a, b) {
-    if (a === null || b === null) {
-      return null;
-    }
+    if (a === null || b === null) return null;
     return (a - b) * 100;
-  }
-
-  function signed(value, digits = 2, suffix = "") {
-    const parsed = num(value);
-    if (parsed === null) {
-      return "n/a";
-    }
-    const sign = parsed > 0 ? "+" : "";
-    return `${sign}${parsed.toFixed(digits)}${suffix}`;
-  }
-
-  function shortDate(value) {
-    const parts = String(value).split("-");
-    if (parts.length !== 3) {
-      return escapeHtml(value);
-    }
-    return `${parts[1]}/${parts[2]}`;
-  }
-
-  function prettyDateTime(value) {
-    const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) {
-      return escapeHtml(value);
-    }
-    return parsed.toLocaleString("en-US", {
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit"
-    });
-  }
-
-  function daysBetween(start, end) {
-    const a = new Date(`${start}T00:00:00`);
-    const b = new Date(`${end}T00:00:00`);
-    return Math.round((b - a) / 86400000);
-  }
-
-  function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
   }
 
   function toneClass(value) {
     const parsed = num(value);
-    if (parsed === null) {
-      return "tone-neutral";
-    }
-    if (parsed > 0.08) {
-      return "tone-positive";
-    }
-    if (parsed < -0.08) {
-      return "tone-negative";
-    }
+    if (parsed === null) return "tone-neutral";
+    if (parsed > 0.08) return "tone-positive";
+    if (parsed < -0.08) return "tone-negative";
     return "tone-neutral";
   }
 
-  function contributionTone(value) {
-    const parsed = num(value) ?? 0;
-    return parsed >= 0 ? "#48d597" : "#ff6e6e";
+  function legPct(score) {
+    return clamp(((num(score) ?? 0) + 1) / 2, 0, 1);
   }
 
-  function sparkline(values, color) {
-    if (!Array.isArray(values) || values.length < 2) {
-      return "";
-    }
-    const width = 130;
-    const height = 34;
-    const low = Math.min(...values);
-    const high = Math.max(...values);
-    const span = high === low ? 1 : high - low;
-    const points = values.map((value, idx) => {
-      const x = 4 + (idx * (width - 8)) / (values.length - 1);
-      const y = 4 + ((high - value) * (height - 8)) / span;
-      return `${x.toFixed(1)},${y.toFixed(1)}`;
-    }).join(" ");
-    return [
-      `<svg viewBox="0 0 ${width} ${height}" class="sparkline" role="img" aria-label="Recent path">`,
-      `<polyline fill="none" stroke="${color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="${points}"></polyline>`,
-      "</svg>"
-    ].join("");
+  function scoreLabel(value) {
+    if (value >= 0.68) return "High";
+    if (value >= 0.52) return "Elevated";
+    if (value >= 0.38) return "Moderate";
+    return "Low";
   }
 
   function historyChart(history, scenarios) {
-    const width = 960;
-    const height = 320;
+    const width = 920;
+    const height = 310;
     const left = 56;
-    const right = 20;
+    const right = 18;
     const top = 18;
     const bottom = 42;
     const plotWidth = width - left - right;
     const plotHeight = height - top - bottom;
-    const gridLevels = [0, 0.25, 0.5, 0.75, 1];
+    const scenarioIds = ["inflation_shock", "stagflation", "growth_slowdown", "contained_shock"];
+    const activeScenarios = scenarioIds
+      .map((id) => scenarios.find((row) => row.scenario_id === id))
+      .filter(Boolean);
 
-    const grid = gridLevels.map((level) => {
+    const grid = [0, 0.25, 0.5, 0.75, 1].map((level) => {
       const y = top + (1 - level) * plotHeight;
-      return [
-        `<line x1="${left}" y1="${y}" x2="${width - right}" y2="${y}" stroke="rgba(142,164,186,0.16)" stroke-width="1"></line>`,
-        `<text x="${left - 10}" y="${y + 4}" fill="rgba(142,164,186,0.72)" text-anchor="end" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${Math.round(level * 100)}%</text>`
-      ].join("");
+      return `
+        <line x1="${left}" y1="${y}" x2="${width - right}" y2="${y}" stroke="rgba(142,164,186,0.16)" stroke-width="1"></line>
+        <text x="${left - 10}" y="${y + 4}" fill="rgba(142,164,186,0.72)" text-anchor="end" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${Math.round(level * 100)}%</text>
+      `;
     }).join("");
 
-    const xAxis = [
-      `<line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="rgba(142,164,186,0.24)" stroke-width="1.2"></line>`,
-      `<text x="${left}" y="${height - 14}" fill="rgba(142,164,186,0.72)" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${escapeHtml(history[0].date)}</text>`,
-      `<text x="${width - right}" y="${height - 14}" fill="rgba(142,164,186,0.72)" text-anchor="end" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${escapeHtml(history[history.length - 1].date)}</text>`
-    ].join("");
+    const xAxis = `
+      <line x1="${left}" y1="${height - bottom}" x2="${width - right}" y2="${height - bottom}" stroke="rgba(142,164,186,0.24)" stroke-width="1.2"></line>
+      <text x="${left}" y="${height - 14}" fill="rgba(142,164,186,0.72)" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${escapeHtml(history[0].date)}</text>
+      <text x="${width - right}" y="${height - 14}" fill="rgba(142,164,186,0.72)" text-anchor="end" font-size="12" font-family="SF Mono, Menlo, Consolas, monospace">${escapeHtml(history[history.length - 1].date)}</text>
+    `;
 
-    const lines = scenarios.map((scenario) => {
+    const lines = activeScenarios.map((scenario) => {
       const key = `${scenario.scenario_id}_probability`;
+      const color = COLORS[scenario.scenario_id] || "#4bc9dd";
       const points = history.map((row, idx) => {
         const x = left + (idx * plotWidth) / Math.max(history.length - 1, 1);
-        const y = top + (1 - num(row[key])) * plotHeight;
+        const y = top + (1 - (num(row[key]) ?? 0)) * plotHeight;
         return `${x.toFixed(2)},${y.toFixed(2)}`;
       }).join(" ");
-      const color = COLORS[scenario.scenario_id] || "#4bc9dd";
-      const lastRow = history[history.length - 1];
-      const lastX = left + plotWidth;
-      const lastY = top + (1 - num(lastRow[key])) * plotHeight;
-      return [
-        `<polyline fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="${points}"></polyline>`,
-        `<circle cx="${lastX}" cy="${lastY}" r="4" fill="${color}"></circle>`
-      ].join("");
+      return `<polyline fill="none" stroke="${color}" stroke-width="${scenario.scenario_id === "stagflation" ? 3.4 : 2.5}" stroke-linecap="round" stroke-linejoin="round" points="${points}"></polyline>`;
     }).join("");
 
-    const legend = scenarios.map((scenario) => (
-      `<div class="legend-item"><span class="legend-swatch" style="background:${COLORS[scenario.scenario_id] || "#4bc9dd"}"></span>${escapeHtml(scenario.title)}</div>`
-    )).join("");
+    const legend = activeScenarios.map((scenario) => `
+      <div class="legend-item">
+        <span class="legend-swatch" style="background:${COLORS[scenario.scenario_id] || "#4bc9dd"}"></span>
+        ${escapeHtml(scenario.title)}
+      </div>
+    `).join("");
 
     return `
       <div class="chart-wrap">
-        <svg viewBox="0 0 ${width} ${height}" class="history-chart" role="img" aria-label="Scenario probabilities from war start to latest date">
+        <svg viewBox="0 0 ${width} ${height}" class="history-chart" role="img" aria-label="Desk hypothesis path from war start to latest date">
           ${grid}
           ${xAxis}
           ${lines}
@@ -1126,165 +857,61 @@ ul.task-list li input[type="checkbox"] {
     `;
   }
 
-  function regimeStrip(history) {
-    return history.map((row) => {
-      const color = COLORS[row.dominant_scenario_id] || "#4bc9dd";
-      const title = `${row.date} | ${row.dominant_scenario} ${pct(row.dominant_probability)}`;
-      return `<div class="regime-cell" style="background:${color}" title="${escapeHtml(title)}"></div>`;
-    }).join("");
-  }
-
-  function transmissionItems(questions) {
-    return questions.map((item) => {
-      const score = clamp(num(item.score) ?? 0, -1, 1);
-      const left = score >= 0 ? 50 : 50 + score * 50;
-      const width = Math.abs(score) * 50;
-      const color = score >= 0 ? "#ff9d31" : "#48d597";
-      return `
-        <div class="transmission-item">
-          <div class="transmission-head">
-            <strong>${escapeHtml(QUESTION_LABELS[item.question] || item.question)}</strong>
-            <span class="mono ${toneClass(score)}">${signed(score, 2)}</span>
-          </div>
-          <div class="meter">
-            <div class="meter-fill" style="left:${left}%;width:${width}%;background:${color}"></div>
-          </div>
-          <p class="foot-note">${escapeHtml(String(item.reading))}</p>
-        </div>
-      `;
-    }).join("");
-  }
-
-  function scenarioItems(scenarios, historyStart) {
-    return scenarios.map((scenario, idx) => {
-      const current = num(scenario.probability) ?? 0;
-      const prior = historyStart ? num(historyStart[`${scenario.scenario_id}_probability`]) ?? 0 : 0;
-      const delta = (current - prior) * 100;
-      const color = COLORS[scenario.scenario_id] || "#4bc9dd";
-      return `
-        <div class="scenario-item ${idx === 0 ? "is-dominant" : ""}">
-          <div class="scenario-head">
-            <strong>${escapeHtml(scenario.title)}</strong>
-            <span class="mono" style="color:${color}">${pct(current)}</span>
-          </div>
-          <p class="scenario-subtitle">${escapeHtml(scenario.description)}</p>
-          <div class="prob-track">
-            <div class="prob-fill" style="width:${(current * 100).toFixed(1)}%;background:${color}"></div>
-          </div>
-          <div class="delta-row">
-            <span>Raw score ${signed(scenario.raw_score, 2)}</span>
-            <span class="${toneClass(delta / 100)}">${signed(delta, 1, " pts")} since start</span>
-          </div>
-        </div>
-      `;
-    }).join("");
-  }
-
-  function driverItems(items, heading) {
+  function headlineCard(label, value, subvalue, color = "") {
     return `
-      <div class="driver-shell">
-        <p class="section-kicker">${escapeHtml(heading)}</p>
-        <div class="driver-grid">
-          ${items.map((item) => {
-            const value = num(item.contribution) ?? 0;
-            const width = clamp(Math.abs(value) / 0.65, 0.08, 1) * 100;
-            return `
-              <div class="driver-item">
-                <div class="driver-head">
-                  <strong>${escapeHtml(item.label)}</strong>
-                  <span class="mono ${toneClass(value)}">${signed(value, 2)}</span>
-                </div>
-                <p>Composite z ${signed(item.composite_z, 2)} | weight ${fixed(item.weight, 2)}</p>
-                <div class="contribution-track">
-                  <div class="contribution-fill" style="width:${width.toFixed(1)}%;background:${contributionTone(value)}"></div>
-                </div>
-              </div>
-            `;
-          }).join("")}
-        </div>
+      <div class="headline-card">
+        <div class="headline-label">${escapeHtml(label)}</div>
+        <div class="headline-value" ${color ? `style="color:${color}"` : ""}>${escapeHtml(value)}</div>
+        <div class="headline-subvalue">${escapeHtml(subvalue)}</div>
       </div>
     `;
   }
 
-  function transitionItems(transitions) {
-    return transitions.map((item) => `
-      <div class="transition-item">
-        <div class="transition-date">${escapeHtml(item.date)}</div>
-        <div class="transition-route">${escapeHtml(item.from || "Opening read")} -> ${escapeHtml(item.to)}</div>
-        <p>${escapeHtml(item.note)}</p>
-      </div>
-    `).join("");
-  }
-
-  function signalRows(signals) {
-    return signals.map((row) => `
-      <tr>
-        <td>
-          <div class="signal-label">
-            <strong>${escapeHtml(row.label)}</strong>
-            <small>${escapeHtml(row.category)} | ${escapeHtml(row.latest_date)}</small>
-          </div>
-        </td>
-        <td class="mono">${escapeHtml(formatLatestValue(row))}</td>
-        <td class="mono ${toneClass((num(row.change_1) ?? 0) / 10)}">${signed(row.change_1, 2)}</td>
-        <td class="mono ${toneClass((num(row.change_5) ?? 0) / 10)}">${signed(row.change_5, 2)}</td>
-        <td class="mono ${toneClass(row.composite_z)}">${signed(row.composite_z, 2)}</td>
-        <td>${sparkline(Array.isArray(row.recent_values) ? row.recent_values.map(Number) : [], COLORS.inflation_shock)}</td>
-      </tr>
-    `).join("");
-  }
-
-  function selectTapeSignals(signals) {
-    const preferred = [
-      "Brent crude",
-      "10Y breakeven inflation",
-      "2Y Treasury yield",
-      "U.S. high yield spread",
-      "Broad U.S. dollar",
-      "S&P 500",
-      "VIX"
-    ];
-    const selected = preferred
-      .map((label) => signals.find((row) => row.label === label))
-      .filter(Boolean);
-    if (selected.length >= 5) {
-      return selected;
-    }
-    const byStrength = [...signals]
-      .sort((a, b) => Math.abs(num(b.composite_z) ?? 0) - Math.abs(num(a.composite_z) ?? 0));
-    const merged = [...selected];
-    for (const row of byStrength) {
-      if (!merged.some((item) => item.label === row.label)) {
-        merged.push(row);
-      }
-      if (merged.length >= 7) {
-        break;
-      }
-    }
-    return merged;
-  }
-
-  function tickerRow(signals) {
-    return signals.map((row) => `
+  function tickerRow(items) {
+    return items.map((item) => `
       <div class="ticker-item">
-        <span class="ticker-name">${escapeHtml(row.label)}</span>
-        <span class="ticker-latest">${escapeHtml(formatLatestValue(row))}</span>
-        <span class="ticker-change ${toneClass((num(row.change_1) ?? 0) / 10)}">${signed(row.change_1, 2)}</span>
-        <span class="ticker-change ${toneClass(row.composite_z)}">z ${signed(row.composite_z, 2)}</span>
+        <span class="ticker-name">${escapeHtml(item.label)}</span>
+        <span class="ticker-latest">${escapeHtml(item.latest)}</span>
+        <span class="ticker-change ${item.tone || ""}">${escapeHtml(item.change)}</span>
       </div>
     `).join("");
   }
 
-  function signalCluster(cards) {
+  function scoreCard(label, value, meta, color) {
     return `
-      <div class="signal-cluster-grid">
-        ${cards.map((card) => `
-          <div class="signal-cluster-card">
-            <div class="signal-cluster-label">${escapeHtml(card.label)}</div>
-            <div class="signal-cluster-value ${card.tone || ""}">${escapeHtml(card.value)}</div>
-            <div class="signal-cluster-meta">${escapeHtml(card.meta || "")}</div>
-          </div>
-        `).join("")}
+      <div class="score-card">
+        <strong>${escapeHtml(label)}</strong>
+        <div class="score-meta">
+          <span>${escapeHtml(scoreLabel(value))}</span>
+          <span>${pct(value)}</span>
+        </div>
+        <div class="score-bar">
+          <div class="score-fill" style="width:${(value * 100).toFixed(1)}%;background:${color};"></div>
+        </div>
+        <p>${escapeHtml(meta)}</p>
+      </div>
+    `;
+  }
+
+  function deskItem(title, meta, note) {
+    return `
+      <div class="desk-item">
+        <strong>${escapeHtml(title)}</strong>
+        <div class="desk-meta"><span>${escapeHtml(meta.left)}</span><span class="${meta.tone || ""}">${escapeHtml(meta.right)}</span></div>
+        <p>${escapeHtml(note)}</p>
+      </div>
+    `;
+  }
+
+  function biasCard(statusClass, statusLabel, title, note, trade) {
+    return `
+      <div class="bias-card">
+        <div class="desk-meta">
+          <span class="status-pill ${statusClass}">${escapeHtml(statusLabel)}</span>
+          <span class="meta-pill">${escapeHtml(trade)}</span>
+        </div>
+        <strong style="margin-top:0.55rem;">${escapeHtml(title)}</strong>
+        <p>${escapeHtml(note)}</p>
       </div>
     `;
   }
@@ -1292,33 +919,34 @@ ul.task-list li input[type="checkbox"] {
   function macroItems(rows) {
     return rows.map((row) => `
       <div class="macro-item">
-        <div class="macro-head">
-          <strong>${escapeHtml(row.label)}</strong>
-          <span class="mono">${escapeHtml(row.snapshot_label)}</span>
-        </div>
+        <strong>${escapeHtml(row.label)}</strong>
         <div class="macro-value">${escapeHtml(formatMacroSnapshot(row))}</div>
-        <p class="macro-date">${escapeHtml(row.category)} | latest ${escapeHtml(row.latest_date)}</p>
+        <p class="macro-date">${escapeHtml(row.snapshot_label)} | latest ${escapeHtml(row.latest_date)}</p>
       </div>
     `).join("");
   }
 
-  function lagRows(rows) {
-    return rows.map((row) => {
-      const expected = Number(row.expected_direction) > 0 ? "up" : "down";
-      const cells = ["h1", "h2", "h5", "h20"].map((key) => {
-        const value = num(row[`${key}_value`]);
-        const match = row[`${key}_match`];
-        const className = match === true ? "match-yes" : match === false ? "match-no" : "match-na";
-        return `<td class="${className} mono">${value === null ? "n/a" : signed(value, 2)}</td>`;
-      }).join("");
-      return `
-        <tr>
-          <td><strong>${escapeHtml(row.label)}</strong></td>
-          <td class="mono">${expected}</td>
-          ${cells}
-        </tr>
-      `;
-    }).join("");
+  function signalRows(rows) {
+    return rows.map((row) => `
+      <tr>
+        <td><strong>${escapeHtml(row.label)}</strong><div class="mini-note">${escapeHtml(row.note || "")}</div></td>
+        <td class="mono">${escapeHtml(row.latest)}</td>
+        <td class="mono ${row.tone1 || ""}">${escapeHtml(row.change1)}</td>
+        <td class="mono ${row.tone5 || ""}">${escapeHtml(row.change5)}</td>
+        <td class="mono ${row.ztone || ""}">${escapeHtml(row.zscore)}</td>
+      </tr>
+    `).join("");
+  }
+
+  function releaseRows(rows) {
+    return rows.map((row) => `
+      <tr>
+        <td><strong>${escapeHtml(row.release)}</strong><div class="mini-note">${escapeHtml(row.watch)}</div></td>
+        <td>${escapeHtml(row.hot)}</td>
+        <td>${escapeHtml(row.cool)}</td>
+        <td><span class="meta-pill">${escapeHtml(row.bias)}</span></td>
+      </tr>
+    `).join("");
   }
 
   function dailyRows(history) {
@@ -1326,244 +954,438 @@ ul.task-list li input[type="checkbox"] {
       <tr>
         <td class="mono">${escapeHtml(row.date)}</td>
         <td><strong>${escapeHtml(row.dominant_scenario)}</strong></td>
-        <td class="mono">${pct(row.contained_shock_probability)}</td>
-        <td class="mono">${pct(row.inflation_shock_probability)}</td>
         <td class="mono">${pct(row.stagflation_probability)}</td>
-        <td class="mono">${pct(row.growth_slowdown_probability)}</td>
+        <td class="mono">${signed(row.inflation_pressure, 2)}</td>
+        <td class="mono">${signed(row.growth_drag, 2)}</td>
+        <td class="mono">${signed(row.financial_tightening, 2)}</td>
       </tr>
     `).join("");
   }
 
-  function render(snapshot) {
-    const history = Array.isArray(snapshot.scenario_history) ? snapshot.scenario_history : [];
-    const scenarios = Array.isArray(snapshot.scenarios) ? snapshot.scenarios : [];
-    const questions = Array.isArray(snapshot.five_questions) ? snapshot.five_questions : [];
-    const transitions = Array.isArray(snapshot.transitions) ? snapshot.transitions : [];
+  function buildDeskState(snapshot) {
     const signals = Array.isArray(snapshot.market_signals) ? snapshot.market_signals : [];
     const macro = Array.isArray(snapshot.macro_backdrop) ? snapshot.macro_backdrop : [];
-    const lag = Array.isArray(snapshot.lag_check) ? snapshot.lag_check : [];
+    const questions = Array.isArray(snapshot.five_questions) ? snapshot.five_questions : [];
+    const scenarios = Array.isArray(snapshot.scenarios) ? snapshot.scenarios : [];
+    const history = Array.isArray(snapshot.scenario_history) ? snapshot.scenario_history : [];
+    const transitions = Array.isArray(snapshot.transitions) ? snapshot.transitions : [];
 
-    const dominant = scenarios[0];
-    const runnerUp = scenarios[1];
-    const historyStart = history[0];
-    const historyEnd = history[history.length - 1];
-    const trackedDays = historyStart && historyEnd ? daysBetween(historyStart.date, historyEnd.date) + 1 : 0;
-    const startDate = snapshot.active_event?.start_date || historyStart?.date || "";
-    const topSignals = [
-      "Effective fed funds rate",
-      "SOFR",
-      "3M T-bill yield",
-      "2Y Treasury yield",
-      "ON RRP take-up",
-      "Reserve balances",
-      "Treasury General Account",
-      "10Y breakeven inflation",
-      "Brent crude",
-      "Broad U.S. dollar"
-    ]
-      .map((label) => signalByLabel(signals, label))
-      .filter(Boolean);
-    const tapeSignals = [
-      "Effective fed funds rate",
-      "SOFR",
-      "3M T-bill yield",
-      "2Y Treasury yield",
-      "ON RRP take-up",
-      "Reserve balances",
-      "Treasury General Account"
-    ]
-      .map((label) => signalByLabel(signals, label))
-      .filter(Boolean);
-    const strongestQuestion = [...questions]
-      .sort((a, b) => Math.abs(num(b.score) ?? 0) - Math.abs(num(a.score) ?? 0))[0];
-
-    const latestTransition = transitions.length ? transitions[transitions.length - 1] : null;
+    const y2 = signalByLabel(signals, "2Y Treasury yield");
+    const y10 = signalByLabel(signals, "10Y Treasury yield");
+    const y30 = signalByLabel(signals, "30Y Treasury yield");
+    const be10 = signalByLabel(signals, "10Y breakeven inflation");
+    const hy = signalByLabel(signals, "U.S. high yield spread");
+    const brent = signalByLabel(signals, "Brent crude");
     const effr = signalByLabel(signals, "Effective fed funds rate");
     const sofr = signalByLabel(signals, "SOFR");
     const bill3m = signalByLabel(signals, "3M T-bill yield");
-    const twoYear = signalByLabel(signals, "2Y Treasury yield");
     const onRrp = signalByLabel(signals, "ON RRP take-up");
     const reserves = signalByLabel(signals, "Reserve balances");
-    const tga = signalByLabel(signals, "Treasury General Account");
-    const sofrEffr = spreadBps(latestValue(signals, "SOFR"), latestValue(signals, "Effective fed funds rate"));
-    const billEffr = spreadBps(latestValue(signals, "3M T-bill yield"), latestValue(signals, "Effective fed funds rate"));
-    const frontEndCards = [
+    const vix = signalByLabel(signals, "VIX");
+    const spx = signalByLabel(signals, "S&P 500");
+
+    const curve2s10s = spreadBps(num(y10?.latest_value), num(y2?.latest_value));
+    const curve2s10s1d = (num(y10?.change_1) ?? 0) - (num(y2?.change_1) ?? 0);
+    const sofrEffr = spreadBps(num(sofr?.latest_value), num(effr?.latest_value));
+    const billEffr = spreadBps(num(bill3m?.latest_value), num(effr?.latest_value));
+
+    const qInfl = questionById(questions, "inflation_pressure");
+    const qGrowth = questionById(questions, "growth_drag");
+    const qFin = questionById(questions, "financial_tightening");
+
+    const inflationLeg = legPct(qInfl?.score);
+    const growthLeg = legPct(((num(qGrowth?.score) ?? 0) + (num(qFin?.score) ?? 0)) / 2);
+    const fundingLeg = clamp(
+      (Math.min(Math.abs(sofrEffr ?? 0) / 10, 1) * 0.35) +
+      (Math.min(Math.abs(billEffr ?? 0) / 20, 1) * 0.2) +
+      (Math.min(Math.max(0, -(num(reserves?.composite_z) ?? 0)) / 2, 1) * 0.25) +
+      (Math.min(Math.max(0, num(vix?.composite_z) ?? 0) / 2, 1) * 0.2),
+      0,
+      1
+    );
+
+    const stag = scenarioById(scenarios, "stagflation");
+    const inflation = scenarioById(scenarios, "inflation_shock");
+    const growth = scenarioById(scenarios, "growth_slowdown");
+    const dominant = scenarios[0] || stag;
+
+    const stagProb = num(stag?.probability) ?? 0;
+    let hypothesisTone = "Not dominant";
+    let hypothesisClass = "is-calm";
+    if (stagProb >= 0.3 || (inflationLeg >= 0.62 && growthLeg >= 0.58)) {
+      hypothesisTone = "Live risk";
+      hypothesisClass = "is-active";
+    } else if (stagProb >= 0.2 || (inflationLeg >= 0.56 && growthLeg >= 0.46)) {
+      hypothesisTone = "Watch";
+      hypothesisClass = "is-watch";
+    }
+
+    const deskBiases = [];
+    const y2Move = num(y2?.change_1) ?? 0;
+    const beMove = num(be10?.change_1) ?? 0;
+    const brentMove = num(brent?.change_1) ?? 0;
+    const hyMove = num(hy?.change_1) ?? 0;
+
+    if (inflationLeg >= 0.58 && y2Move > 0) {
+      deskBiases.push({
+        statusClass: "is-active",
+        statusLabel: "Active",
+        title: "Front-end still prices inflation discipline",
+        note: "2Y rates are firm while the inflation leg remains elevated. This keeps a short-front-end bias alive.",
+        trade: "Short front-end"
+      });
+    } else if (growthLeg >= 0.6 && y2Move < 0) {
+      deskBiases.push({
+        statusClass: "is-active",
+        statusLabel: "Active",
+        title: "Growth scare is pushing the front end lower",
+        note: "The market is starting to price cuts faster than inflation persistence.",
+        trade: "Receive front-end"
+      });
+    } else {
+      deskBiases.push({
+        statusClass: "is-watch",
+        statusLabel: "Watch",
+        title: "Front-end is not in a clean directional regime",
+        note: "The desk should treat the next data print as the main trigger for the front-end call.",
+        trade: "Wait for release"
+      });
+    }
+
+    if (curve2s10s1d < -1 && inflationLeg >= growthLeg) {
+      deskBiases.push({
+        statusClass: "is-active",
+        statusLabel: "Active",
+        title: "Curve is flattening under inflation pressure",
+        note: "The front end is moving more than the long end, which is the classic flattener expression.",
+        trade: "2s10s flattener"
+      });
+    } else if (curve2s10s1d > 1 && growthLeg > inflationLeg) {
+      deskBiases.push({
+        statusClass: "is-active",
+        statusLabel: "Active",
+        title: "Curve is steepening on growth fear",
+        note: "The market is leaning toward easier policy and lower front-end rates.",
+        trade: "Bull steepener"
+      });
+    } else {
+      deskBiases.push({
+        statusClass: "is-watch",
+        statusLabel: "Watch",
+        title: "Curve signal is mixed",
+        note: "The 2s10s move is not yet strong enough to force a directional curve trade.",
+        trade: "Hold neutral curve"
+      });
+    }
+
+    if (brentMove > 0 && beMove > 0) {
+      deskBiases.push({
+        statusClass: "is-active",
+        statusLabel: "Active",
+        title: "Oil and breakevens are reinforcing the inflation leg",
+        note: "That keeps inflation hedges and breakeven trades relevant to the desk thesis.",
+        trade: "Inflation trade"
+      });
+    } else if (hyMove > 0 && growthLeg >= 0.56) {
+      deskBiases.push({
+        statusClass: "is-watch",
+        statusLabel: "Watch",
+        title: "Credit is starting to lean into the growth side",
+        note: "This is the channel that can convert an inflation shock into a stagflation or recession debate.",
+        trade: "Add growth hedge"
+      });
+    } else {
+      deskBiases.push({
+        statusClass: "is-calm",
+        statusLabel: "Calm",
+        title: "Inflation trade is not being strongly reinforced today",
+        note: "Breakevens and oil are not both pressing in the same direction.",
+        trade: "No fresh add"
+      });
+    }
+
+    const catalysts = [
+      deskItem(
+        "Oil overlay",
+        { left: brent ? formatLatestValue(brent) : "n/a", right: brent ? signed(brent.change_1, 2) : "n/a", tone: toneClass((num(brent?.change_1) ?? 0) / 10) },
+        brentMove > 0 ? "Higher Brent reinforces the inflation leg of the war hypothesis." : "Brent is not adding fresh pressure to the inflation leg today."
+      ),
+      deskItem(
+        "Breakeven read",
+        { left: be10 ? formatLatestValue(be10) : "n/a", right: be10 ? signed(be10.change_1, 2) : "n/a", tone: toneClass((num(be10?.change_1) ?? 0) / 10) },
+        beMove > 0 ? "Inflation compensation is firming, which keeps the hawkish side of the hypothesis alive." : "Inflation compensation is not accelerating, so the inflation leg is not cleanly dominant."
+      ),
+      deskItem(
+        "Rates and curve",
+        { left: curve2s10s === null ? "n/a" : `${signed(curve2s10s, 1)} bps`, right: `${signed(curve2s10s1d, 1)} bps 1d`, tone: toneClass(curve2s10s1d / 10) },
+        curve2s10s1d < 0 ? "The front end is leading, which is what the desk watches first when inflation risk dominates." : "The curve is not flattening aggressively enough to force a hawkish curve call."
+      ),
+      deskItem(
+        "Credit and risk",
+        { left: hy ? formatLatestValue(hy) : "n/a", right: hy ? signed(hy.change_1, 2) : "n/a", tone: toneClass((num(hy?.change_1) ?? 0) / 10) },
+        (num(hy?.change_1) ?? 0) > 0 ? "Credit is widening, which is the growth-damage channel the stagflation hypothesis needs." : "Credit remains contained, so the growth leg is not yet fully confirmed."
+      ),
+      deskItem(
+        "Funding and cash",
+        { left: sofrEffr === null ? "n/a" : signed(sofrEffr, 1, " bps"), right: billEffr === null ? "n/a" : signed(billEffr, 1, " bps"), tone: toneClass(((Math.abs(sofrEffr ?? 0) + Math.abs(billEffr ?? 0)) / 2) / 10) },
+        fundingLeg >= 0.45 ? "Front-end liquidity is contributing to the tightening story and can amplify the macro thesis." : "Funding conditions look orderly enough that the macro story is still the main driver."
+      )
+    ];
+
+    const releasePlaybook = [
       {
-        label: "EFFR",
-        value: effr ? formatLatestValue(effr) : "n/a",
-        meta: effr ? `1d ${signed(effr.change_1, 2)} | z ${signed(effr.composite_z, 2)}` : ""
+        release: "CPI / PCE",
+        watch: "Watch Δ2Y, Δ10Y, Δ2s10s, ΔBE10",
+        hot: "2Y up, BE up, curve flatter, stagflation risk rises if growth leg also stays firm",
+        cool: "2Y down, BE down, curve can steepen, inflation leg softens",
+        bias: inflationLeg >= 0.58 ? "Hot print hurts most" : "Balanced"
       },
       {
-        label: "SOFR",
-        value: sofr ? formatLatestValue(sofr) : "n/a",
-        meta: sofr ? `1d ${signed(sofr.change_1, 2)} | z ${signed(sofr.composite_z, 2)}` : ""
+        release: "NFP",
+        watch: "Watch 2Y, HY OAS, S&P, VIX",
+        hot: "Front-end hawkish, cuts priced out, stagflation call weakens",
+        cool: "Growth scare deepens, front-end rallies, growth leg strengthens",
+        bias: growthLeg >= 0.52 ? "Weak payroll most important" : "Balanced"
       },
       {
-        label: "3M T-bill",
-        value: bill3m ? formatLatestValue(bill3m) : "n/a",
-        meta: bill3m ? `1d ${signed(bill3m.change_1, 2)} | z ${signed(bill3m.composite_z, 2)}` : ""
+        release: "Claims",
+        watch: "Watch front-end and HY follow-through",
+        hot: "Low claims keep policy restrictive",
+        cool: "Higher claims support growth-risk and pivot talk",
+        bias: growthLeg >= 0.52 ? "Claims deterioration matters" : "Secondary"
       },
+      {
+        release: "ISM / PMIs",
+        watch: "Watch 2s10s, credit, equities",
+        hot: "Growth resilience weakens stagflation thesis",
+        cool: "Weak activity plus firm BE is the classic stagflation mix",
+        bias: stagProb >= 0.24 ? "Weak PMI most dangerous" : "Watchlist"
+      }
+    ];
+
+    const signalTable = [
       {
         label: "2Y Treasury",
-        value: twoYear ? formatLatestValue(twoYear) : "n/a",
-        meta: twoYear ? `1d ${signed(twoYear.change_1, 2)} | z ${signed(twoYear.composite_z, 2)}` : ""
+        note: "front-end policy proxy",
+        latest: formatLatestValue(y2),
+        change1: signed(y2?.change_1, 2),
+        change5: signed(y2?.change_5, 2),
+        zscore: signed(y2?.composite_z, 2),
+        tone1: toneClass((num(y2?.change_1) ?? 0) / 10),
+        tone5: toneClass((num(y2?.change_5) ?? 0) / 10),
+        ztone: toneClass(num(y2?.composite_z))
+      },
+      {
+        label: "10Y Treasury",
+        note: "macro anchor",
+        latest: formatLatestValue(y10),
+        change1: signed(y10?.change_1, 2),
+        change5: signed(y10?.change_5, 2),
+        zscore: signed(y10?.composite_z, 2),
+        tone1: toneClass((num(y10?.change_1) ?? 0) / 10),
+        tone5: toneClass((num(y10?.change_5) ?? 0) / 10),
+        ztone: toneClass(num(y10?.composite_z))
+      },
+      {
+        label: "30Y Treasury",
+        note: "long-end funding signal",
+        latest: formatLatestValue(y30),
+        change1: signed(y30?.change_1, 2),
+        change5: signed(y30?.change_5, 2),
+        zscore: signed(y30?.composite_z, 2),
+        tone1: toneClass((num(y30?.change_1) ?? 0) / 10),
+        tone5: toneClass((num(y30?.change_5) ?? 0) / 10),
+        ztone: toneClass(num(y30?.composite_z))
+      },
+      {
+        label: "2s10s",
+        note: "derived curve slope",
+        latest: curve2s10s === null ? "n/a" : signed(curve2s10s, 1, " bps"),
+        change1: signed(curve2s10s1d, 1, " bps"),
+        change5: "n/a",
+        zscore: "n/a",
+        tone1: toneClass(curve2s10s1d / 10),
+        tone5: "",
+        ztone: ""
+      },
+      {
+        label: "10Y breakeven",
+        note: "inflation market",
+        latest: formatLatestValue(be10),
+        change1: signed(be10?.change_1, 2),
+        change5: signed(be10?.change_5, 2),
+        zscore: signed(be10?.composite_z, 2),
+        tone1: toneClass((num(be10?.change_1) ?? 0) / 10),
+        tone5: toneClass((num(be10?.change_5) ?? 0) / 10),
+        ztone: toneClass(num(be10?.composite_z))
+      },
+      {
+        label: "HY OAS",
+        note: "growth and credit stress",
+        latest: formatLatestValue(hy),
+        change1: signed(hy?.change_1, 2),
+        change5: signed(hy?.change_5, 2),
+        zscore: signed(hy?.composite_z, 2),
+        tone1: toneClass((num(hy?.change_1) ?? 0) / 10),
+        tone5: toneClass((num(hy?.change_5) ?? 0) / 10),
+        ztone: toneClass(num(hy?.composite_z))
+      },
+      {
+        label: "Brent crude",
+        note: "war shock input",
+        latest: formatLatestValue(brent),
+        change1: signed(brent?.change_1, 2),
+        change5: signed(brent?.change_5, 2),
+        zscore: signed(brent?.composite_z, 2),
+        tone1: toneClass((num(brent?.change_1) ?? 0) / 10),
+        tone5: toneClass((num(brent?.change_5) ?? 0) / 10),
+        ztone: toneClass(num(brent?.composite_z))
+      },
+      {
+        label: "SOFR - EFFR",
+        note: "funding spread proxy",
+        latest: sofrEffr === null ? "n/a" : signed(sofrEffr, 1, " bps"),
+        change1: "n/a",
+        change5: "n/a",
+        zscore: fundingLeg ? pct(fundingLeg) : "n/a",
+        tone1: toneClass((Math.abs(sofrEffr ?? 0)) / 10),
+        tone5: "",
+        ztone: toneClass(fundingLeg - 0.5)
       }
     ];
-    const liquidityCards = [
-      {
-        label: "ON RRP",
-        value: onRrp ? formatLatestValue(onRrp) : "n/a",
-        meta: onRrp ? `1w-style move ${signed(onRrp.change_1, 2, "%")} | z ${signed(onRrp.composite_z, 2)}` : ""
-      },
-      {
-        label: "Reserve balances",
-        value: reserves ? formatLatestValue(reserves) : "n/a",
-        meta: reserves ? `latest ${escapeHtml(reserves.latest_date)} | z ${signed(reserves.composite_z, 2)}` : ""
-      },
-      {
-        label: "TGA",
-        value: tga ? formatLatestValue(tga) : "n/a",
-        meta: tga ? `latest ${escapeHtml(tga.latest_date)} | z ${signed(tga.composite_z, 2)}` : ""
-      },
-      {
-        label: "Strongest macro channel",
-        value: strongestQuestion ? (QUESTION_LABELS[strongestQuestion.question] || strongestQuestion.question) : "n/a",
-        meta: strongestQuestion ? `${strongestQuestion.reading} | ${signed(strongestQuestion.score, 2)}` : ""
-      }
+
+    const headlineCards = [
+      headlineCard("2Y", formatLatestValue(y2), y2 ? `1d ${signed(y2.change_1, 2)}` : "n/a"),
+      headlineCard("10Y", formatLatestValue(y10), y10 ? `1d ${signed(y10.change_1, 2)}` : "n/a"),
+      headlineCard("30Y", formatLatestValue(y30), y30 ? `1d ${signed(y30.change_1, 2)}` : "n/a"),
+      headlineCard("2s10s", curve2s10s === null ? "n/a" : signed(curve2s10s, 1, " bps"), `${signed(curve2s10s1d, 1, " bps")} 1d`),
+      headlineCard("10Y BE", formatLatestValue(be10), be10 ? `1d ${signed(be10.change_1, 2)}` : "n/a"),
+      headlineCard("HY OAS", formatLatestValue(hy), hy ? `1d ${signed(hy.change_1, 2)}` : "n/a"),
+      headlineCard("Brent", formatLatestValue(brent), brent ? `1d ${signed(brent.change_1, 2)}` : "n/a"),
+      headlineCard("Stagflation", hypothesisTone, `${pct(stagProb)} now`, COLORS.stagflation)
+    ].join("");
+
+    const tickerItems = [
+      { label: "EFFR", latest: formatLatestValue(effr), change: effr ? signed(effr.change_1, 2) : "n/a", tone: toneClass((num(effr?.change_1) ?? 0) / 10) },
+      { label: "SOFR-EFFR", latest: sofrEffr === null ? "n/a" : signed(sofrEffr, 1, " bps"), change: fundingLeg ? pct(fundingLeg) : "n/a", tone: toneClass(fundingLeg - 0.5) },
+      { label: "3M-EFFR", latest: billEffr === null ? "n/a" : signed(billEffr, 1, " bps"), change: bill3m ? formatLatestValue(bill3m) : "n/a", tone: toneClass((Math.abs(billEffr ?? 0)) / 15) },
+      { label: "VIX", latest: formatLatestValue(vix), change: vix ? signed(vix.change_1, 2) : "n/a", tone: toneClass((num(vix?.change_1) ?? 0) / 10) },
+      { label: "S&P", latest: formatLatestValue(spx), change: spx ? signed(spx.change_1, 2) : "n/a", tone: toneClass((num(spx?.change_1) ?? 0) / 10) }
     ];
+
+    const macroCards = macroItems(macro);
+    const historyStart = history[0];
+    const latestTransition = transitions.length ? transitions[transitions.length - 1] : null;
+
+    return {
+      signals,
+      scenarios,
+      history,
+      transitions,
+      dominant,
+      stag,
+      inflation,
+      growth,
+      inflationLeg,
+      growthLeg,
+      fundingLeg,
+      stagProb,
+      hypothesisTone,
+      hypothesisClass,
+      headlineCards,
+      tickerItems,
+      catalysts,
+      deskBiases,
+      releasePlaybook,
+      signalTable,
+      macroCards,
+      historyStart,
+      latestTransition,
+      startDate: snapshot.active_event?.start_date || historyStart?.date || "",
+      generatedAt: snapshot.generated_at
+    };
+  }
+
+  function render(snapshot) {
+    const state = buildDeskState(snapshot);
+    const history = state.history;
+    const scenarios = state.scenarios;
 
     app.innerHTML = `
       <div class="terminal-grid">
         <section class="terminal-panel">
           <div class="terminal-panel-inner">
-            <p class="section-kicker">War monitor</p>
-            <h1 class="section-title">Iran-U.S. war overlay for front-end rates and liquidity</h1>
-            <p class="section-copy">This page now starts where a short-rate strategist would start: the front end of the curve, secured funding conditions, and balance-sheet liquidity. The war is treated as the overlay shock that can bleed into repo conditions, bill pricing, and then the broader macro conclusion.</p>
-            <div class="headline-grid">
-              <div class="headline-card">
-                <div class="headline-label">EFFR</div>
-                <div class="headline-value">${escapeHtml(effr ? formatLatestValue(effr) : "n/a")}</div>
-                <div class="headline-subvalue">${effr ? `1d ${signed(effr.change_1, 2)}` : "n/a"}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">SOFR - EFFR</div>
-                <div class="headline-value">${sofrEffr === null ? "n/a" : signed(sofrEffr, 1, " bps")}</div>
-                <div class="headline-subvalue">${sofr ? `SOFR ${formatLatestValue(sofr)}` : "n/a"}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">3M Bill - EFFR</div>
-                <div class="headline-value">${billEffr === null ? "n/a" : signed(billEffr, 1, " bps")}</div>
-                <div class="headline-subvalue">${bill3m ? `Bill ${formatLatestValue(bill3m)}` : "n/a"}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">ON RRP</div>
-                <div class="headline-value">${escapeHtml(onRrp ? formatLatestValue(onRrp) : "n/a")}</div>
-                <div class="headline-subvalue">${onRrp ? `z ${signed(onRrp.composite_z, 2)}` : "n/a"}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">Reserve balances</div>
-                <div class="headline-value">${escapeHtml(reserves ? formatLatestValue(reserves) : "n/a")}</div>
-                <div class="headline-subvalue">${reserves ? `latest ${escapeHtml(reserves.latest_date)}` : "n/a"}</div>
-              </div>
-              <div class="headline-card">
-                <div class="headline-label">Lead macro conclusion</div>
-                <div class="headline-value" style="color:${COLORS[dominant?.scenario_id] || "#4bc9dd"}">${escapeHtml(dominant?.title || "")}</div>
-                <div class="headline-subvalue">${pct(dominant?.probability)} now</div>
-              </div>
-            </div>
-            <div class="ticker-strip">
-              <div class="ticker-row">
-                ${tickerRow(tapeSignals)}
-              </div>
-            </div>
-            <div class="flow-grid" style="margin-top:1rem;">
-              <div class="stage-card">
-                <p class="section-kicker">Short-end first</p>
-                <div class="cause-title">Front-end rates read</div>
-                <p>The first question is whether the war shock is repricing the Fed-sensitive front end through funding rates, bill yields, and the 2-year sector.</p>
-                ${signalCluster(frontEndCards)}
-                <div class="cause-meta">
-                  <div class="meta-pill-row">
-                    <span class="meta-pill">Start ${escapeHtml(startDate)}</span>
-                    <span class="meta-pill">${trackedDays} tracked days</span>
-                    <span class="meta-pill">Updated ${escapeHtml(prettyDateTime(snapshot.generated_at))}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="stage-card">
-                <p class="section-kicker">Repo and liquidity second</p>
-                <h3>Funding and balance-sheet conditions</h3>
-                <p>The second question is whether liquidity is orderly or starting to tighten through repo substitutes, Fed facilities, reserves, and Treasury cash management.</p>
-                ${signalCluster(liquidityCards)}
-                <div class="tag-grid" style="margin-top:0.85rem;">
-                  ${(snapshot.active_event?.tags || []).map((tag) => `<span class="terminal-tag">${escapeHtml(tag)}</span>`).join("")}
-                </div>
-              </div>
-
-              <div class="stage-card">
-                <p class="section-kicker">Macro conclusion third</p>
-                <h3>${escapeHtml(dominant?.title || "No dominant conclusion")}</h3>
-                <p>${escapeHtml(dominant?.description || "")}</p>
-                <div class="meta-pill-row" style="margin-top:0.8rem;">
-                  <span class="meta-pill" style="color:${COLORS[dominant?.scenario_id] || "#4bc9dd"};border-color:${COLORS[dominant?.scenario_id] || "#4bc9dd"}33;">Lead ${pct(dominant?.probability)}</span>
-                  ${runnerUp ? `<span class="meta-pill">Runner-up ${escapeHtml(runnerUp.title)} ${pct(runnerUp.probability)}</span>` : ""}
-                  ${latestTransition ? `<span class="meta-pill">Latest flip ${escapeHtml(latestTransition.date)}</span>` : ""}
-                </div>
-                <div class="scenario-list">
-                  ${scenarioItems(scenarios, historyStart)}
-                </div>
-              </div>
-            </div>
+            <p class="section-kicker">Desk question</p>
+            <h1 class="section-title">Does the U.S.-Iran war become a stagflation shock?</h1>
+            <p class="section-copy">This screen is organized like a rates desk workflow: morning core board first, overnight catalysts second, release reaction logic third, and the stagflation hypothesis score last. The point is not to tell every macro story. The point is to decide whether inflation and growth damage are appearing together strongly enough to change the desk call.</p>
+            <div class="headline-grid">${state.headlineCards}</div>
+            <div class="ticker-row">${tickerRow(state.tickerItems)}</div>
           </div>
         </section>
 
-        <div class="chart-grid">
-          <section class="terminal-panel chart-shell">
+        <div class="desk-grid">
+          <section class="terminal-panel">
             <div class="terminal-panel-inner">
-              <p class="section-kicker">Probability path</p>
-              <h2 class="section-title">Daily scenario progression from war start to latest date</h2>
-              <p class="section-copy">Each line shows how the macro conclusion likelihood moved as the shock passed through energy, inflation, financial, and growth signals.</p>
-              <div class="regime-strip">${regimeStrip(history)}</div>
-              ${historyChart(history, scenarios)}
+              <p class="section-kicker">Morning workflow</p>
+              <h2 class="section-title">Overnight catalyst log</h2>
+              <p class="section-copy">This is the stripped-down first pass a U.S. rates desk would run before cash hours: oil, breakevens, curve, credit, and funding.</p>
+              <div class="section-stack">${state.catalysts.join("")}</div>
+              <div class="desk-meta" style="margin-top:0.9rem;">
+                <span class="meta-pill">War start ${escapeHtml(state.startDate)}</span>
+                <span class="meta-pill">Snapshot ${escapeHtml(prettyDateTime(state.generatedAt))}</span>
+              </div>
+              ${state.latestTransition ? `<p class="foot-note">Latest regime flip: ${escapeHtml(state.latestTransition.date)} | ${escapeHtml(state.latestTransition.note)}</p>` : ""}
             </div>
           </section>
 
-          <section class="terminal-panel driver-shell">
+          <section class="terminal-panel">
             <div class="terminal-panel-inner">
-              <p class="section-kicker">Why the current read leads</p>
-              <h2 class="section-title">${escapeHtml(dominant?.title || "")} drivers</h2>
-              <p class="section-copy">These are the strongest index contributions now pushing the dominant conclusion higher or lower.</p>
-              ${driverItems(dominant?.top_confirms || [], "Confirming indices")}
-              <div style="height:0.9rem;"></div>
-              ${driverItems(dominant?.top_diverges || [], "Signals pulling against it")}
+              <p class="section-kicker">Hypothesis board</p>
+              <h2 class="section-title">Stagflation scorecard</h2>
+              <p class="section-copy">The desk hypothesis only becomes live when the inflation leg and the growth-damage leg are both meaningfully elevated. Funding stress is the amplifier, not the whole story.</p>
+              <div class="score-grid">
+                ${scoreCard("Inflation leg", state.inflationLeg, "Built from inflation-pressure signals such as Brent, breakevens, and inflation-sensitive rates.", COLORS.inflation_shock)}
+                ${scoreCard("Growth leg", state.growthLeg, "Built from growth-drag and financial-tightening pressure together, because stagflation needs both.", COLORS.growth_slowdown)}
+                ${scoreCard("Funding / liquidity leg", state.fundingLeg, "Built from SOFR-EFFR, bill-EFFR, reserves, and volatility as a stress amplifier.", "#4bc9dd")}
+                ${scoreCard("Combined stagflation likelihood", state.stagProb, "This is the current model probability for the stagflation conclusion under the war overlay.", COLORS.stagflation)}
+              </div>
+              <div class="desk-meta" style="margin-top:0.9rem;">
+                <span class="status-pill ${state.hypothesisClass}">${escapeHtml(state.hypothesisTone)}</span>
+                <span class="meta-pill">Dominant view ${escapeHtml(state.dominant?.title || "n/a")}</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="terminal-panel">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Trade translation</p>
+              <h2 class="section-title">Desk bias right now</h2>
+              <p class="section-copy">This is the simplest trader-facing translation of the screen. It is intentionally rule-like: front-end, curve, then inflation expression.</p>
+              <div class="bias-grid">
+                ${state.deskBiases.map((row) => biasCard(row.statusClass, row.statusLabel, row.title, row.note, row.trade)).join("")}
+              </div>
             </div>
           </section>
         </div>
 
-        <div class="chart-grid">
-          <section class="terminal-panel signal-shell">
+        <div class="panel-grid">
+          <section class="terminal-panel">
             <div class="terminal-panel-inner">
-              <p class="section-kicker">Short-end and funding monitor</p>
-              <h2 class="section-title">Front-end and liquidity drivers</h2>
-              <div class="panel-tools">
-                <span>Policy rates, bills, repo-adjacent liquidity, and macro spillover</span>
-                <span class="mono">front-end first</span>
-              </div>
-              <div class="table-wrap">
-                <table class="terminal-table signal-table">
+              <p class="section-kicker">Release sheet</p>
+              <h2 class="section-title">If CPI / NFP hit now, what does the desk watch?</h2>
+              <p class="section-copy">This is a desk reaction sheet, not a forecast. The point is to know which instruments move first and how that changes the stagflation hypothesis.</p>
+              <div class="release-table-wrap">
+                <table class="terminal-table release-table">
                   <thead>
                     <tr>
-                      <th>Signal</th>
-                      <th>Latest</th>
-                      <th>1d</th>
-                      <th>5d</th>
-                      <th>z-score</th>
-                      <th>Path</th>
+                      <th>Release</th>
+                      <th>Hot / strong outcome</th>
+                      <th>Cool / weak outcome</th>
+                      <th>Current bias</th>
                     </tr>
                   </thead>
                   <tbody>
-                    ${signalRows(topSignals)}
+                    ${releaseRows(state.releasePlaybook)}
                   </tbody>
                 </table>
               </div>
@@ -1572,67 +1394,66 @@ ul.task-list li input[type="checkbox"] {
 
           <section class="terminal-panel">
             <div class="terminal-panel-inner">
-              <p class="section-kicker">Regime flips</p>
-              <h2 class="section-title">How the market story changed</h2>
-              <div class="transition-list">
-                ${transitionItems(transitions.slice(-8).reverse())}
-              </div>
+              <p class="section-kicker">Hypothesis path</p>
+              <h2 class="section-title">Stagflation vs alternatives from war start</h2>
+              <p class="section-copy">This is the slower audit trail. It shows whether the war has been moving more like an inflation shock, a stagflation risk, or a growth scare over time.</p>
+              ${history.length ? historyChart(history, scenarios) : '<div class="terminal-loading">No history available.</div>'}
             </div>
           </section>
         </div>
 
-        <div class="chart-grid">
-          <section class="terminal-panel macro-shell">
+        <div class="panel-grid">
+          <section class="terminal-panel">
             <div class="terminal-panel-inner">
-              <p class="section-kicker">Macro backdrop</p>
-              <h2 class="section-title">Slower confirmation layer</h2>
-              <p class="section-copy">These releases lag the market, but they tell us whether the war shock is turning into real inflation persistence or growth damage.</p>
-              <div class="macro-grid">
-                ${macroItems(macro)}
-              </div>
-            </div>
-          </section>
-
-          <section class="terminal-panel lag-shell">
-            <div class="terminal-panel-inner">
-              <p class="section-kicker">Lag validation</p>
-              <h2 class="section-title">Did the opening war shock behave like the current thesis?</h2>
+              <p class="section-kicker">Desk tape</p>
+              <h2 class="section-title">Core rates, credit, and energy monitor</h2>
+              <p class="section-copy">This is the minimum live tape for the hypothesis: rates across maturities, curve, breakevens, credit, oil, and funding spreads.</p>
               <div class="table-wrap">
-                <table class="terminal-table lag-table">
+                <table class="terminal-table">
                   <thead>
                     <tr>
-                      <th>Signal</th>
-                      <th>Expected</th>
-                      <th>t+1</th>
-                      <th>t+2</th>
-                      <th>t+5</th>
-                      <th>t+20</th>
+                      <th>Series</th>
+                      <th>Latest</th>
+                      <th>1d</th>
+                      <th>5d</th>
+                      <th>z-score</th>
                     </tr>
                   </thead>
                   <tbody>
-                    ${lagRows(lag)}
+                    ${signalRows(state.signalTable)}
                   </tbody>
                 </table>
               </div>
             </div>
           </section>
+
+          <section class="terminal-panel">
+            <div class="terminal-panel-inner">
+              <p class="section-kicker">Slower confirmation</p>
+              <h2 class="section-title">Macro follow-through</h2>
+              <p class="section-copy">These releases do not set the morning trade, but they tell you whether the war shock is becoming real inflation persistence, growth weakness, or both.</p>
+              <div class="macro-grid">
+                ${state.macroCards}
+              </div>
+            </div>
+          </section>
         </div>
 
-        <section class="terminal-panel daily-shell">
+        <section class="terminal-panel">
           <div class="terminal-panel-inner">
-            <p class="section-kicker">Daily score log</p>
-            <h2 class="section-title">Full day-by-day conclusion table</h2>
-            <p class="section-copy">This is the compact audit trail from the opening war date to the latest monitored date.</p>
+            <p class="section-kicker">Daily audit trail</p>
+            <h2 class="section-title">Day-by-day stagflation log</h2>
+            <p class="section-copy">This log is deliberately narrow: dominant scenario, stagflation probability, and the inflation / growth / tightening legs that matter for the desk hypothesis.</p>
             <div class="table-wrap">
               <table class="terminal-table daily-table">
                 <thead>
                   <tr>
                     <th>Date</th>
                     <th>Dominant</th>
-                    <th>Contained</th>
-                    <th>Inflation</th>
-                    <th>Stagflation</th>
-                    <th>Growth slowdown</th>
+                    <th>Stag prob</th>
+                    <th>Inflation leg</th>
+                    <th>Growth leg</th>
+                    <th>Financial tighten</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1640,6 +1461,7 @@ ul.task-list li input[type="checkbox"] {
                 </tbody>
               </table>
             </div>
+            <p class="foot-note">Desk rule of thumb: stagflation risk is only compelling when the inflation leg stays high while the growth and tightening legs climb at the same time.</p>
           </div>
         </section>
       </div>
