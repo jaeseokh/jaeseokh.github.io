@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="<p>Three dissertation chapters with direct paths to chapter summary pages and repositories.</p>">
+<meta name="description" content="<p>Research dashboard for a daily, weekly, and monthly macro scenario updating system built around structured shocks, realized cross-asset reactions, covariance-path beliefs, and ex-post story review.</p>">
 
-<title>Research Atlas – Portfolio</title>
+<title>Macro Scenario Updating System – Jaeseok Hwang</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -40,11 +41,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -68,15 +69,73 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body>
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Jaeseok Hwang</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../research/index.html" aria-current="page"> 
+<span class="menu-text">Research Dashboard</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -85,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Research Atlas</h1>
+<h1 class="title">Macro Scenario Updating System</h1>
 </div>
 
 
@@ -102,66 +161,206 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="surface">
+<div class="surface research-hero">
 <p class="eyebrow">
-Three dissertation chapters
+Quarto research dashboard
 </p>
-<h2 class="anchored">
-Simple chapter shortcuts
-</h2>
-<p>
-This page stays intentionally short. Each chapter card shows the topic, the main focus, and the repository link. The chapter page holds the concise summary with visual result, contribution, data, logic, and method.
+<h1>
+Daily macro scenario updating for Treasuries and cross-asset interpretation
+</h1>
+<p class="research-lead">
+This project is a post-close research system, not a high-frequency trading engine. It updates scenario probabilities and covariance-path beliefs after the market close, then carries the posterior state forward as tomorrow’s prior. The system is designed to study how narrative expectations, war or policy shocks, realized reactions, and unexplained gaps evolve across daily, weekly, and monthly horizons.
 </p>
 <div class="hero-actions">
-<p><a class="action-link" href="working_papers.html">Open Spatial Decision Lab</a> <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub Profile</a></p>
+<p><a class="action-link" href="../">Back to homepage</a> <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub profile</a></p>
 </div>
 </div>
-<div class="chapter-grid">
-<div class="chapter-card">
+<section id="operating-objective" class="level2">
+<h2 class="anchored" data-anchor-id="operating-objective">Operating Objective</h2>
+<div class="dashboard-mini-grid">
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Research question
+</p>
+<section id="how-does-the-market-revise-belief-paths" class="level3">
+<h3 class="anchored" data-anchor-id="how-does-the-market-revise-belief-paths">How does the market revise belief paths?</h3>
+<p>The system tracks how prior narratives, new shocks, realized reactions, and ex-post stories interact through time rather than trying to predict a single path ex ante.</p>
+</section>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+State variables
+</p>
+<section id="scenario-state-covariance-belief-state" class="level3">
+<h3 class="anchored" data-anchor-id="scenario-state-covariance-belief-state">Scenario state + covariance belief state</h3>
+<p>Each day stores both the scenario distribution and the evolving belief over expected volatility and correlation structure under the current narrative state.</p>
+</section>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Verification
+</p>
+<section id="reaction-is-the-referee" class="level3">
+<h3 class="anchored" data-anchor-id="reaction-is-the-referee">Reaction is the referee</h3>
+<p>LLM interpretation is used for structured shock extraction and ex-post review. The model still verifies the narrative against realized market reaction and covariance-path fit.</p>
+</section>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Forecasting
+</p>
+<section id="multi-horizon-forecast-leaves" class="level3">
+<h3 class="anchored" data-anchor-id="multi-horizon-forecast-leaves">Multi-horizon forecast leaves</h3>
+<p>Tomorrow, next-week, and next-month leaves are built from the updated posterior, unresolved gaps, and covariance-path state, then tested against realized outcomes.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="core-update-logic" class="level2">
+<h2 class="anchored" data-anchor-id="core-update-logic">Core Update Logic</h2>
+<p>The scenario state update is score-based:</p>
+<p><span class="math display">\[
+\text{Score}_t(s)
+=
+\lambda_1 \log(P_{t-1}(s)+\epsilon)
++
+\lambda_2 U_t(s)
++
+\lambda_3 F_t(s)
+\]</span></p>
+<p><span class="math display">\[
+P_t(s)=\frac{\exp(\text{Score}_t(s))}{\sum_j \exp(\text{Score}_t(j))}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li>(P_{t-1}(s)) is yesterday’s posterior carried into today</li>
+<li>(U_t(s)) is the structured shock / expectation support score</li>
+<li>(F_t(s)) is the reaction-fit score from realized market moves</li>
+</ul>
+<p>The covariance belief state is kept in interpretable pieces rather than an unconstrained inverse-Wishart setup:</p>
+<p><span class="math display">\[
+\Sigma_t = D_t \rho_t D_t
+\]</span></p>
+<p>where (D_t) is the prior or posterior volatility scale and (_t) is the prior or posterior correlation matrix. The research object is the evolving path of ((D_t, _t)) from the episode start date to the current date.</p>
+</section>
+<section id="layer-design" class="level2">
+<h2 class="anchored" data-anchor-id="layer-design">Layer Design</h2>
+<div class="process-grid">
+<div class="process-card">
+<p class="dashboard-card-label">
+</p><ol type="1">
+<li>Prior state
+<p></p></li>
+</ol>
+<section id="carry-forward-from-yesterday" class="level3">
+<h3 class="anchored">Carry-forward from yesterday</h3>
+<p>Yesterday’s posterior scenario probabilities, posterior covariance belief, entropy, and unresolved gaps become today’s starting point.</p>
+<p>:::</p>
+<div class="process-card">
+<p class="dashboard-card-label">
+</p><ol start="2" type="1">
+<li>Structured shock layer
+<p></p></li>
+</ol>
+<section id="llm-assisted-event-interpretation" class="level3">
+<h3 class="anchored">LLM-assisted event interpretation</h3>
+<p>After the close, the day’s information flow is summarized into a structured event ledger and shock vector instead of leaving the interpretation as free-form commentary.</p>
+<p>:::</p>
+<div class="process-card">
+<p class="dashboard-card-label">
+</p><ol start="3" type="1">
+<li>Reaction layer
+<p></p></li>
+</ol>
+<section id="observed-cross-asset-move" class="level3">
+<h3 class="anchored">Observed cross-asset move</h3>
+<p>The realized reaction vector covers rates, curve, breakeven, credit, USD, equities, oil, and volatility. Reaction fit is measured against scenario templates and covariance beliefs.</p>
+<p>:::</p>
+<div class="process-card">
+<p class="dashboard-card-label">
+</p><ol start="4" type="1">
+<li>Ex-post review
+<p></p></li>
+</ol>
+<section id="story-and-puzzle-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="story-and-puzzle-diagnostics">Story and puzzle diagnostics</h3>
+<p>The system records reaction gap, story-model gap, entropy, explained share, unexplained share, and gap decay. The disagreement between structural updater and ex-post story is a core research object.</p>
+<p>:::</p>
+<p>:::</p>
+</section>
+<section id="public-data-scope" class="level2">
+<h2 class="anchored" data-anchor-id="public-data-scope">Public-Data Scope</h2>
+<div class="surface note-surface">
 <p class="eyebrow">
-Chapter 1
+Scope note
 </p>
-<h3 class="anchored">
-Transferability of Multi-Field Information
-</h3>
-<p class="hub-focus">
-Main focus: whether a model trained in one field can be trusted in a structurally different field.
+<p>This project does not claim Bloomberg-style high-frequency market microstructure identification. The core system is post-close and uses daily, weekly, and monthly updates. Optional sidecar work can use public ETF and futures proxies to study relative event-window speed, but the main research object is the evolving posterior over scenario paths and covariance paths from the episode start date forward.</p>
+</div>
+</section>
+<section id="episode-frame" class="level2">
+<h2 class="anchored" data-anchor-id="episode-frame">Episode Frame</h2>
+<div class="dashboard-mini-grid">
+<div class="dashboard-card compact">
+<p class="dashboard-card-label">
+Baseline window
 </p>
-<div class="hub-link-row">
-<p><a href="chapter1.html">Open chapter page</a> <a href="https://github.com/jaeseokh/value_multifield_python" target="_blank">GitHub repo</a></p>
+<section id="pre-episode-conditioning" class="level3">
+<h3 class="anchored" data-anchor-id="pre-episode-conditioning">Pre-episode conditioning</h3>
+<p>Use a pre-war or pre-stress window to estimate baseline volatility and correlation structure before the episode begins.</p>
+</section>
 </div>
-</div>
-<div class="chapter-card">
-<p class="eyebrow">
-Chapter 2
+<div class="dashboard-card compact">
+<p class="dashboard-card-label">
+Episode start
 </p>
-<h3 class="anchored">
-Information Validity and Profitability Risk
-</h3>
-<p class="hub-focus">
-Main focus: which part of weak profitability comes from the decision and which part comes from external shocks.
+<section id="anchor-date" class="level3">
+<h3 class="anchored" data-anchor-id="anchor-date">Anchor date</h3>
+<p>From the episode start date onward, the posterior path evolves recursively. Each day’s posterior becomes the next trading day’s prior.</p>
+</section>
+</div>
+<div class="dashboard-card compact">
+<p class="dashboard-card-label">
+Current snapshot
 </p>
-<div class="hub-link-row">
-<p><a href="chapter2.html">Open chapter page</a> <a href="https://github.com/jaeseokh/corn_seed_response" target="_blank">GitHub repo</a></p>
+<section id="today-in-context" class="level3">
+<h3 class="anchored" data-anchor-id="today-in-context">Today in context</h3>
+<p>At any current date, the dashboard shows both the full episode path through today and the posterior snapshot that seeds tomorrow’s update.</p>
+</section>
 </div>
-</div>
-<div class="chapter-card">
-<p class="eyebrow">
-Chapter 3
+<div class="dashboard-card compact">
+<p class="dashboard-card-label">
+Multi-horizon memory
 </p>
-<h3 class="anchored">
-Value of Information in Stochastic Environments
-</h3>
-<p class="hub-focus">
-Main focus: when monitored signals change decisions enough to create real economic value.
-</p>
-<div class="hub-link-row">
-<p><a href="chapter3.html">Open chapter page</a> <a href="https://github.com/jaeseokh/value_multifield_ofpe" target="_blank">GitHub repo</a></p>
+<section id="daily-weekly-monthly" class="level3">
+<h3 class="anchored" data-anchor-id="daily-weekly-monthly">Daily / weekly / monthly</h3>
+<p>Path summaries are aggregated separately for each horizon so gap persistence, convergence, and regime transition can be studied at different timescales.</p>
+</section>
 </div>
 </div>
-</div>
+</section>
+<section id="what-this-page-will-hold" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-page-will-hold">What This Page Will Hold</h2>
+<ul>
+<li>daily post-close updates</li>
+<li>weekly reviews</li>
+<li>monthly regime notes</li>
+<li>covariance-path summaries</li>
+<li>scenario probability path figures</li>
+<li>methods and design notes</li>
+</ul>
+<p>The site is being rebuilt around that publishing structure.</p>
 
 
+</section>
+</div>
+</section>
+</div>
+</section>
+</div>
+</section>
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -591,7 +790,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Built with Quarto for research, defense, and recruiter review</p>
+<p>Built with Quarto for macro research, daily review, and recruiter-facing documentation</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

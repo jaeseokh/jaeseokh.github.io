@@ -6,11 +6,17 @@ project:
     - research/*.qmd
 
 website:
-  title: "Portfolio"
+  title: "Jaeseok Hwang"
   search: true
   repo-url: https://github.com/jaeseokh/jaeseokh.github.io
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research/index.qmd
+        text: Research Dashboard
   page-footer:
-    center: "Built with Quarto for research, defense, and recruiter review"
+    center: "Built with Quarto for macro research, daily review, and recruiter-facing documentation"
 
 format:
   html:
