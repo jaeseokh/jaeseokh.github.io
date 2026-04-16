@@ -2,57 +2,15 @@
   {
     "objectID": "research/index.html",
     "href": "research/index.html",
-    "title": "Macro Scenario Updating System",
+    "title": "Macro Scenario Terminal",
     "section": "",
-    "text": "Quarto research dashboard\n\n\n\nThis project is a post-close research system, not a high-frequency trading engine. It updates scenario probabilities and covariance-path beliefs after the market close, then carries the posterior state forward as tomorrow’s prior. The system is designed to study how narrative expectations, war or policy shocks, realized reactions, and unexplained gaps evolve across daily, weekly, and monthly horizons.\n\n\nBack to homepage GitHub profile"
-  },
-  {
-    "objectID": "research/index.html#operating-objective",
-    "href": "research/index.html#operating-objective",
-    "title": "Macro Scenario Updating System",
-    "section": "Operating Objective",
-    "text": "Operating Objective\n\n\n\nResearch question\n\n\nHow does the market revise belief paths?\nThe system tracks how prior narratives, new shocks, realized reactions, and ex-post stories interact through time rather than trying to predict a single path ex ante.\n\n\n\n\nState variables\n\n\nScenario state + covariance belief state\nEach day stores both the scenario distribution and the evolving belief over expected volatility and correlation structure under the current narrative state.\n\n\n\n\nVerification\n\n\nReaction is the referee\nLLM interpretation is used for structured shock extraction and ex-post review. The model still verifies the narrative against realized market reaction and covariance-path fit.\n\n\n\n\nForecasting\n\n\nMulti-horizon forecast leaves\nTomorrow, next-week, and next-month leaves are built from the updated posterior, unresolved gaps, and covariance-path state, then tested against realized outcomes."
-  },
-  {
-    "objectID": "research/index.html#core-update-logic",
-    "href": "research/index.html#core-update-logic",
-    "title": "Macro Scenario Updating System",
-    "section": "Core Update Logic",
-    "text": "Core Update Logic\nThe scenario state update is score-based:\n\\[\n\\text{Score}_t(s)\n=\n\\lambda_1 \\log(P_{t-1}(s)+\\epsilon)\n+\n\\lambda_2 U_t(s)\n+\n\\lambda_3 F_t(s)\n\\]\n\\[\nP_t(s)=\\frac{\\exp(\\text{Score}_t(s))}{\\sum_j \\exp(\\text{Score}_t(j))}\n\\]\nwhere:\n\n(P_{t-1}(s)) is yesterday’s posterior carried into today\n(U_t(s)) is the structured shock / expectation support score\n(F_t(s)) is the reaction-fit score from realized market moves\n\nThe covariance belief state is kept in interpretable pieces rather than an unconstrained inverse-Wishart setup:\n\\[\n\\Sigma_t = D_t \\rho_t D_t\n\\]\nwhere (D_t) is the prior or posterior volatility scale and (_t) is the prior or posterior correlation matrix. The research object is the evolving path of ((D_t, _t)) from the episode start date to the current date."
-  },
-  {
-    "objectID": "research/index.html#layer-design",
-    "href": "research/index.html#layer-design",
-    "title": "Macro Scenario Updating System",
-    "section": "Layer Design",
-    "text": "Layer Design\n\n\n\n\nPrior state\n\n\n\nCarry-forward from yesterday\nYesterday’s posterior scenario probabilities, posterior covariance belief, entropy, and unresolved gaps become today’s starting point.\n:::\n\n\n\nStructured shock layer\n\n\n\nLLM-assisted event interpretation\nAfter the close, the day’s information flow is summarized into a structured event ledger and shock vector instead of leaving the interpretation as free-form commentary.\n:::\n\n\n\nReaction layer\n\n\n\nObserved cross-asset move\nThe realized reaction vector covers rates, curve, breakeven, credit, USD, equities, oil, and volatility. Reaction fit is measured against scenario templates and covariance beliefs.\n:::\n\n\n\nEx-post review\n\n\n\nStory and puzzle diagnostics\nThe system records reaction gap, story-model gap, entropy, explained share, unexplained share, and gap decay. The disagreement between structural updater and ex-post story is a core research object.\n:::\n:::\n\n\nPublic-Data Scope\n\n\nScope note\n\nThis project does not claim Bloomberg-style high-frequency market microstructure identification. The core system is post-close and uses daily, weekly, and monthly updates. Optional sidecar work can use public ETF and futures proxies to study relative event-window speed, but the main research object is the evolving posterior over scenario paths and covariance paths from the episode start date forward.\n\n\n\nEpisode Frame\n\n\n\nBaseline window\n\n\nPre-episode conditioning\nUse a pre-war or pre-stress window to estimate baseline volatility and correlation structure before the episode begins.\n\n\n\n\nEpisode start\n\n\nAnchor date\nFrom the episode start date onward, the posterior path evolves recursively. Each day’s posterior becomes the next trading day’s prior.\n\n\n\n\nCurrent snapshot\n\n\nToday in context\nAt any current date, the dashboard shows both the full episode path through today and the posterior snapshot that seeds tomorrow’s update.\n\n\n\n\nMulti-horizon memory\n\n\nDaily / weekly / monthly\nPath summaries are aggregated separately for each horizon so gap persistence, convergence, and regime transition can be studied at different timescales.\n\n\n\n\n\nWhat This Page Will Hold\n\ndaily post-close updates\nweekly reviews\nmonthly regime notes\ncovariance-path summaries\nscenario probability path figures\nmethods and design notes\n\nThe site is being rebuilt around that publishing structure."
-  },
-  {
-    "objectID": "research/index.html#public-data-scope",
-    "href": "research/index.html#public-data-scope",
-    "title": "Macro Scenario Updating System",
-    "section": "Public-Data Scope",
-    "text": "Public-Data Scope\n\n\nScope note\n\nThis project does not claim Bloomberg-style high-frequency market microstructure identification. The core system is post-close and uses daily, weekly, and monthly updates. Optional sidecar work can use public ETF and futures proxies to study relative event-window speed, but the main research object is the evolving posterior over scenario paths and covariance paths from the episode start date forward."
-  },
-  {
-    "objectID": "research/index.html#episode-frame",
-    "href": "research/index.html#episode-frame",
-    "title": "Macro Scenario Updating System",
-    "section": "Episode Frame",
-    "text": "Episode Frame\n\n\n\nBaseline window\n\n\nPre-episode conditioning\nUse a pre-war or pre-stress window to estimate baseline volatility and correlation structure before the episode begins.\n\n\n\n\nEpisode start\n\n\nAnchor date\nFrom the episode start date onward, the posterior path evolves recursively. Each day’s posterior becomes the next trading day’s prior.\n\n\n\n\nCurrent snapshot\n\n\nToday in context\nAt any current date, the dashboard shows both the full episode path through today and the posterior snapshot that seeds tomorrow’s update.\n\n\n\n\nMulti-horizon memory\n\n\nDaily / weekly / monthly\nPath summaries are aggregated separately for each horizon so gap persistence, convergence, and regime transition can be studied at different timescales."
-  },
-  {
-    "objectID": "research/index.html#what-this-page-will-hold",
-    "href": "research/index.html#what-this-page-will-hold",
-    "title": "Macro Scenario Updating System",
-    "section": "What This Page Will Hold",
-    "text": "What This Page Will Hold\n\ndaily post-close updates\nweekly reviews\nmonthly regime notes\ncovariance-path summaries\nscenario probability path figures\nmethods and design notes\n\nThe site is being rebuilt around that publishing structure."
+    "text": "&lt;a class=\"action-link ghost\" href=\"../\"&gt;Back to homepage&lt;/a&gt;\n&lt;a class=\"action-link ghost\" href=\"https://github.com/jaeseokh\" target=\"_blank\"&gt;GitHub&lt;/a&gt;"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jaeseok Hwang",
     "section": "",
-    "text": "Bio / Profile\n\n\nMacro research, public-data systems, and interpretable market state updating.\n\n\nI am Jaeseok Hwang, a Ph.D. candidate in Applied Economics at UIUC. My current work focuses on building a research-grade rates and cross-asset scenario updating system that separates prior expectation, new shock, realized reaction, covariance-path belief, and ex-post story review.\n\n\nOpen research dashboard GitHub LinkedIn\n\n\n\n\nCurrent role\n\n\nApplied Economics Ph.D. candidate\n\n\nResearch focus: macro-finance interpretation, Bayesian updating, interpretable state tracking, and decision systems built from public data.\n\n\n\n\nCurrent build\n\n\nDaily macro scenario updating system\n\n\nU.S. Treasury and cross-asset research stack with scenario memory, covariance-path beliefs, post-close review, and multi-horizon forecast leaves.\n\n\n\n\nWorking style\n\n\nResearch + implementation\n\n\nI build the theory, the data pipeline, the update logic, the diagnostics, and the publishing layer together so the research can be inspected end to end.\n\n\n\n\nOutput format\n\n\nPublic daily research log\n\n\nThe website is being rebuilt as a post-close research notebook with daily updates, weekly reviews, methods notes, and project diagrams.\n\n\n\n\n\n\nDashboard Preview\n\n\nTreasury / cross-asset scenario dashboard\n\n\nThis panel is the homepage view of the current research system. The full Quarto page holds the full process logic, operating cycle, and research framing.\n\n\nDaily post-close update Weekly narrative review Monthly regime tracking\n\n\n\n\nState update\n\n\nPrior → shock → reaction → posterior\n\n\nYesterday’s posterior becomes today’s prior. After the close, structured shock interpretation and realized market reaction update the scenario state.\n\n\n\n\nCovariance path\n\n\nBelief over co-movement\n\n\nThe system tracks expected volatility and correlation paths across rates, breakeven, credit, USD, equities, oil, and volatility.\n\n\n\n\nGap diagnostics\n\n\nWhat the prior missed\n\n\nReaction gap, story-model gap, entropy, explained share, and gap decay are stored as first-class objects rather than side metrics.\n\n\n\n\nForecast layer\n\n\nDaily / weekly / monthly leaves\n\n\nForecasts are generated from the updated state and unresolved gaps, then reviewed against realized outcomes to learn which paths converge or diverge.\n\n\n\n\nOpen full Quarto page"
+    "text": "Bio / Profile\n\n\nMacro-finance research, public-data systems, and interpretable market-state updating.\n\n\nI am Jaeseok Hwang, a Ph.D. candidate in Applied Economics at UIUC. My current work centers on a rates and cross-asset scenario updating system that separates prior expectation, structured shock interpretation, realized reaction, covariance-path belief, and ex-post story review.\n\n\nOpen research terminal GitHub LinkedIn\n\n\n\n\nCurrent role\n\n\nApplied Economics Ph.D. candidate\n\n\nApplied macro research, scenario system design, public-data pipelines, and interpretable market diagnostics.\n\n\n\n\nResearch object\n\n\nScenario path and covariance path\n\n\nThe project tracks how prior beliefs, new shocks, cross-asset reactions, and unresolved gaps evolve through daily, weekly, and monthly horizons.\n\n\n\n\nCurrent build\n\n\nPost-close macro scenario terminal\n\n\nVisual-first dashboard with past path, current node, future forecast branches, covariance diagnostics, and fixed-date review tabs.\n\n\n\n\nPublishing format\n\n\nPublic daily research log\n\n\nThe site is being rebuilt as a recruiter-facing research notebook with daily state updates, weekly reviews, and methods notes.\n\n\n\n\n\n\nCurrent Snapshot\n\n\nMacro scenario numeric panel\n\n\nThis right-side panel is the homepage summary view. The full research terminal shows the ensemble tree, date tabs, covariance heatmap, and node-level detail panes.\n\n\n\n\n\nOpen full research terminal"
   }
 ]

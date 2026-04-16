@@ -1,175 +1,38 @@
 ---
-title: "Macro Scenario Updating System"
-description-meta: |
-  Research dashboard for a daily, weekly, and monthly macro scenario updating system built around structured shocks, realized cross-asset reactions, covariance-path beliefs, and ex-post story review.
+title: "Macro Scenario Terminal"
 page-layout: full
+format:
+  html:
+    toc: false
+    title-block: false
 ---
 
-<div class="surface research-hero">
-<p class="eyebrow">Quarto research dashboard</p>
-<h1>Daily macro scenario updating for Treasuries and cross-asset interpretation</h1>
-<p class="research-lead">This project is a post-close research system, not a high-frequency trading engine. It updates scenario probabilities and covariance-path beliefs after the market close, then carries the posterior state forward as tomorrow's prior. The system is designed to study how narrative expectations, war or policy shocks, realized reactions, and unexplained gaps evolve across daily, weekly, and monthly horizons.</p>
-<div class="hero-actions">
-<a class="action-link" href="../">Back to homepage</a>
-<a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub profile</a>
+<style>
+#title-block-header {
+  display: none;
+}
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 22%),
+    linear-gradient(180deg, #050b12 0%, #070d15 100%);
+}
+
+main.content {
+  max-width: 1520px;
+  padding-top: 0.4rem;
+}
+
+@import url("../assets/research_dashboard.css");
+</style>
+
+<div class="terminal-page">
+  <div class="hero-actions" style="margin-bottom: 1rem;">
+    <a class="action-link ghost" href="../">Back to homepage</a>
+    <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
+  </div>
+
+  <div id="macro-dashboard" data-dashboard-src="../assets/dashboard_data.json"></div>
 </div>
-</div>
 
-## Operating Objective
-
-::: {.dashboard-mini-grid}
-::: {.dashboard-card}
-<p class="dashboard-card-label">Research question</p>
-
-### How does the market revise belief paths?
-
-The system tracks how prior narratives, new shocks, realized reactions, and ex-post stories interact through time rather than trying to predict a single path ex ante.
-:::
-
-::: {.dashboard-card}
-<p class="dashboard-card-label">State variables</p>
-
-### Scenario state + covariance belief state
-
-Each day stores both the scenario distribution and the evolving belief over expected volatility and correlation structure under the current narrative state.
-:::
-
-::: {.dashboard-card}
-<p class="dashboard-card-label">Verification</p>
-
-### Reaction is the referee
-
-LLM interpretation is used for structured shock extraction and ex-post review. The model still verifies the narrative against realized market reaction and covariance-path fit.
-:::
-
-::: {.dashboard-card}
-<p class="dashboard-card-label">Forecasting</p>
-
-### Multi-horizon forecast leaves
-
-Tomorrow, next-week, and next-month leaves are built from the updated posterior, unresolved gaps, and covariance-path state, then tested against realized outcomes.
-:::
-:::
-
-## Core Update Logic
-
-The scenario state update is score-based:
-
-$$
-\text{Score}_t(s)
-=
-\lambda_1 \log(P_{t-1}(s)+\epsilon)
-+
-\lambda_2 U_t(s)
-+
-\lambda_3 F_t(s)
-$$
-
-$$
-P_t(s)=\frac{\exp(\text{Score}_t(s))}{\sum_j \exp(\text{Score}_t(j))}
-$$
-
-where:
-
-- \(P_{t-1}(s)\) is yesterday's posterior carried into today
-- \(U_t(s)\) is the structured shock / expectation support score
-- \(F_t(s)\) is the reaction-fit score from realized market moves
-
-The covariance belief state is kept in interpretable pieces rather than an unconstrained inverse-Wishart setup:
-
-$$
-\Sigma_t = D_t \rho_t D_t
-$$
-
-where \(D_t\) is the prior or posterior volatility scale and \(\rho_t\) is the prior or posterior correlation matrix. The research object is the evolving path of \((D_t, \rho_t)\) from the episode start date to the current date.
-
-## Layer Design
-
-::: {.process-grid}
-::: {.process-card}
-<p class="dashboard-card-label">1. Prior state</p>
-
-### Carry-forward from yesterday
-
-Yesterday's posterior scenario probabilities, posterior covariance belief, entropy, and unresolved gaps become today's starting point.
-:::
-
-::: {.process-card}
-<p class="dashboard-card-label">2. Structured shock layer</p>
-
-### LLM-assisted event interpretation
-
-After the close, the day's information flow is summarized into a structured event ledger and shock vector instead of leaving the interpretation as free-form commentary.
-:::
-
-::: {.process-card}
-<p class="dashboard-card-label">3. Reaction layer</p>
-
-### Observed cross-asset move
-
-The realized reaction vector covers rates, curve, breakeven, credit, USD, equities, oil, and volatility. Reaction fit is measured against scenario templates and covariance beliefs.
-:::
-
-::: {.process-card}
-<p class="dashboard-card-label">4. Ex-post review</p>
-
-### Story and puzzle diagnostics
-
-The system records reaction gap, story-model gap, entropy, explained share, unexplained share, and gap decay. The disagreement between structural updater and ex-post story is a core research object.
-:::
-:::
-
-## Public-Data Scope
-
-::: {.surface .note-surface}
-<p class="eyebrow">Scope note</p>
-
-This project does not claim Bloomberg-style high-frequency market microstructure identification. The core system is post-close and uses daily, weekly, and monthly updates. Optional sidecar work can use public ETF and futures proxies to study relative event-window speed, but the main research object is the evolving posterior over scenario paths and covariance paths from the episode start date forward.
-:::
-
-## Episode Frame
-
-::: {.dashboard-mini-grid}
-::: {.dashboard-card .compact}
-<p class="dashboard-card-label">Baseline window</p>
-
-### Pre-episode conditioning
-
-Use a pre-war or pre-stress window to estimate baseline volatility and correlation structure before the episode begins.
-:::
-
-::: {.dashboard-card .compact}
-<p class="dashboard-card-label">Episode start</p>
-
-### Anchor date
-
-From the episode start date onward, the posterior path evolves recursively. Each day's posterior becomes the next trading day's prior.
-:::
-
-::: {.dashboard-card .compact}
-<p class="dashboard-card-label">Current snapshot</p>
-
-### Today in context
-
-At any current date, the dashboard shows both the full episode path through today and the posterior snapshot that seeds tomorrow's update.
-:::
-
-::: {.dashboard-card .compact}
-<p class="dashboard-card-label">Multi-horizon memory</p>
-
-### Daily / weekly / monthly
-
-Path summaries are aggregated separately for each horizon so gap persistence, convergence, and regime transition can be studied at different timescales.
-:::
-:::
-
-## What This Page Will Hold
-
-- daily post-close updates
-- weekly reviews
-- monthly regime notes
-- covariance-path summaries
-- scenario probability path figures
-- methods and design notes
-
-The site is being rebuilt around that publishing structure.
+<script defer src="../assets/research_dashboard.js"></script>

@@ -15,16 +15,18 @@ format:
 main.content {
   padding-top: 0.4rem;
 }
+
+@import url("assets/research_dashboard.css");
 </style>
 
 <div class="split-landing">
 <section class="profile-surface">
 <p class="eyebrow">Bio / Profile</p>
-<h1 class="landing-title">Macro research, public-data systems, and interpretable market state updating.</h1>
-<p class="landing-copy">I am Jaeseok Hwang, a Ph.D. candidate in Applied Economics at UIUC. My current work focuses on building a research-grade rates and cross-asset scenario updating system that separates prior expectation, new shock, realized reaction, covariance-path belief, and ex-post story review.</p>
+<h1 class="landing-title">Macro-finance research, public-data systems, and interpretable market-state updating.</h1>
+<p class="landing-copy">I am Jaeseok Hwang, a Ph.D. candidate in Applied Economics at UIUC. My current work centers on a rates and cross-asset scenario updating system that separates prior expectation, structured shock interpretation, realized reaction, covariance-path belief, and ex-post story review.</p>
 
 <div class="hero-actions">
-<a class="action-link" href="research/">Open research dashboard</a>
+<a class="action-link" href="research/">Open research terminal</a>
 <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a>
 <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a>
 </div>
@@ -33,62 +35,37 @@ main.content {
 <div class="dashboard-card">
 <p class="dashboard-card-label">Current role</p>
 <h3>Applied Economics Ph.D. candidate</h3>
-<p>Research focus: macro-finance interpretation, Bayesian updating, interpretable state tracking, and decision systems built from public data.</p>
+<p>Applied macro research, scenario system design, public-data pipelines, and interpretable market diagnostics.</p>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">Research object</p>
+<h3>Scenario path and covariance path</h3>
+<p>The project tracks how prior beliefs, new shocks, cross-asset reactions, and unresolved gaps evolve through daily, weekly, and monthly horizons.</p>
 </div>
 <div class="dashboard-card">
 <p class="dashboard-card-label">Current build</p>
-<h3>Daily macro scenario updating system</h3>
-<p>U.S. Treasury and cross-asset research stack with scenario memory, covariance-path beliefs, post-close review, and multi-horizon forecast leaves.</p>
+<h3>Post-close macro scenario terminal</h3>
+<p>Visual-first dashboard with past path, current node, future forecast branches, covariance diagnostics, and fixed-date review tabs.</p>
 </div>
 <div class="dashboard-card">
-<p class="dashboard-card-label">Working style</p>
-<h3>Research + implementation</h3>
-<p>I build the theory, the data pipeline, the update logic, the diagnostics, and the publishing layer together so the research can be inspected end to end.</p>
-</div>
-<div class="dashboard-card">
-<p class="dashboard-card-label">Output format</p>
+<p class="dashboard-card-label">Publishing format</p>
 <h3>Public daily research log</h3>
-<p>The website is being rebuilt as a post-close research notebook with daily updates, weekly reviews, methods notes, and project diagrams.</p>
+<p>The site is being rebuilt as a recruiter-facing research notebook with daily state updates, weekly reviews, and methods notes.</p>
 </div>
 </div>
 </section>
 
 <section class="dashboard-surface">
-<p class="eyebrow">Dashboard Preview</p>
-<h2 class="dashboard-title">Treasury / cross-asset scenario dashboard</h2>
-<p class="dashboard-intro">This panel is the homepage view of the current research system. The full Quarto page holds the full process logic, operating cycle, and research framing.</p>
+<p class="eyebrow">Current Snapshot</p>
+<h2 class="dashboard-title">Macro scenario numeric panel</h2>
+<p class="dashboard-intro">This right-side panel is the homepage summary view. The full research terminal shows the ensemble tree, date tabs, covariance heatmap, and node-level detail panes.</p>
 
-<div class="status-strip">
-<span class="status-chip">Daily post-close update</span>
-<span class="status-chip">Weekly narrative review</span>
-<span class="status-chip">Monthly regime tracking</span>
-</div>
-
-<div class="dashboard-mini-grid">
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">State update</p>
-<h3>Prior → shock → reaction → posterior</h3>
-<p>Yesterday's posterior becomes today's prior. After the close, structured shock interpretation and realized market reaction update the scenario state.</p>
-</div>
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">Covariance path</p>
-<h3>Belief over co-movement</h3>
-<p>The system tracks expected volatility and correlation paths across rates, breakeven, credit, USD, equities, oil, and volatility.</p>
-</div>
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">Gap diagnostics</p>
-<h3>What the prior missed</h3>
-<p>Reaction gap, story-model gap, entropy, explained share, and gap decay are stored as first-class objects rather than side metrics.</p>
-</div>
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">Forecast layer</p>
-<h3>Daily / weekly / monthly leaves</h3>
-<p>Forecasts are generated from the updated state and unresolved gaps, then reviewed against realized outcomes to learn which paths converge or diverge.</p>
-</div>
-</div>
+<div id="homepage-dashboard-summary" data-dashboard-src="assets/dashboard_data.json"></div>
 
 <div class="hero-actions dashboard-actions">
-<a class="action-link secondary" href="research/">Open full Quarto page</a>
+<a class="action-link secondary" href="research/">Open full research terminal</a>
 </div>
 </section>
 </div>
+
+<script defer src="assets/research_dashboard.js"></script>

@@ -139,6 +139,8 @@ ul.task-list li input[type="checkbox"] {
 main.content {
   padding-top: 0.4rem;
 }
+
+@import url("assets/research_dashboard.css");
 </style>
 <div class="split-landing">
 <section class="profile-surface">
@@ -146,13 +148,13 @@ main.content {
 Bio / Profile
 </p>
 <h1 class="landing-title">
-Macro research, public-data systems, and interpretable market state updating.
+Macro-finance research, public-data systems, and interpretable market-state updating.
 </h1>
 <p class="landing-copy">
-I am Jaeseok Hwang, a Ph.D.&nbsp;candidate in Applied Economics at UIUC. My current work focuses on building a research-grade rates and cross-asset scenario updating system that separates prior expectation, new shock, realized reaction, covariance-path belief, and ex-post story review.
+I am Jaeseok Hwang, a Ph.D.&nbsp;candidate in Applied Economics at UIUC. My current work centers on a rates and cross-asset scenario updating system that separates prior expectation, structured shock interpretation, realized reaction, covariance-path belief, and ex-post story review.
 </p>
 <div class="hero-actions">
-<p><a class="action-link" href="research/">Open research dashboard</a> <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a> <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a></p>
+<p><a class="action-link" href="research/">Open research terminal</a> <a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank">GitHub</a> <a class="action-link ghost" href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank">LinkedIn</a></p>
 </div>
 <div class="profile-meta-grid">
 <div class="dashboard-card">
@@ -163,7 +165,18 @@ Current role
 Applied Economics Ph.D.&nbsp;candidate
 </h3>
 <p>
-Research focus: macro-finance interpretation, Bayesian updating, interpretable state tracking, and decision systems built from public data.
+Applied macro research, scenario system design, public-data pipelines, and interpretable market diagnostics.
+</p>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Research object
+</p>
+<h3 class="anchored">
+Scenario path and covariance path
+</h3>
+<p>
+The project tracks how prior beliefs, new shocks, cross-asset reactions, and unresolved gaps evolve through daily, weekly, and monthly horizons.
 </p>
 </div>
 <div class="dashboard-card">
@@ -171,100 +184,44 @@ Research focus: macro-finance interpretation, Bayesian updating, interpretable s
 Current build
 </p>
 <h3 class="anchored">
-Daily macro scenario updating system
+Post-close macro scenario terminal
 </h3>
 <p>
-U.S. Treasury and cross-asset research stack with scenario memory, covariance-path beliefs, post-close review, and multi-horizon forecast leaves.
+Visual-first dashboard with past path, current node, future forecast branches, covariance diagnostics, and fixed-date review tabs.
 </p>
 </div>
 <div class="dashboard-card">
 <p class="dashboard-card-label">
-Working style
-</p>
-<h3 class="anchored">
-Research + implementation
-</h3>
-<p>
-I build the theory, the data pipeline, the update logic, the diagnostics, and the publishing layer together so the research can be inspected end to end.
-</p>
-</div>
-<div class="dashboard-card">
-<p class="dashboard-card-label">
-Output format
+Publishing format
 </p>
 <h3 class="anchored">
 Public daily research log
 </h3>
 <p>
-The website is being rebuilt as a post-close research notebook with daily updates, weekly reviews, methods notes, and project diagrams.
+The site is being rebuilt as a recruiter-facing research notebook with daily state updates, weekly reviews, and methods notes.
 </p>
 </div>
 </div>
 </section>
 <section class="dashboard-surface">
 <p class="eyebrow">
-Dashboard Preview
+Current Snapshot
 </p>
 <h2 class="dashboard-title anchored">
-Treasury / cross-asset scenario dashboard
+Macro scenario numeric panel
 </h2>
 <p class="dashboard-intro">
-This panel is the homepage view of the current research system. The full Quarto page holds the full process logic, operating cycle, and research framing.
+This right-side panel is the homepage summary view. The full research terminal shows the ensemble tree, date tabs, covariance heatmap, and node-level detail panes.
 </p>
-<div class="status-strip">
-<p><span class="status-chip">Daily post-close update</span> <span class="status-chip">Weekly narrative review</span> <span class="status-chip">Monthly regime tracking</span></p>
-</div>
-<div class="dashboard-mini-grid">
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">
-State update
-</p>
-<h3 class="anchored">
-Prior → shock → reaction → posterior
-</h3>
-<p>
-Yesterday’s posterior becomes today’s prior. After the close, structured shock interpretation and realized market reaction update the scenario state.
-</p>
-</div>
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">
-Covariance path
-</p>
-<h3 class="anchored">
-Belief over co-movement
-</h3>
-<p>
-The system tracks expected volatility and correlation paths across rates, breakeven, credit, USD, equities, oil, and volatility.
-</p>
-</div>
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">
-Gap diagnostics
-</p>
-<h3 class="anchored">
-What the prior missed
-</h3>
-<p>
-Reaction gap, story-model gap, entropy, explained share, and gap decay are stored as first-class objects rather than side metrics.
-</p>
-</div>
-<div class="dashboard-card compact">
-<p class="dashboard-card-label">
-Forecast layer
-</p>
-<h3 class="anchored">
-Daily / weekly / monthly leaves
-</h3>
-<p>
-Forecasts are generated from the updated state and unresolved gaps, then reviewed against realized outcomes to learn which paths converge or diverge.
-</p>
-</div>
+<div id="homepage-dashboard-summary" data-dashboard-src="assets/dashboard_data.json">
+
 </div>
 <div class="hero-actions dashboard-actions">
-<p><a class="action-link secondary" href="research/">Open full Quarto page</a></p>
+<p><a class="action-link secondary" href="research/">Open full research terminal</a></p>
 </div>
 </section>
 </div>
+<script defer="" src="assets/research_dashboard.js"></script>
 
 
 
