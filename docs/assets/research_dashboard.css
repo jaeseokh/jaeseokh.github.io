@@ -523,19 +523,20 @@
   display: block;
 }
 
+.curve-maturity-guide,
 .curve-grid-line {
   stroke: rgba(148, 163, 184, 0.15);
   stroke-width: 1;
+}
+
+.curve-maturity-guide {
+  stroke: rgba(148, 163, 184, 0.08);
 }
 
 .curve-grid-label {
   font-size: 11px;
   text-anchor: end;
   dominant-baseline: middle;
-}
-
-.curve-area {
-  fill: rgba(56, 189, 248, 0.12);
 }
 
 .curve-line {
@@ -560,6 +561,36 @@
 .brief-card {
   display: grid;
   gap: 0.45rem;
+}
+
+.curve-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.curve-stat-chip {
+  border-radius: 12px;
+  padding: 0.55rem 0.6rem;
+  background: rgba(30, 41, 59, 0.72);
+}
+
+.curve-stat-label {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.curve-stat-value {
+  display: block;
+  margin-top: 0.18rem;
+  color: #f8fafc;
+  font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
+  font-size: 0.82rem;
 }
 
 .scenario-outlook .brief-card-copy {
@@ -641,6 +672,10 @@
 
   .curve-factor-strip {
     justify-content: flex-start;
+  }
+
+  .curve-stat-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

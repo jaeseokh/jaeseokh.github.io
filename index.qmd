@@ -8,6 +8,8 @@ format:
 ---
 
 <style>
+@import url("assets/research_dashboard.css");
+
 #title-block-header {
   display: none;
 }
@@ -15,8 +17,6 @@ format:
 main.content {
   padding-top: 0.4rem;
 }
-
-@import url("assets/research_dashboard.css");
 </style>
 
 <div class="split-landing">

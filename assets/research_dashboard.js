@@ -136,6 +136,10 @@
     });
   }
 
+  function bp(value) {
+    return `${num(value, 1)} bp`;
+  }
+
   function renderFittedCurve(curveStateSummary) {
     const points = fittedCurvePoints(curveStateSummary);
     if (!points.length) {
@@ -148,21 +152,30 @@
     }
 
     const width = 640;
-    const height = 240;
-    const padding = { top: 16, right: 18, bottom: 30, left: 34 };
+    const height = 260;
+    const padding = { top: 18, right: 20, bottom: 38, left: 42 };
     const minYield = Math.min(...points.map((point) => point.fitted));
     const maxYield = Math.max(...points.map((point) => point.fitted));
-    const range = Math.max(maxYield - minYield, 0.2);
-    const xScale = (index) => padding.left + (index / (points.length - 1)) * (width - padding.left - padding.right);
+    const range = Math.max(maxYield - minYield, 0.18);
+    const maxMaturity = Math.max(...points.map((point) => point.years));
+    const xScale = (years) =>
+      padding.left +
+      (Math.log1p(years) / Math.log1p(maxMaturity)) * (width - padding.left - padding.right);
     const yScale = (value) =>
       height - padding.bottom - ((value - (minYield - range * 0.1)) / (range * 1.2)) * (height - padding.top - padding.bottom);
 
     const linePath = points
-      .map((point, index) => `${index === 0 ? "M" : "L"} ${xScale(index).toFixed(1)} ${yScale(point.fitted).toFixed(1)}`)
+      .map((point, index) => `${index === 0 ? "M" : "L"} ${xScale(point.years).toFixed(1)} ${yScale(point.fitted).toFixed(1)}`)
       .join(" ");
 
-    const areaPath = `${linePath} L ${xScale(points.length - 1).toFixed(1)} ${(height - padding.bottom).toFixed(1)} L ${xScale(0).toFixed(1)} ${(height - padding.bottom).toFixed(1)} Z`;
     const yTicks = [minYield, minYield + range / 2, maxYield];
+    const curveStats = [
+      { label: "3m10y", value: bp(curveStateSummary.spreads["3m10y_bp"]) },
+      { label: "2s10s", value: bp(curveStateSummary.spreads["2s10s_bp"]) },
+      { label: "5s30s", value: bp(curveStateSummary.spreads["5s30s_bp"]) },
+      { label: "2s5s10s", value: bp(curveStateSummary.flies["2s5s10s_bp"]) },
+      { label: "5s10s30s", value: bp(curveStateSummary.flies["5s10s30s_bp"]) },
+    ];
 
     return `
       <div class="curve-figure-shell">
@@ -179,6 +192,12 @@
           </div>
         </div>
         <svg class="curve-figure" viewBox="0 0 ${width} ${height}" role="img" aria-label="Fitted Treasury yield curve">
+          ${points
+            .map((point) => {
+              const x = xScale(point.years).toFixed(1);
+              return `<line class="curve-maturity-guide" x1="${x}" y1="${padding.top}" x2="${x}" y2="${height - padding.bottom}"></line>`;
+            })
+            .join("")}
           ${yTicks
             .map((tick) => {
               const y = yScale(tick).toFixed(1);
@@ -188,11 +207,10 @@
               `;
             })
             .join("")}
-          <path class="curve-area" d="${areaPath}"></path>
           <path class="curve-line" d="${linePath}"></path>
           ${points
-            .map((point, index) => {
-              const x = xScale(index).toFixed(1);
+            .map((point) => {
+              const x = xScale(point.years).toFixed(1);
               const y = yScale(point.fitted).toFixed(1);
               return `
                 <circle class="curve-point" cx="${x}" cy="${y}" r="4.2"></circle>
@@ -201,6 +219,18 @@
             })
             .join("")}
         </svg>
+        <div class="curve-stat-strip">
+          ${curveStats
+            .map(
+              (item) => `
+                <div class="curve-stat-chip">
+                  <span class="curve-stat-label">${item.label}</span>
+                  <strong class="curve-stat-value">${item.value}</strong>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
       </div>
     `;
   }

@@ -8,6 +8,8 @@ format:
 ---
 
 <style>
+@import url("../assets/research_dashboard.css");
+
 #title-block-header {
   display: none;
 }
@@ -22,8 +24,6 @@ main.content {
   max-width: 1520px;
   padding-top: 0.4rem;
 }
-
-@import url("../assets/research_dashboard.css");
 </style>
 
 <div class="terminal-page">
