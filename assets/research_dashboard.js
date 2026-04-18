@@ -100,6 +100,111 @@
     `;
   }
 
+  function nsLoadingSlope(maturity, lambdaValue) {
+    const scaled = lambdaValue * maturity;
+    if (Math.abs(scaled) < 1e-9) return 1;
+    return (1 - Math.exp(-scaled)) / scaled;
+  }
+
+  function nsLoadingCurvature(maturity, lambdaValue) {
+    const scaled = lambdaValue * maturity;
+    if (Math.abs(scaled) < 1e-9) return 0;
+    return nsLoadingSlope(maturity, lambdaValue) - Math.exp(-scaled);
+  }
+
+  function fittedCurvePoints(curveStateSummary) {
+    const factors = curveStateSummary?.factors;
+    if (!curveStateSummary?.available || !factors) return [];
+    const maturities = [
+      { label: "3M", years: 0.25 },
+      { label: "6M", years: 0.5 },
+      { label: "1Y", years: 1 },
+      { label: "2Y", years: 2 },
+      { label: "3Y", years: 3 },
+      { label: "5Y", years: 5 },
+      { label: "7Y", years: 7 },
+      { label: "10Y", years: 10 },
+      { label: "20Y", years: 20 },
+      { label: "30Y", years: 30 },
+    ];
+    return maturities.map((point) => {
+      const fitted =
+        Number(factors.level) +
+        Number(factors.slope) * nsLoadingSlope(point.years, Number(factors.lambda)) +
+        Number(factors.curvature) * nsLoadingCurvature(point.years, Number(factors.lambda));
+      return { ...point, fitted };
+    });
+  }
+
+  function renderFittedCurve(curveStateSummary) {
+    const points = fittedCurvePoints(curveStateSummary);
+    if (!points.length) {
+      return `
+        <div class="curve-empty-state">
+          <div class="terminal-label">Fitted curve</div>
+          <div class="terminal-signal-text">Curve state not available.</div>
+        </div>
+      `;
+    }
+
+    const width = 640;
+    const height = 240;
+    const padding = { top: 16, right: 18, bottom: 30, left: 34 };
+    const minYield = Math.min(...points.map((point) => point.fitted));
+    const maxYield = Math.max(...points.map((point) => point.fitted));
+    const range = Math.max(maxYield - minYield, 0.2);
+    const xScale = (index) => padding.left + (index / (points.length - 1)) * (width - padding.left - padding.right);
+    const yScale = (value) =>
+      height - padding.bottom - ((value - (minYield - range * 0.1)) / (range * 1.2)) * (height - padding.top - padding.bottom);
+
+    const linePath = points
+      .map((point, index) => `${index === 0 ? "M" : "L"} ${xScale(index).toFixed(1)} ${yScale(point.fitted).toFixed(1)}`)
+      .join(" ");
+
+    const areaPath = `${linePath} L ${xScale(points.length - 1).toFixed(1)} ${(height - padding.bottom).toFixed(1)} L ${xScale(0).toFixed(1)} ${(height - padding.bottom).toFixed(1)} Z`;
+    const yTicks = [minYield, minYield + range / 2, maxYield];
+
+    return `
+      <div class="curve-figure-shell">
+        <div class="curve-figure-header">
+          <div>
+            <div class="terminal-label">Fitted nominal curve</div>
+            <div class="curve-figure-title">Nelson-Siegel curve snapshot</div>
+          </div>
+          <div class="curve-factor-strip">
+            <span>λ ${num(curveStateSummary.factors.lambda, 3)}</span>
+            <span>L ${num(curveStateSummary.factors.level, 2)}</span>
+            <span>S ${num(curveStateSummary.factors.slope, 2)}</span>
+            <span>C ${num(curveStateSummary.factors.curvature, 2)}</span>
+          </div>
+        </div>
+        <svg class="curve-figure" viewBox="0 0 ${width} ${height}" role="img" aria-label="Fitted Treasury yield curve">
+          ${yTicks
+            .map((tick) => {
+              const y = yScale(tick).toFixed(1);
+              return `
+                <line class="curve-grid-line" x1="${padding.left}" y1="${y}" x2="${width - padding.right}" y2="${y}"></line>
+                <text class="curve-grid-label" x="${padding.left - 8}" y="${y}">${num(tick, 2)}%</text>
+              `;
+            })
+            .join("")}
+          <path class="curve-area" d="${areaPath}"></path>
+          <path class="curve-line" d="${linePath}"></path>
+          ${points
+            .map((point, index) => {
+              const x = xScale(index).toFixed(1);
+              const y = yScale(point.fitted).toFixed(1);
+              return `
+                <circle class="curve-point" cx="${x}" cy="${y}" r="4.2"></circle>
+                <text class="curve-point-label" x="${x}" y="${height - 10}">${point.label}</text>
+              `;
+            })
+            .join("")}
+        </svg>
+      </div>
+    `;
+  }
+
   function buildTooltip() {
     let tooltip = document.querySelector(".dashboard-tooltip");
     if (!tooltip) {
@@ -120,6 +225,9 @@
 
   function renderHomeSummary(container, payload) {
     const summary = payload.homepage_summary;
+    const primarySnapshot = payload.snapshots?.[payload.tabs?.[0]?.date] || null;
+    const topShock = primarySnapshot?.tabs?.shock?.ranked_shocks?.[0] || null;
+    const posterior = primarySnapshot?.tabs?.posterior || null;
     const topForecasts = summary.forecast_groups
       .map((group) => {
         const topBranch = group.branches[0];
@@ -156,7 +264,7 @@
             <div class="terminal-metric-value">${summary.top_shock}</div>
           </div>
         </div>
-        <div class="terminal-metrics-grid">
+        <div class="terminal-metrics-grid compact">
           <div class="terminal-metric-box">
             <div class="terminal-label">Entropy</div>
             <div class="terminal-metric-value">${num(summary.entropy, 2)}</div>
@@ -170,9 +278,23 @@
           <div class="terminal-label">Covariance signal</div>
           <div class="terminal-signal-text">${summary.covariance_signal}</div>
         </div>
+        ${renderFittedCurve(summary.curve_state_summary)}
+        <div class="home-brief-grid">
+          <div class="brief-card">
+            <div class="terminal-label">Shock Today</div>
+            <div class="brief-card-title">${topShock ? topShock.title : summary.top_shock}</div>
+            <div class="brief-card-copy">${topShock ? topShock.narrative : "Latest ranked shock from the post-close update."}</div>
+          </div>
+          <div class="brief-card">
+            <div class="terminal-label">Main Response</div>
+            <div class="brief-card-title">${titleCase(summary.dominant_regime)}</div>
+            <div class="brief-card-copy">${posterior ? posterior.summary_note : summary.covariance_signal}</div>
+          </div>
+        </div>
         <div class="terminal-moves-grid">${keyMoves}</div>
-        <div class="terminal-forecast-block">
-          <div class="terminal-label">Top forecast probabilities</div>
+        <div class="terminal-forecast-block scenario-outlook">
+          <div class="terminal-label">Expected Scenario Path</div>
+          <div class="brief-card-copy">Top branch for tomorrow, +1 week, and +1 month from the current post-close state.</div>
           ${topForecasts}
         </div>
       </div>

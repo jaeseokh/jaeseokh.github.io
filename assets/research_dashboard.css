@@ -49,6 +49,12 @@
   color: #94a3b8;
 }
 
+.brief-card-copy,
+.curve-grid-label,
+.curve-point-label {
+  color: #94a3b8;
+}
+
 .terminal-label,
 .detail-panel-title,
 .forecast-column-label,
@@ -58,6 +64,13 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.curve-figure-title,
+.brief-card-title {
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .top-date-tabs,
@@ -408,6 +421,13 @@
   margin-top: 0.85rem;
 }
 
+.home-brief-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+  margin-top: 0.95rem;
+}
+
 .story-gap-chip,
 .mini-move,
 .terminal-metric-box,
@@ -419,6 +439,8 @@
 
 .terminal-summary {
   margin-top: 1rem;
+  display: grid;
+  gap: 0.95rem;
 }
 
 .terminal-summary-top {
@@ -462,6 +484,87 @@
 
 .terminal-forecast-block {
   margin-top: 0.95rem;
+}
+
+.curve-figure-shell,
+.brief-card {
+  border-radius: 16px;
+  padding: 0.95rem;
+  background: rgba(15, 23, 42, 0.68);
+}
+
+.curve-figure-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-bottom: 0.65rem;
+}
+
+.curve-factor-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: flex-end;
+}
+
+.curve-factor-strip span {
+  border-radius: 999px;
+  padding: 0.28rem 0.5rem;
+  background: rgba(30, 41, 59, 0.82);
+  color: #cbd5e1;
+  font-family: "SFMono-Regular", "Menlo", "Monaco", monospace;
+  font-size: 0.72rem;
+}
+
+.curve-figure {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.curve-grid-line {
+  stroke: rgba(148, 163, 184, 0.15);
+  stroke-width: 1;
+}
+
+.curve-grid-label {
+  font-size: 11px;
+  text-anchor: end;
+  dominant-baseline: middle;
+}
+
+.curve-area {
+  fill: rgba(56, 189, 248, 0.12);
+}
+
+.curve-line {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.curve-point {
+  fill: #f8fafc;
+  stroke: #38bdf8;
+  stroke-width: 2;
+}
+
+.curve-point-label {
+  font-size: 11px;
+  text-anchor: middle;
+}
+
+.brief-card {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.scenario-outlook .brief-card-copy {
+  margin-top: 0.2rem;
+  margin-bottom: 0.85rem;
 }
 
 .tone-up {
@@ -523,12 +626,21 @@
   .macro-tree-stage,
   .detail-grid,
   .covariance-layout,
-  .split-landing {
+  .split-landing,
+  .home-brief-grid {
     grid-template-columns: 1fr;
   }
 
   .forecast-columns {
     grid-template-columns: 1fr;
+  }
+
+  .curve-figure-header {
+    flex-direction: column;
+  }
+
+  .curve-factor-strip {
+    justify-content: flex-start;
   }
 }
 
