@@ -75,6 +75,24 @@ function buildTable(headers, rows) {
   `;
 }
 
+function buildMiniCards(items) {
+  return `
+    <div class="mini-grid">
+      ${items
+        .map(
+          (item) => `
+            <article class="mini-stat">
+              <span class="section-tag">${item.label}</span>
+              <h3>${item.value}</h3>
+              <p>${item.body}</p>
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function lineChart(series, options = {}) {
   const width = options.width || 720;
   const height = options.height || 280;
@@ -211,6 +229,80 @@ async function renderHome() {
         `
       )
       .join("")
+  );
+
+  setHTML(
+    "executive-report",
+    `
+      <p><strong>Base case:</strong> ${titleize(current.mid.regime_id)} remains the dominant mid-horizon regime at ${formatPct(current.mid.probability, 1)}.</p>
+      <p><strong>Immediate driver:</strong> the shock layer reads ${titleize(summary.shock_event.dominant_category)} through ${titleize(summary.shock_event.transmission_channel)}.</p>
+      <p><strong>Treasury interpretation:</strong> ${summary.curve_decomposition.interpretation}</p>
+      <p><strong>Desk implication:</strong> ${titleize(summary.strategy.directional_view)} with a ${titleize(summary.strategy.curve_view)} bias, while the main risk remains ${titleize(summary.strategy.main_risk)}.</p>
+      <p><strong>Falsifier:</strong> ${summary.strategy.falsifier}</p>
+    `
+  );
+
+  setHTML(
+    "horizon-grid",
+    buildMiniCards(
+      ["short", "mid", "long"].map((horizon) => ({
+        label: `${horizon} horizon`,
+        value: titleize(current[horizon].regime_id),
+        body: `Posterior ${formatPct(current[horizon].probability, 1)} for the ${horizon}-horizon dominant regime.`,
+      }))
+    )
+  );
+
+  setHTML(
+    "risk-grid",
+    buildMiniCards([
+      {
+        label: "10Y expected short rate",
+        value: formatNumber(summary.curve_snapshot.expected_short_rate_proxy_10y, 2),
+        body: "Rolling VAR-style expected short-rate path embedded in the 10Y sector.",
+      },
+      {
+        label: "10Y term premium",
+        value: formatNumber(summary.curve_snapshot.term_premium_proxy_10y, 2),
+        body: "Residual long-end compensation after stripping out the expected short-rate path.",
+      },
+      {
+        label: "10Y duration",
+        value: formatNumber(summary.risk_measures.mod_duration_10y, 2),
+        body: "Cash-flow-based modified duration using a semiannual par-bond approximation.",
+      },
+      {
+        label: "10Y DV01",
+        value: formatNumber(summary.risk_measures.dv01_10y, 4),
+        body: "Dollar value of one basis point per 100 par in the 10Y benchmark risk frame.",
+      },
+    ])
+  );
+
+  setHTML(
+    "shock-grid",
+    buildMiniCards([
+      {
+        label: "Dominant shock",
+        value: titleize(summary.shock_event.dominant_category),
+        body: "Primary ex-post shock classification from official and market evidence.",
+      },
+      {
+        label: "Persistence",
+        value: formatNumber(summary.shock_event.persistence_score, 2),
+        body: "Current estimate of how long the shock should keep shaping the regime path.",
+      },
+      {
+        label: "Confidence",
+        value: formatNumber(summary.shock_event.confidence_score, 2),
+        body: "Confidence score on the current shock assignment.",
+      },
+      {
+        label: "Policy uncertainty",
+        value: formatNumber(summary.curve_decomposition.policy_uncertainty_score, 2),
+        body: "Treasury-curve signal for medium-horizon policy confusion or paralysis.",
+      },
+    ])
   );
 
   const regimeBars = Object.keys(midHistoryRow)
