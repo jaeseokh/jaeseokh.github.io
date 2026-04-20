@@ -4,7 +4,7 @@
     "href": "research/index.html",
     "title": "Macro Scenario Terminal",
     "section": "",
-    "text": "&lt;a class=\"action-link ghost\" href=\"../\"&gt;Back to homepage&lt;/a&gt;\n&lt;a class=\"action-link ghost\" href=\"https://github.com/jaeseokh\" target=\"_blank\"&gt;GitHub&lt;/a&gt;"
+    "text": "Back to homepage GitHub\n\n\n\n\n\n\n\n\nMonthly Regime History\n\n\nEconomic regime path, 2007-01 to 2026-04\n\n\nMonth-by-month regime map built from the public Treasury curve, macro-market signals, and the project’s scenario engine. Each month encodes the dominant regime, whether the month looked macro-confirmed or flow-amplified, and the strongest driver family. The underlying SVG includes month-level tooltips with curve, market, and path evidence.\n\n\n\nOpen SVG Evidence CSV\n\n\n\n\n\nFill\n\n\nMonthly regime\n\n\ninflation shock, growth scare, policy constraint, or mixed transition.\n\n\n\n\nTop stripe\n\n\nExpected vs unexpected\n\n\nmacro-confirmed, contested, or flow-amplified based on the month’s justification mix.\n\n\n\n\nDot\n\n\nStrongest driver\n\n\nMonthly dominant driver family from the signal pack: inflation, risk, policy, surprise, or transition.\n\n\n\n\n\n\nSVG preview unavailable. Open the standalone SVG."
   },
   {
     "objectID": "index.html",

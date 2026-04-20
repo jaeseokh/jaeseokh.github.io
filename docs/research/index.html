@@ -151,11 +151,70 @@ main.content {
 </style>
 <div class="terminal-page">
 <div class="hero-actions" style="margin-bottom: 1rem;">
-<pre><code>&lt;a class="action-link ghost" href="../"&gt;Back to homepage&lt;/a&gt;
-&lt;a class="action-link ghost" href="https://github.com/jaeseokh" target="_blank"&gt;GitHub&lt;/a&gt;</code></pre>
+<p><a href="../" class="action-link ghost">Back to homepage</a> <a href="https://github.com/jaeseokh" class="action-link ghost" target="_blank">GitHub</a></p>
 </div>
 <div id="macro-dashboard" data-dashboard-src="../assets/dashboard_data.json">
 
+</div>
+<div class="regime-history-shell">
+<div class="regime-history-head">
+<div>
+<p class="eyebrow">
+Monthly Regime History
+</p>
+<h2 class="dashboard-title anchored">
+Economic regime path, 2007-01 to 2026-04
+</h2>
+<p class="dashboard-intro">
+Month-by-month regime map built from the public Treasury curve, macro-market signals, and the project’s scenario engine. Each month encodes the dominant regime, whether the month looked macro-confirmed or flow-amplified, and the strongest driver family. The underlying SVG includes month-level tooltips with curve, market, and path evidence.
+</p>
+</div>
+<div class="hero-actions regime-history-actions">
+<p><a href="../assets/economic_regime_monthly_path_2007_2026.svg" class="action-link ghost" target="_blank">Open SVG</a> <a href="../assets/regime_monthly_evidence.csv" class="action-link ghost" target="_blank">Evidence CSV</a></p>
+</div>
+</div>
+<div class="regime-history-meta">
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Fill
+</p>
+<h3 class="anchored">
+Monthly regime
+</h3>
+<p>
+<code>inflation shock</code>, <code>growth scare</code>, <code>policy constraint</code>, or <code>mixed transition</code>.
+</p>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Top stripe
+</p>
+<h3 class="anchored">
+Expected vs unexpected
+</h3>
+<p>
+<code>macro-confirmed</code>, <code>contested</code>, or <code>flow-amplified</code> based on the month’s justification mix.
+</p>
+</div>
+<div class="dashboard-card">
+<p class="dashboard-card-label">
+Dot
+</p>
+<h3 class="anchored">
+Strongest driver
+</h3>
+<p>
+Monthly dominant driver family from the signal pack: inflation, risk, policy, surprise, or transition.
+</p>
+</div>
+</div>
+<div class="regime-history-frame">
+<object class="regime-history-object" data="../assets/economic_regime_monthly_path_2007_2026.svg" type="image/svg+xml" aria-label="Monthly economic regime path from 2007 to 2026">
+<p>
+SVG preview unavailable. Open the <a href="../assets/economic_regime_monthly_path_2007_2026.svg" target="_blank">standalone SVG</a>.
+</p>
+</object>
+</div>
 </div>
 </div>
 <script defer="" src="../assets/research_dashboard.js"></script>
