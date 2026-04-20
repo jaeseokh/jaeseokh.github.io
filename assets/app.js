@@ -456,6 +456,7 @@ async function renderArchive() {
   const archive = await loadJSON("archive");
   const notes = archive.notes || [];
   const review = archive.regime_review || [];
+  const missSummary = archive.miss_summary || [];
 
   setHTML(
     "archive-table",
@@ -484,6 +485,21 @@ async function renderArchive() {
           })
         )
       : `<p class="muted">Review statistics will build as the archive deepens.</p>`
+  );
+
+  setHTML(
+    "miss-table",
+    missSummary.length
+      ? buildTable(
+          ["Horizon", "Miss type", "Observations", "Avg directional accuracy"],
+          missSummary.map((item) => [
+            titleize(item.target_horizon),
+            titleize(item.miss_type),
+            item.observations,
+            formatPct(item.avg_directional_accuracy, 0),
+          ])
+        )
+      : `<p class="muted">Miss taxonomy statistics will populate as the review archive builds.</p>`
   );
 }
 

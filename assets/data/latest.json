@@ -17,7 +17,7 @@
       }
     },
     "shock_event": {
-      "shock_id": "shock-c6e1c085eea3",
+      "shock_id": "shock-3378606872d4",
       "date": "2026-04-20",
       "dominant_category": "narrative_policy_signaling",
       "secondary_categories": [
@@ -1712,6 +1712,6 @@
     "layer_count": 7,
     "upgrade_count": 15,
     "high_priority_count": 8,
-    "in_progress_count": 1
+    "in_progress_count": 2
   }
 }
