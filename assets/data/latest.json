@@ -1,0 +1,1717 @@
+{
+  "summary": {
+    "date": "2026-04-20",
+    "war_anchor_date": "2025-06-21",
+    "current_regime": {
+      "short": {
+        "regime_id": "policy_trapped_stagflation_risk",
+        "probability": 0.9999999970767759
+      },
+      "mid": {
+        "regime_id": "policy_trapped_stagflation_risk",
+        "probability": 0.9999999994508604
+      },
+      "long": {
+        "regime_id": "policy_trapped_stagflation_risk",
+        "probability": 0.9999999996651887
+      }
+    },
+    "shock_event": {
+      "shock_id": "shock-c6e1c085eea3",
+      "date": "2026-04-20",
+      "dominant_category": "narrative_policy_signaling",
+      "secondary_categories": [
+        "monetary_credibility",
+        "energy_shipping_supply"
+      ],
+      "source_actor": "treasury",
+      "origin_source": "official_and_market_evidence",
+      "transmission_channel": "narrative_and_policy_signaling",
+      "affected_horizons": [
+        "short",
+        "mid",
+        "long"
+      ],
+      "persistence_score": 0.35,
+      "severity_score": 0.6238172905676957,
+      "confidence_score": 0.8435725935851544,
+      "linked_evidence_ids": [
+        "1a8b9ffdbf404b32",
+        "083e3cc4787c5d74",
+        "c41a22cc1897e8d2",
+        "e5bbfcd05c981544",
+        "9143f4fcae15df16",
+        "a9c73a8530d9af97"
+      ]
+    },
+    "strategy": {
+      "directional_view": "two-way",
+      "curve_view": "range_bound",
+      "main_risk": "fiscal_premium",
+      "policy_paralysis_signal": "medium",
+      "term_premium_view": "stable",
+      "falsifier": "A clean reversal in breakevens, repo stress, and long-end underperformance would challenge the current path."
+    },
+    "curve_snapshot": {
+      "yield_2y": 3.78,
+      "yield_10y": 4.32,
+      "curve_2s10s": 0.5400000000000005,
+      "curve_5s30s": 1.0199999999999996,
+      "fly_2s5s10s": -27.999999999999936,
+      "fly_5s10s30s": -19.99999999999993,
+      "breakeven_10y": 2.36,
+      "real_10y": 1.93,
+      "expected_short_rate_proxy_2y": 3.8022393952433724,
+      "term_premium_proxy_10y": 1.1212650390135317,
+      "term_premium_proxy_30y": 2.2888940912632303,
+      "expected_short_rate_proxy_10y": 3.1987349609864686,
+      "ns_level": 5.168147643078772,
+      "ns_slope": -1.3437679250812042,
+      "ns_curvature": -2.4700197230195458
+    },
+    "daily_changes": {
+      "yield_2y_bp": 0.0,
+      "yield_10y_bp": 0.0,
+      "curve_2s10s_bp": 0.0,
+      "breakeven_10y_bp": 0.0,
+      "real_10y_bp": 0.0,
+      "term_premium_proxy_10y_bp": 0.0,
+      "wti_pct": 0.0
+    },
+    "curve_decomposition": {
+      "interpretation": "Inflation compensation softened while real yields rose, which suggests cleaner disinflation or a term-premium rather than stagflation impulse.",
+      "policy_uncertainty_score": 0.4018480279306378,
+      "stagflation_signal": 0.0,
+      "term_premium_model_window_months": 120.0
+    },
+    "risk_measures": {
+      "par_price_2y": 100.00000000000003,
+      "par_price_10y": 99.99999999999989,
+      "mod_duration_2y": 1.908957449603576,
+      "mod_duration_10y": 8.050874408520778,
+      "convexity_2y": 4.64002332023483,
+      "convexity_10y": 77.16423712622607,
+      "price_change_10bp_2y_pct": -0.19066396795939244,
+      "price_change_10bp_10y_pct": -0.8012424249758232,
+      "dv01_2y": 0.019089574496035766,
+      "dv01_10y": 0.0805087440852077,
+      "dv01_proxy_2y": 0.019089574496035766,
+      "dv01_proxy_10y": 0.0805087440852077
+    },
+    "channel_updates": [
+      {
+        "channel_name": "treasury_market",
+        "horizon": "short",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.4822111181582392,
+          "war_augmented_inflation_pressure": 0.03034074606250378,
+          "growth_slowdown_constrained_easing": -0.9758161947952811,
+          "fiscal_term_premium_repricing": 0.06556755371133338,
+          "funding_liquidity_stress": -0.7588537443619778,
+          "reanchoring_normalization": -0.20172656352181792
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5970912295089801,
+            "war_augmented_inflation_pressure": 0.1626352246860261,
+            "growth_slowdown_constrained_easing": 0.13164185604172635,
+            "fiscal_term_premium_repricing": 0.08233828594362783,
+            "funding_liquidity_stress": 0.0,
+            "reanchoring_normalization": 0.02629340381963972
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.19203936476520675,
+            "war_augmented_inflation_pressure": 0.527181902955422,
+            "growth_slowdown_constrained_easing": 0.08101037294875467,
+            "fiscal_term_premium_repricing": 0.1633486588923825,
+            "funding_liquidity_stress": 0.010126296618594334,
+            "reanchoring_normalization": 0.02629340381963972
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.09077639857926341,
+            "war_augmented_inflation_pressure": 0.04111966526289405,
+            "growth_slowdown_constrained_easing": 0.5771989072598769,
+            "fiscal_term_premium_repricing": 0.05195939608784482,
+            "funding_liquidity_stress": 0.14176815266032064,
+            "reanchoring_normalization": 0.09717748014980004
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.15153417829082938,
+            "war_augmented_inflation_pressure": 0.1423826314488374,
+            "growth_slowdown_constrained_easing": 0.07088407633016033,
+            "fiscal_term_premium_repricing": 0.5278953371617784,
+            "funding_liquidity_stress": 0.07088407633016033,
+            "reanchoring_normalization": 0.03641970043823405
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.07052380534207472,
+            "war_augmented_inflation_pressure": 0.030993368644299718,
+            "growth_slowdown_constrained_easing": 0.24303111884626394,
+            "fiscal_term_premium_repricing": 0.06208569270643914,
+            "funding_liquidity_stress": 0.4556833478367449,
+            "reanchoring_normalization": 0.13768266662417739
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.19203936476520675,
+            "war_augmented_inflation_pressure": 0.04111966526289405,
+            "growth_slowdown_constrained_easing": 0.09113666956734902,
+            "fiscal_term_premium_repricing": 0.04183309946925049,
+            "funding_liquidity_stress": 0.010126296618594334,
+            "reanchoring_normalization": 0.6237449043167054
+          }
+        },
+        "confidence": 0.6940000000000001,
+        "notes": "treasury_market contribution for short horizon"
+      },
+      {
+        "channel_name": "shock_player",
+        "horizon": "short",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.2,
+          "war_augmented_inflation_pressure": 0.0,
+          "growth_slowdown_constrained_easing": 0.0,
+          "fiscal_term_premium_repricing": 0.0,
+          "funding_liquidity_stress": 0.0,
+          "reanchoring_normalization": -0.05083216174820995
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5822629020321929,
+            "war_augmented_inflation_pressure": 0.15952408274854601,
+            "growth_slowdown_constrained_easing": 0.13958357240497776,
+            "fiscal_term_premium_repricing": 0.07976204137427301,
+            "funding_liquidity_stress": 0.009970255171784126,
+            "reanchoring_normalization": 0.028897146268226263
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.1834526951608279,
+            "war_augmented_inflation_pressure": 0.5184532689327745,
+            "growth_slowdown_constrained_easing": 0.08973229654605713,
+            "fiscal_term_premium_repricing": 0.15952408274854601,
+            "funding_liquidity_stress": 0.019940510343568252,
+            "reanchoring_normalization": 0.028897146268226263
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.08375014344298666,
+            "war_augmented_inflation_pressure": 0.039881020687136504,
+            "growth_slowdown_constrained_easing": 0.5782747999634793,
+            "fiscal_term_premium_repricing": 0.04985127585892063,
+            "funding_liquidity_stress": 0.1495538275767619,
+            "reanchoring_normalization": 0.09868893247071515
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.1435716744736914,
+            "war_augmented_inflation_pressure": 0.13958357240497773,
+            "growth_slowdown_constrained_easing": 0.079762041374273,
+            "fiscal_term_premium_repricing": 0.5184532689327744,
+            "funding_liquidity_stress": 0.079762041374273,
+            "reanchoring_normalization": 0.03886740144001038
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.06380963309941841,
+            "war_augmented_inflation_pressure": 0.029910765515352378,
+            "growth_slowdown_constrained_easing": 0.24925637929460315,
+            "fiscal_term_premium_repricing": 0.059821531030704755,
+            "funding_liquidity_stress": 0.4586317379020698,
+            "reanchoring_normalization": 0.13856995315785167
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.1834526951608279,
+            "war_augmented_inflation_pressure": 0.039881020687136504,
+            "growth_slowdown_constrained_easing": 0.09970255171784126,
+            "fiscal_term_premium_repricing": 0.039881020687136504,
+            "funding_liquidity_stress": 0.019940510343568252,
+            "reanchoring_normalization": 0.6171422014034896
+          }
+        },
+        "confidence": 0.658,
+        "notes": "shock_player contribution for short horizon"
+      },
+      {
+        "channel_name": "policy_framework",
+        "horizon": "short",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.05345131685761878,
+          "war_augmented_inflation_pressure": 0.019089756020578136,
+          "growth_slowdown_constrained_easing": -0.21854054245405793,
+          "fiscal_term_premium_repricing": 0.003817951204115627,
+          "funding_liquidity_stress": -0.0471607248411338,
+          "reanchoring_normalization": -0.019089756020578136
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5835014337449734,
+            "war_augmented_inflation_pressure": 0.16105316779534087,
+            "growth_slowdown_constrained_easing": 0.13619694518239597,
+            "fiscal_term_premium_repricing": 0.08041156589289329,
+            "funding_liquidity_stress": 0.009094698025012884,
+            "reanchoring_normalization": 0.029742189359383563
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.1818269976297641,
+            "war_augmented_inflation_pressure": 0.5225601602990292,
+            "growth_slowdown_constrained_easing": 0.08598764066799479,
+            "fiscal_term_premium_repricing": 0.16074645311593513,
+            "funding_liquidity_stress": 0.019136558927893114,
+            "reanchoring_normalization": 0.02974218935938356
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.08140838860096183,
+            "war_augmented_inflation_pressure": 0.04055083696077806,
+            "growth_slowdown_constrained_easing": 0.5780388249091262,
+            "fiscal_term_premium_repricing": 0.05028598318425259,
+            "funding_liquidity_stress": 0.14968075066533615,
+            "reanchoring_normalization": 0.10003521567954521
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.1416595540182432,
+            "war_augmented_inflation_pressure": 0.1409694459895804,
+            "growth_slowdown_constrained_easing": 0.07594577976511457,
+            "fiscal_term_premium_repricing": 0.5222534456196235,
+            "funding_liquidity_stress": 0.0793877243451745,
+            "reanchoring_normalization": 0.0397840502622638
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.06132466679520137,
+            "war_augmented_inflation_pressure": 0.030508976057897833,
+            "growth_slowdown_constrained_easing": 0.24665741511407854,
+            "fiscal_term_premium_repricing": 0.06032784408713282,
+            "funding_liquidity_stress": 0.4609784386546234,
+            "reanchoring_normalization": 0.14020265929106615
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.18182699762976415,
+            "war_augmented_inflation_pressure": 0.04055083696077806,
+            "growth_slowdown_constrained_easing": 0.09602950157087506,
+            "fiscal_term_premium_repricing": 0.040244122281372356,
+            "funding_liquidity_stress": 0.01913655892789312,
+            "reanchoring_normalization": 0.6222119826293173
+          }
+        },
+        "confidence": 0.6180000000000001,
+        "notes": "policy_framework contribution for short horizon"
+      },
+      {
+        "channel_name": "inflation_regime",
+        "horizon": "short",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 19.204997225650402,
+          "war_augmented_inflation_pressure": 0.3335168230600858,
+          "growth_slowdown_constrained_easing": -0.039143827922311074,
+          "fiscal_term_premium_repricing": 0.0587157418834666,
+          "funding_liquidity_stress": 0.019571913961155537,
+          "reanchoring_normalization": -12.803331483766936
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.6978377482302699,
+            "war_augmented_inflation_pressure": 0.12063982884224424,
+            "growth_slowdown_constrained_easing": 0.10076856086390805,
+            "fiscal_term_premium_repricing": 0.05875583895927696,
+            "funding_liquidity_stress": 0.007521562397049848,
+            "reanchoring_normalization": 0.014476460707250964
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.4083085340852506,
+            "war_augmented_inflation_pressure": 0.3812161215727617,
+            "growth_slowdown_constrained_easing": 0.06457740909578062,
+            "fiscal_term_premium_repricing": 0.11666168178828083,
+            "funding_liquidity_stress": 0.014759792750675332,
+            "reanchoring_normalization": 0.014476460707250964
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.3359262305489958,
+            "war_augmented_inflation_pressure": 0.03378106459873844,
+            "growth_slowdown_constrained_easing": 0.4192506964234293,
+            "fiscal_term_premium_repricing": 0.03704114789840052,
+            "funding_liquidity_stress": 0.10885678734780663,
+            "reanchoring_normalization": 0.06514407318262937
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.3793556126707487,
+            "war_augmented_inflation_pressure": 0.10616336813499327,
+            "growth_slowdown_constrained_easing": 0.05733917874215514,
+            "fiscal_term_premium_repricing": 0.3772379745187982,
+            "funding_liquidity_stress": 0.05818917487242823,
+            "reanchoring_normalization": 0.021714691060876447
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.3214497698417448,
+            "war_augmented_inflation_pressure": 0.026542834245112952,
+            "growth_slowdown_constrained_easing": 0.18038909475378834,
+            "fiscal_term_premium_repricing": 0.04427937825202599,
+            "funding_liquidity_stress": 0.3332419283101966,
+            "reanchoring_normalization": 0.09409699459713128
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.40830853408525064,
+            "war_augmented_inflation_pressure": 0.03378106459873844,
+            "growth_slowdown_constrained_easing": 0.07181563944940612,
+            "fiscal_term_premium_repricing": 0.029802917544775032,
+            "funding_liquidity_stress": 0.014759792750675333,
+            "reanchoring_normalization": 0.44153205157115455
+          }
+        },
+        "confidence": 0.5980000000000001,
+        "notes": "inflation_regime contribution for short horizon"
+      },
+      {
+        "channel_name": "activity_anchor",
+        "horizon": "short",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": -0.01295880898251099,
+          "war_augmented_inflation_pressure": 0.006479404491255495,
+          "growth_slowdown_constrained_easing": -0.06479404491255494,
+          "fiscal_term_premium_repricing": -0.002356799399328394,
+          "funding_liquidity_stress": -0.0943214496822676,
+          "reanchoring_normalization": 0.03239702245627747
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5813168281064347,
+            "war_augmented_inflation_pressure": 0.16056489453503206,
+            "growth_slowdown_constrained_easing": 0.13908118119091056,
+            "fiscal_term_premium_repricing": 0.08017021295690463,
+            "funding_liquidity_stress": 0.008135627453228971,
+            "reanchoring_normalization": 0.030731255757489043
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.18022944269465746,
+            "war_augmented_inflation_pressure": 0.5215435414056316,
+            "growth_slowdown_constrained_easing": 0.08894525801443838,
+            "fiscal_term_premium_repricing": 0.1603876900392601,
+            "funding_liquidity_stress": 0.0181628120885234,
+            "reanchoring_normalization": 0.03073125575748904
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.07995759634171315,
+            "war_augmented_inflation_pressure": 0.040238678911498876,
+            "growth_slowdown_constrained_easing": 0.5802773051438656,
+            "fiscal_term_premium_repricing": 0.05008865905102132,
+            "funding_liquidity_stress": 0.148516212347351,
+            "reanchoring_normalization": 0.10092154820455007
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.14012070415347977,
+            "war_augmented_inflation_pressure": 0.1405105252644432,
+            "growth_slowdown_constrained_easing": 0.07891807337914396,
+            "fiscal_term_premium_repricing": 0.5213663369098597,
+            "funding_liquidity_stress": 0.07832591990028999,
+            "reanchoring_normalization": 0.04075844039278347
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.05990322707112429,
+            "war_augmented_inflation_pressure": 0.030211494276204443,
+            "growth_slowdown_constrained_easing": 0.24938021217914927,
+            "fiscal_term_premium_repricing": 0.06011584368631575,
+            "funding_liquidity_stress": 0.4593589360414784,
+            "reanchoring_normalization": 0.14103028674572782
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.1802294426946575,
+            "war_augmented_inflation_pressure": 0.04023867891149888,
+            "growth_slowdown_constrained_easing": 0.09897244264973283,
+            "fiscal_term_premium_repricing": 0.04006147441572689,
+            "funding_liquidity_stress": 0.018162812088523404,
+            "reanchoring_normalization": 0.6223351492398606
+          }
+        },
+        "confidence": 0.5820000000000001,
+        "notes": "activity_anchor contribution for short horizon"
+      },
+      {
+        "channel_name": "treasury_market",
+        "horizon": "mid",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.4822111181582392,
+          "war_augmented_inflation_pressure": 0.03034074606250378,
+          "growth_slowdown_constrained_easing": -0.9758161947952811,
+          "fiscal_term_premium_repricing": 0.06556755371133338,
+          "funding_liquidity_stress": -0.7588537443619778,
+          "reanchoring_normalization": -0.20172656352181792
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5970912295089801,
+            "war_augmented_inflation_pressure": 0.1626352246860261,
+            "growth_slowdown_constrained_easing": 0.13164185604172635,
+            "fiscal_term_premium_repricing": 0.08233828594362783,
+            "funding_liquidity_stress": 0.0,
+            "reanchoring_normalization": 0.02629340381963972
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.19203936476520675,
+            "war_augmented_inflation_pressure": 0.527181902955422,
+            "growth_slowdown_constrained_easing": 0.08101037294875467,
+            "fiscal_term_premium_repricing": 0.1633486588923825,
+            "funding_liquidity_stress": 0.010126296618594334,
+            "reanchoring_normalization": 0.02629340381963972
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.09077639857926341,
+            "war_augmented_inflation_pressure": 0.04111966526289405,
+            "growth_slowdown_constrained_easing": 0.5771989072598769,
+            "fiscal_term_premium_repricing": 0.05195939608784482,
+            "funding_liquidity_stress": 0.14176815266032064,
+            "reanchoring_normalization": 0.09717748014980004
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.15153417829082938,
+            "war_augmented_inflation_pressure": 0.1423826314488374,
+            "growth_slowdown_constrained_easing": 0.07088407633016033,
+            "fiscal_term_premium_repricing": 0.5278953371617784,
+            "funding_liquidity_stress": 0.07088407633016033,
+            "reanchoring_normalization": 0.03641970043823405
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.07052380534207472,
+            "war_augmented_inflation_pressure": 0.030993368644299718,
+            "growth_slowdown_constrained_easing": 0.24303111884626394,
+            "fiscal_term_premium_repricing": 0.06208569270643914,
+            "funding_liquidity_stress": 0.4556833478367449,
+            "reanchoring_normalization": 0.13768266662417739
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.19203936476520675,
+            "war_augmented_inflation_pressure": 0.04111966526289405,
+            "growth_slowdown_constrained_easing": 0.09113666956734902,
+            "fiscal_term_premium_repricing": 0.04183309946925049,
+            "funding_liquidity_stress": 0.010126296618594334,
+            "reanchoring_normalization": 0.6237449043167054
+          }
+        },
+        "confidence": 0.658,
+        "notes": "treasury_market contribution for mid horizon"
+      },
+      {
+        "channel_name": "shock_player",
+        "horizon": "mid",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.2,
+          "war_augmented_inflation_pressure": 0.0,
+          "growth_slowdown_constrained_easing": 0.0,
+          "fiscal_term_premium_repricing": 0.0,
+          "funding_liquidity_stress": 0.0,
+          "reanchoring_normalization": -0.05083216174820995
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5822629020321929,
+            "war_augmented_inflation_pressure": 0.15952408274854601,
+            "growth_slowdown_constrained_easing": 0.13958357240497776,
+            "fiscal_term_premium_repricing": 0.07976204137427301,
+            "funding_liquidity_stress": 0.009970255171784126,
+            "reanchoring_normalization": 0.028897146268226263
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.1834526951608279,
+            "war_augmented_inflation_pressure": 0.5184532689327745,
+            "growth_slowdown_constrained_easing": 0.08973229654605713,
+            "fiscal_term_premium_repricing": 0.15952408274854601,
+            "funding_liquidity_stress": 0.019940510343568252,
+            "reanchoring_normalization": 0.028897146268226263
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.08375014344298666,
+            "war_augmented_inflation_pressure": 0.039881020687136504,
+            "growth_slowdown_constrained_easing": 0.5782747999634793,
+            "fiscal_term_premium_repricing": 0.04985127585892063,
+            "funding_liquidity_stress": 0.1495538275767619,
+            "reanchoring_normalization": 0.09868893247071515
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.1435716744736914,
+            "war_augmented_inflation_pressure": 0.13958357240497773,
+            "growth_slowdown_constrained_easing": 0.079762041374273,
+            "fiscal_term_premium_repricing": 0.5184532689327744,
+            "funding_liquidity_stress": 0.079762041374273,
+            "reanchoring_normalization": 0.03886740144001038
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.06380963309941841,
+            "war_augmented_inflation_pressure": 0.029910765515352378,
+            "growth_slowdown_constrained_easing": 0.24925637929460315,
+            "fiscal_term_premium_repricing": 0.059821531030704755,
+            "funding_liquidity_stress": 0.4586317379020698,
+            "reanchoring_normalization": 0.13856995315785167
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.1834526951608279,
+            "war_augmented_inflation_pressure": 0.039881020687136504,
+            "growth_slowdown_constrained_easing": 0.09970255171784126,
+            "fiscal_term_premium_repricing": 0.039881020687136504,
+            "funding_liquidity_stress": 0.019940510343568252,
+            "reanchoring_normalization": 0.6171422014034896
+          }
+        },
+        "confidence": 0.622,
+        "notes": "shock_player contribution for mid horizon"
+      },
+      {
+        "channel_name": "policy_framework",
+        "horizon": "mid",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.05345131685761878,
+          "war_augmented_inflation_pressure": 0.019089756020578136,
+          "growth_slowdown_constrained_easing": -0.21854054245405793,
+          "fiscal_term_premium_repricing": 0.003817951204115627,
+          "funding_liquidity_stress": -0.0471607248411338,
+          "reanchoring_normalization": -0.019089756020578136
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5835014337449734,
+            "war_augmented_inflation_pressure": 0.16105316779534087,
+            "growth_slowdown_constrained_easing": 0.13619694518239597,
+            "fiscal_term_premium_repricing": 0.08041156589289329,
+            "funding_liquidity_stress": 0.009094698025012884,
+            "reanchoring_normalization": 0.029742189359383563
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.1818269976297641,
+            "war_augmented_inflation_pressure": 0.5225601602990292,
+            "growth_slowdown_constrained_easing": 0.08598764066799479,
+            "fiscal_term_premium_repricing": 0.16074645311593513,
+            "funding_liquidity_stress": 0.019136558927893114,
+            "reanchoring_normalization": 0.02974218935938356
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.08140838860096183,
+            "war_augmented_inflation_pressure": 0.04055083696077806,
+            "growth_slowdown_constrained_easing": 0.5780388249091262,
+            "fiscal_term_premium_repricing": 0.05028598318425259,
+            "funding_liquidity_stress": 0.14968075066533615,
+            "reanchoring_normalization": 0.10003521567954521
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.1416595540182432,
+            "war_augmented_inflation_pressure": 0.1409694459895804,
+            "growth_slowdown_constrained_easing": 0.07594577976511457,
+            "fiscal_term_premium_repricing": 0.5222534456196235,
+            "funding_liquidity_stress": 0.0793877243451745,
+            "reanchoring_normalization": 0.0397840502622638
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.06132466679520137,
+            "war_augmented_inflation_pressure": 0.030508976057897833,
+            "growth_slowdown_constrained_easing": 0.24665741511407854,
+            "fiscal_term_premium_repricing": 0.06032784408713282,
+            "funding_liquidity_stress": 0.4609784386546234,
+            "reanchoring_normalization": 0.14020265929106615
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.18182699762976415,
+            "war_augmented_inflation_pressure": 0.04055083696077806,
+            "growth_slowdown_constrained_easing": 0.09602950157087506,
+            "fiscal_term_premium_repricing": 0.040244122281372356,
+            "funding_liquidity_stress": 0.01913655892789312,
+            "reanchoring_normalization": 0.6222119826293173
+          }
+        },
+        "confidence": 0.646,
+        "notes": "policy_framework contribution for mid horizon"
+      },
+      {
+        "channel_name": "inflation_regime",
+        "horizon": "mid",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 19.204997225650402,
+          "war_augmented_inflation_pressure": 0.3335168230600858,
+          "growth_slowdown_constrained_easing": -0.039143827922311074,
+          "fiscal_term_premium_repricing": 0.0587157418834666,
+          "funding_liquidity_stress": 0.019571913961155537,
+          "reanchoring_normalization": -12.803331483766936
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.6978377482302699,
+            "war_augmented_inflation_pressure": 0.12063982884224424,
+            "growth_slowdown_constrained_easing": 0.10076856086390805,
+            "fiscal_term_premium_repricing": 0.05875583895927696,
+            "funding_liquidity_stress": 0.007521562397049848,
+            "reanchoring_normalization": 0.014476460707250964
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.4083085340852506,
+            "war_augmented_inflation_pressure": 0.3812161215727617,
+            "growth_slowdown_constrained_easing": 0.06457740909578062,
+            "fiscal_term_premium_repricing": 0.11666168178828083,
+            "funding_liquidity_stress": 0.014759792750675332,
+            "reanchoring_normalization": 0.014476460707250964
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.3359262305489958,
+            "war_augmented_inflation_pressure": 0.03378106459873844,
+            "growth_slowdown_constrained_easing": 0.4192506964234293,
+            "fiscal_term_premium_repricing": 0.03704114789840052,
+            "funding_liquidity_stress": 0.10885678734780663,
+            "reanchoring_normalization": 0.06514407318262937
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.3793556126707487,
+            "war_augmented_inflation_pressure": 0.10616336813499327,
+            "growth_slowdown_constrained_easing": 0.05733917874215514,
+            "fiscal_term_premium_repricing": 0.3772379745187982,
+            "funding_liquidity_stress": 0.05818917487242823,
+            "reanchoring_normalization": 0.021714691060876447
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.3214497698417448,
+            "war_augmented_inflation_pressure": 0.026542834245112952,
+            "growth_slowdown_constrained_easing": 0.18038909475378834,
+            "fiscal_term_premium_repricing": 0.04427937825202599,
+            "funding_liquidity_stress": 0.3332419283101966,
+            "reanchoring_normalization": 0.09409699459713128
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.40830853408525064,
+            "war_augmented_inflation_pressure": 0.03378106459873844,
+            "growth_slowdown_constrained_easing": 0.07181563944940612,
+            "fiscal_term_premium_repricing": 0.029802917544775032,
+            "funding_liquidity_stress": 0.014759792750675333,
+            "reanchoring_normalization": 0.44153205157115455
+          }
+        },
+        "confidence": 0.634,
+        "notes": "inflation_regime contribution for mid horizon"
+      },
+      {
+        "channel_name": "activity_anchor",
+        "horizon": "mid",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": -0.01295880898251099,
+          "war_augmented_inflation_pressure": 0.006479404491255495,
+          "growth_slowdown_constrained_easing": -0.06479404491255494,
+          "fiscal_term_premium_repricing": -0.002356799399328394,
+          "funding_liquidity_stress": -0.0943214496822676,
+          "reanchoring_normalization": 0.03239702245627747
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5813168281064347,
+            "war_augmented_inflation_pressure": 0.16056489453503206,
+            "growth_slowdown_constrained_easing": 0.13908118119091056,
+            "fiscal_term_premium_repricing": 0.08017021295690463,
+            "funding_liquidity_stress": 0.008135627453228971,
+            "reanchoring_normalization": 0.030731255757489043
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.18022944269465746,
+            "war_augmented_inflation_pressure": 0.5215435414056316,
+            "growth_slowdown_constrained_easing": 0.08894525801443838,
+            "fiscal_term_premium_repricing": 0.1603876900392601,
+            "funding_liquidity_stress": 0.0181628120885234,
+            "reanchoring_normalization": 0.03073125575748904
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.07995759634171315,
+            "war_augmented_inflation_pressure": 0.040238678911498876,
+            "growth_slowdown_constrained_easing": 0.5802773051438656,
+            "fiscal_term_premium_repricing": 0.05008865905102132,
+            "funding_liquidity_stress": 0.148516212347351,
+            "reanchoring_normalization": 0.10092154820455007
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.14012070415347977,
+            "war_augmented_inflation_pressure": 0.1405105252644432,
+            "growth_slowdown_constrained_easing": 0.07891807337914396,
+            "fiscal_term_premium_repricing": 0.5213663369098597,
+            "funding_liquidity_stress": 0.07832591990028999,
+            "reanchoring_normalization": 0.04075844039278347
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.05990322707112429,
+            "war_augmented_inflation_pressure": 0.030211494276204443,
+            "growth_slowdown_constrained_easing": 0.24938021217914927,
+            "fiscal_term_premium_repricing": 0.06011584368631575,
+            "funding_liquidity_stress": 0.4593589360414784,
+            "reanchoring_normalization": 0.14103028674572782
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.1802294426946575,
+            "war_augmented_inflation_pressure": 0.04023867891149888,
+            "growth_slowdown_constrained_easing": 0.09897244264973283,
+            "fiscal_term_premium_repricing": 0.04006147441572689,
+            "funding_liquidity_stress": 0.018162812088523404,
+            "reanchoring_normalization": 0.6223351492398606
+          }
+        },
+        "confidence": 0.5900000000000001,
+        "notes": "activity_anchor contribution for mid horizon"
+      },
+      {
+        "channel_name": "treasury_market",
+        "horizon": "long",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.4822111181582392,
+          "war_augmented_inflation_pressure": 0.03034074606250378,
+          "growth_slowdown_constrained_easing": -0.9758161947952811,
+          "fiscal_term_premium_repricing": 0.06556755371133338,
+          "funding_liquidity_stress": -0.7588537443619778,
+          "reanchoring_normalization": -0.20172656352181792
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5970912295089801,
+            "war_augmented_inflation_pressure": 0.1626352246860261,
+            "growth_slowdown_constrained_easing": 0.13164185604172635,
+            "fiscal_term_premium_repricing": 0.08233828594362783,
+            "funding_liquidity_stress": 0.0,
+            "reanchoring_normalization": 0.02629340381963972
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.19203936476520675,
+            "war_augmented_inflation_pressure": 0.527181902955422,
+            "growth_slowdown_constrained_easing": 0.08101037294875467,
+            "fiscal_term_premium_repricing": 0.1633486588923825,
+            "funding_liquidity_stress": 0.010126296618594334,
+            "reanchoring_normalization": 0.02629340381963972
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.09077639857926341,
+            "war_augmented_inflation_pressure": 0.04111966526289405,
+            "growth_slowdown_constrained_easing": 0.5771989072598769,
+            "fiscal_term_premium_repricing": 0.05195939608784482,
+            "funding_liquidity_stress": 0.14176815266032064,
+            "reanchoring_normalization": 0.09717748014980004
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.15153417829082938,
+            "war_augmented_inflation_pressure": 0.1423826314488374,
+            "growth_slowdown_constrained_easing": 0.07088407633016033,
+            "fiscal_term_premium_repricing": 0.5278953371617784,
+            "funding_liquidity_stress": 0.07088407633016033,
+            "reanchoring_normalization": 0.03641970043823405
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.07052380534207472,
+            "war_augmented_inflation_pressure": 0.030993368644299718,
+            "growth_slowdown_constrained_easing": 0.24303111884626394,
+            "fiscal_term_premium_repricing": 0.06208569270643914,
+            "funding_liquidity_stress": 0.4556833478367449,
+            "reanchoring_normalization": 0.13768266662417739
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.19203936476520675,
+            "war_augmented_inflation_pressure": 0.04111966526289405,
+            "growth_slowdown_constrained_easing": 0.09113666956734902,
+            "fiscal_term_premium_repricing": 0.04183309946925049,
+            "funding_liquidity_stress": 0.010126296618594334,
+            "reanchoring_normalization": 0.6237449043167054
+          }
+        },
+        "confidence": 0.622,
+        "notes": "treasury_market contribution for long horizon"
+      },
+      {
+        "channel_name": "shock_player",
+        "horizon": "long",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.2,
+          "war_augmented_inflation_pressure": 0.0,
+          "growth_slowdown_constrained_easing": 0.0,
+          "fiscal_term_premium_repricing": 0.0,
+          "funding_liquidity_stress": 0.0,
+          "reanchoring_normalization": -0.05083216174820995
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5822629020321929,
+            "war_augmented_inflation_pressure": 0.15952408274854601,
+            "growth_slowdown_constrained_easing": 0.13958357240497776,
+            "fiscal_term_premium_repricing": 0.07976204137427301,
+            "funding_liquidity_stress": 0.009970255171784126,
+            "reanchoring_normalization": 0.028897146268226263
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.1834526951608279,
+            "war_augmented_inflation_pressure": 0.5184532689327745,
+            "growth_slowdown_constrained_easing": 0.08973229654605713,
+            "fiscal_term_premium_repricing": 0.15952408274854601,
+            "funding_liquidity_stress": 0.019940510343568252,
+            "reanchoring_normalization": 0.028897146268226263
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.08375014344298666,
+            "war_augmented_inflation_pressure": 0.039881020687136504,
+            "growth_slowdown_constrained_easing": 0.5782747999634793,
+            "fiscal_term_premium_repricing": 0.04985127585892063,
+            "funding_liquidity_stress": 0.1495538275767619,
+            "reanchoring_normalization": 0.09868893247071515
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.1435716744736914,
+            "war_augmented_inflation_pressure": 0.13958357240497773,
+            "growth_slowdown_constrained_easing": 0.079762041374273,
+            "fiscal_term_premium_repricing": 0.5184532689327744,
+            "funding_liquidity_stress": 0.079762041374273,
+            "reanchoring_normalization": 0.03886740144001038
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.06380963309941841,
+            "war_augmented_inflation_pressure": 0.029910765515352378,
+            "growth_slowdown_constrained_easing": 0.24925637929460315,
+            "fiscal_term_premium_repricing": 0.059821531030704755,
+            "funding_liquidity_stress": 0.4586317379020698,
+            "reanchoring_normalization": 0.13856995315785167
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.1834526951608279,
+            "war_augmented_inflation_pressure": 0.039881020687136504,
+            "growth_slowdown_constrained_easing": 0.09970255171784126,
+            "fiscal_term_premium_repricing": 0.039881020687136504,
+            "funding_liquidity_stress": 0.019940510343568252,
+            "reanchoring_normalization": 0.6171422014034896
+          }
+        },
+        "confidence": 0.5980000000000001,
+        "notes": "shock_player contribution for long horizon"
+      },
+      {
+        "channel_name": "policy_framework",
+        "horizon": "long",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 0.05345131685761878,
+          "war_augmented_inflation_pressure": 0.019089756020578136,
+          "growth_slowdown_constrained_easing": -0.21854054245405793,
+          "fiscal_term_premium_repricing": 0.003817951204115627,
+          "funding_liquidity_stress": -0.0471607248411338,
+          "reanchoring_normalization": -0.019089756020578136
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5835014337449734,
+            "war_augmented_inflation_pressure": 0.16105316779534087,
+            "growth_slowdown_constrained_easing": 0.13619694518239597,
+            "fiscal_term_premium_repricing": 0.08041156589289329,
+            "funding_liquidity_stress": 0.009094698025012884,
+            "reanchoring_normalization": 0.029742189359383563
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.1818269976297641,
+            "war_augmented_inflation_pressure": 0.5225601602990292,
+            "growth_slowdown_constrained_easing": 0.08598764066799479,
+            "fiscal_term_premium_repricing": 0.16074645311593513,
+            "funding_liquidity_stress": 0.019136558927893114,
+            "reanchoring_normalization": 0.02974218935938356
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.08140838860096183,
+            "war_augmented_inflation_pressure": 0.04055083696077806,
+            "growth_slowdown_constrained_easing": 0.5780388249091262,
+            "fiscal_term_premium_repricing": 0.05028598318425259,
+            "funding_liquidity_stress": 0.14968075066533615,
+            "reanchoring_normalization": 0.10003521567954521
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.1416595540182432,
+            "war_augmented_inflation_pressure": 0.1409694459895804,
+            "growth_slowdown_constrained_easing": 0.07594577976511457,
+            "fiscal_term_premium_repricing": 0.5222534456196235,
+            "funding_liquidity_stress": 0.0793877243451745,
+            "reanchoring_normalization": 0.0397840502622638
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.06132466679520137,
+            "war_augmented_inflation_pressure": 0.030508976057897833,
+            "growth_slowdown_constrained_easing": 0.24665741511407854,
+            "fiscal_term_premium_repricing": 0.06032784408713282,
+            "funding_liquidity_stress": 0.4609784386546234,
+            "reanchoring_normalization": 0.14020265929106615
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.18182699762976415,
+            "war_augmented_inflation_pressure": 0.04055083696077806,
+            "growth_slowdown_constrained_easing": 0.09602950157087506,
+            "fiscal_term_premium_repricing": 0.040244122281372356,
+            "funding_liquidity_stress": 0.01913655892789312,
+            "reanchoring_normalization": 0.6222119826293173
+          }
+        },
+        "confidence": 0.646,
+        "notes": "policy_framework contribution for long horizon"
+      },
+      {
+        "channel_name": "inflation_regime",
+        "horizon": "long",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": 19.204997225650402,
+          "war_augmented_inflation_pressure": 0.3335168230600858,
+          "growth_slowdown_constrained_easing": -0.039143827922311074,
+          "fiscal_term_premium_repricing": 0.0587157418834666,
+          "funding_liquidity_stress": 0.019571913961155537,
+          "reanchoring_normalization": -12.803331483766936
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.6978377482302699,
+            "war_augmented_inflation_pressure": 0.12063982884224424,
+            "growth_slowdown_constrained_easing": 0.10076856086390805,
+            "fiscal_term_premium_repricing": 0.05875583895927696,
+            "funding_liquidity_stress": 0.007521562397049848,
+            "reanchoring_normalization": 0.014476460707250964
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.4083085340852506,
+            "war_augmented_inflation_pressure": 0.3812161215727617,
+            "growth_slowdown_constrained_easing": 0.06457740909578062,
+            "fiscal_term_premium_repricing": 0.11666168178828083,
+            "funding_liquidity_stress": 0.014759792750675332,
+            "reanchoring_normalization": 0.014476460707250964
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.3359262305489958,
+            "war_augmented_inflation_pressure": 0.03378106459873844,
+            "growth_slowdown_constrained_easing": 0.4192506964234293,
+            "fiscal_term_premium_repricing": 0.03704114789840052,
+            "funding_liquidity_stress": 0.10885678734780663,
+            "reanchoring_normalization": 0.06514407318262937
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.3793556126707487,
+            "war_augmented_inflation_pressure": 0.10616336813499327,
+            "growth_slowdown_constrained_easing": 0.05733917874215514,
+            "fiscal_term_premium_repricing": 0.3772379745187982,
+            "funding_liquidity_stress": 0.05818917487242823,
+            "reanchoring_normalization": 0.021714691060876447
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.3214497698417448,
+            "war_augmented_inflation_pressure": 0.026542834245112952,
+            "growth_slowdown_constrained_easing": 0.18038909475378834,
+            "fiscal_term_premium_repricing": 0.04427937825202599,
+            "funding_liquidity_stress": 0.3332419283101966,
+            "reanchoring_normalization": 0.09409699459713128
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.40830853408525064,
+            "war_augmented_inflation_pressure": 0.03378106459873844,
+            "growth_slowdown_constrained_easing": 0.07181563944940612,
+            "fiscal_term_premium_repricing": 0.029802917544775032,
+            "funding_liquidity_stress": 0.014759792750675333,
+            "reanchoring_normalization": 0.44153205157115455
+          }
+        },
+        "confidence": 0.646,
+        "notes": "inflation_regime contribution for long horizon"
+      },
+      {
+        "channel_name": "activity_anchor",
+        "horizon": "long",
+        "regime_likelihoods": {
+          "policy_trapped_stagflation_risk": -0.01295880898251099,
+          "war_augmented_inflation_pressure": 0.006479404491255495,
+          "growth_slowdown_constrained_easing": -0.06479404491255494,
+          "fiscal_term_premium_repricing": -0.002356799399328394,
+          "funding_liquidity_stress": -0.0943214496822676,
+          "reanchoring_normalization": 0.03239702245627747
+        },
+        "transition_likelihoods": {
+          "policy_trapped_stagflation_risk": {
+            "policy_trapped_stagflation_risk": 0.5813168281064347,
+            "war_augmented_inflation_pressure": 0.16056489453503206,
+            "growth_slowdown_constrained_easing": 0.13908118119091056,
+            "fiscal_term_premium_repricing": 0.08017021295690463,
+            "funding_liquidity_stress": 0.008135627453228971,
+            "reanchoring_normalization": 0.030731255757489043
+          },
+          "war_augmented_inflation_pressure": {
+            "policy_trapped_stagflation_risk": 0.18022944269465746,
+            "war_augmented_inflation_pressure": 0.5215435414056316,
+            "growth_slowdown_constrained_easing": 0.08894525801443838,
+            "fiscal_term_premium_repricing": 0.1603876900392601,
+            "funding_liquidity_stress": 0.0181628120885234,
+            "reanchoring_normalization": 0.03073125575748904
+          },
+          "growth_slowdown_constrained_easing": {
+            "policy_trapped_stagflation_risk": 0.07995759634171315,
+            "war_augmented_inflation_pressure": 0.040238678911498876,
+            "growth_slowdown_constrained_easing": 0.5802773051438656,
+            "fiscal_term_premium_repricing": 0.05008865905102132,
+            "funding_liquidity_stress": 0.148516212347351,
+            "reanchoring_normalization": 0.10092154820455007
+          },
+          "fiscal_term_premium_repricing": {
+            "policy_trapped_stagflation_risk": 0.14012070415347977,
+            "war_augmented_inflation_pressure": 0.1405105252644432,
+            "growth_slowdown_constrained_easing": 0.07891807337914396,
+            "fiscal_term_premium_repricing": 0.5213663369098597,
+            "funding_liquidity_stress": 0.07832591990028999,
+            "reanchoring_normalization": 0.04075844039278347
+          },
+          "funding_liquidity_stress": {
+            "policy_trapped_stagflation_risk": 0.05990322707112429,
+            "war_augmented_inflation_pressure": 0.030211494276204443,
+            "growth_slowdown_constrained_easing": 0.24938021217914927,
+            "fiscal_term_premium_repricing": 0.06011584368631575,
+            "funding_liquidity_stress": 0.4593589360414784,
+            "reanchoring_normalization": 0.14103028674572782
+          },
+          "reanchoring_normalization": {
+            "policy_trapped_stagflation_risk": 0.1802294426946575,
+            "war_augmented_inflation_pressure": 0.04023867891149888,
+            "growth_slowdown_constrained_easing": 0.09897244264973283,
+            "fiscal_term_premium_repricing": 0.04006147441572689,
+            "funding_liquidity_stress": 0.018162812088523404,
+            "reanchoring_normalization": 0.6223351492398606
+          }
+        },
+        "confidence": 0.638,
+        "notes": "activity_anchor contribution for long horizon"
+      }
+    ],
+    "player_responses": [
+      {
+        "player_id": "treasury",
+        "date": "2026-04-20",
+        "main_objective": "Preserve market access and financing credibility",
+        "main_constraint": "Heavy issuance and term-premium sensitivity",
+        "horizon_scenarios": {
+          "short": [
+            {
+              "action": "communication_support",
+              "probability": 0.3659120798337256,
+              "rationale": "treasury communication support probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "maintain_issuance_mix",
+              "probability": 0.3389867698080243,
+              "rationale": "treasury maintain issuance mix probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "bill_heavy_flexibility",
+              "probability": 0.2951011503582502,
+              "rationale": "treasury bill heavy flexibility probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "mid": [
+            {
+              "action": "stabilize_coupon_path",
+              "probability": 0.36436913976866564,
+              "rationale": "treasury stabilize coupon path probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "refund_bills_over_coupons",
+              "probability": 0.32201543526930704,
+              "rationale": "treasury refund bills over coupons probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "defense_financing_bias",
+              "probability": 0.31361542496202727,
+              "rationale": "treasury defense financing bias probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "long": [
+            {
+              "action": "preserve_market_confidence",
+              "probability": 0.4031295341824238,
+              "rationale": "treasury preserve market confidence probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "normalize_issuance_mix",
+              "probability": 0.3199332339971464,
+              "rationale": "treasury normalize issuance mix probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "structural_bill_bias",
+              "probability": 0.27693723182042984,
+              "rationale": "treasury structural bill bias probability under policy_trapped_stagflation_risk"
+            }
+          ]
+        },
+        "linked_market_proxies": [
+          "curve_2s10s",
+          "breakeven_10y",
+          "repo_minus_sofr",
+          "high_yield_spread"
+        ]
+      },
+      {
+        "player_id": "federal_reserve",
+        "date": "2026-04-20",
+        "main_objective": "Protect inflation credibility while managing downside risk",
+        "main_constraint": "Dual-mandate conflict under uncertainty",
+        "horizon_scenarios": {
+          "short": [
+            {
+              "action": "look_through_supply_shock",
+              "probability": 0.3788845060897261,
+              "rationale": "federal_reserve look through supply shock probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "hawkish_hold",
+              "probability": 0.36796191966505293,
+              "rationale": "federal_reserve hawkish hold probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "stability_monitoring",
+              "probability": 0.253153574245221,
+              "rationale": "federal_reserve stability monitoring probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "mid": [
+            {
+              "action": "delay_easing",
+              "probability": 0.47643784339875866,
+              "rationale": "federal_reserve delay easing probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "liquidity_backstop_if_needed",
+              "probability": 0.2761982926702149,
+              "rationale": "federal_reserve liquidity backstop if needed probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "measured_easing",
+              "probability": 0.24736386393102647,
+              "rationale": "federal_reserve measured easing probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "long": [
+            {
+              "action": "restore_credibility",
+              "probability": 0.39968687912075074,
+              "rationale": "federal_reserve restore credibility probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "soft_landing_normalization",
+              "probability": 0.33622269768228846,
+              "rationale": "federal_reserve soft landing normalization probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "financial_stability_tools",
+              "probability": 0.26409042319696086,
+              "rationale": "federal_reserve financial stability tools probability under policy_trapped_stagflation_risk"
+            }
+          ]
+        },
+        "linked_market_proxies": [
+          "curve_2s10s",
+          "breakeven_10y",
+          "repo_minus_sofr",
+          "high_yield_spread"
+        ]
+      },
+      {
+        "player_id": "sell_side",
+        "date": "2026-04-20",
+        "main_objective": "Intermediate flow and manage balance sheet",
+        "main_constraint": "Inventory, funding, and client flow stress",
+        "horizon_scenarios": {
+          "short": [
+            {
+              "action": "flow_amplification",
+              "probability": 0.37870336441817254,
+              "rationale": "sell_side flow amplification probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "front_end_repricing",
+              "probability": 0.36445669038705175,
+              "rationale": "sell_side front end repricing probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "balance_sheet_conservatism",
+              "probability": 0.25683994519477565,
+              "rationale": "sell_side balance sheet conservatism probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "mid": [
+            {
+              "action": "client_rehedging",
+              "probability": 0.3792763822176335,
+              "rationale": "sell_side client rehedging probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "curve_reshaping",
+              "probability": 0.36930337946134595,
+              "rationale": "sell_side curve reshaping probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "inventory_reduction",
+              "probability": 0.25142023832102056,
+              "rationale": "sell_side inventory reduction probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "long": [
+            {
+              "action": "new_macro_consensus",
+              "probability": 0.37239920127705606,
+              "rationale": "sell_side new macro consensus probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "normalized_intermediation",
+              "probability": 0.32146413949620906,
+              "rationale": "sell_side normalized intermediation probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "structural_long_end_discount",
+              "probability": 0.306136659226735,
+              "rationale": "sell_side structural long end discount probability under policy_trapped_stagflation_risk"
+            }
+          ]
+        },
+        "linked_market_proxies": [
+          "curve_2s10s",
+          "breakeven_10y",
+          "repo_minus_sofr",
+          "high_yield_spread"
+        ]
+      },
+      {
+        "player_id": "buy_side",
+        "date": "2026-04-20",
+        "main_objective": "Allocate duration and inflation risk efficiently",
+        "main_constraint": "Regime uncertainty and drawdown control",
+        "horizon_scenarios": {
+          "short": [
+            {
+              "action": "wait_for_confirmation",
+              "probability": 0.3988341122670209,
+              "rationale": "buy_side wait for confirmation probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "inflation_hedge_bias",
+              "probability": 0.38476178331639416,
+              "rationale": "buy_side inflation hedge bias probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "quality_duration_bid",
+              "probability": 0.21640410441658486,
+              "rationale": "buy_side quality duration bid probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "mid": [
+            {
+              "action": "barbell_real_and_nominal",
+              "probability": 0.4133138579923091,
+              "rationale": "buy_side barbell real and nominal probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "underweight_duration",
+              "probability": 0.35895885550539397,
+              "rationale": "buy_side underweight duration probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "extend_duration_on_slowdown",
+              "probability": 0.22772728650229693,
+              "rationale": "buy_side extend duration on slowdown probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "long": [
+            {
+              "action": "structural_inflation_hedge",
+              "probability": 0.40657785294548476,
+              "rationale": "buy_side structural inflation hedge probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "soft_landing_reengagement",
+              "probability": 0.3407673952358517,
+              "rationale": "buy_side soft landing reengagement probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "selective_long_duration",
+              "probability": 0.25265475181866354,
+              "rationale": "buy_side selective long duration probability under policy_trapped_stagflation_risk"
+            }
+          ]
+        },
+        "linked_market_proxies": [
+          "curve_2s10s",
+          "breakeven_10y",
+          "repo_minus_sofr",
+          "high_yield_spread"
+        ]
+      },
+      {
+        "player_id": "foreign_official",
+        "date": "2026-04-20",
+        "main_objective": "Preserve reserves and liquidity",
+        "main_constraint": "Dollar exposure and safe-haven confidence",
+        "horizon_scenarios": {
+          "short": [
+            {
+              "action": "maintain_reserves",
+              "probability": 0.4036833776826349,
+              "rationale": "foreign_official maintain reserves probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "shorten_duration",
+              "probability": 0.3584454393235319,
+              "rationale": "foreign_official shorten duration probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "safe_haven_reentry",
+              "probability": 0.23787118299383322,
+              "rationale": "foreign_official safe haven reentry probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "mid": [
+            {
+              "action": "maintain_core_treasury_holdings",
+              "probability": 0.37493962784719737,
+              "rationale": "foreign_official maintain core treasury holdings probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "gradual_diversification",
+              "probability": 0.3246099228899033,
+              "rationale": "foreign_official gradual diversification probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "prefer_front_end_liquidity",
+              "probability": 0.30045044926289943,
+              "rationale": "foreign_official prefer front end liquidity probability under policy_trapped_stagflation_risk"
+            }
+          ],
+          "long": [
+            {
+              "action": "conditional_safe_haven_demand",
+              "probability": 0.35066855964603344,
+              "rationale": "foreign_official conditional safe haven demand probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "return_if_reanchoring",
+              "probability": 0.326961197849282,
+              "rationale": "foreign_official return if reanchoring probability under policy_trapped_stagflation_risk"
+            },
+            {
+              "action": "reserve_rebalancing",
+              "probability": 0.32237024250468455,
+              "rationale": "foreign_official reserve rebalancing probability under policy_trapped_stagflation_risk"
+            }
+          ]
+        },
+        "linked_market_proxies": [
+          "curve_2s10s",
+          "breakeven_10y",
+          "repo_minus_sofr",
+          "high_yield_spread"
+        ]
+      }
+    ],
+    "source_scorecard": []
+  },
+  "player_probabilities": [
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "short",
+      "action": "communication_support",
+      "probability": 0.3659120798337256
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "short",
+      "action": "maintain_issuance_mix",
+      "probability": 0.3389867698080243
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "short",
+      "action": "bill_heavy_flexibility",
+      "probability": 0.2951011503582502
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "mid",
+      "action": "stabilize_coupon_path",
+      "probability": 0.3643691397686656
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "mid",
+      "action": "refund_bills_over_coupons",
+      "probability": 0.322015435269307
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "mid",
+      "action": "defense_financing_bias",
+      "probability": 0.3136154249620272
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "long",
+      "action": "preserve_market_confidence",
+      "probability": 0.4031295341824238
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "long",
+      "action": "normalize_issuance_mix",
+      "probability": 0.3199332339971464
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "treasury",
+      "horizon": "long",
+      "action": "structural_bill_bias",
+      "probability": 0.2769372318204298
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "short",
+      "action": "look_through_supply_shock",
+      "probability": 0.3788845060897261
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "short",
+      "action": "hawkish_hold",
+      "probability": 0.3679619196650529
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "short",
+      "action": "stability_monitoring",
+      "probability": 0.253153574245221
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "mid",
+      "action": "delay_easing",
+      "probability": 0.4764378433987586
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "mid",
+      "action": "liquidity_backstop_if_needed",
+      "probability": 0.2761982926702149
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "mid",
+      "action": "measured_easing",
+      "probability": 0.2473638639310264
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "long",
+      "action": "restore_credibility",
+      "probability": 0.3996868791207507
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "long",
+      "action": "soft_landing_normalization",
+      "probability": 0.3362226976822884
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "federal_reserve",
+      "horizon": "long",
+      "action": "financial_stability_tools",
+      "probability": 0.2640904231969608
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "short",
+      "action": "flow_amplification",
+      "probability": 0.3787033644181725
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "short",
+      "action": "front_end_repricing",
+      "probability": 0.3644566903870517
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "short",
+      "action": "balance_sheet_conservatism",
+      "probability": 0.2568399451947756
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "mid",
+      "action": "client_rehedging",
+      "probability": 0.3792763822176335
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "mid",
+      "action": "curve_reshaping",
+      "probability": 0.3693033794613459
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "mid",
+      "action": "inventory_reduction",
+      "probability": 0.2514202383210205
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "long",
+      "action": "new_macro_consensus",
+      "probability": 0.372399201277056
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "long",
+      "action": "normalized_intermediation",
+      "probability": 0.321464139496209
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "sell_side",
+      "horizon": "long",
+      "action": "structural_long_end_discount",
+      "probability": 0.306136659226735
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "short",
+      "action": "wait_for_confirmation",
+      "probability": 0.3988341122670209
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "short",
+      "action": "inflation_hedge_bias",
+      "probability": 0.3847617833163941
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "short",
+      "action": "quality_duration_bid",
+      "probability": 0.2164041044165848
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "mid",
+      "action": "barbell_real_and_nominal",
+      "probability": 0.4133138579923091
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "mid",
+      "action": "underweight_duration",
+      "probability": 0.3589588555053939
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "mid",
+      "action": "extend_duration_on_slowdown",
+      "probability": 0.2277272865022969
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "long",
+      "action": "structural_inflation_hedge",
+      "probability": 0.4065778529454847
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "long",
+      "action": "soft_landing_reengagement",
+      "probability": 0.3407673952358517
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "buy_side",
+      "horizon": "long",
+      "action": "selective_long_duration",
+      "probability": 0.2526547518186635
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "short",
+      "action": "maintain_reserves",
+      "probability": 0.4036833776826349
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "short",
+      "action": "shorten_duration",
+      "probability": 0.3584454393235319
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "short",
+      "action": "safe_haven_reentry",
+      "probability": 0.2378711829938332
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "mid",
+      "action": "maintain_core_treasury_holdings",
+      "probability": 0.3749396278471973
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "mid",
+      "action": "gradual_diversification",
+      "probability": 0.3246099228899033
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "mid",
+      "action": "prefer_front_end_liquidity",
+      "probability": 0.3004504492628994
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "long",
+      "action": "conditional_safe_haven_demand",
+      "probability": 0.3506685596460334
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "long",
+      "action": "return_if_reanchoring",
+      "probability": 0.326961197849282
+    },
+    {
+      "date": "2026-04-20",
+      "player_id": "foreign_official",
+      "horizon": "long",
+      "action": "reserve_rebalancing",
+      "probability": 0.3223702425046845
+    }
+  ],
+  "source_scorecard": [],
+  "roadmap_summary": {
+    "system_version": "v1.0",
+    "layer_count": 7,
+    "upgrade_count": 15,
+    "high_priority_count": 8,
+    "in_progress_count": 1
+  }
+}

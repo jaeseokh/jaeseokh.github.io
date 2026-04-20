@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jaeseok Hwang | Treasury Regime Lab</title>
+    <meta
+      name="description"
+      content="Regime-first Treasury market research, daily regime-path updates, and player-driven strategy tracking."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/">Treasury Regime Lab</a>
+        <nav class="site-nav">
+          <a href="/">Home</a>
+          <a href="/framework/">Framework</a>
+          <a href="/roadmap/">Roadmap</a>
+          <a href="/archive/">Archive</a>
+          <a href="/research/">Research</a>
+          <a href="/resume/docs/" target="_blank" rel="noreferrer">Resume</a>
+        </nav>
+      </header>
+
+      <main class="main-layout">
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <span class="eyebrow">Manager-facing macro strategy system</span>
+            <h1>Regime-first Treasury research built for strategy heads and hiring managers.</h1>
+            <p class="lede">
+              This site tracks the latent economic regime path, the shock overlay,
+              and the player responses that matter for Treasury decision-making.
+            </p>
+            <div class="hero-actions">
+              <a class="button-primary" href="/framework/">See framework</a>
+              <a class="button-secondary" href="/roadmap/">See roadmap</a>
+              <a class="button-secondary" href="/archive/">Review archive</a>
+            </div>
+          </div>
+          <aside class="hero-summary" id="hero-summary">
+            <p class="summary-loading">Loading latest regime snapshot…</p>
+          </aside>
+        </section>
+
+        <section class="summary-grid" id="summary-grid"></section>
+
+        <section class="section-grid section-grid-wide">
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Regime path</span>
+              <h2>Mid-horizon posterior and path pressure</h2>
+            </div>
+            <div id="regime-bars"></div>
+            <div id="channel-list" class="compact-list"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Treasury mirror</span>
+              <h2>2Y / 10Y path and inner-circle context</h2>
+            </div>
+            <div id="yield-chart"></div>
+            <div id="curve-table"></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <span class="section-tag">Player map</span>
+            <h2>Who is likely to move next?</h2>
+          </div>
+          <div class="player-grid" id="player-grid"></div>
+        </section>
+
+        <section class="section-grid">
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Source review</span>
+              <h2>Tracked evidence credibility</h2>
+            </div>
+            <div id="source-table"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Current thesis</span>
+              <h2>Treasury decision note</h2>
+            </div>
+            <div id="thesis-note" class="narrative-note"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+  </html>
