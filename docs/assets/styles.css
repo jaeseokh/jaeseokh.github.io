@@ -605,6 +605,28 @@ a {
   background: rgba(255, 255, 255, 0.45);
 }
 
+.probability-strip {
+  display: flex;
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  background: rgba(16, 34, 53, 0.08);
+}
+
+.probability-segment {
+  display: block;
+  height: 100%;
+}
+
+.probability-segment-1 { background: #102235; }
+.probability-segment-2 { background: #c66a2b; }
+.probability-segment-3 { background: #7f3e17; }
+.probability-segment-4 { background: #6f8394; }
+.probability-segment-5 { background: #b79b77; }
+.probability-segment-6 { background: #d8c6ad; }
+
 .regime-focus-note p {
   margin: 0 0 10px;
   color: var(--ink-soft);

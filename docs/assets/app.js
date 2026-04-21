@@ -195,6 +195,12 @@ function evidenceTagsForRegime(channelUpdates, regimeId, horizon = "mid") {
     .slice(0, 2);
 }
 
+function distributionLabel(probability) {
+  if (probability >= 0.65) return "High concentration";
+  if (probability >= 0.45) return "Moderate concentration";
+  return "Contested regime";
+}
+
 function buildRegimeMap(history, channelUpdates) {
   const series = extractRegimeSeries(history, "mid");
   if (!series.length) return `<p class="muted">Regime history is not available yet.</p>`;
@@ -202,6 +208,24 @@ function buildRegimeMap(history, channelUpdates) {
   const dominant = series[0];
   const alternatives = series.slice(1, 5);
   const dominantTags = evidenceTagsForRegime(channelUpdates, dominant.regimeId);
+  const remainingMass = Math.max(0, 1 - dominant.current);
+  const topThreeMass = series.slice(0, 3).reduce((sum, item) => sum + Number(item.current || 0), 0);
+  const strip = `
+    <div class="probability-strip">
+      ${series
+        .slice(0, 6)
+        .map(
+          (node, index) => `
+            <span
+              class="probability-segment probability-segment-${index + 1}"
+              style="width:${Math.max(4, node.current * 100)}%"
+              title="${titleize(node.regimeId)} ${formatProbability(node.current)}"
+            ></span>
+          `
+        )
+        .join("")}
+    </div>
+  `;
   const renderNode = (node, emphasis = false) => {
     const tags = evidenceTagsForRegime(channelUpdates, node.regimeId)
       .map((item) => `<span class="node-tag">${titleize(item.channel)}</span>`)
@@ -228,8 +252,10 @@ function buildRegimeMap(history, channelUpdates) {
       <div class="regime-map-focus">
         ${renderNode(dominant, true)}
         <div class="regime-focus-note">
+          ${strip}
           <p><strong>Evidence:</strong> ${dominantTags.map((item) => titleize(item.channel)).join(", ") || "No positive evidence tags"}.</p>
-          <p><strong>Interpretation:</strong> ${titleize(dominant.regimeId)} remains the highest-probability regime path, while transition pressure stays visible in the alternative nodes.</p>
+          <p><strong>Uncertainty:</strong> ${distributionLabel(dominant.current)}. Remaining scenario mass is ${formatProbability(remainingMass)}, and the top three regimes account for ${formatProbability(topThreeMass)}.</p>
+          <p><strong>Interpretation:</strong> ${titleize(dominant.regimeId)} remains the highest-probability regime path, but the adjacent nodes still retain enough mass to matter for the next repricing.</p>
         </div>
       </div>
       <div class="regime-map-side">
