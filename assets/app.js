@@ -13,11 +13,15 @@ function titleize(value) {
 }
 
 function formatPct(value, digits = 0) {
-  return `${(Number(value) * 100).toFixed(digits)}%`;
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "n/a";
+  return `${(number * 100).toFixed(digits)}%`;
 }
 
 function formatNumber(value, digits = 2) {
-  return Number(value).toFixed(digits);
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "n/a";
+  return number.toFixed(digits);
 }
 
 function formatDate(value) {
@@ -93,6 +97,241 @@ function buildMiniCards(items) {
   `;
 }
 
+function formatSigned(value, digits = 1, suffix = "") {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return `n/a${suffix}`;
+  const sign = number > 0 ? "+" : "";
+  return `${sign}${number.toFixed(digits)}${suffix}`;
+}
+
+function formatProbability(value) {
+  const number = Number(value);
+  if (number > 0 && number < 0.01) return "<1%";
+  return formatPct(number, 1);
+}
+
+function formatProbabilityDelta(current, prior) {
+  const delta = (Number(current) - Number(prior || 0)) * 100;
+  return `${delta > 0 ? "+" : ""}${delta.toFixed(1)} pp`;
+}
+
+function termStructureChart(points, options = {}) {
+  const cleanPoints = points.filter((point) => Number.isFinite(Number(point.value)));
+  if (!cleanPoints.length) {
+    return `<p class="muted">Treasury term-structure points are not available yet.</p>`;
+  }
+  const width = options.width || 760;
+  const height = options.height || 280;
+  const paddingX = 44;
+  const paddingY = 30;
+  const values = cleanPoints.map((point) => Number(point.value));
+  const minY = Math.min(...values);
+  const maxY = Math.max(...values);
+  const scaleX = (index) =>
+    paddingX + ((width - paddingX * 2) * index) / Math.max(1, cleanPoints.length - 1);
+  const scaleY = (value) =>
+    height - paddingY - ((value - minY) * (height - paddingY * 2)) / Math.max(1e-9, maxY - minY);
+
+  const polyline = cleanPoints
+    .map((point, index) => `${scaleX(index)},${scaleY(point.value)}`)
+    .join(" ");
+
+  const circles = cleanPoints
+    .map(
+      (point, index) => `
+        <circle cx="${scaleX(index)}" cy="${scaleY(point.value)}" r="4.5" fill="#c66a2b"></circle>
+        <text x="${scaleX(index)}" y="${height - 6}" text-anchor="middle" fill="#4d5b69" font-size="12">${point.label}</text>
+      `
+    )
+    .join("");
+
+  const yLabels = [minY, (minY + maxY) / 2, maxY]
+    .map(
+      (value) =>
+        `<text x="0" y="${scaleY(value) + 4}" fill="#4d5b69" font-size="12">${formatNumber(value)}</text>`
+    )
+    .join("");
+
+  return `
+    <div class="chart-shell">
+      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Treasury yield curve">
+        <rect x="${paddingX}" y="${paddingY / 2}" width="${width - paddingX * 2}" height="${height - paddingY * 1.5}" fill="rgba(16,34,53,0.03)" rx="18"></rect>
+        <polyline fill="none" stroke="#102235" stroke-width="3" points="${polyline}" />
+        ${circles}
+        ${yLabels}
+      </svg>
+    </div>
+  `;
+}
+
+function extractRegimeSeries(history, horizon = "mid") {
+  const latest = history[history.length - 1] || {};
+  const oneDay = history[history.length - 2] || latest;
+  const oneWeek = history[Math.max(0, history.length - 6)] || latest;
+  return Object.keys(latest)
+    .filter((key) => key.startsWith(`${horizon}_`) && !key.includes("dominant"))
+    .map((key) => {
+      const regimeId = key.replace(`${horizon}_`, "");
+      return {
+        regimeId,
+        current: Number(latest[key] || 0),
+        d1: Number(oneDay[key] || 0),
+        w1: Number(oneWeek[key] || 0),
+      };
+    })
+    .sort((a, b) => b.current - a.current);
+}
+
+function evidenceTagsForRegime(channelUpdates, regimeId, horizon = "mid") {
+  return (channelUpdates || [])
+    .filter((item) => item.horizon === horizon)
+    .map((item) => ({
+      channel: item.channel_name,
+      score: Number(item.regime_likelihoods?.[regimeId] || 0),
+      confidence: Number(item.confidence || 0),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .filter((item) => item.score > 0)
+    .slice(0, 2);
+}
+
+function buildRegimeMap(history, channelUpdates) {
+  const series = extractRegimeSeries(history, "mid");
+  if (!series.length) return `<p class="muted">Regime history is not available yet.</p>`;
+
+  const dominant = series[0];
+  const alternatives = series.slice(1, 5);
+  const dominantTags = evidenceTagsForRegime(channelUpdates, dominant.regimeId);
+  const renderNode = (node, emphasis = false) => {
+    const tags = evidenceTagsForRegime(channelUpdates, node.regimeId)
+      .map((item) => `<span class="node-tag">${titleize(item.channel)}</span>`)
+      .join("");
+    return `
+      <article class="regime-node ${emphasis ? "regime-node-focus" : ""}">
+        <span class="section-tag">${emphasis ? "Current node" : "Alternative path"}</span>
+        <h3>${titleize(node.regimeId)}</h3>
+        <div class="node-prob">${formatProbability(node.current)}</div>
+        <div class="node-deltas">
+          <span>Δ1D ${formatProbabilityDelta(node.current, node.d1)}</span>
+          <span>Δ1W ${formatProbabilityDelta(node.current, node.w1)}</span>
+        </div>
+        <div class="node-tags">${tags || `<span class="muted">No positive evidence tags</span>`}</div>
+      </article>
+    `;
+  };
+
+  return `
+    <div class="regime-map-layout">
+      <div class="regime-map-side">
+        ${alternatives.slice(0, 2).map((node) => renderNode(node)).join("")}
+      </div>
+      <div class="regime-map-focus">
+        ${renderNode(dominant, true)}
+        <div class="regime-focus-note">
+          <p><strong>Evidence:</strong> ${dominantTags.map((item) => titleize(item.channel)).join(", ") || "No positive evidence tags"}.</p>
+          <p><strong>Interpretation:</strong> ${titleize(dominant.regimeId)} remains the highest-probability regime path, while transition pressure stays visible in the alternative nodes.</p>
+        </div>
+      </div>
+      <div class="regime-map-side">
+        ${alternatives.slice(2, 4).map((node) => renderNode(node)).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function buildEvidenceBars(channelUpdates, dominantRegime) {
+  const items = (channelUpdates || [])
+    .filter((item) => item.horizon === "mid")
+    .map((item) => ({
+      channel: item.channel_name,
+      score: Number(item.regime_likelihoods?.[dominantRegime] || 0),
+      confidence: Number(item.confidence || 0),
+      note: item.notes,
+    }))
+    .sort((a, b) => b.score - a.score);
+
+  if (!items.length) return `<p class="muted">No evidence decomposition available.</p>`;
+
+  const maxScore = Math.max(...items.map((item) => Math.abs(item.score)), 1e-9);
+  return `
+    <div class="bar-list">
+      ${items
+        .map(
+          (item) => `
+            <div class="bar-row">
+              <div class="bar-label">
+                <span>${titleize(item.channel)}</span>
+                <strong>${formatNumber(item.score, 2)}</strong>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width:${(Math.abs(item.score) / maxScore) * 100}%"></div>
+              </div>
+              <p class="muted">Confidence ${formatNumber(item.confidence, 2)}. ${item.note}</p>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function buildPlayerHorizonGrid(playerRows) {
+  if (!playerRows.length) return `<p class="muted">Player probabilities are not available yet.</p>`;
+  const byHorizon = groupBy(playerRows, "horizon");
+  return `
+    <div class="horizon-columns">
+      ${["short", "mid", "long"]
+        .map((horizon) => {
+          const rows = byHorizon[horizon] || [];
+          const byPlayer = groupBy(rows, "player_id");
+          return `
+            <article class="horizon-card">
+              <span class="section-tag">${titleize(horizon)} horizon</span>
+              <h3>${titleize(horizon)} player paths</h3>
+              <ul class="horizon-list">
+                ${Object.entries(byPlayer)
+                  .map(([playerId, playerActions]) => {
+                    const top = playerActions
+                      .sort((a, b) => Number(b.probability) - Number(a.probability))
+                      .slice(0, 2)
+                      .map((item) => `${titleize(item.action)} (${formatPct(item.probability, 0)})`)
+                      .join(", ");
+                    return `<li><strong>${titleize(playerId)}:</strong> ${top}</li>`;
+                  })
+                  .join("")}
+              </ul>
+            </article>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function buildReviewOverview(archive) {
+  const missSummary = archive.miss_summary || [];
+  if (!missSummary.length) return `<p class="muted">Review statistics will populate as the archive deepens.</p>`;
+
+  const byHorizon = groupBy(missSummary, "target_horizon");
+  const cards = ["short", "mid", "long"].map((horizon) => {
+    const rows = (byHorizon[horizon] || []).sort((a, b) => Number(b.observations) - Number(a.observations));
+    const top = rows[0];
+    if (!top) {
+      return {
+        label: `${horizon} horizon`,
+        value: "No data",
+        body: "Review memory is still building.",
+      };
+    }
+    return {
+      label: `${horizon} horizon`,
+      value: titleize(top.miss_type),
+      body: `${top.observations} observations. Avg directional accuracy ${formatPct(top.avg_directional_accuracy, 0)}.`,
+    };
+  });
+  return buildMiniCards(cards);
+}
+
 function lineChart(series, options = {}) {
   const width = options.width || 720;
   const height = options.height || 280;
@@ -154,235 +393,89 @@ function lineChart(series, options = {}) {
 async function renderHome() {
   const latest = await loadJSON("latest");
   const history = await loadJSON("history");
+  const archive = await loadJSON("archive");
   const summary = latest.summary;
   const current = summary.current_regime;
-  const midHistoryRow = history[history.length - 1] || {};
   const roadmapSummary = latest.roadmap_summary || {};
+  const curve = summary.curve_snapshot;
+  const channelUpdates = summary.channel_updates || [];
 
   setHTML(
-    "hero-summary",
+    "snapshot-lead",
     `
-      <div class="summary-card profile-tile">
+      <div class="snapshot-author">
         <img src="/profile_git_jae.jpg" alt="Jaeseok Hwang" />
         <div>
-          <span class="section-tag">Author</span>
+          <span class="section-tag">As of ${formatDate(summary.date)}</span>
           <h3>Jaeseok Hwang</h3>
-          <p>Macro and quant research focused on Treasury regime shifts, curve behavior, and decision support.</p>
+          <p class="muted">Macro and quant research focused on Treasury regime shifts, curve behavior, and decision support.</p>
         </div>
       </div>
-      <div class="summary-card">
-        <span class="section-tag">Current regime</span>
-        <h3>${titleize(current.mid.regime_id)}</h3>
-        <div class="value">${formatPct(current.mid.probability, 1)}</div>
-        <p>Mid-horizon dominant regime as of ${formatDate(summary.date)}.</p>
+      <div class="snapshot-badges">
+        <span class="badge">Mid-horizon regime: ${titleize(current.mid.regime_id)}</span>
+        <span class="badge">Shock: ${titleize(summary.shock_event.dominant_category)}</span>
+        <span class="badge">Roadmap: ${roadmapSummary.system_version || "v1"}</span>
       </div>
-      <div class="summary-card">
-        <span class="section-tag">Dominant shock</span>
-        <h3>${titleize(summary.shock_event.dominant_category)}</h3>
-        <div class="value">${formatNumber(summary.shock_event.persistence_score, 2)}</div>
-        <p>Persistence score through the ${titleize(summary.shock_event.transmission_channel)} channel.</p>
+      <div class="report-note">
+        <p><strong>Current path:</strong> ${titleize(current.mid.regime_id)} is the dominant regime node at ${formatProbability(current.mid.probability)}.</p>
+        <p><strong>Treasury read-through:</strong> ${summary.curve_decomposition.interpretation}</p>
+        <p><strong>Before the open:</strong> the system is watching ${titleize(summary.strategy.directional_view)} with a ${titleize(summary.strategy.curve_view)} bias, while ${titleize(summary.strategy.main_risk)} remains the main risk channel.</p>
       </div>
     `
   );
 
   setHTML(
-    "summary-grid",
-    [
-      {
-        label: "Short-horizon strategy",
-        value: titleize(summary.strategy.directional_view),
-        body: `Curve bias: ${titleize(summary.strategy.curve_view)}.`,
-      },
-      {
-        label: "Main risk",
-        value: titleize(summary.strategy.main_risk),
-        body: "The primary channel that can challenge the current Treasury view.",
-      },
-      {
-        label: "2s10s",
-        value: `${formatNumber(summary.curve_snapshot.curve_2s10s * 100, 1)} bp`,
-        body: "Yesterday’s curve slope.",
-      },
-      {
-        label: "Breakeven",
-        value: `${formatNumber(summary.curve_snapshot.breakeven_10y, 2)}`,
-        body: "10Y inflation compensation proxy.",
-      },
-      {
-        label: "10Y VAR term premium",
-        value: `${formatNumber(summary.curve_snapshot.term_premium_proxy_10y, 2)}`,
-        body: "10Y yield minus a rolling VAR-style expected short-rate path.",
-      },
-      {
-        label: "System roadmap",
-        value: roadmapSummary.system_version || "v1",
-        body: `${roadmapSummary.high_priority_count || 0} high-priority tracked upgrades in the version map.`,
-      },
-    ]
-      .map(
-        (card) => `
-          <article class="summary-card">
-            <span class="section-tag">${card.label}</span>
-            <h3>${card.value}</h3>
-            <p>${card.body}</p>
-          </article>
-        `
-      )
-      .join("")
+    "curve-term-chart",
+    termStructureChart([
+      { label: "3M", value: curve.yield_3m },
+      { label: "6M", value: curve.yield_6m },
+      { label: "1Y", value: curve.yield_1y },
+      { label: "2Y", value: curve.yield_2y },
+      { label: "3Y", value: curve.yield_3y },
+      { label: "5Y", value: curve.yield_5y },
+      { label: "7Y", value: curve.yield_7y },
+      { label: "10Y", value: curve.yield_10y },
+      { label: "20Y", value: curve.yield_20y },
+      { label: "30Y", value: curve.yield_30y },
+    ])
   );
+
+  setHTML(
+    "snapshot-metrics",
+    buildMiniCards([
+      { label: "3M", value: formatNumber(curve.yield_3m, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_3m_bp, 1, " bp")}` },
+      { label: "2Y", value: formatNumber(curve.yield_2y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_2y_bp, 1, " bp")}` },
+      { label: "5Y", value: formatNumber(curve.yield_5y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_5y_bp, 1, " bp")}` },
+      { label: "10Y", value: formatNumber(curve.yield_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_10y_bp, 1, " bp")}` },
+      { label: "30Y", value: formatNumber(curve.yield_30y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_30y_bp, 1, " bp")}` },
+      { label: "2s10s", value: `${formatNumber(curve.curve_2s10s * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.curve_2s10s_bp, 1, " bp")}` },
+      { label: "5s30s", value: `${formatNumber(curve.curve_5s30s * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.curve_5s30s_bp, 1, " bp")}` },
+      { label: "5Y breakeven", value: formatNumber(curve.breakeven_5y, 2), body: `Daily ${formatSigned(summary.daily_changes.breakeven_5y_bp, 1, " bp")}` },
+      { label: "10Y breakeven", value: formatNumber(curve.breakeven_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.breakeven_10y_bp, 1, " bp")}` },
+      { label: "10Y real yield", value: formatNumber(curve.real_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.real_10y_bp, 1, " bp")}` },
+      { label: "SOFR", value: formatNumber(curve.sofr, 2), body: `Daily ${formatSigned(summary.daily_changes.sofr_bp, 1, " bp")}` },
+      { label: "SOFR-FF proxy", value: `${formatNumber(curve.sofr_minus_ff * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.sofr_minus_ff_bp, 1, " bp")}` },
+      { label: "OBFR-SOFR proxy", value: `${formatNumber(curve.repo_minus_sofr * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.repo_minus_sofr_bp, 1, " bp")}` },
+      { label: "10Y term premium", value: formatNumber(curve.term_premium_proxy_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.term_premium_proxy_10y_bp, 1, " bp")}` },
+    ])
+  );
+
+  setHTML("regime-map", buildRegimeMap(history, channelUpdates));
+  setHTML("evidence-bars", buildEvidenceBars(channelUpdates, current.mid.regime_id));
 
   setHTML(
     "executive-report",
     `
-      <p><strong>Base case:</strong> ${titleize(current.mid.regime_id)} remains the dominant mid-horizon regime at ${formatPct(current.mid.probability, 1)}.</p>
-      <p><strong>Immediate driver:</strong> the shock layer reads ${titleize(summary.shock_event.dominant_category)} through ${titleize(summary.shock_event.transmission_channel)}.</p>
-      <p><strong>Treasury interpretation:</strong> ${summary.curve_decomposition.interpretation}</p>
-      <p><strong>Desk implication:</strong> ${titleize(summary.strategy.directional_view)} with a ${titleize(summary.strategy.curve_view)} bias, while the main risk remains ${titleize(summary.strategy.main_risk)}.</p>
+      <p><strong>Dominant regime:</strong> ${titleize(current.mid.regime_id)} at ${formatProbability(current.mid.probability)}.</p>
+      <p><strong>Dominant shock:</strong> ${titleize(summary.shock_event.dominant_category)} with persistence ${formatNumber(summary.shock_event.persistence_score, 2)} and confidence ${formatNumber(summary.shock_event.confidence_score, 2)}.</p>
+      <p><strong>Curve signal:</strong> Nelson-Siegel curvature is ${formatNumber(curve.ns_curvature, 2)}, 10Y term premium is ${formatNumber(curve.term_premium_proxy_10y, 2)}, and policy uncertainty is ${formatNumber(summary.curve_decomposition.policy_uncertainty_score, 2)}.</p>
+      <p><strong>Desk implication:</strong> ${titleize(summary.strategy.directional_view)} with ${titleize(summary.strategy.curve_view)} and a main risk of ${titleize(summary.strategy.main_risk)}.</p>
       <p><strong>Falsifier:</strong> ${summary.strategy.falsifier}</p>
     `
   );
 
-  setHTML(
-    "horizon-grid",
-    buildMiniCards(
-      ["short", "mid", "long"].map((horizon) => ({
-        label: `${horizon} horizon`,
-        value: titleize(current[horizon].regime_id),
-        body: `Posterior ${formatPct(current[horizon].probability, 1)} for the ${horizon}-horizon dominant regime.`,
-      }))
-    )
-  );
-
-  setHTML(
-    "risk-grid",
-    buildMiniCards([
-      {
-        label: "10Y expected short rate",
-        value: formatNumber(summary.curve_snapshot.expected_short_rate_proxy_10y, 2),
-        body: "Rolling VAR-style expected short-rate path embedded in the 10Y sector.",
-      },
-      {
-        label: "10Y term premium",
-        value: formatNumber(summary.curve_snapshot.term_premium_proxy_10y, 2),
-        body: "Residual long-end compensation after stripping out the expected short-rate path.",
-      },
-      {
-        label: "10Y duration",
-        value: formatNumber(summary.risk_measures.mod_duration_10y, 2),
-        body: "Cash-flow-based modified duration using a semiannual par-bond approximation.",
-      },
-      {
-        label: "10Y DV01",
-        value: formatNumber(summary.risk_measures.dv01_10y, 4),
-        body: "Dollar value of one basis point per 100 par in the 10Y benchmark risk frame.",
-      },
-    ])
-  );
-
-  setHTML(
-    "shock-grid",
-    buildMiniCards([
-      {
-        label: "Dominant shock",
-        value: titleize(summary.shock_event.dominant_category),
-        body: "Primary ex-post shock classification from official and market evidence.",
-      },
-      {
-        label: "Persistence",
-        value: formatNumber(summary.shock_event.persistence_score, 2),
-        body: "Current estimate of how long the shock should keep shaping the regime path.",
-      },
-      {
-        label: "Confidence",
-        value: formatNumber(summary.shock_event.confidence_score, 2),
-        body: "Confidence score on the current shock assignment.",
-      },
-      {
-        label: "Policy uncertainty",
-        value: formatNumber(summary.curve_decomposition.policy_uncertainty_score, 2),
-        body: "Treasury-curve signal for medium-horizon policy confusion or paralysis.",
-      },
-    ])
-  );
-
-  const regimeBars = Object.keys(midHistoryRow)
-    .filter((key) => key.startsWith("mid_") && !key.includes("dominant"))
-    .map((key) => ({ label: key.replace("mid_", ""), value: Number(midHistoryRow[key]) }))
-    .sort((a, b) => b.value - a.value);
-  setHTML("regime-bars", buildBarList(regimeBars));
-
-  const channelUpdates = (summary.channel_updates || [])
-    .filter((item) => item.horizon === "mid")
-    .map(
-      (item) => `
-        <div class="list-item">
-          <strong>${titleize(item.channel_name)}</strong>
-          <p class="muted">${item.notes}</p>
-        </div>
-      `
-    )
-    .join("");
-  setHTML("channel-list", channelUpdates);
-
-  const recentHistory = history.slice(-90);
-  setHTML(
-    "yield-chart",
-    lineChart([
-      {
-        label: "2Y yield",
-        color: "#c66a2b",
-        values: recentHistory.map((row) => ({ date: row.date, value: Number(row.yield_2y) })),
-      },
-      {
-        label: "10Y yield",
-        color: "#102235",
-        values: recentHistory.map((row) => ({ date: row.date, value: Number(row.yield_10y) })),
-      },
-    ])
-  );
-
-  setHTML(
-    "curve-table",
-    buildTable(
-      ["Metric", "Level", "Daily change"],
-      [
-        ["2Y", formatNumber(summary.curve_snapshot.yield_2y, 2), `${formatNumber(summary.daily_changes.yield_2y_bp, 1)} bp`],
-        ["10Y", formatNumber(summary.curve_snapshot.yield_10y, 2), `${formatNumber(summary.daily_changes.yield_10y_bp, 1)} bp`],
-        ["2s10s", `${formatNumber(summary.curve_snapshot.curve_2s10s * 100, 1)} bp`, `${formatNumber(summary.daily_changes.curve_2s10s_bp, 1)} bp`],
-        ["10Y breakeven", formatNumber(summary.curve_snapshot.breakeven_10y, 2), `${formatNumber(summary.daily_changes.breakeven_10y_bp, 1)} bp`],
-        ["NS curvature", formatNumber(summary.curve_snapshot.ns_curvature, 2), "state"],
-        ["10Y VAR term premium", formatNumber(summary.curve_snapshot.term_premium_proxy_10y, 2), `${formatNumber(summary.daily_changes.term_premium_proxy_10y_bp, 1)} bp`],
-      ]
-    )
-  );
-
-  const groupedPlayers = groupBy(latest.player_probabilities, "player_id");
-  setHTML(
-    "player-grid",
-    Object.entries(groupedPlayers)
-      .map(([playerId, rows]) => {
-        const groupedHorizons = groupBy(rows, "horizon");
-        return `
-          <article class="player-card">
-            <span class="section-tag">${titleize(playerId)}</span>
-            <h3>${titleize(playerId)}</h3>
-            <ul>
-              ${Object.entries(groupedHorizons)
-                .map(
-                  ([horizon, actions]) =>
-                    `<li><strong>${titleize(horizon)}:</strong> ${actions
-                      .sort((a, b) => b.probability - a.probability)
-                      .slice(0, 3)
-                      .map((item) => `${titleize(item.action)} (${formatPct(item.probability, 0)})`)
-                      .join(", ")}</li>`
-                )
-                .join("")}
-            </ul>
-          </article>
-        `;
-      })
-      .join("")
-  );
+  setHTML("player-horizon-grid", buildPlayerHorizonGrid(latest.player_probabilities || []));
+  setHTML("review-overview", buildReviewOverview(archive));
 
   setHTML(
     "source-table",
@@ -398,17 +491,6 @@ async function renderHome() {
           ])
         )
       : `<p class="muted">Source scorecards will populate as the forecast-review memory builds.</p>`
-  );
-
-  setHTML(
-    "thesis-note",
-    `
-      <p><strong>Yesterday’s move:</strong> 2Y ${formatNumber(summary.daily_changes.yield_2y_bp, 1)} bp, 10Y ${formatNumber(summary.daily_changes.yield_10y_bp, 1)} bp, 2s10s ${formatNumber(summary.daily_changes.curve_2s10s_bp, 1)} bp.</p>
-      <p><strong>Current regime path:</strong> ${titleize(current.mid.regime_id)} remains dominant, with the shock layer reading ${titleize(summary.shock_event.dominant_category)}.</p>
-      <p><strong>Curve math:</strong> Nelson-Siegel curvature is ${formatNumber(summary.curve_snapshot.ns_curvature, 2)}, and the 10Y VAR-style term-premium proxy is ${formatNumber(summary.curve_snapshot.term_premium_proxy_10y, 2)}.</p>
-      <p><strong>Manager takeaway:</strong> the system is watching whether Treasury pricing keeps expressing a ${titleize(summary.strategy.main_risk)} story or rotates into a cleaner slowdown or re-anchoring path.</p>
-      <p><strong>Falsifier:</strong> ${summary.strategy.falsifier}</p>
-    `
   );
 }
 

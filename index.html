@@ -6,7 +6,7 @@
     <title>Jaeseok Hwang | Treasury Regime Lab</title>
     <meta
       name="description"
-      content="Regime-first Treasury market research, daily regime-path updates, and player-driven strategy tracking."
+      content="Daily Treasury market snapshot, Bayesian regime map, and player-driven strategy tracking."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,89 +31,72 @@
       </header>
 
       <main class="main-layout">
-        <section class="hero-panel">
-          <div class="hero-copy">
-            <span class="eyebrow">Manager-facing macro strategy system</span>
-            <h1>Regime-first Treasury research built for strategy heads and hiring managers.</h1>
-            <p class="lede">
-              This site tracks the latent economic regime path, the shock overlay,
-              and the player responses that matter for Treasury decision-making.
-            </p>
-            <div class="hero-actions">
-              <a class="button-primary" href="/framework/">See framework</a>
-              <a class="button-secondary" href="/roadmap/">See roadmap</a>
-              <a class="button-secondary" href="/archive/">Review archive</a>
-            </div>
-          </div>
-          <aside class="hero-summary" id="hero-summary">
-            <p class="summary-loading">Loading latest regime snapshot…</p>
-          </aside>
-        </section>
-
-        <section class="summary-grid" id="summary-grid"></section>
-
-        <section class="section-grid section-grid-wide">
-          <article class="panel">
+        <section class="snapshot-hero">
+          <article class="panel snapshot-lead">
             <div class="panel-header">
-              <span class="section-tag">Executive report</span>
-              <h2>What matters before the open</h2>
+              <span class="section-tag">Daily snapshot</span>
+              <h1>Current path of the economy through the Treasury market.</h1>
             </div>
-            <div id="executive-report" class="report-note"></div>
+            <div id="snapshot-lead"></div>
           </article>
-          <article class="panel">
+          <article class="panel snapshot-curve-panel">
             <div class="panel-header">
-              <span class="section-tag">Horizon map</span>
-              <h2>Regime path by horizon</h2>
+              <span class="section-tag">Treasury curve</span>
+              <h2>Today’s yield curve and funding frame</h2>
             </div>
-            <div id="horizon-grid"></div>
-          </article>
-        </section>
-
-        <section class="section-grid">
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Risk frame</span>
-              <h2>Duration, DV01, and term premium</h2>
-            </div>
-            <div id="risk-grid"></div>
-          </article>
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Shock map</span>
-              <h2>Transmission and persistence</h2>
-            </div>
-            <div id="shock-grid"></div>
-          </article>
-        </section>
-
-        <section class="section-grid section-grid-wide">
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Regime path</span>
-              <h2>Mid-horizon posterior and path pressure</h2>
-            </div>
-            <div id="regime-bars"></div>
-            <div id="channel-list" class="compact-list"></div>
-          </article>
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Treasury mirror</span>
-              <h2>2Y / 10Y path and inner-circle context</h2>
-            </div>
-            <div id="yield-chart"></div>
-            <div id="curve-table"></div>
+            <div id="curve-term-chart"></div>
           </article>
         </section>
 
         <section class="panel">
           <div class="panel-header">
-            <span class="section-tag">Player map</span>
-            <h2>Who is likely to move next?</h2>
+            <span class="section-tag">Market snapshot</span>
+            <h2>Yields, spreads, breakevens, real yields, and funding</h2>
           </div>
-          <div class="player-grid" id="player-grid"></div>
+          <div id="snapshot-metrics"></div>
         </section>
 
-        <section class="section-grid">
+        <section class="panel">
+          <div class="panel-header">
+            <span class="section-tag">Bayesian regime map</span>
+            <h2>Current regime node and nearest alternative paths</h2>
+          </div>
+          <div id="regime-map"></div>
+        </section>
+
+        <section class="section-grid section-grid-wide">
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Evidence decomposition</span>
+              <h2>What is pushing the current regime call?</h2>
+            </div>
+            <div id="evidence-bars"></div>
+          </article>
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Decision note</span>
+              <h2>What matters before the open</h2>
+            </div>
+            <div id="executive-report" class="report-note"></div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <span class="section-tag">Player response by horizon</span>
+            <h2>How Treasury, Fed, dealers, buy side, and foreign officials are likely to react</h2>
+          </div>
+          <div id="player-horizon-grid"></div>
+        </section>
+
+        <section class="section-grid section-grid-wide">
+          <article class="panel">
+            <div class="panel-header">
+              <span class="section-tag">Model review</span>
+              <h2>What the system has been getting right and wrong</h2>
+            </div>
+            <div id="review-overview"></div>
+          </article>
           <article class="panel">
             <div class="panel-header">
               <span class="section-tag">Source review</span>
@@ -121,17 +104,10 @@
             </div>
             <div id="source-table"></div>
           </article>
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Current thesis</span>
-              <h2>Treasury decision note</h2>
-            </div>
-            <div id="thesis-note" class="narrative-note"></div>
-          </article>
         </section>
       </main>
     </div>
 
     <script src="/assets/app.js" defer></script>
   </body>
-  </html>
+</html>
