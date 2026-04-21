@@ -31,35 +31,44 @@
       </header>
 
       <main class="main-layout">
-        <section class="snapshot-hero">
-          <article class="panel snapshot-lead">
+        <section class="market-command">
+          <article class="panel command-hero">
             <div class="panel-header">
-              <span class="section-tag">Daily snapshot</span>
-              <h1>Current path of the economy through the Treasury market.</h1>
+              <span class="section-tag">Market snapshot</span>
+              <h1>Treasury regime snapshot before the open.</h1>
             </div>
-            <div id="snapshot-lead"></div>
+            <div id="hero-summary"></div>
           </article>
-          <article class="panel snapshot-curve-panel">
+          <article class="panel command-board">
             <div class="panel-header">
-              <span class="section-tag">Treasury curve</span>
-              <h2>Today’s yield curve and funding frame</h2>
+              <span class="section-tag">Signal board</span>
+              <h2>What changed in rates, funding, and inflation</h2>
             </div>
-            <div id="curve-term-chart"></div>
+            <div id="hero-signals"></div>
           </article>
         </section>
 
-        <section class="panel">
-          <div class="panel-header">
-            <span class="section-tag">Market snapshot</span>
-            <h2>Yields, spreads, breakevens, real yields, and funding</h2>
-          </div>
-          <div id="snapshot-metrics"></div>
+        <section class="snapshot-grid">
+          <article class="panel curve-stage">
+            <div class="panel-header">
+              <span class="section-tag">Treasury curve</span>
+              <h2>Yesterday’s curve shape and sector pricing</h2>
+            </div>
+            <div id="curve-term-chart"></div>
+          </article>
+          <article class="panel snapshot-panel">
+            <div class="panel-header">
+              <span class="section-tag">Key levels</span>
+              <h2>Rates board, curve, breakevens, real yields, and funding</h2>
+            </div>
+            <div id="snapshot-metrics"></div>
+          </article>
         </section>
 
         <section class="panel">
           <div class="panel-header">
             <span class="section-tag">Bayesian regime map</span>
-            <h2>Current regime node and nearest alternative paths</h2>
+            <h2>Current path, transition pressure, and nearest alternatives</h2>
           </div>
           <div id="regime-map"></div>
         </section>
@@ -68,14 +77,14 @@
           <article class="panel">
             <div class="panel-header">
               <span class="section-tag">Evidence decomposition</span>
-              <h2>What is pushing the current regime call?</h2>
+              <h2>What is pushing the regime posterior right now?</h2>
             </div>
             <div id="evidence-bars"></div>
           </article>
           <article class="panel">
             <div class="panel-header">
               <span class="section-tag">Decision note</span>
-              <h2>What matters before the open</h2>
+              <h2>Desk takeaway and falsifiers</h2>
             </div>
             <div id="executive-report" class="report-note"></div>
           </article>
@@ -84,7 +93,7 @@
         <section class="panel">
           <div class="panel-header">
             <span class="section-tag">Player response by horizon</span>
-            <h2>How Treasury, Fed, dealers, buy side, and foreign officials are likely to react</h2>
+            <h2>How each player is likely to respond across short, mid, and long horizons</h2>
           </div>
           <div id="player-horizon-grid"></div>
         </section>
@@ -93,7 +102,7 @@
           <article class="panel">
             <div class="panel-header">
               <span class="section-tag">Model review</span>
-              <h2>What the system has been getting right and wrong</h2>
+              <h2>What the model has been getting right and wrong</h2>
             </div>
             <div id="review-overview"></div>
           </article>

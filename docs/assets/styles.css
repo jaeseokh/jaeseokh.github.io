@@ -389,58 +389,145 @@ a {
   font-size: 0.82rem;
 }
 
-.snapshot-hero {
+.market-command,
+.snapshot-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
   gap: 24px;
 }
 
-.snapshot-lead,
-.snapshot-curve-panel {
+.command-hero,
+.command-board,
+.curve-stage,
+.snapshot-panel {
   min-height: 100%;
 }
 
-.snapshot-author {
-  display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 18px;
-}
-
-.snapshot-author img {
-  width: 84px;
-  height: 84px;
-  border-radius: 22px;
-  object-fit: cover;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 26px rgba(16, 34, 53, 0.10);
-}
-
-.snapshot-author h3 {
-  margin: 4px 0 6px;
+.market-command h1 {
+  margin: 10px 0 0;
   font-family: "Fraunces", serif;
-  font-size: 1.45rem;
+  letter-spacing: -0.04em;
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  line-height: 0.98;
+  max-width: 12ch;
 }
 
-.snapshot-badges {
+.command-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
-#snapshot-metrics .mini-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+.command-topline {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(180px, 0.65fr);
+  gap: 18px;
+  align-items: start;
 }
 
-#snapshot-metrics .mini-stat {
-  min-height: 132px;
+.command-title {
+  margin-bottom: 10px;
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
-#snapshot-metrics .mini-stat h3 {
-  font-size: 1.35rem;
-  margin: 10px 0 8px;
+.probability-tile,
+.command-kpi,
+.metric-cell {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.probability-tile {
+  padding: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(198, 106, 43, 0.12), transparent 34%),
+    rgba(255, 255, 255, 0.72);
+}
+
+.probability-number {
+  margin-top: 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.command-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.command-kpi {
+  padding: 16px 18px;
+}
+
+.takeaway-strip {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(16, 34, 53, 0.06);
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.signal-board,
+.metric-board {
+  display: grid;
+  gap: 14px;
+}
+
+.signal-board {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric-board {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-cell {
+  padding: 15px 16px;
+}
+
+.metric-label {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.metric-value {
+  margin-top: 8px;
+  font-family: "Fraunces", serif;
+  font-size: 1.38rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.metric-change {
+  margin-top: 8px;
+  color: var(--accent-deep);
+  font-size: 0.88rem;
+}
+
+.metric-note {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.curve-footnotes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .regime-map-layout {
@@ -565,19 +652,20 @@ a {
   .summary-grid,
   .player-grid,
   .regime-card-grid,
-  .snapshot-hero,
+  .market-command,
+  .snapshot-grid,
   .regime-map-layout,
-  .horizon-columns {
+  .horizon-columns,
+  .command-kpis,
+  .command-topline,
+  .signal-board,
+  .metric-board {
     grid-template-columns: 1fr;
   }
 
   .site-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  #snapshot-metrics .mini-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -591,11 +679,8 @@ a {
     border-radius: 24px;
   }
 
-  .snapshot-author {
-    grid-template-columns: 1fr;
-  }
-
-  #snapshot-metrics .mini-grid {
-    grid-template-columns: 1fr;
+  .command-meta,
+  .curve-footnotes {
+    gap: 8px;
   }
 }

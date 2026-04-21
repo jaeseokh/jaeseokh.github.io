@@ -332,6 +332,25 @@ function buildReviewOverview(archive) {
   return buildMiniCards(cards);
 }
 
+function buildMetricBoard(items, className = "metric-board") {
+  return `
+    <div class="${className}">
+      ${items
+        .map(
+          (item) => `
+            <article class="metric-cell">
+              <span class="metric-label">${item.label}</span>
+              <div class="metric-value">${item.value}</div>
+              <div class="metric-change">${item.change || ""}</div>
+              ${item.note ? `<p class="metric-note">${item.note}</p>` : ""}
+            </article>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function lineChart(series, options = {}) {
   const width = options.width || 720;
   const height = options.height || 280;
@@ -394,34 +413,110 @@ async function renderHome() {
   const latest = await loadJSON("latest");
   const history = await loadJSON("history");
   const archive = await loadJSON("archive");
-  const summary = latest.summary;
-  const current = summary.current_regime;
+  const summary = latest.summary || {};
+  const current = summary.current_regime || {
+    short: { regime_id: "unknown", probability: 0 },
+    mid: { regime_id: "unknown", probability: 0 },
+    long: { regime_id: "unknown", probability: 0 },
+  };
   const roadmapSummary = latest.roadmap_summary || {};
-  const curve = summary.curve_snapshot;
+  const curve = summary.curve_snapshot || {};
+  const daily = summary.daily_changes || {};
+  const shock = summary.shock_event || {};
+  const strategy = summary.strategy || {};
   const channelUpdates = summary.channel_updates || [];
+  const sourceScorecard = latest.source_scorecard || [];
+  const regimeSeries = extractRegimeSeries(history, "mid");
+  const alternative = regimeSeries[1] || { regimeId: "no_alternative_path", current: 0, d1: 0, w1: 0 };
+  const dominantEvidence = evidenceTagsForRegime(channelUpdates, current.mid.regime_id || "unknown")
+    .map((item) => titleize(item.channel))
+    .join(", ");
 
   setHTML(
-    "snapshot-lead",
+    "hero-summary",
     `
-      <div class="snapshot-author">
-        <img src="/profile_git_jae.jpg" alt="Jaeseok Hwang" />
+      <div class="command-meta">
+        <span class="section-tag">As of ${formatDate(summary.date)}</span>
+        <span class="badge">War anchor ${summary.war_anchor_date || "2025-06-21"}</span>
+        <span class="badge">System ${roadmapSummary.system_version || "v1"}</span>
+      </div>
+      <div class="command-topline">
         <div>
-          <span class="section-tag">As of ${formatDate(summary.date)}</span>
-          <h3>Jaeseok Hwang</h3>
-          <p class="muted">Macro and quant research focused on Treasury regime shifts, curve behavior, and decision support.</p>
+          <div class="command-title">${titleize(current.mid.regime_id)}</div>
+          <p class="body-copy">The market is still centered on <strong>${titleize(current.mid.regime_id)}</strong>, with <strong>${titleize(shock.dominant_category)}</strong> acting as the dominant shock overlay.</p>
+        </div>
+        <div class="probability-tile">
+          <span class="section-tag">Mid-horizon probability</span>
+          <div class="probability-number">${formatProbability(current.mid.probability)}</div>
+          <div class="metric-change">Dominant regime node</div>
         </div>
       </div>
-      <div class="snapshot-badges">
-        <span class="badge">Mid-horizon regime: ${titleize(current.mid.regime_id)}</span>
-        <span class="badge">Shock: ${titleize(summary.shock_event.dominant_category)}</span>
-        <span class="badge">Roadmap: ${roadmapSummary.system_version || "v1"}</span>
+      <div class="command-kpis">
+        <article class="command-kpi">
+          <span class="metric-label">Top alternative</span>
+          <div class="metric-value">${titleize(alternative.regimeId)}</div>
+          <div class="metric-change">${formatProbability(alternative.current)} | Δ1D ${formatProbabilityDelta(alternative.current, alternative.d1)}</div>
+        </article>
+        <article class="command-kpi">
+          <span class="metric-label">Dominant shock</span>
+          <div class="metric-value">${titleize(shock.dominant_category)}</div>
+          <div class="metric-change">Persistence ${formatNumber(shock.persistence_score, 2)} | Confidence ${formatNumber(shock.confidence_score, 2)}</div>
+        </article>
+        <article class="command-kpi">
+          <span class="metric-label">Treasury bias</span>
+          <div class="metric-value">${titleize(strategy.directional_view)}</div>
+          <div class="metric-change">${titleize(strategy.curve_view)} | Risk ${titleize(strategy.main_risk)}</div>
+        </article>
       </div>
-      <div class="report-note">
-        <p><strong>Current path:</strong> ${titleize(current.mid.regime_id)} is the dominant regime node at ${formatProbability(current.mid.probability)}.</p>
-        <p><strong>Treasury read-through:</strong> ${summary.curve_decomposition.interpretation}</p>
-        <p><strong>Before the open:</strong> the system is watching ${titleize(summary.strategy.directional_view)} with a ${titleize(summary.strategy.curve_view)} bias, while ${titleize(summary.strategy.main_risk)} remains the main risk channel.</p>
+      <div class="takeaway-strip">
+        <strong>Before the open:</strong> ${summary.curve_decomposition?.interpretation || "Treasury decomposition note is not available."}
       </div>
     `
+  );
+
+  setHTML(
+    "hero-signals",
+    buildMetricBoard(
+      [
+        {
+          label: "2Y",
+          value: formatNumber(curve.yield_2y, 2),
+          change: formatSigned(daily.yield_2y_bp, 1, " bp"),
+          note: "Front-end policy pricing",
+        },
+        {
+          label: "10Y",
+          value: formatNumber(curve.yield_10y, 2),
+          change: formatSigned(daily.yield_10y_bp, 1, " bp"),
+          note: "Benchmark duration level",
+        },
+        {
+          label: "2s10s",
+          value: `${formatNumber(Number(curve.curve_2s10s) * 100, 1)} bp`,
+          change: formatSigned(daily.curve_2s10s_bp, 1, " bp"),
+          note: "Growth-policy slope",
+        },
+        {
+          label: "10Y breakeven",
+          value: formatNumber(curve.breakeven_10y, 2),
+          change: formatSigned(daily.breakeven_10y_bp, 1, " bp"),
+          note: "Inflation compensation",
+        },
+        {
+          label: "10Y real",
+          value: formatNumber(curve.real_10y, 2),
+          change: formatSigned(daily.real_10y_bp, 1, " bp"),
+          note: "Real-rate anchor",
+        },
+        {
+          label: "SOFR-FF",
+          value: `${formatNumber(Number(curve.sofr_minus_ff) * 100, 1)} bp`,
+          change: formatSigned(daily.sofr_minus_ff_bp, 1, " bp"),
+          note: "Funding wedge proxy",
+        },
+      ],
+      "signal-board"
+    )
   );
 
   setHTML(
@@ -437,26 +532,32 @@ async function renderHome() {
       { label: "10Y", value: curve.yield_10y },
       { label: "20Y", value: curve.yield_20y },
       { label: "30Y", value: curve.yield_30y },
-    ])
+    ]) +
+      `
+        <div class="curve-footnotes">
+          <span class="badge">5s30s ${formatNumber(Number(curve.curve_5s30s) * 100, 1)} bp</span>
+          <span class="badge">2s5s10s fly ${formatNumber(curve.fly_2s5s10s, 1)} bp</span>
+          <span class="badge">NS curvature ${formatNumber(curve.ns_curvature, 2)}</span>
+          <span class="badge">10Y term premium ${formatNumber(curve.term_premium_proxy_10y, 2)}</span>
+        </div>
+      `
   );
 
   setHTML(
     "snapshot-metrics",
-    buildMiniCards([
-      { label: "3M", value: formatNumber(curve.yield_3m, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_3m_bp, 1, " bp")}` },
-      { label: "2Y", value: formatNumber(curve.yield_2y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_2y_bp, 1, " bp")}` },
-      { label: "5Y", value: formatNumber(curve.yield_5y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_5y_bp, 1, " bp")}` },
-      { label: "10Y", value: formatNumber(curve.yield_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_10y_bp, 1, " bp")}` },
-      { label: "30Y", value: formatNumber(curve.yield_30y, 2), body: `Daily ${formatSigned(summary.daily_changes.yield_30y_bp, 1, " bp")}` },
-      { label: "2s10s", value: `${formatNumber(curve.curve_2s10s * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.curve_2s10s_bp, 1, " bp")}` },
-      { label: "5s30s", value: `${formatNumber(curve.curve_5s30s * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.curve_5s30s_bp, 1, " bp")}` },
-      { label: "5Y breakeven", value: formatNumber(curve.breakeven_5y, 2), body: `Daily ${formatSigned(summary.daily_changes.breakeven_5y_bp, 1, " bp")}` },
-      { label: "10Y breakeven", value: formatNumber(curve.breakeven_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.breakeven_10y_bp, 1, " bp")}` },
-      { label: "10Y real yield", value: formatNumber(curve.real_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.real_10y_bp, 1, " bp")}` },
-      { label: "SOFR", value: formatNumber(curve.sofr, 2), body: `Daily ${formatSigned(summary.daily_changes.sofr_bp, 1, " bp")}` },
-      { label: "SOFR-FF proxy", value: `${formatNumber(curve.sofr_minus_ff * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.sofr_minus_ff_bp, 1, " bp")}` },
-      { label: "OBFR-SOFR proxy", value: `${formatNumber(curve.repo_minus_sofr * 100, 1)} bp`, body: `Daily ${formatSigned(summary.daily_changes.repo_minus_sofr_bp, 1, " bp")}` },
-      { label: "10Y term premium", value: formatNumber(curve.term_premium_proxy_10y, 2), body: `Daily ${formatSigned(summary.daily_changes.term_premium_proxy_10y_bp, 1, " bp")}` },
+    buildMetricBoard([
+      { label: "3M", value: formatNumber(curve.yield_3m, 2), change: formatSigned(daily.yield_3m_bp, 1, " bp") },
+      { label: "5Y", value: formatNumber(curve.yield_5y, 2), change: formatSigned(daily.yield_5y_bp, 1, " bp") },
+      { label: "30Y", value: formatNumber(curve.yield_30y, 2), change: formatSigned(daily.yield_30y_bp, 1, " bp") },
+      { label: "5s30s", value: `${formatNumber(Number(curve.curve_5s30s) * 100, 1)} bp`, change: formatSigned(daily.curve_5s30s_bp, 1, " bp") },
+      { label: "5Y breakeven", value: formatNumber(curve.breakeven_5y, 2), change: formatSigned(daily.breakeven_5y_bp, 1, " bp") },
+      { label: "10Y breakeven", value: formatNumber(curve.breakeven_10y, 2), change: formatSigned(daily.breakeven_10y_bp, 1, " bp") },
+      { label: "5Y real", value: formatNumber(curve.real_5y, 2), change: "" },
+      { label: "10Y real", value: formatNumber(curve.real_10y, 2), change: formatSigned(daily.real_10y_bp, 1, " bp") },
+      { label: "SOFR", value: formatNumber(curve.sofr, 2), change: formatSigned(daily.sofr_bp, 1, " bp") },
+      { label: "OBFR-SOFR", value: `${formatNumber(Number(curve.repo_minus_sofr) * 100, 1)} bp`, change: formatSigned(daily.repo_minus_sofr_bp, 1, " bp") },
+      { label: "10Y expected short", value: formatNumber(curve.expected_short_rate_proxy_10y, 2), change: "" },
+      { label: "10Y term premium", value: formatNumber(curve.term_premium_proxy_10y, 2), change: formatSigned(daily.term_premium_proxy_10y_bp, 1, " bp") },
     ])
   );
 
@@ -467,10 +568,11 @@ async function renderHome() {
     "executive-report",
     `
       <p><strong>Dominant regime:</strong> ${titleize(current.mid.regime_id)} at ${formatProbability(current.mid.probability)}.</p>
-      <p><strong>Dominant shock:</strong> ${titleize(summary.shock_event.dominant_category)} with persistence ${formatNumber(summary.shock_event.persistence_score, 2)} and confidence ${formatNumber(summary.shock_event.confidence_score, 2)}.</p>
-      <p><strong>Curve signal:</strong> Nelson-Siegel curvature is ${formatNumber(curve.ns_curvature, 2)}, 10Y term premium is ${formatNumber(curve.term_premium_proxy_10y, 2)}, and policy uncertainty is ${formatNumber(summary.curve_decomposition.policy_uncertainty_score, 2)}.</p>
-      <p><strong>Desk implication:</strong> ${titleize(summary.strategy.directional_view)} with ${titleize(summary.strategy.curve_view)} and a main risk of ${titleize(summary.strategy.main_risk)}.</p>
-      <p><strong>Falsifier:</strong> ${summary.strategy.falsifier}</p>
+      <p><strong>Dominant shock:</strong> ${titleize(shock.dominant_category)} with persistence ${formatNumber(shock.persistence_score, 2)} and confidence ${formatNumber(shock.confidence_score, 2)}.</p>
+      <p><strong>Evidence mix:</strong> ${dominantEvidence || "Positive channel evidence is still sparse."}</p>
+      <p><strong>Curve signal:</strong> Nelson-Siegel curvature is ${formatNumber(curve.ns_curvature, 2)}, 10Y term premium is ${formatNumber(curve.term_premium_proxy_10y, 2)}, and policy uncertainty is ${formatNumber(summary.curve_decomposition?.policy_uncertainty_score, 2)}.</p>
+      <p><strong>Desk implication:</strong> ${titleize(strategy.directional_view)} with ${titleize(strategy.curve_view)} and a main risk of ${titleize(strategy.main_risk)}.</p>
+      <p><strong>Falsifier:</strong> ${strategy.falsifier || "No falsifier recorded."}</p>
     `
   );
 
@@ -479,10 +581,10 @@ async function renderHome() {
 
   setHTML(
     "source-table",
-    latest.source_scorecard.length
+    sourceScorecard.length
       ? buildTable(
           ["Source", "Tracked", "D+1", "W+1", "M+1"],
-          latest.source_scorecard.map((item) => [
+          sourceScorecard.map((item) => [
             item.source_name,
             item.claims_tracked,
             formatNumber(item.d1_score, 2),
@@ -687,4 +789,9 @@ async function boot() {
 
 boot().catch((error) => {
   console.error(error);
+  document.body.dataset.error = error?.message || "unknown";
+  setHTML(
+    "hero-summary",
+    `<div class="takeaway-strip"><strong>Load error:</strong> ${error?.message || "Unknown render failure."}</div>`
+  );
 });
