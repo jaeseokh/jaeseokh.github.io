@@ -321,6 +321,231 @@
           </article>
         </div>
 
+        <!-- Agent Architecture Tabs -->
+        <section class="panel">
+          <div class="panel-header">
+            <span class="section-tag">Agent Architecture</span>
+            <h2>How PRISM processes signals into regime assessments</h2>
+          </div>
+
+          <div class="tabs-component">
+            <div class="tab-bar">
+              <button class="tab-btn active" data-tab="overview">Overview</button>
+              <button class="tab-btn" data-tab="agent1">Agent 1 · Signal State</button>
+              <button class="tab-btn" data-tab="agent2">Agent 2 · Vocabulary</button>
+              <button class="tab-btn" data-tab="agent3">Agent 3 · Numeric</button>
+              <button class="tab-btn" data-tab="agent4">Agent 4 · Reconciliation</button>
+            </div>
+
+            <!-- OVERVIEW -->
+            <div class="tab-panel active" data-tab="overview">
+              <p class="tab-desc">Four specialized agents pass structured schemas between them. Neither agent can see the other's internals — only its output. When all four agree, conviction is high. When they disagree, the conflict is the output.</p>
+              <div class="flow-diagram">
+                <div class="flow-row">
+                  <div class="flow-node flow-source">
+                    <div class="flow-label">Six-tier signals</div>
+                    <div class="flow-sub">Daily · Weekly · Monthly · Structural · Alt · Intraday</div>
+                  </div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node flow-agent1">
+                    <div class="flow-label">Agent 1</div>
+                    <div class="flow-sub">Signal State</div>
+                  </div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node flow-split">
+                    <div class="flow-label">Named states</div>
+                    <div class="flow-sub">+ anomaly flags</div>
+                  </div>
+                </div>
+                <div class="flow-row flow-row-mid">
+                  <div class="flow-spacer"></div>
+                  <div class="flow-branch">
+                    <div class="flow-branch-top">↙ Agent 2 · Vocabulary</div>
+                    <div class="flow-branch-bot">↘ Agent 3 · Numeric</div>
+                  </div>
+                  <div class="flow-spacer"></div>
+                </div>
+                <div class="flow-row">
+                  <div class="flow-node flow-agent24">
+                    <div class="flow-label">Language</div>
+                    <div class="flow-sub">Vocabulary entries · tier · regime implication</div>
+                  </div>
+                  <div class="flow-arrow-down">↘</div>
+                  <div class="flow-node flow-agent4">
+                    <div class="flow-label">Agent 4</div>
+                    <div class="flow-sub">Reconciliation</div>
+                  </div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node flow-output">
+                    <div class="flow-label">Daily output</div>
+                    <div class="flow-sub">Regime card · conflicts · forecast</div>
+                  </div>
+                </div>
+                <div class="flow-row">
+                  <div class="flow-node flow-agent24">
+                    <div class="flow-label">Numeric</div>
+                    <div class="flow-sub">Posteriors · analogue set · scenarios</div>
+                  </div>
+                  <div class="flow-arrow-up">↗</div>
+                  <div class="flow-spacer"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AGENT 1 -->
+            <div class="tab-panel" data-tab="agent1">
+              <p class="tab-desc">Agent 1 is the bridge between raw numeric data and the language layer. It converts daily signal readings into named qualitative states and flags configurations that fall outside all known states.</p>
+              <div class="agent-grid">
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Input</div>
+                  <div class="agent-io-body">Raw signal data from six-tier hierarchy — z-scores, levels, changes, and derived spreads</div>
+                </div>
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Output</div>
+                  <div class="agent-io-body">Named state IDs · z-score snapshot · anomaly flags for unmatched configurations</div>
+                </div>
+              </div>
+              <div class="agent-logic">
+                <div class="agent-logic-title">Core logic</div>
+                <div class="agent-logic-items">
+                  <div class="agent-logic-item">
+                    <span class="logic-num">1</span>
+                    <span>Threshold classification — each named state is a conjunction of signal conditions evaluated daily</span>
+                  </div>
+                  <div class="agent-logic-item">
+                    <span class="logic-num">2</span>
+                    <span>Anomaly detection — when no state matches, or when an unusual combination activates simultaneously, a conflict flag is raised</span>
+                  </div>
+                </div>
+              </div>
+              <div class="agent-example">
+                <div class="agent-example-title">Example — active states April 22, 2026</div>
+                <div class="compact-list">
+                  <div class="signal-state-item">
+                    <div class="signal-state-top"><code class="signal-code">war_oil_premium</code><span class="tier-badge tier-1">Tier 1</span><span class="status-badge status-active">Active</span></div>
+                    <div class="signal-state-desc">z(Brent-WTI spread) &gt; 1.5 AND z(domestic gas) &lt; 0.5</div>
+                  </div>
+                  <div class="signal-state-item">
+                    <div class="signal-state-top"><code class="signal-code">dollar_yield_decoupled</code><span class="tier-badge tier-2">Tier 2</span><span class="status-badge status-anomaly">Anomalous</span></div>
+                    <div class="signal-state-desc">z(Δyield_10y) &gt; 1.0 AND z(ΔDXY) &lt; −1.0</div>
+                  </div>
+                </div>
+              </div>
+              <a href="https://github.com/jaeseokh/treasury-regime-project/tree/main/src/treasury_regime/agents" class="agent-github-link" target="_blank" rel="noreferrer">View source on GitHub →</a>
+            </div>
+
+            <!-- AGENT 2 -->
+            <div class="tab-panel" data-tab="agent2">
+              <p class="tab-desc">Agent 2 is the language layer. It matches active signal states to a structured vocabulary of economic interpretations and returns the interpretation with its confidence tier and regime implication.</p>
+              <div class="agent-grid">
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Input</div>
+                  <div class="agent-io-body">Named state IDs from Agent 1</div>
+                </div>
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Output</div>
+                  <div class="agent-io-body">Vocabulary entry IDs · confidence tier · regime implication · alternative interpretations</div>
+                </div>
+              </div>
+              <div class="agent-logic">
+                <div class="agent-logic-title">Two-layer vocabulary structure</div>
+                <div class="vocab-layers">
+                  <div class="vocab-layer-card layer1-card">
+                    <div class="vocab-layer-title">Layer 1 — Definitional</div>
+                    <div class="vocab-layer-desc">True by construction. No freeze constraint — available at all simulation dates. Standard economic definitions and market conventions.</div>
+                    <div class="vocab-layer-example">e.g. yield curve inversion, credit spread widening, auction tail as demand signal</div>
+                  </div>
+                  <div class="vocab-layer-card layer2-card">
+                    <div class="vocab-layer-title">Layer 2 — Empirical</div>
+                    <div class="vocab-layer-desc">Requires observing data. Carries a freeze date for walk-forward backtesting. Sub-classes: <strong>2a</strong> well-replicated · <strong>2b</strong> this-sample · <strong>2c</strong> candidate emergent</div>
+                    <div class="vocab-layer-example">e.g. oil_breakeven_supply, cftc_crowded_reversal, dollar_fiscal_stress</div>
+                  </div>
+                </div>
+              </div>
+              <a href="https://github.com/jaeseokh/treasury-regime-project/tree/main/src/treasury_regime/agents" class="agent-github-link" target="_blank" rel="noreferrer">View source on GitHub →</a>
+            </div>
+
+            <!-- AGENT 3 -->
+            <div class="tab-panel" data-tab="agent3">
+              <p class="tab-desc">Agent 3 is the numeric layer. It maintains the Bayesian regime posterior and runs five analogue matching models in parallel, reporting both ensemble output and individual model agreement (Jaccard score).</p>
+              <div class="agent-grid">
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Input</div>
+                  <div class="agent-io-body">Named states + raw signal data + prior regime posteriors</div>
+                </div>
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Output</div>
+                  <div class="agent-io-body">Regime probability distributions · analogue set · scenario distributions · Jaccard agreement scores</div>
+                </div>
+              </div>
+              <div class="agent-logic">
+                <div class="agent-logic-title">Analogue matching suite — five models in parallel</div>
+                <table class="data-table" style="margin-top:12px">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Metric</th>
+                      <th>Best condition</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Mahalanobis</td><td>Global covariance distance</td><td>Stable regimes</td></tr>
+                    <tr><td>Regime-conditional Mahalanobis</td><td>Regime-specific Σ distance</td><td>Standard regime states</td></tr>
+                    <tr><td>Dynamic Time Warping</td><td>Path similarity over trajectory</td><td>Transition detection</td></tr>
+                    <tr><td>Synthetic Control</td><td>Weighted history combination</td><td>Rare / novel events</td></tr>
+                    <tr><td>Random Forest Proximity</td><td>Leaf co-occurrence</td><td>Non-linear interactions</td></tr>
+                  </tbody>
+                </table>
+                <div class="jaccard-note">High Jaccard across all model pairs → robust analogue set, high conviction. Low Jaccard → ambiguous state, activate conflict flag.</div>
+              </div>
+              <a href="https://github.com/jaeseokh/treasury-regime-project/tree/main/src/treasury_regime/modeling" class="agent-github-link" target="_blank" rel="noreferrer">View source on GitHub →</a>
+            </div>
+
+            <!-- AGENT 4 -->
+            <div class="tab-panel" data-tab="agent4">
+              <p class="tab-desc">Agent 4 is the intellectual core of PRISM. It takes the outputs of Agents 2 and 3 and either confirms their agreement or surfaces the disagreement as a structured conflict report — never silently resolving it.</p>
+              <div class="agent-grid">
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Input</div>
+                  <div class="agent-io-body">Language interpretation (Agent 2) + Numeric posteriors and analogue set (Agent 3)</div>
+                </div>
+                <div class="agent-io-block">
+                  <div class="agent-io-label">Output</div>
+                  <div class="agent-io-body">Dominant regime · conflict flags · vocabulary coverage score · structured daily report</div>
+                </div>
+              </div>
+              <div class="agent-logic">
+                <div class="agent-logic-title">Three functions</div>
+                <div class="agent-logic-items">
+                  <div class="agent-logic-item">
+                    <span class="logic-num">1</span>
+                    <span><strong>Consistency check</strong> — does the top vocabulary entry agree with the numeric dominant regime?</span>
+                  </div>
+                  <div class="agent-logic-item">
+                    <span class="logic-num">2</span>
+                    <span><strong>Conflict surfacing</strong> — when they disagree, report the distinguishing signal, the Jaccard agreement score, and historical resolution rate; do not choose a winner</span>
+                  </div>
+                  <div class="agent-logic-item">
+                    <span class="logic-num">3</span>
+                    <span><strong>Output generation</strong> — structured daily report: regime card, signal states, analogue set, scenario distribution, conflict flags</span>
+                  </div>
+                </div>
+              </div>
+              <div class="agent-example">
+                <div class="agent-example-title">Example conflict output — April 22, 2026</div>
+                <div class="conflict-item">
+                  <div class="conflict-header"><span class="conflict-label">Dollar channel</span><span class="conflict-badge">High uncertainty</span></div>
+                  <div class="conflict-row"><span class="cf-layer">Vocabulary:</span> fiscal_term_premium_repricing</div>
+                  <div class="conflict-row"><span class="cf-layer">Numeric:</span> war_augmented_inflation_pressure</div>
+                  <div class="conflict-note">Distinguishing signal: dollar index direction. Jaccard: 0.31. Resolution: monitor TIC release and auction tail.</div>
+                </div>
+              </div>
+              <a href="https://github.com/jaeseokh/treasury-regime-project/tree/main/src/treasury_regime/agents" class="agent-github-link" target="_blank" rel="noreferrer">View source on GitHub →</a>
+            </div>
+
+          </div>
+        </section>
+
         <!-- Research Documents -->
         <section class="panel">
           <div class="panel-header">
@@ -384,5 +609,17 @@
 
       </main>
     </div>
+    <script>
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.tab;
+          const container = btn.closest('.tabs-component');
+          container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          container.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          container.querySelector('.tab-panel[data-tab="' + target + '"]').classList.add('active');
+        });
+      });
+    </script>
   </body>
 </html>
