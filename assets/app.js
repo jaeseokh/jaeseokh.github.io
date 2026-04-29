@@ -31,6 +31,15 @@ function formatDate(value) {
     : date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function setHTML(id, html) {
   const node = document.getElementById(id);
   if (node) node.innerHTML = html;
@@ -805,10 +814,201 @@ async function renderArchive() {
   );
 }
 
+function buildPrimerMap(primer) {
+  const studyList = (primer.studyFramework || [])
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
+
+  const layerCards = (primer.layers || [])
+    .map(
+      (layer) => `
+        <article class="primer-mini-card">
+          <span class="badge">Layer ${escapeHtml(layer.number)}</span>
+          <h3>${escapeHtml(layer.title)}</h3>
+          <p>${escapeHtml(layer.strapline)}</p>
+          <div class="primer-mini-meta">
+            <span><strong>Desk:</strong> ${escapeHtml(layer.deskSpeed)}</span>
+            <span><strong>Public:</strong> ${escapeHtml(layer.publicRhythm)}</span>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
+  return `
+    <div class="primer-intro-note">
+      <p>${escapeHtml(primer.introduction || "")}</p>
+    </div>
+    <article class="primer-study-card">
+      <span class="section-tag">Reading order</span>
+      <ul class="bullet-list">${studyList}</ul>
+    </article>
+    <div class="primer-mini-grid">${layerCards}</div>
+  `;
+}
+
+function buildPrimerToc(layers) {
+  return `
+    <ul class="primer-toc-list">
+      ${layers
+        .map(
+          (layer) => `
+            <li>
+              <a href="#primer-${escapeHtml(layer.id)}">
+                <span class="toc-number">${escapeHtml(layer.number)}</span>
+                <span>
+                  <strong>${escapeHtml(layer.title)}</strong>
+                  <small>${escapeHtml(layer.strapline)}</small>
+                </span>
+              </a>
+            </li>
+          `
+        )
+        .join("")}
+    </ul>
+  `;
+}
+
+function buildPrimerSection(layer) {
+  const implications = (layer.implications || [])
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("");
+
+  const terminology = (layer.terminology || [])
+    .map(
+      (item) => `
+        <article class="term-box">
+          <span class="term-label">${escapeHtml(item.term)}</span>
+          <p>${escapeHtml(item.meaning)}</p>
+          <div class="term-desk-read"><strong>Desk read:</strong> ${escapeHtml(item.deskRead)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  const deskVariables = (layer.deskVariables || [])
+    .map(
+      (item) => `
+        <article class="desk-variable-card">
+          <h4>${escapeHtml(item.name)}</h4>
+          <p>${escapeHtml(item.description)}</p>
+          <div class="desk-variable-why"><strong>Why it matters:</strong> ${escapeHtml(item.whyItMatters)}</div>
+        </article>
+      `
+    )
+    .join("");
+
+  const publicRows = (layer.publicInstruments || [])
+    .map(
+      (item) => `
+        <tr>
+          <td>
+            <strong><a href="${escapeHtml(item.link)}" target="_blank" rel="noreferrer">${escapeHtml(item.source)}</a></strong>
+            <div class="cell-note">${escapeHtml(item.description)}</div>
+          </td>
+          <td>${escapeHtml(item.frequency)}</td>
+          <td>${escapeHtml(item.publishTiming)}</td>
+          <td>${escapeHtml(item.use)}</td>
+          <td>${escapeHtml(item.gap)}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  return `
+    <section class="panel primer-section" id="primer-${escapeHtml(layer.id)}">
+      <div class="primer-section-head">
+        <div>
+          <span class="section-tag">Hidden layer ${escapeHtml(layer.number)}</span>
+          <h2>${escapeHtml(layer.title)}</h2>
+          <p class="body-copy">${escapeHtml(layer.strapline)}</p>
+        </div>
+        <div class="primer-speed">
+          <span class="badge">Desk speed: ${escapeHtml(layer.deskSpeed)}</span>
+          <span class="badge">Public rhythm: ${escapeHtml(layer.publicRhythm)}</span>
+        </div>
+      </div>
+
+      <div class="primer-grid-two">
+        <article class="primer-copy-block">
+          <h3>Definition</h3>
+          <p>${escapeHtml(layer.definition)}</p>
+        </article>
+        <article class="primer-copy-block">
+          <h3>Why the desk cares</h3>
+          <p>${escapeHtml(layer.whyDeskCares)}</p>
+        </article>
+      </div>
+
+      <article class="primer-copy-block">
+        <h3>What it usually implies</h3>
+        <ul class="bullet-list">${implications}</ul>
+      </article>
+
+      <article class="primer-block">
+        <div class="primer-block-head">
+          <span class="section-tag">Terminology box</span>
+          <h3>Words you need to hear the way a desk hears them</h3>
+        </div>
+        <div class="term-grid">${terminology}</div>
+      </article>
+
+      <article class="primer-block">
+        <div class="primer-block-head">
+          <span class="section-tag">Desk variables</span>
+          <h3>What professionals actually watch</h3>
+        </div>
+        <div class="desk-variable-grid">${deskVariables}</div>
+      </article>
+
+      <article class="primer-block">
+        <div class="primer-block-head">
+          <span class="section-tag">Public instruments</span>
+          <h3>What you can collect, how often, and where the lag begins</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table primer-table">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Frequency</th>
+                <th>Publication timing</th>
+                <th>What it captures</th>
+                <th>Gap versus desk data</th>
+              </tr>
+            </thead>
+            <tbody>${publicRows}</tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="primer-callout">
+        <span class="section-tag">Research use</span>
+        <p>${escapeHtml(layer.researchUse)}</p>
+      </article>
+    </section>
+  `;
+}
+
+async function renderPrimer() {
+  const primer = window.HIDDEN_LAYER_PRIMER;
+  if (!primer || !Array.isArray(primer.layers)) {
+    throw new Error("Primer data is not available.");
+  }
+
+  setHTML("primer-map", buildPrimerMap(primer));
+  setHTML("primer-toc", buildPrimerToc(primer.layers));
+  setHTML(
+    "primer-sections",
+    primer.layers.map((layer) => buildPrimerSection(layer)).join("")
+  );
+}
+
 async function boot() {
   const page = document.body.dataset.page;
   if (page === "home") await renderHome();
   if (page === "framework") await renderFramework();
+  if (page === "primer") await renderPrimer();
   if (page === "roadmap") await renderRoadmap();
   if (page === "archive") await renderArchive();
 }

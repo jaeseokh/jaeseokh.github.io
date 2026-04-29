@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Roadmap | Treasury Regime Lab</title>
+    <title>Primer | Treasury Regime Lab</title>
+    <meta
+      name="description"
+      content="A handbook for the hidden Treasury market layer: funding, basis, auctions, repo, dealer balance sheet, and positioning."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +16,7 @@
     />
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
-  <body data-page="roadmap">
+  <body data-page="primer">
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="/">Treasury Regime Lab</a>
@@ -30,44 +34,38 @@
       <main class="main-layout">
         <section class="hero-panel hero-panel-narrow">
           <div class="hero-copy">
-            <span class="eyebrow">Version map</span>
-            <h1>Version 1 hierarchy, known limits, and the next upgrade queue.</h1>
+            <span class="eyebrow">Hidden market layer handbook</span>
+            <h1>Read the Treasury market beyond the visible curve.</h1>
             <p class="lede">
-              This page tracks what the system already does, where the weak points are,
-              and what should be improved next. The roadmap is organized by layer so future
-              changes stay coherent with the research architecture.
+              This primer is designed as a repeatable desk-style field guide. Each hidden layer is
+              broken into desk meaning, terminology, real variables, public proxies, update lag, and
+              the practical gap between public evidence and live trading desks.
             </p>
+            <div class="hero-actions">
+              <a class="button-primary" href="#primer-sections">Start reading</a>
+              <a class="button-secondary" href="/framework/">Back to framework</a>
+            </div>
           </div>
         </section>
 
-        <section class="summary-grid" id="roadmap-summary"></section>
+        <section class="primer-shell">
+          <aside class="panel primer-sidebar">
+            <div class="panel-header">
+              <span class="section-tag">How to use this page</span>
+              <h2>Study the same structure each time</h2>
+            </div>
+            <div id="primer-map"></div>
+            <nav id="primer-toc" class="primer-toc"></nav>
+          </aside>
 
-        <section class="panel">
-          <div class="panel-header">
-            <span class="section-tag">Hierarchy</span>
-            <h2>Layer-by-layer research map</h2>
+          <div class="primer-content">
+            <div id="primer-sections"></div>
           </div>
-          <div id="roadmap-layers" class="regime-card-grid"></div>
-        </section>
-
-        <section class="section-grid section-grid-wide">
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Upgrade queue</span>
-              <h2>Tracked changes for the next versions</h2>
-            </div>
-            <div id="roadmap-upgrades"></div>
-          </article>
-          <article class="panel">
-            <div class="panel-header">
-              <span class="section-tag">Maintenance rule</span>
-              <h2>How future problems should be logged</h2>
-            </div>
-            <div id="roadmap-rules" class="narrative-note"></div>
-          </article>
         </section>
       </main>
     </div>
+
+    <script src="/assets/primer-data.js"></script>
     <script src="/assets/app.js" defer></script>
   </body>
 </html>

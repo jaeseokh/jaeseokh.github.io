@@ -1,4 +1,5 @@
 {
+  "model_type": "kalman_state_space_covariance",
   "regimes": [
     {
       "regime_id": "policy_trapped_stagflation_risk",
@@ -230,6 +231,171 @@
       "fiscal_term_premium_repricing": 0.04,
       "funding_liquidity_stress": 0.02,
       "reanchoring_normalization": 0.62
+    }
+  },
+  "transition_matrix_legacy": {
+    "policy_trapped_stagflation_risk": {
+      "policy_trapped_stagflation_risk": 0.58,
+      "war_augmented_inflation_pressure": 0.16,
+      "growth_slowdown_constrained_easing": 0.14,
+      "fiscal_term_premium_repricing": 0.08,
+      "funding_liquidity_stress": 0.01,
+      "reanchoring_normalization": 0.03
+    },
+    "war_augmented_inflation_pressure": {
+      "policy_trapped_stagflation_risk": 0.18,
+      "war_augmented_inflation_pressure": 0.52,
+      "growth_slowdown_constrained_easing": 0.09,
+      "fiscal_term_premium_repricing": 0.16,
+      "funding_liquidity_stress": 0.02,
+      "reanchoring_normalization": 0.03
+    },
+    "growth_slowdown_constrained_easing": {
+      "policy_trapped_stagflation_risk": 0.08,
+      "war_augmented_inflation_pressure": 0.04,
+      "growth_slowdown_constrained_easing": 0.58,
+      "fiscal_term_premium_repricing": 0.05,
+      "funding_liquidity_stress": 0.15,
+      "reanchoring_normalization": 0.1
+    },
+    "fiscal_term_premium_repricing": {
+      "policy_trapped_stagflation_risk": 0.14,
+      "war_augmented_inflation_pressure": 0.14,
+      "growth_slowdown_constrained_easing": 0.08,
+      "fiscal_term_premium_repricing": 0.52,
+      "funding_liquidity_stress": 0.08,
+      "reanchoring_normalization": 0.04
+    },
+    "funding_liquidity_stress": {
+      "policy_trapped_stagflation_risk": 0.06,
+      "war_augmented_inflation_pressure": 0.03,
+      "growth_slowdown_constrained_easing": 0.25,
+      "fiscal_term_premium_repricing": 0.06,
+      "funding_liquidity_stress": 0.46,
+      "reanchoring_normalization": 0.14
+    },
+    "reanchoring_normalization": {
+      "policy_trapped_stagflation_risk": 0.18,
+      "war_augmented_inflation_pressure": 0.04,
+      "growth_slowdown_constrained_easing": 0.1,
+      "fiscal_term_premium_repricing": 0.04,
+      "funding_liquidity_stress": 0.02,
+      "reanchoring_normalization": 0.62
+    }
+  },
+  "latent_states": [
+    "inflation",
+    "growth_drag",
+    "liquidity_stress",
+    "term_premium",
+    "market_stress"
+  ],
+  "signal_columns": [
+    "z_2y_move",
+    "z_10y_move",
+    "z_curve_2s10s",
+    "z_curve_5s30s",
+    "z_breakeven",
+    "z_real_10y",
+    "z_repo_minus_sofr",
+    "z_sofr_minus_ff",
+    "z_hy_spread",
+    "z_dollar",
+    "z_wti",
+    "z_vix",
+    "z_ns_slope",
+    "z_ns_curvature",
+    "z_term_premium_10y"
+  ],
+  "diagnostic_columns": [
+    "cov_trace_60d",
+    "cov_eig1_share_60d",
+    "cov_abs_mean_60d",
+    "cov_shift_fro_60d",
+    "cov_inflation_rates_60d",
+    "cov_growth_risk_60d",
+    "cov_funding_risk_60d"
+  ],
+  "regime_state_loadings": {
+    "policy_trapped_stagflation_risk": [
+      0.85,
+      0.6,
+      0.2,
+      0.3,
+      0.25
+    ],
+    "war_augmented_inflation_pressure": [
+      1.0,
+      0.1,
+      0.05,
+      0.2,
+      0.2
+    ],
+    "growth_slowdown_constrained_easing": [
+      -0.25,
+      1.0,
+      0.2,
+      -0.1,
+      0.2
+    ],
+    "fiscal_term_premium_repricing": [
+      0.2,
+      0.05,
+      0.1,
+      1.0,
+      0.1
+    ],
+    "funding_liquidity_stress": [
+      0.05,
+      0.25,
+      1.0,
+      0.05,
+      0.55
+    ],
+    "reanchoring_normalization": [
+      -0.8,
+      -0.7,
+      -0.55,
+      -0.6,
+      -0.45
+    ]
+  },
+  "horizon_state_space": {
+    "short": {
+      "persistence": [
+        0.74,
+        0.78,
+        0.7,
+        0.8,
+        0.66
+      ],
+      "process_scale": 0.25,
+      "shock_scale": 0.9,
+      "temperature": 1.65
+    },
+    "mid": {
+      "persistence": [
+        0.88,
+        0.9,
+        0.84,
+        0.89,
+        0.76
+      ],
+      "process_scale": 0.16,
+      "shock_scale": 0.7,
+      "temperature": 1.95
+    },
+    "long": {
+      "persistence": [
+        0.96,
+        0.97,
+        0.92,
+        0.96,
+        0.84
+      ],
+      "process_scale": 0.09,
+      "shock_scale": 0.45,
+      "temperature": 2.2
     }
   }
 }
