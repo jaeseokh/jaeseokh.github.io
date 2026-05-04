@@ -31,6 +31,14 @@ body {
   font-family: "IBM Plex Mono", monospace;
 }
 
+body[data-page="home"] {
+  background:
+    linear-gradient(180deg, rgba(249, 246, 239, 0.96), rgba(241, 235, 225, 0.98)),
+    #f6f1e8;
+  color: #172535;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
 a {
   color: var(--cyan);
   text-decoration: none;
@@ -38,6 +46,203 @@ a {
 
 a:hover {
   color: var(--accent);
+}
+
+body[data-page="home"] a {
+  color: inherit;
+}
+
+.portfolio-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 24px 72px;
+}
+
+.portfolio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0 28px;
+}
+
+.portfolio-brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.portfolio-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #5f6b78;
+  font-size: 0.96rem;
+}
+
+.portfolio-nav a:hover,
+.bio-actions a:hover,
+.research-link-card:hover h3,
+.terminal-venue-button:hover {
+  color: #8c4d20;
+}
+
+.portfolio-main {
+  display: grid;
+  gap: 26px;
+}
+
+.bio-hero {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  padding: 34px;
+  border: 1px solid rgba(23, 37, 53, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 252, 247, 0.88);
+  box-shadow: 0 18px 42px rgba(23, 37, 53, 0.08);
+}
+
+.bio-photo-wrap {
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+}
+
+.bio-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(23, 37, 53, 0.12);
+}
+
+.bio-kicker {
+  margin: 0 0 8px;
+  color: #8c4d20;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.bio-copy h1,
+.portfolio-section-head h2,
+.terminal-venue h2 {
+  margin: 0;
+  font-family: "Fraunces", Georgia, serif;
+  letter-spacing: 0;
+  color: #122033;
+}
+
+.bio-copy h1 {
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1;
+}
+
+.bio-title {
+  margin: 12px 0 0;
+  color: #25384b;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.bio-copy p:not(.bio-kicker):not(.bio-title),
+.terminal-venue p,
+.research-link-card p {
+  color: #52606f;
+  line-height: 1.68;
+}
+
+.bio-copy p:not(.bio-kicker):not(.bio-title) {
+  max-width: 75ch;
+}
+
+.bio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.bio-actions a,
+.terminal-venue-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid rgba(23, 37, 53, 0.16);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.58);
+  color: #172535;
+  font-weight: 700;
+}
+
+.portfolio-section,
+.terminal-venue {
+  padding: 28px;
+  border: 1px solid rgba(23, 37, 53, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 252, 247, 0.74);
+}
+
+.portfolio-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.portfolio-section-head h2,
+.terminal-venue h2 {
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+}
+
+.research-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.research-link-card {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  min-height: 220px;
+  border: 1px solid rgba(23, 37, 53, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+.research-link-card span {
+  color: #8c4d20;
+  font-weight: 700;
+  font-size: 0.84rem;
+}
+
+.research-link-card h3 {
+  margin: 0;
+  color: #172535;
+  font-size: 1.12rem;
+  line-height: 1.24;
+  letter-spacing: 0;
+}
+
+.research-link-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.terminal-venue {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
 }
 
 .terminal-shell {
@@ -340,6 +545,10 @@ a:hover {
   .sticky-panel {
     position: static;
   }
+
+  .research-link-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -350,6 +559,31 @@ a:hover {
   .terminal-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .portfolio-shell {
+    padding: 18px 16px 52px;
+  }
+
+  .portfolio-header,
+  .bio-hero,
+  .terminal-venue {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-header {
+    display: grid;
+  }
+
+  .bio-hero,
+  .portfolio-section,
+  .terminal-venue {
+    padding: 22px;
+  }
+
+  .bio-photo-wrap {
+    justify-self: start;
+    max-width: 150px;
   }
 
   .metric-grid {

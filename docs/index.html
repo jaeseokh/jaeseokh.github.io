@@ -3,36 +3,94 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Treasury Regime Terminal</title>
+    <title>Jaeseok Hwang | Research Portfolio</title>
     <meta
       name="description"
-      content="Terminal-style Treasury regime snapshot, covariance monitor, player nowcast, and research schema."
+      content="Jaeseok Hwang's research portfolio, papers, GitHub repositories, and Treasury regime terminal."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
-  <body data-page="snapshot">
-    <div class="terminal-shell">
-      <header class="terminal-header">
-        <a class="terminal-brand" href="/">TREASURY REGIME TERMINAL</a>
-        <nav class="terminal-nav">
-          <a href="/">Snapshot</a>
-          <a href="/schema/">Schema</a>
-          <a href="/workflow/">Workflow</a>
-          <a href="/primer/">Primer</a>
-          <a href="/archive/">Archive</a>
+  <body data-page="home">
+    <div class="portfolio-shell">
+      <header class="portfolio-header">
+        <a class="portfolio-brand" href="/">Jaeseok Hwang</a>
+        <nav class="portfolio-nav">
+          <a href="#research">Research Repositories</a>
+          <a href="/terminal/">Treasury Terminal</a>
           <a href="/resume/docs/" target="_blank" rel="noreferrer">Resume</a>
+          <a href="https://github.com/jaeseokh" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/jaeseok-hwang-0b06741a1" target="_blank" rel="noreferrer">LinkedIn</a>
         </nav>
       </header>
-      <main id="app-root"></main>
+
+      <main class="portfolio-main">
+        <section class="bio-hero">
+          <div class="bio-photo-wrap">
+            <img src="/profile_git_jae.jpg" alt="Portrait of Jaeseok Hwang" class="bio-photo" />
+          </div>
+          <div class="bio-copy">
+            <p class="bio-kicker">Research, code, and decision analytics</p>
+            <h1>Jaeseok Hwang</h1>
+            <p class="bio-title">Ph.D. candidate in Applied Economics at the University of Illinois Urbana-Champaign.</p>
+            <p>
+              My work studies decision risk under price, production, weather, and market uncertainty. I build empirical
+              workflows with Python, R, SQL, machine learning, econometrics, and reproducible reporting to evaluate when
+              model-based recommendations remain reliable outside the setting where they were trained.
+            </p>
+            <p>
+              This page collects my research repositories and keeps the Treasury regime terminal as a separate live
+              research venue for fixed-income regime detection and market-plumbing monitoring.
+            </p>
+            <div class="bio-actions">
+              <a href="#research">Research repositories</a>
+              <a href="/terminal/">Open Treasury terminal</a>
+              <a href="/resume/docs/" target="_blank" rel="noreferrer">Resume</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="portfolio-section" id="research">
+          <div class="portfolio-section-head">
+            <p class="bio-kicker">Repository links</p>
+            <h2>Research Papers and Projects</h2>
+          </div>
+          <div class="research-link-grid">
+            <a class="research-link-card" href="https://github.com/jaeseokh/value-opfe-python" target="_blank" rel="noreferrer">
+              <span>01</span>
+              <h3>Information Transferability and Economic Risk Without Structural Validation</h3>
+              <p>USDA-funded dissertation project on transferability, holdout validation, and economic loss from unstable recommendations.</p>
+            </a>
+            <a class="research-link-card" href="https://github.com/jaeseokh/corn_seed_response" target="_blank" rel="noreferrer">
+              <span>02</span>
+              <h3>Decomposing Profitability Risk: Decision Error vs. Exogenous Shocks</h3>
+              <p>Decision-risk decomposition separating model/decision error from exogenous price and environmental shocks.</p>
+            </a>
+            <a class="research-link-card" href="https://github.com/jaeseokh/treasury-regime-project" target="_blank" rel="noreferrer">
+              <span>03</span>
+              <h3>Treasury and Fixed-Income Regime Monitoring Workflow</h3>
+              <p>Personal research workflow for Treasury yields, curve shape, inflation expectations, credit spreads, and market plumbing signals.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="terminal-venue">
+          <div>
+            <p class="bio-kicker">Live venue</p>
+            <h2>Treasury Regime Terminal</h2>
+            <p>
+              The current terminal page is preserved as a separate workspace for the regime state matrix, curve snapshot,
+              covariance monitor, player nowcast, schema, workflow, primer, and archive.
+            </p>
+          </div>
+          <a class="terminal-venue-button" href="/terminal/">Open terminal</a>
+        </section>
+      </main>
     </div>
-    <script src="/assets/schema-data.js"></script>
-    <script src="/assets/primer-data.js"></script>
-    <script src="/assets/app.js" defer></script>
   </body>
 </html>
