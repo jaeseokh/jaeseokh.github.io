@@ -591,6 +591,147 @@ function renderArchivePage(archive) {
   `;
 }
 
+function renderSpan2Page() {
+  const portfolioRows = [
+    ["1", "ES", "FUT", "-", "-", "0.25", "6", "50", "$1,635,715"],
+    ["2", "ES", "OPT", "Put", "5100", "0.25", "-12", "50", "-$37,353"],
+    ["3", "NQ", "OPT", "Call", "18750", "0.18", "5", "20", "$91"],
+    ["4", "CL", "FUT", "-", "-", "0.10", "-4", "1000", "-$500,982"],
+    ["5", "CL", "OPT", "Call", "85", "0.10", "-8", "1000", "-$320,524"]
+  ];
+
+  const methodRows = [
+    ["Historical HVaR", "Full repricing using historical market moves", "$107,778"],
+    ["Parametric VaR", "Delta-vega covariance approximation", "$105,563"],
+    ["Monte Carlo VaR", "Simulated correlated price and volatility shocks", "$109,179"],
+    ["Legacy SPAN Approx.", "Fixed scan-risk style benchmark", "$238,380"]
+  ];
+
+  const stressRows = [
+    ["Crude crash", "-25% price, +20 vol points", "$649,365"],
+    ["Pure vol shock", "0% price, +25 vol points", "$130,083"],
+    ["Custom sidebar shock", "-10% price, +5 vol points", "-$57,454"],
+    ["Crude spike", "+18% price, +15 vol points", "-$114,719"]
+  ];
+
+  const greekRows = [
+    ["Delta", "First-order futures price exposure", "HVaR sanity check, parametric VaR, scenario explanation"],
+    ["Gamma", "Curvature when futures price moves", "Option non-linearity check under large shocks"],
+    ["Vega", "Implied volatility exposure", "Vol shock stress and parametric VaR"],
+    ["Theta", "Time-decay exposure", "Daily P&L attribution and roll-forward checks"]
+  ];
+
+  const table = (headings, rows) => `
+    <div class="terminal-table-wrap">
+      <table class="terminal-table">
+        <thead>
+          <tr>${headings.map((heading) => `<th>${escapeHtml(heading)}</th>`).join("")}</tr>
+        </thead>
+        <tbody>
+          ${rows
+            .map((row) => `<tr>${row.map((cell, index) => `<${index === 0 ? "th" : "td"}>${escapeHtml(cell)}</${index === 0 ? "th" : "td"}>`).join("")}</tr>`)
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  return `
+    <section class="hero-grid">
+      <article class="terminal-panel hero-panel">
+        <div class="panel-eyebrow">SPAN2 BENCHMARK // FUTURES AND OPTIONS MARGIN</div>
+        <h1 class="hero-title">CME-style HVaR risk terminal for portfolio repricing.</h1>
+        <p class="hero-copy">
+          This page summarizes the Python Streamlit benchmark in a static website format. The desk workflow is:
+          load today portfolio, mark futures and options, reprice options with Black-76, generate historical,
+          parametric, Monte Carlo, and stress losses, then combine HVaR with stress, liquidity, and concentration add-ons.
+        </p>
+        <div class="risk-flow">
+          <span>Portfolio</span>
+          <span>Market data</span>
+          <span>Black-76</span>
+          <span>Scenario loss</span>
+          <span>VaR methods</span>
+          <span>Margin add-ons</span>
+        </div>
+      </article>
+      <article class="terminal-panel focus-panel">
+        <div class="panel-eyebrow">BENCHMARK OUTPUT</div>
+        <div class="focus-regime">SPAN 2 MARGIN</div>
+        <div class="focus-prob">$277,605</div>
+        <div class="focus-subline">PEDAGOGICAL DEMO, NOT CME PRODUCTION METHODOLOGY</div>
+        <div class="focus-note">Portfolio value $776,947 // 99% confidence // sample futures/options account</div>
+      </article>
+    </section>
+
+    <div class="terminal-grid terminal-grid-2">
+      ${renderSectionBlock(
+        "Margin Components",
+        "RISK STACK",
+        metricGrid([
+          { label: "Historical HVaR", value: "$107,778", note: "Empirical tail loss from historical scenarios" },
+          { label: "Stress add-on", value: "$162,341", note: "Severe deterministic shock reserve" },
+          { label: "Liquidity add-on", value: "$6,207", note: "Exit-cost proxy from notional exposure" },
+          { label: "Concentration add-on", value: "$1,280", note: "Penalty for ES exposure above threshold" }
+        ])
+      )}
+      ${renderSectionBlock(
+        "Core Equation",
+        "MARGIN LOGIC",
+        `
+          <div class="equation-card">Margin = HVaR + Stress + Liquidity + Concentration</div>
+          <p class="terminal-copy">
+            HVaR captures ordinary historical tail loss. Stress captures extreme but plausible market breaks.
+            Liquidity captures the cost of exiting large positions. Concentration captures the extra risk of a
+            portfolio crowded in one product, expiry, or direction.
+          </p>
+        `
+      )}
+    </div>
+
+    ${renderSectionBlock(
+      "Current Portfolio",
+      "TODAY'S POSITIONS",
+      table(["ID", "Product", "Type", "Option", "Strike", "Expiry", "Qty", "Size", "Value"], portfolioRows)
+    )}
+
+    <div class="terminal-grid terminal-grid-2">
+      ${renderSectionBlock(
+        "VaR Method Comparison",
+        "HVAR ENGINE",
+        table(["Method", "Mechanism", "Risk"], methodRows)
+      )}
+      ${renderSectionBlock(
+        "Stress Scenarios",
+        "BAD STATE CHECK",
+        table(["Scenario", "Shock", "Loss"], stressRows)
+      )}
+    </div>
+
+    <div class="terminal-grid terminal-grid-2">
+      ${renderSectionBlock(
+        "Greeks Used",
+        "MODEL VALIDATION",
+        table(["Greek", "Meaning", "Use in this research demo"], greekRows)
+      )}
+      ${renderSectionBlock(
+        "Desk Workflow",
+        "IMPLEMENTATION MAP",
+        `
+          <ol class="terminal-list">
+            <li>Read current portfolio rows: product, instrument type, option type, strike, expiry, quantity, and contract size.</li>
+            <li>Join market data: futures settlement, option implied volatility, interest rate, and expiry metadata.</li>
+            <li>Price futures directly and price options with Black-76 using today&apos;s market state.</li>
+            <li>Generate scenario states from historical, parametric, Monte Carlo, and stress methods.</li>
+            <li>Fully reprice the same portfolio under each scenario and compute loss versus today.</li>
+            <li>Take the tail quantile, add stress/liquidity/concentration reserves, and report benchmark margin.</li>
+          </ol>
+        `
+      )}
+    </div>
+  `;
+}
+
 async function boot() {
   const page = document.body.dataset.page;
 
@@ -619,6 +760,11 @@ async function boot() {
   if (page === "archive") {
     const archive = await loadJSON("archive");
     setRoot(renderArchivePage(archive));
+    return;
+  }
+
+  if (page === "span2") {
+    setRoot(renderSpan2Page());
     return;
   }
 

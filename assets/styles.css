@@ -448,6 +448,11 @@ body[data-page="home"] a {
   font-size: 0.88rem;
 }
 
+.terminal-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .terminal-table th,
 .terminal-table td {
   padding: 8px 10px 8px 0;
@@ -517,6 +522,33 @@ body[data-page="home"] a {
   padding-left: 18px;
   color: var(--muted);
   line-height: 1.7;
+}
+
+.risk-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.risk-flow span,
+.equation-card {
+  border: 1px solid var(--line-2);
+  background: rgba(79, 209, 255, 0.07);
+  color: var(--cyan);
+}
+
+.risk-flow span {
+  padding: 7px 10px;
+  font-size: 0.78rem;
+}
+
+.equation-card {
+  margin: 12px 0 14px;
+  padding: 14px;
+  color: #eef4fb;
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 .toc-list li + li,
