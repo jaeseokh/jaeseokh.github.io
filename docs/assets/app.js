@@ -592,48 +592,45 @@ function renderArchivePage(archive) {
 }
 
 function renderSpan2Page() {
-  const representativeRows = [
-    ["Global Bank FCM", "J.P. Morgan Securities LLC-style", "3 accounts", "House energy options, customer energy hedger, customer asset manager"],
-    ["Dealer Clearing Member", "Morgan Stanley-style", "2 accounts", "House volatility book, customer energy volatility fund"],
-    ["International FCM", "ABN AMRO Clearing USA LLC-style", "3 accounts", "CTA client, merchant hedger, residual house clearing account"]
+  const stressModelRows = [
+    ["Historical stress", "Replay observed crisis moves", "Uses severe historical days such as oil crash, gas spike, or vol shock and reprices today's account"],
+    ["Hypothetical stress", "Designed product shock", "Creates controlled scenarios such as WTI down 30%, NG up 50%, or implied vol up 25 points"],
+    ["Volatility surface stress", "Shock option implied vols", "Moves option vols/skew and reprices calls/puts through Black-76"],
+    ["Calendar spread stress", "Shock curve shape", "Moves front and deferred contracts differently to test curve dislocation risk"],
+    ["Liquidity / concentration stress", "Large-position close-out pressure", "Adds liquidation and crowded-product charges when account exposure is too large or one-sided"]
   ];
 
-  const accountRows = [
-    ["JPM_STYLE_FCM", "JPM_HOUSE_ENERGY_OPTIONS", "House", "17", "Dealer hedge and energy options inventory"],
-    ["JPM_STYLE_FCM", "JPM_CUST_ENERGY_HEDGER", "Customer", "9", "Producer/refiner-style physical energy hedge"],
-    ["JPM_STYLE_FCM", "JPM_CUST_ASSET_MANAGER", "Customer", "9", "Institutional commodity allocation and macro overlay"],
-    ["MORGAN_STANLEY_STYLE_DEALER", "MS_HOUSE_VOL_BOOK", "House", "14", "Options market-risk and delta hedge book"],
-    ["MORGAN_STANLEY_STYLE_DEALER", "MS_CUST_VOL_FUND", "Customer", "8", "Energy volatility fund"],
-    ["ABN_AMRO_STYLE_FCM", "ABN_CUST_CTA", "Customer", "8", "CTA / trend-following commodity account"],
-    ["ABN_AMRO_STYLE_FCM", "ABN_CUST_MERCHANT", "Customer", "8", "Merchant hedger account"],
-    ["ABN_AMRO_STYLE_FCM", "ABN_HOUSE_CLEARING", "House", "5", "Residual clearing inventory and hedge account"]
+  const theoryRows = [
+    ["Portfolio value", "V0 = value(today positions, today market)", "Every stress test starts from the same net open position table"],
+    ["Scenario value", "Vs = value(today positions, shocked market s)", "Only prices, volatilities, rates, curves, or spreads change"],
+    ["Stress loss", "Loss_s = V0 - Vs", "Positive number means the account loses money under that scenario"],
+    ["Margin stack", "Margin = Historical Risk + Stress + Liquidity + Concentration", "Simplified SPAN2-style benchmark used by the demo"],
+    ["Option repricing", "Black-76(F, K, T, r, sigma)", "Calls and puts are repriced under shocked futures and implied-vol inputs"]
   ];
 
-  const positionRows = [
-    ["JPM_HOUSE_ENERGY_OPTIONS", "CL", "FUT/OPT", "Jun-26 to May-27", "Crude futures, short calls, long puts"],
-    ["JPM_HOUSE_ENERGY_OPTIONS", "NG", "FUT/OPT", "Jun-26 to Jan-27", "Gas futures, winter calls, downside puts"],
-    ["JPM_HOUSE_ENERGY_OPTIONS", "USD_IRS", "IRS", "2Y / 5Y", "Residual rates/funding overlay"],
-    ["MS_HOUSE_VOL_BOOK", "CL/NG", "Options + futures", "Front and winter terms", "Vega/gamma book with futures hedge"],
-    ["ABN_CUST_MERCHANT", "CL/RB/HO/NG", "FUT/OPT", "Front and deferred terms", "Merchant hedge with refined-product exposure"]
+  const varRows = [
+    ["Non-parametric HVaR", "Direct historical simulation", "No normal-distribution assumption; applies actual historical price/vol move combinations to today's portfolio"],
+    ["Parametric VaR", "Mean/covariance approximation", "Fast older-style benchmark; uses estimated volatility/correlation and delta-vega exposure"],
+    ["Monte Carlo VaR", "Simulated scenarios", "Generates many synthetic correlated shocks from estimated factor distribution"],
+    ["Stress testing", "Selected severe scenarios", "Not a VaR percentile; asks what happens under a named bad market state"],
+    ["Backtesting", "Actual P&L versus forecast", "Checks whether VaR/stress logic produces reasonable exceptions and explainable losses"]
   ];
 
   const monitorRows = [
     ["1", "Account Context", "Select representative, house/customer account, valuation date, and portfolio description"],
     ["2", "Net Open Positions", "Read account-level net positions by product, expiry, strike, option type, and net quantity"],
     ["3", "Market Data Join", "Join settlement price, implied vol, rate, and product metadata"],
-    ["4", "Margin-Ready Risk", "Calculate position value, notional, delta, gamma, vega, theta, POD, and bucket"],
+    ["4", "Margin-Ready Risk", "Calculate value, notional, delta, gamma, vega, theta, POD, and risk bucket"],
     ["5", "HVaR Scenarios", "Apply historical price and vol moves to today's same portfolio and reprice"],
-    ["6", "Add-ons", "Compute stress, liquidity, concentration, and residual margin components"],
-    ["7", "Final Margin", "Compare legacy SPAN approximation, SPAN2-style baseline, and Bayesian research extension"],
-    ["8", "Methodology / Audit", "Show SQL/JSON/Python pipeline assumptions and save repeatable risk-run outputs"]
+    ["6", "Stress Scenarios", "Run crude crash, crude spike, gas spike, vol shock, calendar-spread shock, and custom cases"],
+    ["7", "Add-ons", "Calculate stress, liquidity, concentration, and residual components"],
+    ["8", "Final Margin", "Compare legacy SPAN approximation, SPAN2-style baseline, and Bayesian research extension"]
   ];
 
-  const methodRows = [
-    ["Historical HVaR", "Non-parametric full repricing", "Uses historical market moves directly"],
-    ["Parametric VaR", "Delta-vega covariance approximation", "Fast benchmark for model comparison"],
-    ["Monte Carlo VaR", "Correlated simulated shocks", "Scenario expansion around empirical covariance"],
-    ["Stress Test", "Severe historical/hypothetical shocks", "Crude crash, crude spike, vol shock, custom shock"],
-    ["Bayesian SPAN2 Research", "Regime-weighted tail/stress extension", "Model-risk research idea, not CME production claim"]
+  const accountRows = [
+    ["Global Bank FCM", "J.P. Morgan Securities LLC-style", "3 accounts", "House energy options, customer hedger, customer asset manager"],
+    ["Dealer Clearing Member", "Morgan Stanley-style", "2 accounts", "House volatility book and customer energy volatility fund"],
+    ["International FCM", "ABN AMRO Clearing USA LLC-style", "3 accounts", "CTA client, merchant hedger, residual house clearing account"]
   ];
 
   const table = (headings, rows) => `
@@ -652,22 +649,22 @@ function renderSpan2Page() {
   `;
 
   return `
-    <section class="hero-grid">
+    <section class="hero-grid" id="overview">
       <article class="terminal-panel hero-panel">
         <div class="panel-eyebrow">VAR AND STRESS TEST DEMO // ETL TO RISK MONITOR</div>
-        <h1 class="hero-title">Python, SQL, JSON, and Streamlit-style workflow for margin benchmarking.</h1>
+        <h1 class="hero-title">Stress-test renewal workflow for margin benchmarking.</h1>
         <p class="hero-copy">
-          This page reflects the current local demo structure. The tool starts from synthetic net open positions,
-          joins end-of-day settlement prices and implied volatility inputs, computes futures/options/IRS values,
-          and compares legacy SPAN, SPAN2-style HVaR, parametric VaR, Monte Carlo VaR, stress tests, and add-ons.
+          This page focuses on the pieces relevant to a risk-management tool build: net open positions,
+          settlement market data, Python pricing/risk code, SQL audit queries, stress scenario design,
+          and comparison of non-parametric, parametric, and Monte Carlo VaR methods.
         </p>
         <div class="risk-flow">
-          <span>3 representatives</span>
-          <span>8 accounts</span>
-          <span>78 net positions</span>
-          <span>SQL audit</span>
-          <span>Python risk engines</span>
-          <span>8-panel monitor</span>
+          <span>Stress models</span>
+          <span>Margin theory</span>
+          <span>HVaR</span>
+          <span>Parametric VaR</span>
+          <span>Monte Carlo</span>
+          <span>SQL + Python UI</span>
         </div>
       </article>
       <article class="terminal-panel focus-panel">
@@ -675,73 +672,81 @@ function renderSpan2Page() {
         <div class="focus-regime">VAR + STRESS</div>
         <div class="focus-prob">78</div>
         <div class="focus-subline">NET OPEN POSITION ROWS</div>
-        <div class="focus-note">Futures, options, IRS // house and customer accounts // synthetic representative data</div>
+        <div class="focus-note">3 representatives // 8 accounts // futures, options, IRS // synthetic representative data</div>
       </article>
     </section>
 
     <div class="terminal-grid terminal-grid-2">
       ${renderSectionBlock(
-        "Representative Members",
-        "ACCOUNT UNIVERSE",
-        table(["Category", "Representative", "Accounts", "Modeled book"], representativeRows)
+        "Representative Accounts",
+        "DEMO DATA",
+        table(["Category", "Representative", "Accounts", "Modeled book"], accountRows)
       )}
       ${renderSectionBlock(
-        "Core Pipeline",
-        "ETL FLOW",
+        "Core ETL Pipeline",
+        "SQL / PYTHON / JSON / UI",
         `
-          <div class="equation-card">Net positions + settlement market data -> pricing -> scenarios -> margin monitor</div>
+          <div class="equation-card">Net positions + settlement market data -> pricing -> VaR/stress -> margin monitor</div>
           <p class="terminal-copy">
-            The page is a static public summary of the local Streamlit workflow. The local app contains the interactive
-            account selector, editable portfolio table, scenario views, JSON payload, and SQL audit panel.
+            The local Streamlit app lets the user choose an account, inspect the net open position table, join market data,
+            run VaR/stress engines, inspect add-ons, save risk runs, and query the result with SQL.
           </p>
         `
       )}
     </div>
 
-    ${renderSectionBlock(
-      "Account-Level Portfolios",
-      "HOUSE AND CUSTOMER ACCOUNTS",
-      table(["Representative", "Account", "Origin", "Rows", "Purpose"], accountRows)
-    )}
-
-    <div class="terminal-grid terminal-grid-2">
+    <div id="stress-models">
       ${renderSectionBlock(
-        "Position Detail Examples",
-        "NET OPEN POSITIONS",
-        table(["Account", "Product", "Instrument", "Terms", "Risk story"], positionRows)
-      )}
-      ${renderSectionBlock(
-        "Methods Benchmarked",
-        "RISK ENGINES",
-        table(["Method", "Mechanism", "Use"], methodRows)
+        "Stress Test Models Used",
+        "STRESS MODELS",
+        table(["Model", "Core idea", "How the demo uses it"], stressModelRows)
       )}
     </div>
 
-    ${renderSectionBlock(
-      "Eight-Panel Risk Monitor",
-      "UI STRUCTURE",
-      table(["Panel", "View", "What it checks"], monitorRows)
-    )}
+    <div id="theory">
+      ${renderSectionBlock(
+        "Theoretical Background",
+        "STRESS LOSS AND MARGIN",
+        table(["Concept", "Simple equation", "Meaning"], theoryRows)
+      )}
+    </div>
+
+    <div id="var-methods">
+      ${renderSectionBlock(
+        "VaR Method Comparison",
+        "NON-PARAMETRIC / PARAMETRIC / MONTE CARLO",
+        table(["Method", "Model stance", "Practical difference"], varRows)
+      )}
+    </div>
+
+    <div id="monitor">
+      ${renderSectionBlock(
+        "Eight-Panel Risk Monitor",
+        "UI PAGES REQUIRED",
+        table(["Panel", "View", "What it checks"], monitorRows)
+      )}
+    </div>
 
     <div class="terminal-grid terminal-grid-2">
       ${renderSectionBlock(
-        "Margin Logic",
-        "SPAN / SPAN2 STYLE",
+        "What The Stress Tool Answers",
+        "RISK MANAGER VIEW",
         `
-          <div class="equation-card">Margin = HVaR + Stress + Liquidity + Concentration</div>
-          <p class="terminal-copy">
-            The demo also compares this baseline with legacy SPAN-style scenario scan and a Bayesian regime-weighted
-            research extension for stress and tail-risk discussion.
-          </p>
+          <ul class="terminal-list">
+            <li>Which account loses most under each named stress?</li>
+            <li>Which product, expiry, option strike, or POD drives the loss?</li>
+            <li>How different are HVaR, parametric VaR, Monte Carlo VaR, and selected stress losses?</li>
+            <li>How much final margin comes from HVaR versus stress, liquidity, and concentration?</li>
+          </ul>
         `
       )}
       ${renderSectionBlock(
-        "Project Framing",
-        "INTERVIEW TOOL",
+        "Implementation Boundary",
+        "INTERVIEW FRAMING",
         `
           <p class="terminal-copy">
-            This is designed as a risk-tool modernization demo: migrate Excel/manual stress-test logic into a repeatable
-            Python/SQL/UI pipeline. The data is synthetic and representative; it does not describe real clearing-member positions.
+            This is an educational benchmark for UI and workflow modernization. It does not claim to reproduce CME's
+            production SPAN2 model. The value is the transparent ETL, repeatable calculation path, and explainable stress outputs.
           </p>
         `
       )}
