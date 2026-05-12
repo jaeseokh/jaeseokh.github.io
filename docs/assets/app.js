@@ -639,8 +639,8 @@ function renderSpan2Page() {
   return `
     <section class="hero-grid">
       <article class="terminal-panel hero-panel">
-        <div class="panel-eyebrow">SPAN2 BENCHMARK // FUTURES AND OPTIONS MARGIN</div>
-        <h1 class="hero-title">CME-style HVaR risk terminal for portfolio repricing.</h1>
+        <div class="panel-eyebrow">VAR AND STRESS TEST DEMO // FUTURES AND OPTIONS MARGIN</div>
+        <h1 class="hero-title">CME-style VaR and stress-test monitor for margin benchmarking.</h1>
         <p class="hero-copy">
           This page summarizes the Python Streamlit benchmark in a static website format. The desk workflow is:
           load today portfolio, mark futures and options, reprice options with Black-76, generate historical,
