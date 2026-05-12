@@ -592,33 +592,48 @@ function renderArchivePage(archive) {
 }
 
 function renderSpan2Page() {
-  const portfolioRows = [
-    ["1", "ES", "FUT", "-", "-", "0.25", "6", "50", "$1,635,715"],
-    ["2", "ES", "OPT", "Put", "5100", "0.25", "-12", "50", "-$37,353"],
-    ["3", "NQ", "OPT", "Call", "18750", "0.18", "5", "20", "$91"],
-    ["4", "CL", "FUT", "-", "-", "0.10", "-4", "1000", "-$500,982"],
-    ["5", "CL", "OPT", "Call", "85", "0.10", "-8", "1000", "-$320,524"]
+  const representativeRows = [
+    ["Global Bank FCM", "J.P. Morgan Securities LLC-style", "3 accounts", "House energy options, customer energy hedger, customer asset manager"],
+    ["Dealer Clearing Member", "Morgan Stanley-style", "2 accounts", "House volatility book, customer energy volatility fund"],
+    ["International FCM", "ABN AMRO Clearing USA LLC-style", "3 accounts", "CTA client, merchant hedger, residual house clearing account"]
+  ];
+
+  const accountRows = [
+    ["JPM_STYLE_FCM", "JPM_HOUSE_ENERGY_OPTIONS", "House", "17", "Dealer hedge and energy options inventory"],
+    ["JPM_STYLE_FCM", "JPM_CUST_ENERGY_HEDGER", "Customer", "9", "Producer/refiner-style physical energy hedge"],
+    ["JPM_STYLE_FCM", "JPM_CUST_ASSET_MANAGER", "Customer", "9", "Institutional commodity allocation and macro overlay"],
+    ["MORGAN_STANLEY_STYLE_DEALER", "MS_HOUSE_VOL_BOOK", "House", "14", "Options market-risk and delta hedge book"],
+    ["MORGAN_STANLEY_STYLE_DEALER", "MS_CUST_VOL_FUND", "Customer", "8", "Energy volatility fund"],
+    ["ABN_AMRO_STYLE_FCM", "ABN_CUST_CTA", "Customer", "8", "CTA / trend-following commodity account"],
+    ["ABN_AMRO_STYLE_FCM", "ABN_CUST_MERCHANT", "Customer", "8", "Merchant hedger account"],
+    ["ABN_AMRO_STYLE_FCM", "ABN_HOUSE_CLEARING", "House", "5", "Residual clearing inventory and hedge account"]
+  ];
+
+  const positionRows = [
+    ["JPM_HOUSE_ENERGY_OPTIONS", "CL", "FUT/OPT", "Jun-26 to May-27", "Crude futures, short calls, long puts"],
+    ["JPM_HOUSE_ENERGY_OPTIONS", "NG", "FUT/OPT", "Jun-26 to Jan-27", "Gas futures, winter calls, downside puts"],
+    ["JPM_HOUSE_ENERGY_OPTIONS", "USD_IRS", "IRS", "2Y / 5Y", "Residual rates/funding overlay"],
+    ["MS_HOUSE_VOL_BOOK", "CL/NG", "Options + futures", "Front and winter terms", "Vega/gamma book with futures hedge"],
+    ["ABN_CUST_MERCHANT", "CL/RB/HO/NG", "FUT/OPT", "Front and deferred terms", "Merchant hedge with refined-product exposure"]
+  ];
+
+  const monitorRows = [
+    ["1", "Account Context", "Select representative, house/customer account, valuation date, and portfolio description"],
+    ["2", "Net Open Positions", "Read account-level net positions by product, expiry, strike, option type, and net quantity"],
+    ["3", "Market Data Join", "Join settlement price, implied vol, rate, and product metadata"],
+    ["4", "Margin-Ready Risk", "Calculate position value, notional, delta, gamma, vega, theta, POD, and bucket"],
+    ["5", "HVaR Scenarios", "Apply historical price and vol moves to today's same portfolio and reprice"],
+    ["6", "Add-ons", "Compute stress, liquidity, concentration, and residual margin components"],
+    ["7", "Final Margin", "Compare legacy SPAN approximation, SPAN2-style baseline, and Bayesian research extension"],
+    ["8", "Methodology / Audit", "Show SQL/JSON/Python pipeline assumptions and save repeatable risk-run outputs"]
   ];
 
   const methodRows = [
-    ["Historical HVaR", "Full repricing using historical market moves", "$107,778"],
-    ["Parametric VaR", "Delta-vega covariance approximation", "$105,563"],
-    ["Monte Carlo VaR", "Simulated correlated price and volatility shocks", "$109,179"],
-    ["Legacy SPAN Approx.", "Fixed scan-risk style benchmark", "$238,380"]
-  ];
-
-  const stressRows = [
-    ["Crude crash", "-25% price, +20 vol points", "$649,365"],
-    ["Pure vol shock", "0% price, +25 vol points", "$130,083"],
-    ["Custom sidebar shock", "-10% price, +5 vol points", "-$57,454"],
-    ["Crude spike", "+18% price, +15 vol points", "-$114,719"]
-  ];
-
-  const greekRows = [
-    ["Delta", "First-order futures price exposure", "HVaR sanity check, parametric VaR, scenario explanation"],
-    ["Gamma", "Curvature when futures price moves", "Option non-linearity check under large shocks"],
-    ["Vega", "Implied volatility exposure", "Vol shock stress and parametric VaR"],
-    ["Theta", "Time-decay exposure", "Daily P&L attribution and roll-forward checks"]
+    ["Historical HVaR", "Non-parametric full repricing", "Uses historical market moves directly"],
+    ["Parametric VaR", "Delta-vega covariance approximation", "Fast benchmark for model comparison"],
+    ["Monte Carlo VaR", "Correlated simulated shocks", "Scenario expansion around empirical covariance"],
+    ["Stress Test", "Severe historical/hypothetical shocks", "Crude crash, crude spike, vol shock, custom shock"],
+    ["Bayesian SPAN2 Research", "Regime-weighted tail/stress extension", "Model-risk research idea, not CME production claim"]
   ];
 
   const table = (headings, rows) => `
@@ -639,99 +654,100 @@ function renderSpan2Page() {
   return `
     <section class="hero-grid">
       <article class="terminal-panel hero-panel">
-        <div class="panel-eyebrow">VAR AND STRESS TEST DEMO // FUTURES AND OPTIONS MARGIN</div>
-        <h1 class="hero-title">CME-style VaR and stress-test monitor for margin benchmarking.</h1>
+        <div class="panel-eyebrow">VAR AND STRESS TEST DEMO // ETL TO RISK MONITOR</div>
+        <h1 class="hero-title">Python, SQL, JSON, and Streamlit-style workflow for margin benchmarking.</h1>
         <p class="hero-copy">
-          This page summarizes the Python Streamlit benchmark in a static website format. The desk workflow is:
-          load today portfolio, mark futures and options, reprice options with Black-76, generate historical,
-          parametric, Monte Carlo, and stress losses, then combine HVaR with stress, liquidity, and concentration add-ons.
+          This page reflects the current local demo structure. The tool starts from synthetic net open positions,
+          joins end-of-day settlement prices and implied volatility inputs, computes futures/options/IRS values,
+          and compares legacy SPAN, SPAN2-style HVaR, parametric VaR, Monte Carlo VaR, stress tests, and add-ons.
         </p>
         <div class="risk-flow">
-          <span>Portfolio</span>
-          <span>Market data</span>
-          <span>Black-76</span>
-          <span>Scenario loss</span>
-          <span>VaR methods</span>
-          <span>Margin add-ons</span>
+          <span>3 representatives</span>
+          <span>8 accounts</span>
+          <span>78 net positions</span>
+          <span>SQL audit</span>
+          <span>Python risk engines</span>
+          <span>8-panel monitor</span>
         </div>
       </article>
       <article class="terminal-panel focus-panel">
-        <div class="panel-eyebrow">BENCHMARK OUTPUT</div>
-        <div class="focus-regime">SPAN 2 MARGIN</div>
-        <div class="focus-prob">$277,605</div>
-        <div class="focus-subline">PEDAGOGICAL DEMO, NOT CME PRODUCTION METHODOLOGY</div>
-        <div class="focus-note">Portfolio value $776,947 // 99% confidence // sample futures/options account</div>
+        <div class="panel-eyebrow">CURRENT DEMO SHAPE</div>
+        <div class="focus-regime">VAR + STRESS</div>
+        <div class="focus-prob">78</div>
+        <div class="focus-subline">NET OPEN POSITION ROWS</div>
+        <div class="focus-note">Futures, options, IRS // house and customer accounts // synthetic representative data</div>
       </article>
     </section>
 
     <div class="terminal-grid terminal-grid-2">
       ${renderSectionBlock(
-        "Margin Components",
-        "RISK STACK",
-        metricGrid([
-          { label: "Historical HVaR", value: "$107,778", note: "Empirical tail loss from historical scenarios" },
-          { label: "Stress add-on", value: "$162,341", note: "Severe deterministic shock reserve" },
-          { label: "Liquidity add-on", value: "$6,207", note: "Exit-cost proxy from notional exposure" },
-          { label: "Concentration add-on", value: "$1,280", note: "Penalty for ES exposure above threshold" }
-        ])
+        "Representative Members",
+        "ACCOUNT UNIVERSE",
+        table(["Category", "Representative", "Accounts", "Modeled book"], representativeRows)
       )}
       ${renderSectionBlock(
-        "Core Equation",
-        "MARGIN LOGIC",
+        "Core Pipeline",
+        "ETL FLOW",
         `
-          <div class="equation-card">Margin = HVaR + Stress + Liquidity + Concentration</div>
+          <div class="equation-card">Net positions + settlement market data -> pricing -> scenarios -> margin monitor</div>
           <p class="terminal-copy">
-            HVaR captures ordinary historical tail loss. Stress captures extreme but plausible market breaks.
-            Liquidity captures the cost of exiting large positions. Concentration captures the extra risk of a
-            portfolio crowded in one product, expiry, or direction.
+            The page is a static public summary of the local Streamlit workflow. The local app contains the interactive
+            account selector, editable portfolio table, scenario views, JSON payload, and SQL audit panel.
           </p>
         `
       )}
     </div>
 
     ${renderSectionBlock(
-      "Current Portfolio",
-      "TODAY'S POSITIONS",
-      table(["ID", "Product", "Type", "Option", "Strike", "Expiry", "Qty", "Size", "Value"], portfolioRows)
+      "Account-Level Portfolios",
+      "HOUSE AND CUSTOMER ACCOUNTS",
+      table(["Representative", "Account", "Origin", "Rows", "Purpose"], accountRows)
     )}
 
     <div class="terminal-grid terminal-grid-2">
       ${renderSectionBlock(
-        "VaR Method Comparison",
-        "HVAR ENGINE",
-        table(["Method", "Mechanism", "Risk"], methodRows)
+        "Position Detail Examples",
+        "NET OPEN POSITIONS",
+        table(["Account", "Product", "Instrument", "Terms", "Risk story"], positionRows)
       )}
       ${renderSectionBlock(
-        "Stress Scenarios",
-        "BAD STATE CHECK",
-        table(["Scenario", "Shock", "Loss"], stressRows)
+        "Methods Benchmarked",
+        "RISK ENGINES",
+        table(["Method", "Mechanism", "Use"], methodRows)
       )}
     </div>
 
+    ${renderSectionBlock(
+      "Eight-Panel Risk Monitor",
+      "UI STRUCTURE",
+      table(["Panel", "View", "What it checks"], monitorRows)
+    )}
+
     <div class="terminal-grid terminal-grid-2">
       ${renderSectionBlock(
-        "Greeks Used",
-        "MODEL VALIDATION",
-        table(["Greek", "Meaning", "Use in this research demo"], greekRows)
+        "Margin Logic",
+        "SPAN / SPAN2 STYLE",
+        `
+          <div class="equation-card">Margin = HVaR + Stress + Liquidity + Concentration</div>
+          <p class="terminal-copy">
+            The demo also compares this baseline with legacy SPAN-style scenario scan and a Bayesian regime-weighted
+            research extension for stress and tail-risk discussion.
+          </p>
+        `
       )}
       ${renderSectionBlock(
-        "Desk Workflow",
-        "IMPLEMENTATION MAP",
+        "Project Framing",
+        "INTERVIEW TOOL",
         `
-          <ol class="terminal-list">
-            <li>Read current portfolio rows: product, instrument type, option type, strike, expiry, quantity, and contract size.</li>
-            <li>Join market data: futures settlement, option implied volatility, interest rate, and expiry metadata.</li>
-            <li>Price futures directly and price options with Black-76 using today&apos;s market state.</li>
-            <li>Generate scenario states from historical, parametric, Monte Carlo, and stress methods.</li>
-            <li>Fully reprice the same portfolio under each scenario and compute loss versus today.</li>
-            <li>Take the tail quantile, add stress/liquidity/concentration reserves, and report benchmark margin.</li>
-          </ol>
+          <p class="terminal-copy">
+            This is designed as a risk-tool modernization demo: migrate Excel/manual stress-test logic into a repeatable
+            Python/SQL/UI pipeline. The data is synthetic and representative; it does not describe real clearing-member positions.
+          </p>
         `
       )}
     </div>
   `;
 }
-
 async function boot() {
   const page = document.body.dataset.page;
 
@@ -763,7 +779,7 @@ async function boot() {
     return;
   }
 
-  if (page === "span2") {
+  if (page === "span2" || page === "var_stress") {
     setRoot(renderSpan2Page());
     return;
   }
